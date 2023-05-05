@@ -62,7 +62,7 @@ begin
         count<=(others=> '0');
         flag_bounce <= '0';
         elsif rising_edge(clk) then
-        --if i have a transition the button is pushed than input signal is the new value
+        --if i have a transitionn the button is pushed than input signal is the new value
             if (last_value = current_value and flag_bounce = '0') then --start debounce and keep the input_signal at output
                 flag_bounce<='1';
                 last_value<=current_value;
