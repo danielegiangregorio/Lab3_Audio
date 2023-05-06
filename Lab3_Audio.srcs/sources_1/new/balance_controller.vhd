@@ -32,6 +32,10 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity balance_controller is
+    Generic(
+        N : positive := 6
+    );
+
     Port ( balance : in STD_LOGIC_VECTOR (9 downto 0);
            aclk : in STD_LOGIC;
            aresetn : in STD_LOGIC;
@@ -55,7 +59,7 @@ architecture Behavioral of balance_controller is
     
     signal data : std_logic_vector(s_axis_tdata'range);
     
-    signal shift : unsigned(2 downto 0);
+    signal shift : unsigned(balance'high-N-1 downto 0);
     signal l_r : std_logic;
     
 begin
@@ -92,8 +96,8 @@ begin
                 
                 when IDLE =>
                     state <= receive;
-                    shift <= unsigned(balance(8 downto 6));
-                    l_r <= balance(9);
+                    shift <= unsigned(balance(balance'high-1 downto N));
+                    l_r <= balance(balance'high);
                     
                 when RECEIVE =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '0' then
@@ -123,7 +127,10 @@ begin
                         if l_r = '0' then
                             
                             for I in 0 to s_axis_tdata'high loop
-                                if I >= to_integer(shift) then
+                                if shift = 0 and I >= 2**(balance'high-N) then
+                                    m_axis_tdata(I) <= '0';
+                                    m_axis_tdata(I-2**(balance'high-N)) <= data(I);
+                                elsif I >= to_integer(shift) then
                                     m_axis_tdata(I) <= '0';
                                     m_axis_tdata(I-to_integer(shift)) <= data(I);
                                 end if;
@@ -139,8 +146,8 @@ begin
                 when TRANSMIT_R => 
                     if m_axis_tready = '1' then
                         state <= RECEIVE;
-                        shift <= unsigned(balance(8 downto 6));
-                        l_r <= balance(9);
+                        shift <= unsigned(balance(balance'high-1 downto N));
+                        l_r <= balance(balance'high);
                     end if;
                     
                 when others => 
