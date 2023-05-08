@@ -35,7 +35,7 @@ use ieee.std_logic_unsigned.all;
 
 --this block doesn't affect the speed of the system which has to be faster than the sampling frequency
 --it only affects the speed at which i can mute two consecutive times the audio or filter the audio samples.
--- 61 Hz..
+--13ms (61Hz)
 
 entity debouncer is
     Port ( input_signal : in STD_LOGIC;
@@ -48,37 +48,35 @@ end debouncer;
 architecture Behavioral of debouncer is
 
 signal last_value: std_logic;
-signal current_value: std_logic;
-signal flag_bounce: std_logic;
+signal new_value: std_logic;
 signal count: std_logic_vector(13 downto 0);
 signal TC: std_logic_vector(13 downto 0) := (others => '1');
 begin
-    current_value<=input_signal;
-    
+
+    debounced <= new_value;
+
     process (clk, reset)
     begin
         if reset = '1' then
-        last_value<='0';
-        count<=(others=> '0');
-        flag_bounce <= '0';
+            last_value  <='0';
+            count       <= (others=> '0');
+            new_value <= '0';
         elsif rising_edge(clk) then
-        --if i have a transitionn the button is pushed than input signal is the new value
-            if (last_value = current_value and flag_bounce = '0') then --start debounce and keep the input_signal at output
-                flag_bounce<='1';
-                last_value<=current_value;
-                count<=(others=>'0');
-                
-            elsif (flag_bounce ='1') then
-                last_value<=last_value;
-                count<= count + 1;
-                if (count = TC) then --cause the increment of count occurs after the last line of the
-                                     --process, so this statement is the value of count without the +1 
-                                     -- of the previous line.
-                    count<=(others => '0'); -- the last row is the one that happens so count = 0 wins over
-                                            -- count = count ++
-                    flag_bounce<='0'; -- now the block waits for the new pression of the button                  
+            --if i have a transitionn the button is pushed than input signal is the new value
+            if (last_value /= input_signal) then
+                if count /= TC then
+                    count <= count + 1;
+                end if;    
+                    
+            elsif (last_value = input_signal) then
+                if (count /= "0") then
+                    count<= count - 1;
                 end if;
+                if (count = 0) then
+                    new_value <= input_signal;
+                end if;                
             end if;
         end if;
+        last_value <= input_signal;
     end process;
 end Behavioral;

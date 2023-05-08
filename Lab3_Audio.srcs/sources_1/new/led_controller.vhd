@@ -43,6 +43,17 @@ end led_controller;
 architecture Behavioral of led_controller is
 
 begin
-
-
+    proc_name: process(mute_enable, filter_enable)
+    begin
+        led_g <= (others => '0');
+        led_b <= (others => '0');
+        led_r <= (others => '0');
+        if mute_enable = '1' then
+            led_r <= (others => '1');
+        elsif filter_enable = '1' then
+            led_b <= (others => '1');
+        else
+            led_g <= (others => '1');
+        end if;
+    end process proc_name;
 end Behavioral;
