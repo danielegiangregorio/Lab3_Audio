@@ -46,8 +46,16 @@ entity mute is
 end mute;
 
 architecture Behavioral of mute is
-
 begin
-
-
+    mute_p: process(s_axis_tdata, s_axis_tlast, s_axis_tvalid, m_axis_tready)
+    begin
+        if mute_enable = '1' then
+            m_axis_tdata    <= (others => '0');
+        else
+            m_axis_tdata    <= s_axis_tdata;
+        end if;
+        m_axis_tlast    <= s_axis_tlast;
+        m_axis_tvalid   <= s_axis_tvalid;
+        s_axis_tready   <= m_axis_tready;
+    end process mute_p;
 end Behavioral;
