@@ -88,6 +88,7 @@ begin
             up_down <= '0';
         elsif rising_edge(aclk) then 
             case state is 
+                -- TODO: add L R channel support by reading and writing tlast correctly to the maxis bussses
                 
                 when IDLE =>
                     state <= RECEIVE;
@@ -117,12 +118,11 @@ begin
                 --in transmit i check the clipped vector to see if there are any 1s which means it clipped.
                 when TRANSMIT =>
                     if m_axis_tready = '1' then 
+                        -- signal has clipped
                         if up_down = '1' and clipped /= (others=>'0') then
-                            m_axis_tdata <= (others => '1');
-                        elsif up_down ='0' and clipped /= (others=>'0') then
-                            m_axis_tdata <= (others => '0');
+                            m_axis_tdata    <= (others => '1');
                         else
-                            m_axis_tdata<=data;                            
+                            m_axis_tdata    <= data;                            
                         end if;
                         state <= RECEIVE;
                     end if;
@@ -131,10 +131,6 @@ begin
                     state <= IDLE;
             
             end case;
-        
         end if;
-    
     end process;
-
-
 end Behavioral;
