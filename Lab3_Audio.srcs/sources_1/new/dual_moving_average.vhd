@@ -50,16 +50,20 @@ end dual_moving_average;
 architecture Behavioral of dual_moving_average is
     type state_t is (RCV_L, RCV_R, SEND_L, SEND_R);
     type ring_buffer is array (31 downto 0) of unsigned (23 downto 0);
+
     signal state_rx : state_t;
     signal state_tx : state_t;
+
     signal ring_buffer_entry : unsigned (5 downto 0) := (others => '0');
     signal ring_buffer_read : unsigned (5 downto 0) := (others => '0');
+
+    signal filter_in_r : ring_buffer := ( others => ( others => '0'));
+    signal filter_in_l : ring_buffer := ( others => ( others => '0'));
     signal filtered_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_r : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_r : unsigned (23 downto 0) := (others => '0');
-    signal filter_in_r : ring_buffer := ( others => ( others => '0'));
-    signal filter_in_l : ring_buffer := ( others => ( others => '0'));
+
 begin
     
     state_seq_rx: process(aclk, aresetn)
@@ -80,8 +84,8 @@ begin
                 
                 when RCV_R =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '1' then
-                        filter_in_r( TO_INTEGER(ring_buffer_entry) )    <= unsigned(s_axis_tdata);
-                        state_rx                                          <= RCV_L;
+                        filter_in_r(TO_INTEGER(ring_buffer_entry))      <= unsigned(s_axis_tdata);
+                        state_rx                                        <= RCV_L;
                         s_axis_tready                                   <= '0';
                         ring_buffer_entry   <= ring_buffer_entry + 1;
                     end if;
