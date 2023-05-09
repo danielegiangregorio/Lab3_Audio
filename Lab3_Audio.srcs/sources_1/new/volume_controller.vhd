@@ -63,6 +63,8 @@ architecture Behavioral of volume_controller is
 
     signal clipped: unsigned (shift'high downto 0); --here I put the values of the audio data that are shifted beyond the margin of our data
 
+    signal ws : std_logic;
+
     signal  up_down : std_logic;
 begin
 
@@ -112,6 +114,7 @@ begin
                             clipped                                             <= unsigned(s_axis_tdata(to_integer(shift)-1 downto 0)); 
                             --potrei essermi perso dei "-1" negli indici
                         end if;
+                        ws <= s_axis_tlast;
                         state <= TRANSMIT;
                     end if;    
                     
@@ -124,6 +127,7 @@ begin
                         else
                             m_axis_tdata    <= data;                            
                         end if;
+                        m_axis_tlast    <= ws;
                         state <= RECEIVE;
                     end if;
 
