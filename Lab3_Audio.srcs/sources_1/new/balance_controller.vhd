@@ -59,7 +59,8 @@ architecture Behavioral of balance_controller is
     
     signal data : std_logic_vector(s_axis_tdata'range);
     
-    signal shift : unsigned(balance'high-N-1 downto 0);
+    signal shift : unsigned(balance'high-N downto 0);
+    signal offset : std_logic;
     signal l_r : std_logic;
     
 begin
@@ -95,8 +96,9 @@ begin
             case state is
                 
                 when IDLE =>
-                    state <= receive;
-                    shift <= unsigned(balance(balance'high-1 downto N));
+                    state <= RECEIVE;
+                    shift <= unsigned(balance(balance'high-1 downto N-1));
+                    offset <= balance(N-1);
                     l_r <= balance(balance'high);
                     
                 when RECEIVE =>
