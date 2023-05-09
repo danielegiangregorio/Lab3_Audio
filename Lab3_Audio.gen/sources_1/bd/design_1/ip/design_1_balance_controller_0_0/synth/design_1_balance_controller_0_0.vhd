@@ -73,6 +73,9 @@ ARCHITECTURE design_1_balance_controller_0_0_arch OF design_1_balance_controller
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_balance_controller_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT balance_controller IS
+    GENERIC (
+      N : INTEGER
+    );
     PORT (
       balance : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       aclk : IN STD_LOGIC;
@@ -92,7 +95,7 @@ ARCHITECTURE design_1_balance_controller_0_0_arch OF design_1_balance_controller
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_balance_controller_0_0_arch : ARCHITECTURE IS "design_1_balance_controller_0_0,balance_controller,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_balance_controller_0_0_arch: ARCHITECTURE IS "design_1_balance_controller_0_0,balance_controller,{x_ipProduct=Vivado 2022.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=balance_controller,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_balance_controller_0_0_arch: ARCHITECTURE IS "design_1_balance_controller_0_0,balance_controller,{x_ipProduct=Vivado 2022.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=balance_controller,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,N=6}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_balance_controller_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -113,6 +116,9 @@ ARCHITECTURE design_1_balance_controller_0_0_arch OF design_1_balance_controller
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 s_axis TVALID";
 BEGIN
   U0 : balance_controller
+    GENERIC MAP (
+      N => 6
+    )
     PORT MAP (
       balance => balance,
       aclk => aclk,

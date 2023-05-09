@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -92,30 +92,34 @@ begin
                 when IDLE =>
                     state <= RECEIVE;
                     shift <= unsigned(volume(volume'high-1 downto N));
-                    up_down <= volume(volume'high); --set 1000 as the center of the joystick Amplification = 1 then 0111 decrease volume 1001 increase it
+                    up_down <= volume(volume'high); 
+                --set 1000 as the center of the joystick Amplification = 1 then 0111 decrease volume 1001 increase it
                 --after this state it doesn't update volume value, so now i can detect if I go up or down.
 
                 when RECEIVE => 
                     if s_axis_tvalid ='1' then 
                         data <= s_axis_tdata;
-                        if up_down = '1' then --increase volume, shift left and add zeros.
-                            data(to_integer(shift)-1 downto 0) <=  (others => '0');
-                            data(s_axis_tdata'high downto to_integer(shift)) <= s_axis_tdata(s_axis_tdata'high - to_integer(shift) downto 0);
-                            clipped <= s_axis_tdata ( s_axis_tdata'high downto to_integer(shift)); --potrei essermi perso dei "-1" negli indici
+                        if up_down = '1' then 
+                            --increase volume, shift left and add zeros.
+                            data(to_integer(shift)-1 downto 0)                  <= (others => '0');
+                            data(s_axis_tdata'high downto to_integer(shift))    <= s_axis_tdata(s_axis_tdata'high - to_integer(shift) downto 0);
+                            clipped                                             <= unsigned(s_axis_tdata ( s_axis_tdata'high downto to_integer(shift))); 
+                            --potrei essermi perso dei "-1" negli indici
                         elsif up_down = '0' then -- decreas shifting left
-                            data(s_axis_tdata'high downto to_integer(shift)) <=  (others => '0');
-                            data(to_integer(shift)-1 downto 0) <= s_axis_tdata(s_axis_tdata'high - to_integer(shift) downto 0);
-                            clipped <= s_axis_tdata ( to_integer(shift)-1 downto 0); --potrei essermi perso dei "-1" negli indici
+                            data(s_axis_tdata'high downto to_integer(shift))    <=  (others => '0');
+                            data(to_integer(shift)-1 downto 0)                  <= s_axis_tdata(s_axis_tdata'high - to_integer(shift) downto 0);
+                            clipped                                             <= unsigned(s_axis_tdata(to_integer(shift)-1 downto 0)); 
+                            --potrei essermi perso dei "-1" negli indici
                         end if;
-                        state => TRANSMIT;
+                        state <= TRANSMIT;
                     end if;    
                     
                 --in transmit i check the clipped vector to see if there are any 1s which means it clipped.
                 when TRANSMIT =>
                     if m_axis_tready = '1' then 
-                        if up_down = '1' and clipped != (others=>'0') then
+                        if up_down = '1' and clipped /= (others=>'0') then
                             m_axis_tdata <= (others => '1');
-                        elsif up_down ='0' and clipped != (others=>'0') then
+                        elsif up_down ='0' and clipped /= (others=>'0') then
                             m_axis_tdata <= (others => '0');
                         else
                             m_axis_tdata<=data;                            
@@ -128,7 +132,7 @@ begin
             
             end case;
         
-        end if:
+        end if;
     
     end process;
 

@@ -6,8 +6,8 @@ use IEEE.math_real.all;
 entity digilent_jstk2 is
 	generic (
 		DELAY_US		: integer := 25;    -- Delay (in us) between two packets
-		CLKFREQ		 	: integer := 100_000_000;  -- Frequency of the aclk signal (in Hz)
-		SPI_SCLKFREQ 	: integer := 66_666 -- Frequency of the SPI SCLK clock signal (in Hz)
+		CLKFREQ		 	: integer := 100000000;  -- Frequency of the aclk signal (in Hz)
+		SPI_SCLKFREQ 	: integer := 66666 -- Frequency of the SPI SCLK clock signal (in Hz)
 	);
 	Port ( 
 		aclk 			: in  STD_LOGIC;

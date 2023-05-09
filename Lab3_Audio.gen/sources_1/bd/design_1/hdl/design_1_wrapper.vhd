@@ -1,7 +1,7 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
---Date        : Fri May  5 14:59:23 2023
+--Date        : Tue May  9 10:15:35 2023
 --Host        : SburroROG running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -33,16 +33,6 @@ end design_1_wrapper;
 architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
-    rx_sdin_0 : in STD_LOGIC;
-    tx_lrck_0 : out STD_LOGIC;
-    tx_mclk_0 : out STD_LOGIC;
-    rx_lrck_0 : out STD_LOGIC;
-    rx_mclk_0 : out STD_LOGIC;
-    tx_sdout_0 : out STD_LOGIC;
-    tx_sclk_0 : out STD_LOGIC;
-    rx_sclk_0 : out STD_LOGIC;
-    clk_in1_0 : in STD_LOGIC;
-    reset_0 : in STD_LOGIC;
     SPI_M_0_sck_t : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPI_M_0_io1_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPI_M_0_ss_t : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -54,7 +44,17 @@ architecture STRUCTURE of design_1_wrapper is
     SPI_M_0_sck_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPI_M_0_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     SPI_M_0_io1_i : in STD_LOGIC_VECTOR ( 0 to 0 );
-    SPI_M_0_io0_i : in STD_LOGIC_VECTOR ( 0 to 0 )
+    SPI_M_0_io0_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    rx_sdin_0 : in STD_LOGIC;
+    tx_lrck_0 : out STD_LOGIC;
+    tx_mclk_0 : out STD_LOGIC;
+    rx_lrck_0 : out STD_LOGIC;
+    rx_mclk_0 : out STD_LOGIC;
+    tx_sdout_0 : out STD_LOGIC;
+    tx_sclk_0 : out STD_LOGIC;
+    rx_sclk_0 : out STD_LOGIC;
+    clk_in1_0 : in STD_LOGIC;
+    reset_0 : in STD_LOGIC
   );
   end component design_1;
   component IOBUF is

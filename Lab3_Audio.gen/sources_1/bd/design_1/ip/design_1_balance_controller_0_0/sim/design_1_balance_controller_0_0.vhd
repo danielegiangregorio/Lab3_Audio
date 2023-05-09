@@ -73,6 +73,9 @@ ARCHITECTURE design_1_balance_controller_0_0_arch OF design_1_balance_controller
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_balance_controller_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT balance_controller IS
+    GENERIC (
+      N : INTEGER
+    );
     PORT (
       balance : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       aclk : IN STD_LOGIC;
@@ -105,6 +108,9 @@ ARCHITECTURE design_1_balance_controller_0_0_arch OF design_1_balance_controller
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 s_axis TVALID";
 BEGIN
   U0 : balance_controller
+    GENERIC MAP (
+      N => 6
+    )
     PORT MAP (
       balance => balance,
       aclk => aclk,

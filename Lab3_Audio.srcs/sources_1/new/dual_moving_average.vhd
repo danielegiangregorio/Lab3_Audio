@@ -120,6 +120,8 @@ begin
                 if ring_buffer_read = 31 then
                     filtered_out_l <= filtered_l;
                     filtered_out_r <= filtered_r;
+                    filtered_l <= (others => '0');
+                    filtered_r <= (others => '0');
                 end if;
         end if;
     end process filter;
