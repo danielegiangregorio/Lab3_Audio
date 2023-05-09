@@ -79,10 +79,12 @@ begin
     '0' when SEND_L,
     '1' when SEND_R;    
 
-    state_seq: process(aclk, aresetn)
+    rx_tx_fsm: process(aclk, aresetn)
     begin
         if aresetn = '0' then
             state <= RCV_L;
+            filter_in_r <= ( others => ( others => '0'));
+            filter_in_l <= ( others => ( others => '0'));
         elsif rising_edge(aclk) then
             case state is
                 when RCV_L =>
@@ -123,13 +125,15 @@ begin
                     state <= RCV_L;
             end case;
         end if;
-    end process state_seq;
+    end process rx_tx_fsm;
 
-    filter: process(aclk, aresetn)
+    dma_filter: process(aclk, aresetn)
     begin
         if aresetn = '0' then
             filtered_out_l <= (others => '0');
             filtered_out_r <= (others => '0');
+            filtered_l <= (others => '0');
+            filtered_r <= (others => '0');
             ring_buffer_read <= (others => '0');
         elsif rising_edge(aclk) then
                 filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read))(23 downto 5);
@@ -142,6 +146,6 @@ begin
                     filtered_r <= (others => '0');
                 end if;
         end if;
-    end process filter;
+    end process dma_filter;
 
 end Behavioral;
