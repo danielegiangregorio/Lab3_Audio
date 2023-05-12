@@ -39,7 +39,7 @@ architecture Behavioral of balance_controller is
     signal data_l : std_logic_vector(s_axis_tdata'range);                           --signal to store left channel data 
     signal data_r : std_logic_vector(s_axis_tdata'range);                           --signal to store right channel data (per Andrea: potrei usare solo un data. lascio coì per chiarezza? ;)))) )
     signal zeros : std_logic_vector(balance'high-N downto 0) := (Others => '0');
-    signal shift : unsigned(balance'high-N+1 downto 0);                             --signal to store only the balance bits needed and male operations on it
+    signal shift : unsigned(balance'high-N+1 downto 0);                             --signal to store only the balance bits needed and make operations on it
     signal shift_n : unsigned(balance'high-N-1 downto 0);                           --number of shifts to do on the channels
     
 begin
