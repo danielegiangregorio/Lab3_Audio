@@ -51,7 +51,7 @@ architecture Behavioral of tb_volume is
 
 	--- TB Initialiazzations ---
 	constant	TB_CLK_INIT		:	STD_LOGIC	:= '0';
-	constant	TB_RESET_INIT 	:	STD_LOGIC	:= '1';
+	constant	TB_RESET_INIT 	:	STD_LOGIC	:= '0';
 	----------------------------
 	
 	
@@ -197,7 +197,7 @@ begin
 		
 		wait for RESET_WND;
 		
-		reset <= not reset;
+		reset <= not TB_RESET_INIT ;
 		wait;
     end process;	
 	----------------------------
@@ -256,6 +256,7 @@ begin
            wait for 5*CLK_PERIOD;
        else
             vol<=(others=>'1');
+            wait;
 	   end if;
 	end process;
 	
