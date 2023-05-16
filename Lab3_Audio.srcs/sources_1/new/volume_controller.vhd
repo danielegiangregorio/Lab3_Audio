@@ -90,11 +90,12 @@ begin
                 
                 when IDLE =>
                 
-                    if s_axis_tlast = '0' then 
-                        state <= RECEIVE_L;
-                    elsif s_axis_tlast = '1' then
-                        state <= RECEIVE_R;
-                    end if;
+                    -- if s_axis_tlast = '0' then
+                    --   state <= RECEIVE_L;
+                    --elsif s_axis_tlast = '1' then
+                    --    state <= RECEIVE_R;
+                    -- end if;
+                    state <= RECEIVE_L;
                     
                     shift <= unsigned(volume(volume'high-1 downto N-1)); --4 bit to assess the interval   8 downto 5 = 3 downto 0 = 4 bit
                     up_down <= volume(volume'high); 

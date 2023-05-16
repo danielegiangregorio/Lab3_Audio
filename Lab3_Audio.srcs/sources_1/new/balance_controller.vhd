@@ -79,11 +79,12 @@ begin
             case state is
                 
                 when IDLE =>
-                    if s_axis_tlast = '0' then
-                        state <= RECEIVE_L;
-                    elsif s_axis_tlast = '1' then
-                        state <= RECEIVE_R;
-                    end if;
+                   -- if s_axis_tlast = '0' then
+                     --   state <= RECEIVE_L;
+                    --elsif s_axis_tlast = '1' then
+                    --    state <= RECEIVE_R;
+                   -- end if;
+                    state <= RECEIVE_L;
                     
                     if unsigned(balance(balance'high downto N-1)) /= 2**(balance'high-N+2) - 1 then
                         shift <= unsigned(balance(balance'high downto N-1)) + unsigned(zeros & balance(N-1));           --here we add the (N-1)th bit so that we can offset the balance by 2^(N-1)  
