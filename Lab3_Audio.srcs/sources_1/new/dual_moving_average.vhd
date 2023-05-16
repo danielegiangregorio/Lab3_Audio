@@ -49,7 +49,7 @@ end dual_moving_average;
 
 architecture Behavioral of dual_moving_average is
     type state_t is (RCV_L, RCV_R, SEND_L, SEND_R);
-    type ring_buffer is array (31 downto 0) of unsigned (28 downto 0);
+    type ring_buffer is array (31 downto 0) of unsigned (23 downto 0);
     signal state : state_t;
     signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
     signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
@@ -145,8 +145,8 @@ begin
                 filtered_l <= (others => '0');
                 filtered_r <= (others => '0');
             end if;
-            filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read))(23 downto 0);
-            filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read))(23 downto 0);
+            filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
+            filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));
             ring_buffer_read <= ring_buffer_read + 1;        
         end if;
     end process dma_filter;
