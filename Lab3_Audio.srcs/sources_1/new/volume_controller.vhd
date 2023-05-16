@@ -83,6 +83,8 @@ begin
             inc<= (others => '0');
             dec<=(others => '0');
             up_down <= '0';
+            half_int <= '0';
+
         elsif rising_edge(aclk) then 
             case state is 
                 
@@ -96,6 +98,7 @@ begin
                     
                     shift <= unsigned(volume(volume'high-1 downto N-1)); --4 bit to assess the interval   8 downto 5 = 3 downto 0 = 4 bit
                     up_down <= volume(volume'high); 
+                    
                     --Assess ampl, inc and dec. Divide each interval in two halfs 1st and 2nd. By looking at volume(5) we understand in which half we are. 
                     --If we are in the 1st half we sum 1 to the value of volume(8 downto 6) otherwise we don't touch it
                     if volume(volume'high-N+2) = '1' and unsigned(volume(volume'high downto N-1)) /= 2**(volume'high-N+2)-1 then    --if volume(5) = 1   9-6+2=5  and volume(8 a 5) != 1111 altrimenti va in overflow
@@ -143,11 +146,18 @@ begin
                                         m_axis_tdata <= (others => '1');
                                     --clipped                    <= unsigned(data_l(23)); 
                                     end if;
-                                else
-                                    m_axis_tdata(to_integer(inc) downto 0)           <= (others => '0');     --ex  8 posizioni  7 downto 0                                
-                                    m_axis_tdata(data_l'high downto (to_integer(inc)+1))   <= data_l(data_l'high - (to_integer(inc)+1) downto 0);   --ex 8 pos 23 downto 7+1 = 15 downto 0 == 16 bit originali restano ho shiftato di 8  23-7 downto 0 = 16 downto 0 Ã¨ troppo 23-7-1
+                                elsif inc = "111" and shift(0) = '1' then
+                                    m_axis_tdata(to_integer(inc) downto 0) <= (others => '0');
+                                    m_axis_tdata(data_l'high downto (to_integer(inc)+1)) <= data_l(data_l'high-(to_integer(inc))-1 downto 0);
+                                    if unsigned(data_l(data_l'high downto data_l'high-(to_integer(inc)))) /= 0  then
+                                        m_axis_tdata <= (others => '1');
+                                    end if;
                                     
-                                    if  unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)+1))) /= 0 then --it clipped
+                                else
+                                    m_axis_tdata(to_integer(inc)-1 downto 0)           <= (others => '0');     --ex  8 posizioni  7 downto 0                                
+                                    m_axis_tdata(data_l'high downto (to_integer(inc)))   <= data_l(data_l'high - (to_integer(inc)) downto 0);   --ex 8 pos 23 downto 7+1 = 15 downto 0 == 16 bit originali restano ho shiftato di 8  23-7 downto 0 = 16 downto 0 Ã¨ troppo 23-7-1
+                                    
+                                    if  unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)) +1)) /= 0 then --it clipped
                                        m_axis_tdata <= (others => '1');
                                         -- clipped                    <= unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)+1)));   -- ex 8 pos 23 downto 23- 7-1= 23 downto 15 == 8 bit
                                     end if;
