@@ -51,8 +51,8 @@ architecture Behavioral of dual_moving_average is
     type state_t is (RCV_L, RCV_R, SEND_L, SEND_R);
     type ring_buffer is array (31 downto 0) of unsigned (23 downto 0);
     signal state : state_t;
-    signal ring_buffer_entry : unsigned (5 downto 0) := (others => '0');
-    signal ring_buffer_read : unsigned (5 downto 0) := (others => '0');
+    signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
+    signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
     signal filtered_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_r : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
