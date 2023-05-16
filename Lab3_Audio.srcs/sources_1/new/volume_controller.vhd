@@ -147,7 +147,7 @@ begin
                                         m_axis_tdata <= (others => '1');
                                     --clipped                    <= unsigned(data_l(23)); 
                                     end if;
-                                elsif to_integer(inc) = 2**(dec'high)-1 and shift(0) = '1' then
+                                elsif to_integer(inc) = 2**(inc'high)-1 and shift(0) = '1' then
                                     m_axis_tdata(to_integer(inc) downto 0) <= (others => '0');
                                     m_axis_tdata(data_l'high downto (to_integer(inc)+1)) <= data_l(data_l'high-(to_integer(inc)+1) downto 0);
                                     if unsigned(data_l(data_l'high downto data_l'high-(to_integer(inc)))) /= 0  then
