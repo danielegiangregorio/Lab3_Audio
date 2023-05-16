@@ -79,11 +79,6 @@ begin
             case state is
                 
                 when IDLE =>
-                   -- if s_axis_tlast = '0' then
-                     --   state <= RECEIVE_L;
-                    --elsif s_axis_tlast = '1' then
-                    --    state <= RECEIVE_R;
-                   -- end if;
                     state <= RECEIVE_L;
                     
                     if unsigned(balance(balance'high downto N-1)) /= 2**(balance'high-N+2) - 1 then
