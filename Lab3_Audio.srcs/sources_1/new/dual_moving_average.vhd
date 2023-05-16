@@ -51,8 +51,8 @@ architecture Behavioral of dual_moving_average is
     type state_t is (RCV_L, RCV_R, SEND_L, SEND_R);
     type ring_buffer is array (31 downto 0) of unsigned (23 downto 0);
     signal state : state_t;
-    signal ring_buffer_entry : unsigned (5 downto 0) := (others => '0');
-    signal ring_buffer_read : unsigned (5 downto 0) := (others => '0');
+    signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
+    signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
     signal filtered_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_r : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
@@ -130,21 +130,24 @@ begin
     dma_filter: process(aclk, aresetn)
     begin
         if aresetn = '0' then
+            -- reset output and calculation buffer
             filtered_out_l <= (others => '0');
             filtered_out_r <= (others => '0');
             filtered_l <= (others => '0');
             filtered_r <= (others => '0');
             ring_buffer_read <= (others => '0');
         elsif rising_edge(aclk) then
-                filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read))(23 downto 5);
-                filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read))(23 downto 5);
-                ring_buffer_read <= ring_buffer_read + 1;
-                if ring_buffer_read = 31 then
-                    filtered_out_l <= filtered_l;
-                    filtered_out_r <= filtered_r;
-                    filtered_l <= (others => '0');
-                    filtered_r <= (others => '0');
-                end if;
+            if ring_buffer_read = 0 then
+                -- commit the result to output and reset the calculation buffer
+                filtered_out_l <= filtered_l;
+                filtered_out_r <= filtered_r;
+                filtered_l <= (others => '0');
+                filtered_r <= (others => '0');
+            end if;
+            -- the avg is implemented shifting by 5 right every entry
+            filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read))(23 downto 5);
+            filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read))(23 downto 5);
+            ring_buffer_read <= ring_buffer_read + 1;        
         end if;
     end process dma_filter;
 
