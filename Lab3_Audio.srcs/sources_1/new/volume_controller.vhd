@@ -123,10 +123,10 @@ begin
     -- if the channel is clipped we output the maximum possible signal
     with clipped_l select volume_out_l <=
         volume_buffer_l(23 downto 0) when '0',
-        (others => '0') when '1';
+        (others => '1') when '1';
     with clipped_r select volume_out_r <=
         volume_buffer_r(23 downto 0) when '0',
-        (others => '0') when '1';
+        (others => '1') when '1';
 
 
     volume_process: process(aclk, aresetn)
