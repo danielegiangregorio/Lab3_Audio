@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Tue May  9 10:19:56 2023
+// Date        : Thu May 18 10:50:33 2023
 // Host        : SburroROG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top design_1_debouncer_1_0 -prefix
 //               design_1_debouncer_1_0_ design_1_debouncer_0_0_stub.v
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "debouncer,Vivado 2022.2" *)
+(* X_CORE_INFO = "debouncer,Vivado 2022.2" *)
 module design_1_debouncer_1_0(input_signal, clk, reset, debounced)
 /* synthesis syn_black_box black_box_pad_pin="input_signal,clk,reset,debounced" */;
   input input_signal;
