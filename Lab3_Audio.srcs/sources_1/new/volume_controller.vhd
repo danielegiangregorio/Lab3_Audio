@@ -139,15 +139,9 @@ begin
             volume_exp_value <= 0;
         elsif rising_edge(aclk) then
             volume_sign_msb_hold <= volume(9 downto N - 1);
-        -- we have two edge cases, the 32 bits interval at top and bottom of the scale, here we search if we are in the bottom half
-            if volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1) = ones then
-                if volume_sign_msb_hold(0) = '1' then
-                    volume_exp_value <= (2**(9 - N));
-                end if;
-            elsif volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1) = zeros then
-                if volume_sign_msb_hold(0) = '0' then
-                    volume_exp_value <= 1;
-                end if;
+        -- if we are in the second part of a 2^N interval, the gain is actually N+1 on each side
+            if volume_exp_value_preprocess(0) = '1' then
+                volume_exp_value <= to_integer(unsigned(volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1))) + 1;
             else
                 volume_exp_value <= to_integer(unsigned(volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1)));    
             end if;
@@ -163,7 +157,6 @@ begin
             end if;
         end if;
     end process volume_process; 
-
     
     -- if one of the MSBs above the expected 24bits is high we have clipped, so we rise clipped in the channle
     clipper : process(volume_buffer_l, volume_buffer_r)
