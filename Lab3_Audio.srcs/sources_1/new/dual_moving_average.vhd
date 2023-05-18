@@ -89,41 +89,33 @@ begin
             case state is
                 when RCV_L =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '0' then
-                        -- get l sample, jump to next state
                         filter_in_l(TO_INTEGER(ring_buffer_entry)) <= unsigned(s_axis_tdata);
                         state <= RCV_R;
                     end if;
 
                 when RCV_R =>
-                    -- wait for l sample
                     if s_axis_tvalid = '1' and s_axis_tlast = '1' then
-                        -- get r sample
                         filter_in_r( TO_INTEGER(ring_buffer_entry) ) <= unsigned(s_axis_tdata);
-                        -- setup m_axis to send l sample in the next state
-                        if filter_enable = '1' then
-                            m_axis_tdata    <= std_logic_vector(filtered_out_l);
-                        else
-                            m_axis_tdata    <= std_logic_vector(filter_in_l(TO_INTEGER(ring_buffer_entry)));
-                        end if;
-                        s_axis_tready <= '0';
                         state <= SEND_L;
                     end if;
 
                 when SEND_L =>
-                    -- wait for receiver
+                    if filter_enable = '1' then
+                        m_axis_tdata    <= std_logic_vector(filtered_out_l);
+                    else
+                        m_axis_tdata    <= std_logic_vector(filter_in_l(TO_INTEGER(ring_buffer_entry)));
+                    end if;
                     if m_axis_tready = '1' then
-                        -- setup m_axis to send r sample in the next state
-                        if filter_enable = '1' then
-                            m_axis_tdata    <= std_logic_vector(filtered_out_r);
-                        else
-                            m_axis_tdata    <= std_logic_vector(filter_in_r(TO_INTEGER(ring_buffer_entry)));
-                        end if;
-                            state <= SEND_R;
+                        state <= SEND_R;
                     end if;
 
                 when SEND_R =>
+                    if filter_enable = '1' then
+                        m_axis_tdata    <= std_logic_vector(filtered_out_r);
+                    else
+                        m_axis_tdata    <= std_logic_vector(filter_in_r(TO_INTEGER(ring_buffer_entry)));
+                    end if;
                     if m_axis_tready = '1' then
-                    -- update counter and go back to receive status
                         state <= RCV_R;
                         ring_buffer_entry <= ring_buffer_entry + 1;
                     end if;
