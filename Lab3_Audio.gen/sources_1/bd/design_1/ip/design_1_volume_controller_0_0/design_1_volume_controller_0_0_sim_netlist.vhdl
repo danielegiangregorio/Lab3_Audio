@@ -1,7 +1,7 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Thu May 18 17:26:02 2023
+-- Date        : Thu May 18 18:01:28 2023
 -- Host        : SburroROG running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_volume_controller_0_0/design_1_volume_controller_0_0_sim_netlist.vhdl
@@ -17,7 +17,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_volume_controller_0_0_volume_controller is
   port (
     \FSM_sequential_state_reg[1]_0\ : out STD_LOGIC;
-    m_axis_tdata : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 23 downto 0 );
     m_axis_tlast : out STD_LOGIC;
     s_axis_tready : out STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -43,10 +43,33 @@ architecture STRUCTURE of design_1_volume_controller_0_0_volume_controller is
   signal clipped_r : STD_LOGIC;
   signal clipped_r_reg_i_1_n_0 : STD_LOGIC;
   signal clipped_r_reg_i_2_n_0 : STD_LOGIC;
+  signal \m_axis_tdata[0]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[10]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[11]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[12]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[13]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[14]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[15]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[16]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[17]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[18]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[19]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[1]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[20]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[21]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[22]_i_1_n_0\ : STD_LOGIC;
   signal \m_axis_tdata[23]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[23]_i_2_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[2]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[3]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[4]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[5]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[6]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[7]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[8]_i_1_n_0\ : STD_LOGIC;
+  signal \m_axis_tdata[9]_i_1_n_0\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal state : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal volume_buffer_l : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal \volume_buffer_l[0]_i_1_n_0\ : STD_LOGIC;
   signal \volume_buffer_l[0]_i_2_n_0\ : STD_LOGIC;
   signal \volume_buffer_l[10]_i_2_n_0\ : STD_LOGIC;
@@ -111,15 +134,38 @@ architecture STRUCTURE of design_1_volume_controller_0_0_volume_controller is
   signal \volume_buffer_l_reg[15]_i_1_n_0\ : STD_LOGIC;
   signal \volume_buffer_l_reg[8]_i_1_n_0\ : STD_LOGIC;
   signal \volume_buffer_l_reg[9]_i_1_n_0\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[0]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[10]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[11]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[12]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[13]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[14]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[15]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[16]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[17]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[18]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[19]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[1]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[20]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[21]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[22]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[23]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[24]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[25]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[26]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[27]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[28]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[29]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[2]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[30]\ : STD_LOGIC;
   signal \volume_buffer_l_reg_n_0_[31]\ : STD_LOGIC;
-  signal volume_buffer_r : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal \volume_buffer_l_reg_n_0_[3]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[4]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[5]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[6]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[7]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[8]\ : STD_LOGIC;
+  signal \volume_buffer_l_reg_n_0_[9]\ : STD_LOGIC;
   signal \volume_buffer_r[0]_i_1_n_0\ : STD_LOGIC;
   signal \volume_buffer_r[0]_i_2_n_0\ : STD_LOGIC;
   signal \volume_buffer_r[10]_i_2_n_0\ : STD_LOGIC;
@@ -184,14 +230,38 @@ architecture STRUCTURE of design_1_volume_controller_0_0_volume_controller is
   signal \volume_buffer_r_reg[15]_i_1_n_0\ : STD_LOGIC;
   signal \volume_buffer_r_reg[8]_i_1_n_0\ : STD_LOGIC;
   signal \volume_buffer_r_reg[9]_i_1_n_0\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[0]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[10]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[11]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[12]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[13]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[14]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[15]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[16]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[17]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[18]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[19]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[1]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[20]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[21]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[22]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[23]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[24]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[25]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[26]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[27]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[28]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[29]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[2]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[30]\ : STD_LOGIC;
   signal \volume_buffer_r_reg_n_0_[31]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[3]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[4]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[5]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[6]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[7]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[8]\ : STD_LOGIC;
+  signal \volume_buffer_r_reg_n_0_[9]\ : STD_LOGIC;
   signal \volume_exp_value[0]_i_1_n_0\ : STD_LOGIC;
   signal \volume_exp_value[3]_i_1_n_0\ : STD_LOGIC;
   signal \volume_exp_value_reg_n_0_[0]\ : STD_LOGIC;
@@ -200,7 +270,6 @@ architecture STRUCTURE of design_1_volume_controller_0_0_volume_controller is
   signal volume_in_l_1 : STD_LOGIC;
   signal volume_in_r : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal volume_in_r_0 : STD_LOGIC;
-  signal \volume_out_l_reg_n_0_[23]\ : STD_LOGIC;
   signal \volume_set_hold_reg_n_0_[0]\ : STD_LOGIC;
   signal \volume_set_hold_reg_n_0_[4]\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
@@ -215,16 +284,12 @@ architecture STRUCTURE of design_1_volume_controller_0_0_volume_controller is
   attribute XILINX_TRANSFORM_PINMAP of clipped_l_reg : label is "VCC:GE GND:CLR";
   attribute XILINX_LEGACY_PRIM of clipped_r_reg : label is "LD";
   attribute XILINX_TRANSFORM_PINMAP of clipped_r_reg : label is "VCC:GE GND:CLR";
-  attribute SOFT_HLUTNM of m_axis_tlast_INST_0 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of s_axis_tready_INST_0 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \volume_buffer_l[0]_i_2\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \volume_buffer_l[23]_i_2\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \m_axis_tdata[0]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of s_axis_tready_INST_0 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \volume_buffer_l[0]_i_2\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \volume_buffer_l[23]_i_2\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \volume_buffer_r[0]_i_2\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \volume_buffer_r[23]_i_2\ : label is "soft_lutpair2";
-  attribute OPT_MODIFIED : string;
-  attribute OPT_MODIFIED of \volume_out_l_reg[23]\ : label is "MLO";
-  attribute XILINX_LEGACY_PRIM of \volume_out_l_reg[23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \volume_out_l_reg[23]\ : label is "VCC:GE GND:CLR";
 begin
   \FSM_sequential_state_reg[1]_0\ <= \^fsm_sequential_state_reg[1]_0\;
 \FSM_sequential_state[0]_i_1\: unisim.vcomponents.LUT5
@@ -311,7 +376,7 @@ clipped_l_reg_i_2: unisim.vcomponents.LUT5
         port map (
       I0 => \volume_buffer_l_reg_n_0_[27]\,
       I1 => \volume_buffer_l_reg_n_0_[26]\,
-      I2 => volume_buffer_l(23),
+      I2 => \volume_buffer_l_reg_n_0_[23]\,
       I3 => \volume_buffer_l_reg_n_0_[24]\,
       I4 => \volume_buffer_l_reg_n_0_[25]\,
       O => clipped_l_reg_i_2_n_0
@@ -346,10 +411,190 @@ clipped_r_reg_i_2: unisim.vcomponents.LUT5
         port map (
       I0 => \volume_buffer_r_reg_n_0_[27]\,
       I1 => \volume_buffer_r_reg_n_0_[26]\,
-      I2 => volume_buffer_r(23),
+      I2 => \volume_buffer_r_reg_n_0_[23]\,
       I3 => \volume_buffer_r_reg_n_0_[24]\,
       I4 => \volume_buffer_r_reg_n_0_[25]\,
       O => clipped_r_reg_i_2_n_0
+    );
+\m_axis_tdata[0]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[0]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[0]\,
+      O => \m_axis_tdata[0]_i_1_n_0\
+    );
+\m_axis_tdata[10]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[10]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[10]\,
+      O => \m_axis_tdata[10]_i_1_n_0\
+    );
+\m_axis_tdata[11]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[11]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[11]\,
+      O => \m_axis_tdata[11]_i_1_n_0\
+    );
+\m_axis_tdata[12]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[12]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[12]\,
+      O => \m_axis_tdata[12]_i_1_n_0\
+    );
+\m_axis_tdata[13]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[13]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[13]\,
+      O => \m_axis_tdata[13]_i_1_n_0\
+    );
+\m_axis_tdata[14]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[14]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[14]\,
+      O => \m_axis_tdata[14]_i_1_n_0\
+    );
+\m_axis_tdata[15]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[15]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[15]\,
+      O => \m_axis_tdata[15]_i_1_n_0\
+    );
+\m_axis_tdata[16]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[16]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[16]\,
+      O => \m_axis_tdata[16]_i_1_n_0\
+    );
+\m_axis_tdata[17]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[17]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[17]\,
+      O => \m_axis_tdata[17]_i_1_n_0\
+    );
+\m_axis_tdata[18]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[18]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[18]\,
+      O => \m_axis_tdata[18]_i_1_n_0\
+    );
+\m_axis_tdata[19]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[19]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[19]\,
+      O => \m_axis_tdata[19]_i_1_n_0\
+    );
+\m_axis_tdata[1]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[1]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[1]\,
+      O => \m_axis_tdata[1]_i_1_n_0\
+    );
+\m_axis_tdata[20]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[20]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[20]\,
+      O => \m_axis_tdata[20]_i_1_n_0\
+    );
+\m_axis_tdata[21]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[21]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[21]\,
+      O => \m_axis_tdata[21]_i_1_n_0\
+    );
+\m_axis_tdata[22]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"EFEFEFE0"
+    )
+        port map (
+      I0 => clipped_r,
+      I1 => \volume_buffer_r_reg_n_0_[22]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[22]\,
+      O => \m_axis_tdata[22]_i_1_n_0\
     );
 \m_axis_tdata[23]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -364,444 +609,304 @@ clipped_r_reg_i_2: unisim.vcomponents.LUT5
       I5 => s_axis_tlast,
       O => \m_axis_tdata[23]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_10\: unisim.vcomponents.LUT2
+\m_axis_tdata[23]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(15),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_11\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(14),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_12\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(13),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_13\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(12),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_14\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(11),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_15\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(10),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_16\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(9),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_17\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(8),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_18\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(7),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_19\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(6),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(23),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_20\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(5),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_21\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(4),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_22\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(3),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_23\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(2),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_24\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(1),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_25\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(0),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_26\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(23),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[23]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[23]\,
+      O => \m_axis_tdata[23]_i_2_n_0\
     );
-\m_axis_tdata[23]_i_27\: unisim.vcomponents.LUT2
+\m_axis_tdata[2]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(22),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[2]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[2]\,
+      O => \m_axis_tdata[2]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_28\: unisim.vcomponents.LUT2
+\m_axis_tdata[3]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(21),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[3]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[3]\,
+      O => \m_axis_tdata[3]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_29\: unisim.vcomponents.LUT2
+\m_axis_tdata[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(20),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[4]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[4]\,
+      O => \m_axis_tdata[4]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_3\: unisim.vcomponents.LUT2
+\m_axis_tdata[5]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(22),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_30\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(19),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[5]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[5]\,
+      O => \m_axis_tdata[5]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_31\: unisim.vcomponents.LUT2
+\m_axis_tdata[6]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(18),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[6]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[6]\,
+      O => \m_axis_tdata[6]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_32\: unisim.vcomponents.LUT2
+\m_axis_tdata[7]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(17),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[7]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[7]\,
+      O => \m_axis_tdata[7]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_33\: unisim.vcomponents.LUT2
+\m_axis_tdata[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(16),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[8]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[8]\,
+      O => \m_axis_tdata[8]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_34\: unisim.vcomponents.LUT2
+\m_axis_tdata[9]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"4"
+      INIT => X"EFEFEFE0"
     )
         port map (
       I0 => clipped_r,
-      I1 => volume_buffer_r(15),
-      O => \volume_out_l_reg_n_0_[23]\
+      I1 => \volume_buffer_r_reg_n_0_[9]\,
+      I2 => \^fsm_sequential_state_reg[1]_0\,
+      I3 => clipped_l,
+      I4 => \volume_buffer_l_reg_n_0_[9]\,
+      O => \m_axis_tdata[9]_i_1_n_0\
     );
-\m_axis_tdata[23]_i_35\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(14),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[0]_i_1_n_0\,
+      Q => m_axis_tdata(0),
+      R => '0'
     );
-\m_axis_tdata[23]_i_36\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(13),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[10]_i_1_n_0\,
+      Q => m_axis_tdata(10),
+      R => '0'
     );
-\m_axis_tdata[23]_i_37\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(12),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[11]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[11]_i_1_n_0\,
+      Q => m_axis_tdata(11),
+      R => '0'
     );
-\m_axis_tdata[23]_i_38\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(11),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[12]_i_1_n_0\,
+      Q => m_axis_tdata(12),
+      R => '0'
     );
-\m_axis_tdata[23]_i_39\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(10),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[13]_i_1_n_0\,
+      Q => m_axis_tdata(13),
+      R => '0'
     );
-\m_axis_tdata[23]_i_4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(21),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[14]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[14]_i_1_n_0\,
+      Q => m_axis_tdata(14),
+      R => '0'
     );
-\m_axis_tdata[23]_i_40\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(9),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[15]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[15]_i_1_n_0\,
+      Q => m_axis_tdata(15),
+      R => '0'
     );
-\m_axis_tdata[23]_i_41\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(8),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[16]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[16]_i_1_n_0\,
+      Q => m_axis_tdata(16),
+      R => '0'
     );
-\m_axis_tdata[23]_i_42\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(7),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[17]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[17]_i_1_n_0\,
+      Q => m_axis_tdata(17),
+      R => '0'
     );
-\m_axis_tdata[23]_i_43\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(6),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[18]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[18]_i_1_n_0\,
+      Q => m_axis_tdata(18),
+      R => '0'
     );
-\m_axis_tdata[23]_i_44\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(5),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[19]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[19]_i_1_n_0\,
+      Q => m_axis_tdata(19),
+      R => '0'
     );
-\m_axis_tdata[23]_i_45\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(4),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[1]_i_1_n_0\,
+      Q => m_axis_tdata(1),
+      R => '0'
     );
-\m_axis_tdata[23]_i_46\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(3),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[20]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[20]_i_1_n_0\,
+      Q => m_axis_tdata(20),
+      R => '0'
     );
-\m_axis_tdata[23]_i_47\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(2),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[21]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[21]_i_1_n_0\,
+      Q => m_axis_tdata(21),
+      R => '0'
     );
-\m_axis_tdata[23]_i_48\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(1),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_49\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_r,
-      I1 => volume_buffer_r(0),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_5\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(20),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_6\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(19),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_7\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(18),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_8\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(17),
-      O => \volume_out_l_reg_n_0_[23]\
-    );
-\m_axis_tdata[23]_i_9\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"4"
-    )
-        port map (
-      I0 => clipped_l,
-      I1 => volume_buffer_l(16),
-      O => \volume_out_l_reg_n_0_[23]\
+\m_axis_tdata_reg[22]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[22]_i_1_n_0\,
+      Q => m_axis_tdata(22),
+      R => '0'
     );
 \m_axis_tdata_reg[23]\: unisim.vcomponents.FDRE
      port map (
       C => aclk,
       CE => \m_axis_tdata[23]_i_1_n_0\,
-      D => \volume_out_l_reg_n_0_[23]\,
-      Q => m_axis_tdata(0),
+      D => \m_axis_tdata[23]_i_2_n_0\,
+      Q => m_axis_tdata(23),
+      R => '0'
+    );
+\m_axis_tdata_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[2]_i_1_n_0\,
+      Q => m_axis_tdata(2),
+      R => '0'
+    );
+\m_axis_tdata_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[3]_i_1_n_0\,
+      Q => m_axis_tdata(3),
+      R => '0'
+    );
+\m_axis_tdata_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[4]_i_1_n_0\,
+      Q => m_axis_tdata(4),
+      R => '0'
+    );
+\m_axis_tdata_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[5]_i_1_n_0\,
+      Q => m_axis_tdata(5),
+      R => '0'
+    );
+\m_axis_tdata_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[6]_i_1_n_0\,
+      Q => m_axis_tdata(6),
+      R => '0'
+    );
+\m_axis_tdata_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[7]_i_1_n_0\,
+      Q => m_axis_tdata(7),
+      R => '0'
+    );
+\m_axis_tdata_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[8]_i_1_n_0\,
+      Q => m_axis_tdata(8),
+      R => '0'
+    );
+\m_axis_tdata_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => aclk,
+      CE => \m_axis_tdata[23]_i_1_n_0\,
+      D => \m_axis_tdata[9]_i_1_n_0\,
+      Q => m_axis_tdata(9),
       R => '0'
     );
 m_axis_tlast_INST_0: unisim.vcomponents.LUT2
@@ -1543,7 +1648,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[0]_i_1_n_0\,
-      Q => volume_buffer_l(0)
+      Q => \volume_buffer_l_reg_n_0_[0]\
     );
 \volume_buffer_l_reg[10]\: unisim.vcomponents.FDCE
     generic map(
@@ -1554,7 +1659,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[10]_i_1_n_0\,
-      Q => volume_buffer_l(10)
+      Q => \volume_buffer_l_reg_n_0_[10]\
     );
 \volume_buffer_l_reg[10]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1572,7 +1677,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[11]_i_1_n_0\,
-      Q => volume_buffer_l(11)
+      Q => \volume_buffer_l_reg_n_0_[11]\
     );
 \volume_buffer_l_reg[11]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1590,7 +1695,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[12]_i_1_n_0\,
-      Q => volume_buffer_l(12)
+      Q => \volume_buffer_l_reg_n_0_[12]\
     );
 \volume_buffer_l_reg[12]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1608,7 +1713,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[13]_i_1_n_0\,
-      Q => volume_buffer_l(13)
+      Q => \volume_buffer_l_reg_n_0_[13]\
     );
 \volume_buffer_l_reg[13]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1626,7 +1731,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[14]_i_1_n_0\,
-      Q => volume_buffer_l(14)
+      Q => \volume_buffer_l_reg_n_0_[14]\
     );
 \volume_buffer_l_reg[14]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1644,7 +1749,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[15]_i_1_n_0\,
-      Q => volume_buffer_l(15)
+      Q => \volume_buffer_l_reg_n_0_[15]\
     );
 \volume_buffer_l_reg[15]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1662,7 +1767,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[16]_i_1_n_0\,
-      Q => volume_buffer_l(16)
+      Q => \volume_buffer_l_reg_n_0_[16]\
     );
 \volume_buffer_l_reg[17]\: unisim.vcomponents.FDCE
     generic map(
@@ -1673,7 +1778,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[17]_i_1_n_0\,
-      Q => volume_buffer_l(17)
+      Q => \volume_buffer_l_reg_n_0_[17]\
     );
 \volume_buffer_l_reg[18]\: unisim.vcomponents.FDCE
     generic map(
@@ -1684,7 +1789,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[18]_i_1_n_0\,
-      Q => volume_buffer_l(18)
+      Q => \volume_buffer_l_reg_n_0_[18]\
     );
 \volume_buffer_l_reg[19]\: unisim.vcomponents.FDCE
     generic map(
@@ -1695,7 +1800,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[19]_i_1_n_0\,
-      Q => volume_buffer_l(19)
+      Q => \volume_buffer_l_reg_n_0_[19]\
     );
 \volume_buffer_l_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -1706,7 +1811,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[1]_i_1_n_0\,
-      Q => volume_buffer_l(1)
+      Q => \volume_buffer_l_reg_n_0_[1]\
     );
 \volume_buffer_l_reg[20]\: unisim.vcomponents.FDCE
     generic map(
@@ -1717,7 +1822,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[20]_i_1_n_0\,
-      Q => volume_buffer_l(20)
+      Q => \volume_buffer_l_reg_n_0_[20]\
     );
 \volume_buffer_l_reg[21]\: unisim.vcomponents.FDCE
     generic map(
@@ -1728,7 +1833,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[21]_i_1_n_0\,
-      Q => volume_buffer_l(21)
+      Q => \volume_buffer_l_reg_n_0_[21]\
     );
 \volume_buffer_l_reg[22]\: unisim.vcomponents.FDCE
     generic map(
@@ -1739,7 +1844,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[22]_i_1_n_0\,
-      Q => volume_buffer_l(22)
+      Q => \volume_buffer_l_reg_n_0_[22]\
     );
 \volume_buffer_l_reg[23]\: unisim.vcomponents.FDCE
     generic map(
@@ -1750,7 +1855,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[23]_i_1_n_0\,
-      Q => volume_buffer_l(23)
+      Q => \volume_buffer_l_reg_n_0_[23]\
     );
 \volume_buffer_l_reg[24]\: unisim.vcomponents.FDCE
     generic map(
@@ -1827,7 +1932,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[2]_i_1_n_0\,
-      Q => volume_buffer_l(2)
+      Q => \volume_buffer_l_reg_n_0_[2]\
     );
 \volume_buffer_l_reg[30]\: unisim.vcomponents.FDCE
     generic map(
@@ -1860,7 +1965,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[3]_i_1_n_0\,
-      Q => volume_buffer_l(3)
+      Q => \volume_buffer_l_reg_n_0_[3]\
     );
 \volume_buffer_l_reg[4]\: unisim.vcomponents.FDCE
     generic map(
@@ -1871,7 +1976,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[4]_i_1_n_0\,
-      Q => volume_buffer_l(4)
+      Q => \volume_buffer_l_reg_n_0_[4]\
     );
 \volume_buffer_l_reg[5]\: unisim.vcomponents.FDCE
     generic map(
@@ -1882,7 +1987,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[5]_i_1_n_0\,
-      Q => volume_buffer_l(5)
+      Q => \volume_buffer_l_reg_n_0_[5]\
     );
 \volume_buffer_l_reg[6]\: unisim.vcomponents.FDCE
     generic map(
@@ -1893,7 +1998,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[6]_i_1_n_0\,
-      Q => volume_buffer_l(6)
+      Q => \volume_buffer_l_reg_n_0_[6]\
     );
 \volume_buffer_l_reg[7]\: unisim.vcomponents.FDCE
     generic map(
@@ -1904,7 +2009,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l[7]_i_1_n_0\,
-      Q => volume_buffer_l(7)
+      Q => \volume_buffer_l_reg_n_0_[7]\
     );
 \volume_buffer_l_reg[8]\: unisim.vcomponents.FDCE
     generic map(
@@ -1915,7 +2020,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[8]_i_1_n_0\,
-      Q => volume_buffer_l(8)
+      Q => \volume_buffer_l_reg_n_0_[8]\
     );
 \volume_buffer_l_reg[8]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -1933,7 +2038,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_l_reg[9]_i_1_n_0\,
-      Q => volume_buffer_l(9)
+      Q => \volume_buffer_l_reg_n_0_[9]\
     );
 \volume_buffer_l_reg[9]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2664,7 +2769,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[0]_i_1_n_0\,
-      Q => volume_buffer_r(0)
+      Q => \volume_buffer_r_reg_n_0_[0]\
     );
 \volume_buffer_r_reg[10]\: unisim.vcomponents.FDCE
     generic map(
@@ -2675,7 +2780,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[10]_i_1_n_0\,
-      Q => volume_buffer_r(10)
+      Q => \volume_buffer_r_reg_n_0_[10]\
     );
 \volume_buffer_r_reg[10]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2693,7 +2798,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[11]_i_1_n_0\,
-      Q => volume_buffer_r(11)
+      Q => \volume_buffer_r_reg_n_0_[11]\
     );
 \volume_buffer_r_reg[11]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2711,7 +2816,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[12]_i_1_n_0\,
-      Q => volume_buffer_r(12)
+      Q => \volume_buffer_r_reg_n_0_[12]\
     );
 \volume_buffer_r_reg[12]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2729,7 +2834,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[13]_i_1_n_0\,
-      Q => volume_buffer_r(13)
+      Q => \volume_buffer_r_reg_n_0_[13]\
     );
 \volume_buffer_r_reg[13]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2747,7 +2852,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[14]_i_1_n_0\,
-      Q => volume_buffer_r(14)
+      Q => \volume_buffer_r_reg_n_0_[14]\
     );
 \volume_buffer_r_reg[14]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2765,7 +2870,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[15]_i_1_n_0\,
-      Q => volume_buffer_r(15)
+      Q => \volume_buffer_r_reg_n_0_[15]\
     );
 \volume_buffer_r_reg[15]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -2783,7 +2888,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[16]_i_1_n_0\,
-      Q => volume_buffer_r(16)
+      Q => \volume_buffer_r_reg_n_0_[16]\
     );
 \volume_buffer_r_reg[17]\: unisim.vcomponents.FDCE
     generic map(
@@ -2794,7 +2899,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[17]_i_1_n_0\,
-      Q => volume_buffer_r(17)
+      Q => \volume_buffer_r_reg_n_0_[17]\
     );
 \volume_buffer_r_reg[18]\: unisim.vcomponents.FDCE
     generic map(
@@ -2805,7 +2910,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[18]_i_1_n_0\,
-      Q => volume_buffer_r(18)
+      Q => \volume_buffer_r_reg_n_0_[18]\
     );
 \volume_buffer_r_reg[19]\: unisim.vcomponents.FDCE
     generic map(
@@ -2816,7 +2921,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[19]_i_1_n_0\,
-      Q => volume_buffer_r(19)
+      Q => \volume_buffer_r_reg_n_0_[19]\
     );
 \volume_buffer_r_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -2827,7 +2932,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[1]_i_1_n_0\,
-      Q => volume_buffer_r(1)
+      Q => \volume_buffer_r_reg_n_0_[1]\
     );
 \volume_buffer_r_reg[20]\: unisim.vcomponents.FDCE
     generic map(
@@ -2838,7 +2943,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[20]_i_1_n_0\,
-      Q => volume_buffer_r(20)
+      Q => \volume_buffer_r_reg_n_0_[20]\
     );
 \volume_buffer_r_reg[21]\: unisim.vcomponents.FDCE
     generic map(
@@ -2849,7 +2954,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[21]_i_1_n_0\,
-      Q => volume_buffer_r(21)
+      Q => \volume_buffer_r_reg_n_0_[21]\
     );
 \volume_buffer_r_reg[22]\: unisim.vcomponents.FDCE
     generic map(
@@ -2860,7 +2965,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[22]_i_1_n_0\,
-      Q => volume_buffer_r(22)
+      Q => \volume_buffer_r_reg_n_0_[22]\
     );
 \volume_buffer_r_reg[23]\: unisim.vcomponents.FDCE
     generic map(
@@ -2871,7 +2976,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[23]_i_1_n_0\,
-      Q => volume_buffer_r(23)
+      Q => \volume_buffer_r_reg_n_0_[23]\
     );
 \volume_buffer_r_reg[24]\: unisim.vcomponents.FDCE
     generic map(
@@ -2948,7 +3053,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[2]_i_1_n_0\,
-      Q => volume_buffer_r(2)
+      Q => \volume_buffer_r_reg_n_0_[2]\
     );
 \volume_buffer_r_reg[30]\: unisim.vcomponents.FDCE
     generic map(
@@ -2981,7 +3086,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[3]_i_1_n_0\,
-      Q => volume_buffer_r(3)
+      Q => \volume_buffer_r_reg_n_0_[3]\
     );
 \volume_buffer_r_reg[4]\: unisim.vcomponents.FDCE
     generic map(
@@ -2992,7 +3097,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[4]_i_1_n_0\,
-      Q => volume_buffer_r(4)
+      Q => \volume_buffer_r_reg_n_0_[4]\
     );
 \volume_buffer_r_reg[5]\: unisim.vcomponents.FDCE
     generic map(
@@ -3003,7 +3108,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[5]_i_1_n_0\,
-      Q => volume_buffer_r(5)
+      Q => \volume_buffer_r_reg_n_0_[5]\
     );
 \volume_buffer_r_reg[6]\: unisim.vcomponents.FDCE
     generic map(
@@ -3014,7 +3119,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[6]_i_1_n_0\,
-      Q => volume_buffer_r(6)
+      Q => \volume_buffer_r_reg_n_0_[6]\
     );
 \volume_buffer_r_reg[7]\: unisim.vcomponents.FDCE
     generic map(
@@ -3025,7 +3130,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r[7]_i_1_n_0\,
-      Q => volume_buffer_r(7)
+      Q => \volume_buffer_r_reg_n_0_[7]\
     );
 \volume_buffer_r_reg[8]\: unisim.vcomponents.FDCE
     generic map(
@@ -3036,7 +3141,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[8]_i_1_n_0\,
-      Q => volume_buffer_r(8)
+      Q => \volume_buffer_r_reg_n_0_[8]\
     );
 \volume_buffer_r_reg[8]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -3054,7 +3159,7 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \volume_buffer_r_reg[9]_i_1_n_0\,
-      Q => volume_buffer_r(9)
+      Q => \volume_buffer_r_reg_n_0_[9]\
     );
 \volume_buffer_r_reg[9]_i_1\: unisim.vcomponents.MUXF7
      port map (
@@ -3661,18 +3766,6 @@ s_axis_tready_INST_0: unisim.vcomponents.LUT1
       D => s_axis_tdata(9),
       Q => volume_in_r(9)
     );
-\volume_out_l_reg[23]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0',
-      IS_G_INVERTED => '1'
-    )
-        port map (
-      CLR => '0',
-      D => aresetn,
-      G => aresetn,
-      GE => '1',
-      Q => \volume_out_l_reg_n_0_[23]\
-    );
 \volume_set_hold_reg[0]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
@@ -3760,7 +3853,6 @@ entity design_1_volume_controller_0_0 is
 end design_1_volume_controller_0_0;
 
 architecture STRUCTURE of design_1_volume_controller_0_0 is
-  signal \^m_axis_tdata\ : STD_LOGIC_VECTOR ( 22 to 22 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 aclk CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -3778,36 +3870,12 @@ architecture STRUCTURE of design_1_volume_controller_0_0 is
   attribute X_INTERFACE_INFO of m_axis_tdata : signal is "xilinx.com:interface:axis:1.0 m_axis TDATA";
   attribute X_INTERFACE_INFO of s_axis_tdata : signal is "xilinx.com:interface:axis:1.0 s_axis TDATA";
 begin
-  m_axis_tdata(23) <= \^m_axis_tdata\(22);
-  m_axis_tdata(22) <= \^m_axis_tdata\(22);
-  m_axis_tdata(21) <= \^m_axis_tdata\(22);
-  m_axis_tdata(20) <= \^m_axis_tdata\(22);
-  m_axis_tdata(19) <= \^m_axis_tdata\(22);
-  m_axis_tdata(18) <= \^m_axis_tdata\(22);
-  m_axis_tdata(17) <= \^m_axis_tdata\(22);
-  m_axis_tdata(16) <= \^m_axis_tdata\(22);
-  m_axis_tdata(15) <= \^m_axis_tdata\(22);
-  m_axis_tdata(14) <= \^m_axis_tdata\(22);
-  m_axis_tdata(13) <= \^m_axis_tdata\(22);
-  m_axis_tdata(12) <= \^m_axis_tdata\(22);
-  m_axis_tdata(11) <= \^m_axis_tdata\(22);
-  m_axis_tdata(10) <= \^m_axis_tdata\(22);
-  m_axis_tdata(9) <= \^m_axis_tdata\(22);
-  m_axis_tdata(8) <= \^m_axis_tdata\(22);
-  m_axis_tdata(7) <= \^m_axis_tdata\(22);
-  m_axis_tdata(6) <= \^m_axis_tdata\(22);
-  m_axis_tdata(5) <= \^m_axis_tdata\(22);
-  m_axis_tdata(4) <= \^m_axis_tdata\(22);
-  m_axis_tdata(3) <= \^m_axis_tdata\(22);
-  m_axis_tdata(2) <= \^m_axis_tdata\(22);
-  m_axis_tdata(1) <= \^m_axis_tdata\(22);
-  m_axis_tdata(0) <= \^m_axis_tdata\(22);
 inst: entity work.design_1_volume_controller_0_0_volume_controller
      port map (
       \FSM_sequential_state_reg[1]_0\ => m_axis_tvalid,
       aclk => aclk,
       aresetn => aresetn,
-      m_axis_tdata(0) => \^m_axis_tdata\(22),
+      m_axis_tdata(23 downto 0) => m_axis_tdata(23 downto 0),
       m_axis_tlast => m_axis_tlast,
       m_axis_tready => m_axis_tready,
       s_axis_tdata(23 downto 0) => s_axis_tdata(23 downto 0),

@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Thu May 18 17:26:02 2023
+// Date        : Thu May 18 18:01:28 2023
 // Host        : SburroROG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_volume_controller_0_0/design_1_volume_controller_0_0_sim_netlist.v
@@ -41,7 +41,7 @@ module design_1_volume_controller_0_0
 
   wire aclk;
   wire aresetn;
-  wire [22:22]\^m_axis_tdata ;
+  wire [23:0]m_axis_tdata;
   wire m_axis_tlast;
   wire m_axis_tready;
   wire m_axis_tvalid;
@@ -51,35 +51,11 @@ module design_1_volume_controller_0_0
   wire s_axis_tvalid;
   wire [9:0]volume;
 
-  assign m_axis_tdata[23] = \^m_axis_tdata [22];
-  assign m_axis_tdata[22] = \^m_axis_tdata [22];
-  assign m_axis_tdata[21] = \^m_axis_tdata [22];
-  assign m_axis_tdata[20] = \^m_axis_tdata [22];
-  assign m_axis_tdata[19] = \^m_axis_tdata [22];
-  assign m_axis_tdata[18] = \^m_axis_tdata [22];
-  assign m_axis_tdata[17] = \^m_axis_tdata [22];
-  assign m_axis_tdata[16] = \^m_axis_tdata [22];
-  assign m_axis_tdata[15] = \^m_axis_tdata [22];
-  assign m_axis_tdata[14] = \^m_axis_tdata [22];
-  assign m_axis_tdata[13] = \^m_axis_tdata [22];
-  assign m_axis_tdata[12] = \^m_axis_tdata [22];
-  assign m_axis_tdata[11] = \^m_axis_tdata [22];
-  assign m_axis_tdata[10] = \^m_axis_tdata [22];
-  assign m_axis_tdata[9] = \^m_axis_tdata [22];
-  assign m_axis_tdata[8] = \^m_axis_tdata [22];
-  assign m_axis_tdata[7] = \^m_axis_tdata [22];
-  assign m_axis_tdata[6] = \^m_axis_tdata [22];
-  assign m_axis_tdata[5] = \^m_axis_tdata [22];
-  assign m_axis_tdata[4] = \^m_axis_tdata [22];
-  assign m_axis_tdata[3] = \^m_axis_tdata [22];
-  assign m_axis_tdata[2] = \^m_axis_tdata [22];
-  assign m_axis_tdata[1] = \^m_axis_tdata [22];
-  assign m_axis_tdata[0] = \^m_axis_tdata [22];
   design_1_volume_controller_0_0_volume_controller inst
        (.\FSM_sequential_state_reg[1]_0 (m_axis_tvalid),
         .aclk(aclk),
         .aresetn(aresetn),
-        .m_axis_tdata(\^m_axis_tdata ),
+        .m_axis_tdata(m_axis_tdata),
         .m_axis_tlast(m_axis_tlast),
         .m_axis_tready(m_axis_tready),
         .s_axis_tdata(s_axis_tdata),
@@ -103,7 +79,7 @@ module design_1_volume_controller_0_0_volume_controller
     volume,
     s_axis_tdata);
   output \FSM_sequential_state_reg[1]_0 ;
-  output [0:0]m_axis_tdata;
+  output [23:0]m_axis_tdata;
   output m_axis_tlast;
   output s_axis_tready;
   input aresetn;
@@ -126,8 +102,32 @@ module design_1_volume_controller_0_0_volume_controller
   wire clipped_r;
   wire clipped_r_reg_i_1_n_0;
   wire clipped_r_reg_i_2_n_0;
-  wire [0:0]m_axis_tdata;
+  wire [23:0]m_axis_tdata;
+  wire \m_axis_tdata[0]_i_1_n_0 ;
+  wire \m_axis_tdata[10]_i_1_n_0 ;
+  wire \m_axis_tdata[11]_i_1_n_0 ;
+  wire \m_axis_tdata[12]_i_1_n_0 ;
+  wire \m_axis_tdata[13]_i_1_n_0 ;
+  wire \m_axis_tdata[14]_i_1_n_0 ;
+  wire \m_axis_tdata[15]_i_1_n_0 ;
+  wire \m_axis_tdata[16]_i_1_n_0 ;
+  wire \m_axis_tdata[17]_i_1_n_0 ;
+  wire \m_axis_tdata[18]_i_1_n_0 ;
+  wire \m_axis_tdata[19]_i_1_n_0 ;
+  wire \m_axis_tdata[1]_i_1_n_0 ;
+  wire \m_axis_tdata[20]_i_1_n_0 ;
+  wire \m_axis_tdata[21]_i_1_n_0 ;
+  wire \m_axis_tdata[22]_i_1_n_0 ;
   wire \m_axis_tdata[23]_i_1_n_0 ;
+  wire \m_axis_tdata[23]_i_2_n_0 ;
+  wire \m_axis_tdata[2]_i_1_n_0 ;
+  wire \m_axis_tdata[3]_i_1_n_0 ;
+  wire \m_axis_tdata[4]_i_1_n_0 ;
+  wire \m_axis_tdata[5]_i_1_n_0 ;
+  wire \m_axis_tdata[6]_i_1_n_0 ;
+  wire \m_axis_tdata[7]_i_1_n_0 ;
+  wire \m_axis_tdata[8]_i_1_n_0 ;
+  wire \m_axis_tdata[9]_i_1_n_0 ;
   wire m_axis_tlast;
   wire m_axis_tready;
   wire [2:0]p_0_in;
@@ -137,7 +137,6 @@ module design_1_volume_controller_0_0_volume_controller
   wire s_axis_tvalid;
   wire [0:0]state;
   wire [4:0]volume;
-  wire [23:0]volume_buffer_l;
   wire \volume_buffer_l[0]_i_1_n_0 ;
   wire \volume_buffer_l[0]_i_2_n_0 ;
   wire \volume_buffer_l[10]_i_2_n_0 ;
@@ -202,15 +201,38 @@ module design_1_volume_controller_0_0_volume_controller
   wire \volume_buffer_l_reg[15]_i_1_n_0 ;
   wire \volume_buffer_l_reg[8]_i_1_n_0 ;
   wire \volume_buffer_l_reg[9]_i_1_n_0 ;
+  wire \volume_buffer_l_reg_n_0_[0] ;
+  wire \volume_buffer_l_reg_n_0_[10] ;
+  wire \volume_buffer_l_reg_n_0_[11] ;
+  wire \volume_buffer_l_reg_n_0_[12] ;
+  wire \volume_buffer_l_reg_n_0_[13] ;
+  wire \volume_buffer_l_reg_n_0_[14] ;
+  wire \volume_buffer_l_reg_n_0_[15] ;
+  wire \volume_buffer_l_reg_n_0_[16] ;
+  wire \volume_buffer_l_reg_n_0_[17] ;
+  wire \volume_buffer_l_reg_n_0_[18] ;
+  wire \volume_buffer_l_reg_n_0_[19] ;
+  wire \volume_buffer_l_reg_n_0_[1] ;
+  wire \volume_buffer_l_reg_n_0_[20] ;
+  wire \volume_buffer_l_reg_n_0_[21] ;
+  wire \volume_buffer_l_reg_n_0_[22] ;
+  wire \volume_buffer_l_reg_n_0_[23] ;
   wire \volume_buffer_l_reg_n_0_[24] ;
   wire \volume_buffer_l_reg_n_0_[25] ;
   wire \volume_buffer_l_reg_n_0_[26] ;
   wire \volume_buffer_l_reg_n_0_[27] ;
   wire \volume_buffer_l_reg_n_0_[28] ;
   wire \volume_buffer_l_reg_n_0_[29] ;
+  wire \volume_buffer_l_reg_n_0_[2] ;
   wire \volume_buffer_l_reg_n_0_[30] ;
   wire \volume_buffer_l_reg_n_0_[31] ;
-  wire [23:0]volume_buffer_r;
+  wire \volume_buffer_l_reg_n_0_[3] ;
+  wire \volume_buffer_l_reg_n_0_[4] ;
+  wire \volume_buffer_l_reg_n_0_[5] ;
+  wire \volume_buffer_l_reg_n_0_[6] ;
+  wire \volume_buffer_l_reg_n_0_[7] ;
+  wire \volume_buffer_l_reg_n_0_[8] ;
+  wire \volume_buffer_l_reg_n_0_[9] ;
   wire \volume_buffer_r[0]_i_1_n_0 ;
   wire \volume_buffer_r[0]_i_2_n_0 ;
   wire \volume_buffer_r[10]_i_2_n_0 ;
@@ -275,14 +297,38 @@ module design_1_volume_controller_0_0_volume_controller
   wire \volume_buffer_r_reg[15]_i_1_n_0 ;
   wire \volume_buffer_r_reg[8]_i_1_n_0 ;
   wire \volume_buffer_r_reg[9]_i_1_n_0 ;
+  wire \volume_buffer_r_reg_n_0_[0] ;
+  wire \volume_buffer_r_reg_n_0_[10] ;
+  wire \volume_buffer_r_reg_n_0_[11] ;
+  wire \volume_buffer_r_reg_n_0_[12] ;
+  wire \volume_buffer_r_reg_n_0_[13] ;
+  wire \volume_buffer_r_reg_n_0_[14] ;
+  wire \volume_buffer_r_reg_n_0_[15] ;
+  wire \volume_buffer_r_reg_n_0_[16] ;
+  wire \volume_buffer_r_reg_n_0_[17] ;
+  wire \volume_buffer_r_reg_n_0_[18] ;
+  wire \volume_buffer_r_reg_n_0_[19] ;
+  wire \volume_buffer_r_reg_n_0_[1] ;
+  wire \volume_buffer_r_reg_n_0_[20] ;
+  wire \volume_buffer_r_reg_n_0_[21] ;
+  wire \volume_buffer_r_reg_n_0_[22] ;
+  wire \volume_buffer_r_reg_n_0_[23] ;
   wire \volume_buffer_r_reg_n_0_[24] ;
   wire \volume_buffer_r_reg_n_0_[25] ;
   wire \volume_buffer_r_reg_n_0_[26] ;
   wire \volume_buffer_r_reg_n_0_[27] ;
   wire \volume_buffer_r_reg_n_0_[28] ;
   wire \volume_buffer_r_reg_n_0_[29] ;
+  wire \volume_buffer_r_reg_n_0_[2] ;
   wire \volume_buffer_r_reg_n_0_[30] ;
   wire \volume_buffer_r_reg_n_0_[31] ;
+  wire \volume_buffer_r_reg_n_0_[3] ;
+  wire \volume_buffer_r_reg_n_0_[4] ;
+  wire \volume_buffer_r_reg_n_0_[5] ;
+  wire \volume_buffer_r_reg_n_0_[6] ;
+  wire \volume_buffer_r_reg_n_0_[7] ;
+  wire \volume_buffer_r_reg_n_0_[8] ;
+  wire \volume_buffer_r_reg_n_0_[9] ;
   wire \volume_exp_value[0]_i_1_n_0 ;
   wire \volume_exp_value[3]_i_1_n_0 ;
   wire \volume_exp_value_reg_n_0_[0] ;
@@ -291,7 +337,6 @@ module design_1_volume_controller_0_0_volume_controller
   wire volume_in_l_1;
   wire [23:0]volume_in_r;
   wire volume_in_r_0;
-  wire \volume_out_l_reg_n_0_[23] ;
   wire \volume_set_hold_reg_n_0_[0] ;
   wire \volume_set_hold_reg_n_0_[4] ;
 
@@ -362,7 +407,7 @@ module design_1_volume_controller_0_0_volume_controller
     clipped_l_reg_i_2
        (.I0(\volume_buffer_l_reg_n_0_[27] ),
         .I1(\volume_buffer_l_reg_n_0_[26] ),
-        .I2(volume_buffer_l[23]),
+        .I2(\volume_buffer_l_reg_n_0_[23] ),
         .I3(\volume_buffer_l_reg_n_0_[24] ),
         .I4(\volume_buffer_l_reg_n_0_[25] ),
         .O(clipped_l_reg_i_2_n_0));
@@ -390,10 +435,146 @@ module design_1_volume_controller_0_0_volume_controller
     clipped_r_reg_i_2
        (.I0(\volume_buffer_r_reg_n_0_[27] ),
         .I1(\volume_buffer_r_reg_n_0_[26] ),
-        .I2(volume_buffer_r[23]),
+        .I2(\volume_buffer_r_reg_n_0_[23] ),
         .I3(\volume_buffer_r_reg_n_0_[24] ),
         .I4(\volume_buffer_r_reg_n_0_[25] ),
         .O(clipped_r_reg_i_2_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[0]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[0] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[0] ),
+        .O(\m_axis_tdata[0]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[10]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[10] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[10] ),
+        .O(\m_axis_tdata[10]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[11]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[11] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[11] ),
+        .O(\m_axis_tdata[11]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[12]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[12] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[12] ),
+        .O(\m_axis_tdata[12]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[13]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[13] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[13] ),
+        .O(\m_axis_tdata[13]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[14]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[14] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[14] ),
+        .O(\m_axis_tdata[14]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[15]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[15] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[15] ),
+        .O(\m_axis_tdata[15]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[16]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[16] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[16] ),
+        .O(\m_axis_tdata[16]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[17]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[17] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[17] ),
+        .O(\m_axis_tdata[17]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[18]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[18] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[18] ),
+        .O(\m_axis_tdata[18]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[19]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[19] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[19] ),
+        .O(\m_axis_tdata[19]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[1]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[1] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[1] ),
+        .O(\m_axis_tdata[1]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[20]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[20] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[20] ),
+        .O(\m_axis_tdata[20]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[21]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[21] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[21] ),
+        .O(\m_axis_tdata[21]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[22]_i_1 
+       (.I0(clipped_r),
+        .I1(\volume_buffer_r_reg_n_0_[22] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[22] ),
+        .O(\m_axis_tdata[22]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0A80008000800080)) 
     \m_axis_tdata[23]_i_1 
@@ -404,308 +585,238 @@ module design_1_volume_controller_0_0_volume_controller
         .I4(s_axis_tvalid),
         .I5(s_axis_tlast),
         .O(\m_axis_tdata[23]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_10 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[15]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_11 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[14]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_12 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[13]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_13 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[12]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_14 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[11]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_15 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[10]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_16 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[9]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_17 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[8]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_18 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[7]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_19 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[6]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
     \m_axis_tdata[23]_i_2 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[23]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_20 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[5]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_21 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[4]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_22 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[3]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_23 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[2]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_24 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[1]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_25 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[0]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_26 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[23]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_27 
+        .I1(\volume_buffer_r_reg_n_0_[23] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[23] ),
+        .O(\m_axis_tdata[23]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[2]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[22]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_28 
+        .I1(\volume_buffer_r_reg_n_0_[2] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[2] ),
+        .O(\m_axis_tdata[2]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[3]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[21]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_29 
+        .I1(\volume_buffer_r_reg_n_0_[3] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[3] ),
+        .O(\m_axis_tdata[3]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[4]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[20]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_3 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[22]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_30 
+        .I1(\volume_buffer_r_reg_n_0_[4] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[4] ),
+        .O(\m_axis_tdata[4]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[5]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[19]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_31 
+        .I1(\volume_buffer_r_reg_n_0_[5] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[5] ),
+        .O(\m_axis_tdata[5]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[6]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[18]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_32 
+        .I1(\volume_buffer_r_reg_n_0_[6] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[6] ),
+        .O(\m_axis_tdata[6]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[7]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[17]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_33 
+        .I1(\volume_buffer_r_reg_n_0_[7] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[7] ),
+        .O(\m_axis_tdata[7]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[8]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[16]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_34 
+        .I1(\volume_buffer_r_reg_n_0_[8] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[8] ),
+        .O(\m_axis_tdata[8]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFEFEFE0)) 
+    \m_axis_tdata[9]_i_1 
        (.I0(clipped_r),
-        .I1(volume_buffer_r[15]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_35 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[14]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_36 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[13]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_37 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[12]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_38 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[11]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_39 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[10]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_4 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[21]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_40 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[9]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_41 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[8]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_42 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[7]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_43 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[6]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_44 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[5]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_45 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[4]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_46 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[3]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_47 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[2]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_48 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[1]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_49 
-       (.I0(clipped_r),
-        .I1(volume_buffer_r[0]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_5 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[20]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_6 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[19]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_7 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[18]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_8 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[17]),
-        .O(\volume_out_l_reg_n_0_[23] ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \m_axis_tdata[23]_i_9 
-       (.I0(clipped_l),
-        .I1(volume_buffer_l[16]),
-        .O(\volume_out_l_reg_n_0_[23] ));
+        .I1(\volume_buffer_r_reg_n_0_[9] ),
+        .I2(\FSM_sequential_state_reg[1]_0 ),
+        .I3(clipped_l),
+        .I4(\volume_buffer_l_reg_n_0_[9] ),
+        .O(\m_axis_tdata[9]_i_1_n_0 ));
+  FDRE \m_axis_tdata_reg[0] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[0]_i_1_n_0 ),
+        .Q(m_axis_tdata[0]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[10] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[10]_i_1_n_0 ),
+        .Q(m_axis_tdata[10]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[11] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[11]_i_1_n_0 ),
+        .Q(m_axis_tdata[11]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[12] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[12]_i_1_n_0 ),
+        .Q(m_axis_tdata[12]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[13] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[13]_i_1_n_0 ),
+        .Q(m_axis_tdata[13]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[14] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[14]_i_1_n_0 ),
+        .Q(m_axis_tdata[14]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[15] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[15]_i_1_n_0 ),
+        .Q(m_axis_tdata[15]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[16] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[16]_i_1_n_0 ),
+        .Q(m_axis_tdata[16]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[17] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[17]_i_1_n_0 ),
+        .Q(m_axis_tdata[17]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[18] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[18]_i_1_n_0 ),
+        .Q(m_axis_tdata[18]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[19] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[19]_i_1_n_0 ),
+        .Q(m_axis_tdata[19]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[1] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[1]_i_1_n_0 ),
+        .Q(m_axis_tdata[1]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[20] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[20]_i_1_n_0 ),
+        .Q(m_axis_tdata[20]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[21] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[21]_i_1_n_0 ),
+        .Q(m_axis_tdata[21]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[22] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[22]_i_1_n_0 ),
+        .Q(m_axis_tdata[22]),
+        .R(1'b0));
   FDRE \m_axis_tdata_reg[23] 
        (.C(aclk),
         .CE(\m_axis_tdata[23]_i_1_n_0 ),
-        .D(\volume_out_l_reg_n_0_[23] ),
-        .Q(m_axis_tdata),
+        .D(\m_axis_tdata[23]_i_2_n_0 ),
+        .Q(m_axis_tdata[23]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  FDRE \m_axis_tdata_reg[2] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[2]_i_1_n_0 ),
+        .Q(m_axis_tdata[2]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[3] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[3]_i_1_n_0 ),
+        .Q(m_axis_tdata[3]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[4] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[4]_i_1_n_0 ),
+        .Q(m_axis_tdata[4]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[5] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[5]_i_1_n_0 ),
+        .Q(m_axis_tdata[5]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[6] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[6]_i_1_n_0 ),
+        .Q(m_axis_tdata[6]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[7] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[7]_i_1_n_0 ),
+        .Q(m_axis_tdata[7]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[8] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[8]_i_1_n_0 ),
+        .Q(m_axis_tdata[8]),
+        .R(1'b0));
+  FDRE \m_axis_tdata_reg[9] 
+       (.C(aclk),
+        .CE(\m_axis_tdata[23]_i_1_n_0 ),
+        .D(\m_axis_tdata[9]_i_1_n_0 ),
+        .Q(m_axis_tdata[9]),
+        .R(1'b0));
   LUT2 #(
     .INIT(4'h8)) 
     m_axis_tlast_INST_0
        (.I0(state),
         .I1(\FSM_sequential_state_reg[1]_0 ),
         .O(m_axis_tlast));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT1 #(
     .INIT(2'h1)) 
     s_axis_tready_INST_0
@@ -721,7 +832,7 @@ module design_1_volume_controller_0_0_volume_controller
         .I4(\volume_exp_value_reg_n_0_[0] ),
         .I5(volume_in_l[0]),
         .O(\volume_buffer_l[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \volume_buffer_l[0]_i_2 
@@ -1018,7 +1129,7 @@ module design_1_volume_controller_0_0_volume_controller
         .I4(volume_in_l[23]),
         .I5(\volume_exp_value_reg_n_0_[3] ),
         .O(\volume_buffer_l[23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \volume_buffer_l[23]_i_2 
@@ -1265,7 +1376,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[0]_i_1_n_0 ),
-        .Q(volume_buffer_l[0]));
+        .Q(\volume_buffer_l_reg_n_0_[0] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[10] 
@@ -1273,7 +1384,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[10]_i_1_n_0 ),
-        .Q(volume_buffer_l[10]));
+        .Q(\volume_buffer_l_reg_n_0_[10] ));
   MUXF7 \volume_buffer_l_reg[10]_i_1 
        (.I0(\volume_buffer_l[10]_i_2_n_0 ),
         .I1(\volume_buffer_l[10]_i_3_n_0 ),
@@ -1286,7 +1397,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[11]_i_1_n_0 ),
-        .Q(volume_buffer_l[11]));
+        .Q(\volume_buffer_l_reg_n_0_[11] ));
   MUXF7 \volume_buffer_l_reg[11]_i_1 
        (.I0(\volume_buffer_l[11]_i_2_n_0 ),
         .I1(\volume_buffer_l[11]_i_3_n_0 ),
@@ -1299,7 +1410,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[12]_i_1_n_0 ),
-        .Q(volume_buffer_l[12]));
+        .Q(\volume_buffer_l_reg_n_0_[12] ));
   MUXF7 \volume_buffer_l_reg[12]_i_1 
        (.I0(\volume_buffer_l[12]_i_2_n_0 ),
         .I1(\volume_buffer_l[12]_i_3_n_0 ),
@@ -1312,7 +1423,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[13]_i_1_n_0 ),
-        .Q(volume_buffer_l[13]));
+        .Q(\volume_buffer_l_reg_n_0_[13] ));
   MUXF7 \volume_buffer_l_reg[13]_i_1 
        (.I0(\volume_buffer_l[13]_i_2_n_0 ),
         .I1(\volume_buffer_l[13]_i_3_n_0 ),
@@ -1325,7 +1436,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[14]_i_1_n_0 ),
-        .Q(volume_buffer_l[14]));
+        .Q(\volume_buffer_l_reg_n_0_[14] ));
   MUXF7 \volume_buffer_l_reg[14]_i_1 
        (.I0(\volume_buffer_l[14]_i_2_n_0 ),
         .I1(\volume_buffer_l[14]_i_3_n_0 ),
@@ -1338,7 +1449,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[15]_i_1_n_0 ),
-        .Q(volume_buffer_l[15]));
+        .Q(\volume_buffer_l_reg_n_0_[15] ));
   MUXF7 \volume_buffer_l_reg[15]_i_1 
        (.I0(\volume_buffer_l[15]_i_2_n_0 ),
         .I1(\volume_buffer_l[15]_i_3_n_0 ),
@@ -1351,7 +1462,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[16]_i_1_n_0 ),
-        .Q(volume_buffer_l[16]));
+        .Q(\volume_buffer_l_reg_n_0_[16] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[17] 
@@ -1359,7 +1470,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[17]_i_1_n_0 ),
-        .Q(volume_buffer_l[17]));
+        .Q(\volume_buffer_l_reg_n_0_[17] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[18] 
@@ -1367,7 +1478,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[18]_i_1_n_0 ),
-        .Q(volume_buffer_l[18]));
+        .Q(\volume_buffer_l_reg_n_0_[18] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[19] 
@@ -1375,7 +1486,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[19]_i_1_n_0 ),
-        .Q(volume_buffer_l[19]));
+        .Q(\volume_buffer_l_reg_n_0_[19] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[1] 
@@ -1383,7 +1494,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[1]_i_1_n_0 ),
-        .Q(volume_buffer_l[1]));
+        .Q(\volume_buffer_l_reg_n_0_[1] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[20] 
@@ -1391,7 +1502,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[20]_i_1_n_0 ),
-        .Q(volume_buffer_l[20]));
+        .Q(\volume_buffer_l_reg_n_0_[20] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[21] 
@@ -1399,7 +1510,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[21]_i_1_n_0 ),
-        .Q(volume_buffer_l[21]));
+        .Q(\volume_buffer_l_reg_n_0_[21] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[22] 
@@ -1407,7 +1518,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[22]_i_1_n_0 ),
-        .Q(volume_buffer_l[22]));
+        .Q(\volume_buffer_l_reg_n_0_[22] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[23] 
@@ -1415,7 +1526,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[23]_i_1_n_0 ),
-        .Q(volume_buffer_l[23]));
+        .Q(\volume_buffer_l_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[24] 
@@ -1471,7 +1582,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[2]_i_1_n_0 ),
-        .Q(volume_buffer_l[2]));
+        .Q(\volume_buffer_l_reg_n_0_[2] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[30] 
@@ -1495,7 +1606,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[3]_i_1_n_0 ),
-        .Q(volume_buffer_l[3]));
+        .Q(\volume_buffer_l_reg_n_0_[3] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[4] 
@@ -1503,7 +1614,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[4]_i_1_n_0 ),
-        .Q(volume_buffer_l[4]));
+        .Q(\volume_buffer_l_reg_n_0_[4] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[5] 
@@ -1511,7 +1622,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[5]_i_1_n_0 ),
-        .Q(volume_buffer_l[5]));
+        .Q(\volume_buffer_l_reg_n_0_[5] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[6] 
@@ -1519,7 +1630,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[6]_i_1_n_0 ),
-        .Q(volume_buffer_l[6]));
+        .Q(\volume_buffer_l_reg_n_0_[6] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[7] 
@@ -1527,7 +1638,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l[7]_i_1_n_0 ),
-        .Q(volume_buffer_l[7]));
+        .Q(\volume_buffer_l_reg_n_0_[7] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_l_reg[8] 
@@ -1535,7 +1646,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[8]_i_1_n_0 ),
-        .Q(volume_buffer_l[8]));
+        .Q(\volume_buffer_l_reg_n_0_[8] ));
   MUXF7 \volume_buffer_l_reg[8]_i_1 
        (.I0(\volume_buffer_l[8]_i_2_n_0 ),
         .I1(\volume_buffer_l[8]_i_3_n_0 ),
@@ -1548,7 +1659,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_l_reg[9]_i_1_n_0 ),
-        .Q(volume_buffer_l[9]));
+        .Q(\volume_buffer_l_reg_n_0_[9] ));
   MUXF7 \volume_buffer_l_reg[9]_i_1 
        (.I0(\volume_buffer_l[9]_i_2_n_0 ),
         .I1(\volume_buffer_l[9]_i_3_n_0 ),
@@ -2108,7 +2219,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[0]_i_1_n_0 ),
-        .Q(volume_buffer_r[0]));
+        .Q(\volume_buffer_r_reg_n_0_[0] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[10] 
@@ -2116,7 +2227,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[10]_i_1_n_0 ),
-        .Q(volume_buffer_r[10]));
+        .Q(\volume_buffer_r_reg_n_0_[10] ));
   MUXF7 \volume_buffer_r_reg[10]_i_1 
        (.I0(\volume_buffer_r[10]_i_2_n_0 ),
         .I1(\volume_buffer_r[10]_i_3_n_0 ),
@@ -2129,7 +2240,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[11]_i_1_n_0 ),
-        .Q(volume_buffer_r[11]));
+        .Q(\volume_buffer_r_reg_n_0_[11] ));
   MUXF7 \volume_buffer_r_reg[11]_i_1 
        (.I0(\volume_buffer_r[11]_i_2_n_0 ),
         .I1(\volume_buffer_r[11]_i_3_n_0 ),
@@ -2142,7 +2253,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[12]_i_1_n_0 ),
-        .Q(volume_buffer_r[12]));
+        .Q(\volume_buffer_r_reg_n_0_[12] ));
   MUXF7 \volume_buffer_r_reg[12]_i_1 
        (.I0(\volume_buffer_r[12]_i_2_n_0 ),
         .I1(\volume_buffer_r[12]_i_3_n_0 ),
@@ -2155,7 +2266,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[13]_i_1_n_0 ),
-        .Q(volume_buffer_r[13]));
+        .Q(\volume_buffer_r_reg_n_0_[13] ));
   MUXF7 \volume_buffer_r_reg[13]_i_1 
        (.I0(\volume_buffer_r[13]_i_2_n_0 ),
         .I1(\volume_buffer_r[13]_i_3_n_0 ),
@@ -2168,7 +2279,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[14]_i_1_n_0 ),
-        .Q(volume_buffer_r[14]));
+        .Q(\volume_buffer_r_reg_n_0_[14] ));
   MUXF7 \volume_buffer_r_reg[14]_i_1 
        (.I0(\volume_buffer_r[14]_i_2_n_0 ),
         .I1(\volume_buffer_r[14]_i_3_n_0 ),
@@ -2181,7 +2292,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[15]_i_1_n_0 ),
-        .Q(volume_buffer_r[15]));
+        .Q(\volume_buffer_r_reg_n_0_[15] ));
   MUXF7 \volume_buffer_r_reg[15]_i_1 
        (.I0(\volume_buffer_r[15]_i_2_n_0 ),
         .I1(\volume_buffer_r[15]_i_3_n_0 ),
@@ -2194,7 +2305,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[16]_i_1_n_0 ),
-        .Q(volume_buffer_r[16]));
+        .Q(\volume_buffer_r_reg_n_0_[16] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[17] 
@@ -2202,7 +2313,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[17]_i_1_n_0 ),
-        .Q(volume_buffer_r[17]));
+        .Q(\volume_buffer_r_reg_n_0_[17] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[18] 
@@ -2210,7 +2321,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[18]_i_1_n_0 ),
-        .Q(volume_buffer_r[18]));
+        .Q(\volume_buffer_r_reg_n_0_[18] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[19] 
@@ -2218,7 +2329,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[19]_i_1_n_0 ),
-        .Q(volume_buffer_r[19]));
+        .Q(\volume_buffer_r_reg_n_0_[19] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[1] 
@@ -2226,7 +2337,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[1]_i_1_n_0 ),
-        .Q(volume_buffer_r[1]));
+        .Q(\volume_buffer_r_reg_n_0_[1] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[20] 
@@ -2234,7 +2345,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[20]_i_1_n_0 ),
-        .Q(volume_buffer_r[20]));
+        .Q(\volume_buffer_r_reg_n_0_[20] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[21] 
@@ -2242,7 +2353,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[21]_i_1_n_0 ),
-        .Q(volume_buffer_r[21]));
+        .Q(\volume_buffer_r_reg_n_0_[21] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[22] 
@@ -2250,7 +2361,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[22]_i_1_n_0 ),
-        .Q(volume_buffer_r[22]));
+        .Q(\volume_buffer_r_reg_n_0_[22] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[23] 
@@ -2258,7 +2369,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[23]_i_1_n_0 ),
-        .Q(volume_buffer_r[23]));
+        .Q(\volume_buffer_r_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[24] 
@@ -2314,7 +2425,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[2]_i_1_n_0 ),
-        .Q(volume_buffer_r[2]));
+        .Q(\volume_buffer_r_reg_n_0_[2] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[30] 
@@ -2338,7 +2449,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[3]_i_1_n_0 ),
-        .Q(volume_buffer_r[3]));
+        .Q(\volume_buffer_r_reg_n_0_[3] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[4] 
@@ -2346,7 +2457,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[4]_i_1_n_0 ),
-        .Q(volume_buffer_r[4]));
+        .Q(\volume_buffer_r_reg_n_0_[4] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[5] 
@@ -2354,7 +2465,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[5]_i_1_n_0 ),
-        .Q(volume_buffer_r[5]));
+        .Q(\volume_buffer_r_reg_n_0_[5] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[6] 
@@ -2362,7 +2473,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[6]_i_1_n_0 ),
-        .Q(volume_buffer_r[6]));
+        .Q(\volume_buffer_r_reg_n_0_[6] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[7] 
@@ -2370,7 +2481,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r[7]_i_1_n_0 ),
-        .Q(volume_buffer_r[7]));
+        .Q(\volume_buffer_r_reg_n_0_[7] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_buffer_r_reg[8] 
@@ -2378,7 +2489,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[8]_i_1_n_0 ),
-        .Q(volume_buffer_r[8]));
+        .Q(\volume_buffer_r_reg_n_0_[8] ));
   MUXF7 \volume_buffer_r_reg[8]_i_1 
        (.I0(\volume_buffer_r[8]_i_2_n_0 ),
         .I1(\volume_buffer_r[8]_i_3_n_0 ),
@@ -2391,7 +2502,7 @@ module design_1_volume_controller_0_0_volume_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\volume_buffer_r_reg[9]_i_1_n_0 ),
-        .Q(volume_buffer_r[9]));
+        .Q(\volume_buffer_r_reg_n_0_[9] ));
   MUXF7 \volume_buffer_r_reg[9]_i_1 
        (.I0(\volume_buffer_r[9]_i_2_n_0 ),
         .I1(\volume_buffer_r[9]_i_3_n_0 ),
@@ -2833,18 +2944,6 @@ module design_1_volume_controller_0_0_volume_controller
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
         .Q(volume_in_r[9]));
-  (* OPT_MODIFIED = "MLO" *) 
-  (* XILINX_LEGACY_PRIM = "LD" *) 
-  (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
-  LDCE #(
-    .INIT(1'b0),
-    .IS_G_INVERTED(1'b1)) 
-    \volume_out_l_reg[23] 
-       (.CLR(1'b0),
-        .D(aresetn),
-        .G(aresetn),
-        .GE(1'b1),
-        .Q(\volume_out_l_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \volume_set_hold_reg[0] 

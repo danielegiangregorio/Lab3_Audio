@@ -154,8 +154,8 @@ begin
                 filtered_r <= (others => '0');
             end if;
 
-            filtered_l <= filtered_l + ("00000" & filter_in_l(TO_INTEGER(ring_buffer_read)));
-            filtered_r <= filtered_r + ("00000" & filter_in_r(TO_INTEGER(ring_buffer_read)));
+            filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
+            filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));
             ring_buffer_read <= ring_buffer_read + 1;        
         end if;
     end process dma_filter;

@@ -32,15 +32,15 @@ architecture Behavioral of volume_controller is
     signal state : state_t;
 
     -- helper signals
-    signal ones : unsigned(9 - N - 2 downto 0) := (others => '1');
-    signal zeros : unsigned(9 - N - 2 downto 0) := (others => '0');
+    signal ones                         : unsigned(9 - N  -1 downto 0) := (others => '1');
+    signal zeros                        : unsigned(9 - N  -1 downto 0) := (others => '0');
     -- signal clipping
     signal clipped_l                    : std_logic := '0';
     signal clipped_r                    : std_logic := '0';
     -- signals
-    signal volume_set_hold              : std_logic_vector(9 - N + 1 downto 0) := (others => '0');
+    signal volume_sign_msb_hold              : std_logic_vector(9 - N + 1 downto 0) := (others => '0');
     signal volume_exp_value             : integer range 0 to 2**(9 - N) := 0;
-    signal volume_exp_value_preprocess  : unsigned(9 - N -1 downto 0) := (others => '0');
+    signal volume_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
     signal volume_exp_is_negative       : std_logic := '0';
     signal volume_buffer_l              : unsigned (23 + 2**(9 - N) downto 0) := (others => '0');
     signal volume_buffer_r              : unsigned (23 + 2**(9 - N) downto 0) := (others => '0');
@@ -115,11 +115,11 @@ begin
     end process rx_tx_fsm;
 
     -- take the sign of the volume variation
-    volume_exp_is_negative <= not volume_set_hold(volume_set_hold'high);
+    volume_exp_is_negative <= not volume_sign_msb_hold(volume_sign_msb_hold'high);
     -- take the complement of the module for correct decrement of volume
     with volume_exp_is_negative select volume_exp_value_preprocess <=
-        unsigned(volume_set_hold(volume_set_hold'high -1 downto 1))  when '0',
-        unsigned(not volume_set_hold(volume_set_hold'high -1 downto 1)) when '1';
+        unsigned(volume_sign_msb_hold(volume_sign_msb_hold'high -1 downto 0))  when '0',
+        unsigned(not volume_sign_msb_hold(volume_sign_msb_hold'high -1 downto 0)) when '1';
     -- if the channel is clipped we output the maximum possible signal
     with clipped_l select volume_out_l <=
         volume_buffer_l(23 downto 0) when '0',
@@ -133,23 +133,23 @@ begin
     begin
         if aresetn = '0' then
             -- reset output and calculation buffer
-            volume_out_l <= (others => '0');
-            volume_out_r <= (others => '0');
             volume_buffer_l <= (others => '0');
             volume_buffer_r <= (others => '0');
-            volume_set_hold <= (others => '0');
+            volume_sign_msb_hold <= (others => '0');
             volume_exp_value <= 0;
         elsif rising_edge(aclk) then
-            volume_set_hold <= volume(9 downto N - 1);
+            volume_sign_msb_hold <= volume(9 downto N - 1);
         -- we have two edge cases, the 32 bits interval at top and bottom of the scale, here we search if we are in the bottom half
-            if volume_exp_value_preprocess = ones then
-                if volume_set_hold(volume_set_hold'low) = '1' then
+            if volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1) = ones then
+                if volume_sign_msb_hold(0) = '1' then
                     volume_exp_value <= (2**(9 - N));
                 end if;
-            elsif volume_exp_value_preprocess = zeros then
-                if volume_set_hold(volume_set_hold'low) = '1' then
+            elsif volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1) = zeros then
+                if volume_sign_msb_hold(0) = '0' then
                     volume_exp_value <= 1;
-                end if;    
+                end if;
+            else
+                volume_exp_value <= to_integer(unsigned(volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1)));    
             end if;
             -- store the shifted value in volume_buffer_channel, the comb logic will process the clipping for the volume rise case
             volume_buffer_l <= (others => '0');
@@ -168,10 +168,10 @@ begin
     -- if one of the MSBs above the expected 24bits is high we have clipped, so we rise clipped in the channle
     clipper : process(volume_buffer_l, volume_buffer_r)
     begin
-        if volume_buffer_l(volume_buffer_l'high downto volume_buffer_l'high - 2**(9 - N)) /= "0" then
+        if volume_buffer_l(volume_buffer_l'high downto 24) /= "0" then
             clipped_l <= '1';
         end if;
-        if volume_buffer_r(volume_buffer_l'high downto volume_buffer_l'high - 2**(9 - N)) /= "0" then
+        if volume_buffer_r(volume_buffer_l'high downto 24) /= "0" then
             clipped_r <= '1';
         end if;
     end process clipper;

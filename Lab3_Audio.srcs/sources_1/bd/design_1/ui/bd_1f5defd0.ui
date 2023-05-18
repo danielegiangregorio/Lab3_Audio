@@ -73,7 +73,7 @@ levelinfo -pg 1 -110 110 460 800 1100 1440 1790 2120 2460 2760 3070 5130
 pagesize -pg 1 -db -bbox -sgen -220 -140 5250 900
 ",
    "Color Coded_ScaleFactor":"0.858056",
-   "Color Coded_TopLeft":"-214,70",
+   "Color Coded_TopLeft":"1020,531",
    "Default View_Layers":"/clk_in1_0_1:true|/clk_wiz_0_clk_out2:true|/Net5:true|/Net2:true|/clk_wiz_0_clk_out1:true|/Net3:true|/proc_sys_reset_1_peripheral_aresetn:true|",
    "Default View_ScaleFactor":"0.371458",
    "Default View_TopLeft":"-105,-738",

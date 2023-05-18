@@ -35,12 +35,12 @@ architecture Behavioral of balance_controller is
     signal state : state_t;
 
     -- helper signals
-    signal ones : unsigned(9 - N - 2 downto 0) := (others => '1');
-    signal zeros : unsigned(9 - N - 2 downto 0) := (others => '0');
+    signal ones                          : unsigned(9 - N - 1 downto 0) := (others => '1');
+    signal zeros                         : unsigned(9 - N - 1 downto 0) := (others => '0');
     -- signals
     signal balance_set_hold              : std_logic_vector(9 - N + 1 downto 0) := (others => '0');
     signal balance_exp_value             : integer range 0 to 2**(9 - N) := 0;
-    signal balance_exp_value_preprocess  : unsigned(9 - N -1 downto 0) := (others => '0');
+    signal balance_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
     signal balance_exp_is_left           : std_logic := '0';
     signal balance_in_l                  : unsigned (23 downto 0) := (others => '0');
     signal balance_in_r                  : unsigned (23 downto 0) := (others => '0');
@@ -114,10 +114,10 @@ begin
 
     -- take the sign of the balance variation
     balance_exp_is_left <= not balance_set_hold(balance_set_hold'high);
-    -- take the complement of the module for correct decrement of balance
+    -- take the complement of the module for correct decrement of volume
     with balance_exp_is_left select balance_exp_value_preprocess <=
-        unsigned(balance_set_hold(balance_set_hold'high -1 downto 1))  when '0',
-        unsigned(not balance_set_hold(balance_set_hold'high -1 downto 1)) when '1';
+        unsigned(balance_set_hold(balance_set_hold'high -1 downto 0))  when '0',
+        unsigned(not balance_set_hold(balance_set_hold'high -1 downto 0)) when '1';
 
 
     balance_process: process(aclk, aresetn)
@@ -130,17 +130,19 @@ begin
             balance_exp_value <= 0;
         elsif rising_edge(aclk) then
             balance_set_hold <= balance(9 downto N - 1);
-        -- we have two edge cases, the 32 bits interval at top and bottom of the scale, here we search if we are in the bottom half
-            if balance_exp_value_preprocess = ones then
-                if balance_set_hold(balance_set_hold'low) = '1' then
+            -- we have two edge cases, the 32 bits interval at top and bottom of the scale, here we search if we are in the bottom half
+            if balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1) = ones then
+                if balance_set_hold(0) = '1' then
                     balance_exp_value <= (2**(9 - N));
                 end if;
-            elsif balance_exp_value_preprocess = zeros then
-                if balance_set_hold(balance_set_hold'low) = '1' then
-                    balance_exp_value <= 1;
-                end if;    
+            elsif balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1) = zeros then
+                if balance_set_hold(0) = '1' then
+                    balance_exp_value <= (2**(9 - N));
+                end if;   
+            else
+                balance_exp_value <= to_integer(unsigned(balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1))); 
             end if;
-            -- store the shifted value in balance_buffer_channel, the comb logic will process the clipping for the balance rise case
+            -- store the shifted value in balance_out_channel for the fading channel, let pass the other
             balance_out_l <= (others => '0');
             balance_out_r <= (others => '0');
             if balance_exp_is_left = '1' then 
