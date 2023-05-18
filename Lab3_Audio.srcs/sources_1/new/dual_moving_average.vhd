@@ -89,33 +89,40 @@ begin
             case state is
                 when RCV_L =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '0' then
+                        -- get l sample, jump to next state
                         filter_in_l(TO_INTEGER(ring_buffer_entry)) <= unsigned(s_axis_tdata);
                         state <= RCV_R;
                     end if;
 
                 when RCV_R =>
+                    -- wait for l sample
                     if s_axis_tvalid = '1' and s_axis_tlast = '1' then
+                        -- get r sample
                         filter_in_r( TO_INTEGER(ring_buffer_entry) ) <= unsigned(s_axis_tdata);
+                        -- setup m_axis to send l sample in the next state
+                        if filter_enable = '1' then
+                            m_axis_tdata    <= std_logic_vector(filtered_out_l);
+                        else
+                            m_axis_tdata    <= std_logic_vector(filter_in_l(TO_INTEGER(ring_buffer_entry)));
+                        end if;
                         state <= SEND_L;
                     end if;
 
                 when SEND_L =>
-                    if filter_enable = '1' then
-                        m_axis_tdata    <= std_logic_vector(filtered_out_l);
-                    else
-                        m_axis_tdata    <= std_logic_vector(filter_in_l(TO_INTEGER(ring_buffer_entry)));
-                    end if;
+                    -- wait for receiver
                     if m_axis_tready = '1' then
-                        state <= SEND_R;
+                        -- setup m_axis to send r sample in the next state
+                        if filter_enable = '1' then
+                            m_axis_tdata    <= std_logic_vector(filtered_out_r);
+                        else
+                            m_axis_tdata    <= std_logic_vector(filter_in_r(TO_INTEGER(ring_buffer_entry)));
+                        end if;
+                            state <= SEND_R;
                     end if;
 
                 when SEND_R =>
-                    if filter_enable = '1' then
-                        m_axis_tdata    <= std_logic_vector(filtered_out_r);
-                    else
-                        m_axis_tdata    <= std_logic_vector(filter_in_r(TO_INTEGER(ring_buffer_entry)));
-                    end if;
                     if m_axis_tready = '1' then
+                    -- update counter and go back to receive status
                         state <= RCV_R;
                         ring_buffer_entry <= ring_buffer_entry + 1;
                     end if;
@@ -135,7 +142,9 @@ begin
             filtered_l <= (others => '0');
             filtered_r <= (others => '0');
             ring_buffer_read <= (others => '0');
+
         elsif rising_edge(aclk) then
+
             if ring_buffer_read = 0 then
                 -- commit the result to output and reset the calculation buffer
                 -- the avg is implemented shifting by 5 right te sum of the 32 samples
@@ -144,8 +153,9 @@ begin
                 filtered_l <= (others => '0');
                 filtered_r <= (others => '0');
             end if;
-            filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
-            filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));
+
+            filtered_l <= filtered_l + ("00000" & filter_in_l(TO_INTEGER(ring_buffer_read)));
+            filtered_r <= filtered_r + ("00000" & filter_in_r(TO_INTEGER(ring_buffer_read)));
             ring_buffer_read <= ring_buffer_read + 1;        
         end if;
     end process dma_filter;

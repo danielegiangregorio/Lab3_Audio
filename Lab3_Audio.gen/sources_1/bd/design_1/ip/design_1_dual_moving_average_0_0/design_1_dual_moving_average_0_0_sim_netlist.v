@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Thu May 18 10:52:48 2023
+// Date        : Thu May 18 13:15:05 2023
 // Host        : SburroROG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_dual_moving_average_0_0/design_1_dual_moving_average_0_0_sim_netlist.v
@@ -63,37 +63,32 @@ module design_1_dual_moving_average_0_0
         .s_axis_tlast(s_axis_tlast),
         .s_axis_tready(s_axis_tready),
         .s_axis_tvalid(s_axis_tvalid));
-  LUT1 #(
-    .INIT(2'h1)) 
-    s_axis_tready_INST_0
-       (.I0(m_axis_tvalid),
-        .O(s_axis_tready));
 endmodule
 
 (* ORIG_REF_NAME = "dual_moving_average" *) 
 module design_1_dual_moving_average_0_0_dual_moving_average
    (\FSM_sequential_state_reg[1]_0 ,
-    m_axis_tlast,
     m_axis_tdata,
+    m_axis_tlast,
     s_axis_tready,
-    aclk,
     m_axis_tready,
-    aresetn,
     s_axis_tvalid,
     s_axis_tlast,
-    filter_enable,
-    s_axis_tdata);
+    aclk,
+    s_axis_tdata,
+    aresetn,
+    filter_enable);
   output \FSM_sequential_state_reg[1]_0 ;
-  output m_axis_tlast;
   output [23:0]m_axis_tdata;
-  inout s_axis_tready;
-  input aclk;
+  output m_axis_tlast;
+  output s_axis_tready;
   input m_axis_tready;
-  input aresetn;
   input s_axis_tvalid;
   input s_axis_tlast;
-  input filter_enable;
+  input aclk;
   input [23:0]s_axis_tdata;
+  input aresetn;
+  input filter_enable;
 
   wire \FSM_sequential_state[0]_i_1_n_0 ;
   wire \FSM_sequential_state[1]_i_1_n_0 ;
@@ -102,165 +97,165 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   wire aclk;
   wire aresetn;
   wire filter_enable;
-  wire \filter_in_l[0]_22 ;
-  wire \filter_in_l[10]_42 ;
-  wire \filter_in_l[11]_10 ;
-  wire \filter_in_l[12]_50 ;
-  wire \filter_in_l[13]_26 ;
-  wire \filter_in_l[14]_58 ;
-  wire \filter_in_l[15]_0 ;
-  wire \filter_in_l[16]_20 ;
-  wire \filter_in_l[17]_36 ;
-  wire \filter_in_l[18]_44 ;
-  wire \filter_in_l[19]_12 ;
-  wire \filter_in_l[1]_38 ;
-  wire \filter_in_l[20]_52 ;
-  wire \filter_in_l[21]_28 ;
-  wire \filter_in_l[22]_60 ;
-  wire \filter_in_l[23]_4 ;
-  wire \filter_in_l[24]_16 ;
-  wire \filter_in_l[25]_32 ;
-  wire \filter_in_l[26]_40 ;
-  wire \filter_in_l[27]_8 ;
-  wire \filter_in_l[28]_48 ;
-  wire \filter_in_l[29]_24 ;
-  wire \filter_in_l[2]_46 ;
-  wire \filter_in_l[30]_56 ;
-  wire \filter_in_l[31]_2 ;
-  wire \filter_in_l[3]_14 ;
-  wire \filter_in_l[4]_54 ;
-  wire \filter_in_l[5]_30 ;
-  wire \filter_in_l[6]_62 ;
-  wire \filter_in_l[7]_6 ;
-  wire \filter_in_l[8]_18 ;
-  wire \filter_in_l[9]_34 ;
-  wire [23:0]\filter_in_l_reg[0]_127 ;
-  wire [23:0]\filter_in_l_reg[10]_117 ;
-  wire [23:0]\filter_in_l_reg[11]_116 ;
-  wire [23:0]\filter_in_l_reg[12]_115 ;
-  wire [23:0]\filter_in_l_reg[13]_114 ;
-  wire [23:0]\filter_in_l_reg[14]_113 ;
-  wire [23:0]\filter_in_l_reg[15]_112 ;
-  wire [23:0]\filter_in_l_reg[16]_111 ;
-  wire [23:0]\filter_in_l_reg[17]_110 ;
-  wire [23:0]\filter_in_l_reg[18]_109 ;
-  wire [23:0]\filter_in_l_reg[19]_108 ;
-  wire [23:0]\filter_in_l_reg[1]_126 ;
-  wire [23:0]\filter_in_l_reg[20]_107 ;
-  wire [23:0]\filter_in_l_reg[21]_106 ;
-  wire [23:0]\filter_in_l_reg[22]_105 ;
-  wire [23:0]\filter_in_l_reg[23]_104 ;
-  wire [23:0]\filter_in_l_reg[24]_103 ;
-  wire [23:0]\filter_in_l_reg[25]_102 ;
-  wire [23:0]\filter_in_l_reg[26]_101 ;
-  wire [23:0]\filter_in_l_reg[27]_100 ;
-  wire [23:0]\filter_in_l_reg[28]_99 ;
-  wire [23:0]\filter_in_l_reg[29]_98 ;
-  wire [23:0]\filter_in_l_reg[2]_125 ;
-  wire [23:0]\filter_in_l_reg[30]_97 ;
-  wire [23:0]\filter_in_l_reg[31]_96 ;
-  wire [23:0]\filter_in_l_reg[3]_124 ;
-  wire [23:0]\filter_in_l_reg[4]_123 ;
-  wire [23:0]\filter_in_l_reg[5]_122 ;
-  wire [23:0]\filter_in_l_reg[6]_121 ;
-  wire [23:0]\filter_in_l_reg[7]_120 ;
-  wire [23:0]\filter_in_l_reg[8]_119 ;
-  wire [23:0]\filter_in_l_reg[9]_118 ;
+  wire \filter_in_l[0]_86 ;
+  wire \filter_in_l[10]_106 ;
+  wire \filter_in_l[11]_74 ;
+  wire \filter_in_l[12]_114 ;
+  wire \filter_in_l[13]_90 ;
+  wire \filter_in_l[14]_122 ;
+  wire \filter_in_l[15]_64 ;
+  wire \filter_in_l[16]_84 ;
+  wire \filter_in_l[17]_100 ;
+  wire \filter_in_l[18]_108 ;
+  wire \filter_in_l[19]_76 ;
+  wire \filter_in_l[1]_102 ;
+  wire \filter_in_l[20]_116 ;
+  wire \filter_in_l[21]_92 ;
+  wire \filter_in_l[22]_124 ;
+  wire \filter_in_l[23]_68 ;
+  wire \filter_in_l[24]_80 ;
+  wire \filter_in_l[25]_96 ;
+  wire \filter_in_l[26]_104 ;
+  wire \filter_in_l[27]_72 ;
+  wire \filter_in_l[28]_112 ;
+  wire \filter_in_l[29]_88 ;
+  wire \filter_in_l[2]_110 ;
+  wire \filter_in_l[30]_120 ;
+  wire \filter_in_l[31]_66 ;
+  wire \filter_in_l[3]_78 ;
+  wire \filter_in_l[4]_118 ;
+  wire \filter_in_l[5]_94 ;
+  wire \filter_in_l[6]_126 ;
+  wire \filter_in_l[7]_70 ;
+  wire \filter_in_l[8]_82 ;
+  wire \filter_in_l[9]_98 ;
+  wire [23:0]\filter_in_l_reg[0]_63 ;
+  wire [23:0]\filter_in_l_reg[10]_53 ;
+  wire [23:0]\filter_in_l_reg[11]_52 ;
+  wire [23:0]\filter_in_l_reg[12]_51 ;
+  wire [23:0]\filter_in_l_reg[13]_50 ;
+  wire [23:0]\filter_in_l_reg[14]_49 ;
+  wire [23:0]\filter_in_l_reg[15]_48 ;
+  wire [23:0]\filter_in_l_reg[16]_47 ;
+  wire [23:0]\filter_in_l_reg[17]_46 ;
+  wire [23:0]\filter_in_l_reg[18]_45 ;
+  wire [23:0]\filter_in_l_reg[19]_44 ;
+  wire [23:0]\filter_in_l_reg[1]_62 ;
+  wire [23:0]\filter_in_l_reg[20]_43 ;
+  wire [23:0]\filter_in_l_reg[21]_42 ;
+  wire [23:0]\filter_in_l_reg[22]_41 ;
+  wire [23:0]\filter_in_l_reg[23]_40 ;
+  wire [23:0]\filter_in_l_reg[24]_39 ;
+  wire [23:0]\filter_in_l_reg[25]_38 ;
+  wire [23:0]\filter_in_l_reg[26]_37 ;
+  wire [23:0]\filter_in_l_reg[27]_36 ;
+  wire [23:0]\filter_in_l_reg[28]_35 ;
+  wire [23:0]\filter_in_l_reg[29]_34 ;
+  wire [23:0]\filter_in_l_reg[2]_61 ;
+  wire [23:0]\filter_in_l_reg[30]_33 ;
+  wire [23:0]\filter_in_l_reg[31]_32 ;
+  wire [23:0]\filter_in_l_reg[3]_60 ;
+  wire [23:0]\filter_in_l_reg[4]_59 ;
+  wire [23:0]\filter_in_l_reg[5]_58 ;
+  wire [23:0]\filter_in_l_reg[6]_57 ;
+  wire [23:0]\filter_in_l_reg[7]_56 ;
+  wire [23:0]\filter_in_l_reg[8]_55 ;
+  wire [23:0]\filter_in_l_reg[9]_54 ;
   wire \filter_in_r[0][23]_i_2_n_0 ;
-  wire \filter_in_r[0]_23 ;
+  wire \filter_in_r[0]_87 ;
   wire \filter_in_r[10][23]_i_2_n_0 ;
-  wire \filter_in_r[10]_43 ;
+  wire \filter_in_r[10]_107 ;
   wire \filter_in_r[11][23]_i_2_n_0 ;
-  wire \filter_in_r[11]_11 ;
+  wire \filter_in_r[11]_75 ;
   wire \filter_in_r[12][23]_i_2_n_0 ;
-  wire \filter_in_r[12]_51 ;
+  wire \filter_in_r[12]_115 ;
   wire \filter_in_r[13][23]_i_2_n_0 ;
-  wire \filter_in_r[13]_27 ;
+  wire \filter_in_r[13]_91 ;
   wire \filter_in_r[14][23]_i_2_n_0 ;
-  wire \filter_in_r[14]_59 ;
-  wire \filter_in_r[15]_1 ;
+  wire \filter_in_r[14]_123 ;
+  wire \filter_in_r[15]_65 ;
   wire \filter_in_r[16][23]_i_2_n_0 ;
-  wire \filter_in_r[16]_21 ;
+  wire \filter_in_r[16]_85 ;
   wire \filter_in_r[17][23]_i_2_n_0 ;
-  wire \filter_in_r[17]_37 ;
+  wire \filter_in_r[17]_101 ;
   wire \filter_in_r[18][23]_i_2_n_0 ;
-  wire \filter_in_r[18]_45 ;
+  wire \filter_in_r[18]_109 ;
   wire \filter_in_r[19][23]_i_2_n_0 ;
-  wire \filter_in_r[19]_13 ;
+  wire \filter_in_r[19]_77 ;
   wire \filter_in_r[1][23]_i_2_n_0 ;
-  wire \filter_in_r[1]_39 ;
+  wire \filter_in_r[1]_103 ;
   wire \filter_in_r[20][23]_i_2_n_0 ;
-  wire \filter_in_r[20]_53 ;
+  wire \filter_in_r[20]_117 ;
   wire \filter_in_r[21][23]_i_2_n_0 ;
-  wire \filter_in_r[21]_29 ;
+  wire \filter_in_r[21]_93 ;
   wire \filter_in_r[22][23]_i_2_n_0 ;
-  wire \filter_in_r[22]_61 ;
+  wire \filter_in_r[22]_125 ;
   wire \filter_in_r[23][23]_i_2_n_0 ;
-  wire \filter_in_r[23]_5 ;
+  wire \filter_in_r[23]_69 ;
   wire \filter_in_r[24][23]_i_2_n_0 ;
-  wire \filter_in_r[24]_17 ;
+  wire \filter_in_r[24]_81 ;
   wire \filter_in_r[25][23]_i_2_n_0 ;
-  wire \filter_in_r[25]_33 ;
+  wire \filter_in_r[25]_97 ;
   wire \filter_in_r[26][23]_i_2_n_0 ;
-  wire \filter_in_r[26]_41 ;
+  wire \filter_in_r[26]_105 ;
   wire \filter_in_r[27][23]_i_2_n_0 ;
-  wire \filter_in_r[27]_9 ;
+  wire \filter_in_r[27]_73 ;
   wire \filter_in_r[28][23]_i_2_n_0 ;
-  wire \filter_in_r[28]_49 ;
+  wire \filter_in_r[28]_113 ;
   wire \filter_in_r[29][23]_i_2_n_0 ;
-  wire \filter_in_r[29]_25 ;
+  wire \filter_in_r[29]_89 ;
   wire \filter_in_r[2][23]_i_2_n_0 ;
-  wire \filter_in_r[2]_47 ;
+  wire \filter_in_r[2]_111 ;
   wire \filter_in_r[30][23]_i_2_n_0 ;
-  wire \filter_in_r[30]_57 ;
+  wire \filter_in_r[30]_121 ;
   wire \filter_in_r[31][23]_i_2_n_0 ;
-  wire \filter_in_r[31]_3 ;
+  wire \filter_in_r[31]_67 ;
   wire \filter_in_r[3][23]_i_2_n_0 ;
-  wire \filter_in_r[3]_15 ;
+  wire \filter_in_r[3]_79 ;
   wire \filter_in_r[4][23]_i_2_n_0 ;
-  wire \filter_in_r[4]_55 ;
+  wire \filter_in_r[4]_119 ;
   wire \filter_in_r[5][23]_i_2_n_0 ;
-  wire \filter_in_r[5]_31 ;
+  wire \filter_in_r[5]_95 ;
   wire \filter_in_r[6][23]_i_2_n_0 ;
-  wire \filter_in_r[6]_63 ;
+  wire \filter_in_r[6]_127 ;
   wire \filter_in_r[7][23]_i_2_n_0 ;
-  wire \filter_in_r[7]_7 ;
+  wire \filter_in_r[7]_71 ;
   wire \filter_in_r[8][23]_i_2_n_0 ;
-  wire \filter_in_r[8]_19 ;
+  wire \filter_in_r[8]_83 ;
   wire \filter_in_r[9][23]_i_2_n_0 ;
-  wire \filter_in_r[9]_35 ;
-  wire [23:0]\filter_in_r_reg[0]_95 ;
-  wire [23:0]\filter_in_r_reg[10]_85 ;
-  wire [23:0]\filter_in_r_reg[11]_84 ;
-  wire [23:0]\filter_in_r_reg[12]_83 ;
-  wire [23:0]\filter_in_r_reg[13]_82 ;
-  wire [23:0]\filter_in_r_reg[14]_81 ;
-  wire [23:0]\filter_in_r_reg[15]_80 ;
-  wire [23:0]\filter_in_r_reg[16]_79 ;
-  wire [23:0]\filter_in_r_reg[17]_78 ;
-  wire [23:0]\filter_in_r_reg[18]_77 ;
-  wire [23:0]\filter_in_r_reg[19]_76 ;
-  wire [23:0]\filter_in_r_reg[1]_94 ;
-  wire [23:0]\filter_in_r_reg[20]_75 ;
-  wire [23:0]\filter_in_r_reg[21]_74 ;
-  wire [23:0]\filter_in_r_reg[22]_73 ;
-  wire [23:0]\filter_in_r_reg[23]_72 ;
-  wire [23:0]\filter_in_r_reg[24]_71 ;
-  wire [23:0]\filter_in_r_reg[25]_70 ;
-  wire [23:0]\filter_in_r_reg[26]_69 ;
-  wire [23:0]\filter_in_r_reg[27]_68 ;
-  wire [23:0]\filter_in_r_reg[28]_67 ;
-  wire [23:0]\filter_in_r_reg[29]_66 ;
-  wire [23:0]\filter_in_r_reg[2]_93 ;
-  wire [23:0]\filter_in_r_reg[30]_65 ;
-  wire [23:0]\filter_in_r_reg[31]_64 ;
-  wire [23:0]\filter_in_r_reg[3]_92 ;
-  wire [23:0]\filter_in_r_reg[4]_91 ;
-  wire [23:0]\filter_in_r_reg[5]_90 ;
-  wire [23:0]\filter_in_r_reg[6]_89 ;
-  wire [23:0]\filter_in_r_reg[7]_88 ;
-  wire [23:0]\filter_in_r_reg[8]_87 ;
-  wire [23:0]\filter_in_r_reg[9]_86 ;
+  wire \filter_in_r[9]_99 ;
+  wire [23:0]\filter_in_r_reg[0]_31 ;
+  wire [23:0]\filter_in_r_reg[10]_21 ;
+  wire [23:0]\filter_in_r_reg[11]_20 ;
+  wire [23:0]\filter_in_r_reg[12]_19 ;
+  wire [23:0]\filter_in_r_reg[13]_18 ;
+  wire [23:0]\filter_in_r_reg[14]_17 ;
+  wire [23:0]\filter_in_r_reg[15]_16 ;
+  wire [23:0]\filter_in_r_reg[16]_15 ;
+  wire [23:0]\filter_in_r_reg[17]_14 ;
+  wire [23:0]\filter_in_r_reg[18]_13 ;
+  wire [23:0]\filter_in_r_reg[19]_12 ;
+  wire [23:0]\filter_in_r_reg[1]_30 ;
+  wire [23:0]\filter_in_r_reg[20]_11 ;
+  wire [23:0]\filter_in_r_reg[21]_10 ;
+  wire [23:0]\filter_in_r_reg[22]_9 ;
+  wire [23:0]\filter_in_r_reg[23]_8 ;
+  wire [23:0]\filter_in_r_reg[24]_7 ;
+  wire [23:0]\filter_in_r_reg[25]_6 ;
+  wire [23:0]\filter_in_r_reg[26]_5 ;
+  wire [23:0]\filter_in_r_reg[27]_4 ;
+  wire [23:0]\filter_in_r_reg[28]_3 ;
+  wire [23:0]\filter_in_r_reg[29]_2 ;
+  wire [23:0]\filter_in_r_reg[2]_29 ;
+  wire [23:0]\filter_in_r_reg[30]_1 ;
+  wire [23:0]\filter_in_r_reg[31]_0 ;
+  wire [23:0]\filter_in_r_reg[3]_28 ;
+  wire [23:0]\filter_in_r_reg[4]_27 ;
+  wire [23:0]\filter_in_r_reg[5]_26 ;
+  wire [23:0]\filter_in_r_reg[6]_25 ;
+  wire [23:0]\filter_in_r_reg[7]_24 ;
+  wire [23:0]\filter_in_r_reg[8]_23 ;
+  wire [23:0]\filter_in_r_reg[9]_22 ;
   wire \filtered_l[0]_i_20_n_0 ;
   wire \filtered_l[0]_i_21_n_0 ;
   wire \filtered_l[0]_i_22_n_0 ;
@@ -477,7 +472,6 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   wire \filtered_l[8]_i_56_n_0 ;
   wire \filtered_l[8]_i_57_n_0 ;
   wire \filtered_l[8]_i_5_n_0 ;
-  wire [28:5]filtered_l_reg;
   wire \filtered_l_reg[0]_i_10_n_0 ;
   wire \filtered_l_reg[0]_i_11_n_0 ;
   wire \filtered_l_reg[0]_i_12_n_0 ;
@@ -1833,6 +1827,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   wire \m_axis_tdata_reg[9]_i_9_n_0 ;
   wire m_axis_tlast;
   wire m_axis_tready;
+  wire [23:0]p_0_in;
   wire [4:0]plusOp;
   wire [4:0]plusOp__0;
   wire ring_buffer_entry0;
@@ -1877,7 +1872,6 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   wire [23:0]s_axis_tdata;
   wire s_axis_tlast;
   wire s_axis_tready;
-  wire s_axis_tready_i_1_n_0;
   wire s_axis_tvalid;
   wire [0:0]state;
   wire [3:0]\NLW_filtered_l_reg[28]_i_1_CO_UNCONNECTED ;
@@ -1885,7 +1879,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   wire [3:0]\NLW_filtered_r_reg[28]_i_1_CO_UNCONNECTED ;
   wire [3:1]\NLW_filtered_r_reg[28]_i_1_O_UNCONNECTED ;
 
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hC8F8FBF8)) 
     \FSM_sequential_state[0]_i_1 
@@ -1895,7 +1889,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I3(s_axis_tvalid),
         .I4(s_axis_tlast),
         .O(\FSM_sequential_state[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7C4C4C4C)) 
     \FSM_sequential_state[1]_i_1 
@@ -1935,7 +1929,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[0][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[0]_22 ));
+        .O(\filter_in_l[0]_86 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[10][23]_i_1 
@@ -1943,7 +1937,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[10][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[10]_42 ));
+        .O(\filter_in_l[10]_106 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[11][23]_i_1 
@@ -1951,7 +1945,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[11][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[11]_10 ));
+        .O(\filter_in_l[11]_74 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[12][23]_i_1 
@@ -1959,7 +1953,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[12][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[12]_50 ));
+        .O(\filter_in_l[12]_114 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[13][23]_i_1 
@@ -1967,7 +1961,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[13][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[13]_26 ));
+        .O(\filter_in_l[13]_90 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[14][23]_i_1 
@@ -1975,7 +1969,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[14][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[14]_58 ));
+        .O(\filter_in_l[14]_122 ));
   LUT6 #(
     .INIT(64'h0000000000000040)) 
     \filter_in_l[15][23]_i_1 
@@ -1985,7 +1979,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I3(ring_buffer_entry_reg[4]),
         .I4(s_axis_tlast),
         .I5(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[15]_0 ));
+        .O(\filter_in_l[15]_64 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[16][23]_i_1 
@@ -1993,7 +1987,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[16][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[16]_20 ));
+        .O(\filter_in_l[16]_84 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[17][23]_i_1 
@@ -2001,7 +1995,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[17][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[17]_36 ));
+        .O(\filter_in_l[17]_100 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[18][23]_i_1 
@@ -2009,7 +2003,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[18][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[18]_44 ));
+        .O(\filter_in_l[18]_108 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[19][23]_i_1 
@@ -2017,7 +2011,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[19][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[19]_12 ));
+        .O(\filter_in_l[19]_76 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[1][23]_i_1 
@@ -2025,7 +2019,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[1][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[1]_38 ));
+        .O(\filter_in_l[1]_102 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[20][23]_i_1 
@@ -2033,7 +2027,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[20][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[20]_52 ));
+        .O(\filter_in_l[20]_116 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[21][23]_i_1 
@@ -2041,7 +2035,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[21][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[21]_28 ));
+        .O(\filter_in_l[21]_92 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[22][23]_i_1 
@@ -2049,7 +2043,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[22][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[22]_60 ));
+        .O(\filter_in_l[22]_124 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[23][23]_i_1 
@@ -2057,7 +2051,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[23][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[23]_4 ));
+        .O(\filter_in_l[23]_68 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[24][23]_i_1 
@@ -2065,7 +2059,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[24][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[24]_16 ));
+        .O(\filter_in_l[24]_80 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[25][23]_i_1 
@@ -2073,7 +2067,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[25][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[25]_32 ));
+        .O(\filter_in_l[25]_96 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[26][23]_i_1 
@@ -2081,7 +2075,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[26][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[26]_40 ));
+        .O(\filter_in_l[26]_104 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[27][23]_i_1 
@@ -2089,7 +2083,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[27][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[27]_8 ));
+        .O(\filter_in_l[27]_72 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[28][23]_i_1 
@@ -2097,7 +2091,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[28][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[28]_48 ));
+        .O(\filter_in_l[28]_112 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[29][23]_i_1 
@@ -2105,7 +2099,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[29][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[29]_24 ));
+        .O(\filter_in_l[29]_88 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[2][23]_i_1 
@@ -2113,7 +2107,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[2][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[2]_46 ));
+        .O(\filter_in_l[2]_110 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[30][23]_i_1 
@@ -2121,7 +2115,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[30][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[30]_56 ));
+        .O(\filter_in_l[30]_120 ));
   LUT6 #(
     .INIT(64'h0000000000004000)) 
     \filter_in_l[31][23]_i_1 
@@ -2131,7 +2125,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I3(ring_buffer_entry_reg[4]),
         .I4(s_axis_tlast),
         .I5(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[31]_2 ));
+        .O(\filter_in_l[31]_66 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[3][23]_i_1 
@@ -2139,7 +2133,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[3][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[3]_14 ));
+        .O(\filter_in_l[3]_78 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[4][23]_i_1 
@@ -2147,7 +2141,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[4][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[4]_54 ));
+        .O(\filter_in_l[4]_118 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[5][23]_i_1 
@@ -2155,7 +2149,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[5][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[5]_30 ));
+        .O(\filter_in_l[5]_94 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[6][23]_i_1 
@@ -2163,7 +2157,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[6][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[6]_62 ));
+        .O(\filter_in_l[6]_126 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[7][23]_i_1 
@@ -2171,7 +2165,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[7][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[7]_6 ));
+        .O(\filter_in_l[7]_70 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[8][23]_i_1 
@@ -2179,7 +2173,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[8][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[8]_18 ));
+        .O(\filter_in_l[8]_82 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \filter_in_l[9][23]_i_1 
@@ -2187,6151 +2181,6151 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[9][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_l[9]_34 ));
+        .O(\filter_in_l[9]_98 ));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][0] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[0]_127 [0]));
+        .Q(\filter_in_l_reg[0]_63 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][10] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[0]_127 [10]));
+        .Q(\filter_in_l_reg[0]_63 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][11] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[0]_127 [11]));
+        .Q(\filter_in_l_reg[0]_63 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][12] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[0]_127 [12]));
+        .Q(\filter_in_l_reg[0]_63 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][13] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[0]_127 [13]));
+        .Q(\filter_in_l_reg[0]_63 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][14] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[0]_127 [14]));
+        .Q(\filter_in_l_reg[0]_63 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][15] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[0]_127 [15]));
+        .Q(\filter_in_l_reg[0]_63 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][16] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[0]_127 [16]));
+        .Q(\filter_in_l_reg[0]_63 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][17] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[0]_127 [17]));
+        .Q(\filter_in_l_reg[0]_63 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][18] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[0]_127 [18]));
+        .Q(\filter_in_l_reg[0]_63 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][19] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[0]_127 [19]));
+        .Q(\filter_in_l_reg[0]_63 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][1] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[0]_127 [1]));
+        .Q(\filter_in_l_reg[0]_63 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][20] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[0]_127 [20]));
+        .Q(\filter_in_l_reg[0]_63 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][21] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[0]_127 [21]));
+        .Q(\filter_in_l_reg[0]_63 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][22] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[0]_127 [22]));
+        .Q(\filter_in_l_reg[0]_63 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][23] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[0]_127 [23]));
+        .Q(\filter_in_l_reg[0]_63 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][2] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[0]_127 [2]));
+        .Q(\filter_in_l_reg[0]_63 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][3] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[0]_127 [3]));
+        .Q(\filter_in_l_reg[0]_63 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][4] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[0]_127 [4]));
+        .Q(\filter_in_l_reg[0]_63 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][5] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[0]_127 [5]));
+        .Q(\filter_in_l_reg[0]_63 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][6] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[0]_127 [6]));
+        .Q(\filter_in_l_reg[0]_63 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][7] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[0]_127 [7]));
+        .Q(\filter_in_l_reg[0]_63 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][8] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[0]_127 [8]));
+        .Q(\filter_in_l_reg[0]_63 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[0][9] 
        (.C(aclk),
-        .CE(\filter_in_l[0]_22 ),
+        .CE(\filter_in_l[0]_86 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[0]_127 [9]));
+        .Q(\filter_in_l_reg[0]_63 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][0] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[10]_117 [0]));
+        .Q(\filter_in_l_reg[10]_53 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][10] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[10]_117 [10]));
+        .Q(\filter_in_l_reg[10]_53 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][11] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[10]_117 [11]));
+        .Q(\filter_in_l_reg[10]_53 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][12] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[10]_117 [12]));
+        .Q(\filter_in_l_reg[10]_53 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][13] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[10]_117 [13]));
+        .Q(\filter_in_l_reg[10]_53 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][14] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[10]_117 [14]));
+        .Q(\filter_in_l_reg[10]_53 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][15] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[10]_117 [15]));
+        .Q(\filter_in_l_reg[10]_53 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][16] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[10]_117 [16]));
+        .Q(\filter_in_l_reg[10]_53 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][17] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[10]_117 [17]));
+        .Q(\filter_in_l_reg[10]_53 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][18] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[10]_117 [18]));
+        .Q(\filter_in_l_reg[10]_53 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][19] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[10]_117 [19]));
+        .Q(\filter_in_l_reg[10]_53 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][1] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[10]_117 [1]));
+        .Q(\filter_in_l_reg[10]_53 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][20] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[10]_117 [20]));
+        .Q(\filter_in_l_reg[10]_53 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][21] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[10]_117 [21]));
+        .Q(\filter_in_l_reg[10]_53 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][22] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[10]_117 [22]));
+        .Q(\filter_in_l_reg[10]_53 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][23] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[10]_117 [23]));
+        .Q(\filter_in_l_reg[10]_53 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][2] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[10]_117 [2]));
+        .Q(\filter_in_l_reg[10]_53 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][3] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[10]_117 [3]));
+        .Q(\filter_in_l_reg[10]_53 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][4] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[10]_117 [4]));
+        .Q(\filter_in_l_reg[10]_53 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][5] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[10]_117 [5]));
+        .Q(\filter_in_l_reg[10]_53 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][6] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[10]_117 [6]));
+        .Q(\filter_in_l_reg[10]_53 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][7] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[10]_117 [7]));
+        .Q(\filter_in_l_reg[10]_53 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][8] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[10]_117 [8]));
+        .Q(\filter_in_l_reg[10]_53 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[10][9] 
        (.C(aclk),
-        .CE(\filter_in_l[10]_42 ),
+        .CE(\filter_in_l[10]_106 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[10]_117 [9]));
+        .Q(\filter_in_l_reg[10]_53 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][0] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[11]_116 [0]));
+        .Q(\filter_in_l_reg[11]_52 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][10] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[11]_116 [10]));
+        .Q(\filter_in_l_reg[11]_52 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][11] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[11]_116 [11]));
+        .Q(\filter_in_l_reg[11]_52 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][12] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[11]_116 [12]));
+        .Q(\filter_in_l_reg[11]_52 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][13] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[11]_116 [13]));
+        .Q(\filter_in_l_reg[11]_52 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][14] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[11]_116 [14]));
+        .Q(\filter_in_l_reg[11]_52 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][15] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[11]_116 [15]));
+        .Q(\filter_in_l_reg[11]_52 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][16] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[11]_116 [16]));
+        .Q(\filter_in_l_reg[11]_52 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][17] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[11]_116 [17]));
+        .Q(\filter_in_l_reg[11]_52 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][18] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[11]_116 [18]));
+        .Q(\filter_in_l_reg[11]_52 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][19] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[11]_116 [19]));
+        .Q(\filter_in_l_reg[11]_52 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][1] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[11]_116 [1]));
+        .Q(\filter_in_l_reg[11]_52 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][20] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[11]_116 [20]));
+        .Q(\filter_in_l_reg[11]_52 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][21] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[11]_116 [21]));
+        .Q(\filter_in_l_reg[11]_52 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][22] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[11]_116 [22]));
+        .Q(\filter_in_l_reg[11]_52 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][23] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[11]_116 [23]));
+        .Q(\filter_in_l_reg[11]_52 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][2] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[11]_116 [2]));
+        .Q(\filter_in_l_reg[11]_52 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][3] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[11]_116 [3]));
+        .Q(\filter_in_l_reg[11]_52 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][4] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[11]_116 [4]));
+        .Q(\filter_in_l_reg[11]_52 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][5] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[11]_116 [5]));
+        .Q(\filter_in_l_reg[11]_52 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][6] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[11]_116 [6]));
+        .Q(\filter_in_l_reg[11]_52 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][7] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[11]_116 [7]));
+        .Q(\filter_in_l_reg[11]_52 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][8] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[11]_116 [8]));
+        .Q(\filter_in_l_reg[11]_52 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[11][9] 
        (.C(aclk),
-        .CE(\filter_in_l[11]_10 ),
+        .CE(\filter_in_l[11]_74 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[11]_116 [9]));
+        .Q(\filter_in_l_reg[11]_52 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][0] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[12]_115 [0]));
+        .Q(\filter_in_l_reg[12]_51 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][10] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[12]_115 [10]));
+        .Q(\filter_in_l_reg[12]_51 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][11] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[12]_115 [11]));
+        .Q(\filter_in_l_reg[12]_51 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][12] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[12]_115 [12]));
+        .Q(\filter_in_l_reg[12]_51 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][13] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[12]_115 [13]));
+        .Q(\filter_in_l_reg[12]_51 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][14] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[12]_115 [14]));
+        .Q(\filter_in_l_reg[12]_51 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][15] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[12]_115 [15]));
+        .Q(\filter_in_l_reg[12]_51 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][16] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[12]_115 [16]));
+        .Q(\filter_in_l_reg[12]_51 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][17] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[12]_115 [17]));
+        .Q(\filter_in_l_reg[12]_51 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][18] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[12]_115 [18]));
+        .Q(\filter_in_l_reg[12]_51 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][19] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[12]_115 [19]));
+        .Q(\filter_in_l_reg[12]_51 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][1] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[12]_115 [1]));
+        .Q(\filter_in_l_reg[12]_51 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][20] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[12]_115 [20]));
+        .Q(\filter_in_l_reg[12]_51 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][21] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[12]_115 [21]));
+        .Q(\filter_in_l_reg[12]_51 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][22] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[12]_115 [22]));
+        .Q(\filter_in_l_reg[12]_51 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][23] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[12]_115 [23]));
+        .Q(\filter_in_l_reg[12]_51 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][2] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[12]_115 [2]));
+        .Q(\filter_in_l_reg[12]_51 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][3] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[12]_115 [3]));
+        .Q(\filter_in_l_reg[12]_51 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][4] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[12]_115 [4]));
+        .Q(\filter_in_l_reg[12]_51 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][5] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[12]_115 [5]));
+        .Q(\filter_in_l_reg[12]_51 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][6] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[12]_115 [6]));
+        .Q(\filter_in_l_reg[12]_51 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][7] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[12]_115 [7]));
+        .Q(\filter_in_l_reg[12]_51 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][8] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[12]_115 [8]));
+        .Q(\filter_in_l_reg[12]_51 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[12][9] 
        (.C(aclk),
-        .CE(\filter_in_l[12]_50 ),
+        .CE(\filter_in_l[12]_114 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[12]_115 [9]));
+        .Q(\filter_in_l_reg[12]_51 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][0] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[13]_114 [0]));
+        .Q(\filter_in_l_reg[13]_50 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][10] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[13]_114 [10]));
+        .Q(\filter_in_l_reg[13]_50 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][11] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[13]_114 [11]));
+        .Q(\filter_in_l_reg[13]_50 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][12] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[13]_114 [12]));
+        .Q(\filter_in_l_reg[13]_50 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][13] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[13]_114 [13]));
+        .Q(\filter_in_l_reg[13]_50 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][14] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[13]_114 [14]));
+        .Q(\filter_in_l_reg[13]_50 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][15] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[13]_114 [15]));
+        .Q(\filter_in_l_reg[13]_50 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][16] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[13]_114 [16]));
+        .Q(\filter_in_l_reg[13]_50 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][17] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[13]_114 [17]));
+        .Q(\filter_in_l_reg[13]_50 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][18] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[13]_114 [18]));
+        .Q(\filter_in_l_reg[13]_50 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][19] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[13]_114 [19]));
+        .Q(\filter_in_l_reg[13]_50 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][1] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[13]_114 [1]));
+        .Q(\filter_in_l_reg[13]_50 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][20] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[13]_114 [20]));
+        .Q(\filter_in_l_reg[13]_50 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][21] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[13]_114 [21]));
+        .Q(\filter_in_l_reg[13]_50 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][22] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[13]_114 [22]));
+        .Q(\filter_in_l_reg[13]_50 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][23] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[13]_114 [23]));
+        .Q(\filter_in_l_reg[13]_50 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][2] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[13]_114 [2]));
+        .Q(\filter_in_l_reg[13]_50 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][3] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[13]_114 [3]));
+        .Q(\filter_in_l_reg[13]_50 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][4] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[13]_114 [4]));
+        .Q(\filter_in_l_reg[13]_50 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][5] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[13]_114 [5]));
+        .Q(\filter_in_l_reg[13]_50 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][6] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[13]_114 [6]));
+        .Q(\filter_in_l_reg[13]_50 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][7] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[13]_114 [7]));
+        .Q(\filter_in_l_reg[13]_50 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][8] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[13]_114 [8]));
+        .Q(\filter_in_l_reg[13]_50 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[13][9] 
        (.C(aclk),
-        .CE(\filter_in_l[13]_26 ),
+        .CE(\filter_in_l[13]_90 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[13]_114 [9]));
+        .Q(\filter_in_l_reg[13]_50 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][0] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[14]_113 [0]));
+        .Q(\filter_in_l_reg[14]_49 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][10] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[14]_113 [10]));
+        .Q(\filter_in_l_reg[14]_49 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][11] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[14]_113 [11]));
+        .Q(\filter_in_l_reg[14]_49 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][12] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[14]_113 [12]));
+        .Q(\filter_in_l_reg[14]_49 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][13] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[14]_113 [13]));
+        .Q(\filter_in_l_reg[14]_49 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][14] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[14]_113 [14]));
+        .Q(\filter_in_l_reg[14]_49 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][15] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[14]_113 [15]));
+        .Q(\filter_in_l_reg[14]_49 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][16] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[14]_113 [16]));
+        .Q(\filter_in_l_reg[14]_49 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][17] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[14]_113 [17]));
+        .Q(\filter_in_l_reg[14]_49 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][18] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[14]_113 [18]));
+        .Q(\filter_in_l_reg[14]_49 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][19] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[14]_113 [19]));
+        .Q(\filter_in_l_reg[14]_49 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][1] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[14]_113 [1]));
+        .Q(\filter_in_l_reg[14]_49 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][20] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[14]_113 [20]));
+        .Q(\filter_in_l_reg[14]_49 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][21] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[14]_113 [21]));
+        .Q(\filter_in_l_reg[14]_49 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][22] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[14]_113 [22]));
+        .Q(\filter_in_l_reg[14]_49 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][23] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[14]_113 [23]));
+        .Q(\filter_in_l_reg[14]_49 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][2] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[14]_113 [2]));
+        .Q(\filter_in_l_reg[14]_49 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][3] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[14]_113 [3]));
+        .Q(\filter_in_l_reg[14]_49 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][4] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[14]_113 [4]));
+        .Q(\filter_in_l_reg[14]_49 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][5] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[14]_113 [5]));
+        .Q(\filter_in_l_reg[14]_49 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][6] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[14]_113 [6]));
+        .Q(\filter_in_l_reg[14]_49 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][7] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[14]_113 [7]));
+        .Q(\filter_in_l_reg[14]_49 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][8] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[14]_113 [8]));
+        .Q(\filter_in_l_reg[14]_49 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[14][9] 
        (.C(aclk),
-        .CE(\filter_in_l[14]_58 ),
+        .CE(\filter_in_l[14]_122 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[14]_113 [9]));
+        .Q(\filter_in_l_reg[14]_49 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][0] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[15]_112 [0]));
+        .Q(\filter_in_l_reg[15]_48 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][10] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[15]_112 [10]));
+        .Q(\filter_in_l_reg[15]_48 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][11] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[15]_112 [11]));
+        .Q(\filter_in_l_reg[15]_48 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][12] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[15]_112 [12]));
+        .Q(\filter_in_l_reg[15]_48 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][13] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[15]_112 [13]));
+        .Q(\filter_in_l_reg[15]_48 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][14] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[15]_112 [14]));
+        .Q(\filter_in_l_reg[15]_48 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][15] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[15]_112 [15]));
+        .Q(\filter_in_l_reg[15]_48 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][16] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[15]_112 [16]));
+        .Q(\filter_in_l_reg[15]_48 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][17] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[15]_112 [17]));
+        .Q(\filter_in_l_reg[15]_48 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][18] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[15]_112 [18]));
+        .Q(\filter_in_l_reg[15]_48 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][19] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[15]_112 [19]));
+        .Q(\filter_in_l_reg[15]_48 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][1] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[15]_112 [1]));
+        .Q(\filter_in_l_reg[15]_48 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][20] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[15]_112 [20]));
+        .Q(\filter_in_l_reg[15]_48 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][21] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[15]_112 [21]));
+        .Q(\filter_in_l_reg[15]_48 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][22] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[15]_112 [22]));
+        .Q(\filter_in_l_reg[15]_48 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][23] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[15]_112 [23]));
+        .Q(\filter_in_l_reg[15]_48 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][2] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[15]_112 [2]));
+        .Q(\filter_in_l_reg[15]_48 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][3] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[15]_112 [3]));
+        .Q(\filter_in_l_reg[15]_48 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][4] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[15]_112 [4]));
+        .Q(\filter_in_l_reg[15]_48 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][5] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[15]_112 [5]));
+        .Q(\filter_in_l_reg[15]_48 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][6] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[15]_112 [6]));
+        .Q(\filter_in_l_reg[15]_48 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][7] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[15]_112 [7]));
+        .Q(\filter_in_l_reg[15]_48 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][8] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[15]_112 [8]));
+        .Q(\filter_in_l_reg[15]_48 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[15][9] 
        (.C(aclk),
-        .CE(\filter_in_l[15]_0 ),
+        .CE(\filter_in_l[15]_64 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[15]_112 [9]));
+        .Q(\filter_in_l_reg[15]_48 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][0] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[16]_111 [0]));
+        .Q(\filter_in_l_reg[16]_47 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][10] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[16]_111 [10]));
+        .Q(\filter_in_l_reg[16]_47 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][11] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[16]_111 [11]));
+        .Q(\filter_in_l_reg[16]_47 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][12] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[16]_111 [12]));
+        .Q(\filter_in_l_reg[16]_47 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][13] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[16]_111 [13]));
+        .Q(\filter_in_l_reg[16]_47 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][14] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[16]_111 [14]));
+        .Q(\filter_in_l_reg[16]_47 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][15] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[16]_111 [15]));
+        .Q(\filter_in_l_reg[16]_47 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][16] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[16]_111 [16]));
+        .Q(\filter_in_l_reg[16]_47 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][17] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[16]_111 [17]));
+        .Q(\filter_in_l_reg[16]_47 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][18] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[16]_111 [18]));
+        .Q(\filter_in_l_reg[16]_47 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][19] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[16]_111 [19]));
+        .Q(\filter_in_l_reg[16]_47 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][1] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[16]_111 [1]));
+        .Q(\filter_in_l_reg[16]_47 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][20] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[16]_111 [20]));
+        .Q(\filter_in_l_reg[16]_47 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][21] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[16]_111 [21]));
+        .Q(\filter_in_l_reg[16]_47 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][22] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[16]_111 [22]));
+        .Q(\filter_in_l_reg[16]_47 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][23] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[16]_111 [23]));
+        .Q(\filter_in_l_reg[16]_47 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][2] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[16]_111 [2]));
+        .Q(\filter_in_l_reg[16]_47 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][3] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[16]_111 [3]));
+        .Q(\filter_in_l_reg[16]_47 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][4] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[16]_111 [4]));
+        .Q(\filter_in_l_reg[16]_47 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][5] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[16]_111 [5]));
+        .Q(\filter_in_l_reg[16]_47 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][6] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[16]_111 [6]));
+        .Q(\filter_in_l_reg[16]_47 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][7] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[16]_111 [7]));
+        .Q(\filter_in_l_reg[16]_47 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][8] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[16]_111 [8]));
+        .Q(\filter_in_l_reg[16]_47 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[16][9] 
        (.C(aclk),
-        .CE(\filter_in_l[16]_20 ),
+        .CE(\filter_in_l[16]_84 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[16]_111 [9]));
+        .Q(\filter_in_l_reg[16]_47 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][0] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[17]_110 [0]));
+        .Q(\filter_in_l_reg[17]_46 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][10] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[17]_110 [10]));
+        .Q(\filter_in_l_reg[17]_46 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][11] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[17]_110 [11]));
+        .Q(\filter_in_l_reg[17]_46 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][12] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[17]_110 [12]));
+        .Q(\filter_in_l_reg[17]_46 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][13] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[17]_110 [13]));
+        .Q(\filter_in_l_reg[17]_46 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][14] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[17]_110 [14]));
+        .Q(\filter_in_l_reg[17]_46 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][15] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[17]_110 [15]));
+        .Q(\filter_in_l_reg[17]_46 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][16] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[17]_110 [16]));
+        .Q(\filter_in_l_reg[17]_46 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][17] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[17]_110 [17]));
+        .Q(\filter_in_l_reg[17]_46 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][18] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[17]_110 [18]));
+        .Q(\filter_in_l_reg[17]_46 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][19] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[17]_110 [19]));
+        .Q(\filter_in_l_reg[17]_46 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][1] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[17]_110 [1]));
+        .Q(\filter_in_l_reg[17]_46 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][20] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[17]_110 [20]));
+        .Q(\filter_in_l_reg[17]_46 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][21] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[17]_110 [21]));
+        .Q(\filter_in_l_reg[17]_46 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][22] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[17]_110 [22]));
+        .Q(\filter_in_l_reg[17]_46 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][23] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[17]_110 [23]));
+        .Q(\filter_in_l_reg[17]_46 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][2] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[17]_110 [2]));
+        .Q(\filter_in_l_reg[17]_46 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][3] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[17]_110 [3]));
+        .Q(\filter_in_l_reg[17]_46 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][4] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[17]_110 [4]));
+        .Q(\filter_in_l_reg[17]_46 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][5] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[17]_110 [5]));
+        .Q(\filter_in_l_reg[17]_46 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][6] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[17]_110 [6]));
+        .Q(\filter_in_l_reg[17]_46 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][7] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[17]_110 [7]));
+        .Q(\filter_in_l_reg[17]_46 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][8] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[17]_110 [8]));
+        .Q(\filter_in_l_reg[17]_46 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[17][9] 
        (.C(aclk),
-        .CE(\filter_in_l[17]_36 ),
+        .CE(\filter_in_l[17]_100 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[17]_110 [9]));
+        .Q(\filter_in_l_reg[17]_46 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][0] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[18]_109 [0]));
+        .Q(\filter_in_l_reg[18]_45 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][10] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[18]_109 [10]));
+        .Q(\filter_in_l_reg[18]_45 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][11] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[18]_109 [11]));
+        .Q(\filter_in_l_reg[18]_45 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][12] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[18]_109 [12]));
+        .Q(\filter_in_l_reg[18]_45 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][13] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[18]_109 [13]));
+        .Q(\filter_in_l_reg[18]_45 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][14] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[18]_109 [14]));
+        .Q(\filter_in_l_reg[18]_45 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][15] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[18]_109 [15]));
+        .Q(\filter_in_l_reg[18]_45 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][16] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[18]_109 [16]));
+        .Q(\filter_in_l_reg[18]_45 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][17] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[18]_109 [17]));
+        .Q(\filter_in_l_reg[18]_45 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][18] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[18]_109 [18]));
+        .Q(\filter_in_l_reg[18]_45 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][19] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[18]_109 [19]));
+        .Q(\filter_in_l_reg[18]_45 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][1] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[18]_109 [1]));
+        .Q(\filter_in_l_reg[18]_45 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][20] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[18]_109 [20]));
+        .Q(\filter_in_l_reg[18]_45 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][21] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[18]_109 [21]));
+        .Q(\filter_in_l_reg[18]_45 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][22] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[18]_109 [22]));
+        .Q(\filter_in_l_reg[18]_45 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][23] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[18]_109 [23]));
+        .Q(\filter_in_l_reg[18]_45 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][2] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[18]_109 [2]));
+        .Q(\filter_in_l_reg[18]_45 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][3] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[18]_109 [3]));
+        .Q(\filter_in_l_reg[18]_45 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][4] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[18]_109 [4]));
+        .Q(\filter_in_l_reg[18]_45 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][5] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[18]_109 [5]));
+        .Q(\filter_in_l_reg[18]_45 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][6] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[18]_109 [6]));
+        .Q(\filter_in_l_reg[18]_45 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][7] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[18]_109 [7]));
+        .Q(\filter_in_l_reg[18]_45 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][8] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[18]_109 [8]));
+        .Q(\filter_in_l_reg[18]_45 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[18][9] 
        (.C(aclk),
-        .CE(\filter_in_l[18]_44 ),
+        .CE(\filter_in_l[18]_108 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[18]_109 [9]));
+        .Q(\filter_in_l_reg[18]_45 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][0] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[19]_108 [0]));
+        .Q(\filter_in_l_reg[19]_44 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][10] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[19]_108 [10]));
+        .Q(\filter_in_l_reg[19]_44 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][11] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[19]_108 [11]));
+        .Q(\filter_in_l_reg[19]_44 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][12] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[19]_108 [12]));
+        .Q(\filter_in_l_reg[19]_44 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][13] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[19]_108 [13]));
+        .Q(\filter_in_l_reg[19]_44 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][14] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[19]_108 [14]));
+        .Q(\filter_in_l_reg[19]_44 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][15] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[19]_108 [15]));
+        .Q(\filter_in_l_reg[19]_44 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][16] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[19]_108 [16]));
+        .Q(\filter_in_l_reg[19]_44 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][17] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[19]_108 [17]));
+        .Q(\filter_in_l_reg[19]_44 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][18] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[19]_108 [18]));
+        .Q(\filter_in_l_reg[19]_44 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][19] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[19]_108 [19]));
+        .Q(\filter_in_l_reg[19]_44 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][1] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[19]_108 [1]));
+        .Q(\filter_in_l_reg[19]_44 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][20] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[19]_108 [20]));
+        .Q(\filter_in_l_reg[19]_44 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][21] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[19]_108 [21]));
+        .Q(\filter_in_l_reg[19]_44 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][22] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[19]_108 [22]));
+        .Q(\filter_in_l_reg[19]_44 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][23] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[19]_108 [23]));
+        .Q(\filter_in_l_reg[19]_44 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][2] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[19]_108 [2]));
+        .Q(\filter_in_l_reg[19]_44 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][3] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[19]_108 [3]));
+        .Q(\filter_in_l_reg[19]_44 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][4] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[19]_108 [4]));
+        .Q(\filter_in_l_reg[19]_44 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][5] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[19]_108 [5]));
+        .Q(\filter_in_l_reg[19]_44 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][6] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[19]_108 [6]));
+        .Q(\filter_in_l_reg[19]_44 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][7] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[19]_108 [7]));
+        .Q(\filter_in_l_reg[19]_44 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][8] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[19]_108 [8]));
+        .Q(\filter_in_l_reg[19]_44 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[19][9] 
        (.C(aclk),
-        .CE(\filter_in_l[19]_12 ),
+        .CE(\filter_in_l[19]_76 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[19]_108 [9]));
+        .Q(\filter_in_l_reg[19]_44 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][0] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[1]_126 [0]));
+        .Q(\filter_in_l_reg[1]_62 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][10] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[1]_126 [10]));
+        .Q(\filter_in_l_reg[1]_62 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][11] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[1]_126 [11]));
+        .Q(\filter_in_l_reg[1]_62 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][12] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[1]_126 [12]));
+        .Q(\filter_in_l_reg[1]_62 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][13] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[1]_126 [13]));
+        .Q(\filter_in_l_reg[1]_62 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][14] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[1]_126 [14]));
+        .Q(\filter_in_l_reg[1]_62 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][15] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[1]_126 [15]));
+        .Q(\filter_in_l_reg[1]_62 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][16] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[1]_126 [16]));
+        .Q(\filter_in_l_reg[1]_62 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][17] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[1]_126 [17]));
+        .Q(\filter_in_l_reg[1]_62 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][18] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[1]_126 [18]));
+        .Q(\filter_in_l_reg[1]_62 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][19] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[1]_126 [19]));
+        .Q(\filter_in_l_reg[1]_62 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][1] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[1]_126 [1]));
+        .Q(\filter_in_l_reg[1]_62 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][20] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[1]_126 [20]));
+        .Q(\filter_in_l_reg[1]_62 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][21] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[1]_126 [21]));
+        .Q(\filter_in_l_reg[1]_62 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][22] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[1]_126 [22]));
+        .Q(\filter_in_l_reg[1]_62 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][23] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[1]_126 [23]));
+        .Q(\filter_in_l_reg[1]_62 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][2] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[1]_126 [2]));
+        .Q(\filter_in_l_reg[1]_62 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][3] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[1]_126 [3]));
+        .Q(\filter_in_l_reg[1]_62 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][4] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[1]_126 [4]));
+        .Q(\filter_in_l_reg[1]_62 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][5] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[1]_126 [5]));
+        .Q(\filter_in_l_reg[1]_62 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][6] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[1]_126 [6]));
+        .Q(\filter_in_l_reg[1]_62 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][7] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[1]_126 [7]));
+        .Q(\filter_in_l_reg[1]_62 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][8] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[1]_126 [8]));
+        .Q(\filter_in_l_reg[1]_62 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[1][9] 
        (.C(aclk),
-        .CE(\filter_in_l[1]_38 ),
+        .CE(\filter_in_l[1]_102 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[1]_126 [9]));
+        .Q(\filter_in_l_reg[1]_62 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][0] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[20]_107 [0]));
+        .Q(\filter_in_l_reg[20]_43 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][10] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[20]_107 [10]));
+        .Q(\filter_in_l_reg[20]_43 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][11] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[20]_107 [11]));
+        .Q(\filter_in_l_reg[20]_43 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][12] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[20]_107 [12]));
+        .Q(\filter_in_l_reg[20]_43 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][13] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[20]_107 [13]));
+        .Q(\filter_in_l_reg[20]_43 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][14] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[20]_107 [14]));
+        .Q(\filter_in_l_reg[20]_43 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][15] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[20]_107 [15]));
+        .Q(\filter_in_l_reg[20]_43 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][16] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[20]_107 [16]));
+        .Q(\filter_in_l_reg[20]_43 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][17] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[20]_107 [17]));
+        .Q(\filter_in_l_reg[20]_43 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][18] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[20]_107 [18]));
+        .Q(\filter_in_l_reg[20]_43 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][19] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[20]_107 [19]));
+        .Q(\filter_in_l_reg[20]_43 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][1] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[20]_107 [1]));
+        .Q(\filter_in_l_reg[20]_43 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][20] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[20]_107 [20]));
+        .Q(\filter_in_l_reg[20]_43 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][21] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[20]_107 [21]));
+        .Q(\filter_in_l_reg[20]_43 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][22] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[20]_107 [22]));
+        .Q(\filter_in_l_reg[20]_43 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][23] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[20]_107 [23]));
+        .Q(\filter_in_l_reg[20]_43 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][2] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[20]_107 [2]));
+        .Q(\filter_in_l_reg[20]_43 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][3] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[20]_107 [3]));
+        .Q(\filter_in_l_reg[20]_43 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][4] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[20]_107 [4]));
+        .Q(\filter_in_l_reg[20]_43 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][5] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[20]_107 [5]));
+        .Q(\filter_in_l_reg[20]_43 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][6] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[20]_107 [6]));
+        .Q(\filter_in_l_reg[20]_43 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][7] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[20]_107 [7]));
+        .Q(\filter_in_l_reg[20]_43 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][8] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[20]_107 [8]));
+        .Q(\filter_in_l_reg[20]_43 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[20][9] 
        (.C(aclk),
-        .CE(\filter_in_l[20]_52 ),
+        .CE(\filter_in_l[20]_116 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[20]_107 [9]));
+        .Q(\filter_in_l_reg[20]_43 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][0] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[21]_106 [0]));
+        .Q(\filter_in_l_reg[21]_42 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][10] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[21]_106 [10]));
+        .Q(\filter_in_l_reg[21]_42 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][11] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[21]_106 [11]));
+        .Q(\filter_in_l_reg[21]_42 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][12] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[21]_106 [12]));
+        .Q(\filter_in_l_reg[21]_42 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][13] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[21]_106 [13]));
+        .Q(\filter_in_l_reg[21]_42 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][14] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[21]_106 [14]));
+        .Q(\filter_in_l_reg[21]_42 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][15] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[21]_106 [15]));
+        .Q(\filter_in_l_reg[21]_42 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][16] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[21]_106 [16]));
+        .Q(\filter_in_l_reg[21]_42 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][17] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[21]_106 [17]));
+        .Q(\filter_in_l_reg[21]_42 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][18] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[21]_106 [18]));
+        .Q(\filter_in_l_reg[21]_42 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][19] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[21]_106 [19]));
+        .Q(\filter_in_l_reg[21]_42 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][1] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[21]_106 [1]));
+        .Q(\filter_in_l_reg[21]_42 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][20] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[21]_106 [20]));
+        .Q(\filter_in_l_reg[21]_42 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][21] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[21]_106 [21]));
+        .Q(\filter_in_l_reg[21]_42 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][22] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[21]_106 [22]));
+        .Q(\filter_in_l_reg[21]_42 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][23] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[21]_106 [23]));
+        .Q(\filter_in_l_reg[21]_42 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][2] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[21]_106 [2]));
+        .Q(\filter_in_l_reg[21]_42 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][3] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[21]_106 [3]));
+        .Q(\filter_in_l_reg[21]_42 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][4] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[21]_106 [4]));
+        .Q(\filter_in_l_reg[21]_42 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][5] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[21]_106 [5]));
+        .Q(\filter_in_l_reg[21]_42 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][6] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[21]_106 [6]));
+        .Q(\filter_in_l_reg[21]_42 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][7] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[21]_106 [7]));
+        .Q(\filter_in_l_reg[21]_42 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][8] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[21]_106 [8]));
+        .Q(\filter_in_l_reg[21]_42 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[21][9] 
        (.C(aclk),
-        .CE(\filter_in_l[21]_28 ),
+        .CE(\filter_in_l[21]_92 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[21]_106 [9]));
+        .Q(\filter_in_l_reg[21]_42 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][0] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[22]_105 [0]));
+        .Q(\filter_in_l_reg[22]_41 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][10] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[22]_105 [10]));
+        .Q(\filter_in_l_reg[22]_41 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][11] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[22]_105 [11]));
+        .Q(\filter_in_l_reg[22]_41 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][12] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[22]_105 [12]));
+        .Q(\filter_in_l_reg[22]_41 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][13] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[22]_105 [13]));
+        .Q(\filter_in_l_reg[22]_41 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][14] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[22]_105 [14]));
+        .Q(\filter_in_l_reg[22]_41 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][15] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[22]_105 [15]));
+        .Q(\filter_in_l_reg[22]_41 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][16] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[22]_105 [16]));
+        .Q(\filter_in_l_reg[22]_41 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][17] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[22]_105 [17]));
+        .Q(\filter_in_l_reg[22]_41 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][18] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[22]_105 [18]));
+        .Q(\filter_in_l_reg[22]_41 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][19] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[22]_105 [19]));
+        .Q(\filter_in_l_reg[22]_41 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][1] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[22]_105 [1]));
+        .Q(\filter_in_l_reg[22]_41 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][20] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[22]_105 [20]));
+        .Q(\filter_in_l_reg[22]_41 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][21] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[22]_105 [21]));
+        .Q(\filter_in_l_reg[22]_41 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][22] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[22]_105 [22]));
+        .Q(\filter_in_l_reg[22]_41 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][23] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[22]_105 [23]));
+        .Q(\filter_in_l_reg[22]_41 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][2] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[22]_105 [2]));
+        .Q(\filter_in_l_reg[22]_41 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][3] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[22]_105 [3]));
+        .Q(\filter_in_l_reg[22]_41 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][4] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[22]_105 [4]));
+        .Q(\filter_in_l_reg[22]_41 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][5] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[22]_105 [5]));
+        .Q(\filter_in_l_reg[22]_41 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][6] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[22]_105 [6]));
+        .Q(\filter_in_l_reg[22]_41 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][7] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[22]_105 [7]));
+        .Q(\filter_in_l_reg[22]_41 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][8] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[22]_105 [8]));
+        .Q(\filter_in_l_reg[22]_41 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[22][9] 
        (.C(aclk),
-        .CE(\filter_in_l[22]_60 ),
+        .CE(\filter_in_l[22]_124 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[22]_105 [9]));
+        .Q(\filter_in_l_reg[22]_41 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][0] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[23]_104 [0]));
+        .Q(\filter_in_l_reg[23]_40 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][10] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[23]_104 [10]));
+        .Q(\filter_in_l_reg[23]_40 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][11] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[23]_104 [11]));
+        .Q(\filter_in_l_reg[23]_40 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][12] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[23]_104 [12]));
+        .Q(\filter_in_l_reg[23]_40 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][13] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[23]_104 [13]));
+        .Q(\filter_in_l_reg[23]_40 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][14] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[23]_104 [14]));
+        .Q(\filter_in_l_reg[23]_40 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][15] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[23]_104 [15]));
+        .Q(\filter_in_l_reg[23]_40 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][16] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[23]_104 [16]));
+        .Q(\filter_in_l_reg[23]_40 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][17] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[23]_104 [17]));
+        .Q(\filter_in_l_reg[23]_40 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][18] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[23]_104 [18]));
+        .Q(\filter_in_l_reg[23]_40 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][19] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[23]_104 [19]));
+        .Q(\filter_in_l_reg[23]_40 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][1] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[23]_104 [1]));
+        .Q(\filter_in_l_reg[23]_40 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][20] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[23]_104 [20]));
+        .Q(\filter_in_l_reg[23]_40 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][21] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[23]_104 [21]));
+        .Q(\filter_in_l_reg[23]_40 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][22] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[23]_104 [22]));
+        .Q(\filter_in_l_reg[23]_40 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][23] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[23]_104 [23]));
+        .Q(\filter_in_l_reg[23]_40 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][2] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[23]_104 [2]));
+        .Q(\filter_in_l_reg[23]_40 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][3] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[23]_104 [3]));
+        .Q(\filter_in_l_reg[23]_40 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][4] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[23]_104 [4]));
+        .Q(\filter_in_l_reg[23]_40 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][5] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[23]_104 [5]));
+        .Q(\filter_in_l_reg[23]_40 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][6] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[23]_104 [6]));
+        .Q(\filter_in_l_reg[23]_40 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][7] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[23]_104 [7]));
+        .Q(\filter_in_l_reg[23]_40 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][8] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[23]_104 [8]));
+        .Q(\filter_in_l_reg[23]_40 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[23][9] 
        (.C(aclk),
-        .CE(\filter_in_l[23]_4 ),
+        .CE(\filter_in_l[23]_68 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[23]_104 [9]));
+        .Q(\filter_in_l_reg[23]_40 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][0] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[24]_103 [0]));
+        .Q(\filter_in_l_reg[24]_39 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][10] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[24]_103 [10]));
+        .Q(\filter_in_l_reg[24]_39 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][11] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[24]_103 [11]));
+        .Q(\filter_in_l_reg[24]_39 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][12] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[24]_103 [12]));
+        .Q(\filter_in_l_reg[24]_39 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][13] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[24]_103 [13]));
+        .Q(\filter_in_l_reg[24]_39 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][14] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[24]_103 [14]));
+        .Q(\filter_in_l_reg[24]_39 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][15] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[24]_103 [15]));
+        .Q(\filter_in_l_reg[24]_39 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][16] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[24]_103 [16]));
+        .Q(\filter_in_l_reg[24]_39 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][17] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[24]_103 [17]));
+        .Q(\filter_in_l_reg[24]_39 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][18] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[24]_103 [18]));
+        .Q(\filter_in_l_reg[24]_39 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][19] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[24]_103 [19]));
+        .Q(\filter_in_l_reg[24]_39 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][1] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[24]_103 [1]));
+        .Q(\filter_in_l_reg[24]_39 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][20] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[24]_103 [20]));
+        .Q(\filter_in_l_reg[24]_39 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][21] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[24]_103 [21]));
+        .Q(\filter_in_l_reg[24]_39 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][22] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[24]_103 [22]));
+        .Q(\filter_in_l_reg[24]_39 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][23] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[24]_103 [23]));
+        .Q(\filter_in_l_reg[24]_39 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][2] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[24]_103 [2]));
+        .Q(\filter_in_l_reg[24]_39 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][3] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[24]_103 [3]));
+        .Q(\filter_in_l_reg[24]_39 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][4] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[24]_103 [4]));
+        .Q(\filter_in_l_reg[24]_39 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][5] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[24]_103 [5]));
+        .Q(\filter_in_l_reg[24]_39 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][6] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[24]_103 [6]));
+        .Q(\filter_in_l_reg[24]_39 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][7] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[24]_103 [7]));
+        .Q(\filter_in_l_reg[24]_39 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][8] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[24]_103 [8]));
+        .Q(\filter_in_l_reg[24]_39 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[24][9] 
        (.C(aclk),
-        .CE(\filter_in_l[24]_16 ),
+        .CE(\filter_in_l[24]_80 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[24]_103 [9]));
+        .Q(\filter_in_l_reg[24]_39 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][0] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[25]_102 [0]));
+        .Q(\filter_in_l_reg[25]_38 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][10] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[25]_102 [10]));
+        .Q(\filter_in_l_reg[25]_38 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][11] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[25]_102 [11]));
+        .Q(\filter_in_l_reg[25]_38 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][12] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[25]_102 [12]));
+        .Q(\filter_in_l_reg[25]_38 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][13] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[25]_102 [13]));
+        .Q(\filter_in_l_reg[25]_38 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][14] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[25]_102 [14]));
+        .Q(\filter_in_l_reg[25]_38 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][15] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[25]_102 [15]));
+        .Q(\filter_in_l_reg[25]_38 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][16] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[25]_102 [16]));
+        .Q(\filter_in_l_reg[25]_38 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][17] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[25]_102 [17]));
+        .Q(\filter_in_l_reg[25]_38 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][18] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[25]_102 [18]));
+        .Q(\filter_in_l_reg[25]_38 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][19] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[25]_102 [19]));
+        .Q(\filter_in_l_reg[25]_38 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][1] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[25]_102 [1]));
+        .Q(\filter_in_l_reg[25]_38 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][20] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[25]_102 [20]));
+        .Q(\filter_in_l_reg[25]_38 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][21] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[25]_102 [21]));
+        .Q(\filter_in_l_reg[25]_38 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][22] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[25]_102 [22]));
+        .Q(\filter_in_l_reg[25]_38 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][23] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[25]_102 [23]));
+        .Q(\filter_in_l_reg[25]_38 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][2] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[25]_102 [2]));
+        .Q(\filter_in_l_reg[25]_38 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][3] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[25]_102 [3]));
+        .Q(\filter_in_l_reg[25]_38 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][4] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[25]_102 [4]));
+        .Q(\filter_in_l_reg[25]_38 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][5] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[25]_102 [5]));
+        .Q(\filter_in_l_reg[25]_38 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][6] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[25]_102 [6]));
+        .Q(\filter_in_l_reg[25]_38 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][7] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[25]_102 [7]));
+        .Q(\filter_in_l_reg[25]_38 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][8] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[25]_102 [8]));
+        .Q(\filter_in_l_reg[25]_38 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[25][9] 
        (.C(aclk),
-        .CE(\filter_in_l[25]_32 ),
+        .CE(\filter_in_l[25]_96 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[25]_102 [9]));
+        .Q(\filter_in_l_reg[25]_38 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][0] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[26]_101 [0]));
+        .Q(\filter_in_l_reg[26]_37 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][10] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[26]_101 [10]));
+        .Q(\filter_in_l_reg[26]_37 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][11] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[26]_101 [11]));
+        .Q(\filter_in_l_reg[26]_37 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][12] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[26]_101 [12]));
+        .Q(\filter_in_l_reg[26]_37 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][13] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[26]_101 [13]));
+        .Q(\filter_in_l_reg[26]_37 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][14] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[26]_101 [14]));
+        .Q(\filter_in_l_reg[26]_37 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][15] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[26]_101 [15]));
+        .Q(\filter_in_l_reg[26]_37 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][16] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[26]_101 [16]));
+        .Q(\filter_in_l_reg[26]_37 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][17] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[26]_101 [17]));
+        .Q(\filter_in_l_reg[26]_37 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][18] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[26]_101 [18]));
+        .Q(\filter_in_l_reg[26]_37 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][19] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[26]_101 [19]));
+        .Q(\filter_in_l_reg[26]_37 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][1] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[26]_101 [1]));
+        .Q(\filter_in_l_reg[26]_37 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][20] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[26]_101 [20]));
+        .Q(\filter_in_l_reg[26]_37 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][21] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[26]_101 [21]));
+        .Q(\filter_in_l_reg[26]_37 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][22] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[26]_101 [22]));
+        .Q(\filter_in_l_reg[26]_37 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][23] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[26]_101 [23]));
+        .Q(\filter_in_l_reg[26]_37 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][2] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[26]_101 [2]));
+        .Q(\filter_in_l_reg[26]_37 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][3] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[26]_101 [3]));
+        .Q(\filter_in_l_reg[26]_37 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][4] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[26]_101 [4]));
+        .Q(\filter_in_l_reg[26]_37 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][5] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[26]_101 [5]));
+        .Q(\filter_in_l_reg[26]_37 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][6] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[26]_101 [6]));
+        .Q(\filter_in_l_reg[26]_37 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][7] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[26]_101 [7]));
+        .Q(\filter_in_l_reg[26]_37 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][8] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[26]_101 [8]));
+        .Q(\filter_in_l_reg[26]_37 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[26][9] 
        (.C(aclk),
-        .CE(\filter_in_l[26]_40 ),
+        .CE(\filter_in_l[26]_104 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[26]_101 [9]));
+        .Q(\filter_in_l_reg[26]_37 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][0] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[27]_100 [0]));
+        .Q(\filter_in_l_reg[27]_36 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][10] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[27]_100 [10]));
+        .Q(\filter_in_l_reg[27]_36 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][11] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[27]_100 [11]));
+        .Q(\filter_in_l_reg[27]_36 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][12] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[27]_100 [12]));
+        .Q(\filter_in_l_reg[27]_36 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][13] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[27]_100 [13]));
+        .Q(\filter_in_l_reg[27]_36 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][14] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[27]_100 [14]));
+        .Q(\filter_in_l_reg[27]_36 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][15] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[27]_100 [15]));
+        .Q(\filter_in_l_reg[27]_36 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][16] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[27]_100 [16]));
+        .Q(\filter_in_l_reg[27]_36 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][17] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[27]_100 [17]));
+        .Q(\filter_in_l_reg[27]_36 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][18] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[27]_100 [18]));
+        .Q(\filter_in_l_reg[27]_36 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][19] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[27]_100 [19]));
+        .Q(\filter_in_l_reg[27]_36 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][1] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[27]_100 [1]));
+        .Q(\filter_in_l_reg[27]_36 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][20] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[27]_100 [20]));
+        .Q(\filter_in_l_reg[27]_36 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][21] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[27]_100 [21]));
+        .Q(\filter_in_l_reg[27]_36 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][22] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[27]_100 [22]));
+        .Q(\filter_in_l_reg[27]_36 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][23] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[27]_100 [23]));
+        .Q(\filter_in_l_reg[27]_36 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][2] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[27]_100 [2]));
+        .Q(\filter_in_l_reg[27]_36 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][3] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[27]_100 [3]));
+        .Q(\filter_in_l_reg[27]_36 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][4] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[27]_100 [4]));
+        .Q(\filter_in_l_reg[27]_36 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][5] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[27]_100 [5]));
+        .Q(\filter_in_l_reg[27]_36 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][6] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[27]_100 [6]));
+        .Q(\filter_in_l_reg[27]_36 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][7] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[27]_100 [7]));
+        .Q(\filter_in_l_reg[27]_36 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][8] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[27]_100 [8]));
+        .Q(\filter_in_l_reg[27]_36 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[27][9] 
        (.C(aclk),
-        .CE(\filter_in_l[27]_8 ),
+        .CE(\filter_in_l[27]_72 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[27]_100 [9]));
+        .Q(\filter_in_l_reg[27]_36 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][0] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[28]_99 [0]));
+        .Q(\filter_in_l_reg[28]_35 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][10] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[28]_99 [10]));
+        .Q(\filter_in_l_reg[28]_35 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][11] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[28]_99 [11]));
+        .Q(\filter_in_l_reg[28]_35 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][12] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[28]_99 [12]));
+        .Q(\filter_in_l_reg[28]_35 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][13] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[28]_99 [13]));
+        .Q(\filter_in_l_reg[28]_35 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][14] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[28]_99 [14]));
+        .Q(\filter_in_l_reg[28]_35 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][15] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[28]_99 [15]));
+        .Q(\filter_in_l_reg[28]_35 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][16] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[28]_99 [16]));
+        .Q(\filter_in_l_reg[28]_35 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][17] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[28]_99 [17]));
+        .Q(\filter_in_l_reg[28]_35 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][18] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[28]_99 [18]));
+        .Q(\filter_in_l_reg[28]_35 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][19] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[28]_99 [19]));
+        .Q(\filter_in_l_reg[28]_35 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][1] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[28]_99 [1]));
+        .Q(\filter_in_l_reg[28]_35 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][20] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[28]_99 [20]));
+        .Q(\filter_in_l_reg[28]_35 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][21] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[28]_99 [21]));
+        .Q(\filter_in_l_reg[28]_35 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][22] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[28]_99 [22]));
+        .Q(\filter_in_l_reg[28]_35 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][23] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[28]_99 [23]));
+        .Q(\filter_in_l_reg[28]_35 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][2] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[28]_99 [2]));
+        .Q(\filter_in_l_reg[28]_35 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][3] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[28]_99 [3]));
+        .Q(\filter_in_l_reg[28]_35 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][4] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[28]_99 [4]));
+        .Q(\filter_in_l_reg[28]_35 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][5] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[28]_99 [5]));
+        .Q(\filter_in_l_reg[28]_35 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][6] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[28]_99 [6]));
+        .Q(\filter_in_l_reg[28]_35 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][7] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[28]_99 [7]));
+        .Q(\filter_in_l_reg[28]_35 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][8] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[28]_99 [8]));
+        .Q(\filter_in_l_reg[28]_35 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[28][9] 
        (.C(aclk),
-        .CE(\filter_in_l[28]_48 ),
+        .CE(\filter_in_l[28]_112 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[28]_99 [9]));
+        .Q(\filter_in_l_reg[28]_35 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][0] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[29]_98 [0]));
+        .Q(\filter_in_l_reg[29]_34 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][10] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[29]_98 [10]));
+        .Q(\filter_in_l_reg[29]_34 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][11] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[29]_98 [11]));
+        .Q(\filter_in_l_reg[29]_34 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][12] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[29]_98 [12]));
+        .Q(\filter_in_l_reg[29]_34 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][13] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[29]_98 [13]));
+        .Q(\filter_in_l_reg[29]_34 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][14] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[29]_98 [14]));
+        .Q(\filter_in_l_reg[29]_34 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][15] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[29]_98 [15]));
+        .Q(\filter_in_l_reg[29]_34 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][16] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[29]_98 [16]));
+        .Q(\filter_in_l_reg[29]_34 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][17] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[29]_98 [17]));
+        .Q(\filter_in_l_reg[29]_34 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][18] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[29]_98 [18]));
+        .Q(\filter_in_l_reg[29]_34 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][19] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[29]_98 [19]));
+        .Q(\filter_in_l_reg[29]_34 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][1] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[29]_98 [1]));
+        .Q(\filter_in_l_reg[29]_34 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][20] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[29]_98 [20]));
+        .Q(\filter_in_l_reg[29]_34 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][21] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[29]_98 [21]));
+        .Q(\filter_in_l_reg[29]_34 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][22] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[29]_98 [22]));
+        .Q(\filter_in_l_reg[29]_34 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][23] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[29]_98 [23]));
+        .Q(\filter_in_l_reg[29]_34 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][2] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[29]_98 [2]));
+        .Q(\filter_in_l_reg[29]_34 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][3] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[29]_98 [3]));
+        .Q(\filter_in_l_reg[29]_34 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][4] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[29]_98 [4]));
+        .Q(\filter_in_l_reg[29]_34 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][5] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[29]_98 [5]));
+        .Q(\filter_in_l_reg[29]_34 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][6] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[29]_98 [6]));
+        .Q(\filter_in_l_reg[29]_34 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][7] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[29]_98 [7]));
+        .Q(\filter_in_l_reg[29]_34 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][8] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[29]_98 [8]));
+        .Q(\filter_in_l_reg[29]_34 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[29][9] 
        (.C(aclk),
-        .CE(\filter_in_l[29]_24 ),
+        .CE(\filter_in_l[29]_88 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[29]_98 [9]));
+        .Q(\filter_in_l_reg[29]_34 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][0] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[2]_125 [0]));
+        .Q(\filter_in_l_reg[2]_61 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][10] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[2]_125 [10]));
+        .Q(\filter_in_l_reg[2]_61 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][11] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[2]_125 [11]));
+        .Q(\filter_in_l_reg[2]_61 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][12] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[2]_125 [12]));
+        .Q(\filter_in_l_reg[2]_61 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][13] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[2]_125 [13]));
+        .Q(\filter_in_l_reg[2]_61 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][14] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[2]_125 [14]));
+        .Q(\filter_in_l_reg[2]_61 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][15] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[2]_125 [15]));
+        .Q(\filter_in_l_reg[2]_61 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][16] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[2]_125 [16]));
+        .Q(\filter_in_l_reg[2]_61 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][17] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[2]_125 [17]));
+        .Q(\filter_in_l_reg[2]_61 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][18] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[2]_125 [18]));
+        .Q(\filter_in_l_reg[2]_61 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][19] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[2]_125 [19]));
+        .Q(\filter_in_l_reg[2]_61 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][1] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[2]_125 [1]));
+        .Q(\filter_in_l_reg[2]_61 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][20] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[2]_125 [20]));
+        .Q(\filter_in_l_reg[2]_61 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][21] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[2]_125 [21]));
+        .Q(\filter_in_l_reg[2]_61 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][22] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[2]_125 [22]));
+        .Q(\filter_in_l_reg[2]_61 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][23] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[2]_125 [23]));
+        .Q(\filter_in_l_reg[2]_61 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][2] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[2]_125 [2]));
+        .Q(\filter_in_l_reg[2]_61 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][3] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[2]_125 [3]));
+        .Q(\filter_in_l_reg[2]_61 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][4] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[2]_125 [4]));
+        .Q(\filter_in_l_reg[2]_61 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][5] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[2]_125 [5]));
+        .Q(\filter_in_l_reg[2]_61 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][6] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[2]_125 [6]));
+        .Q(\filter_in_l_reg[2]_61 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][7] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[2]_125 [7]));
+        .Q(\filter_in_l_reg[2]_61 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][8] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[2]_125 [8]));
+        .Q(\filter_in_l_reg[2]_61 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[2][9] 
        (.C(aclk),
-        .CE(\filter_in_l[2]_46 ),
+        .CE(\filter_in_l[2]_110 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[2]_125 [9]));
+        .Q(\filter_in_l_reg[2]_61 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][0] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[30]_97 [0]));
+        .Q(\filter_in_l_reg[30]_33 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][10] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[30]_97 [10]));
+        .Q(\filter_in_l_reg[30]_33 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][11] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[30]_97 [11]));
+        .Q(\filter_in_l_reg[30]_33 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][12] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[30]_97 [12]));
+        .Q(\filter_in_l_reg[30]_33 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][13] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[30]_97 [13]));
+        .Q(\filter_in_l_reg[30]_33 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][14] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[30]_97 [14]));
+        .Q(\filter_in_l_reg[30]_33 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][15] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[30]_97 [15]));
+        .Q(\filter_in_l_reg[30]_33 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][16] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[30]_97 [16]));
+        .Q(\filter_in_l_reg[30]_33 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][17] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[30]_97 [17]));
+        .Q(\filter_in_l_reg[30]_33 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][18] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[30]_97 [18]));
+        .Q(\filter_in_l_reg[30]_33 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][19] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[30]_97 [19]));
+        .Q(\filter_in_l_reg[30]_33 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][1] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[30]_97 [1]));
+        .Q(\filter_in_l_reg[30]_33 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][20] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[30]_97 [20]));
+        .Q(\filter_in_l_reg[30]_33 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][21] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[30]_97 [21]));
+        .Q(\filter_in_l_reg[30]_33 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][22] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[30]_97 [22]));
+        .Q(\filter_in_l_reg[30]_33 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][23] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[30]_97 [23]));
+        .Q(\filter_in_l_reg[30]_33 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][2] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[30]_97 [2]));
+        .Q(\filter_in_l_reg[30]_33 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][3] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[30]_97 [3]));
+        .Q(\filter_in_l_reg[30]_33 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][4] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[30]_97 [4]));
+        .Q(\filter_in_l_reg[30]_33 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][5] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[30]_97 [5]));
+        .Q(\filter_in_l_reg[30]_33 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][6] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[30]_97 [6]));
+        .Q(\filter_in_l_reg[30]_33 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][7] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[30]_97 [7]));
+        .Q(\filter_in_l_reg[30]_33 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][8] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[30]_97 [8]));
+        .Q(\filter_in_l_reg[30]_33 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[30][9] 
        (.C(aclk),
-        .CE(\filter_in_l[30]_56 ),
+        .CE(\filter_in_l[30]_120 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[30]_97 [9]));
+        .Q(\filter_in_l_reg[30]_33 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][0] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[31]_96 [0]));
+        .Q(\filter_in_l_reg[31]_32 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][10] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[31]_96 [10]));
+        .Q(\filter_in_l_reg[31]_32 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][11] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[31]_96 [11]));
+        .Q(\filter_in_l_reg[31]_32 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][12] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[31]_96 [12]));
+        .Q(\filter_in_l_reg[31]_32 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][13] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[31]_96 [13]));
+        .Q(\filter_in_l_reg[31]_32 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][14] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[31]_96 [14]));
+        .Q(\filter_in_l_reg[31]_32 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][15] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[31]_96 [15]));
+        .Q(\filter_in_l_reg[31]_32 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][16] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[31]_96 [16]));
+        .Q(\filter_in_l_reg[31]_32 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][17] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[31]_96 [17]));
+        .Q(\filter_in_l_reg[31]_32 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][18] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[31]_96 [18]));
+        .Q(\filter_in_l_reg[31]_32 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][19] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[31]_96 [19]));
+        .Q(\filter_in_l_reg[31]_32 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][1] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[31]_96 [1]));
+        .Q(\filter_in_l_reg[31]_32 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][20] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[31]_96 [20]));
+        .Q(\filter_in_l_reg[31]_32 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][21] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[31]_96 [21]));
+        .Q(\filter_in_l_reg[31]_32 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][22] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[31]_96 [22]));
+        .Q(\filter_in_l_reg[31]_32 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][23] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[31]_96 [23]));
+        .Q(\filter_in_l_reg[31]_32 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][2] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[31]_96 [2]));
+        .Q(\filter_in_l_reg[31]_32 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][3] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[31]_96 [3]));
+        .Q(\filter_in_l_reg[31]_32 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][4] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[31]_96 [4]));
+        .Q(\filter_in_l_reg[31]_32 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][5] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[31]_96 [5]));
+        .Q(\filter_in_l_reg[31]_32 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][6] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[31]_96 [6]));
+        .Q(\filter_in_l_reg[31]_32 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][7] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[31]_96 [7]));
+        .Q(\filter_in_l_reg[31]_32 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][8] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[31]_96 [8]));
+        .Q(\filter_in_l_reg[31]_32 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[31][9] 
        (.C(aclk),
-        .CE(\filter_in_l[31]_2 ),
+        .CE(\filter_in_l[31]_66 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[31]_96 [9]));
+        .Q(\filter_in_l_reg[31]_32 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][0] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[3]_124 [0]));
+        .Q(\filter_in_l_reg[3]_60 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][10] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[3]_124 [10]));
+        .Q(\filter_in_l_reg[3]_60 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][11] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[3]_124 [11]));
+        .Q(\filter_in_l_reg[3]_60 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][12] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[3]_124 [12]));
+        .Q(\filter_in_l_reg[3]_60 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][13] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[3]_124 [13]));
+        .Q(\filter_in_l_reg[3]_60 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][14] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[3]_124 [14]));
+        .Q(\filter_in_l_reg[3]_60 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][15] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[3]_124 [15]));
+        .Q(\filter_in_l_reg[3]_60 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][16] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[3]_124 [16]));
+        .Q(\filter_in_l_reg[3]_60 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][17] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[3]_124 [17]));
+        .Q(\filter_in_l_reg[3]_60 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][18] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[3]_124 [18]));
+        .Q(\filter_in_l_reg[3]_60 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][19] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[3]_124 [19]));
+        .Q(\filter_in_l_reg[3]_60 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][1] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[3]_124 [1]));
+        .Q(\filter_in_l_reg[3]_60 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][20] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[3]_124 [20]));
+        .Q(\filter_in_l_reg[3]_60 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][21] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[3]_124 [21]));
+        .Q(\filter_in_l_reg[3]_60 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][22] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[3]_124 [22]));
+        .Q(\filter_in_l_reg[3]_60 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][23] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[3]_124 [23]));
+        .Q(\filter_in_l_reg[3]_60 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][2] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[3]_124 [2]));
+        .Q(\filter_in_l_reg[3]_60 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][3] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[3]_124 [3]));
+        .Q(\filter_in_l_reg[3]_60 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][4] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[3]_124 [4]));
+        .Q(\filter_in_l_reg[3]_60 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][5] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[3]_124 [5]));
+        .Q(\filter_in_l_reg[3]_60 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][6] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[3]_124 [6]));
+        .Q(\filter_in_l_reg[3]_60 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][7] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[3]_124 [7]));
+        .Q(\filter_in_l_reg[3]_60 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][8] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[3]_124 [8]));
+        .Q(\filter_in_l_reg[3]_60 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[3][9] 
        (.C(aclk),
-        .CE(\filter_in_l[3]_14 ),
+        .CE(\filter_in_l[3]_78 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[3]_124 [9]));
+        .Q(\filter_in_l_reg[3]_60 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][0] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[4]_123 [0]));
+        .Q(\filter_in_l_reg[4]_59 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][10] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[4]_123 [10]));
+        .Q(\filter_in_l_reg[4]_59 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][11] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[4]_123 [11]));
+        .Q(\filter_in_l_reg[4]_59 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][12] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[4]_123 [12]));
+        .Q(\filter_in_l_reg[4]_59 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][13] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[4]_123 [13]));
+        .Q(\filter_in_l_reg[4]_59 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][14] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[4]_123 [14]));
+        .Q(\filter_in_l_reg[4]_59 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][15] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[4]_123 [15]));
+        .Q(\filter_in_l_reg[4]_59 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][16] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[4]_123 [16]));
+        .Q(\filter_in_l_reg[4]_59 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][17] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[4]_123 [17]));
+        .Q(\filter_in_l_reg[4]_59 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][18] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[4]_123 [18]));
+        .Q(\filter_in_l_reg[4]_59 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][19] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[4]_123 [19]));
+        .Q(\filter_in_l_reg[4]_59 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][1] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[4]_123 [1]));
+        .Q(\filter_in_l_reg[4]_59 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][20] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[4]_123 [20]));
+        .Q(\filter_in_l_reg[4]_59 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][21] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[4]_123 [21]));
+        .Q(\filter_in_l_reg[4]_59 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][22] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[4]_123 [22]));
+        .Q(\filter_in_l_reg[4]_59 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][23] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[4]_123 [23]));
+        .Q(\filter_in_l_reg[4]_59 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][2] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[4]_123 [2]));
+        .Q(\filter_in_l_reg[4]_59 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][3] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[4]_123 [3]));
+        .Q(\filter_in_l_reg[4]_59 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][4] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[4]_123 [4]));
+        .Q(\filter_in_l_reg[4]_59 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][5] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[4]_123 [5]));
+        .Q(\filter_in_l_reg[4]_59 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][6] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[4]_123 [6]));
+        .Q(\filter_in_l_reg[4]_59 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][7] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[4]_123 [7]));
+        .Q(\filter_in_l_reg[4]_59 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][8] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[4]_123 [8]));
+        .Q(\filter_in_l_reg[4]_59 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[4][9] 
        (.C(aclk),
-        .CE(\filter_in_l[4]_54 ),
+        .CE(\filter_in_l[4]_118 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[4]_123 [9]));
+        .Q(\filter_in_l_reg[4]_59 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][0] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[5]_122 [0]));
+        .Q(\filter_in_l_reg[5]_58 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][10] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[5]_122 [10]));
+        .Q(\filter_in_l_reg[5]_58 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][11] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[5]_122 [11]));
+        .Q(\filter_in_l_reg[5]_58 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][12] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[5]_122 [12]));
+        .Q(\filter_in_l_reg[5]_58 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][13] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[5]_122 [13]));
+        .Q(\filter_in_l_reg[5]_58 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][14] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[5]_122 [14]));
+        .Q(\filter_in_l_reg[5]_58 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][15] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[5]_122 [15]));
+        .Q(\filter_in_l_reg[5]_58 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][16] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[5]_122 [16]));
+        .Q(\filter_in_l_reg[5]_58 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][17] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[5]_122 [17]));
+        .Q(\filter_in_l_reg[5]_58 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][18] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[5]_122 [18]));
+        .Q(\filter_in_l_reg[5]_58 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][19] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[5]_122 [19]));
+        .Q(\filter_in_l_reg[5]_58 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][1] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[5]_122 [1]));
+        .Q(\filter_in_l_reg[5]_58 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][20] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[5]_122 [20]));
+        .Q(\filter_in_l_reg[5]_58 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][21] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[5]_122 [21]));
+        .Q(\filter_in_l_reg[5]_58 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][22] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[5]_122 [22]));
+        .Q(\filter_in_l_reg[5]_58 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][23] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[5]_122 [23]));
+        .Q(\filter_in_l_reg[5]_58 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][2] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[5]_122 [2]));
+        .Q(\filter_in_l_reg[5]_58 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][3] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[5]_122 [3]));
+        .Q(\filter_in_l_reg[5]_58 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][4] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[5]_122 [4]));
+        .Q(\filter_in_l_reg[5]_58 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][5] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[5]_122 [5]));
+        .Q(\filter_in_l_reg[5]_58 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][6] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[5]_122 [6]));
+        .Q(\filter_in_l_reg[5]_58 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][7] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[5]_122 [7]));
+        .Q(\filter_in_l_reg[5]_58 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][8] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[5]_122 [8]));
+        .Q(\filter_in_l_reg[5]_58 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[5][9] 
        (.C(aclk),
-        .CE(\filter_in_l[5]_30 ),
+        .CE(\filter_in_l[5]_94 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[5]_122 [9]));
+        .Q(\filter_in_l_reg[5]_58 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][0] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[6]_121 [0]));
+        .Q(\filter_in_l_reg[6]_57 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][10] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[6]_121 [10]));
+        .Q(\filter_in_l_reg[6]_57 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][11] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[6]_121 [11]));
+        .Q(\filter_in_l_reg[6]_57 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][12] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[6]_121 [12]));
+        .Q(\filter_in_l_reg[6]_57 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][13] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[6]_121 [13]));
+        .Q(\filter_in_l_reg[6]_57 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][14] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[6]_121 [14]));
+        .Q(\filter_in_l_reg[6]_57 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][15] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[6]_121 [15]));
+        .Q(\filter_in_l_reg[6]_57 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][16] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[6]_121 [16]));
+        .Q(\filter_in_l_reg[6]_57 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][17] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[6]_121 [17]));
+        .Q(\filter_in_l_reg[6]_57 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][18] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[6]_121 [18]));
+        .Q(\filter_in_l_reg[6]_57 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][19] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[6]_121 [19]));
+        .Q(\filter_in_l_reg[6]_57 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][1] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[6]_121 [1]));
+        .Q(\filter_in_l_reg[6]_57 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][20] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[6]_121 [20]));
+        .Q(\filter_in_l_reg[6]_57 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][21] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[6]_121 [21]));
+        .Q(\filter_in_l_reg[6]_57 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][22] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[6]_121 [22]));
+        .Q(\filter_in_l_reg[6]_57 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][23] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[6]_121 [23]));
+        .Q(\filter_in_l_reg[6]_57 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][2] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[6]_121 [2]));
+        .Q(\filter_in_l_reg[6]_57 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][3] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[6]_121 [3]));
+        .Q(\filter_in_l_reg[6]_57 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][4] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[6]_121 [4]));
+        .Q(\filter_in_l_reg[6]_57 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][5] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[6]_121 [5]));
+        .Q(\filter_in_l_reg[6]_57 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][6] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[6]_121 [6]));
+        .Q(\filter_in_l_reg[6]_57 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][7] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[6]_121 [7]));
+        .Q(\filter_in_l_reg[6]_57 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][8] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[6]_121 [8]));
+        .Q(\filter_in_l_reg[6]_57 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[6][9] 
        (.C(aclk),
-        .CE(\filter_in_l[6]_62 ),
+        .CE(\filter_in_l[6]_126 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[6]_121 [9]));
+        .Q(\filter_in_l_reg[6]_57 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][0] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[7]_120 [0]));
+        .Q(\filter_in_l_reg[7]_56 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][10] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[7]_120 [10]));
+        .Q(\filter_in_l_reg[7]_56 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][11] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[7]_120 [11]));
+        .Q(\filter_in_l_reg[7]_56 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][12] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[7]_120 [12]));
+        .Q(\filter_in_l_reg[7]_56 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][13] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[7]_120 [13]));
+        .Q(\filter_in_l_reg[7]_56 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][14] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[7]_120 [14]));
+        .Q(\filter_in_l_reg[7]_56 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][15] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[7]_120 [15]));
+        .Q(\filter_in_l_reg[7]_56 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][16] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[7]_120 [16]));
+        .Q(\filter_in_l_reg[7]_56 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][17] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[7]_120 [17]));
+        .Q(\filter_in_l_reg[7]_56 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][18] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[7]_120 [18]));
+        .Q(\filter_in_l_reg[7]_56 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][19] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[7]_120 [19]));
+        .Q(\filter_in_l_reg[7]_56 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][1] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[7]_120 [1]));
+        .Q(\filter_in_l_reg[7]_56 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][20] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[7]_120 [20]));
+        .Q(\filter_in_l_reg[7]_56 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][21] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[7]_120 [21]));
+        .Q(\filter_in_l_reg[7]_56 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][22] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[7]_120 [22]));
+        .Q(\filter_in_l_reg[7]_56 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][23] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[7]_120 [23]));
+        .Q(\filter_in_l_reg[7]_56 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][2] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[7]_120 [2]));
+        .Q(\filter_in_l_reg[7]_56 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][3] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[7]_120 [3]));
+        .Q(\filter_in_l_reg[7]_56 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][4] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[7]_120 [4]));
+        .Q(\filter_in_l_reg[7]_56 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][5] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[7]_120 [5]));
+        .Q(\filter_in_l_reg[7]_56 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][6] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[7]_120 [6]));
+        .Q(\filter_in_l_reg[7]_56 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][7] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[7]_120 [7]));
+        .Q(\filter_in_l_reg[7]_56 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][8] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[7]_120 [8]));
+        .Q(\filter_in_l_reg[7]_56 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[7][9] 
        (.C(aclk),
-        .CE(\filter_in_l[7]_6 ),
+        .CE(\filter_in_l[7]_70 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[7]_120 [9]));
+        .Q(\filter_in_l_reg[7]_56 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][0] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[8]_119 [0]));
+        .Q(\filter_in_l_reg[8]_55 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][10] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[8]_119 [10]));
+        .Q(\filter_in_l_reg[8]_55 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][11] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[8]_119 [11]));
+        .Q(\filter_in_l_reg[8]_55 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][12] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[8]_119 [12]));
+        .Q(\filter_in_l_reg[8]_55 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][13] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[8]_119 [13]));
+        .Q(\filter_in_l_reg[8]_55 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][14] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[8]_119 [14]));
+        .Q(\filter_in_l_reg[8]_55 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][15] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[8]_119 [15]));
+        .Q(\filter_in_l_reg[8]_55 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][16] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[8]_119 [16]));
+        .Q(\filter_in_l_reg[8]_55 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][17] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[8]_119 [17]));
+        .Q(\filter_in_l_reg[8]_55 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][18] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[8]_119 [18]));
+        .Q(\filter_in_l_reg[8]_55 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][19] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[8]_119 [19]));
+        .Q(\filter_in_l_reg[8]_55 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][1] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[8]_119 [1]));
+        .Q(\filter_in_l_reg[8]_55 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][20] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[8]_119 [20]));
+        .Q(\filter_in_l_reg[8]_55 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][21] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[8]_119 [21]));
+        .Q(\filter_in_l_reg[8]_55 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][22] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[8]_119 [22]));
+        .Q(\filter_in_l_reg[8]_55 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][23] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[8]_119 [23]));
+        .Q(\filter_in_l_reg[8]_55 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][2] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[8]_119 [2]));
+        .Q(\filter_in_l_reg[8]_55 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][3] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[8]_119 [3]));
+        .Q(\filter_in_l_reg[8]_55 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][4] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[8]_119 [4]));
+        .Q(\filter_in_l_reg[8]_55 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][5] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[8]_119 [5]));
+        .Q(\filter_in_l_reg[8]_55 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][6] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[8]_119 [6]));
+        .Q(\filter_in_l_reg[8]_55 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][7] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[8]_119 [7]));
+        .Q(\filter_in_l_reg[8]_55 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][8] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[8]_119 [8]));
+        .Q(\filter_in_l_reg[8]_55 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[8][9] 
        (.C(aclk),
-        .CE(\filter_in_l[8]_18 ),
+        .CE(\filter_in_l[8]_82 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[8]_119 [9]));
+        .Q(\filter_in_l_reg[8]_55 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][0] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_l_reg[9]_118 [0]));
+        .Q(\filter_in_l_reg[9]_54 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][10] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_l_reg[9]_118 [10]));
+        .Q(\filter_in_l_reg[9]_54 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][11] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_l_reg[9]_118 [11]));
+        .Q(\filter_in_l_reg[9]_54 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][12] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_l_reg[9]_118 [12]));
+        .Q(\filter_in_l_reg[9]_54 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][13] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_l_reg[9]_118 [13]));
+        .Q(\filter_in_l_reg[9]_54 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][14] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_l_reg[9]_118 [14]));
+        .Q(\filter_in_l_reg[9]_54 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][15] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_l_reg[9]_118 [15]));
+        .Q(\filter_in_l_reg[9]_54 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][16] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_l_reg[9]_118 [16]));
+        .Q(\filter_in_l_reg[9]_54 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][17] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_l_reg[9]_118 [17]));
+        .Q(\filter_in_l_reg[9]_54 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][18] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_l_reg[9]_118 [18]));
+        .Q(\filter_in_l_reg[9]_54 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][19] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_l_reg[9]_118 [19]));
+        .Q(\filter_in_l_reg[9]_54 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][1] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_l_reg[9]_118 [1]));
+        .Q(\filter_in_l_reg[9]_54 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][20] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_l_reg[9]_118 [20]));
+        .Q(\filter_in_l_reg[9]_54 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][21] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_l_reg[9]_118 [21]));
+        .Q(\filter_in_l_reg[9]_54 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][22] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_l_reg[9]_118 [22]));
+        .Q(\filter_in_l_reg[9]_54 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][23] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_l_reg[9]_118 [23]));
+        .Q(\filter_in_l_reg[9]_54 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][2] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_l_reg[9]_118 [2]));
+        .Q(\filter_in_l_reg[9]_54 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][3] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_l_reg[9]_118 [3]));
+        .Q(\filter_in_l_reg[9]_54 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][4] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_l_reg[9]_118 [4]));
+        .Q(\filter_in_l_reg[9]_54 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][5] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_l_reg[9]_118 [5]));
+        .Q(\filter_in_l_reg[9]_54 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][6] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_l_reg[9]_118 [6]));
+        .Q(\filter_in_l_reg[9]_54 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][7] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_l_reg[9]_118 [7]));
+        .Q(\filter_in_l_reg[9]_54 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][8] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_l_reg[9]_118 [8]));
+        .Q(\filter_in_l_reg[9]_54 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_l_reg[9][9] 
        (.C(aclk),
-        .CE(\filter_in_l[9]_34 ),
+        .CE(\filter_in_l[9]_98 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_l_reg[9]_118 [9]));
+        .Q(\filter_in_l_reg[9]_54 [9]));
   LUT4 #(
     .INIT(16'h0080)) 
     \filter_in_r[0][23]_i_1 
@@ -8339,7 +8333,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[0][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[0]_23 ));
+        .O(\filter_in_r[0]_87 ));
   LUT6 #(
     .INIT(64'h0000000100000000)) 
     \filter_in_r[0][23]_i_2 
@@ -8357,7 +8351,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[10][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[10]_43 ));
+        .O(\filter_in_r[10]_107 ));
   LUT6 #(
     .INIT(64'h0010000000000000)) 
     \filter_in_r[10][23]_i_2 
@@ -8375,7 +8369,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[11][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[11]_11 ));
+        .O(\filter_in_r[11]_75 ));
   LUT6 #(
     .INIT(64'h1000000000000000)) 
     \filter_in_r[11][23]_i_2 
@@ -8393,7 +8387,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[12][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[12]_51 ));
+        .O(\filter_in_r[12]_115 ));
   LUT6 #(
     .INIT(64'h0004000000000000)) 
     \filter_in_r[12][23]_i_2 
@@ -8411,7 +8405,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[13][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[13]_27 ));
+        .O(\filter_in_r[13]_91 ));
   LUT6 #(
     .INIT(64'h0040000000000000)) 
     \filter_in_r[13][23]_i_2 
@@ -8429,7 +8423,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[14][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[14]_59 ));
+        .O(\filter_in_r[14]_123 ));
   LUT6 #(
     .INIT(64'h0040000000000000)) 
     \filter_in_r[14][23]_i_2 
@@ -8449,7 +8443,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I3(ring_buffer_entry_reg[4]),
         .I4(s_axis_tlast),
         .I5(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[15]_1 ));
+        .O(\filter_in_r[15]_65 ));
   LUT4 #(
     .INIT(16'h0080)) 
     \filter_in_r[16][23]_i_1 
@@ -8457,7 +8451,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[16][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[16]_21 ));
+        .O(\filter_in_r[16]_85 ));
   LUT6 #(
     .INIT(64'h0000000200000000)) 
     \filter_in_r[16][23]_i_2 
@@ -8475,7 +8469,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[17][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[17]_37 ));
+        .O(\filter_in_r[17]_101 ));
   LUT6 #(
     .INIT(64'h0000002000000000)) 
     \filter_in_r[17][23]_i_2 
@@ -8493,7 +8487,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[18][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[18]_45 ));
+        .O(\filter_in_r[18]_109 ));
   LUT6 #(
     .INIT(64'h0000002000000000)) 
     \filter_in_r[18][23]_i_2 
@@ -8511,7 +8505,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[19][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[19]_13 ));
+        .O(\filter_in_r[19]_77 ));
   LUT6 #(
     .INIT(64'h0000200000000000)) 
     \filter_in_r[19][23]_i_2 
@@ -8529,7 +8523,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[1][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[1]_39 ));
+        .O(\filter_in_r[1]_103 ));
   LUT6 #(
     .INIT(64'h0000001000000000)) 
     \filter_in_r[1][23]_i_2 
@@ -8547,7 +8541,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[20][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[20]_53 ));
+        .O(\filter_in_r[20]_117 ));
   LUT6 #(
     .INIT(64'h0000000800000000)) 
     \filter_in_r[20][23]_i_2 
@@ -8565,7 +8559,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[21][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[21]_29 ));
+        .O(\filter_in_r[21]_93 ));
   LUT6 #(
     .INIT(64'h0000008000000000)) 
     \filter_in_r[21][23]_i_2 
@@ -8583,7 +8577,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[22][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[22]_61 ));
+        .O(\filter_in_r[22]_125 ));
   LUT6 #(
     .INIT(64'h0000008000000000)) 
     \filter_in_r[22][23]_i_2 
@@ -8601,7 +8595,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[23][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[23]_5 ));
+        .O(\filter_in_r[23]_69 ));
   LUT6 #(
     .INIT(64'h0000800000000000)) 
     \filter_in_r[23][23]_i_2 
@@ -8619,7 +8613,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[24][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[24]_17 ));
+        .O(\filter_in_r[24]_81 ));
   LUT6 #(
     .INIT(64'h0002000000000000)) 
     \filter_in_r[24][23]_i_2 
@@ -8637,7 +8631,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[25][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[25]_33 ));
+        .O(\filter_in_r[25]_97 ));
   LUT6 #(
     .INIT(64'h0020000000000000)) 
     \filter_in_r[25][23]_i_2 
@@ -8655,7 +8649,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[26][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[26]_41 ));
+        .O(\filter_in_r[26]_105 ));
   LUT6 #(
     .INIT(64'h0020000000000000)) 
     \filter_in_r[26][23]_i_2 
@@ -8673,7 +8667,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[27][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[27]_9 ));
+        .O(\filter_in_r[27]_73 ));
   LUT6 #(
     .INIT(64'h2000000000000000)) 
     \filter_in_r[27][23]_i_2 
@@ -8691,7 +8685,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[28][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[28]_49 ));
+        .O(\filter_in_r[28]_113 ));
   LUT6 #(
     .INIT(64'h0008000000000000)) 
     \filter_in_r[28][23]_i_2 
@@ -8709,7 +8703,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[29][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[29]_25 ));
+        .O(\filter_in_r[29]_89 ));
   LUT6 #(
     .INIT(64'h0080000000000000)) 
     \filter_in_r[29][23]_i_2 
@@ -8727,7 +8721,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[2][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[2]_47 ));
+        .O(\filter_in_r[2]_111 ));
   LUT6 #(
     .INIT(64'h0000001000000000)) 
     \filter_in_r[2][23]_i_2 
@@ -8745,7 +8739,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[30][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[30]_57 ));
+        .O(\filter_in_r[30]_121 ));
   LUT6 #(
     .INIT(64'h0080000000000000)) 
     \filter_in_r[30][23]_i_2 
@@ -8765,7 +8759,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I3(ring_buffer_entry_reg[4]),
         .I4(s_axis_tlast),
         .I5(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[31]_3 ));
+        .O(\filter_in_r[31]_67 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h8000)) 
@@ -8782,7 +8776,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[3][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[3]_15 ));
+        .O(\filter_in_r[3]_79 ));
   LUT6 #(
     .INIT(64'h0000100000000000)) 
     \filter_in_r[3][23]_i_2 
@@ -8800,7 +8794,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[4][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[4]_55 ));
+        .O(\filter_in_r[4]_119 ));
   LUT6 #(
     .INIT(64'h0000000400000000)) 
     \filter_in_r[4][23]_i_2 
@@ -8818,7 +8812,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[5][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[5]_31 ));
+        .O(\filter_in_r[5]_95 ));
   LUT6 #(
     .INIT(64'h0000004000000000)) 
     \filter_in_r[5][23]_i_2 
@@ -8836,7 +8830,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[6][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[6]_63 ));
+        .O(\filter_in_r[6]_127 ));
   LUT6 #(
     .INIT(64'h0000004000000000)) 
     \filter_in_r[6][23]_i_2 
@@ -8854,7 +8848,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[7][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[7]_7 ));
+        .O(\filter_in_r[7]_71 ));
   LUT6 #(
     .INIT(64'h0000400000000000)) 
     \filter_in_r[7][23]_i_2 
@@ -8872,7 +8866,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[8][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[8]_19 ));
+        .O(\filter_in_r[8]_83 ));
   LUT6 #(
     .INIT(64'h0001000000000000)) 
     \filter_in_r[8][23]_i_2 
@@ -8890,7 +8884,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\filter_in_r[9][23]_i_2_n_0 ),
         .I2(s_axis_tlast),
         .I3(\FSM_sequential_state_reg[1]_0 ),
-        .O(\filter_in_r[9]_35 ));
+        .O(\filter_in_r[9]_99 ));
   LUT6 #(
     .INIT(64'h0010000000000000)) 
     \filter_in_r[9][23]_i_2 
@@ -8905,6146 +8899,6146 @@ module design_1_dual_moving_average_0_0_dual_moving_average
     .INIT(1'b0)) 
     \filter_in_r_reg[0][0] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[0]_95 [0]));
+        .Q(\filter_in_r_reg[0]_31 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][10] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[0]_95 [10]));
+        .Q(\filter_in_r_reg[0]_31 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][11] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[0]_95 [11]));
+        .Q(\filter_in_r_reg[0]_31 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][12] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[0]_95 [12]));
+        .Q(\filter_in_r_reg[0]_31 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][13] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[0]_95 [13]));
+        .Q(\filter_in_r_reg[0]_31 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][14] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[0]_95 [14]));
+        .Q(\filter_in_r_reg[0]_31 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][15] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[0]_95 [15]));
+        .Q(\filter_in_r_reg[0]_31 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][16] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[0]_95 [16]));
+        .Q(\filter_in_r_reg[0]_31 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][17] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[0]_95 [17]));
+        .Q(\filter_in_r_reg[0]_31 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][18] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[0]_95 [18]));
+        .Q(\filter_in_r_reg[0]_31 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][19] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[0]_95 [19]));
+        .Q(\filter_in_r_reg[0]_31 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][1] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[0]_95 [1]));
+        .Q(\filter_in_r_reg[0]_31 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][20] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[0]_95 [20]));
+        .Q(\filter_in_r_reg[0]_31 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][21] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[0]_95 [21]));
+        .Q(\filter_in_r_reg[0]_31 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][22] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[0]_95 [22]));
+        .Q(\filter_in_r_reg[0]_31 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][23] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[0]_95 [23]));
+        .Q(\filter_in_r_reg[0]_31 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][2] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[0]_95 [2]));
+        .Q(\filter_in_r_reg[0]_31 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][3] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[0]_95 [3]));
+        .Q(\filter_in_r_reg[0]_31 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][4] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[0]_95 [4]));
+        .Q(\filter_in_r_reg[0]_31 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][5] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[0]_95 [5]));
+        .Q(\filter_in_r_reg[0]_31 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][6] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[0]_95 [6]));
+        .Q(\filter_in_r_reg[0]_31 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][7] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[0]_95 [7]));
+        .Q(\filter_in_r_reg[0]_31 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][8] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[0]_95 [8]));
+        .Q(\filter_in_r_reg[0]_31 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[0][9] 
        (.C(aclk),
-        .CE(\filter_in_r[0]_23 ),
+        .CE(\filter_in_r[0]_87 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[0]_95 [9]));
+        .Q(\filter_in_r_reg[0]_31 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][0] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[10]_85 [0]));
+        .Q(\filter_in_r_reg[10]_21 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][10] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[10]_85 [10]));
+        .Q(\filter_in_r_reg[10]_21 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][11] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[10]_85 [11]));
+        .Q(\filter_in_r_reg[10]_21 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][12] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[10]_85 [12]));
+        .Q(\filter_in_r_reg[10]_21 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][13] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[10]_85 [13]));
+        .Q(\filter_in_r_reg[10]_21 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][14] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[10]_85 [14]));
+        .Q(\filter_in_r_reg[10]_21 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][15] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[10]_85 [15]));
+        .Q(\filter_in_r_reg[10]_21 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][16] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[10]_85 [16]));
+        .Q(\filter_in_r_reg[10]_21 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][17] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[10]_85 [17]));
+        .Q(\filter_in_r_reg[10]_21 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][18] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[10]_85 [18]));
+        .Q(\filter_in_r_reg[10]_21 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][19] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[10]_85 [19]));
+        .Q(\filter_in_r_reg[10]_21 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][1] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[10]_85 [1]));
+        .Q(\filter_in_r_reg[10]_21 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][20] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[10]_85 [20]));
+        .Q(\filter_in_r_reg[10]_21 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][21] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[10]_85 [21]));
+        .Q(\filter_in_r_reg[10]_21 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][22] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[10]_85 [22]));
+        .Q(\filter_in_r_reg[10]_21 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][23] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[10]_85 [23]));
+        .Q(\filter_in_r_reg[10]_21 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][2] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[10]_85 [2]));
+        .Q(\filter_in_r_reg[10]_21 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][3] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[10]_85 [3]));
+        .Q(\filter_in_r_reg[10]_21 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][4] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[10]_85 [4]));
+        .Q(\filter_in_r_reg[10]_21 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][5] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[10]_85 [5]));
+        .Q(\filter_in_r_reg[10]_21 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][6] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[10]_85 [6]));
+        .Q(\filter_in_r_reg[10]_21 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][7] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[10]_85 [7]));
+        .Q(\filter_in_r_reg[10]_21 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][8] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[10]_85 [8]));
+        .Q(\filter_in_r_reg[10]_21 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[10][9] 
        (.C(aclk),
-        .CE(\filter_in_r[10]_43 ),
+        .CE(\filter_in_r[10]_107 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[10]_85 [9]));
+        .Q(\filter_in_r_reg[10]_21 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][0] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[11]_84 [0]));
+        .Q(\filter_in_r_reg[11]_20 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][10] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[11]_84 [10]));
+        .Q(\filter_in_r_reg[11]_20 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][11] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[11]_84 [11]));
+        .Q(\filter_in_r_reg[11]_20 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][12] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[11]_84 [12]));
+        .Q(\filter_in_r_reg[11]_20 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][13] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[11]_84 [13]));
+        .Q(\filter_in_r_reg[11]_20 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][14] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[11]_84 [14]));
+        .Q(\filter_in_r_reg[11]_20 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][15] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[11]_84 [15]));
+        .Q(\filter_in_r_reg[11]_20 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][16] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[11]_84 [16]));
+        .Q(\filter_in_r_reg[11]_20 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][17] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[11]_84 [17]));
+        .Q(\filter_in_r_reg[11]_20 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][18] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[11]_84 [18]));
+        .Q(\filter_in_r_reg[11]_20 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][19] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[11]_84 [19]));
+        .Q(\filter_in_r_reg[11]_20 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][1] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[11]_84 [1]));
+        .Q(\filter_in_r_reg[11]_20 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][20] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[11]_84 [20]));
+        .Q(\filter_in_r_reg[11]_20 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][21] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[11]_84 [21]));
+        .Q(\filter_in_r_reg[11]_20 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][22] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[11]_84 [22]));
+        .Q(\filter_in_r_reg[11]_20 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][23] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[11]_84 [23]));
+        .Q(\filter_in_r_reg[11]_20 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][2] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[11]_84 [2]));
+        .Q(\filter_in_r_reg[11]_20 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][3] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[11]_84 [3]));
+        .Q(\filter_in_r_reg[11]_20 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][4] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[11]_84 [4]));
+        .Q(\filter_in_r_reg[11]_20 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][5] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[11]_84 [5]));
+        .Q(\filter_in_r_reg[11]_20 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][6] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[11]_84 [6]));
+        .Q(\filter_in_r_reg[11]_20 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][7] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[11]_84 [7]));
+        .Q(\filter_in_r_reg[11]_20 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][8] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[11]_84 [8]));
+        .Q(\filter_in_r_reg[11]_20 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[11][9] 
        (.C(aclk),
-        .CE(\filter_in_r[11]_11 ),
+        .CE(\filter_in_r[11]_75 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[11]_84 [9]));
+        .Q(\filter_in_r_reg[11]_20 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][0] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[12]_83 [0]));
+        .Q(\filter_in_r_reg[12]_19 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][10] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[12]_83 [10]));
+        .Q(\filter_in_r_reg[12]_19 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][11] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[12]_83 [11]));
+        .Q(\filter_in_r_reg[12]_19 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][12] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[12]_83 [12]));
+        .Q(\filter_in_r_reg[12]_19 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][13] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[12]_83 [13]));
+        .Q(\filter_in_r_reg[12]_19 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][14] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[12]_83 [14]));
+        .Q(\filter_in_r_reg[12]_19 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][15] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[12]_83 [15]));
+        .Q(\filter_in_r_reg[12]_19 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][16] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[12]_83 [16]));
+        .Q(\filter_in_r_reg[12]_19 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][17] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[12]_83 [17]));
+        .Q(\filter_in_r_reg[12]_19 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][18] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[12]_83 [18]));
+        .Q(\filter_in_r_reg[12]_19 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][19] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[12]_83 [19]));
+        .Q(\filter_in_r_reg[12]_19 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][1] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[12]_83 [1]));
+        .Q(\filter_in_r_reg[12]_19 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][20] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[12]_83 [20]));
+        .Q(\filter_in_r_reg[12]_19 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][21] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[12]_83 [21]));
+        .Q(\filter_in_r_reg[12]_19 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][22] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[12]_83 [22]));
+        .Q(\filter_in_r_reg[12]_19 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][23] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[12]_83 [23]));
+        .Q(\filter_in_r_reg[12]_19 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][2] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[12]_83 [2]));
+        .Q(\filter_in_r_reg[12]_19 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][3] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[12]_83 [3]));
+        .Q(\filter_in_r_reg[12]_19 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][4] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[12]_83 [4]));
+        .Q(\filter_in_r_reg[12]_19 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][5] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[12]_83 [5]));
+        .Q(\filter_in_r_reg[12]_19 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][6] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[12]_83 [6]));
+        .Q(\filter_in_r_reg[12]_19 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][7] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[12]_83 [7]));
+        .Q(\filter_in_r_reg[12]_19 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][8] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[12]_83 [8]));
+        .Q(\filter_in_r_reg[12]_19 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[12][9] 
        (.C(aclk),
-        .CE(\filter_in_r[12]_51 ),
+        .CE(\filter_in_r[12]_115 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[12]_83 [9]));
+        .Q(\filter_in_r_reg[12]_19 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][0] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[13]_82 [0]));
+        .Q(\filter_in_r_reg[13]_18 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][10] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[13]_82 [10]));
+        .Q(\filter_in_r_reg[13]_18 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][11] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[13]_82 [11]));
+        .Q(\filter_in_r_reg[13]_18 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][12] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[13]_82 [12]));
+        .Q(\filter_in_r_reg[13]_18 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][13] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[13]_82 [13]));
+        .Q(\filter_in_r_reg[13]_18 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][14] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[13]_82 [14]));
+        .Q(\filter_in_r_reg[13]_18 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][15] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[13]_82 [15]));
+        .Q(\filter_in_r_reg[13]_18 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][16] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[13]_82 [16]));
+        .Q(\filter_in_r_reg[13]_18 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][17] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[13]_82 [17]));
+        .Q(\filter_in_r_reg[13]_18 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][18] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[13]_82 [18]));
+        .Q(\filter_in_r_reg[13]_18 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][19] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[13]_82 [19]));
+        .Q(\filter_in_r_reg[13]_18 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][1] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[13]_82 [1]));
+        .Q(\filter_in_r_reg[13]_18 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][20] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[13]_82 [20]));
+        .Q(\filter_in_r_reg[13]_18 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][21] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[13]_82 [21]));
+        .Q(\filter_in_r_reg[13]_18 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][22] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[13]_82 [22]));
+        .Q(\filter_in_r_reg[13]_18 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][23] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[13]_82 [23]));
+        .Q(\filter_in_r_reg[13]_18 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][2] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[13]_82 [2]));
+        .Q(\filter_in_r_reg[13]_18 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][3] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[13]_82 [3]));
+        .Q(\filter_in_r_reg[13]_18 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][4] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[13]_82 [4]));
+        .Q(\filter_in_r_reg[13]_18 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][5] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[13]_82 [5]));
+        .Q(\filter_in_r_reg[13]_18 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][6] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[13]_82 [6]));
+        .Q(\filter_in_r_reg[13]_18 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][7] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[13]_82 [7]));
+        .Q(\filter_in_r_reg[13]_18 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][8] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[13]_82 [8]));
+        .Q(\filter_in_r_reg[13]_18 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[13][9] 
        (.C(aclk),
-        .CE(\filter_in_r[13]_27 ),
+        .CE(\filter_in_r[13]_91 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[13]_82 [9]));
+        .Q(\filter_in_r_reg[13]_18 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][0] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[14]_81 [0]));
+        .Q(\filter_in_r_reg[14]_17 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][10] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[14]_81 [10]));
+        .Q(\filter_in_r_reg[14]_17 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][11] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[14]_81 [11]));
+        .Q(\filter_in_r_reg[14]_17 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][12] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[14]_81 [12]));
+        .Q(\filter_in_r_reg[14]_17 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][13] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[14]_81 [13]));
+        .Q(\filter_in_r_reg[14]_17 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][14] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[14]_81 [14]));
+        .Q(\filter_in_r_reg[14]_17 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][15] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[14]_81 [15]));
+        .Q(\filter_in_r_reg[14]_17 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][16] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[14]_81 [16]));
+        .Q(\filter_in_r_reg[14]_17 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][17] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[14]_81 [17]));
+        .Q(\filter_in_r_reg[14]_17 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][18] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[14]_81 [18]));
+        .Q(\filter_in_r_reg[14]_17 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][19] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[14]_81 [19]));
+        .Q(\filter_in_r_reg[14]_17 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][1] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[14]_81 [1]));
+        .Q(\filter_in_r_reg[14]_17 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][20] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[14]_81 [20]));
+        .Q(\filter_in_r_reg[14]_17 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][21] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[14]_81 [21]));
+        .Q(\filter_in_r_reg[14]_17 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][22] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[14]_81 [22]));
+        .Q(\filter_in_r_reg[14]_17 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][23] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[14]_81 [23]));
+        .Q(\filter_in_r_reg[14]_17 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][2] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[14]_81 [2]));
+        .Q(\filter_in_r_reg[14]_17 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][3] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[14]_81 [3]));
+        .Q(\filter_in_r_reg[14]_17 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][4] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[14]_81 [4]));
+        .Q(\filter_in_r_reg[14]_17 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][5] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[14]_81 [5]));
+        .Q(\filter_in_r_reg[14]_17 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][6] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[14]_81 [6]));
+        .Q(\filter_in_r_reg[14]_17 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][7] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[14]_81 [7]));
+        .Q(\filter_in_r_reg[14]_17 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][8] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[14]_81 [8]));
+        .Q(\filter_in_r_reg[14]_17 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[14][9] 
        (.C(aclk),
-        .CE(\filter_in_r[14]_59 ),
+        .CE(\filter_in_r[14]_123 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[14]_81 [9]));
+        .Q(\filter_in_r_reg[14]_17 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][0] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[15]_80 [0]));
+        .Q(\filter_in_r_reg[15]_16 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][10] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[15]_80 [10]));
+        .Q(\filter_in_r_reg[15]_16 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][11] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[15]_80 [11]));
+        .Q(\filter_in_r_reg[15]_16 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][12] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[15]_80 [12]));
+        .Q(\filter_in_r_reg[15]_16 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][13] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[15]_80 [13]));
+        .Q(\filter_in_r_reg[15]_16 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][14] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[15]_80 [14]));
+        .Q(\filter_in_r_reg[15]_16 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][15] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[15]_80 [15]));
+        .Q(\filter_in_r_reg[15]_16 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][16] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[15]_80 [16]));
+        .Q(\filter_in_r_reg[15]_16 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][17] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[15]_80 [17]));
+        .Q(\filter_in_r_reg[15]_16 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][18] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[15]_80 [18]));
+        .Q(\filter_in_r_reg[15]_16 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][19] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[15]_80 [19]));
+        .Q(\filter_in_r_reg[15]_16 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][1] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[15]_80 [1]));
+        .Q(\filter_in_r_reg[15]_16 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][20] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[15]_80 [20]));
+        .Q(\filter_in_r_reg[15]_16 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][21] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[15]_80 [21]));
+        .Q(\filter_in_r_reg[15]_16 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][22] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[15]_80 [22]));
+        .Q(\filter_in_r_reg[15]_16 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][23] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[15]_80 [23]));
+        .Q(\filter_in_r_reg[15]_16 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][2] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[15]_80 [2]));
+        .Q(\filter_in_r_reg[15]_16 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][3] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[15]_80 [3]));
+        .Q(\filter_in_r_reg[15]_16 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][4] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[15]_80 [4]));
+        .Q(\filter_in_r_reg[15]_16 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][5] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[15]_80 [5]));
+        .Q(\filter_in_r_reg[15]_16 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][6] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[15]_80 [6]));
+        .Q(\filter_in_r_reg[15]_16 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][7] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[15]_80 [7]));
+        .Q(\filter_in_r_reg[15]_16 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][8] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[15]_80 [8]));
+        .Q(\filter_in_r_reg[15]_16 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[15][9] 
        (.C(aclk),
-        .CE(\filter_in_r[15]_1 ),
+        .CE(\filter_in_r[15]_65 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[15]_80 [9]));
+        .Q(\filter_in_r_reg[15]_16 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][0] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[16]_79 [0]));
+        .Q(\filter_in_r_reg[16]_15 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][10] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[16]_79 [10]));
+        .Q(\filter_in_r_reg[16]_15 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][11] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[16]_79 [11]));
+        .Q(\filter_in_r_reg[16]_15 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][12] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[16]_79 [12]));
+        .Q(\filter_in_r_reg[16]_15 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][13] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[16]_79 [13]));
+        .Q(\filter_in_r_reg[16]_15 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][14] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[16]_79 [14]));
+        .Q(\filter_in_r_reg[16]_15 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][15] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[16]_79 [15]));
+        .Q(\filter_in_r_reg[16]_15 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][16] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[16]_79 [16]));
+        .Q(\filter_in_r_reg[16]_15 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][17] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[16]_79 [17]));
+        .Q(\filter_in_r_reg[16]_15 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][18] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[16]_79 [18]));
+        .Q(\filter_in_r_reg[16]_15 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][19] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[16]_79 [19]));
+        .Q(\filter_in_r_reg[16]_15 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][1] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[16]_79 [1]));
+        .Q(\filter_in_r_reg[16]_15 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][20] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[16]_79 [20]));
+        .Q(\filter_in_r_reg[16]_15 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][21] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[16]_79 [21]));
+        .Q(\filter_in_r_reg[16]_15 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][22] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[16]_79 [22]));
+        .Q(\filter_in_r_reg[16]_15 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][23] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[16]_79 [23]));
+        .Q(\filter_in_r_reg[16]_15 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][2] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[16]_79 [2]));
+        .Q(\filter_in_r_reg[16]_15 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][3] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[16]_79 [3]));
+        .Q(\filter_in_r_reg[16]_15 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][4] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[16]_79 [4]));
+        .Q(\filter_in_r_reg[16]_15 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][5] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[16]_79 [5]));
+        .Q(\filter_in_r_reg[16]_15 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][6] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[16]_79 [6]));
+        .Q(\filter_in_r_reg[16]_15 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][7] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[16]_79 [7]));
+        .Q(\filter_in_r_reg[16]_15 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][8] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[16]_79 [8]));
+        .Q(\filter_in_r_reg[16]_15 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[16][9] 
        (.C(aclk),
-        .CE(\filter_in_r[16]_21 ),
+        .CE(\filter_in_r[16]_85 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[16]_79 [9]));
+        .Q(\filter_in_r_reg[16]_15 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][0] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[17]_78 [0]));
+        .Q(\filter_in_r_reg[17]_14 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][10] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[17]_78 [10]));
+        .Q(\filter_in_r_reg[17]_14 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][11] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[17]_78 [11]));
+        .Q(\filter_in_r_reg[17]_14 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][12] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[17]_78 [12]));
+        .Q(\filter_in_r_reg[17]_14 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][13] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[17]_78 [13]));
+        .Q(\filter_in_r_reg[17]_14 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][14] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[17]_78 [14]));
+        .Q(\filter_in_r_reg[17]_14 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][15] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[17]_78 [15]));
+        .Q(\filter_in_r_reg[17]_14 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][16] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[17]_78 [16]));
+        .Q(\filter_in_r_reg[17]_14 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][17] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[17]_78 [17]));
+        .Q(\filter_in_r_reg[17]_14 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][18] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[17]_78 [18]));
+        .Q(\filter_in_r_reg[17]_14 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][19] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[17]_78 [19]));
+        .Q(\filter_in_r_reg[17]_14 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][1] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[17]_78 [1]));
+        .Q(\filter_in_r_reg[17]_14 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][20] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[17]_78 [20]));
+        .Q(\filter_in_r_reg[17]_14 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][21] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[17]_78 [21]));
+        .Q(\filter_in_r_reg[17]_14 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][22] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[17]_78 [22]));
+        .Q(\filter_in_r_reg[17]_14 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][23] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[17]_78 [23]));
+        .Q(\filter_in_r_reg[17]_14 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][2] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[17]_78 [2]));
+        .Q(\filter_in_r_reg[17]_14 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][3] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[17]_78 [3]));
+        .Q(\filter_in_r_reg[17]_14 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][4] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[17]_78 [4]));
+        .Q(\filter_in_r_reg[17]_14 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][5] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[17]_78 [5]));
+        .Q(\filter_in_r_reg[17]_14 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][6] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[17]_78 [6]));
+        .Q(\filter_in_r_reg[17]_14 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][7] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[17]_78 [7]));
+        .Q(\filter_in_r_reg[17]_14 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][8] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[17]_78 [8]));
+        .Q(\filter_in_r_reg[17]_14 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[17][9] 
        (.C(aclk),
-        .CE(\filter_in_r[17]_37 ),
+        .CE(\filter_in_r[17]_101 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[17]_78 [9]));
+        .Q(\filter_in_r_reg[17]_14 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][0] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[18]_77 [0]));
+        .Q(\filter_in_r_reg[18]_13 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][10] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[18]_77 [10]));
+        .Q(\filter_in_r_reg[18]_13 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][11] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[18]_77 [11]));
+        .Q(\filter_in_r_reg[18]_13 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][12] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[18]_77 [12]));
+        .Q(\filter_in_r_reg[18]_13 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][13] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[18]_77 [13]));
+        .Q(\filter_in_r_reg[18]_13 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][14] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[18]_77 [14]));
+        .Q(\filter_in_r_reg[18]_13 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][15] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[18]_77 [15]));
+        .Q(\filter_in_r_reg[18]_13 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][16] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[18]_77 [16]));
+        .Q(\filter_in_r_reg[18]_13 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][17] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[18]_77 [17]));
+        .Q(\filter_in_r_reg[18]_13 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][18] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[18]_77 [18]));
+        .Q(\filter_in_r_reg[18]_13 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][19] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[18]_77 [19]));
+        .Q(\filter_in_r_reg[18]_13 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][1] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[18]_77 [1]));
+        .Q(\filter_in_r_reg[18]_13 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][20] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[18]_77 [20]));
+        .Q(\filter_in_r_reg[18]_13 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][21] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[18]_77 [21]));
+        .Q(\filter_in_r_reg[18]_13 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][22] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[18]_77 [22]));
+        .Q(\filter_in_r_reg[18]_13 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][23] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[18]_77 [23]));
+        .Q(\filter_in_r_reg[18]_13 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][2] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[18]_77 [2]));
+        .Q(\filter_in_r_reg[18]_13 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][3] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[18]_77 [3]));
+        .Q(\filter_in_r_reg[18]_13 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][4] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[18]_77 [4]));
+        .Q(\filter_in_r_reg[18]_13 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][5] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[18]_77 [5]));
+        .Q(\filter_in_r_reg[18]_13 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][6] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[18]_77 [6]));
+        .Q(\filter_in_r_reg[18]_13 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][7] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[18]_77 [7]));
+        .Q(\filter_in_r_reg[18]_13 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][8] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[18]_77 [8]));
+        .Q(\filter_in_r_reg[18]_13 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[18][9] 
        (.C(aclk),
-        .CE(\filter_in_r[18]_45 ),
+        .CE(\filter_in_r[18]_109 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[18]_77 [9]));
+        .Q(\filter_in_r_reg[18]_13 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][0] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[19]_76 [0]));
+        .Q(\filter_in_r_reg[19]_12 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][10] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[19]_76 [10]));
+        .Q(\filter_in_r_reg[19]_12 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][11] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[19]_76 [11]));
+        .Q(\filter_in_r_reg[19]_12 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][12] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[19]_76 [12]));
+        .Q(\filter_in_r_reg[19]_12 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][13] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[19]_76 [13]));
+        .Q(\filter_in_r_reg[19]_12 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][14] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[19]_76 [14]));
+        .Q(\filter_in_r_reg[19]_12 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][15] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[19]_76 [15]));
+        .Q(\filter_in_r_reg[19]_12 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][16] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[19]_76 [16]));
+        .Q(\filter_in_r_reg[19]_12 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][17] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[19]_76 [17]));
+        .Q(\filter_in_r_reg[19]_12 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][18] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[19]_76 [18]));
+        .Q(\filter_in_r_reg[19]_12 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][19] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[19]_76 [19]));
+        .Q(\filter_in_r_reg[19]_12 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][1] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[19]_76 [1]));
+        .Q(\filter_in_r_reg[19]_12 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][20] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[19]_76 [20]));
+        .Q(\filter_in_r_reg[19]_12 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][21] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[19]_76 [21]));
+        .Q(\filter_in_r_reg[19]_12 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][22] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[19]_76 [22]));
+        .Q(\filter_in_r_reg[19]_12 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][23] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[19]_76 [23]));
+        .Q(\filter_in_r_reg[19]_12 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][2] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[19]_76 [2]));
+        .Q(\filter_in_r_reg[19]_12 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][3] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[19]_76 [3]));
+        .Q(\filter_in_r_reg[19]_12 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][4] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[19]_76 [4]));
+        .Q(\filter_in_r_reg[19]_12 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][5] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[19]_76 [5]));
+        .Q(\filter_in_r_reg[19]_12 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][6] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[19]_76 [6]));
+        .Q(\filter_in_r_reg[19]_12 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][7] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[19]_76 [7]));
+        .Q(\filter_in_r_reg[19]_12 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][8] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[19]_76 [8]));
+        .Q(\filter_in_r_reg[19]_12 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[19][9] 
        (.C(aclk),
-        .CE(\filter_in_r[19]_13 ),
+        .CE(\filter_in_r[19]_77 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[19]_76 [9]));
+        .Q(\filter_in_r_reg[19]_12 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][0] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[1]_94 [0]));
+        .Q(\filter_in_r_reg[1]_30 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][10] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[1]_94 [10]));
+        .Q(\filter_in_r_reg[1]_30 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][11] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[1]_94 [11]));
+        .Q(\filter_in_r_reg[1]_30 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][12] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[1]_94 [12]));
+        .Q(\filter_in_r_reg[1]_30 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][13] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[1]_94 [13]));
+        .Q(\filter_in_r_reg[1]_30 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][14] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[1]_94 [14]));
+        .Q(\filter_in_r_reg[1]_30 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][15] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[1]_94 [15]));
+        .Q(\filter_in_r_reg[1]_30 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][16] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[1]_94 [16]));
+        .Q(\filter_in_r_reg[1]_30 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][17] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[1]_94 [17]));
+        .Q(\filter_in_r_reg[1]_30 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][18] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[1]_94 [18]));
+        .Q(\filter_in_r_reg[1]_30 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][19] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[1]_94 [19]));
+        .Q(\filter_in_r_reg[1]_30 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][1] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[1]_94 [1]));
+        .Q(\filter_in_r_reg[1]_30 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][20] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[1]_94 [20]));
+        .Q(\filter_in_r_reg[1]_30 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][21] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[1]_94 [21]));
+        .Q(\filter_in_r_reg[1]_30 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][22] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[1]_94 [22]));
+        .Q(\filter_in_r_reg[1]_30 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][23] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[1]_94 [23]));
+        .Q(\filter_in_r_reg[1]_30 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][2] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[1]_94 [2]));
+        .Q(\filter_in_r_reg[1]_30 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][3] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[1]_94 [3]));
+        .Q(\filter_in_r_reg[1]_30 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][4] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[1]_94 [4]));
+        .Q(\filter_in_r_reg[1]_30 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][5] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[1]_94 [5]));
+        .Q(\filter_in_r_reg[1]_30 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][6] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[1]_94 [6]));
+        .Q(\filter_in_r_reg[1]_30 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][7] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[1]_94 [7]));
+        .Q(\filter_in_r_reg[1]_30 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][8] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[1]_94 [8]));
+        .Q(\filter_in_r_reg[1]_30 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[1][9] 
        (.C(aclk),
-        .CE(\filter_in_r[1]_39 ),
+        .CE(\filter_in_r[1]_103 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[1]_94 [9]));
+        .Q(\filter_in_r_reg[1]_30 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][0] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[20]_75 [0]));
+        .Q(\filter_in_r_reg[20]_11 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][10] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[20]_75 [10]));
+        .Q(\filter_in_r_reg[20]_11 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][11] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[20]_75 [11]));
+        .Q(\filter_in_r_reg[20]_11 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][12] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[20]_75 [12]));
+        .Q(\filter_in_r_reg[20]_11 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][13] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[20]_75 [13]));
+        .Q(\filter_in_r_reg[20]_11 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][14] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[20]_75 [14]));
+        .Q(\filter_in_r_reg[20]_11 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][15] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[20]_75 [15]));
+        .Q(\filter_in_r_reg[20]_11 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][16] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[20]_75 [16]));
+        .Q(\filter_in_r_reg[20]_11 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][17] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[20]_75 [17]));
+        .Q(\filter_in_r_reg[20]_11 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][18] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[20]_75 [18]));
+        .Q(\filter_in_r_reg[20]_11 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][19] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[20]_75 [19]));
+        .Q(\filter_in_r_reg[20]_11 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][1] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[20]_75 [1]));
+        .Q(\filter_in_r_reg[20]_11 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][20] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[20]_75 [20]));
+        .Q(\filter_in_r_reg[20]_11 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][21] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[20]_75 [21]));
+        .Q(\filter_in_r_reg[20]_11 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][22] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[20]_75 [22]));
+        .Q(\filter_in_r_reg[20]_11 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][23] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[20]_75 [23]));
+        .Q(\filter_in_r_reg[20]_11 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][2] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[20]_75 [2]));
+        .Q(\filter_in_r_reg[20]_11 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][3] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[20]_75 [3]));
+        .Q(\filter_in_r_reg[20]_11 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][4] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[20]_75 [4]));
+        .Q(\filter_in_r_reg[20]_11 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][5] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[20]_75 [5]));
+        .Q(\filter_in_r_reg[20]_11 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][6] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[20]_75 [6]));
+        .Q(\filter_in_r_reg[20]_11 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][7] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[20]_75 [7]));
+        .Q(\filter_in_r_reg[20]_11 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][8] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[20]_75 [8]));
+        .Q(\filter_in_r_reg[20]_11 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[20][9] 
        (.C(aclk),
-        .CE(\filter_in_r[20]_53 ),
+        .CE(\filter_in_r[20]_117 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[20]_75 [9]));
+        .Q(\filter_in_r_reg[20]_11 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][0] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[21]_74 [0]));
+        .Q(\filter_in_r_reg[21]_10 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][10] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[21]_74 [10]));
+        .Q(\filter_in_r_reg[21]_10 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][11] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[21]_74 [11]));
+        .Q(\filter_in_r_reg[21]_10 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][12] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[21]_74 [12]));
+        .Q(\filter_in_r_reg[21]_10 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][13] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[21]_74 [13]));
+        .Q(\filter_in_r_reg[21]_10 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][14] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[21]_74 [14]));
+        .Q(\filter_in_r_reg[21]_10 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][15] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[21]_74 [15]));
+        .Q(\filter_in_r_reg[21]_10 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][16] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[21]_74 [16]));
+        .Q(\filter_in_r_reg[21]_10 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][17] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[21]_74 [17]));
+        .Q(\filter_in_r_reg[21]_10 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][18] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[21]_74 [18]));
+        .Q(\filter_in_r_reg[21]_10 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][19] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[21]_74 [19]));
+        .Q(\filter_in_r_reg[21]_10 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][1] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[21]_74 [1]));
+        .Q(\filter_in_r_reg[21]_10 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][20] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[21]_74 [20]));
+        .Q(\filter_in_r_reg[21]_10 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][21] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[21]_74 [21]));
+        .Q(\filter_in_r_reg[21]_10 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][22] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[21]_74 [22]));
+        .Q(\filter_in_r_reg[21]_10 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][23] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[21]_74 [23]));
+        .Q(\filter_in_r_reg[21]_10 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][2] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[21]_74 [2]));
+        .Q(\filter_in_r_reg[21]_10 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][3] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[21]_74 [3]));
+        .Q(\filter_in_r_reg[21]_10 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][4] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[21]_74 [4]));
+        .Q(\filter_in_r_reg[21]_10 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][5] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[21]_74 [5]));
+        .Q(\filter_in_r_reg[21]_10 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][6] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[21]_74 [6]));
+        .Q(\filter_in_r_reg[21]_10 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][7] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[21]_74 [7]));
+        .Q(\filter_in_r_reg[21]_10 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][8] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[21]_74 [8]));
+        .Q(\filter_in_r_reg[21]_10 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[21][9] 
        (.C(aclk),
-        .CE(\filter_in_r[21]_29 ),
+        .CE(\filter_in_r[21]_93 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[21]_74 [9]));
+        .Q(\filter_in_r_reg[21]_10 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][0] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[22]_73 [0]));
+        .Q(\filter_in_r_reg[22]_9 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][10] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[22]_73 [10]));
+        .Q(\filter_in_r_reg[22]_9 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][11] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[22]_73 [11]));
+        .Q(\filter_in_r_reg[22]_9 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][12] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[22]_73 [12]));
+        .Q(\filter_in_r_reg[22]_9 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][13] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[22]_73 [13]));
+        .Q(\filter_in_r_reg[22]_9 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][14] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[22]_73 [14]));
+        .Q(\filter_in_r_reg[22]_9 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][15] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[22]_73 [15]));
+        .Q(\filter_in_r_reg[22]_9 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][16] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[22]_73 [16]));
+        .Q(\filter_in_r_reg[22]_9 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][17] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[22]_73 [17]));
+        .Q(\filter_in_r_reg[22]_9 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][18] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[22]_73 [18]));
+        .Q(\filter_in_r_reg[22]_9 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][19] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[22]_73 [19]));
+        .Q(\filter_in_r_reg[22]_9 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][1] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[22]_73 [1]));
+        .Q(\filter_in_r_reg[22]_9 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][20] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[22]_73 [20]));
+        .Q(\filter_in_r_reg[22]_9 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][21] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[22]_73 [21]));
+        .Q(\filter_in_r_reg[22]_9 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][22] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[22]_73 [22]));
+        .Q(\filter_in_r_reg[22]_9 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][23] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[22]_73 [23]));
+        .Q(\filter_in_r_reg[22]_9 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][2] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[22]_73 [2]));
+        .Q(\filter_in_r_reg[22]_9 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][3] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[22]_73 [3]));
+        .Q(\filter_in_r_reg[22]_9 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][4] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[22]_73 [4]));
+        .Q(\filter_in_r_reg[22]_9 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][5] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[22]_73 [5]));
+        .Q(\filter_in_r_reg[22]_9 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][6] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[22]_73 [6]));
+        .Q(\filter_in_r_reg[22]_9 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][7] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[22]_73 [7]));
+        .Q(\filter_in_r_reg[22]_9 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][8] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[22]_73 [8]));
+        .Q(\filter_in_r_reg[22]_9 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[22][9] 
        (.C(aclk),
-        .CE(\filter_in_r[22]_61 ),
+        .CE(\filter_in_r[22]_125 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[22]_73 [9]));
+        .Q(\filter_in_r_reg[22]_9 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][0] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[23]_72 [0]));
+        .Q(\filter_in_r_reg[23]_8 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][10] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[23]_72 [10]));
+        .Q(\filter_in_r_reg[23]_8 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][11] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[23]_72 [11]));
+        .Q(\filter_in_r_reg[23]_8 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][12] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[23]_72 [12]));
+        .Q(\filter_in_r_reg[23]_8 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][13] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[23]_72 [13]));
+        .Q(\filter_in_r_reg[23]_8 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][14] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[23]_72 [14]));
+        .Q(\filter_in_r_reg[23]_8 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][15] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[23]_72 [15]));
+        .Q(\filter_in_r_reg[23]_8 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][16] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[23]_72 [16]));
+        .Q(\filter_in_r_reg[23]_8 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][17] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[23]_72 [17]));
+        .Q(\filter_in_r_reg[23]_8 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][18] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[23]_72 [18]));
+        .Q(\filter_in_r_reg[23]_8 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][19] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[23]_72 [19]));
+        .Q(\filter_in_r_reg[23]_8 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][1] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[23]_72 [1]));
+        .Q(\filter_in_r_reg[23]_8 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][20] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[23]_72 [20]));
+        .Q(\filter_in_r_reg[23]_8 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][21] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[23]_72 [21]));
+        .Q(\filter_in_r_reg[23]_8 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][22] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[23]_72 [22]));
+        .Q(\filter_in_r_reg[23]_8 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][23] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[23]_72 [23]));
+        .Q(\filter_in_r_reg[23]_8 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][2] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[23]_72 [2]));
+        .Q(\filter_in_r_reg[23]_8 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][3] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[23]_72 [3]));
+        .Q(\filter_in_r_reg[23]_8 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][4] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[23]_72 [4]));
+        .Q(\filter_in_r_reg[23]_8 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][5] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[23]_72 [5]));
+        .Q(\filter_in_r_reg[23]_8 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][6] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[23]_72 [6]));
+        .Q(\filter_in_r_reg[23]_8 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][7] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[23]_72 [7]));
+        .Q(\filter_in_r_reg[23]_8 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][8] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[23]_72 [8]));
+        .Q(\filter_in_r_reg[23]_8 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[23][9] 
        (.C(aclk),
-        .CE(\filter_in_r[23]_5 ),
+        .CE(\filter_in_r[23]_69 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[23]_72 [9]));
+        .Q(\filter_in_r_reg[23]_8 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][0] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[24]_71 [0]));
+        .Q(\filter_in_r_reg[24]_7 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][10] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[24]_71 [10]));
+        .Q(\filter_in_r_reg[24]_7 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][11] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[24]_71 [11]));
+        .Q(\filter_in_r_reg[24]_7 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][12] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[24]_71 [12]));
+        .Q(\filter_in_r_reg[24]_7 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][13] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[24]_71 [13]));
+        .Q(\filter_in_r_reg[24]_7 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][14] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[24]_71 [14]));
+        .Q(\filter_in_r_reg[24]_7 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][15] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[24]_71 [15]));
+        .Q(\filter_in_r_reg[24]_7 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][16] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[24]_71 [16]));
+        .Q(\filter_in_r_reg[24]_7 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][17] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[24]_71 [17]));
+        .Q(\filter_in_r_reg[24]_7 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][18] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[24]_71 [18]));
+        .Q(\filter_in_r_reg[24]_7 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][19] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[24]_71 [19]));
+        .Q(\filter_in_r_reg[24]_7 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][1] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[24]_71 [1]));
+        .Q(\filter_in_r_reg[24]_7 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][20] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[24]_71 [20]));
+        .Q(\filter_in_r_reg[24]_7 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][21] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[24]_71 [21]));
+        .Q(\filter_in_r_reg[24]_7 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][22] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[24]_71 [22]));
+        .Q(\filter_in_r_reg[24]_7 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][23] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[24]_71 [23]));
+        .Q(\filter_in_r_reg[24]_7 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][2] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[24]_71 [2]));
+        .Q(\filter_in_r_reg[24]_7 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][3] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[24]_71 [3]));
+        .Q(\filter_in_r_reg[24]_7 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][4] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[24]_71 [4]));
+        .Q(\filter_in_r_reg[24]_7 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][5] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[24]_71 [5]));
+        .Q(\filter_in_r_reg[24]_7 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][6] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[24]_71 [6]));
+        .Q(\filter_in_r_reg[24]_7 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][7] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[24]_71 [7]));
+        .Q(\filter_in_r_reg[24]_7 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][8] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[24]_71 [8]));
+        .Q(\filter_in_r_reg[24]_7 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[24][9] 
        (.C(aclk),
-        .CE(\filter_in_r[24]_17 ),
+        .CE(\filter_in_r[24]_81 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[24]_71 [9]));
+        .Q(\filter_in_r_reg[24]_7 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][0] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[25]_70 [0]));
+        .Q(\filter_in_r_reg[25]_6 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][10] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[25]_70 [10]));
+        .Q(\filter_in_r_reg[25]_6 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][11] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[25]_70 [11]));
+        .Q(\filter_in_r_reg[25]_6 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][12] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[25]_70 [12]));
+        .Q(\filter_in_r_reg[25]_6 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][13] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[25]_70 [13]));
+        .Q(\filter_in_r_reg[25]_6 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][14] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[25]_70 [14]));
+        .Q(\filter_in_r_reg[25]_6 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][15] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[25]_70 [15]));
+        .Q(\filter_in_r_reg[25]_6 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][16] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[25]_70 [16]));
+        .Q(\filter_in_r_reg[25]_6 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][17] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[25]_70 [17]));
+        .Q(\filter_in_r_reg[25]_6 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][18] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[25]_70 [18]));
+        .Q(\filter_in_r_reg[25]_6 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][19] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[25]_70 [19]));
+        .Q(\filter_in_r_reg[25]_6 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][1] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[25]_70 [1]));
+        .Q(\filter_in_r_reg[25]_6 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][20] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[25]_70 [20]));
+        .Q(\filter_in_r_reg[25]_6 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][21] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[25]_70 [21]));
+        .Q(\filter_in_r_reg[25]_6 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][22] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[25]_70 [22]));
+        .Q(\filter_in_r_reg[25]_6 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][23] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[25]_70 [23]));
+        .Q(\filter_in_r_reg[25]_6 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][2] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[25]_70 [2]));
+        .Q(\filter_in_r_reg[25]_6 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][3] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[25]_70 [3]));
+        .Q(\filter_in_r_reg[25]_6 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][4] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[25]_70 [4]));
+        .Q(\filter_in_r_reg[25]_6 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][5] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[25]_70 [5]));
+        .Q(\filter_in_r_reg[25]_6 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][6] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[25]_70 [6]));
+        .Q(\filter_in_r_reg[25]_6 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][7] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[25]_70 [7]));
+        .Q(\filter_in_r_reg[25]_6 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][8] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[25]_70 [8]));
+        .Q(\filter_in_r_reg[25]_6 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[25][9] 
        (.C(aclk),
-        .CE(\filter_in_r[25]_33 ),
+        .CE(\filter_in_r[25]_97 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[25]_70 [9]));
+        .Q(\filter_in_r_reg[25]_6 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][0] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[26]_69 [0]));
+        .Q(\filter_in_r_reg[26]_5 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][10] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[26]_69 [10]));
+        .Q(\filter_in_r_reg[26]_5 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][11] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[26]_69 [11]));
+        .Q(\filter_in_r_reg[26]_5 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][12] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[26]_69 [12]));
+        .Q(\filter_in_r_reg[26]_5 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][13] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[26]_69 [13]));
+        .Q(\filter_in_r_reg[26]_5 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][14] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[26]_69 [14]));
+        .Q(\filter_in_r_reg[26]_5 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][15] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[26]_69 [15]));
+        .Q(\filter_in_r_reg[26]_5 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][16] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[26]_69 [16]));
+        .Q(\filter_in_r_reg[26]_5 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][17] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[26]_69 [17]));
+        .Q(\filter_in_r_reg[26]_5 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][18] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[26]_69 [18]));
+        .Q(\filter_in_r_reg[26]_5 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][19] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[26]_69 [19]));
+        .Q(\filter_in_r_reg[26]_5 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][1] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[26]_69 [1]));
+        .Q(\filter_in_r_reg[26]_5 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][20] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[26]_69 [20]));
+        .Q(\filter_in_r_reg[26]_5 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][21] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[26]_69 [21]));
+        .Q(\filter_in_r_reg[26]_5 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][22] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[26]_69 [22]));
+        .Q(\filter_in_r_reg[26]_5 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][23] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[26]_69 [23]));
+        .Q(\filter_in_r_reg[26]_5 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][2] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[26]_69 [2]));
+        .Q(\filter_in_r_reg[26]_5 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][3] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[26]_69 [3]));
+        .Q(\filter_in_r_reg[26]_5 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][4] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[26]_69 [4]));
+        .Q(\filter_in_r_reg[26]_5 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][5] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[26]_69 [5]));
+        .Q(\filter_in_r_reg[26]_5 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][6] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[26]_69 [6]));
+        .Q(\filter_in_r_reg[26]_5 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][7] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[26]_69 [7]));
+        .Q(\filter_in_r_reg[26]_5 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][8] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[26]_69 [8]));
+        .Q(\filter_in_r_reg[26]_5 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[26][9] 
        (.C(aclk),
-        .CE(\filter_in_r[26]_41 ),
+        .CE(\filter_in_r[26]_105 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[26]_69 [9]));
+        .Q(\filter_in_r_reg[26]_5 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][0] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[27]_68 [0]));
+        .Q(\filter_in_r_reg[27]_4 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][10] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[27]_68 [10]));
+        .Q(\filter_in_r_reg[27]_4 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][11] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[27]_68 [11]));
+        .Q(\filter_in_r_reg[27]_4 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][12] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[27]_68 [12]));
+        .Q(\filter_in_r_reg[27]_4 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][13] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[27]_68 [13]));
+        .Q(\filter_in_r_reg[27]_4 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][14] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[27]_68 [14]));
+        .Q(\filter_in_r_reg[27]_4 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][15] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[27]_68 [15]));
+        .Q(\filter_in_r_reg[27]_4 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][16] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[27]_68 [16]));
+        .Q(\filter_in_r_reg[27]_4 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][17] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[27]_68 [17]));
+        .Q(\filter_in_r_reg[27]_4 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][18] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[27]_68 [18]));
+        .Q(\filter_in_r_reg[27]_4 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][19] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[27]_68 [19]));
+        .Q(\filter_in_r_reg[27]_4 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][1] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[27]_68 [1]));
+        .Q(\filter_in_r_reg[27]_4 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][20] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[27]_68 [20]));
+        .Q(\filter_in_r_reg[27]_4 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][21] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[27]_68 [21]));
+        .Q(\filter_in_r_reg[27]_4 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][22] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[27]_68 [22]));
+        .Q(\filter_in_r_reg[27]_4 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][23] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[27]_68 [23]));
+        .Q(\filter_in_r_reg[27]_4 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][2] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[27]_68 [2]));
+        .Q(\filter_in_r_reg[27]_4 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][3] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[27]_68 [3]));
+        .Q(\filter_in_r_reg[27]_4 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][4] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[27]_68 [4]));
+        .Q(\filter_in_r_reg[27]_4 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][5] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[27]_68 [5]));
+        .Q(\filter_in_r_reg[27]_4 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][6] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[27]_68 [6]));
+        .Q(\filter_in_r_reg[27]_4 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][7] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[27]_68 [7]));
+        .Q(\filter_in_r_reg[27]_4 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][8] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[27]_68 [8]));
+        .Q(\filter_in_r_reg[27]_4 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[27][9] 
        (.C(aclk),
-        .CE(\filter_in_r[27]_9 ),
+        .CE(\filter_in_r[27]_73 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[27]_68 [9]));
+        .Q(\filter_in_r_reg[27]_4 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][0] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[28]_67 [0]));
+        .Q(\filter_in_r_reg[28]_3 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][10] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[28]_67 [10]));
+        .Q(\filter_in_r_reg[28]_3 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][11] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[28]_67 [11]));
+        .Q(\filter_in_r_reg[28]_3 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][12] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[28]_67 [12]));
+        .Q(\filter_in_r_reg[28]_3 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][13] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[28]_67 [13]));
+        .Q(\filter_in_r_reg[28]_3 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][14] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[28]_67 [14]));
+        .Q(\filter_in_r_reg[28]_3 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][15] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[28]_67 [15]));
+        .Q(\filter_in_r_reg[28]_3 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][16] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[28]_67 [16]));
+        .Q(\filter_in_r_reg[28]_3 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][17] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[28]_67 [17]));
+        .Q(\filter_in_r_reg[28]_3 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][18] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[28]_67 [18]));
+        .Q(\filter_in_r_reg[28]_3 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][19] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[28]_67 [19]));
+        .Q(\filter_in_r_reg[28]_3 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][1] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[28]_67 [1]));
+        .Q(\filter_in_r_reg[28]_3 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][20] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[28]_67 [20]));
+        .Q(\filter_in_r_reg[28]_3 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][21] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[28]_67 [21]));
+        .Q(\filter_in_r_reg[28]_3 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][22] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[28]_67 [22]));
+        .Q(\filter_in_r_reg[28]_3 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][23] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[28]_67 [23]));
+        .Q(\filter_in_r_reg[28]_3 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][2] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[28]_67 [2]));
+        .Q(\filter_in_r_reg[28]_3 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][3] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[28]_67 [3]));
+        .Q(\filter_in_r_reg[28]_3 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][4] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[28]_67 [4]));
+        .Q(\filter_in_r_reg[28]_3 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][5] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[28]_67 [5]));
+        .Q(\filter_in_r_reg[28]_3 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][6] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[28]_67 [6]));
+        .Q(\filter_in_r_reg[28]_3 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][7] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[28]_67 [7]));
+        .Q(\filter_in_r_reg[28]_3 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][8] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[28]_67 [8]));
+        .Q(\filter_in_r_reg[28]_3 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[28][9] 
        (.C(aclk),
-        .CE(\filter_in_r[28]_49 ),
+        .CE(\filter_in_r[28]_113 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[28]_67 [9]));
+        .Q(\filter_in_r_reg[28]_3 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][0] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[29]_66 [0]));
+        .Q(\filter_in_r_reg[29]_2 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][10] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[29]_66 [10]));
+        .Q(\filter_in_r_reg[29]_2 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][11] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[29]_66 [11]));
+        .Q(\filter_in_r_reg[29]_2 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][12] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[29]_66 [12]));
+        .Q(\filter_in_r_reg[29]_2 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][13] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[29]_66 [13]));
+        .Q(\filter_in_r_reg[29]_2 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][14] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[29]_66 [14]));
+        .Q(\filter_in_r_reg[29]_2 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][15] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[29]_66 [15]));
+        .Q(\filter_in_r_reg[29]_2 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][16] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[29]_66 [16]));
+        .Q(\filter_in_r_reg[29]_2 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][17] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[29]_66 [17]));
+        .Q(\filter_in_r_reg[29]_2 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][18] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[29]_66 [18]));
+        .Q(\filter_in_r_reg[29]_2 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][19] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[29]_66 [19]));
+        .Q(\filter_in_r_reg[29]_2 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][1] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[29]_66 [1]));
+        .Q(\filter_in_r_reg[29]_2 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][20] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[29]_66 [20]));
+        .Q(\filter_in_r_reg[29]_2 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][21] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[29]_66 [21]));
+        .Q(\filter_in_r_reg[29]_2 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][22] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[29]_66 [22]));
+        .Q(\filter_in_r_reg[29]_2 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][23] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[29]_66 [23]));
+        .Q(\filter_in_r_reg[29]_2 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][2] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[29]_66 [2]));
+        .Q(\filter_in_r_reg[29]_2 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][3] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[29]_66 [3]));
+        .Q(\filter_in_r_reg[29]_2 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][4] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[29]_66 [4]));
+        .Q(\filter_in_r_reg[29]_2 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][5] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[29]_66 [5]));
+        .Q(\filter_in_r_reg[29]_2 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][6] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[29]_66 [6]));
+        .Q(\filter_in_r_reg[29]_2 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][7] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[29]_66 [7]));
+        .Q(\filter_in_r_reg[29]_2 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][8] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[29]_66 [8]));
+        .Q(\filter_in_r_reg[29]_2 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[29][9] 
        (.C(aclk),
-        .CE(\filter_in_r[29]_25 ),
+        .CE(\filter_in_r[29]_89 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[29]_66 [9]));
+        .Q(\filter_in_r_reg[29]_2 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][0] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[2]_93 [0]));
+        .Q(\filter_in_r_reg[2]_29 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][10] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[2]_93 [10]));
+        .Q(\filter_in_r_reg[2]_29 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][11] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[2]_93 [11]));
+        .Q(\filter_in_r_reg[2]_29 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][12] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[2]_93 [12]));
+        .Q(\filter_in_r_reg[2]_29 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][13] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[2]_93 [13]));
+        .Q(\filter_in_r_reg[2]_29 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][14] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[2]_93 [14]));
+        .Q(\filter_in_r_reg[2]_29 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][15] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[2]_93 [15]));
+        .Q(\filter_in_r_reg[2]_29 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][16] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[2]_93 [16]));
+        .Q(\filter_in_r_reg[2]_29 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][17] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[2]_93 [17]));
+        .Q(\filter_in_r_reg[2]_29 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][18] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[2]_93 [18]));
+        .Q(\filter_in_r_reg[2]_29 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][19] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[2]_93 [19]));
+        .Q(\filter_in_r_reg[2]_29 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][1] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[2]_93 [1]));
+        .Q(\filter_in_r_reg[2]_29 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][20] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[2]_93 [20]));
+        .Q(\filter_in_r_reg[2]_29 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][21] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[2]_93 [21]));
+        .Q(\filter_in_r_reg[2]_29 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][22] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[2]_93 [22]));
+        .Q(\filter_in_r_reg[2]_29 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][23] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[2]_93 [23]));
+        .Q(\filter_in_r_reg[2]_29 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][2] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[2]_93 [2]));
+        .Q(\filter_in_r_reg[2]_29 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][3] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[2]_93 [3]));
+        .Q(\filter_in_r_reg[2]_29 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][4] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[2]_93 [4]));
+        .Q(\filter_in_r_reg[2]_29 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][5] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[2]_93 [5]));
+        .Q(\filter_in_r_reg[2]_29 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][6] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[2]_93 [6]));
+        .Q(\filter_in_r_reg[2]_29 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][7] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[2]_93 [7]));
+        .Q(\filter_in_r_reg[2]_29 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][8] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[2]_93 [8]));
+        .Q(\filter_in_r_reg[2]_29 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[2][9] 
        (.C(aclk),
-        .CE(\filter_in_r[2]_47 ),
+        .CE(\filter_in_r[2]_111 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[2]_93 [9]));
+        .Q(\filter_in_r_reg[2]_29 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][0] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[30]_65 [0]));
+        .Q(\filter_in_r_reg[30]_1 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][10] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[30]_65 [10]));
+        .Q(\filter_in_r_reg[30]_1 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][11] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[30]_65 [11]));
+        .Q(\filter_in_r_reg[30]_1 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][12] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[30]_65 [12]));
+        .Q(\filter_in_r_reg[30]_1 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][13] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[30]_65 [13]));
+        .Q(\filter_in_r_reg[30]_1 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][14] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[30]_65 [14]));
+        .Q(\filter_in_r_reg[30]_1 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][15] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[30]_65 [15]));
+        .Q(\filter_in_r_reg[30]_1 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][16] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[30]_65 [16]));
+        .Q(\filter_in_r_reg[30]_1 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][17] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[30]_65 [17]));
+        .Q(\filter_in_r_reg[30]_1 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][18] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[30]_65 [18]));
+        .Q(\filter_in_r_reg[30]_1 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][19] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[30]_65 [19]));
+        .Q(\filter_in_r_reg[30]_1 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][1] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[30]_65 [1]));
+        .Q(\filter_in_r_reg[30]_1 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][20] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[30]_65 [20]));
+        .Q(\filter_in_r_reg[30]_1 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][21] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[30]_65 [21]));
+        .Q(\filter_in_r_reg[30]_1 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][22] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[30]_65 [22]));
+        .Q(\filter_in_r_reg[30]_1 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][23] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[30]_65 [23]));
+        .Q(\filter_in_r_reg[30]_1 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][2] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[30]_65 [2]));
+        .Q(\filter_in_r_reg[30]_1 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][3] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[30]_65 [3]));
+        .Q(\filter_in_r_reg[30]_1 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][4] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[30]_65 [4]));
+        .Q(\filter_in_r_reg[30]_1 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][5] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[30]_65 [5]));
+        .Q(\filter_in_r_reg[30]_1 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][6] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[30]_65 [6]));
+        .Q(\filter_in_r_reg[30]_1 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][7] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[30]_65 [7]));
+        .Q(\filter_in_r_reg[30]_1 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][8] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[30]_65 [8]));
+        .Q(\filter_in_r_reg[30]_1 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[30][9] 
        (.C(aclk),
-        .CE(\filter_in_r[30]_57 ),
+        .CE(\filter_in_r[30]_121 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[30]_65 [9]));
+        .Q(\filter_in_r_reg[30]_1 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][0] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[31]_64 [0]));
+        .Q(\filter_in_r_reg[31]_0 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][10] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[31]_64 [10]));
+        .Q(\filter_in_r_reg[31]_0 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][11] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[31]_64 [11]));
+        .Q(\filter_in_r_reg[31]_0 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][12] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[31]_64 [12]));
+        .Q(\filter_in_r_reg[31]_0 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][13] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[31]_64 [13]));
+        .Q(\filter_in_r_reg[31]_0 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][14] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[31]_64 [14]));
+        .Q(\filter_in_r_reg[31]_0 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][15] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[31]_64 [15]));
+        .Q(\filter_in_r_reg[31]_0 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][16] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[31]_64 [16]));
+        .Q(\filter_in_r_reg[31]_0 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][17] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[31]_64 [17]));
+        .Q(\filter_in_r_reg[31]_0 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][18] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[31]_64 [18]));
+        .Q(\filter_in_r_reg[31]_0 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][19] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[31]_64 [19]));
+        .Q(\filter_in_r_reg[31]_0 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][1] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[31]_64 [1]));
+        .Q(\filter_in_r_reg[31]_0 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][20] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[31]_64 [20]));
+        .Q(\filter_in_r_reg[31]_0 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][21] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[31]_64 [21]));
+        .Q(\filter_in_r_reg[31]_0 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][22] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[31]_64 [22]));
+        .Q(\filter_in_r_reg[31]_0 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][23] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[31]_64 [23]));
+        .Q(\filter_in_r_reg[31]_0 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][2] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[31]_64 [2]));
+        .Q(\filter_in_r_reg[31]_0 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][3] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[31]_64 [3]));
+        .Q(\filter_in_r_reg[31]_0 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][4] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[31]_64 [4]));
+        .Q(\filter_in_r_reg[31]_0 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][5] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[31]_64 [5]));
+        .Q(\filter_in_r_reg[31]_0 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][6] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[31]_64 [6]));
+        .Q(\filter_in_r_reg[31]_0 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][7] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[31]_64 [7]));
+        .Q(\filter_in_r_reg[31]_0 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][8] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[31]_64 [8]));
+        .Q(\filter_in_r_reg[31]_0 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[31][9] 
        (.C(aclk),
-        .CE(\filter_in_r[31]_3 ),
+        .CE(\filter_in_r[31]_67 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[31]_64 [9]));
+        .Q(\filter_in_r_reg[31]_0 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][0] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[3]_92 [0]));
+        .Q(\filter_in_r_reg[3]_28 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][10] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[3]_92 [10]));
+        .Q(\filter_in_r_reg[3]_28 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][11] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[3]_92 [11]));
+        .Q(\filter_in_r_reg[3]_28 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][12] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[3]_92 [12]));
+        .Q(\filter_in_r_reg[3]_28 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][13] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[3]_92 [13]));
+        .Q(\filter_in_r_reg[3]_28 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][14] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[3]_92 [14]));
+        .Q(\filter_in_r_reg[3]_28 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][15] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[3]_92 [15]));
+        .Q(\filter_in_r_reg[3]_28 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][16] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[3]_92 [16]));
+        .Q(\filter_in_r_reg[3]_28 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][17] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[3]_92 [17]));
+        .Q(\filter_in_r_reg[3]_28 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][18] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[3]_92 [18]));
+        .Q(\filter_in_r_reg[3]_28 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][19] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[3]_92 [19]));
+        .Q(\filter_in_r_reg[3]_28 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][1] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[3]_92 [1]));
+        .Q(\filter_in_r_reg[3]_28 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][20] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[3]_92 [20]));
+        .Q(\filter_in_r_reg[3]_28 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][21] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[3]_92 [21]));
+        .Q(\filter_in_r_reg[3]_28 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][22] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[3]_92 [22]));
+        .Q(\filter_in_r_reg[3]_28 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][23] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[3]_92 [23]));
+        .Q(\filter_in_r_reg[3]_28 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][2] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[3]_92 [2]));
+        .Q(\filter_in_r_reg[3]_28 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][3] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[3]_92 [3]));
+        .Q(\filter_in_r_reg[3]_28 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][4] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[3]_92 [4]));
+        .Q(\filter_in_r_reg[3]_28 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][5] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[3]_92 [5]));
+        .Q(\filter_in_r_reg[3]_28 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][6] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[3]_92 [6]));
+        .Q(\filter_in_r_reg[3]_28 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][7] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[3]_92 [7]));
+        .Q(\filter_in_r_reg[3]_28 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][8] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[3]_92 [8]));
+        .Q(\filter_in_r_reg[3]_28 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[3][9] 
        (.C(aclk),
-        .CE(\filter_in_r[3]_15 ),
+        .CE(\filter_in_r[3]_79 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[3]_92 [9]));
+        .Q(\filter_in_r_reg[3]_28 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][0] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[4]_91 [0]));
+        .Q(\filter_in_r_reg[4]_27 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][10] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[4]_91 [10]));
+        .Q(\filter_in_r_reg[4]_27 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][11] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[4]_91 [11]));
+        .Q(\filter_in_r_reg[4]_27 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][12] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[4]_91 [12]));
+        .Q(\filter_in_r_reg[4]_27 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][13] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[4]_91 [13]));
+        .Q(\filter_in_r_reg[4]_27 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][14] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[4]_91 [14]));
+        .Q(\filter_in_r_reg[4]_27 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][15] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[4]_91 [15]));
+        .Q(\filter_in_r_reg[4]_27 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][16] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[4]_91 [16]));
+        .Q(\filter_in_r_reg[4]_27 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][17] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[4]_91 [17]));
+        .Q(\filter_in_r_reg[4]_27 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][18] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[4]_91 [18]));
+        .Q(\filter_in_r_reg[4]_27 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][19] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[4]_91 [19]));
+        .Q(\filter_in_r_reg[4]_27 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][1] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[4]_91 [1]));
+        .Q(\filter_in_r_reg[4]_27 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][20] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[4]_91 [20]));
+        .Q(\filter_in_r_reg[4]_27 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][21] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[4]_91 [21]));
+        .Q(\filter_in_r_reg[4]_27 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][22] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[4]_91 [22]));
+        .Q(\filter_in_r_reg[4]_27 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][23] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[4]_91 [23]));
+        .Q(\filter_in_r_reg[4]_27 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][2] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[4]_91 [2]));
+        .Q(\filter_in_r_reg[4]_27 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][3] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[4]_91 [3]));
+        .Q(\filter_in_r_reg[4]_27 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][4] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[4]_91 [4]));
+        .Q(\filter_in_r_reg[4]_27 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][5] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[4]_91 [5]));
+        .Q(\filter_in_r_reg[4]_27 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][6] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[4]_91 [6]));
+        .Q(\filter_in_r_reg[4]_27 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][7] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[4]_91 [7]));
+        .Q(\filter_in_r_reg[4]_27 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][8] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[4]_91 [8]));
+        .Q(\filter_in_r_reg[4]_27 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[4][9] 
        (.C(aclk),
-        .CE(\filter_in_r[4]_55 ),
+        .CE(\filter_in_r[4]_119 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[4]_91 [9]));
+        .Q(\filter_in_r_reg[4]_27 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][0] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[5]_90 [0]));
+        .Q(\filter_in_r_reg[5]_26 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][10] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[5]_90 [10]));
+        .Q(\filter_in_r_reg[5]_26 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][11] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[5]_90 [11]));
+        .Q(\filter_in_r_reg[5]_26 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][12] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[5]_90 [12]));
+        .Q(\filter_in_r_reg[5]_26 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][13] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[5]_90 [13]));
+        .Q(\filter_in_r_reg[5]_26 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][14] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[5]_90 [14]));
+        .Q(\filter_in_r_reg[5]_26 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][15] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[5]_90 [15]));
+        .Q(\filter_in_r_reg[5]_26 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][16] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[5]_90 [16]));
+        .Q(\filter_in_r_reg[5]_26 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][17] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[5]_90 [17]));
+        .Q(\filter_in_r_reg[5]_26 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][18] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[5]_90 [18]));
+        .Q(\filter_in_r_reg[5]_26 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][19] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[5]_90 [19]));
+        .Q(\filter_in_r_reg[5]_26 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][1] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[5]_90 [1]));
+        .Q(\filter_in_r_reg[5]_26 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][20] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[5]_90 [20]));
+        .Q(\filter_in_r_reg[5]_26 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][21] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[5]_90 [21]));
+        .Q(\filter_in_r_reg[5]_26 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][22] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[5]_90 [22]));
+        .Q(\filter_in_r_reg[5]_26 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][23] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[5]_90 [23]));
+        .Q(\filter_in_r_reg[5]_26 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][2] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[5]_90 [2]));
+        .Q(\filter_in_r_reg[5]_26 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][3] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[5]_90 [3]));
+        .Q(\filter_in_r_reg[5]_26 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][4] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[5]_90 [4]));
+        .Q(\filter_in_r_reg[5]_26 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][5] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[5]_90 [5]));
+        .Q(\filter_in_r_reg[5]_26 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][6] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[5]_90 [6]));
+        .Q(\filter_in_r_reg[5]_26 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][7] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[5]_90 [7]));
+        .Q(\filter_in_r_reg[5]_26 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][8] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[5]_90 [8]));
+        .Q(\filter_in_r_reg[5]_26 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[5][9] 
        (.C(aclk),
-        .CE(\filter_in_r[5]_31 ),
+        .CE(\filter_in_r[5]_95 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[5]_90 [9]));
+        .Q(\filter_in_r_reg[5]_26 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][0] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[6]_89 [0]));
+        .Q(\filter_in_r_reg[6]_25 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][10] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[6]_89 [10]));
+        .Q(\filter_in_r_reg[6]_25 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][11] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[6]_89 [11]));
+        .Q(\filter_in_r_reg[6]_25 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][12] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[6]_89 [12]));
+        .Q(\filter_in_r_reg[6]_25 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][13] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[6]_89 [13]));
+        .Q(\filter_in_r_reg[6]_25 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][14] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[6]_89 [14]));
+        .Q(\filter_in_r_reg[6]_25 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][15] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[6]_89 [15]));
+        .Q(\filter_in_r_reg[6]_25 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][16] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[6]_89 [16]));
+        .Q(\filter_in_r_reg[6]_25 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][17] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[6]_89 [17]));
+        .Q(\filter_in_r_reg[6]_25 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][18] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[6]_89 [18]));
+        .Q(\filter_in_r_reg[6]_25 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][19] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[6]_89 [19]));
+        .Q(\filter_in_r_reg[6]_25 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][1] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[6]_89 [1]));
+        .Q(\filter_in_r_reg[6]_25 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][20] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[6]_89 [20]));
+        .Q(\filter_in_r_reg[6]_25 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][21] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[6]_89 [21]));
+        .Q(\filter_in_r_reg[6]_25 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][22] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[6]_89 [22]));
+        .Q(\filter_in_r_reg[6]_25 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][23] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[6]_89 [23]));
+        .Q(\filter_in_r_reg[6]_25 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][2] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[6]_89 [2]));
+        .Q(\filter_in_r_reg[6]_25 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][3] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[6]_89 [3]));
+        .Q(\filter_in_r_reg[6]_25 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][4] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[6]_89 [4]));
+        .Q(\filter_in_r_reg[6]_25 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][5] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[6]_89 [5]));
+        .Q(\filter_in_r_reg[6]_25 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][6] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[6]_89 [6]));
+        .Q(\filter_in_r_reg[6]_25 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][7] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[6]_89 [7]));
+        .Q(\filter_in_r_reg[6]_25 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][8] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[6]_89 [8]));
+        .Q(\filter_in_r_reg[6]_25 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[6][9] 
        (.C(aclk),
-        .CE(\filter_in_r[6]_63 ),
+        .CE(\filter_in_r[6]_127 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[6]_89 [9]));
+        .Q(\filter_in_r_reg[6]_25 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][0] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[7]_88 [0]));
+        .Q(\filter_in_r_reg[7]_24 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][10] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[7]_88 [10]));
+        .Q(\filter_in_r_reg[7]_24 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][11] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[7]_88 [11]));
+        .Q(\filter_in_r_reg[7]_24 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][12] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[7]_88 [12]));
+        .Q(\filter_in_r_reg[7]_24 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][13] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[7]_88 [13]));
+        .Q(\filter_in_r_reg[7]_24 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][14] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[7]_88 [14]));
+        .Q(\filter_in_r_reg[7]_24 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][15] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[7]_88 [15]));
+        .Q(\filter_in_r_reg[7]_24 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][16] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[7]_88 [16]));
+        .Q(\filter_in_r_reg[7]_24 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][17] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[7]_88 [17]));
+        .Q(\filter_in_r_reg[7]_24 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][18] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[7]_88 [18]));
+        .Q(\filter_in_r_reg[7]_24 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][19] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[7]_88 [19]));
+        .Q(\filter_in_r_reg[7]_24 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][1] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[7]_88 [1]));
+        .Q(\filter_in_r_reg[7]_24 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][20] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[7]_88 [20]));
+        .Q(\filter_in_r_reg[7]_24 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][21] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[7]_88 [21]));
+        .Q(\filter_in_r_reg[7]_24 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][22] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[7]_88 [22]));
+        .Q(\filter_in_r_reg[7]_24 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][23] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[7]_88 [23]));
+        .Q(\filter_in_r_reg[7]_24 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][2] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[7]_88 [2]));
+        .Q(\filter_in_r_reg[7]_24 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][3] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[7]_88 [3]));
+        .Q(\filter_in_r_reg[7]_24 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][4] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[7]_88 [4]));
+        .Q(\filter_in_r_reg[7]_24 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][5] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[7]_88 [5]));
+        .Q(\filter_in_r_reg[7]_24 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][6] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[7]_88 [6]));
+        .Q(\filter_in_r_reg[7]_24 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][7] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[7]_88 [7]));
+        .Q(\filter_in_r_reg[7]_24 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][8] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[7]_88 [8]));
+        .Q(\filter_in_r_reg[7]_24 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[7][9] 
        (.C(aclk),
-        .CE(\filter_in_r[7]_7 ),
+        .CE(\filter_in_r[7]_71 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[7]_88 [9]));
+        .Q(\filter_in_r_reg[7]_24 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][0] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[8]_87 [0]));
+        .Q(\filter_in_r_reg[8]_23 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][10] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[8]_87 [10]));
+        .Q(\filter_in_r_reg[8]_23 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][11] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[8]_87 [11]));
+        .Q(\filter_in_r_reg[8]_23 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][12] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[8]_87 [12]));
+        .Q(\filter_in_r_reg[8]_23 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][13] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[8]_87 [13]));
+        .Q(\filter_in_r_reg[8]_23 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][14] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[8]_87 [14]));
+        .Q(\filter_in_r_reg[8]_23 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][15] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[8]_87 [15]));
+        .Q(\filter_in_r_reg[8]_23 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][16] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[8]_87 [16]));
+        .Q(\filter_in_r_reg[8]_23 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][17] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[8]_87 [17]));
+        .Q(\filter_in_r_reg[8]_23 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][18] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[8]_87 [18]));
+        .Q(\filter_in_r_reg[8]_23 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][19] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[8]_87 [19]));
+        .Q(\filter_in_r_reg[8]_23 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][1] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[8]_87 [1]));
+        .Q(\filter_in_r_reg[8]_23 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][20] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[8]_87 [20]));
+        .Q(\filter_in_r_reg[8]_23 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][21] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[8]_87 [21]));
+        .Q(\filter_in_r_reg[8]_23 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][22] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[8]_87 [22]));
+        .Q(\filter_in_r_reg[8]_23 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][23] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[8]_87 [23]));
+        .Q(\filter_in_r_reg[8]_23 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][2] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[8]_87 [2]));
+        .Q(\filter_in_r_reg[8]_23 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][3] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[8]_87 [3]));
+        .Q(\filter_in_r_reg[8]_23 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][4] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[8]_87 [4]));
+        .Q(\filter_in_r_reg[8]_23 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][5] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[8]_87 [5]));
+        .Q(\filter_in_r_reg[8]_23 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][6] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[8]_87 [6]));
+        .Q(\filter_in_r_reg[8]_23 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][7] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[8]_87 [7]));
+        .Q(\filter_in_r_reg[8]_23 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][8] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[8]_87 [8]));
+        .Q(\filter_in_r_reg[8]_23 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[8][9] 
        (.C(aclk),
-        .CE(\filter_in_r[8]_19 ),
+        .CE(\filter_in_r[8]_83 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[8]_87 [9]));
+        .Q(\filter_in_r_reg[8]_23 [9]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][0] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[0]),
-        .Q(\filter_in_r_reg[9]_86 [0]));
+        .Q(\filter_in_r_reg[9]_22 [0]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][10] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[10]),
-        .Q(\filter_in_r_reg[9]_86 [10]));
+        .Q(\filter_in_r_reg[9]_22 [10]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][11] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[11]),
-        .Q(\filter_in_r_reg[9]_86 [11]));
+        .Q(\filter_in_r_reg[9]_22 [11]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][12] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[12]),
-        .Q(\filter_in_r_reg[9]_86 [12]));
+        .Q(\filter_in_r_reg[9]_22 [12]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][13] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[13]),
-        .Q(\filter_in_r_reg[9]_86 [13]));
+        .Q(\filter_in_r_reg[9]_22 [13]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][14] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[14]),
-        .Q(\filter_in_r_reg[9]_86 [14]));
+        .Q(\filter_in_r_reg[9]_22 [14]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][15] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[15]),
-        .Q(\filter_in_r_reg[9]_86 [15]));
+        .Q(\filter_in_r_reg[9]_22 [15]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][16] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[16]),
-        .Q(\filter_in_r_reg[9]_86 [16]));
+        .Q(\filter_in_r_reg[9]_22 [16]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][17] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[17]),
-        .Q(\filter_in_r_reg[9]_86 [17]));
+        .Q(\filter_in_r_reg[9]_22 [17]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][18] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[18]),
-        .Q(\filter_in_r_reg[9]_86 [18]));
+        .Q(\filter_in_r_reg[9]_22 [18]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][19] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[19]),
-        .Q(\filter_in_r_reg[9]_86 [19]));
+        .Q(\filter_in_r_reg[9]_22 [19]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][1] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[1]),
-        .Q(\filter_in_r_reg[9]_86 [1]));
+        .Q(\filter_in_r_reg[9]_22 [1]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][20] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[20]),
-        .Q(\filter_in_r_reg[9]_86 [20]));
+        .Q(\filter_in_r_reg[9]_22 [20]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][21] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[21]),
-        .Q(\filter_in_r_reg[9]_86 [21]));
+        .Q(\filter_in_r_reg[9]_22 [21]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][22] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[22]),
-        .Q(\filter_in_r_reg[9]_86 [22]));
+        .Q(\filter_in_r_reg[9]_22 [22]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][23] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(\filter_in_r_reg[9]_86 [23]));
+        .Q(\filter_in_r_reg[9]_22 [23]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][2] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[2]),
-        .Q(\filter_in_r_reg[9]_86 [2]));
+        .Q(\filter_in_r_reg[9]_22 [2]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][3] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[3]),
-        .Q(\filter_in_r_reg[9]_86 [3]));
+        .Q(\filter_in_r_reg[9]_22 [3]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][4] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[4]),
-        .Q(\filter_in_r_reg[9]_86 [4]));
+        .Q(\filter_in_r_reg[9]_22 [4]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][5] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[5]),
-        .Q(\filter_in_r_reg[9]_86 [5]));
+        .Q(\filter_in_r_reg[9]_22 [5]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][6] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[6]),
-        .Q(\filter_in_r_reg[9]_86 [6]));
+        .Q(\filter_in_r_reg[9]_22 [6]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][7] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[7]),
-        .Q(\filter_in_r_reg[9]_86 [7]));
+        .Q(\filter_in_r_reg[9]_22 [7]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][8] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[8]),
-        .Q(\filter_in_r_reg[9]_86 [8]));
+        .Q(\filter_in_r_reg[9]_22 [8]));
   FDCE #(
     .INIT(1'b0)) 
     \filter_in_r_reg[9][9] 
        (.C(aclk),
-        .CE(\filter_in_r[9]_35 ),
+        .CE(\filter_in_r[9]_99 ),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
-        .Q(\filter_in_r_reg[9]_86 [9]));
+        .Q(\filter_in_r_reg[9]_22 [9]));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
     \filtered_l[0]_i_2 
@@ -15058,82 +15052,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_20 
-       (.I0(\filter_in_l_reg[19]_108 [3]),
-        .I1(\filter_in_l_reg[18]_109 [3]),
+       (.I0(\filter_in_l_reg[19]_44 [3]),
+        .I1(\filter_in_l_reg[18]_45 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [3]),
+        .I3(\filter_in_l_reg[17]_46 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [3]),
+        .I5(\filter_in_l_reg[16]_47 [3]),
         .O(\filtered_l[0]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_21 
-       (.I0(\filter_in_l_reg[23]_104 [3]),
-        .I1(\filter_in_l_reg[22]_105 [3]),
+       (.I0(\filter_in_l_reg[23]_40 [3]),
+        .I1(\filter_in_l_reg[22]_41 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [3]),
+        .I3(\filter_in_l_reg[21]_42 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [3]),
+        .I5(\filter_in_l_reg[20]_43 [3]),
         .O(\filtered_l[0]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_22 
-       (.I0(\filter_in_l_reg[27]_100 [3]),
-        .I1(\filter_in_l_reg[26]_101 [3]),
+       (.I0(\filter_in_l_reg[27]_36 [3]),
+        .I1(\filter_in_l_reg[26]_37 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [3]),
+        .I3(\filter_in_l_reg[25]_38 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [3]),
+        .I5(\filter_in_l_reg[24]_39 [3]),
         .O(\filtered_l[0]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_23 
-       (.I0(\filter_in_l_reg[31]_96 [3]),
-        .I1(\filter_in_l_reg[30]_97 [3]),
+       (.I0(\filter_in_l_reg[31]_32 [3]),
+        .I1(\filter_in_l_reg[30]_33 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [3]),
+        .I3(\filter_in_l_reg[29]_34 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [3]),
+        .I5(\filter_in_l_reg[28]_35 [3]),
         .O(\filtered_l[0]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_26 
-       (.I0(\filter_in_l_reg[19]_108 [2]),
-        .I1(\filter_in_l_reg[18]_109 [2]),
+       (.I0(\filter_in_l_reg[19]_44 [2]),
+        .I1(\filter_in_l_reg[18]_45 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [2]),
+        .I3(\filter_in_l_reg[17]_46 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [2]),
+        .I5(\filter_in_l_reg[16]_47 [2]),
         .O(\filtered_l[0]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_27 
-       (.I0(\filter_in_l_reg[23]_104 [2]),
-        .I1(\filter_in_l_reg[22]_105 [2]),
+       (.I0(\filter_in_l_reg[23]_40 [2]),
+        .I1(\filter_in_l_reg[22]_41 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [2]),
+        .I3(\filter_in_l_reg[21]_42 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [2]),
+        .I5(\filter_in_l_reg[20]_43 [2]),
         .O(\filtered_l[0]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_28 
-       (.I0(\filter_in_l_reg[27]_100 [2]),
-        .I1(\filter_in_l_reg[26]_101 [2]),
+       (.I0(\filter_in_l_reg[27]_36 [2]),
+        .I1(\filter_in_l_reg[26]_37 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [2]),
+        .I3(\filter_in_l_reg[25]_38 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [2]),
+        .I5(\filter_in_l_reg[24]_39 [2]),
         .O(\filtered_l[0]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_29 
-       (.I0(\filter_in_l_reg[31]_96 [2]),
-        .I1(\filter_in_l_reg[30]_97 [2]),
+       (.I0(\filter_in_l_reg[31]_32 [2]),
+        .I1(\filter_in_l_reg[30]_33 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [2]),
+        .I3(\filter_in_l_reg[29]_34 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [2]),
+        .I5(\filter_in_l_reg[28]_35 [2]),
         .O(\filtered_l[0]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15148,62 +15142,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_32 
-       (.I0(\filter_in_l_reg[19]_108 [1]),
-        .I1(\filter_in_l_reg[18]_109 [1]),
+       (.I0(\filter_in_l_reg[19]_44 [1]),
+        .I1(\filter_in_l_reg[18]_45 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [1]),
+        .I3(\filter_in_l_reg[17]_46 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [1]),
+        .I5(\filter_in_l_reg[16]_47 [1]),
         .O(\filtered_l[0]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_33 
-       (.I0(\filter_in_l_reg[23]_104 [1]),
-        .I1(\filter_in_l_reg[22]_105 [1]),
+       (.I0(\filter_in_l_reg[23]_40 [1]),
+        .I1(\filter_in_l_reg[22]_41 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [1]),
+        .I3(\filter_in_l_reg[21]_42 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [1]),
+        .I5(\filter_in_l_reg[20]_43 [1]),
         .O(\filtered_l[0]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_34 
-       (.I0(\filter_in_l_reg[27]_100 [1]),
-        .I1(\filter_in_l_reg[26]_101 [1]),
+       (.I0(\filter_in_l_reg[27]_36 [1]),
+        .I1(\filter_in_l_reg[26]_37 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [1]),
+        .I3(\filter_in_l_reg[25]_38 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [1]),
+        .I5(\filter_in_l_reg[24]_39 [1]),
         .O(\filtered_l[0]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_35 
-       (.I0(\filter_in_l_reg[31]_96 [1]),
-        .I1(\filter_in_l_reg[30]_97 [1]),
+       (.I0(\filter_in_l_reg[31]_32 [1]),
+        .I1(\filter_in_l_reg[30]_33 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [1]),
+        .I3(\filter_in_l_reg[29]_34 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [1]),
+        .I5(\filter_in_l_reg[28]_35 [1]),
         .O(\filtered_l[0]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_38 
-       (.I0(\filter_in_l_reg[19]_108 [0]),
-        .I1(\filter_in_l_reg[18]_109 [0]),
+       (.I0(\filter_in_l_reg[19]_44 [0]),
+        .I1(\filter_in_l_reg[18]_45 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [0]),
+        .I3(\filter_in_l_reg[17]_46 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [0]),
+        .I5(\filter_in_l_reg[16]_47 [0]),
         .O(\filtered_l[0]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_39 
-       (.I0(\filter_in_l_reg[23]_104 [0]),
-        .I1(\filter_in_l_reg[22]_105 [0]),
+       (.I0(\filter_in_l_reg[23]_40 [0]),
+        .I1(\filter_in_l_reg[22]_41 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [0]),
+        .I3(\filter_in_l_reg[21]_42 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [0]),
+        .I5(\filter_in_l_reg[20]_43 [0]),
         .O(\filtered_l[0]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15218,102 +15212,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_40 
-       (.I0(\filter_in_l_reg[27]_100 [0]),
-        .I1(\filter_in_l_reg[26]_101 [0]),
+       (.I0(\filter_in_l_reg[27]_36 [0]),
+        .I1(\filter_in_l_reg[26]_37 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [0]),
+        .I3(\filter_in_l_reg[25]_38 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [0]),
+        .I5(\filter_in_l_reg[24]_39 [0]),
         .O(\filtered_l[0]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_41 
-       (.I0(\filter_in_l_reg[31]_96 [0]),
-        .I1(\filter_in_l_reg[30]_97 [0]),
+       (.I0(\filter_in_l_reg[31]_32 [0]),
+        .I1(\filter_in_l_reg[30]_33 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [0]),
+        .I3(\filter_in_l_reg[29]_34 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [0]),
+        .I5(\filter_in_l_reg[28]_35 [0]),
         .O(\filtered_l[0]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_42 
-       (.I0(\filter_in_l_reg[3]_124 [3]),
-        .I1(\filter_in_l_reg[2]_125 [3]),
+       (.I0(\filter_in_l_reg[3]_60 [3]),
+        .I1(\filter_in_l_reg[2]_61 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [3]),
+        .I3(\filter_in_l_reg[1]_62 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [3]),
+        .I5(\filter_in_l_reg[0]_63 [3]),
         .O(\filtered_l[0]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_43 
-       (.I0(\filter_in_l_reg[7]_120 [3]),
-        .I1(\filter_in_l_reg[6]_121 [3]),
+       (.I0(\filter_in_l_reg[7]_56 [3]),
+        .I1(\filter_in_l_reg[6]_57 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [3]),
+        .I3(\filter_in_l_reg[5]_58 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [3]),
+        .I5(\filter_in_l_reg[4]_59 [3]),
         .O(\filtered_l[0]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_44 
-       (.I0(\filter_in_l_reg[11]_116 [3]),
-        .I1(\filter_in_l_reg[10]_117 [3]),
+       (.I0(\filter_in_l_reg[11]_52 [3]),
+        .I1(\filter_in_l_reg[10]_53 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [3]),
+        .I3(\filter_in_l_reg[9]_54 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [3]),
+        .I5(\filter_in_l_reg[8]_55 [3]),
         .O(\filtered_l[0]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_45 
-       (.I0(\filter_in_l_reg[15]_112 [3]),
-        .I1(\filter_in_l_reg[14]_113 [3]),
+       (.I0(\filter_in_l_reg[15]_48 [3]),
+        .I1(\filter_in_l_reg[14]_49 [3]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [3]),
+        .I3(\filter_in_l_reg[13]_50 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [3]),
+        .I5(\filter_in_l_reg[12]_51 [3]),
         .O(\filtered_l[0]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_46 
-       (.I0(\filter_in_l_reg[3]_124 [2]),
-        .I1(\filter_in_l_reg[2]_125 [2]),
+       (.I0(\filter_in_l_reg[3]_60 [2]),
+        .I1(\filter_in_l_reg[2]_61 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [2]),
+        .I3(\filter_in_l_reg[1]_62 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [2]),
+        .I5(\filter_in_l_reg[0]_63 [2]),
         .O(\filtered_l[0]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_47 
-       (.I0(\filter_in_l_reg[7]_120 [2]),
-        .I1(\filter_in_l_reg[6]_121 [2]),
+       (.I0(\filter_in_l_reg[7]_56 [2]),
+        .I1(\filter_in_l_reg[6]_57 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [2]),
+        .I3(\filter_in_l_reg[5]_58 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [2]),
+        .I5(\filter_in_l_reg[4]_59 [2]),
         .O(\filtered_l[0]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_48 
-       (.I0(\filter_in_l_reg[11]_116 [2]),
-        .I1(\filter_in_l_reg[10]_117 [2]),
+       (.I0(\filter_in_l_reg[11]_52 [2]),
+        .I1(\filter_in_l_reg[10]_53 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [2]),
+        .I3(\filter_in_l_reg[9]_54 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [2]),
+        .I5(\filter_in_l_reg[8]_55 [2]),
         .O(\filtered_l[0]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_49 
-       (.I0(\filter_in_l_reg[15]_112 [2]),
-        .I1(\filter_in_l_reg[14]_113 [2]),
+       (.I0(\filter_in_l_reg[15]_48 [2]),
+        .I1(\filter_in_l_reg[14]_49 [2]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [2]),
+        .I3(\filter_in_l_reg[13]_50 [2]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [2]),
+        .I5(\filter_in_l_reg[12]_51 [2]),
         .O(\filtered_l[0]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15328,82 +15322,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_50 
-       (.I0(\filter_in_l_reg[3]_124 [1]),
-        .I1(\filter_in_l_reg[2]_125 [1]),
+       (.I0(\filter_in_l_reg[3]_60 [1]),
+        .I1(\filter_in_l_reg[2]_61 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [1]),
+        .I3(\filter_in_l_reg[1]_62 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [1]),
+        .I5(\filter_in_l_reg[0]_63 [1]),
         .O(\filtered_l[0]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_51 
-       (.I0(\filter_in_l_reg[7]_120 [1]),
-        .I1(\filter_in_l_reg[6]_121 [1]),
+       (.I0(\filter_in_l_reg[7]_56 [1]),
+        .I1(\filter_in_l_reg[6]_57 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [1]),
+        .I3(\filter_in_l_reg[5]_58 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [1]),
+        .I5(\filter_in_l_reg[4]_59 [1]),
         .O(\filtered_l[0]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_52 
-       (.I0(\filter_in_l_reg[11]_116 [1]),
-        .I1(\filter_in_l_reg[10]_117 [1]),
+       (.I0(\filter_in_l_reg[11]_52 [1]),
+        .I1(\filter_in_l_reg[10]_53 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [1]),
+        .I3(\filter_in_l_reg[9]_54 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [1]),
+        .I5(\filter_in_l_reg[8]_55 [1]),
         .O(\filtered_l[0]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_53 
-       (.I0(\filter_in_l_reg[15]_112 [1]),
-        .I1(\filter_in_l_reg[14]_113 [1]),
+       (.I0(\filter_in_l_reg[15]_48 [1]),
+        .I1(\filter_in_l_reg[14]_49 [1]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [1]),
+        .I3(\filter_in_l_reg[13]_50 [1]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [1]),
+        .I5(\filter_in_l_reg[12]_51 [1]),
         .O(\filtered_l[0]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_54 
-       (.I0(\filter_in_l_reg[3]_124 [0]),
-        .I1(\filter_in_l_reg[2]_125 [0]),
+       (.I0(\filter_in_l_reg[3]_60 [0]),
+        .I1(\filter_in_l_reg[2]_61 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [0]),
+        .I3(\filter_in_l_reg[1]_62 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [0]),
+        .I5(\filter_in_l_reg[0]_63 [0]),
         .O(\filtered_l[0]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_55 
-       (.I0(\filter_in_l_reg[7]_120 [0]),
-        .I1(\filter_in_l_reg[6]_121 [0]),
+       (.I0(\filter_in_l_reg[7]_56 [0]),
+        .I1(\filter_in_l_reg[6]_57 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [0]),
+        .I3(\filter_in_l_reg[5]_58 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [0]),
+        .I5(\filter_in_l_reg[4]_59 [0]),
         .O(\filtered_l[0]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_56 
-       (.I0(\filter_in_l_reg[11]_116 [0]),
-        .I1(\filter_in_l_reg[10]_117 [0]),
+       (.I0(\filter_in_l_reg[11]_52 [0]),
+        .I1(\filter_in_l_reg[10]_53 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [0]),
+        .I3(\filter_in_l_reg[9]_54 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [0]),
+        .I5(\filter_in_l_reg[8]_55 [0]),
         .O(\filtered_l[0]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[0]_i_57 
-       (.I0(\filter_in_l_reg[15]_112 [0]),
-        .I1(\filter_in_l_reg[14]_113 [0]),
+       (.I0(\filter_in_l_reg[15]_48 [0]),
+        .I1(\filter_in_l_reg[14]_49 [0]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [0]),
+        .I3(\filter_in_l_reg[13]_50 [0]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [0]),
+        .I5(\filter_in_l_reg[12]_51 [0]),
         .O(\filtered_l[0]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15413,87 +15407,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[12]_i_7_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[12]_i_8_n_0 ),
-        .I5(filtered_l_reg[15]),
+        .I5(p_0_in[10]),
         .O(\filtered_l[12]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_20 
-       (.I0(\filter_in_l_reg[19]_108 [15]),
-        .I1(\filter_in_l_reg[18]_109 [15]),
+       (.I0(\filter_in_l_reg[19]_44 [15]),
+        .I1(\filter_in_l_reg[18]_45 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [15]),
+        .I3(\filter_in_l_reg[17]_46 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [15]),
+        .I5(\filter_in_l_reg[16]_47 [15]),
         .O(\filtered_l[12]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_21 
-       (.I0(\filter_in_l_reg[23]_104 [15]),
-        .I1(\filter_in_l_reg[22]_105 [15]),
+       (.I0(\filter_in_l_reg[23]_40 [15]),
+        .I1(\filter_in_l_reg[22]_41 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [15]),
+        .I3(\filter_in_l_reg[21]_42 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [15]),
+        .I5(\filter_in_l_reg[20]_43 [15]),
         .O(\filtered_l[12]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_22 
-       (.I0(\filter_in_l_reg[27]_100 [15]),
-        .I1(\filter_in_l_reg[26]_101 [15]),
+       (.I0(\filter_in_l_reg[27]_36 [15]),
+        .I1(\filter_in_l_reg[26]_37 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [15]),
+        .I3(\filter_in_l_reg[25]_38 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [15]),
+        .I5(\filter_in_l_reg[24]_39 [15]),
         .O(\filtered_l[12]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_23 
-       (.I0(\filter_in_l_reg[31]_96 [15]),
-        .I1(\filter_in_l_reg[30]_97 [15]),
+       (.I0(\filter_in_l_reg[31]_32 [15]),
+        .I1(\filter_in_l_reg[30]_33 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [15]),
+        .I3(\filter_in_l_reg[29]_34 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [15]),
+        .I5(\filter_in_l_reg[28]_35 [15]),
         .O(\filtered_l[12]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_26 
-       (.I0(\filter_in_l_reg[19]_108 [14]),
-        .I1(\filter_in_l_reg[18]_109 [14]),
+       (.I0(\filter_in_l_reg[19]_44 [14]),
+        .I1(\filter_in_l_reg[18]_45 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [14]),
+        .I3(\filter_in_l_reg[17]_46 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [14]),
+        .I5(\filter_in_l_reg[16]_47 [14]),
         .O(\filtered_l[12]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_27 
-       (.I0(\filter_in_l_reg[23]_104 [14]),
-        .I1(\filter_in_l_reg[22]_105 [14]),
+       (.I0(\filter_in_l_reg[23]_40 [14]),
+        .I1(\filter_in_l_reg[22]_41 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [14]),
+        .I3(\filter_in_l_reg[21]_42 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [14]),
+        .I5(\filter_in_l_reg[20]_43 [14]),
         .O(\filtered_l[12]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_28 
-       (.I0(\filter_in_l_reg[27]_100 [14]),
-        .I1(\filter_in_l_reg[26]_101 [14]),
+       (.I0(\filter_in_l_reg[27]_36 [14]),
+        .I1(\filter_in_l_reg[26]_37 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [14]),
+        .I3(\filter_in_l_reg[25]_38 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [14]),
+        .I5(\filter_in_l_reg[24]_39 [14]),
         .O(\filtered_l[12]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_29 
-       (.I0(\filter_in_l_reg[31]_96 [14]),
-        .I1(\filter_in_l_reg[30]_97 [14]),
+       (.I0(\filter_in_l_reg[31]_32 [14]),
+        .I1(\filter_in_l_reg[30]_33 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [14]),
+        .I3(\filter_in_l_reg[29]_34 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [14]),
+        .I5(\filter_in_l_reg[28]_35 [14]),
         .O(\filtered_l[12]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15503,67 +15497,67 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[12]_i_10_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[12]_i_11_n_0 ),
-        .I5(filtered_l_reg[14]),
+        .I5(p_0_in[9]),
         .O(\filtered_l[12]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_32 
-       (.I0(\filter_in_l_reg[19]_108 [13]),
-        .I1(\filter_in_l_reg[18]_109 [13]),
+       (.I0(\filter_in_l_reg[19]_44 [13]),
+        .I1(\filter_in_l_reg[18]_45 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [13]),
+        .I3(\filter_in_l_reg[17]_46 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [13]),
+        .I5(\filter_in_l_reg[16]_47 [13]),
         .O(\filtered_l[12]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_33 
-       (.I0(\filter_in_l_reg[23]_104 [13]),
-        .I1(\filter_in_l_reg[22]_105 [13]),
+       (.I0(\filter_in_l_reg[23]_40 [13]),
+        .I1(\filter_in_l_reg[22]_41 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [13]),
+        .I3(\filter_in_l_reg[21]_42 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [13]),
+        .I5(\filter_in_l_reg[20]_43 [13]),
         .O(\filtered_l[12]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_34 
-       (.I0(\filter_in_l_reg[27]_100 [13]),
-        .I1(\filter_in_l_reg[26]_101 [13]),
+       (.I0(\filter_in_l_reg[27]_36 [13]),
+        .I1(\filter_in_l_reg[26]_37 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [13]),
+        .I3(\filter_in_l_reg[25]_38 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [13]),
+        .I5(\filter_in_l_reg[24]_39 [13]),
         .O(\filtered_l[12]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_35 
-       (.I0(\filter_in_l_reg[31]_96 [13]),
-        .I1(\filter_in_l_reg[30]_97 [13]),
+       (.I0(\filter_in_l_reg[31]_32 [13]),
+        .I1(\filter_in_l_reg[30]_33 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [13]),
+        .I3(\filter_in_l_reg[29]_34 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [13]),
+        .I5(\filter_in_l_reg[28]_35 [13]),
         .O(\filtered_l[12]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_38 
-       (.I0(\filter_in_l_reg[19]_108 [12]),
-        .I1(\filter_in_l_reg[18]_109 [12]),
+       (.I0(\filter_in_l_reg[19]_44 [12]),
+        .I1(\filter_in_l_reg[18]_45 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [12]),
+        .I3(\filter_in_l_reg[17]_46 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [12]),
+        .I5(\filter_in_l_reg[16]_47 [12]),
         .O(\filtered_l[12]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_39 
-       (.I0(\filter_in_l_reg[23]_104 [12]),
-        .I1(\filter_in_l_reg[22]_105 [12]),
+       (.I0(\filter_in_l_reg[23]_40 [12]),
+        .I1(\filter_in_l_reg[22]_41 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [12]),
+        .I3(\filter_in_l_reg[21]_42 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [12]),
+        .I5(\filter_in_l_reg[20]_43 [12]),
         .O(\filtered_l[12]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15573,107 +15567,107 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[12]_i_13_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[12]_i_14_n_0 ),
-        .I5(filtered_l_reg[13]),
+        .I5(p_0_in[8]),
         .O(\filtered_l[12]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_40 
-       (.I0(\filter_in_l_reg[27]_100 [12]),
-        .I1(\filter_in_l_reg[26]_101 [12]),
+       (.I0(\filter_in_l_reg[27]_36 [12]),
+        .I1(\filter_in_l_reg[26]_37 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [12]),
+        .I3(\filter_in_l_reg[25]_38 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [12]),
+        .I5(\filter_in_l_reg[24]_39 [12]),
         .O(\filtered_l[12]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_41 
-       (.I0(\filter_in_l_reg[31]_96 [12]),
-        .I1(\filter_in_l_reg[30]_97 [12]),
+       (.I0(\filter_in_l_reg[31]_32 [12]),
+        .I1(\filter_in_l_reg[30]_33 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [12]),
+        .I3(\filter_in_l_reg[29]_34 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [12]),
+        .I5(\filter_in_l_reg[28]_35 [12]),
         .O(\filtered_l[12]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_42 
-       (.I0(\filter_in_l_reg[3]_124 [15]),
-        .I1(\filter_in_l_reg[2]_125 [15]),
+       (.I0(\filter_in_l_reg[3]_60 [15]),
+        .I1(\filter_in_l_reg[2]_61 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [15]),
+        .I3(\filter_in_l_reg[1]_62 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [15]),
+        .I5(\filter_in_l_reg[0]_63 [15]),
         .O(\filtered_l[12]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_43 
-       (.I0(\filter_in_l_reg[7]_120 [15]),
-        .I1(\filter_in_l_reg[6]_121 [15]),
+       (.I0(\filter_in_l_reg[7]_56 [15]),
+        .I1(\filter_in_l_reg[6]_57 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [15]),
+        .I3(\filter_in_l_reg[5]_58 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [15]),
+        .I5(\filter_in_l_reg[4]_59 [15]),
         .O(\filtered_l[12]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_44 
-       (.I0(\filter_in_l_reg[11]_116 [15]),
-        .I1(\filter_in_l_reg[10]_117 [15]),
+       (.I0(\filter_in_l_reg[11]_52 [15]),
+        .I1(\filter_in_l_reg[10]_53 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [15]),
+        .I3(\filter_in_l_reg[9]_54 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [15]),
+        .I5(\filter_in_l_reg[8]_55 [15]),
         .O(\filtered_l[12]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_45 
-       (.I0(\filter_in_l_reg[15]_112 [15]),
-        .I1(\filter_in_l_reg[14]_113 [15]),
+       (.I0(\filter_in_l_reg[15]_48 [15]),
+        .I1(\filter_in_l_reg[14]_49 [15]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [15]),
+        .I3(\filter_in_l_reg[13]_50 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [15]),
+        .I5(\filter_in_l_reg[12]_51 [15]),
         .O(\filtered_l[12]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_46 
-       (.I0(\filter_in_l_reg[3]_124 [14]),
-        .I1(\filter_in_l_reg[2]_125 [14]),
+       (.I0(\filter_in_l_reg[3]_60 [14]),
+        .I1(\filter_in_l_reg[2]_61 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [14]),
+        .I3(\filter_in_l_reg[1]_62 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [14]),
+        .I5(\filter_in_l_reg[0]_63 [14]),
         .O(\filtered_l[12]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_47 
-       (.I0(\filter_in_l_reg[7]_120 [14]),
-        .I1(\filter_in_l_reg[6]_121 [14]),
+       (.I0(\filter_in_l_reg[7]_56 [14]),
+        .I1(\filter_in_l_reg[6]_57 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [14]),
+        .I3(\filter_in_l_reg[5]_58 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [14]),
+        .I5(\filter_in_l_reg[4]_59 [14]),
         .O(\filtered_l[12]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_48 
-       (.I0(\filter_in_l_reg[11]_116 [14]),
-        .I1(\filter_in_l_reg[10]_117 [14]),
+       (.I0(\filter_in_l_reg[11]_52 [14]),
+        .I1(\filter_in_l_reg[10]_53 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [14]),
+        .I3(\filter_in_l_reg[9]_54 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [14]),
+        .I5(\filter_in_l_reg[8]_55 [14]),
         .O(\filtered_l[12]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_49 
-       (.I0(\filter_in_l_reg[15]_112 [14]),
-        .I1(\filter_in_l_reg[14]_113 [14]),
+       (.I0(\filter_in_l_reg[15]_48 [14]),
+        .I1(\filter_in_l_reg[14]_49 [14]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [14]),
+        .I3(\filter_in_l_reg[13]_50 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [14]),
+        .I5(\filter_in_l_reg[12]_51 [14]),
         .O(\filtered_l[12]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15683,87 +15677,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[12]_i_16_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[12]_i_17_n_0 ),
-        .I5(filtered_l_reg[12]),
+        .I5(p_0_in[7]),
         .O(\filtered_l[12]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_50 
-       (.I0(\filter_in_l_reg[3]_124 [13]),
-        .I1(\filter_in_l_reg[2]_125 [13]),
+       (.I0(\filter_in_l_reg[3]_60 [13]),
+        .I1(\filter_in_l_reg[2]_61 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [13]),
+        .I3(\filter_in_l_reg[1]_62 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [13]),
+        .I5(\filter_in_l_reg[0]_63 [13]),
         .O(\filtered_l[12]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_51 
-       (.I0(\filter_in_l_reg[7]_120 [13]),
-        .I1(\filter_in_l_reg[6]_121 [13]),
+       (.I0(\filter_in_l_reg[7]_56 [13]),
+        .I1(\filter_in_l_reg[6]_57 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [13]),
+        .I3(\filter_in_l_reg[5]_58 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [13]),
+        .I5(\filter_in_l_reg[4]_59 [13]),
         .O(\filtered_l[12]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_52 
-       (.I0(\filter_in_l_reg[11]_116 [13]),
-        .I1(\filter_in_l_reg[10]_117 [13]),
+       (.I0(\filter_in_l_reg[11]_52 [13]),
+        .I1(\filter_in_l_reg[10]_53 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [13]),
+        .I3(\filter_in_l_reg[9]_54 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [13]),
+        .I5(\filter_in_l_reg[8]_55 [13]),
         .O(\filtered_l[12]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_53 
-       (.I0(\filter_in_l_reg[15]_112 [13]),
-        .I1(\filter_in_l_reg[14]_113 [13]),
+       (.I0(\filter_in_l_reg[15]_48 [13]),
+        .I1(\filter_in_l_reg[14]_49 [13]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [13]),
+        .I3(\filter_in_l_reg[13]_50 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [13]),
+        .I5(\filter_in_l_reg[12]_51 [13]),
         .O(\filtered_l[12]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_54 
-       (.I0(\filter_in_l_reg[3]_124 [12]),
-        .I1(\filter_in_l_reg[2]_125 [12]),
+       (.I0(\filter_in_l_reg[3]_60 [12]),
+        .I1(\filter_in_l_reg[2]_61 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [12]),
+        .I3(\filter_in_l_reg[1]_62 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [12]),
+        .I5(\filter_in_l_reg[0]_63 [12]),
         .O(\filtered_l[12]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_55 
-       (.I0(\filter_in_l_reg[7]_120 [12]),
-        .I1(\filter_in_l_reg[6]_121 [12]),
+       (.I0(\filter_in_l_reg[7]_56 [12]),
+        .I1(\filter_in_l_reg[6]_57 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [12]),
+        .I3(\filter_in_l_reg[5]_58 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [12]),
+        .I5(\filter_in_l_reg[4]_59 [12]),
         .O(\filtered_l[12]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_56 
-       (.I0(\filter_in_l_reg[11]_116 [12]),
-        .I1(\filter_in_l_reg[10]_117 [12]),
+       (.I0(\filter_in_l_reg[11]_52 [12]),
+        .I1(\filter_in_l_reg[10]_53 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [12]),
+        .I3(\filter_in_l_reg[9]_54 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [12]),
+        .I5(\filter_in_l_reg[8]_55 [12]),
         .O(\filtered_l[12]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[12]_i_57 
-       (.I0(\filter_in_l_reg[15]_112 [12]),
-        .I1(\filter_in_l_reg[14]_113 [12]),
+       (.I0(\filter_in_l_reg[15]_48 [12]),
+        .I1(\filter_in_l_reg[14]_49 [12]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [12]),
+        .I3(\filter_in_l_reg[13]_50 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [12]),
+        .I5(\filter_in_l_reg[12]_51 [12]),
         .O(\filtered_l[12]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15773,87 +15767,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[16]_i_7_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[16]_i_8_n_0 ),
-        .I5(filtered_l_reg[19]),
+        .I5(p_0_in[14]),
         .O(\filtered_l[16]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_20 
-       (.I0(\filter_in_l_reg[19]_108 [19]),
-        .I1(\filter_in_l_reg[18]_109 [19]),
+       (.I0(\filter_in_l_reg[19]_44 [19]),
+        .I1(\filter_in_l_reg[18]_45 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [19]),
+        .I3(\filter_in_l_reg[17]_46 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [19]),
+        .I5(\filter_in_l_reg[16]_47 [19]),
         .O(\filtered_l[16]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_21 
-       (.I0(\filter_in_l_reg[23]_104 [19]),
-        .I1(\filter_in_l_reg[22]_105 [19]),
+       (.I0(\filter_in_l_reg[23]_40 [19]),
+        .I1(\filter_in_l_reg[22]_41 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [19]),
+        .I3(\filter_in_l_reg[21]_42 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [19]),
+        .I5(\filter_in_l_reg[20]_43 [19]),
         .O(\filtered_l[16]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_22 
-       (.I0(\filter_in_l_reg[27]_100 [19]),
-        .I1(\filter_in_l_reg[26]_101 [19]),
+       (.I0(\filter_in_l_reg[27]_36 [19]),
+        .I1(\filter_in_l_reg[26]_37 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [19]),
+        .I3(\filter_in_l_reg[25]_38 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [19]),
+        .I5(\filter_in_l_reg[24]_39 [19]),
         .O(\filtered_l[16]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_23 
-       (.I0(\filter_in_l_reg[31]_96 [19]),
-        .I1(\filter_in_l_reg[30]_97 [19]),
+       (.I0(\filter_in_l_reg[31]_32 [19]),
+        .I1(\filter_in_l_reg[30]_33 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [19]),
+        .I3(\filter_in_l_reg[29]_34 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [19]),
+        .I5(\filter_in_l_reg[28]_35 [19]),
         .O(\filtered_l[16]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_26 
-       (.I0(\filter_in_l_reg[19]_108 [18]),
-        .I1(\filter_in_l_reg[18]_109 [18]),
+       (.I0(\filter_in_l_reg[19]_44 [18]),
+        .I1(\filter_in_l_reg[18]_45 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [18]),
+        .I3(\filter_in_l_reg[17]_46 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [18]),
+        .I5(\filter_in_l_reg[16]_47 [18]),
         .O(\filtered_l[16]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_27 
-       (.I0(\filter_in_l_reg[23]_104 [18]),
-        .I1(\filter_in_l_reg[22]_105 [18]),
+       (.I0(\filter_in_l_reg[23]_40 [18]),
+        .I1(\filter_in_l_reg[22]_41 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [18]),
+        .I3(\filter_in_l_reg[21]_42 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [18]),
+        .I5(\filter_in_l_reg[20]_43 [18]),
         .O(\filtered_l[16]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_28 
-       (.I0(\filter_in_l_reg[27]_100 [18]),
-        .I1(\filter_in_l_reg[26]_101 [18]),
+       (.I0(\filter_in_l_reg[27]_36 [18]),
+        .I1(\filter_in_l_reg[26]_37 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [18]),
+        .I3(\filter_in_l_reg[25]_38 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [18]),
+        .I5(\filter_in_l_reg[24]_39 [18]),
         .O(\filtered_l[16]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_29 
-       (.I0(\filter_in_l_reg[31]_96 [18]),
-        .I1(\filter_in_l_reg[30]_97 [18]),
+       (.I0(\filter_in_l_reg[31]_32 [18]),
+        .I1(\filter_in_l_reg[30]_33 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [18]),
+        .I3(\filter_in_l_reg[29]_34 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [18]),
+        .I5(\filter_in_l_reg[28]_35 [18]),
         .O(\filtered_l[16]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15863,67 +15857,67 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[16]_i_10_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[16]_i_11_n_0 ),
-        .I5(filtered_l_reg[18]),
+        .I5(p_0_in[13]),
         .O(\filtered_l[16]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_32 
-       (.I0(\filter_in_l_reg[19]_108 [17]),
-        .I1(\filter_in_l_reg[18]_109 [17]),
+       (.I0(\filter_in_l_reg[19]_44 [17]),
+        .I1(\filter_in_l_reg[18]_45 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [17]),
+        .I3(\filter_in_l_reg[17]_46 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [17]),
+        .I5(\filter_in_l_reg[16]_47 [17]),
         .O(\filtered_l[16]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_33 
-       (.I0(\filter_in_l_reg[23]_104 [17]),
-        .I1(\filter_in_l_reg[22]_105 [17]),
+       (.I0(\filter_in_l_reg[23]_40 [17]),
+        .I1(\filter_in_l_reg[22]_41 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [17]),
+        .I3(\filter_in_l_reg[21]_42 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [17]),
+        .I5(\filter_in_l_reg[20]_43 [17]),
         .O(\filtered_l[16]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_34 
-       (.I0(\filter_in_l_reg[27]_100 [17]),
-        .I1(\filter_in_l_reg[26]_101 [17]),
+       (.I0(\filter_in_l_reg[27]_36 [17]),
+        .I1(\filter_in_l_reg[26]_37 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [17]),
+        .I3(\filter_in_l_reg[25]_38 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [17]),
+        .I5(\filter_in_l_reg[24]_39 [17]),
         .O(\filtered_l[16]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_35 
-       (.I0(\filter_in_l_reg[31]_96 [17]),
-        .I1(\filter_in_l_reg[30]_97 [17]),
+       (.I0(\filter_in_l_reg[31]_32 [17]),
+        .I1(\filter_in_l_reg[30]_33 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [17]),
+        .I3(\filter_in_l_reg[29]_34 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [17]),
+        .I5(\filter_in_l_reg[28]_35 [17]),
         .O(\filtered_l[16]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_38 
-       (.I0(\filter_in_l_reg[19]_108 [16]),
-        .I1(\filter_in_l_reg[18]_109 [16]),
+       (.I0(\filter_in_l_reg[19]_44 [16]),
+        .I1(\filter_in_l_reg[18]_45 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [16]),
+        .I3(\filter_in_l_reg[17]_46 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [16]),
+        .I5(\filter_in_l_reg[16]_47 [16]),
         .O(\filtered_l[16]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_39 
-       (.I0(\filter_in_l_reg[23]_104 [16]),
-        .I1(\filter_in_l_reg[22]_105 [16]),
+       (.I0(\filter_in_l_reg[23]_40 [16]),
+        .I1(\filter_in_l_reg[22]_41 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [16]),
+        .I3(\filter_in_l_reg[21]_42 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [16]),
+        .I5(\filter_in_l_reg[20]_43 [16]),
         .O(\filtered_l[16]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -15933,107 +15927,107 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[16]_i_13_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[16]_i_14_n_0 ),
-        .I5(filtered_l_reg[17]),
+        .I5(p_0_in[12]),
         .O(\filtered_l[16]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_40 
-       (.I0(\filter_in_l_reg[27]_100 [16]),
-        .I1(\filter_in_l_reg[26]_101 [16]),
+       (.I0(\filter_in_l_reg[27]_36 [16]),
+        .I1(\filter_in_l_reg[26]_37 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [16]),
+        .I3(\filter_in_l_reg[25]_38 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [16]),
+        .I5(\filter_in_l_reg[24]_39 [16]),
         .O(\filtered_l[16]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_41 
-       (.I0(\filter_in_l_reg[31]_96 [16]),
-        .I1(\filter_in_l_reg[30]_97 [16]),
+       (.I0(\filter_in_l_reg[31]_32 [16]),
+        .I1(\filter_in_l_reg[30]_33 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [16]),
+        .I3(\filter_in_l_reg[29]_34 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [16]),
+        .I5(\filter_in_l_reg[28]_35 [16]),
         .O(\filtered_l[16]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_42 
-       (.I0(\filter_in_l_reg[3]_124 [19]),
-        .I1(\filter_in_l_reg[2]_125 [19]),
+       (.I0(\filter_in_l_reg[3]_60 [19]),
+        .I1(\filter_in_l_reg[2]_61 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [19]),
+        .I3(\filter_in_l_reg[1]_62 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [19]),
+        .I5(\filter_in_l_reg[0]_63 [19]),
         .O(\filtered_l[16]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_43 
-       (.I0(\filter_in_l_reg[7]_120 [19]),
-        .I1(\filter_in_l_reg[6]_121 [19]),
+       (.I0(\filter_in_l_reg[7]_56 [19]),
+        .I1(\filter_in_l_reg[6]_57 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [19]),
+        .I3(\filter_in_l_reg[5]_58 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [19]),
+        .I5(\filter_in_l_reg[4]_59 [19]),
         .O(\filtered_l[16]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_44 
-       (.I0(\filter_in_l_reg[11]_116 [19]),
-        .I1(\filter_in_l_reg[10]_117 [19]),
+       (.I0(\filter_in_l_reg[11]_52 [19]),
+        .I1(\filter_in_l_reg[10]_53 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [19]),
+        .I3(\filter_in_l_reg[9]_54 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [19]),
+        .I5(\filter_in_l_reg[8]_55 [19]),
         .O(\filtered_l[16]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_45 
-       (.I0(\filter_in_l_reg[15]_112 [19]),
-        .I1(\filter_in_l_reg[14]_113 [19]),
+       (.I0(\filter_in_l_reg[15]_48 [19]),
+        .I1(\filter_in_l_reg[14]_49 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [19]),
+        .I3(\filter_in_l_reg[13]_50 [19]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [19]),
+        .I5(\filter_in_l_reg[12]_51 [19]),
         .O(\filtered_l[16]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_46 
-       (.I0(\filter_in_l_reg[3]_124 [18]),
-        .I1(\filter_in_l_reg[2]_125 [18]),
+       (.I0(\filter_in_l_reg[3]_60 [18]),
+        .I1(\filter_in_l_reg[2]_61 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [18]),
+        .I3(\filter_in_l_reg[1]_62 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [18]),
+        .I5(\filter_in_l_reg[0]_63 [18]),
         .O(\filtered_l[16]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_47 
-       (.I0(\filter_in_l_reg[7]_120 [18]),
-        .I1(\filter_in_l_reg[6]_121 [18]),
+       (.I0(\filter_in_l_reg[7]_56 [18]),
+        .I1(\filter_in_l_reg[6]_57 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [18]),
+        .I3(\filter_in_l_reg[5]_58 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [18]),
+        .I5(\filter_in_l_reg[4]_59 [18]),
         .O(\filtered_l[16]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_48 
-       (.I0(\filter_in_l_reg[11]_116 [18]),
-        .I1(\filter_in_l_reg[10]_117 [18]),
+       (.I0(\filter_in_l_reg[11]_52 [18]),
+        .I1(\filter_in_l_reg[10]_53 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [18]),
+        .I3(\filter_in_l_reg[9]_54 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [18]),
+        .I5(\filter_in_l_reg[8]_55 [18]),
         .O(\filtered_l[16]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_49 
-       (.I0(\filter_in_l_reg[15]_112 [18]),
-        .I1(\filter_in_l_reg[14]_113 [18]),
+       (.I0(\filter_in_l_reg[15]_48 [18]),
+        .I1(\filter_in_l_reg[14]_49 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [18]),
+        .I3(\filter_in_l_reg[13]_50 [18]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [18]),
+        .I5(\filter_in_l_reg[12]_51 [18]),
         .O(\filtered_l[16]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16043,87 +16037,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[16]_i_16_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[16]_i_17_n_0 ),
-        .I5(filtered_l_reg[16]),
+        .I5(p_0_in[11]),
         .O(\filtered_l[16]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_50 
-       (.I0(\filter_in_l_reg[3]_124 [17]),
-        .I1(\filter_in_l_reg[2]_125 [17]),
+       (.I0(\filter_in_l_reg[3]_60 [17]),
+        .I1(\filter_in_l_reg[2]_61 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [17]),
+        .I3(\filter_in_l_reg[1]_62 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [17]),
+        .I5(\filter_in_l_reg[0]_63 [17]),
         .O(\filtered_l[16]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_51 
-       (.I0(\filter_in_l_reg[7]_120 [17]),
-        .I1(\filter_in_l_reg[6]_121 [17]),
+       (.I0(\filter_in_l_reg[7]_56 [17]),
+        .I1(\filter_in_l_reg[6]_57 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [17]),
+        .I3(\filter_in_l_reg[5]_58 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [17]),
+        .I5(\filter_in_l_reg[4]_59 [17]),
         .O(\filtered_l[16]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_52 
-       (.I0(\filter_in_l_reg[11]_116 [17]),
-        .I1(\filter_in_l_reg[10]_117 [17]),
+       (.I0(\filter_in_l_reg[11]_52 [17]),
+        .I1(\filter_in_l_reg[10]_53 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [17]),
+        .I3(\filter_in_l_reg[9]_54 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [17]),
+        .I5(\filter_in_l_reg[8]_55 [17]),
         .O(\filtered_l[16]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_53 
-       (.I0(\filter_in_l_reg[15]_112 [17]),
-        .I1(\filter_in_l_reg[14]_113 [17]),
+       (.I0(\filter_in_l_reg[15]_48 [17]),
+        .I1(\filter_in_l_reg[14]_49 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [17]),
+        .I3(\filter_in_l_reg[13]_50 [17]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [17]),
+        .I5(\filter_in_l_reg[12]_51 [17]),
         .O(\filtered_l[16]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_54 
-       (.I0(\filter_in_l_reg[3]_124 [16]),
-        .I1(\filter_in_l_reg[2]_125 [16]),
+       (.I0(\filter_in_l_reg[3]_60 [16]),
+        .I1(\filter_in_l_reg[2]_61 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [16]),
+        .I3(\filter_in_l_reg[1]_62 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [16]),
+        .I5(\filter_in_l_reg[0]_63 [16]),
         .O(\filtered_l[16]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_55 
-       (.I0(\filter_in_l_reg[7]_120 [16]),
-        .I1(\filter_in_l_reg[6]_121 [16]),
+       (.I0(\filter_in_l_reg[7]_56 [16]),
+        .I1(\filter_in_l_reg[6]_57 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [16]),
+        .I3(\filter_in_l_reg[5]_58 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [16]),
+        .I5(\filter_in_l_reg[4]_59 [16]),
         .O(\filtered_l[16]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_56 
-       (.I0(\filter_in_l_reg[11]_116 [16]),
-        .I1(\filter_in_l_reg[10]_117 [16]),
+       (.I0(\filter_in_l_reg[11]_52 [16]),
+        .I1(\filter_in_l_reg[10]_53 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [16]),
+        .I3(\filter_in_l_reg[9]_54 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [16]),
+        .I5(\filter_in_l_reg[8]_55 [16]),
         .O(\filtered_l[16]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[16]_i_57 
-       (.I0(\filter_in_l_reg[15]_112 [16]),
-        .I1(\filter_in_l_reg[14]_113 [16]),
+       (.I0(\filter_in_l_reg[15]_48 [16]),
+        .I1(\filter_in_l_reg[14]_49 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [16]),
+        .I3(\filter_in_l_reg[13]_50 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [16]),
+        .I5(\filter_in_l_reg[12]_51 [16]),
         .O(\filtered_l[16]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16133,87 +16127,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[20]_i_7_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[20]_i_8_n_0 ),
-        .I5(filtered_l_reg[23]),
+        .I5(p_0_in[18]),
         .O(\filtered_l[20]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_20 
-       (.I0(\filter_in_l_reg[19]_108 [23]),
-        .I1(\filter_in_l_reg[18]_109 [23]),
+       (.I0(\filter_in_l_reg[19]_44 [23]),
+        .I1(\filter_in_l_reg[18]_45 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [23]),
+        .I3(\filter_in_l_reg[17]_46 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [23]),
+        .I5(\filter_in_l_reg[16]_47 [23]),
         .O(\filtered_l[20]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_21 
-       (.I0(\filter_in_l_reg[23]_104 [23]),
-        .I1(\filter_in_l_reg[22]_105 [23]),
+       (.I0(\filter_in_l_reg[23]_40 [23]),
+        .I1(\filter_in_l_reg[22]_41 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [23]),
+        .I3(\filter_in_l_reg[21]_42 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [23]),
+        .I5(\filter_in_l_reg[20]_43 [23]),
         .O(\filtered_l[20]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_22 
-       (.I0(\filter_in_l_reg[27]_100 [23]),
-        .I1(\filter_in_l_reg[26]_101 [23]),
+       (.I0(\filter_in_l_reg[27]_36 [23]),
+        .I1(\filter_in_l_reg[26]_37 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [23]),
+        .I3(\filter_in_l_reg[25]_38 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [23]),
+        .I5(\filter_in_l_reg[24]_39 [23]),
         .O(\filtered_l[20]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_23 
-       (.I0(\filter_in_l_reg[31]_96 [23]),
-        .I1(\filter_in_l_reg[30]_97 [23]),
+       (.I0(\filter_in_l_reg[31]_32 [23]),
+        .I1(\filter_in_l_reg[30]_33 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [23]),
+        .I3(\filter_in_l_reg[29]_34 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [23]),
+        .I5(\filter_in_l_reg[28]_35 [23]),
         .O(\filtered_l[20]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_26 
-       (.I0(\filter_in_l_reg[19]_108 [22]),
-        .I1(\filter_in_l_reg[18]_109 [22]),
+       (.I0(\filter_in_l_reg[19]_44 [22]),
+        .I1(\filter_in_l_reg[18]_45 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [22]),
+        .I3(\filter_in_l_reg[17]_46 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [22]),
+        .I5(\filter_in_l_reg[16]_47 [22]),
         .O(\filtered_l[20]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_27 
-       (.I0(\filter_in_l_reg[23]_104 [22]),
-        .I1(\filter_in_l_reg[22]_105 [22]),
+       (.I0(\filter_in_l_reg[23]_40 [22]),
+        .I1(\filter_in_l_reg[22]_41 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [22]),
+        .I3(\filter_in_l_reg[21]_42 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [22]),
+        .I5(\filter_in_l_reg[20]_43 [22]),
         .O(\filtered_l[20]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_28 
-       (.I0(\filter_in_l_reg[27]_100 [22]),
-        .I1(\filter_in_l_reg[26]_101 [22]),
+       (.I0(\filter_in_l_reg[27]_36 [22]),
+        .I1(\filter_in_l_reg[26]_37 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [22]),
+        .I3(\filter_in_l_reg[25]_38 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [22]),
+        .I5(\filter_in_l_reg[24]_39 [22]),
         .O(\filtered_l[20]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_29 
-       (.I0(\filter_in_l_reg[31]_96 [22]),
-        .I1(\filter_in_l_reg[30]_97 [22]),
+       (.I0(\filter_in_l_reg[31]_32 [22]),
+        .I1(\filter_in_l_reg[30]_33 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [22]),
+        .I3(\filter_in_l_reg[29]_34 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [22]),
+        .I5(\filter_in_l_reg[28]_35 [22]),
         .O(\filtered_l[20]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16223,67 +16217,67 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[20]_i_10_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[20]_i_11_n_0 ),
-        .I5(filtered_l_reg[22]),
+        .I5(p_0_in[17]),
         .O(\filtered_l[20]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_32 
-       (.I0(\filter_in_l_reg[19]_108 [21]),
-        .I1(\filter_in_l_reg[18]_109 [21]),
+       (.I0(\filter_in_l_reg[19]_44 [21]),
+        .I1(\filter_in_l_reg[18]_45 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [21]),
+        .I3(\filter_in_l_reg[17]_46 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [21]),
+        .I5(\filter_in_l_reg[16]_47 [21]),
         .O(\filtered_l[20]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_33 
-       (.I0(\filter_in_l_reg[23]_104 [21]),
-        .I1(\filter_in_l_reg[22]_105 [21]),
+       (.I0(\filter_in_l_reg[23]_40 [21]),
+        .I1(\filter_in_l_reg[22]_41 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [21]),
+        .I3(\filter_in_l_reg[21]_42 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [21]),
+        .I5(\filter_in_l_reg[20]_43 [21]),
         .O(\filtered_l[20]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_34 
-       (.I0(\filter_in_l_reg[27]_100 [21]),
-        .I1(\filter_in_l_reg[26]_101 [21]),
+       (.I0(\filter_in_l_reg[27]_36 [21]),
+        .I1(\filter_in_l_reg[26]_37 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [21]),
+        .I3(\filter_in_l_reg[25]_38 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [21]),
+        .I5(\filter_in_l_reg[24]_39 [21]),
         .O(\filtered_l[20]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_35 
-       (.I0(\filter_in_l_reg[31]_96 [21]),
-        .I1(\filter_in_l_reg[30]_97 [21]),
+       (.I0(\filter_in_l_reg[31]_32 [21]),
+        .I1(\filter_in_l_reg[30]_33 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [21]),
+        .I3(\filter_in_l_reg[29]_34 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [21]),
+        .I5(\filter_in_l_reg[28]_35 [21]),
         .O(\filtered_l[20]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_38 
-       (.I0(\filter_in_l_reg[19]_108 [20]),
-        .I1(\filter_in_l_reg[18]_109 [20]),
+       (.I0(\filter_in_l_reg[19]_44 [20]),
+        .I1(\filter_in_l_reg[18]_45 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [20]),
+        .I3(\filter_in_l_reg[17]_46 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [20]),
+        .I5(\filter_in_l_reg[16]_47 [20]),
         .O(\filtered_l[20]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_39 
-       (.I0(\filter_in_l_reg[23]_104 [20]),
-        .I1(\filter_in_l_reg[22]_105 [20]),
+       (.I0(\filter_in_l_reg[23]_40 [20]),
+        .I1(\filter_in_l_reg[22]_41 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [20]),
+        .I3(\filter_in_l_reg[21]_42 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [20]),
+        .I5(\filter_in_l_reg[20]_43 [20]),
         .O(\filtered_l[20]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16293,107 +16287,107 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[20]_i_13_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[20]_i_14_n_0 ),
-        .I5(filtered_l_reg[21]),
+        .I5(p_0_in[16]),
         .O(\filtered_l[20]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_40 
-       (.I0(\filter_in_l_reg[27]_100 [20]),
-        .I1(\filter_in_l_reg[26]_101 [20]),
+       (.I0(\filter_in_l_reg[27]_36 [20]),
+        .I1(\filter_in_l_reg[26]_37 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [20]),
+        .I3(\filter_in_l_reg[25]_38 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [20]),
+        .I5(\filter_in_l_reg[24]_39 [20]),
         .O(\filtered_l[20]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_41 
-       (.I0(\filter_in_l_reg[31]_96 [20]),
-        .I1(\filter_in_l_reg[30]_97 [20]),
+       (.I0(\filter_in_l_reg[31]_32 [20]),
+        .I1(\filter_in_l_reg[30]_33 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [20]),
+        .I3(\filter_in_l_reg[29]_34 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [20]),
+        .I5(\filter_in_l_reg[28]_35 [20]),
         .O(\filtered_l[20]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_42 
-       (.I0(\filter_in_l_reg[3]_124 [23]),
-        .I1(\filter_in_l_reg[2]_125 [23]),
+       (.I0(\filter_in_l_reg[3]_60 [23]),
+        .I1(\filter_in_l_reg[2]_61 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [23]),
+        .I3(\filter_in_l_reg[1]_62 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [23]),
+        .I5(\filter_in_l_reg[0]_63 [23]),
         .O(\filtered_l[20]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_43 
-       (.I0(\filter_in_l_reg[7]_120 [23]),
-        .I1(\filter_in_l_reg[6]_121 [23]),
+       (.I0(\filter_in_l_reg[7]_56 [23]),
+        .I1(\filter_in_l_reg[6]_57 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [23]),
+        .I3(\filter_in_l_reg[5]_58 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [23]),
+        .I5(\filter_in_l_reg[4]_59 [23]),
         .O(\filtered_l[20]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_44 
-       (.I0(\filter_in_l_reg[11]_116 [23]),
-        .I1(\filter_in_l_reg[10]_117 [23]),
+       (.I0(\filter_in_l_reg[11]_52 [23]),
+        .I1(\filter_in_l_reg[10]_53 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [23]),
+        .I3(\filter_in_l_reg[9]_54 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [23]),
+        .I5(\filter_in_l_reg[8]_55 [23]),
         .O(\filtered_l[20]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_45 
-       (.I0(\filter_in_l_reg[15]_112 [23]),
-        .I1(\filter_in_l_reg[14]_113 [23]),
+       (.I0(\filter_in_l_reg[15]_48 [23]),
+        .I1(\filter_in_l_reg[14]_49 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [23]),
+        .I3(\filter_in_l_reg[13]_50 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [23]),
+        .I5(\filter_in_l_reg[12]_51 [23]),
         .O(\filtered_l[20]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_46 
-       (.I0(\filter_in_l_reg[3]_124 [22]),
-        .I1(\filter_in_l_reg[2]_125 [22]),
+       (.I0(\filter_in_l_reg[3]_60 [22]),
+        .I1(\filter_in_l_reg[2]_61 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [22]),
+        .I3(\filter_in_l_reg[1]_62 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [22]),
+        .I5(\filter_in_l_reg[0]_63 [22]),
         .O(\filtered_l[20]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_47 
-       (.I0(\filter_in_l_reg[7]_120 [22]),
-        .I1(\filter_in_l_reg[6]_121 [22]),
+       (.I0(\filter_in_l_reg[7]_56 [22]),
+        .I1(\filter_in_l_reg[6]_57 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [22]),
+        .I3(\filter_in_l_reg[5]_58 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [22]),
+        .I5(\filter_in_l_reg[4]_59 [22]),
         .O(\filtered_l[20]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_48 
-       (.I0(\filter_in_l_reg[11]_116 [22]),
-        .I1(\filter_in_l_reg[10]_117 [22]),
+       (.I0(\filter_in_l_reg[11]_52 [22]),
+        .I1(\filter_in_l_reg[10]_53 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [22]),
+        .I3(\filter_in_l_reg[9]_54 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [22]),
+        .I5(\filter_in_l_reg[8]_55 [22]),
         .O(\filtered_l[20]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_49 
-       (.I0(\filter_in_l_reg[15]_112 [22]),
-        .I1(\filter_in_l_reg[14]_113 [22]),
+       (.I0(\filter_in_l_reg[15]_48 [22]),
+        .I1(\filter_in_l_reg[14]_49 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [22]),
+        .I3(\filter_in_l_reg[13]_50 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [22]),
+        .I5(\filter_in_l_reg[12]_51 [22]),
         .O(\filtered_l[20]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16403,87 +16397,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[20]_i_16_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[20]_i_17_n_0 ),
-        .I5(filtered_l_reg[20]),
+        .I5(p_0_in[15]),
         .O(\filtered_l[20]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_50 
-       (.I0(\filter_in_l_reg[3]_124 [21]),
-        .I1(\filter_in_l_reg[2]_125 [21]),
+       (.I0(\filter_in_l_reg[3]_60 [21]),
+        .I1(\filter_in_l_reg[2]_61 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [21]),
+        .I3(\filter_in_l_reg[1]_62 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [21]),
+        .I5(\filter_in_l_reg[0]_63 [21]),
         .O(\filtered_l[20]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_51 
-       (.I0(\filter_in_l_reg[7]_120 [21]),
-        .I1(\filter_in_l_reg[6]_121 [21]),
+       (.I0(\filter_in_l_reg[7]_56 [21]),
+        .I1(\filter_in_l_reg[6]_57 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [21]),
+        .I3(\filter_in_l_reg[5]_58 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [21]),
+        .I5(\filter_in_l_reg[4]_59 [21]),
         .O(\filtered_l[20]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_52 
-       (.I0(\filter_in_l_reg[11]_116 [21]),
-        .I1(\filter_in_l_reg[10]_117 [21]),
+       (.I0(\filter_in_l_reg[11]_52 [21]),
+        .I1(\filter_in_l_reg[10]_53 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [21]),
+        .I3(\filter_in_l_reg[9]_54 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [21]),
+        .I5(\filter_in_l_reg[8]_55 [21]),
         .O(\filtered_l[20]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_53 
-       (.I0(\filter_in_l_reg[15]_112 [21]),
-        .I1(\filter_in_l_reg[14]_113 [21]),
+       (.I0(\filter_in_l_reg[15]_48 [21]),
+        .I1(\filter_in_l_reg[14]_49 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [21]),
+        .I3(\filter_in_l_reg[13]_50 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [21]),
+        .I5(\filter_in_l_reg[12]_51 [21]),
         .O(\filtered_l[20]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_54 
-       (.I0(\filter_in_l_reg[3]_124 [20]),
-        .I1(\filter_in_l_reg[2]_125 [20]),
+       (.I0(\filter_in_l_reg[3]_60 [20]),
+        .I1(\filter_in_l_reg[2]_61 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [20]),
+        .I3(\filter_in_l_reg[1]_62 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [20]),
+        .I5(\filter_in_l_reg[0]_63 [20]),
         .O(\filtered_l[20]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_55 
-       (.I0(\filter_in_l_reg[7]_120 [20]),
-        .I1(\filter_in_l_reg[6]_121 [20]),
+       (.I0(\filter_in_l_reg[7]_56 [20]),
+        .I1(\filter_in_l_reg[6]_57 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [20]),
+        .I3(\filter_in_l_reg[5]_58 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [20]),
+        .I5(\filter_in_l_reg[4]_59 [20]),
         .O(\filtered_l[20]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_56 
-       (.I0(\filter_in_l_reg[11]_116 [20]),
-        .I1(\filter_in_l_reg[10]_117 [20]),
+       (.I0(\filter_in_l_reg[11]_52 [20]),
+        .I1(\filter_in_l_reg[10]_53 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [20]),
+        .I3(\filter_in_l_reg[9]_54 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [20]),
+        .I5(\filter_in_l_reg[8]_55 [20]),
         .O(\filtered_l[20]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[20]_i_57 
-       (.I0(\filter_in_l_reg[15]_112 [20]),
-        .I1(\filter_in_l_reg[14]_113 [20]),
+       (.I0(\filter_in_l_reg[15]_48 [20]),
+        .I1(\filter_in_l_reg[14]_49 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [20]),
+        .I3(\filter_in_l_reg[13]_50 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [20]),
+        .I5(\filter_in_l_reg[12]_51 [20]),
         .O(\filtered_l[20]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16493,87 +16487,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[4]_i_7_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[4]_i_8_n_0 ),
-        .I5(filtered_l_reg[7]),
+        .I5(p_0_in[2]),
         .O(\filtered_l[4]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_20 
-       (.I0(\filter_in_l_reg[19]_108 [7]),
-        .I1(\filter_in_l_reg[18]_109 [7]),
+       (.I0(\filter_in_l_reg[19]_44 [7]),
+        .I1(\filter_in_l_reg[18]_45 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [7]),
+        .I3(\filter_in_l_reg[17]_46 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [7]),
+        .I5(\filter_in_l_reg[16]_47 [7]),
         .O(\filtered_l[4]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_21 
-       (.I0(\filter_in_l_reg[23]_104 [7]),
-        .I1(\filter_in_l_reg[22]_105 [7]),
+       (.I0(\filter_in_l_reg[23]_40 [7]),
+        .I1(\filter_in_l_reg[22]_41 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [7]),
+        .I3(\filter_in_l_reg[21]_42 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [7]),
+        .I5(\filter_in_l_reg[20]_43 [7]),
         .O(\filtered_l[4]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_22 
-       (.I0(\filter_in_l_reg[27]_100 [7]),
-        .I1(\filter_in_l_reg[26]_101 [7]),
+       (.I0(\filter_in_l_reg[27]_36 [7]),
+        .I1(\filter_in_l_reg[26]_37 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [7]),
+        .I3(\filter_in_l_reg[25]_38 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [7]),
+        .I5(\filter_in_l_reg[24]_39 [7]),
         .O(\filtered_l[4]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_23 
-       (.I0(\filter_in_l_reg[31]_96 [7]),
-        .I1(\filter_in_l_reg[30]_97 [7]),
+       (.I0(\filter_in_l_reg[31]_32 [7]),
+        .I1(\filter_in_l_reg[30]_33 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [7]),
+        .I3(\filter_in_l_reg[29]_34 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [7]),
+        .I5(\filter_in_l_reg[28]_35 [7]),
         .O(\filtered_l[4]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_26 
-       (.I0(\filter_in_l_reg[19]_108 [6]),
-        .I1(\filter_in_l_reg[18]_109 [6]),
+       (.I0(\filter_in_l_reg[19]_44 [6]),
+        .I1(\filter_in_l_reg[18]_45 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [6]),
+        .I3(\filter_in_l_reg[17]_46 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [6]),
+        .I5(\filter_in_l_reg[16]_47 [6]),
         .O(\filtered_l[4]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_27 
-       (.I0(\filter_in_l_reg[23]_104 [6]),
-        .I1(\filter_in_l_reg[22]_105 [6]),
+       (.I0(\filter_in_l_reg[23]_40 [6]),
+        .I1(\filter_in_l_reg[22]_41 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [6]),
+        .I3(\filter_in_l_reg[21]_42 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [6]),
+        .I5(\filter_in_l_reg[20]_43 [6]),
         .O(\filtered_l[4]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_28 
-       (.I0(\filter_in_l_reg[27]_100 [6]),
-        .I1(\filter_in_l_reg[26]_101 [6]),
+       (.I0(\filter_in_l_reg[27]_36 [6]),
+        .I1(\filter_in_l_reg[26]_37 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [6]),
+        .I3(\filter_in_l_reg[25]_38 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [6]),
+        .I5(\filter_in_l_reg[24]_39 [6]),
         .O(\filtered_l[4]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_29 
-       (.I0(\filter_in_l_reg[31]_96 [6]),
-        .I1(\filter_in_l_reg[30]_97 [6]),
+       (.I0(\filter_in_l_reg[31]_32 [6]),
+        .I1(\filter_in_l_reg[30]_33 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [6]),
+        .I3(\filter_in_l_reg[29]_34 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [6]),
+        .I5(\filter_in_l_reg[28]_35 [6]),
         .O(\filtered_l[4]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16583,67 +16577,67 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[4]_i_10_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[4]_i_11_n_0 ),
-        .I5(filtered_l_reg[6]),
+        .I5(p_0_in[1]),
         .O(\filtered_l[4]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_32 
-       (.I0(\filter_in_l_reg[19]_108 [5]),
-        .I1(\filter_in_l_reg[18]_109 [5]),
+       (.I0(\filter_in_l_reg[19]_44 [5]),
+        .I1(\filter_in_l_reg[18]_45 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [5]),
+        .I3(\filter_in_l_reg[17]_46 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [5]),
+        .I5(\filter_in_l_reg[16]_47 [5]),
         .O(\filtered_l[4]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_33 
-       (.I0(\filter_in_l_reg[23]_104 [5]),
-        .I1(\filter_in_l_reg[22]_105 [5]),
+       (.I0(\filter_in_l_reg[23]_40 [5]),
+        .I1(\filter_in_l_reg[22]_41 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [5]),
+        .I3(\filter_in_l_reg[21]_42 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [5]),
+        .I5(\filter_in_l_reg[20]_43 [5]),
         .O(\filtered_l[4]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_34 
-       (.I0(\filter_in_l_reg[27]_100 [5]),
-        .I1(\filter_in_l_reg[26]_101 [5]),
+       (.I0(\filter_in_l_reg[27]_36 [5]),
+        .I1(\filter_in_l_reg[26]_37 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [5]),
+        .I3(\filter_in_l_reg[25]_38 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [5]),
+        .I5(\filter_in_l_reg[24]_39 [5]),
         .O(\filtered_l[4]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_35 
-       (.I0(\filter_in_l_reg[31]_96 [5]),
-        .I1(\filter_in_l_reg[30]_97 [5]),
+       (.I0(\filter_in_l_reg[31]_32 [5]),
+        .I1(\filter_in_l_reg[30]_33 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [5]),
+        .I3(\filter_in_l_reg[29]_34 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [5]),
+        .I5(\filter_in_l_reg[28]_35 [5]),
         .O(\filtered_l[4]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_38 
-       (.I0(\filter_in_l_reg[19]_108 [4]),
-        .I1(\filter_in_l_reg[18]_109 [4]),
+       (.I0(\filter_in_l_reg[19]_44 [4]),
+        .I1(\filter_in_l_reg[18]_45 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [4]),
+        .I3(\filter_in_l_reg[17]_46 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[16]_111 [4]),
+        .I5(\filter_in_l_reg[16]_47 [4]),
         .O(\filtered_l[4]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_39 
-       (.I0(\filter_in_l_reg[23]_104 [4]),
-        .I1(\filter_in_l_reg[22]_105 [4]),
+       (.I0(\filter_in_l_reg[23]_40 [4]),
+        .I1(\filter_in_l_reg[22]_41 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [4]),
+        .I3(\filter_in_l_reg[21]_42 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [4]),
+        .I5(\filter_in_l_reg[20]_43 [4]),
         .O(\filtered_l[4]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16653,107 +16647,107 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[4]_i_13_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[4]_i_14_n_0 ),
-        .I5(filtered_l_reg[5]),
+        .I5(p_0_in[0]),
         .O(\filtered_l[4]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_40 
-       (.I0(\filter_in_l_reg[27]_100 [4]),
-        .I1(\filter_in_l_reg[26]_101 [4]),
+       (.I0(\filter_in_l_reg[27]_36 [4]),
+        .I1(\filter_in_l_reg[26]_37 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [4]),
+        .I3(\filter_in_l_reg[25]_38 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [4]),
+        .I5(\filter_in_l_reg[24]_39 [4]),
         .O(\filtered_l[4]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_41 
-       (.I0(\filter_in_l_reg[31]_96 [4]),
-        .I1(\filter_in_l_reg[30]_97 [4]),
+       (.I0(\filter_in_l_reg[31]_32 [4]),
+        .I1(\filter_in_l_reg[30]_33 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [4]),
+        .I3(\filter_in_l_reg[29]_34 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [4]),
+        .I5(\filter_in_l_reg[28]_35 [4]),
         .O(\filtered_l[4]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_42 
-       (.I0(\filter_in_l_reg[3]_124 [7]),
-        .I1(\filter_in_l_reg[2]_125 [7]),
+       (.I0(\filter_in_l_reg[3]_60 [7]),
+        .I1(\filter_in_l_reg[2]_61 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [7]),
+        .I3(\filter_in_l_reg[1]_62 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [7]),
+        .I5(\filter_in_l_reg[0]_63 [7]),
         .O(\filtered_l[4]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_43 
-       (.I0(\filter_in_l_reg[7]_120 [7]),
-        .I1(\filter_in_l_reg[6]_121 [7]),
+       (.I0(\filter_in_l_reg[7]_56 [7]),
+        .I1(\filter_in_l_reg[6]_57 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [7]),
+        .I3(\filter_in_l_reg[5]_58 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [7]),
+        .I5(\filter_in_l_reg[4]_59 [7]),
         .O(\filtered_l[4]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_44 
-       (.I0(\filter_in_l_reg[11]_116 [7]),
-        .I1(\filter_in_l_reg[10]_117 [7]),
+       (.I0(\filter_in_l_reg[11]_52 [7]),
+        .I1(\filter_in_l_reg[10]_53 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [7]),
+        .I3(\filter_in_l_reg[9]_54 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [7]),
+        .I5(\filter_in_l_reg[8]_55 [7]),
         .O(\filtered_l[4]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_45 
-       (.I0(\filter_in_l_reg[15]_112 [7]),
-        .I1(\filter_in_l_reg[14]_113 [7]),
+       (.I0(\filter_in_l_reg[15]_48 [7]),
+        .I1(\filter_in_l_reg[14]_49 [7]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [7]),
+        .I3(\filter_in_l_reg[13]_50 [7]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [7]),
+        .I5(\filter_in_l_reg[12]_51 [7]),
         .O(\filtered_l[4]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_46 
-       (.I0(\filter_in_l_reg[3]_124 [6]),
-        .I1(\filter_in_l_reg[2]_125 [6]),
+       (.I0(\filter_in_l_reg[3]_60 [6]),
+        .I1(\filter_in_l_reg[2]_61 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [6]),
+        .I3(\filter_in_l_reg[1]_62 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [6]),
+        .I5(\filter_in_l_reg[0]_63 [6]),
         .O(\filtered_l[4]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_47 
-       (.I0(\filter_in_l_reg[7]_120 [6]),
-        .I1(\filter_in_l_reg[6]_121 [6]),
+       (.I0(\filter_in_l_reg[7]_56 [6]),
+        .I1(\filter_in_l_reg[6]_57 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [6]),
+        .I3(\filter_in_l_reg[5]_58 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [6]),
+        .I5(\filter_in_l_reg[4]_59 [6]),
         .O(\filtered_l[4]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_48 
-       (.I0(\filter_in_l_reg[11]_116 [6]),
-        .I1(\filter_in_l_reg[10]_117 [6]),
+       (.I0(\filter_in_l_reg[11]_52 [6]),
+        .I1(\filter_in_l_reg[10]_53 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [6]),
+        .I3(\filter_in_l_reg[9]_54 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [6]),
+        .I5(\filter_in_l_reg[8]_55 [6]),
         .O(\filtered_l[4]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_49 
-       (.I0(\filter_in_l_reg[15]_112 [6]),
-        .I1(\filter_in_l_reg[14]_113 [6]),
+       (.I0(\filter_in_l_reg[15]_48 [6]),
+        .I1(\filter_in_l_reg[14]_49 [6]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [6]),
+        .I3(\filter_in_l_reg[13]_50 [6]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [6]),
+        .I5(\filter_in_l_reg[12]_51 [6]),
         .O(\filtered_l[4]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16768,82 +16762,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_50 
-       (.I0(\filter_in_l_reg[3]_124 [5]),
-        .I1(\filter_in_l_reg[2]_125 [5]),
+       (.I0(\filter_in_l_reg[3]_60 [5]),
+        .I1(\filter_in_l_reg[2]_61 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [5]),
+        .I3(\filter_in_l_reg[1]_62 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [5]),
+        .I5(\filter_in_l_reg[0]_63 [5]),
         .O(\filtered_l[4]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_51 
-       (.I0(\filter_in_l_reg[7]_120 [5]),
-        .I1(\filter_in_l_reg[6]_121 [5]),
+       (.I0(\filter_in_l_reg[7]_56 [5]),
+        .I1(\filter_in_l_reg[6]_57 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [5]),
+        .I3(\filter_in_l_reg[5]_58 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [5]),
+        .I5(\filter_in_l_reg[4]_59 [5]),
         .O(\filtered_l[4]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_52 
-       (.I0(\filter_in_l_reg[11]_116 [5]),
-        .I1(\filter_in_l_reg[10]_117 [5]),
+       (.I0(\filter_in_l_reg[11]_52 [5]),
+        .I1(\filter_in_l_reg[10]_53 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [5]),
+        .I3(\filter_in_l_reg[9]_54 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [5]),
+        .I5(\filter_in_l_reg[8]_55 [5]),
         .O(\filtered_l[4]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_53 
-       (.I0(\filter_in_l_reg[15]_112 [5]),
-        .I1(\filter_in_l_reg[14]_113 [5]),
+       (.I0(\filter_in_l_reg[15]_48 [5]),
+        .I1(\filter_in_l_reg[14]_49 [5]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [5]),
+        .I3(\filter_in_l_reg[13]_50 [5]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [5]),
+        .I5(\filter_in_l_reg[12]_51 [5]),
         .O(\filtered_l[4]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_54 
-       (.I0(\filter_in_l_reg[3]_124 [4]),
-        .I1(\filter_in_l_reg[2]_125 [4]),
+       (.I0(\filter_in_l_reg[3]_60 [4]),
+        .I1(\filter_in_l_reg[2]_61 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [4]),
+        .I3(\filter_in_l_reg[1]_62 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[0]_127 [4]),
+        .I5(\filter_in_l_reg[0]_63 [4]),
         .O(\filtered_l[4]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_55 
-       (.I0(\filter_in_l_reg[7]_120 [4]),
-        .I1(\filter_in_l_reg[6]_121 [4]),
+       (.I0(\filter_in_l_reg[7]_56 [4]),
+        .I1(\filter_in_l_reg[6]_57 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [4]),
+        .I3(\filter_in_l_reg[5]_58 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[4]_123 [4]),
+        .I5(\filter_in_l_reg[4]_59 [4]),
         .O(\filtered_l[4]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_56 
-       (.I0(\filter_in_l_reg[11]_116 [4]),
-        .I1(\filter_in_l_reg[10]_117 [4]),
+       (.I0(\filter_in_l_reg[11]_52 [4]),
+        .I1(\filter_in_l_reg[10]_53 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [4]),
+        .I3(\filter_in_l_reg[9]_54 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[8]_119 [4]),
+        .I5(\filter_in_l_reg[8]_55 [4]),
         .O(\filtered_l[4]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[4]_i_57 
-       (.I0(\filter_in_l_reg[15]_112 [4]),
-        .I1(\filter_in_l_reg[14]_113 [4]),
+       (.I0(\filter_in_l_reg[15]_48 [4]),
+        .I1(\filter_in_l_reg[14]_49 [4]),
         .I2(\ring_buffer_read_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [4]),
+        .I3(\filter_in_l_reg[13]_50 [4]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_l_reg[12]_115 [4]),
+        .I5(\filter_in_l_reg[12]_51 [4]),
         .O(\filtered_l[4]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16853,87 +16847,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[8]_i_7_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[8]_i_8_n_0 ),
-        .I5(filtered_l_reg[11]),
+        .I5(p_0_in[6]),
         .O(\filtered_l[8]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_20 
-       (.I0(\filter_in_l_reg[19]_108 [11]),
-        .I1(\filter_in_l_reg[18]_109 [11]),
+       (.I0(\filter_in_l_reg[19]_44 [11]),
+        .I1(\filter_in_l_reg[18]_45 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [11]),
+        .I3(\filter_in_l_reg[17]_46 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [11]),
+        .I5(\filter_in_l_reg[16]_47 [11]),
         .O(\filtered_l[8]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_21 
-       (.I0(\filter_in_l_reg[23]_104 [11]),
-        .I1(\filter_in_l_reg[22]_105 [11]),
+       (.I0(\filter_in_l_reg[23]_40 [11]),
+        .I1(\filter_in_l_reg[22]_41 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [11]),
+        .I3(\filter_in_l_reg[21]_42 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [11]),
+        .I5(\filter_in_l_reg[20]_43 [11]),
         .O(\filtered_l[8]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_22 
-       (.I0(\filter_in_l_reg[27]_100 [11]),
-        .I1(\filter_in_l_reg[26]_101 [11]),
+       (.I0(\filter_in_l_reg[27]_36 [11]),
+        .I1(\filter_in_l_reg[26]_37 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [11]),
+        .I3(\filter_in_l_reg[25]_38 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [11]),
+        .I5(\filter_in_l_reg[24]_39 [11]),
         .O(\filtered_l[8]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_23 
-       (.I0(\filter_in_l_reg[31]_96 [11]),
-        .I1(\filter_in_l_reg[30]_97 [11]),
+       (.I0(\filter_in_l_reg[31]_32 [11]),
+        .I1(\filter_in_l_reg[30]_33 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [11]),
+        .I3(\filter_in_l_reg[29]_34 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [11]),
+        .I5(\filter_in_l_reg[28]_35 [11]),
         .O(\filtered_l[8]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_26 
-       (.I0(\filter_in_l_reg[19]_108 [10]),
-        .I1(\filter_in_l_reg[18]_109 [10]),
+       (.I0(\filter_in_l_reg[19]_44 [10]),
+        .I1(\filter_in_l_reg[18]_45 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [10]),
+        .I3(\filter_in_l_reg[17]_46 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [10]),
+        .I5(\filter_in_l_reg[16]_47 [10]),
         .O(\filtered_l[8]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_27 
-       (.I0(\filter_in_l_reg[23]_104 [10]),
-        .I1(\filter_in_l_reg[22]_105 [10]),
+       (.I0(\filter_in_l_reg[23]_40 [10]),
+        .I1(\filter_in_l_reg[22]_41 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [10]),
+        .I3(\filter_in_l_reg[21]_42 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [10]),
+        .I5(\filter_in_l_reg[20]_43 [10]),
         .O(\filtered_l[8]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_28 
-       (.I0(\filter_in_l_reg[27]_100 [10]),
-        .I1(\filter_in_l_reg[26]_101 [10]),
+       (.I0(\filter_in_l_reg[27]_36 [10]),
+        .I1(\filter_in_l_reg[26]_37 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [10]),
+        .I3(\filter_in_l_reg[25]_38 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [10]),
+        .I5(\filter_in_l_reg[24]_39 [10]),
         .O(\filtered_l[8]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_29 
-       (.I0(\filter_in_l_reg[31]_96 [10]),
-        .I1(\filter_in_l_reg[30]_97 [10]),
+       (.I0(\filter_in_l_reg[31]_32 [10]),
+        .I1(\filter_in_l_reg[30]_33 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [10]),
+        .I3(\filter_in_l_reg[29]_34 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [10]),
+        .I5(\filter_in_l_reg[28]_35 [10]),
         .O(\filtered_l[8]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -16943,67 +16937,67 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[8]_i_10_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[8]_i_11_n_0 ),
-        .I5(filtered_l_reg[10]),
+        .I5(p_0_in[5]),
         .O(\filtered_l[8]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_32 
-       (.I0(\filter_in_l_reg[19]_108 [9]),
-        .I1(\filter_in_l_reg[18]_109 [9]),
+       (.I0(\filter_in_l_reg[19]_44 [9]),
+        .I1(\filter_in_l_reg[18]_45 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [9]),
+        .I3(\filter_in_l_reg[17]_46 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [9]),
+        .I5(\filter_in_l_reg[16]_47 [9]),
         .O(\filtered_l[8]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_33 
-       (.I0(\filter_in_l_reg[23]_104 [9]),
-        .I1(\filter_in_l_reg[22]_105 [9]),
+       (.I0(\filter_in_l_reg[23]_40 [9]),
+        .I1(\filter_in_l_reg[22]_41 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [9]),
+        .I3(\filter_in_l_reg[21]_42 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [9]),
+        .I5(\filter_in_l_reg[20]_43 [9]),
         .O(\filtered_l[8]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_34 
-       (.I0(\filter_in_l_reg[27]_100 [9]),
-        .I1(\filter_in_l_reg[26]_101 [9]),
+       (.I0(\filter_in_l_reg[27]_36 [9]),
+        .I1(\filter_in_l_reg[26]_37 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [9]),
+        .I3(\filter_in_l_reg[25]_38 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [9]),
+        .I5(\filter_in_l_reg[24]_39 [9]),
         .O(\filtered_l[8]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_35 
-       (.I0(\filter_in_l_reg[31]_96 [9]),
-        .I1(\filter_in_l_reg[30]_97 [9]),
+       (.I0(\filter_in_l_reg[31]_32 [9]),
+        .I1(\filter_in_l_reg[30]_33 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [9]),
+        .I3(\filter_in_l_reg[29]_34 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [9]),
+        .I5(\filter_in_l_reg[28]_35 [9]),
         .O(\filtered_l[8]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_38 
-       (.I0(\filter_in_l_reg[19]_108 [8]),
-        .I1(\filter_in_l_reg[18]_109 [8]),
+       (.I0(\filter_in_l_reg[19]_44 [8]),
+        .I1(\filter_in_l_reg[18]_45 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [8]),
+        .I3(\filter_in_l_reg[17]_46 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [8]),
+        .I5(\filter_in_l_reg[16]_47 [8]),
         .O(\filtered_l[8]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_39 
-       (.I0(\filter_in_l_reg[23]_104 [8]),
-        .I1(\filter_in_l_reg[22]_105 [8]),
+       (.I0(\filter_in_l_reg[23]_40 [8]),
+        .I1(\filter_in_l_reg[22]_41 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [8]),
+        .I3(\filter_in_l_reg[21]_42 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [8]),
+        .I5(\filter_in_l_reg[20]_43 [8]),
         .O(\filtered_l[8]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -17013,107 +17007,107 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[8]_i_13_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[8]_i_14_n_0 ),
-        .I5(filtered_l_reg[9]),
+        .I5(p_0_in[4]),
         .O(\filtered_l[8]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_40 
-       (.I0(\filter_in_l_reg[27]_100 [8]),
-        .I1(\filter_in_l_reg[26]_101 [8]),
+       (.I0(\filter_in_l_reg[27]_36 [8]),
+        .I1(\filter_in_l_reg[26]_37 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [8]),
+        .I3(\filter_in_l_reg[25]_38 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [8]),
+        .I5(\filter_in_l_reg[24]_39 [8]),
         .O(\filtered_l[8]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_41 
-       (.I0(\filter_in_l_reg[31]_96 [8]),
-        .I1(\filter_in_l_reg[30]_97 [8]),
+       (.I0(\filter_in_l_reg[31]_32 [8]),
+        .I1(\filter_in_l_reg[30]_33 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [8]),
+        .I3(\filter_in_l_reg[29]_34 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [8]),
+        .I5(\filter_in_l_reg[28]_35 [8]),
         .O(\filtered_l[8]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_42 
-       (.I0(\filter_in_l_reg[3]_124 [11]),
-        .I1(\filter_in_l_reg[2]_125 [11]),
+       (.I0(\filter_in_l_reg[3]_60 [11]),
+        .I1(\filter_in_l_reg[2]_61 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [11]),
+        .I3(\filter_in_l_reg[1]_62 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [11]),
+        .I5(\filter_in_l_reg[0]_63 [11]),
         .O(\filtered_l[8]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_43 
-       (.I0(\filter_in_l_reg[7]_120 [11]),
-        .I1(\filter_in_l_reg[6]_121 [11]),
+       (.I0(\filter_in_l_reg[7]_56 [11]),
+        .I1(\filter_in_l_reg[6]_57 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [11]),
+        .I3(\filter_in_l_reg[5]_58 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [11]),
+        .I5(\filter_in_l_reg[4]_59 [11]),
         .O(\filtered_l[8]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_44 
-       (.I0(\filter_in_l_reg[11]_116 [11]),
-        .I1(\filter_in_l_reg[10]_117 [11]),
+       (.I0(\filter_in_l_reg[11]_52 [11]),
+        .I1(\filter_in_l_reg[10]_53 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [11]),
+        .I3(\filter_in_l_reg[9]_54 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [11]),
+        .I5(\filter_in_l_reg[8]_55 [11]),
         .O(\filtered_l[8]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_45 
-       (.I0(\filter_in_l_reg[15]_112 [11]),
-        .I1(\filter_in_l_reg[14]_113 [11]),
+       (.I0(\filter_in_l_reg[15]_48 [11]),
+        .I1(\filter_in_l_reg[14]_49 [11]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [11]),
+        .I3(\filter_in_l_reg[13]_50 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [11]),
+        .I5(\filter_in_l_reg[12]_51 [11]),
         .O(\filtered_l[8]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_46 
-       (.I0(\filter_in_l_reg[3]_124 [10]),
-        .I1(\filter_in_l_reg[2]_125 [10]),
+       (.I0(\filter_in_l_reg[3]_60 [10]),
+        .I1(\filter_in_l_reg[2]_61 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [10]),
+        .I3(\filter_in_l_reg[1]_62 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [10]),
+        .I5(\filter_in_l_reg[0]_63 [10]),
         .O(\filtered_l[8]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_47 
-       (.I0(\filter_in_l_reg[7]_120 [10]),
-        .I1(\filter_in_l_reg[6]_121 [10]),
+       (.I0(\filter_in_l_reg[7]_56 [10]),
+        .I1(\filter_in_l_reg[6]_57 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [10]),
+        .I3(\filter_in_l_reg[5]_58 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [10]),
+        .I5(\filter_in_l_reg[4]_59 [10]),
         .O(\filtered_l[8]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_48 
-       (.I0(\filter_in_l_reg[11]_116 [10]),
-        .I1(\filter_in_l_reg[10]_117 [10]),
+       (.I0(\filter_in_l_reg[11]_52 [10]),
+        .I1(\filter_in_l_reg[10]_53 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [10]),
+        .I3(\filter_in_l_reg[9]_54 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [10]),
+        .I5(\filter_in_l_reg[8]_55 [10]),
         .O(\filtered_l[8]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_49 
-       (.I0(\filter_in_l_reg[15]_112 [10]),
-        .I1(\filter_in_l_reg[14]_113 [10]),
+       (.I0(\filter_in_l_reg[15]_48 [10]),
+        .I1(\filter_in_l_reg[14]_49 [10]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [10]),
+        .I3(\filter_in_l_reg[13]_50 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [10]),
+        .I5(\filter_in_l_reg[12]_51 [10]),
         .O(\filtered_l[8]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -17123,87 +17117,87 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\filtered_l_reg[8]_i_16_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .I4(\filtered_l_reg[8]_i_17_n_0 ),
-        .I5(filtered_l_reg[8]),
+        .I5(p_0_in[3]),
         .O(\filtered_l[8]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_50 
-       (.I0(\filter_in_l_reg[3]_124 [9]),
-        .I1(\filter_in_l_reg[2]_125 [9]),
+       (.I0(\filter_in_l_reg[3]_60 [9]),
+        .I1(\filter_in_l_reg[2]_61 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [9]),
+        .I3(\filter_in_l_reg[1]_62 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [9]),
+        .I5(\filter_in_l_reg[0]_63 [9]),
         .O(\filtered_l[8]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_51 
-       (.I0(\filter_in_l_reg[7]_120 [9]),
-        .I1(\filter_in_l_reg[6]_121 [9]),
+       (.I0(\filter_in_l_reg[7]_56 [9]),
+        .I1(\filter_in_l_reg[6]_57 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [9]),
+        .I3(\filter_in_l_reg[5]_58 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [9]),
+        .I5(\filter_in_l_reg[4]_59 [9]),
         .O(\filtered_l[8]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_52 
-       (.I0(\filter_in_l_reg[11]_116 [9]),
-        .I1(\filter_in_l_reg[10]_117 [9]),
+       (.I0(\filter_in_l_reg[11]_52 [9]),
+        .I1(\filter_in_l_reg[10]_53 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [9]),
+        .I3(\filter_in_l_reg[9]_54 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [9]),
+        .I5(\filter_in_l_reg[8]_55 [9]),
         .O(\filtered_l[8]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_53 
-       (.I0(\filter_in_l_reg[15]_112 [9]),
-        .I1(\filter_in_l_reg[14]_113 [9]),
+       (.I0(\filter_in_l_reg[15]_48 [9]),
+        .I1(\filter_in_l_reg[14]_49 [9]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [9]),
+        .I3(\filter_in_l_reg[13]_50 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [9]),
+        .I5(\filter_in_l_reg[12]_51 [9]),
         .O(\filtered_l[8]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_54 
-       (.I0(\filter_in_l_reg[3]_124 [8]),
-        .I1(\filter_in_l_reg[2]_125 [8]),
+       (.I0(\filter_in_l_reg[3]_60 [8]),
+        .I1(\filter_in_l_reg[2]_61 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [8]),
+        .I3(\filter_in_l_reg[1]_62 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [8]),
+        .I5(\filter_in_l_reg[0]_63 [8]),
         .O(\filtered_l[8]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_55 
-       (.I0(\filter_in_l_reg[7]_120 [8]),
-        .I1(\filter_in_l_reg[6]_121 [8]),
+       (.I0(\filter_in_l_reg[7]_56 [8]),
+        .I1(\filter_in_l_reg[6]_57 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [8]),
+        .I3(\filter_in_l_reg[5]_58 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [8]),
+        .I5(\filter_in_l_reg[4]_59 [8]),
         .O(\filtered_l[8]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_56 
-       (.I0(\filter_in_l_reg[11]_116 [8]),
-        .I1(\filter_in_l_reg[10]_117 [8]),
+       (.I0(\filter_in_l_reg[11]_52 [8]),
+        .I1(\filter_in_l_reg[10]_53 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [8]),
+        .I3(\filter_in_l_reg[9]_54 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [8]),
+        .I5(\filter_in_l_reg[8]_55 [8]),
         .O(\filtered_l[8]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_l[8]_i_57 
-       (.I0(\filter_in_l_reg[15]_112 [8]),
-        .I1(\filter_in_l_reg[14]_113 [8]),
+       (.I0(\filter_in_l_reg[15]_48 [8]),
+        .I1(\filter_in_l_reg[14]_49 [8]),
         .I2(\ring_buffer_read_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [8]),
+        .I3(\filter_in_l_reg[13]_50 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [8]),
+        .I5(\filter_in_l_reg[12]_51 [8]),
         .O(\filtered_l[8]_i_57_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
@@ -17328,7 +17322,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[8]_i_1_n_5 ),
-        .Q(filtered_l_reg[10]));
+        .Q(p_0_in[5]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[11] 
@@ -17336,7 +17330,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[8]_i_1_n_4 ),
-        .Q(filtered_l_reg[11]));
+        .Q(p_0_in[6]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[12] 
@@ -17344,13 +17338,13 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[12]_i_1_n_7 ),
-        .Q(filtered_l_reg[12]));
+        .Q(p_0_in[7]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \filtered_l_reg[12]_i_1 
        (.CI(\filtered_l_reg[8]_i_1_n_0 ),
         .CO({\filtered_l_reg[12]_i_1_n_0 ,\filtered_l_reg[12]_i_1_n_1 ,\filtered_l_reg[12]_i_1_n_2 ,\filtered_l_reg[12]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI(filtered_l_reg[15:12]),
+        .DI(p_0_in[10:7]),
         .O({\filtered_l_reg[12]_i_1_n_4 ,\filtered_l_reg[12]_i_1_n_5 ,\filtered_l_reg[12]_i_1_n_6 ,\filtered_l_reg[12]_i_1_n_7 }),
         .S({\filtered_l[12]_i_2_n_0 ,\filtered_l[12]_i_3_n_0 ,\filtered_l[12]_i_4_n_0 ,\filtered_l[12]_i_5_n_0 }));
   MUXF7 \filtered_l_reg[12]_i_10 
@@ -17460,7 +17454,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[12]_i_1_n_6 ),
-        .Q(filtered_l_reg[13]));
+        .Q(p_0_in[8]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[14] 
@@ -17468,7 +17462,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[12]_i_1_n_5 ),
-        .Q(filtered_l_reg[14]));
+        .Q(p_0_in[9]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[15] 
@@ -17476,7 +17470,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[12]_i_1_n_4 ),
-        .Q(filtered_l_reg[15]));
+        .Q(p_0_in[10]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[16] 
@@ -17484,13 +17478,13 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[16]_i_1_n_7 ),
-        .Q(filtered_l_reg[16]));
+        .Q(p_0_in[11]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \filtered_l_reg[16]_i_1 
        (.CI(\filtered_l_reg[12]_i_1_n_0 ),
         .CO({\filtered_l_reg[16]_i_1_n_0 ,\filtered_l_reg[16]_i_1_n_1 ,\filtered_l_reg[16]_i_1_n_2 ,\filtered_l_reg[16]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI(filtered_l_reg[19:16]),
+        .DI(p_0_in[14:11]),
         .O({\filtered_l_reg[16]_i_1_n_4 ,\filtered_l_reg[16]_i_1_n_5 ,\filtered_l_reg[16]_i_1_n_6 ,\filtered_l_reg[16]_i_1_n_7 }),
         .S({\filtered_l[16]_i_2_n_0 ,\filtered_l[16]_i_3_n_0 ,\filtered_l[16]_i_4_n_0 ,\filtered_l[16]_i_5_n_0 }));
   MUXF7 \filtered_l_reg[16]_i_10 
@@ -17600,7 +17594,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[16]_i_1_n_6 ),
-        .Q(filtered_l_reg[17]));
+        .Q(p_0_in[12]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[18] 
@@ -17608,7 +17602,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[16]_i_1_n_5 ),
-        .Q(filtered_l_reg[18]));
+        .Q(p_0_in[13]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[19] 
@@ -17616,7 +17610,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[16]_i_1_n_4 ),
-        .Q(filtered_l_reg[19]));
+        .Q(p_0_in[14]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[1] 
@@ -17632,13 +17626,13 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[20]_i_1_n_7 ),
-        .Q(filtered_l_reg[20]));
+        .Q(p_0_in[15]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \filtered_l_reg[20]_i_1 
        (.CI(\filtered_l_reg[16]_i_1_n_0 ),
         .CO({\filtered_l_reg[20]_i_1_n_0 ,\filtered_l_reg[20]_i_1_n_1 ,\filtered_l_reg[20]_i_1_n_2 ,\filtered_l_reg[20]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI(filtered_l_reg[23:20]),
+        .DI(p_0_in[18:15]),
         .O({\filtered_l_reg[20]_i_1_n_4 ,\filtered_l_reg[20]_i_1_n_5 ,\filtered_l_reg[20]_i_1_n_6 ,\filtered_l_reg[20]_i_1_n_7 }),
         .S({\filtered_l[20]_i_2_n_0 ,\filtered_l[20]_i_3_n_0 ,\filtered_l[20]_i_4_n_0 ,\filtered_l[20]_i_5_n_0 }));
   MUXF7 \filtered_l_reg[20]_i_10 
@@ -17748,7 +17742,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[20]_i_1_n_6 ),
-        .Q(filtered_l_reg[21]));
+        .Q(p_0_in[16]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[22] 
@@ -17756,7 +17750,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[20]_i_1_n_5 ),
-        .Q(filtered_l_reg[22]));
+        .Q(p_0_in[17]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[23] 
@@ -17764,7 +17758,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[20]_i_1_n_4 ),
-        .Q(filtered_l_reg[23]));
+        .Q(p_0_in[18]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[24] 
@@ -17772,7 +17766,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[24]_i_1_n_7 ),
-        .Q(filtered_l_reg[24]));
+        .Q(p_0_in[19]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \filtered_l_reg[24]_i_1 
        (.CI(\filtered_l_reg[20]_i_1_n_0 ),
@@ -17780,7 +17774,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\filtered_l_reg[24]_i_1_n_4 ,\filtered_l_reg[24]_i_1_n_5 ,\filtered_l_reg[24]_i_1_n_6 ,\filtered_l_reg[24]_i_1_n_7 }),
-        .S(filtered_l_reg[27:24]));
+        .S(p_0_in[22:19]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[25] 
@@ -17788,7 +17782,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[24]_i_1_n_6 ),
-        .Q(filtered_l_reg[25]));
+        .Q(p_0_in[20]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[26] 
@@ -17796,7 +17790,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[24]_i_1_n_5 ),
-        .Q(filtered_l_reg[26]));
+        .Q(p_0_in[21]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[27] 
@@ -17804,7 +17798,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[24]_i_1_n_4 ),
-        .Q(filtered_l_reg[27]));
+        .Q(p_0_in[22]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[28] 
@@ -17812,7 +17806,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[28]_i_1_n_7 ),
-        .Q(filtered_l_reg[28]));
+        .Q(p_0_in[23]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \filtered_l_reg[28]_i_1 
        (.CI(\filtered_l_reg[24]_i_1_n_0 ),
@@ -17820,7 +17814,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\NLW_filtered_l_reg[28]_i_1_O_UNCONNECTED [3:1],\filtered_l_reg[28]_i_1_n_7 }),
-        .S({1'b0,1'b0,1'b0,filtered_l_reg[28]}));
+        .S({1'b0,1'b0,1'b0,p_0_in[23]}));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[2] 
@@ -17850,7 +17844,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.CI(\filtered_l_reg[0]_i_1_n_0 ),
         .CO({\filtered_l_reg[4]_i_1_n_0 ,\filtered_l_reg[4]_i_1_n_1 ,\filtered_l_reg[4]_i_1_n_2 ,\filtered_l_reg[4]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI({filtered_l_reg[7:5],\filtered_l_reg_n_0_[4] }),
+        .DI({p_0_in[2:0],\filtered_l_reg_n_0_[4] }),
         .O({\filtered_l_reg[4]_i_1_n_4 ,\filtered_l_reg[4]_i_1_n_5 ,\filtered_l_reg[4]_i_1_n_6 ,\filtered_l_reg[4]_i_1_n_7 }),
         .S({\filtered_l[4]_i_2_n_0 ,\filtered_l[4]_i_3_n_0 ,\filtered_l[4]_i_4_n_0 ,\filtered_l[4]_i_5_n_0 }));
   MUXF7 \filtered_l_reg[4]_i_10 
@@ -17960,7 +17954,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[4]_i_1_n_6 ),
-        .Q(filtered_l_reg[5]));
+        .Q(p_0_in[0]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[6] 
@@ -17968,7 +17962,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[4]_i_1_n_5 ),
-        .Q(filtered_l_reg[6]));
+        .Q(p_0_in[1]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[7] 
@@ -17976,7 +17970,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[4]_i_1_n_4 ),
-        .Q(filtered_l_reg[7]));
+        .Q(p_0_in[2]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_l_reg[8] 
@@ -17984,13 +17978,13 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[8]_i_1_n_7 ),
-        .Q(filtered_l_reg[8]));
+        .Q(p_0_in[3]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \filtered_l_reg[8]_i_1 
        (.CI(\filtered_l_reg[4]_i_1_n_0 ),
         .CO({\filtered_l_reg[8]_i_1_n_0 ,\filtered_l_reg[8]_i_1_n_1 ,\filtered_l_reg[8]_i_1_n_2 ,\filtered_l_reg[8]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI(filtered_l_reg[11:8]),
+        .DI(p_0_in[6:3]),
         .O({\filtered_l_reg[8]_i_1_n_4 ,\filtered_l_reg[8]_i_1_n_5 ,\filtered_l_reg[8]_i_1_n_6 ,\filtered_l_reg[8]_i_1_n_7 }),
         .S({\filtered_l[8]_i_2_n_0 ,\filtered_l[8]_i_3_n_0 ,\filtered_l[8]_i_4_n_0 ,\filtered_l[8]_i_5_n_0 }));
   MUXF7 \filtered_l_reg[8]_i_10 
@@ -18100,14 +18094,14 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\filtered_l_reg[8]_i_1_n_6 ),
-        .Q(filtered_l_reg[9]));
+        .Q(p_0_in[4]));
   FDCE #(
     .INIT(1'b0)) 
     \filtered_out_l_reg[0] 
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[5]),
+        .D(p_0_in[0]),
         .Q(filtered_out_l[0]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18115,7 +18109,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[15]),
+        .D(p_0_in[10]),
         .Q(filtered_out_l[10]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18123,7 +18117,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[16]),
+        .D(p_0_in[11]),
         .Q(filtered_out_l[11]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18131,7 +18125,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[17]),
+        .D(p_0_in[12]),
         .Q(filtered_out_l[12]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18139,7 +18133,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[18]),
+        .D(p_0_in[13]),
         .Q(filtered_out_l[13]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18147,7 +18141,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[19]),
+        .D(p_0_in[14]),
         .Q(filtered_out_l[14]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18155,7 +18149,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[20]),
+        .D(p_0_in[15]),
         .Q(filtered_out_l[15]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18163,7 +18157,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[21]),
+        .D(p_0_in[16]),
         .Q(filtered_out_l[16]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18171,7 +18165,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[22]),
+        .D(p_0_in[17]),
         .Q(filtered_out_l[17]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18179,7 +18173,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[23]),
+        .D(p_0_in[18]),
         .Q(filtered_out_l[18]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18187,7 +18181,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[24]),
+        .D(p_0_in[19]),
         .Q(filtered_out_l[19]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18195,7 +18189,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[6]),
+        .D(p_0_in[1]),
         .Q(filtered_out_l[1]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18203,7 +18197,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[25]),
+        .D(p_0_in[20]),
         .Q(filtered_out_l[20]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18211,7 +18205,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[26]),
+        .D(p_0_in[21]),
         .Q(filtered_out_l[21]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18219,7 +18213,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[27]),
+        .D(p_0_in[22]),
         .Q(filtered_out_l[22]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18227,7 +18221,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[28]),
+        .D(p_0_in[23]),
         .Q(filtered_out_l[23]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18235,7 +18229,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[7]),
+        .D(p_0_in[2]),
         .Q(filtered_out_l[2]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18243,7 +18237,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[8]),
+        .D(p_0_in[3]),
         .Q(filtered_out_l[3]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18251,7 +18245,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[9]),
+        .D(p_0_in[4]),
         .Q(filtered_out_l[4]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18259,7 +18253,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[10]),
+        .D(p_0_in[5]),
         .Q(filtered_out_l[5]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18267,7 +18261,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[11]),
+        .D(p_0_in[6]),
         .Q(filtered_out_l[6]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18275,7 +18269,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[12]),
+        .D(p_0_in[7]),
         .Q(filtered_out_l[7]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18283,7 +18277,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[13]),
+        .D(p_0_in[8]),
         .Q(filtered_out_l[8]));
   FDCE #(
     .INIT(1'b0)) 
@@ -18291,7 +18285,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
        (.C(aclk),
         .CE(filtered_out_r),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(filtered_l_reg[14]),
+        .D(p_0_in[9]),
         .Q(filtered_out_l[9]));
   LUT5 #(
     .INIT(32'h00000001)) 
@@ -18507,82 +18501,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_20 
-       (.I0(\filter_in_r_reg[19]_76 [3]),
-        .I1(\filter_in_r_reg[18]_77 [3]),
+       (.I0(\filter_in_r_reg[19]_12 [3]),
+        .I1(\filter_in_r_reg[18]_13 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [3]),
+        .I3(\filter_in_r_reg[17]_14 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [3]),
+        .I5(\filter_in_r_reg[16]_15 [3]),
         .O(\filtered_r[0]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_21 
-       (.I0(\filter_in_r_reg[23]_72 [3]),
-        .I1(\filter_in_r_reg[22]_73 [3]),
+       (.I0(\filter_in_r_reg[23]_8 [3]),
+        .I1(\filter_in_r_reg[22]_9 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [3]),
+        .I3(\filter_in_r_reg[21]_10 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [3]),
+        .I5(\filter_in_r_reg[20]_11 [3]),
         .O(\filtered_r[0]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_22 
-       (.I0(\filter_in_r_reg[27]_68 [3]),
-        .I1(\filter_in_r_reg[26]_69 [3]),
+       (.I0(\filter_in_r_reg[27]_4 [3]),
+        .I1(\filter_in_r_reg[26]_5 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [3]),
+        .I3(\filter_in_r_reg[25]_6 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [3]),
+        .I5(\filter_in_r_reg[24]_7 [3]),
         .O(\filtered_r[0]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_23 
-       (.I0(\filter_in_r_reg[31]_64 [3]),
-        .I1(\filter_in_r_reg[30]_65 [3]),
+       (.I0(\filter_in_r_reg[31]_0 [3]),
+        .I1(\filter_in_r_reg[30]_1 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [3]),
+        .I3(\filter_in_r_reg[29]_2 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [3]),
+        .I5(\filter_in_r_reg[28]_3 [3]),
         .O(\filtered_r[0]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_26 
-       (.I0(\filter_in_r_reg[19]_76 [2]),
-        .I1(\filter_in_r_reg[18]_77 [2]),
+       (.I0(\filter_in_r_reg[19]_12 [2]),
+        .I1(\filter_in_r_reg[18]_13 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [2]),
+        .I3(\filter_in_r_reg[17]_14 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [2]),
+        .I5(\filter_in_r_reg[16]_15 [2]),
         .O(\filtered_r[0]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_27 
-       (.I0(\filter_in_r_reg[23]_72 [2]),
-        .I1(\filter_in_r_reg[22]_73 [2]),
+       (.I0(\filter_in_r_reg[23]_8 [2]),
+        .I1(\filter_in_r_reg[22]_9 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [2]),
+        .I3(\filter_in_r_reg[21]_10 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [2]),
+        .I5(\filter_in_r_reg[20]_11 [2]),
         .O(\filtered_r[0]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_28 
-       (.I0(\filter_in_r_reg[27]_68 [2]),
-        .I1(\filter_in_r_reg[26]_69 [2]),
+       (.I0(\filter_in_r_reg[27]_4 [2]),
+        .I1(\filter_in_r_reg[26]_5 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [2]),
+        .I3(\filter_in_r_reg[25]_6 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [2]),
+        .I5(\filter_in_r_reg[24]_7 [2]),
         .O(\filtered_r[0]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_29 
-       (.I0(\filter_in_r_reg[31]_64 [2]),
-        .I1(\filter_in_r_reg[30]_65 [2]),
+       (.I0(\filter_in_r_reg[31]_0 [2]),
+        .I1(\filter_in_r_reg[30]_1 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [2]),
+        .I3(\filter_in_r_reg[29]_2 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [2]),
+        .I5(\filter_in_r_reg[28]_3 [2]),
         .O(\filtered_r[0]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -18597,62 +18591,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_32 
-       (.I0(\filter_in_r_reg[19]_76 [1]),
-        .I1(\filter_in_r_reg[18]_77 [1]),
+       (.I0(\filter_in_r_reg[19]_12 [1]),
+        .I1(\filter_in_r_reg[18]_13 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [1]),
+        .I3(\filter_in_r_reg[17]_14 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [1]),
+        .I5(\filter_in_r_reg[16]_15 [1]),
         .O(\filtered_r[0]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_33 
-       (.I0(\filter_in_r_reg[23]_72 [1]),
-        .I1(\filter_in_r_reg[22]_73 [1]),
+       (.I0(\filter_in_r_reg[23]_8 [1]),
+        .I1(\filter_in_r_reg[22]_9 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [1]),
+        .I3(\filter_in_r_reg[21]_10 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [1]),
+        .I5(\filter_in_r_reg[20]_11 [1]),
         .O(\filtered_r[0]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_34 
-       (.I0(\filter_in_r_reg[27]_68 [1]),
-        .I1(\filter_in_r_reg[26]_69 [1]),
+       (.I0(\filter_in_r_reg[27]_4 [1]),
+        .I1(\filter_in_r_reg[26]_5 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [1]),
+        .I3(\filter_in_r_reg[25]_6 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [1]),
+        .I5(\filter_in_r_reg[24]_7 [1]),
         .O(\filtered_r[0]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_35 
-       (.I0(\filter_in_r_reg[31]_64 [1]),
-        .I1(\filter_in_r_reg[30]_65 [1]),
+       (.I0(\filter_in_r_reg[31]_0 [1]),
+        .I1(\filter_in_r_reg[30]_1 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [1]),
+        .I3(\filter_in_r_reg[29]_2 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [1]),
+        .I5(\filter_in_r_reg[28]_3 [1]),
         .O(\filtered_r[0]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_38 
-       (.I0(\filter_in_r_reg[19]_76 [0]),
-        .I1(\filter_in_r_reg[18]_77 [0]),
+       (.I0(\filter_in_r_reg[19]_12 [0]),
+        .I1(\filter_in_r_reg[18]_13 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [0]),
+        .I3(\filter_in_r_reg[17]_14 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [0]),
+        .I5(\filter_in_r_reg[16]_15 [0]),
         .O(\filtered_r[0]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_39 
-       (.I0(\filter_in_r_reg[23]_72 [0]),
-        .I1(\filter_in_r_reg[22]_73 [0]),
+       (.I0(\filter_in_r_reg[23]_8 [0]),
+        .I1(\filter_in_r_reg[22]_9 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [0]),
+        .I3(\filter_in_r_reg[21]_10 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [0]),
+        .I5(\filter_in_r_reg[20]_11 [0]),
         .O(\filtered_r[0]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -18667,102 +18661,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_40 
-       (.I0(\filter_in_r_reg[27]_68 [0]),
-        .I1(\filter_in_r_reg[26]_69 [0]),
+       (.I0(\filter_in_r_reg[27]_4 [0]),
+        .I1(\filter_in_r_reg[26]_5 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [0]),
+        .I3(\filter_in_r_reg[25]_6 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [0]),
+        .I5(\filter_in_r_reg[24]_7 [0]),
         .O(\filtered_r[0]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_41 
-       (.I0(\filter_in_r_reg[31]_64 [0]),
-        .I1(\filter_in_r_reg[30]_65 [0]),
+       (.I0(\filter_in_r_reg[31]_0 [0]),
+        .I1(\filter_in_r_reg[30]_1 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [0]),
+        .I3(\filter_in_r_reg[29]_2 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [0]),
+        .I5(\filter_in_r_reg[28]_3 [0]),
         .O(\filtered_r[0]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_42 
-       (.I0(\filter_in_r_reg[3]_92 [3]),
-        .I1(\filter_in_r_reg[2]_93 [3]),
+       (.I0(\filter_in_r_reg[3]_28 [3]),
+        .I1(\filter_in_r_reg[2]_29 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [3]),
+        .I3(\filter_in_r_reg[1]_30 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [3]),
+        .I5(\filter_in_r_reg[0]_31 [3]),
         .O(\filtered_r[0]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_43 
-       (.I0(\filter_in_r_reg[7]_88 [3]),
-        .I1(\filter_in_r_reg[6]_89 [3]),
+       (.I0(\filter_in_r_reg[7]_24 [3]),
+        .I1(\filter_in_r_reg[6]_25 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [3]),
+        .I3(\filter_in_r_reg[5]_26 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [3]),
+        .I5(\filter_in_r_reg[4]_27 [3]),
         .O(\filtered_r[0]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_44 
-       (.I0(\filter_in_r_reg[11]_84 [3]),
-        .I1(\filter_in_r_reg[10]_85 [3]),
+       (.I0(\filter_in_r_reg[11]_20 [3]),
+        .I1(\filter_in_r_reg[10]_21 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [3]),
+        .I3(\filter_in_r_reg[9]_22 [3]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [3]),
+        .I5(\filter_in_r_reg[8]_23 [3]),
         .O(\filtered_r[0]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_45 
-       (.I0(\filter_in_r_reg[15]_80 [3]),
-        .I1(\filter_in_r_reg[14]_81 [3]),
+       (.I0(\filter_in_r_reg[15]_16 [3]),
+        .I1(\filter_in_r_reg[14]_17 [3]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [3]),
+        .I3(\filter_in_r_reg[13]_18 [3]),
         .I4(ring_buffer_read_reg[0]),
-        .I5(\filter_in_r_reg[12]_83 [3]),
+        .I5(\filter_in_r_reg[12]_19 [3]),
         .O(\filtered_r[0]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_46 
-       (.I0(\filter_in_r_reg[3]_92 [2]),
-        .I1(\filter_in_r_reg[2]_93 [2]),
+       (.I0(\filter_in_r_reg[3]_28 [2]),
+        .I1(\filter_in_r_reg[2]_29 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [2]),
+        .I3(\filter_in_r_reg[1]_30 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [2]),
+        .I5(\filter_in_r_reg[0]_31 [2]),
         .O(\filtered_r[0]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_47 
-       (.I0(\filter_in_r_reg[7]_88 [2]),
-        .I1(\filter_in_r_reg[6]_89 [2]),
+       (.I0(\filter_in_r_reg[7]_24 [2]),
+        .I1(\filter_in_r_reg[6]_25 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [2]),
+        .I3(\filter_in_r_reg[5]_26 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [2]),
+        .I5(\filter_in_r_reg[4]_27 [2]),
         .O(\filtered_r[0]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_48 
-       (.I0(\filter_in_r_reg[11]_84 [2]),
-        .I1(\filter_in_r_reg[10]_85 [2]),
+       (.I0(\filter_in_r_reg[11]_20 [2]),
+        .I1(\filter_in_r_reg[10]_21 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [2]),
+        .I3(\filter_in_r_reg[9]_22 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [2]),
+        .I5(\filter_in_r_reg[8]_23 [2]),
         .O(\filtered_r[0]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_49 
-       (.I0(\filter_in_r_reg[15]_80 [2]),
-        .I1(\filter_in_r_reg[14]_81 [2]),
+       (.I0(\filter_in_r_reg[15]_16 [2]),
+        .I1(\filter_in_r_reg[14]_17 [2]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [2]),
+        .I3(\filter_in_r_reg[13]_18 [2]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [2]),
+        .I5(\filter_in_r_reg[12]_19 [2]),
         .O(\filtered_r[0]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -18777,82 +18771,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_50 
-       (.I0(\filter_in_r_reg[3]_92 [1]),
-        .I1(\filter_in_r_reg[2]_93 [1]),
+       (.I0(\filter_in_r_reg[3]_28 [1]),
+        .I1(\filter_in_r_reg[2]_29 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [1]),
+        .I3(\filter_in_r_reg[1]_30 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [1]),
+        .I5(\filter_in_r_reg[0]_31 [1]),
         .O(\filtered_r[0]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_51 
-       (.I0(\filter_in_r_reg[7]_88 [1]),
-        .I1(\filter_in_r_reg[6]_89 [1]),
+       (.I0(\filter_in_r_reg[7]_24 [1]),
+        .I1(\filter_in_r_reg[6]_25 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [1]),
+        .I3(\filter_in_r_reg[5]_26 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [1]),
+        .I5(\filter_in_r_reg[4]_27 [1]),
         .O(\filtered_r[0]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_52 
-       (.I0(\filter_in_r_reg[11]_84 [1]),
-        .I1(\filter_in_r_reg[10]_85 [1]),
+       (.I0(\filter_in_r_reg[11]_20 [1]),
+        .I1(\filter_in_r_reg[10]_21 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [1]),
+        .I3(\filter_in_r_reg[9]_22 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [1]),
+        .I5(\filter_in_r_reg[8]_23 [1]),
         .O(\filtered_r[0]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_53 
-       (.I0(\filter_in_r_reg[15]_80 [1]),
-        .I1(\filter_in_r_reg[14]_81 [1]),
+       (.I0(\filter_in_r_reg[15]_16 [1]),
+        .I1(\filter_in_r_reg[14]_17 [1]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [1]),
+        .I3(\filter_in_r_reg[13]_18 [1]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [1]),
+        .I5(\filter_in_r_reg[12]_19 [1]),
         .O(\filtered_r[0]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_54 
-       (.I0(\filter_in_r_reg[3]_92 [0]),
-        .I1(\filter_in_r_reg[2]_93 [0]),
+       (.I0(\filter_in_r_reg[3]_28 [0]),
+        .I1(\filter_in_r_reg[2]_29 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [0]),
+        .I3(\filter_in_r_reg[1]_30 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [0]),
+        .I5(\filter_in_r_reg[0]_31 [0]),
         .O(\filtered_r[0]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_55 
-       (.I0(\filter_in_r_reg[7]_88 [0]),
-        .I1(\filter_in_r_reg[6]_89 [0]),
+       (.I0(\filter_in_r_reg[7]_24 [0]),
+        .I1(\filter_in_r_reg[6]_25 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [0]),
+        .I3(\filter_in_r_reg[5]_26 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [0]),
+        .I5(\filter_in_r_reg[4]_27 [0]),
         .O(\filtered_r[0]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_56 
-       (.I0(\filter_in_r_reg[11]_84 [0]),
-        .I1(\filter_in_r_reg[10]_85 [0]),
+       (.I0(\filter_in_r_reg[11]_20 [0]),
+        .I1(\filter_in_r_reg[10]_21 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [0]),
+        .I3(\filter_in_r_reg[9]_22 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [0]),
+        .I5(\filter_in_r_reg[8]_23 [0]),
         .O(\filtered_r[0]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[0]_i_57 
-       (.I0(\filter_in_r_reg[15]_80 [0]),
-        .I1(\filter_in_r_reg[14]_81 [0]),
+       (.I0(\filter_in_r_reg[15]_16 [0]),
+        .I1(\filter_in_r_reg[14]_17 [0]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [0]),
+        .I3(\filter_in_r_reg[13]_18 [0]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [0]),
+        .I5(\filter_in_r_reg[12]_19 [0]),
         .O(\filtered_r[0]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -18867,82 +18861,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_20 
-       (.I0(\filter_in_r_reg[19]_76 [15]),
-        .I1(\filter_in_r_reg[18]_77 [15]),
+       (.I0(\filter_in_r_reg[19]_12 [15]),
+        .I1(\filter_in_r_reg[18]_13 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [15]),
+        .I3(\filter_in_r_reg[17]_14 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [15]),
+        .I5(\filter_in_r_reg[16]_15 [15]),
         .O(\filtered_r[12]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_21 
-       (.I0(\filter_in_r_reg[23]_72 [15]),
-        .I1(\filter_in_r_reg[22]_73 [15]),
+       (.I0(\filter_in_r_reg[23]_8 [15]),
+        .I1(\filter_in_r_reg[22]_9 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [15]),
+        .I3(\filter_in_r_reg[21]_10 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [15]),
+        .I5(\filter_in_r_reg[20]_11 [15]),
         .O(\filtered_r[12]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_22 
-       (.I0(\filter_in_r_reg[27]_68 [15]),
-        .I1(\filter_in_r_reg[26]_69 [15]),
+       (.I0(\filter_in_r_reg[27]_4 [15]),
+        .I1(\filter_in_r_reg[26]_5 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [15]),
+        .I3(\filter_in_r_reg[25]_6 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [15]),
+        .I5(\filter_in_r_reg[24]_7 [15]),
         .O(\filtered_r[12]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_23 
-       (.I0(\filter_in_r_reg[31]_64 [15]),
-        .I1(\filter_in_r_reg[30]_65 [15]),
+       (.I0(\filter_in_r_reg[31]_0 [15]),
+        .I1(\filter_in_r_reg[30]_1 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [15]),
+        .I3(\filter_in_r_reg[29]_2 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [15]),
+        .I5(\filter_in_r_reg[28]_3 [15]),
         .O(\filtered_r[12]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_26 
-       (.I0(\filter_in_r_reg[19]_76 [14]),
-        .I1(\filter_in_r_reg[18]_77 [14]),
+       (.I0(\filter_in_r_reg[19]_12 [14]),
+        .I1(\filter_in_r_reg[18]_13 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [14]),
+        .I3(\filter_in_r_reg[17]_14 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [14]),
+        .I5(\filter_in_r_reg[16]_15 [14]),
         .O(\filtered_r[12]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_27 
-       (.I0(\filter_in_r_reg[23]_72 [14]),
-        .I1(\filter_in_r_reg[22]_73 [14]),
+       (.I0(\filter_in_r_reg[23]_8 [14]),
+        .I1(\filter_in_r_reg[22]_9 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [14]),
+        .I3(\filter_in_r_reg[21]_10 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [14]),
+        .I5(\filter_in_r_reg[20]_11 [14]),
         .O(\filtered_r[12]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_28 
-       (.I0(\filter_in_r_reg[27]_68 [14]),
-        .I1(\filter_in_r_reg[26]_69 [14]),
+       (.I0(\filter_in_r_reg[27]_4 [14]),
+        .I1(\filter_in_r_reg[26]_5 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [14]),
+        .I3(\filter_in_r_reg[25]_6 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [14]),
+        .I5(\filter_in_r_reg[24]_7 [14]),
         .O(\filtered_r[12]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_29 
-       (.I0(\filter_in_r_reg[31]_64 [14]),
-        .I1(\filter_in_r_reg[30]_65 [14]),
+       (.I0(\filter_in_r_reg[31]_0 [14]),
+        .I1(\filter_in_r_reg[30]_1 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [14]),
+        .I3(\filter_in_r_reg[29]_2 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [14]),
+        .I5(\filter_in_r_reg[28]_3 [14]),
         .O(\filtered_r[12]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -18957,62 +18951,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_32 
-       (.I0(\filter_in_r_reg[19]_76 [13]),
-        .I1(\filter_in_r_reg[18]_77 [13]),
+       (.I0(\filter_in_r_reg[19]_12 [13]),
+        .I1(\filter_in_r_reg[18]_13 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [13]),
+        .I3(\filter_in_r_reg[17]_14 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [13]),
+        .I5(\filter_in_r_reg[16]_15 [13]),
         .O(\filtered_r[12]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_33 
-       (.I0(\filter_in_r_reg[23]_72 [13]),
-        .I1(\filter_in_r_reg[22]_73 [13]),
+       (.I0(\filter_in_r_reg[23]_8 [13]),
+        .I1(\filter_in_r_reg[22]_9 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [13]),
+        .I3(\filter_in_r_reg[21]_10 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [13]),
+        .I5(\filter_in_r_reg[20]_11 [13]),
         .O(\filtered_r[12]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_34 
-       (.I0(\filter_in_r_reg[27]_68 [13]),
-        .I1(\filter_in_r_reg[26]_69 [13]),
+       (.I0(\filter_in_r_reg[27]_4 [13]),
+        .I1(\filter_in_r_reg[26]_5 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [13]),
+        .I3(\filter_in_r_reg[25]_6 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [13]),
+        .I5(\filter_in_r_reg[24]_7 [13]),
         .O(\filtered_r[12]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_35 
-       (.I0(\filter_in_r_reg[31]_64 [13]),
-        .I1(\filter_in_r_reg[30]_65 [13]),
+       (.I0(\filter_in_r_reg[31]_0 [13]),
+        .I1(\filter_in_r_reg[30]_1 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [13]),
+        .I3(\filter_in_r_reg[29]_2 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [13]),
+        .I5(\filter_in_r_reg[28]_3 [13]),
         .O(\filtered_r[12]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_38 
-       (.I0(\filter_in_r_reg[19]_76 [12]),
-        .I1(\filter_in_r_reg[18]_77 [12]),
+       (.I0(\filter_in_r_reg[19]_12 [12]),
+        .I1(\filter_in_r_reg[18]_13 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [12]),
+        .I3(\filter_in_r_reg[17]_14 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [12]),
+        .I5(\filter_in_r_reg[16]_15 [12]),
         .O(\filtered_r[12]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_39 
-       (.I0(\filter_in_r_reg[23]_72 [12]),
-        .I1(\filter_in_r_reg[22]_73 [12]),
+       (.I0(\filter_in_r_reg[23]_8 [12]),
+        .I1(\filter_in_r_reg[22]_9 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [12]),
+        .I3(\filter_in_r_reg[21]_10 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [12]),
+        .I5(\filter_in_r_reg[20]_11 [12]),
         .O(\filtered_r[12]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19027,102 +19021,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_40 
-       (.I0(\filter_in_r_reg[27]_68 [12]),
-        .I1(\filter_in_r_reg[26]_69 [12]),
+       (.I0(\filter_in_r_reg[27]_4 [12]),
+        .I1(\filter_in_r_reg[26]_5 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [12]),
+        .I3(\filter_in_r_reg[25]_6 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [12]),
+        .I5(\filter_in_r_reg[24]_7 [12]),
         .O(\filtered_r[12]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_41 
-       (.I0(\filter_in_r_reg[31]_64 [12]),
-        .I1(\filter_in_r_reg[30]_65 [12]),
+       (.I0(\filter_in_r_reg[31]_0 [12]),
+        .I1(\filter_in_r_reg[30]_1 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [12]),
+        .I3(\filter_in_r_reg[29]_2 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [12]),
+        .I5(\filter_in_r_reg[28]_3 [12]),
         .O(\filtered_r[12]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_42 
-       (.I0(\filter_in_r_reg[3]_92 [15]),
-        .I1(\filter_in_r_reg[2]_93 [15]),
+       (.I0(\filter_in_r_reg[3]_28 [15]),
+        .I1(\filter_in_r_reg[2]_29 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [15]),
+        .I3(\filter_in_r_reg[1]_30 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [15]),
+        .I5(\filter_in_r_reg[0]_31 [15]),
         .O(\filtered_r[12]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_43 
-       (.I0(\filter_in_r_reg[7]_88 [15]),
-        .I1(\filter_in_r_reg[6]_89 [15]),
+       (.I0(\filter_in_r_reg[7]_24 [15]),
+        .I1(\filter_in_r_reg[6]_25 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [15]),
+        .I3(\filter_in_r_reg[5]_26 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [15]),
+        .I5(\filter_in_r_reg[4]_27 [15]),
         .O(\filtered_r[12]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_44 
-       (.I0(\filter_in_r_reg[11]_84 [15]),
-        .I1(\filter_in_r_reg[10]_85 [15]),
+       (.I0(\filter_in_r_reg[11]_20 [15]),
+        .I1(\filter_in_r_reg[10]_21 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [15]),
+        .I3(\filter_in_r_reg[9]_22 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [15]),
+        .I5(\filter_in_r_reg[8]_23 [15]),
         .O(\filtered_r[12]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_45 
-       (.I0(\filter_in_r_reg[15]_80 [15]),
-        .I1(\filter_in_r_reg[14]_81 [15]),
+       (.I0(\filter_in_r_reg[15]_16 [15]),
+        .I1(\filter_in_r_reg[14]_17 [15]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [15]),
+        .I3(\filter_in_r_reg[13]_18 [15]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [15]),
+        .I5(\filter_in_r_reg[12]_19 [15]),
         .O(\filtered_r[12]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_46 
-       (.I0(\filter_in_r_reg[3]_92 [14]),
-        .I1(\filter_in_r_reg[2]_93 [14]),
+       (.I0(\filter_in_r_reg[3]_28 [14]),
+        .I1(\filter_in_r_reg[2]_29 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [14]),
+        .I3(\filter_in_r_reg[1]_30 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [14]),
+        .I5(\filter_in_r_reg[0]_31 [14]),
         .O(\filtered_r[12]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_47 
-       (.I0(\filter_in_r_reg[7]_88 [14]),
-        .I1(\filter_in_r_reg[6]_89 [14]),
+       (.I0(\filter_in_r_reg[7]_24 [14]),
+        .I1(\filter_in_r_reg[6]_25 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [14]),
+        .I3(\filter_in_r_reg[5]_26 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [14]),
+        .I5(\filter_in_r_reg[4]_27 [14]),
         .O(\filtered_r[12]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_48 
-       (.I0(\filter_in_r_reg[11]_84 [14]),
-        .I1(\filter_in_r_reg[10]_85 [14]),
+       (.I0(\filter_in_r_reg[11]_20 [14]),
+        .I1(\filter_in_r_reg[10]_21 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [14]),
+        .I3(\filter_in_r_reg[9]_22 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [14]),
+        .I5(\filter_in_r_reg[8]_23 [14]),
         .O(\filtered_r[12]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_49 
-       (.I0(\filter_in_r_reg[15]_80 [14]),
-        .I1(\filter_in_r_reg[14]_81 [14]),
+       (.I0(\filter_in_r_reg[15]_16 [14]),
+        .I1(\filter_in_r_reg[14]_17 [14]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [14]),
+        .I3(\filter_in_r_reg[13]_18 [14]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [14]),
+        .I5(\filter_in_r_reg[12]_19 [14]),
         .O(\filtered_r[12]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19137,82 +19131,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_50 
-       (.I0(\filter_in_r_reg[3]_92 [13]),
-        .I1(\filter_in_r_reg[2]_93 [13]),
+       (.I0(\filter_in_r_reg[3]_28 [13]),
+        .I1(\filter_in_r_reg[2]_29 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [13]),
+        .I3(\filter_in_r_reg[1]_30 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [13]),
+        .I5(\filter_in_r_reg[0]_31 [13]),
         .O(\filtered_r[12]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_51 
-       (.I0(\filter_in_r_reg[7]_88 [13]),
-        .I1(\filter_in_r_reg[6]_89 [13]),
+       (.I0(\filter_in_r_reg[7]_24 [13]),
+        .I1(\filter_in_r_reg[6]_25 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [13]),
+        .I3(\filter_in_r_reg[5]_26 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [13]),
+        .I5(\filter_in_r_reg[4]_27 [13]),
         .O(\filtered_r[12]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_52 
-       (.I0(\filter_in_r_reg[11]_84 [13]),
-        .I1(\filter_in_r_reg[10]_85 [13]),
+       (.I0(\filter_in_r_reg[11]_20 [13]),
+        .I1(\filter_in_r_reg[10]_21 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [13]),
+        .I3(\filter_in_r_reg[9]_22 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [13]),
+        .I5(\filter_in_r_reg[8]_23 [13]),
         .O(\filtered_r[12]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_53 
-       (.I0(\filter_in_r_reg[15]_80 [13]),
-        .I1(\filter_in_r_reg[14]_81 [13]),
+       (.I0(\filter_in_r_reg[15]_16 [13]),
+        .I1(\filter_in_r_reg[14]_17 [13]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [13]),
+        .I3(\filter_in_r_reg[13]_18 [13]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [13]),
+        .I5(\filter_in_r_reg[12]_19 [13]),
         .O(\filtered_r[12]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_54 
-       (.I0(\filter_in_r_reg[3]_92 [12]),
-        .I1(\filter_in_r_reg[2]_93 [12]),
+       (.I0(\filter_in_r_reg[3]_28 [12]),
+        .I1(\filter_in_r_reg[2]_29 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [12]),
+        .I3(\filter_in_r_reg[1]_30 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [12]),
+        .I5(\filter_in_r_reg[0]_31 [12]),
         .O(\filtered_r[12]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_55 
-       (.I0(\filter_in_r_reg[7]_88 [12]),
-        .I1(\filter_in_r_reg[6]_89 [12]),
+       (.I0(\filter_in_r_reg[7]_24 [12]),
+        .I1(\filter_in_r_reg[6]_25 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [12]),
+        .I3(\filter_in_r_reg[5]_26 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [12]),
+        .I5(\filter_in_r_reg[4]_27 [12]),
         .O(\filtered_r[12]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_56 
-       (.I0(\filter_in_r_reg[11]_84 [12]),
-        .I1(\filter_in_r_reg[10]_85 [12]),
+       (.I0(\filter_in_r_reg[11]_20 [12]),
+        .I1(\filter_in_r_reg[10]_21 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [12]),
+        .I3(\filter_in_r_reg[9]_22 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [12]),
+        .I5(\filter_in_r_reg[8]_23 [12]),
         .O(\filtered_r[12]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[12]_i_57 
-       (.I0(\filter_in_r_reg[15]_80 [12]),
-        .I1(\filter_in_r_reg[14]_81 [12]),
+       (.I0(\filter_in_r_reg[15]_16 [12]),
+        .I1(\filter_in_r_reg[14]_17 [12]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [12]),
+        .I3(\filter_in_r_reg[13]_18 [12]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [12]),
+        .I5(\filter_in_r_reg[12]_19 [12]),
         .O(\filtered_r[12]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19227,82 +19221,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_20 
-       (.I0(\filter_in_r_reg[19]_76 [19]),
-        .I1(\filter_in_r_reg[18]_77 [19]),
+       (.I0(\filter_in_r_reg[19]_12 [19]),
+        .I1(\filter_in_r_reg[18]_13 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [19]),
+        .I3(\filter_in_r_reg[17]_14 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [19]),
+        .I5(\filter_in_r_reg[16]_15 [19]),
         .O(\filtered_r[16]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_21 
-       (.I0(\filter_in_r_reg[23]_72 [19]),
-        .I1(\filter_in_r_reg[22]_73 [19]),
+       (.I0(\filter_in_r_reg[23]_8 [19]),
+        .I1(\filter_in_r_reg[22]_9 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [19]),
+        .I3(\filter_in_r_reg[21]_10 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [19]),
+        .I5(\filter_in_r_reg[20]_11 [19]),
         .O(\filtered_r[16]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_22 
-       (.I0(\filter_in_r_reg[27]_68 [19]),
-        .I1(\filter_in_r_reg[26]_69 [19]),
+       (.I0(\filter_in_r_reg[27]_4 [19]),
+        .I1(\filter_in_r_reg[26]_5 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [19]),
+        .I3(\filter_in_r_reg[25]_6 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [19]),
+        .I5(\filter_in_r_reg[24]_7 [19]),
         .O(\filtered_r[16]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_23 
-       (.I0(\filter_in_r_reg[31]_64 [19]),
-        .I1(\filter_in_r_reg[30]_65 [19]),
+       (.I0(\filter_in_r_reg[31]_0 [19]),
+        .I1(\filter_in_r_reg[30]_1 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [19]),
+        .I3(\filter_in_r_reg[29]_2 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [19]),
+        .I5(\filter_in_r_reg[28]_3 [19]),
         .O(\filtered_r[16]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_26 
-       (.I0(\filter_in_r_reg[19]_76 [18]),
-        .I1(\filter_in_r_reg[18]_77 [18]),
+       (.I0(\filter_in_r_reg[19]_12 [18]),
+        .I1(\filter_in_r_reg[18]_13 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [18]),
+        .I3(\filter_in_r_reg[17]_14 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [18]),
+        .I5(\filter_in_r_reg[16]_15 [18]),
         .O(\filtered_r[16]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_27 
-       (.I0(\filter_in_r_reg[23]_72 [18]),
-        .I1(\filter_in_r_reg[22]_73 [18]),
+       (.I0(\filter_in_r_reg[23]_8 [18]),
+        .I1(\filter_in_r_reg[22]_9 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [18]),
+        .I3(\filter_in_r_reg[21]_10 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [18]),
+        .I5(\filter_in_r_reg[20]_11 [18]),
         .O(\filtered_r[16]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_28 
-       (.I0(\filter_in_r_reg[27]_68 [18]),
-        .I1(\filter_in_r_reg[26]_69 [18]),
+       (.I0(\filter_in_r_reg[27]_4 [18]),
+        .I1(\filter_in_r_reg[26]_5 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [18]),
+        .I3(\filter_in_r_reg[25]_6 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [18]),
+        .I5(\filter_in_r_reg[24]_7 [18]),
         .O(\filtered_r[16]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_29 
-       (.I0(\filter_in_r_reg[31]_64 [18]),
-        .I1(\filter_in_r_reg[30]_65 [18]),
+       (.I0(\filter_in_r_reg[31]_0 [18]),
+        .I1(\filter_in_r_reg[30]_1 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [18]),
+        .I3(\filter_in_r_reg[29]_2 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [18]),
+        .I5(\filter_in_r_reg[28]_3 [18]),
         .O(\filtered_r[16]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19317,62 +19311,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_32 
-       (.I0(\filter_in_r_reg[19]_76 [17]),
-        .I1(\filter_in_r_reg[18]_77 [17]),
+       (.I0(\filter_in_r_reg[19]_12 [17]),
+        .I1(\filter_in_r_reg[18]_13 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [17]),
+        .I3(\filter_in_r_reg[17]_14 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [17]),
+        .I5(\filter_in_r_reg[16]_15 [17]),
         .O(\filtered_r[16]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_33 
-       (.I0(\filter_in_r_reg[23]_72 [17]),
-        .I1(\filter_in_r_reg[22]_73 [17]),
+       (.I0(\filter_in_r_reg[23]_8 [17]),
+        .I1(\filter_in_r_reg[22]_9 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [17]),
+        .I3(\filter_in_r_reg[21]_10 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [17]),
+        .I5(\filter_in_r_reg[20]_11 [17]),
         .O(\filtered_r[16]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_34 
-       (.I0(\filter_in_r_reg[27]_68 [17]),
-        .I1(\filter_in_r_reg[26]_69 [17]),
+       (.I0(\filter_in_r_reg[27]_4 [17]),
+        .I1(\filter_in_r_reg[26]_5 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [17]),
+        .I3(\filter_in_r_reg[25]_6 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [17]),
+        .I5(\filter_in_r_reg[24]_7 [17]),
         .O(\filtered_r[16]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_35 
-       (.I0(\filter_in_r_reg[31]_64 [17]),
-        .I1(\filter_in_r_reg[30]_65 [17]),
+       (.I0(\filter_in_r_reg[31]_0 [17]),
+        .I1(\filter_in_r_reg[30]_1 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [17]),
+        .I3(\filter_in_r_reg[29]_2 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [17]),
+        .I5(\filter_in_r_reg[28]_3 [17]),
         .O(\filtered_r[16]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_38 
-       (.I0(\filter_in_r_reg[19]_76 [16]),
-        .I1(\filter_in_r_reg[18]_77 [16]),
+       (.I0(\filter_in_r_reg[19]_12 [16]),
+        .I1(\filter_in_r_reg[18]_13 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [16]),
+        .I3(\filter_in_r_reg[17]_14 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [16]),
+        .I5(\filter_in_r_reg[16]_15 [16]),
         .O(\filtered_r[16]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_39 
-       (.I0(\filter_in_r_reg[23]_72 [16]),
-        .I1(\filter_in_r_reg[22]_73 [16]),
+       (.I0(\filter_in_r_reg[23]_8 [16]),
+        .I1(\filter_in_r_reg[22]_9 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [16]),
+        .I3(\filter_in_r_reg[21]_10 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [16]),
+        .I5(\filter_in_r_reg[20]_11 [16]),
         .O(\filtered_r[16]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19387,102 +19381,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_40 
-       (.I0(\filter_in_r_reg[27]_68 [16]),
-        .I1(\filter_in_r_reg[26]_69 [16]),
+       (.I0(\filter_in_r_reg[27]_4 [16]),
+        .I1(\filter_in_r_reg[26]_5 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [16]),
+        .I3(\filter_in_r_reg[25]_6 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [16]),
+        .I5(\filter_in_r_reg[24]_7 [16]),
         .O(\filtered_r[16]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_41 
-       (.I0(\filter_in_r_reg[31]_64 [16]),
-        .I1(\filter_in_r_reg[30]_65 [16]),
+       (.I0(\filter_in_r_reg[31]_0 [16]),
+        .I1(\filter_in_r_reg[30]_1 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [16]),
+        .I3(\filter_in_r_reg[29]_2 [16]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [16]),
+        .I5(\filter_in_r_reg[28]_3 [16]),
         .O(\filtered_r[16]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_42 
-       (.I0(\filter_in_r_reg[3]_92 [19]),
-        .I1(\filter_in_r_reg[2]_93 [19]),
+       (.I0(\filter_in_r_reg[3]_28 [19]),
+        .I1(\filter_in_r_reg[2]_29 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [19]),
+        .I3(\filter_in_r_reg[1]_30 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [19]),
+        .I5(\filter_in_r_reg[0]_31 [19]),
         .O(\filtered_r[16]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_43 
-       (.I0(\filter_in_r_reg[7]_88 [19]),
-        .I1(\filter_in_r_reg[6]_89 [19]),
+       (.I0(\filter_in_r_reg[7]_24 [19]),
+        .I1(\filter_in_r_reg[6]_25 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [19]),
+        .I3(\filter_in_r_reg[5]_26 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [19]),
+        .I5(\filter_in_r_reg[4]_27 [19]),
         .O(\filtered_r[16]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_44 
-       (.I0(\filter_in_r_reg[11]_84 [19]),
-        .I1(\filter_in_r_reg[10]_85 [19]),
+       (.I0(\filter_in_r_reg[11]_20 [19]),
+        .I1(\filter_in_r_reg[10]_21 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [19]),
+        .I3(\filter_in_r_reg[9]_22 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [19]),
+        .I5(\filter_in_r_reg[8]_23 [19]),
         .O(\filtered_r[16]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_45 
-       (.I0(\filter_in_r_reg[15]_80 [19]),
-        .I1(\filter_in_r_reg[14]_81 [19]),
+       (.I0(\filter_in_r_reg[15]_16 [19]),
+        .I1(\filter_in_r_reg[14]_17 [19]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [19]),
+        .I3(\filter_in_r_reg[13]_18 [19]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [19]),
+        .I5(\filter_in_r_reg[12]_19 [19]),
         .O(\filtered_r[16]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_46 
-       (.I0(\filter_in_r_reg[3]_92 [18]),
-        .I1(\filter_in_r_reg[2]_93 [18]),
+       (.I0(\filter_in_r_reg[3]_28 [18]),
+        .I1(\filter_in_r_reg[2]_29 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [18]),
+        .I3(\filter_in_r_reg[1]_30 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [18]),
+        .I5(\filter_in_r_reg[0]_31 [18]),
         .O(\filtered_r[16]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_47 
-       (.I0(\filter_in_r_reg[7]_88 [18]),
-        .I1(\filter_in_r_reg[6]_89 [18]),
+       (.I0(\filter_in_r_reg[7]_24 [18]),
+        .I1(\filter_in_r_reg[6]_25 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [18]),
+        .I3(\filter_in_r_reg[5]_26 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [18]),
+        .I5(\filter_in_r_reg[4]_27 [18]),
         .O(\filtered_r[16]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_48 
-       (.I0(\filter_in_r_reg[11]_84 [18]),
-        .I1(\filter_in_r_reg[10]_85 [18]),
+       (.I0(\filter_in_r_reg[11]_20 [18]),
+        .I1(\filter_in_r_reg[10]_21 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [18]),
+        .I3(\filter_in_r_reg[9]_22 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [18]),
+        .I5(\filter_in_r_reg[8]_23 [18]),
         .O(\filtered_r[16]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_49 
-       (.I0(\filter_in_r_reg[15]_80 [18]),
-        .I1(\filter_in_r_reg[14]_81 [18]),
+       (.I0(\filter_in_r_reg[15]_16 [18]),
+        .I1(\filter_in_r_reg[14]_17 [18]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [18]),
+        .I3(\filter_in_r_reg[13]_18 [18]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [18]),
+        .I5(\filter_in_r_reg[12]_19 [18]),
         .O(\filtered_r[16]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19497,82 +19491,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_50 
-       (.I0(\filter_in_r_reg[3]_92 [17]),
-        .I1(\filter_in_r_reg[2]_93 [17]),
+       (.I0(\filter_in_r_reg[3]_28 [17]),
+        .I1(\filter_in_r_reg[2]_29 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [17]),
+        .I3(\filter_in_r_reg[1]_30 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [17]),
+        .I5(\filter_in_r_reg[0]_31 [17]),
         .O(\filtered_r[16]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_51 
-       (.I0(\filter_in_r_reg[7]_88 [17]),
-        .I1(\filter_in_r_reg[6]_89 [17]),
+       (.I0(\filter_in_r_reg[7]_24 [17]),
+        .I1(\filter_in_r_reg[6]_25 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [17]),
+        .I3(\filter_in_r_reg[5]_26 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [17]),
+        .I5(\filter_in_r_reg[4]_27 [17]),
         .O(\filtered_r[16]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_52 
-       (.I0(\filter_in_r_reg[11]_84 [17]),
-        .I1(\filter_in_r_reg[10]_85 [17]),
+       (.I0(\filter_in_r_reg[11]_20 [17]),
+        .I1(\filter_in_r_reg[10]_21 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [17]),
+        .I3(\filter_in_r_reg[9]_22 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [17]),
+        .I5(\filter_in_r_reg[8]_23 [17]),
         .O(\filtered_r[16]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_53 
-       (.I0(\filter_in_r_reg[15]_80 [17]),
-        .I1(\filter_in_r_reg[14]_81 [17]),
+       (.I0(\filter_in_r_reg[15]_16 [17]),
+        .I1(\filter_in_r_reg[14]_17 [17]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [17]),
+        .I3(\filter_in_r_reg[13]_18 [17]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [17]),
+        .I5(\filter_in_r_reg[12]_19 [17]),
         .O(\filtered_r[16]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_54 
-       (.I0(\filter_in_r_reg[3]_92 [16]),
-        .I1(\filter_in_r_reg[2]_93 [16]),
+       (.I0(\filter_in_r_reg[3]_28 [16]),
+        .I1(\filter_in_r_reg[2]_29 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [16]),
+        .I3(\filter_in_r_reg[1]_30 [16]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [16]),
+        .I5(\filter_in_r_reg[0]_31 [16]),
         .O(\filtered_r[16]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_55 
-       (.I0(\filter_in_r_reg[7]_88 [16]),
-        .I1(\filter_in_r_reg[6]_89 [16]),
+       (.I0(\filter_in_r_reg[7]_24 [16]),
+        .I1(\filter_in_r_reg[6]_25 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [16]),
+        .I3(\filter_in_r_reg[5]_26 [16]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [16]),
+        .I5(\filter_in_r_reg[4]_27 [16]),
         .O(\filtered_r[16]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_56 
-       (.I0(\filter_in_r_reg[11]_84 [16]),
-        .I1(\filter_in_r_reg[10]_85 [16]),
+       (.I0(\filter_in_r_reg[11]_20 [16]),
+        .I1(\filter_in_r_reg[10]_21 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [16]),
+        .I3(\filter_in_r_reg[9]_22 [16]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [16]),
+        .I5(\filter_in_r_reg[8]_23 [16]),
         .O(\filtered_r[16]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[16]_i_57 
-       (.I0(\filter_in_r_reg[15]_80 [16]),
-        .I1(\filter_in_r_reg[14]_81 [16]),
+       (.I0(\filter_in_r_reg[15]_16 [16]),
+        .I1(\filter_in_r_reg[14]_17 [16]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [16]),
+        .I3(\filter_in_r_reg[13]_18 [16]),
         .I4(\ring_buffer_read_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [16]),
+        .I5(\filter_in_r_reg[12]_19 [16]),
         .O(\filtered_r[16]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19587,82 +19581,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_20 
-       (.I0(\filter_in_r_reg[19]_76 [23]),
-        .I1(\filter_in_r_reg[18]_77 [23]),
+       (.I0(\filter_in_r_reg[19]_12 [23]),
+        .I1(\filter_in_r_reg[18]_13 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [23]),
+        .I3(\filter_in_r_reg[17]_14 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [23]),
+        .I5(\filter_in_r_reg[16]_15 [23]),
         .O(\filtered_r[20]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_21 
-       (.I0(\filter_in_r_reg[23]_72 [23]),
-        .I1(\filter_in_r_reg[22]_73 [23]),
+       (.I0(\filter_in_r_reg[23]_8 [23]),
+        .I1(\filter_in_r_reg[22]_9 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [23]),
+        .I3(\filter_in_r_reg[21]_10 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [23]),
+        .I5(\filter_in_r_reg[20]_11 [23]),
         .O(\filtered_r[20]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_22 
-       (.I0(\filter_in_r_reg[27]_68 [23]),
-        .I1(\filter_in_r_reg[26]_69 [23]),
+       (.I0(\filter_in_r_reg[27]_4 [23]),
+        .I1(\filter_in_r_reg[26]_5 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [23]),
+        .I3(\filter_in_r_reg[25]_6 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [23]),
+        .I5(\filter_in_r_reg[24]_7 [23]),
         .O(\filtered_r[20]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_23 
-       (.I0(\filter_in_r_reg[31]_64 [23]),
-        .I1(\filter_in_r_reg[30]_65 [23]),
+       (.I0(\filter_in_r_reg[31]_0 [23]),
+        .I1(\filter_in_r_reg[30]_1 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [23]),
+        .I3(\filter_in_r_reg[29]_2 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [23]),
+        .I5(\filter_in_r_reg[28]_3 [23]),
         .O(\filtered_r[20]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_26 
-       (.I0(\filter_in_r_reg[19]_76 [22]),
-        .I1(\filter_in_r_reg[18]_77 [22]),
+       (.I0(\filter_in_r_reg[19]_12 [22]),
+        .I1(\filter_in_r_reg[18]_13 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [22]),
+        .I3(\filter_in_r_reg[17]_14 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [22]),
+        .I5(\filter_in_r_reg[16]_15 [22]),
         .O(\filtered_r[20]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_27 
-       (.I0(\filter_in_r_reg[23]_72 [22]),
-        .I1(\filter_in_r_reg[22]_73 [22]),
+       (.I0(\filter_in_r_reg[23]_8 [22]),
+        .I1(\filter_in_r_reg[22]_9 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [22]),
+        .I3(\filter_in_r_reg[21]_10 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [22]),
+        .I5(\filter_in_r_reg[20]_11 [22]),
         .O(\filtered_r[20]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_28 
-       (.I0(\filter_in_r_reg[27]_68 [22]),
-        .I1(\filter_in_r_reg[26]_69 [22]),
+       (.I0(\filter_in_r_reg[27]_4 [22]),
+        .I1(\filter_in_r_reg[26]_5 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [22]),
+        .I3(\filter_in_r_reg[25]_6 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [22]),
+        .I5(\filter_in_r_reg[24]_7 [22]),
         .O(\filtered_r[20]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_29 
-       (.I0(\filter_in_r_reg[31]_64 [22]),
-        .I1(\filter_in_r_reg[30]_65 [22]),
+       (.I0(\filter_in_r_reg[31]_0 [22]),
+        .I1(\filter_in_r_reg[30]_1 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [22]),
+        .I3(\filter_in_r_reg[29]_2 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [22]),
+        .I5(\filter_in_r_reg[28]_3 [22]),
         .O(\filtered_r[20]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19677,62 +19671,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_32 
-       (.I0(\filter_in_r_reg[19]_76 [21]),
-        .I1(\filter_in_r_reg[18]_77 [21]),
+       (.I0(\filter_in_r_reg[19]_12 [21]),
+        .I1(\filter_in_r_reg[18]_13 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [21]),
+        .I3(\filter_in_r_reg[17]_14 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [21]),
+        .I5(\filter_in_r_reg[16]_15 [21]),
         .O(\filtered_r[20]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_33 
-       (.I0(\filter_in_r_reg[23]_72 [21]),
-        .I1(\filter_in_r_reg[22]_73 [21]),
+       (.I0(\filter_in_r_reg[23]_8 [21]),
+        .I1(\filter_in_r_reg[22]_9 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [21]),
+        .I3(\filter_in_r_reg[21]_10 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [21]),
+        .I5(\filter_in_r_reg[20]_11 [21]),
         .O(\filtered_r[20]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_34 
-       (.I0(\filter_in_r_reg[27]_68 [21]),
-        .I1(\filter_in_r_reg[26]_69 [21]),
+       (.I0(\filter_in_r_reg[27]_4 [21]),
+        .I1(\filter_in_r_reg[26]_5 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [21]),
+        .I3(\filter_in_r_reg[25]_6 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [21]),
+        .I5(\filter_in_r_reg[24]_7 [21]),
         .O(\filtered_r[20]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_35 
-       (.I0(\filter_in_r_reg[31]_64 [21]),
-        .I1(\filter_in_r_reg[30]_65 [21]),
+       (.I0(\filter_in_r_reg[31]_0 [21]),
+        .I1(\filter_in_r_reg[30]_1 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [21]),
+        .I3(\filter_in_r_reg[29]_2 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [21]),
+        .I5(\filter_in_r_reg[28]_3 [21]),
         .O(\filtered_r[20]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_38 
-       (.I0(\filter_in_r_reg[19]_76 [20]),
-        .I1(\filter_in_r_reg[18]_77 [20]),
+       (.I0(\filter_in_r_reg[19]_12 [20]),
+        .I1(\filter_in_r_reg[18]_13 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [20]),
+        .I3(\filter_in_r_reg[17]_14 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [20]),
+        .I5(\filter_in_r_reg[16]_15 [20]),
         .O(\filtered_r[20]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_39 
-       (.I0(\filter_in_r_reg[23]_72 [20]),
-        .I1(\filter_in_r_reg[22]_73 [20]),
+       (.I0(\filter_in_r_reg[23]_8 [20]),
+        .I1(\filter_in_r_reg[22]_9 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [20]),
+        .I3(\filter_in_r_reg[21]_10 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [20]),
+        .I5(\filter_in_r_reg[20]_11 [20]),
         .O(\filtered_r[20]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19747,102 +19741,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_40 
-       (.I0(\filter_in_r_reg[27]_68 [20]),
-        .I1(\filter_in_r_reg[26]_69 [20]),
+       (.I0(\filter_in_r_reg[27]_4 [20]),
+        .I1(\filter_in_r_reg[26]_5 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [20]),
+        .I3(\filter_in_r_reg[25]_6 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [20]),
+        .I5(\filter_in_r_reg[24]_7 [20]),
         .O(\filtered_r[20]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_41 
-       (.I0(\filter_in_r_reg[31]_64 [20]),
-        .I1(\filter_in_r_reg[30]_65 [20]),
+       (.I0(\filter_in_r_reg[31]_0 [20]),
+        .I1(\filter_in_r_reg[30]_1 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [20]),
+        .I3(\filter_in_r_reg[29]_2 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [20]),
+        .I5(\filter_in_r_reg[28]_3 [20]),
         .O(\filtered_r[20]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_42 
-       (.I0(\filter_in_r_reg[3]_92 [23]),
-        .I1(\filter_in_r_reg[2]_93 [23]),
+       (.I0(\filter_in_r_reg[3]_28 [23]),
+        .I1(\filter_in_r_reg[2]_29 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [23]),
+        .I3(\filter_in_r_reg[1]_30 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [23]),
+        .I5(\filter_in_r_reg[0]_31 [23]),
         .O(\filtered_r[20]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_43 
-       (.I0(\filter_in_r_reg[7]_88 [23]),
-        .I1(\filter_in_r_reg[6]_89 [23]),
+       (.I0(\filter_in_r_reg[7]_24 [23]),
+        .I1(\filter_in_r_reg[6]_25 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [23]),
+        .I3(\filter_in_r_reg[5]_26 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [23]),
+        .I5(\filter_in_r_reg[4]_27 [23]),
         .O(\filtered_r[20]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_44 
-       (.I0(\filter_in_r_reg[11]_84 [23]),
-        .I1(\filter_in_r_reg[10]_85 [23]),
+       (.I0(\filter_in_r_reg[11]_20 [23]),
+        .I1(\filter_in_r_reg[10]_21 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [23]),
+        .I3(\filter_in_r_reg[9]_22 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [23]),
+        .I5(\filter_in_r_reg[8]_23 [23]),
         .O(\filtered_r[20]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_45 
-       (.I0(\filter_in_r_reg[15]_80 [23]),
-        .I1(\filter_in_r_reg[14]_81 [23]),
+       (.I0(\filter_in_r_reg[15]_16 [23]),
+        .I1(\filter_in_r_reg[14]_17 [23]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [23]),
+        .I3(\filter_in_r_reg[13]_18 [23]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [23]),
+        .I5(\filter_in_r_reg[12]_19 [23]),
         .O(\filtered_r[20]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_46 
-       (.I0(\filter_in_r_reg[3]_92 [22]),
-        .I1(\filter_in_r_reg[2]_93 [22]),
+       (.I0(\filter_in_r_reg[3]_28 [22]),
+        .I1(\filter_in_r_reg[2]_29 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [22]),
+        .I3(\filter_in_r_reg[1]_30 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [22]),
+        .I5(\filter_in_r_reg[0]_31 [22]),
         .O(\filtered_r[20]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_47 
-       (.I0(\filter_in_r_reg[7]_88 [22]),
-        .I1(\filter_in_r_reg[6]_89 [22]),
+       (.I0(\filter_in_r_reg[7]_24 [22]),
+        .I1(\filter_in_r_reg[6]_25 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [22]),
+        .I3(\filter_in_r_reg[5]_26 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [22]),
+        .I5(\filter_in_r_reg[4]_27 [22]),
         .O(\filtered_r[20]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_48 
-       (.I0(\filter_in_r_reg[11]_84 [22]),
-        .I1(\filter_in_r_reg[10]_85 [22]),
+       (.I0(\filter_in_r_reg[11]_20 [22]),
+        .I1(\filter_in_r_reg[10]_21 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [22]),
+        .I3(\filter_in_r_reg[9]_22 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [22]),
+        .I5(\filter_in_r_reg[8]_23 [22]),
         .O(\filtered_r[20]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_49 
-       (.I0(\filter_in_r_reg[15]_80 [22]),
-        .I1(\filter_in_r_reg[14]_81 [22]),
+       (.I0(\filter_in_r_reg[15]_16 [22]),
+        .I1(\filter_in_r_reg[14]_17 [22]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [22]),
+        .I3(\filter_in_r_reg[13]_18 [22]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [22]),
+        .I5(\filter_in_r_reg[12]_19 [22]),
         .O(\filtered_r[20]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19857,82 +19851,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_50 
-       (.I0(\filter_in_r_reg[3]_92 [21]),
-        .I1(\filter_in_r_reg[2]_93 [21]),
+       (.I0(\filter_in_r_reg[3]_28 [21]),
+        .I1(\filter_in_r_reg[2]_29 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [21]),
+        .I3(\filter_in_r_reg[1]_30 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [21]),
+        .I5(\filter_in_r_reg[0]_31 [21]),
         .O(\filtered_r[20]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_51 
-       (.I0(\filter_in_r_reg[7]_88 [21]),
-        .I1(\filter_in_r_reg[6]_89 [21]),
+       (.I0(\filter_in_r_reg[7]_24 [21]),
+        .I1(\filter_in_r_reg[6]_25 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [21]),
+        .I3(\filter_in_r_reg[5]_26 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [21]),
+        .I5(\filter_in_r_reg[4]_27 [21]),
         .O(\filtered_r[20]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_52 
-       (.I0(\filter_in_r_reg[11]_84 [21]),
-        .I1(\filter_in_r_reg[10]_85 [21]),
+       (.I0(\filter_in_r_reg[11]_20 [21]),
+        .I1(\filter_in_r_reg[10]_21 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [21]),
+        .I3(\filter_in_r_reg[9]_22 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [21]),
+        .I5(\filter_in_r_reg[8]_23 [21]),
         .O(\filtered_r[20]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_53 
-       (.I0(\filter_in_r_reg[15]_80 [21]),
-        .I1(\filter_in_r_reg[14]_81 [21]),
+       (.I0(\filter_in_r_reg[15]_16 [21]),
+        .I1(\filter_in_r_reg[14]_17 [21]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [21]),
+        .I3(\filter_in_r_reg[13]_18 [21]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [21]),
+        .I5(\filter_in_r_reg[12]_19 [21]),
         .O(\filtered_r[20]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_54 
-       (.I0(\filter_in_r_reg[3]_92 [20]),
-        .I1(\filter_in_r_reg[2]_93 [20]),
+       (.I0(\filter_in_r_reg[3]_28 [20]),
+        .I1(\filter_in_r_reg[2]_29 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [20]),
+        .I3(\filter_in_r_reg[1]_30 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [20]),
+        .I5(\filter_in_r_reg[0]_31 [20]),
         .O(\filtered_r[20]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_55 
-       (.I0(\filter_in_r_reg[7]_88 [20]),
-        .I1(\filter_in_r_reg[6]_89 [20]),
+       (.I0(\filter_in_r_reg[7]_24 [20]),
+        .I1(\filter_in_r_reg[6]_25 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [20]),
+        .I3(\filter_in_r_reg[5]_26 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [20]),
+        .I5(\filter_in_r_reg[4]_27 [20]),
         .O(\filtered_r[20]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_56 
-       (.I0(\filter_in_r_reg[11]_84 [20]),
-        .I1(\filter_in_r_reg[10]_85 [20]),
+       (.I0(\filter_in_r_reg[11]_20 [20]),
+        .I1(\filter_in_r_reg[10]_21 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [20]),
+        .I3(\filter_in_r_reg[9]_22 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [20]),
+        .I5(\filter_in_r_reg[8]_23 [20]),
         .O(\filtered_r[20]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[20]_i_57 
-       (.I0(\filter_in_r_reg[15]_80 [20]),
-        .I1(\filter_in_r_reg[14]_81 [20]),
+       (.I0(\filter_in_r_reg[15]_16 [20]),
+        .I1(\filter_in_r_reg[14]_17 [20]),
         .I2(ring_buffer_read_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [20]),
+        .I3(\filter_in_r_reg[13]_18 [20]),
         .I4(\ring_buffer_read_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [20]),
+        .I5(\filter_in_r_reg[12]_19 [20]),
         .O(\filtered_r[20]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -19947,82 +19941,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_20 
-       (.I0(\filter_in_r_reg[19]_76 [7]),
-        .I1(\filter_in_r_reg[18]_77 [7]),
+       (.I0(\filter_in_r_reg[19]_12 [7]),
+        .I1(\filter_in_r_reg[18]_13 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [7]),
+        .I3(\filter_in_r_reg[17]_14 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [7]),
+        .I5(\filter_in_r_reg[16]_15 [7]),
         .O(\filtered_r[4]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_21 
-       (.I0(\filter_in_r_reg[23]_72 [7]),
-        .I1(\filter_in_r_reg[22]_73 [7]),
+       (.I0(\filter_in_r_reg[23]_8 [7]),
+        .I1(\filter_in_r_reg[22]_9 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [7]),
+        .I3(\filter_in_r_reg[21]_10 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [7]),
+        .I5(\filter_in_r_reg[20]_11 [7]),
         .O(\filtered_r[4]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_22 
-       (.I0(\filter_in_r_reg[27]_68 [7]),
-        .I1(\filter_in_r_reg[26]_69 [7]),
+       (.I0(\filter_in_r_reg[27]_4 [7]),
+        .I1(\filter_in_r_reg[26]_5 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [7]),
+        .I3(\filter_in_r_reg[25]_6 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [7]),
+        .I5(\filter_in_r_reg[24]_7 [7]),
         .O(\filtered_r[4]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_23 
-       (.I0(\filter_in_r_reg[31]_64 [7]),
-        .I1(\filter_in_r_reg[30]_65 [7]),
+       (.I0(\filter_in_r_reg[31]_0 [7]),
+        .I1(\filter_in_r_reg[30]_1 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [7]),
+        .I3(\filter_in_r_reg[29]_2 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [7]),
+        .I5(\filter_in_r_reg[28]_3 [7]),
         .O(\filtered_r[4]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_26 
-       (.I0(\filter_in_r_reg[19]_76 [6]),
-        .I1(\filter_in_r_reg[18]_77 [6]),
+       (.I0(\filter_in_r_reg[19]_12 [6]),
+        .I1(\filter_in_r_reg[18]_13 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [6]),
+        .I3(\filter_in_r_reg[17]_14 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [6]),
+        .I5(\filter_in_r_reg[16]_15 [6]),
         .O(\filtered_r[4]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_27 
-       (.I0(\filter_in_r_reg[23]_72 [6]),
-        .I1(\filter_in_r_reg[22]_73 [6]),
+       (.I0(\filter_in_r_reg[23]_8 [6]),
+        .I1(\filter_in_r_reg[22]_9 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [6]),
+        .I3(\filter_in_r_reg[21]_10 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [6]),
+        .I5(\filter_in_r_reg[20]_11 [6]),
         .O(\filtered_r[4]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_28 
-       (.I0(\filter_in_r_reg[27]_68 [6]),
-        .I1(\filter_in_r_reg[26]_69 [6]),
+       (.I0(\filter_in_r_reg[27]_4 [6]),
+        .I1(\filter_in_r_reg[26]_5 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [6]),
+        .I3(\filter_in_r_reg[25]_6 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [6]),
+        .I5(\filter_in_r_reg[24]_7 [6]),
         .O(\filtered_r[4]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_29 
-       (.I0(\filter_in_r_reg[31]_64 [6]),
-        .I1(\filter_in_r_reg[30]_65 [6]),
+       (.I0(\filter_in_r_reg[31]_0 [6]),
+        .I1(\filter_in_r_reg[30]_1 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [6]),
+        .I3(\filter_in_r_reg[29]_2 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [6]),
+        .I5(\filter_in_r_reg[28]_3 [6]),
         .O(\filtered_r[4]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20037,62 +20031,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_32 
-       (.I0(\filter_in_r_reg[19]_76 [5]),
-        .I1(\filter_in_r_reg[18]_77 [5]),
+       (.I0(\filter_in_r_reg[19]_12 [5]),
+        .I1(\filter_in_r_reg[18]_13 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [5]),
+        .I3(\filter_in_r_reg[17]_14 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [5]),
+        .I5(\filter_in_r_reg[16]_15 [5]),
         .O(\filtered_r[4]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_33 
-       (.I0(\filter_in_r_reg[23]_72 [5]),
-        .I1(\filter_in_r_reg[22]_73 [5]),
+       (.I0(\filter_in_r_reg[23]_8 [5]),
+        .I1(\filter_in_r_reg[22]_9 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [5]),
+        .I3(\filter_in_r_reg[21]_10 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [5]),
+        .I5(\filter_in_r_reg[20]_11 [5]),
         .O(\filtered_r[4]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_34 
-       (.I0(\filter_in_r_reg[27]_68 [5]),
-        .I1(\filter_in_r_reg[26]_69 [5]),
+       (.I0(\filter_in_r_reg[27]_4 [5]),
+        .I1(\filter_in_r_reg[26]_5 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [5]),
+        .I3(\filter_in_r_reg[25]_6 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [5]),
+        .I5(\filter_in_r_reg[24]_7 [5]),
         .O(\filtered_r[4]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_35 
-       (.I0(\filter_in_r_reg[31]_64 [5]),
-        .I1(\filter_in_r_reg[30]_65 [5]),
+       (.I0(\filter_in_r_reg[31]_0 [5]),
+        .I1(\filter_in_r_reg[30]_1 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [5]),
+        .I3(\filter_in_r_reg[29]_2 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [5]),
+        .I5(\filter_in_r_reg[28]_3 [5]),
         .O(\filtered_r[4]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_38 
-       (.I0(\filter_in_r_reg[19]_76 [4]),
-        .I1(\filter_in_r_reg[18]_77 [4]),
+       (.I0(\filter_in_r_reg[19]_12 [4]),
+        .I1(\filter_in_r_reg[18]_13 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [4]),
+        .I3(\filter_in_r_reg[17]_14 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [4]),
+        .I5(\filter_in_r_reg[16]_15 [4]),
         .O(\filtered_r[4]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_39 
-       (.I0(\filter_in_r_reg[23]_72 [4]),
-        .I1(\filter_in_r_reg[22]_73 [4]),
+       (.I0(\filter_in_r_reg[23]_8 [4]),
+        .I1(\filter_in_r_reg[22]_9 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [4]),
+        .I3(\filter_in_r_reg[21]_10 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [4]),
+        .I5(\filter_in_r_reg[20]_11 [4]),
         .O(\filtered_r[4]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20107,102 +20101,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_40 
-       (.I0(\filter_in_r_reg[27]_68 [4]),
-        .I1(\filter_in_r_reg[26]_69 [4]),
+       (.I0(\filter_in_r_reg[27]_4 [4]),
+        .I1(\filter_in_r_reg[26]_5 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [4]),
+        .I3(\filter_in_r_reg[25]_6 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [4]),
+        .I5(\filter_in_r_reg[24]_7 [4]),
         .O(\filtered_r[4]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_41 
-       (.I0(\filter_in_r_reg[31]_64 [4]),
-        .I1(\filter_in_r_reg[30]_65 [4]),
+       (.I0(\filter_in_r_reg[31]_0 [4]),
+        .I1(\filter_in_r_reg[30]_1 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [4]),
+        .I3(\filter_in_r_reg[29]_2 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [4]),
+        .I5(\filter_in_r_reg[28]_3 [4]),
         .O(\filtered_r[4]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_42 
-       (.I0(\filter_in_r_reg[3]_92 [7]),
-        .I1(\filter_in_r_reg[2]_93 [7]),
+       (.I0(\filter_in_r_reg[3]_28 [7]),
+        .I1(\filter_in_r_reg[2]_29 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [7]),
+        .I3(\filter_in_r_reg[1]_30 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [7]),
+        .I5(\filter_in_r_reg[0]_31 [7]),
         .O(\filtered_r[4]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_43 
-       (.I0(\filter_in_r_reg[7]_88 [7]),
-        .I1(\filter_in_r_reg[6]_89 [7]),
+       (.I0(\filter_in_r_reg[7]_24 [7]),
+        .I1(\filter_in_r_reg[6]_25 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [7]),
+        .I3(\filter_in_r_reg[5]_26 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [7]),
+        .I5(\filter_in_r_reg[4]_27 [7]),
         .O(\filtered_r[4]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_44 
-       (.I0(\filter_in_r_reg[11]_84 [7]),
-        .I1(\filter_in_r_reg[10]_85 [7]),
+       (.I0(\filter_in_r_reg[11]_20 [7]),
+        .I1(\filter_in_r_reg[10]_21 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [7]),
+        .I3(\filter_in_r_reg[9]_22 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [7]),
+        .I5(\filter_in_r_reg[8]_23 [7]),
         .O(\filtered_r[4]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_45 
-       (.I0(\filter_in_r_reg[15]_80 [7]),
-        .I1(\filter_in_r_reg[14]_81 [7]),
+       (.I0(\filter_in_r_reg[15]_16 [7]),
+        .I1(\filter_in_r_reg[14]_17 [7]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [7]),
+        .I3(\filter_in_r_reg[13]_18 [7]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [7]),
+        .I5(\filter_in_r_reg[12]_19 [7]),
         .O(\filtered_r[4]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_46 
-       (.I0(\filter_in_r_reg[3]_92 [6]),
-        .I1(\filter_in_r_reg[2]_93 [6]),
+       (.I0(\filter_in_r_reg[3]_28 [6]),
+        .I1(\filter_in_r_reg[2]_29 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [6]),
+        .I3(\filter_in_r_reg[1]_30 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [6]),
+        .I5(\filter_in_r_reg[0]_31 [6]),
         .O(\filtered_r[4]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_47 
-       (.I0(\filter_in_r_reg[7]_88 [6]),
-        .I1(\filter_in_r_reg[6]_89 [6]),
+       (.I0(\filter_in_r_reg[7]_24 [6]),
+        .I1(\filter_in_r_reg[6]_25 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [6]),
+        .I3(\filter_in_r_reg[5]_26 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [6]),
+        .I5(\filter_in_r_reg[4]_27 [6]),
         .O(\filtered_r[4]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_48 
-       (.I0(\filter_in_r_reg[11]_84 [6]),
-        .I1(\filter_in_r_reg[10]_85 [6]),
+       (.I0(\filter_in_r_reg[11]_20 [6]),
+        .I1(\filter_in_r_reg[10]_21 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [6]),
+        .I3(\filter_in_r_reg[9]_22 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [6]),
+        .I5(\filter_in_r_reg[8]_23 [6]),
         .O(\filtered_r[4]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_49 
-       (.I0(\filter_in_r_reg[15]_80 [6]),
-        .I1(\filter_in_r_reg[14]_81 [6]),
+       (.I0(\filter_in_r_reg[15]_16 [6]),
+        .I1(\filter_in_r_reg[14]_17 [6]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [6]),
+        .I3(\filter_in_r_reg[13]_18 [6]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [6]),
+        .I5(\filter_in_r_reg[12]_19 [6]),
         .O(\filtered_r[4]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20217,82 +20211,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_50 
-       (.I0(\filter_in_r_reg[3]_92 [5]),
-        .I1(\filter_in_r_reg[2]_93 [5]),
+       (.I0(\filter_in_r_reg[3]_28 [5]),
+        .I1(\filter_in_r_reg[2]_29 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [5]),
+        .I3(\filter_in_r_reg[1]_30 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [5]),
+        .I5(\filter_in_r_reg[0]_31 [5]),
         .O(\filtered_r[4]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_51 
-       (.I0(\filter_in_r_reg[7]_88 [5]),
-        .I1(\filter_in_r_reg[6]_89 [5]),
+       (.I0(\filter_in_r_reg[7]_24 [5]),
+        .I1(\filter_in_r_reg[6]_25 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [5]),
+        .I3(\filter_in_r_reg[5]_26 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [5]),
+        .I5(\filter_in_r_reg[4]_27 [5]),
         .O(\filtered_r[4]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_52 
-       (.I0(\filter_in_r_reg[11]_84 [5]),
-        .I1(\filter_in_r_reg[10]_85 [5]),
+       (.I0(\filter_in_r_reg[11]_20 [5]),
+        .I1(\filter_in_r_reg[10]_21 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [5]),
+        .I3(\filter_in_r_reg[9]_22 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [5]),
+        .I5(\filter_in_r_reg[8]_23 [5]),
         .O(\filtered_r[4]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_53 
-       (.I0(\filter_in_r_reg[15]_80 [5]),
-        .I1(\filter_in_r_reg[14]_81 [5]),
+       (.I0(\filter_in_r_reg[15]_16 [5]),
+        .I1(\filter_in_r_reg[14]_17 [5]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [5]),
+        .I3(\filter_in_r_reg[13]_18 [5]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [5]),
+        .I5(\filter_in_r_reg[12]_19 [5]),
         .O(\filtered_r[4]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_54 
-       (.I0(\filter_in_r_reg[3]_92 [4]),
-        .I1(\filter_in_r_reg[2]_93 [4]),
+       (.I0(\filter_in_r_reg[3]_28 [4]),
+        .I1(\filter_in_r_reg[2]_29 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [4]),
+        .I3(\filter_in_r_reg[1]_30 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [4]),
+        .I5(\filter_in_r_reg[0]_31 [4]),
         .O(\filtered_r[4]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_55 
-       (.I0(\filter_in_r_reg[7]_88 [4]),
-        .I1(\filter_in_r_reg[6]_89 [4]),
+       (.I0(\filter_in_r_reg[7]_24 [4]),
+        .I1(\filter_in_r_reg[6]_25 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [4]),
+        .I3(\filter_in_r_reg[5]_26 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [4]),
+        .I5(\filter_in_r_reg[4]_27 [4]),
         .O(\filtered_r[4]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_56 
-       (.I0(\filter_in_r_reg[11]_84 [4]),
-        .I1(\filter_in_r_reg[10]_85 [4]),
+       (.I0(\filter_in_r_reg[11]_20 [4]),
+        .I1(\filter_in_r_reg[10]_21 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [4]),
+        .I3(\filter_in_r_reg[9]_22 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [4]),
+        .I5(\filter_in_r_reg[8]_23 [4]),
         .O(\filtered_r[4]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[4]_i_57 
-       (.I0(\filter_in_r_reg[15]_80 [4]),
-        .I1(\filter_in_r_reg[14]_81 [4]),
+       (.I0(\filter_in_r_reg[15]_16 [4]),
+        .I1(\filter_in_r_reg[14]_17 [4]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [4]),
+        .I3(\filter_in_r_reg[13]_18 [4]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [4]),
+        .I5(\filter_in_r_reg[12]_19 [4]),
         .O(\filtered_r[4]_i_57_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20307,82 +20301,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_20 
-       (.I0(\filter_in_r_reg[19]_76 [11]),
-        .I1(\filter_in_r_reg[18]_77 [11]),
+       (.I0(\filter_in_r_reg[19]_12 [11]),
+        .I1(\filter_in_r_reg[18]_13 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [11]),
+        .I3(\filter_in_r_reg[17]_14 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [11]),
+        .I5(\filter_in_r_reg[16]_15 [11]),
         .O(\filtered_r[8]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_21 
-       (.I0(\filter_in_r_reg[23]_72 [11]),
-        .I1(\filter_in_r_reg[22]_73 [11]),
+       (.I0(\filter_in_r_reg[23]_8 [11]),
+        .I1(\filter_in_r_reg[22]_9 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [11]),
+        .I3(\filter_in_r_reg[21]_10 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [11]),
+        .I5(\filter_in_r_reg[20]_11 [11]),
         .O(\filtered_r[8]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_22 
-       (.I0(\filter_in_r_reg[27]_68 [11]),
-        .I1(\filter_in_r_reg[26]_69 [11]),
+       (.I0(\filter_in_r_reg[27]_4 [11]),
+        .I1(\filter_in_r_reg[26]_5 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [11]),
+        .I3(\filter_in_r_reg[25]_6 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [11]),
+        .I5(\filter_in_r_reg[24]_7 [11]),
         .O(\filtered_r[8]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_23 
-       (.I0(\filter_in_r_reg[31]_64 [11]),
-        .I1(\filter_in_r_reg[30]_65 [11]),
+       (.I0(\filter_in_r_reg[31]_0 [11]),
+        .I1(\filter_in_r_reg[30]_1 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [11]),
+        .I3(\filter_in_r_reg[29]_2 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [11]),
+        .I5(\filter_in_r_reg[28]_3 [11]),
         .O(\filtered_r[8]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_26 
-       (.I0(\filter_in_r_reg[19]_76 [10]),
-        .I1(\filter_in_r_reg[18]_77 [10]),
+       (.I0(\filter_in_r_reg[19]_12 [10]),
+        .I1(\filter_in_r_reg[18]_13 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [10]),
+        .I3(\filter_in_r_reg[17]_14 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [10]),
+        .I5(\filter_in_r_reg[16]_15 [10]),
         .O(\filtered_r[8]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_27 
-       (.I0(\filter_in_r_reg[23]_72 [10]),
-        .I1(\filter_in_r_reg[22]_73 [10]),
+       (.I0(\filter_in_r_reg[23]_8 [10]),
+        .I1(\filter_in_r_reg[22]_9 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [10]),
+        .I3(\filter_in_r_reg[21]_10 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [10]),
+        .I5(\filter_in_r_reg[20]_11 [10]),
         .O(\filtered_r[8]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_28 
-       (.I0(\filter_in_r_reg[27]_68 [10]),
-        .I1(\filter_in_r_reg[26]_69 [10]),
+       (.I0(\filter_in_r_reg[27]_4 [10]),
+        .I1(\filter_in_r_reg[26]_5 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [10]),
+        .I3(\filter_in_r_reg[25]_6 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [10]),
+        .I5(\filter_in_r_reg[24]_7 [10]),
         .O(\filtered_r[8]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_29 
-       (.I0(\filter_in_r_reg[31]_64 [10]),
-        .I1(\filter_in_r_reg[30]_65 [10]),
+       (.I0(\filter_in_r_reg[31]_0 [10]),
+        .I1(\filter_in_r_reg[30]_1 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [10]),
+        .I3(\filter_in_r_reg[29]_2 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [10]),
+        .I5(\filter_in_r_reg[28]_3 [10]),
         .O(\filtered_r[8]_i_29_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20397,62 +20391,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_32 
-       (.I0(\filter_in_r_reg[19]_76 [9]),
-        .I1(\filter_in_r_reg[18]_77 [9]),
+       (.I0(\filter_in_r_reg[19]_12 [9]),
+        .I1(\filter_in_r_reg[18]_13 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [9]),
+        .I3(\filter_in_r_reg[17]_14 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [9]),
+        .I5(\filter_in_r_reg[16]_15 [9]),
         .O(\filtered_r[8]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_33 
-       (.I0(\filter_in_r_reg[23]_72 [9]),
-        .I1(\filter_in_r_reg[22]_73 [9]),
+       (.I0(\filter_in_r_reg[23]_8 [9]),
+        .I1(\filter_in_r_reg[22]_9 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [9]),
+        .I3(\filter_in_r_reg[21]_10 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [9]),
+        .I5(\filter_in_r_reg[20]_11 [9]),
         .O(\filtered_r[8]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_34 
-       (.I0(\filter_in_r_reg[27]_68 [9]),
-        .I1(\filter_in_r_reg[26]_69 [9]),
+       (.I0(\filter_in_r_reg[27]_4 [9]),
+        .I1(\filter_in_r_reg[26]_5 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [9]),
+        .I3(\filter_in_r_reg[25]_6 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [9]),
+        .I5(\filter_in_r_reg[24]_7 [9]),
         .O(\filtered_r[8]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_35 
-       (.I0(\filter_in_r_reg[31]_64 [9]),
-        .I1(\filter_in_r_reg[30]_65 [9]),
+       (.I0(\filter_in_r_reg[31]_0 [9]),
+        .I1(\filter_in_r_reg[30]_1 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [9]),
+        .I3(\filter_in_r_reg[29]_2 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [9]),
+        .I5(\filter_in_r_reg[28]_3 [9]),
         .O(\filtered_r[8]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_38 
-       (.I0(\filter_in_r_reg[19]_76 [8]),
-        .I1(\filter_in_r_reg[18]_77 [8]),
+       (.I0(\filter_in_r_reg[19]_12 [8]),
+        .I1(\filter_in_r_reg[18]_13 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [8]),
+        .I3(\filter_in_r_reg[17]_14 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [8]),
+        .I5(\filter_in_r_reg[16]_15 [8]),
         .O(\filtered_r[8]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_39 
-       (.I0(\filter_in_r_reg[23]_72 [8]),
-        .I1(\filter_in_r_reg[22]_73 [8]),
+       (.I0(\filter_in_r_reg[23]_8 [8]),
+        .I1(\filter_in_r_reg[22]_9 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [8]),
+        .I3(\filter_in_r_reg[21]_10 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [8]),
+        .I5(\filter_in_r_reg[20]_11 [8]),
         .O(\filtered_r[8]_i_39_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20467,102 +20461,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_40 
-       (.I0(\filter_in_r_reg[27]_68 [8]),
-        .I1(\filter_in_r_reg[26]_69 [8]),
+       (.I0(\filter_in_r_reg[27]_4 [8]),
+        .I1(\filter_in_r_reg[26]_5 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [8]),
+        .I3(\filter_in_r_reg[25]_6 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [8]),
+        .I5(\filter_in_r_reg[24]_7 [8]),
         .O(\filtered_r[8]_i_40_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_41 
-       (.I0(\filter_in_r_reg[31]_64 [8]),
-        .I1(\filter_in_r_reg[30]_65 [8]),
+       (.I0(\filter_in_r_reg[31]_0 [8]),
+        .I1(\filter_in_r_reg[30]_1 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [8]),
+        .I3(\filter_in_r_reg[29]_2 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [8]),
+        .I5(\filter_in_r_reg[28]_3 [8]),
         .O(\filtered_r[8]_i_41_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_42 
-       (.I0(\filter_in_r_reg[3]_92 [11]),
-        .I1(\filter_in_r_reg[2]_93 [11]),
+       (.I0(\filter_in_r_reg[3]_28 [11]),
+        .I1(\filter_in_r_reg[2]_29 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [11]),
+        .I3(\filter_in_r_reg[1]_30 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [11]),
+        .I5(\filter_in_r_reg[0]_31 [11]),
         .O(\filtered_r[8]_i_42_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_43 
-       (.I0(\filter_in_r_reg[7]_88 [11]),
-        .I1(\filter_in_r_reg[6]_89 [11]),
+       (.I0(\filter_in_r_reg[7]_24 [11]),
+        .I1(\filter_in_r_reg[6]_25 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [11]),
+        .I3(\filter_in_r_reg[5]_26 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [11]),
+        .I5(\filter_in_r_reg[4]_27 [11]),
         .O(\filtered_r[8]_i_43_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_44 
-       (.I0(\filter_in_r_reg[11]_84 [11]),
-        .I1(\filter_in_r_reg[10]_85 [11]),
+       (.I0(\filter_in_r_reg[11]_20 [11]),
+        .I1(\filter_in_r_reg[10]_21 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [11]),
+        .I3(\filter_in_r_reg[9]_22 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [11]),
+        .I5(\filter_in_r_reg[8]_23 [11]),
         .O(\filtered_r[8]_i_44_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_45 
-       (.I0(\filter_in_r_reg[15]_80 [11]),
-        .I1(\filter_in_r_reg[14]_81 [11]),
+       (.I0(\filter_in_r_reg[15]_16 [11]),
+        .I1(\filter_in_r_reg[14]_17 [11]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [11]),
+        .I3(\filter_in_r_reg[13]_18 [11]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [11]),
+        .I5(\filter_in_r_reg[12]_19 [11]),
         .O(\filtered_r[8]_i_45_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_46 
-       (.I0(\filter_in_r_reg[3]_92 [10]),
-        .I1(\filter_in_r_reg[2]_93 [10]),
+       (.I0(\filter_in_r_reg[3]_28 [10]),
+        .I1(\filter_in_r_reg[2]_29 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [10]),
+        .I3(\filter_in_r_reg[1]_30 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [10]),
+        .I5(\filter_in_r_reg[0]_31 [10]),
         .O(\filtered_r[8]_i_46_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_47 
-       (.I0(\filter_in_r_reg[7]_88 [10]),
-        .I1(\filter_in_r_reg[6]_89 [10]),
+       (.I0(\filter_in_r_reg[7]_24 [10]),
+        .I1(\filter_in_r_reg[6]_25 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [10]),
+        .I3(\filter_in_r_reg[5]_26 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [10]),
+        .I5(\filter_in_r_reg[4]_27 [10]),
         .O(\filtered_r[8]_i_47_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_48 
-       (.I0(\filter_in_r_reg[11]_84 [10]),
-        .I1(\filter_in_r_reg[10]_85 [10]),
+       (.I0(\filter_in_r_reg[11]_20 [10]),
+        .I1(\filter_in_r_reg[10]_21 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [10]),
+        .I3(\filter_in_r_reg[9]_22 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [10]),
+        .I5(\filter_in_r_reg[8]_23 [10]),
         .O(\filtered_r[8]_i_48_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_49 
-       (.I0(\filter_in_r_reg[15]_80 [10]),
-        .I1(\filter_in_r_reg[14]_81 [10]),
+       (.I0(\filter_in_r_reg[15]_16 [10]),
+        .I1(\filter_in_r_reg[14]_17 [10]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [10]),
+        .I3(\filter_in_r_reg[13]_18 [10]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [10]),
+        .I5(\filter_in_r_reg[12]_19 [10]),
         .O(\filtered_r[8]_i_49_n_0 ));
   LUT6 #(
     .INIT(64'h111DDD1DEEE222E2)) 
@@ -20577,82 +20571,82 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_50 
-       (.I0(\filter_in_r_reg[3]_92 [9]),
-        .I1(\filter_in_r_reg[2]_93 [9]),
+       (.I0(\filter_in_r_reg[3]_28 [9]),
+        .I1(\filter_in_r_reg[2]_29 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [9]),
+        .I3(\filter_in_r_reg[1]_30 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [9]),
+        .I5(\filter_in_r_reg[0]_31 [9]),
         .O(\filtered_r[8]_i_50_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_51 
-       (.I0(\filter_in_r_reg[7]_88 [9]),
-        .I1(\filter_in_r_reg[6]_89 [9]),
+       (.I0(\filter_in_r_reg[7]_24 [9]),
+        .I1(\filter_in_r_reg[6]_25 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [9]),
+        .I3(\filter_in_r_reg[5]_26 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [9]),
+        .I5(\filter_in_r_reg[4]_27 [9]),
         .O(\filtered_r[8]_i_51_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_52 
-       (.I0(\filter_in_r_reg[11]_84 [9]),
-        .I1(\filter_in_r_reg[10]_85 [9]),
+       (.I0(\filter_in_r_reg[11]_20 [9]),
+        .I1(\filter_in_r_reg[10]_21 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [9]),
+        .I3(\filter_in_r_reg[9]_22 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [9]),
+        .I5(\filter_in_r_reg[8]_23 [9]),
         .O(\filtered_r[8]_i_52_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_53 
-       (.I0(\filter_in_r_reg[15]_80 [9]),
-        .I1(\filter_in_r_reg[14]_81 [9]),
+       (.I0(\filter_in_r_reg[15]_16 [9]),
+        .I1(\filter_in_r_reg[14]_17 [9]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [9]),
+        .I3(\filter_in_r_reg[13]_18 [9]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [9]),
+        .I5(\filter_in_r_reg[12]_19 [9]),
         .O(\filtered_r[8]_i_53_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_54 
-       (.I0(\filter_in_r_reg[3]_92 [8]),
-        .I1(\filter_in_r_reg[2]_93 [8]),
+       (.I0(\filter_in_r_reg[3]_28 [8]),
+        .I1(\filter_in_r_reg[2]_29 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [8]),
+        .I3(\filter_in_r_reg[1]_30 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [8]),
+        .I5(\filter_in_r_reg[0]_31 [8]),
         .O(\filtered_r[8]_i_54_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_55 
-       (.I0(\filter_in_r_reg[7]_88 [8]),
-        .I1(\filter_in_r_reg[6]_89 [8]),
+       (.I0(\filter_in_r_reg[7]_24 [8]),
+        .I1(\filter_in_r_reg[6]_25 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [8]),
+        .I3(\filter_in_r_reg[5]_26 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [8]),
+        .I5(\filter_in_r_reg[4]_27 [8]),
         .O(\filtered_r[8]_i_55_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_56 
-       (.I0(\filter_in_r_reg[11]_84 [8]),
-        .I1(\filter_in_r_reg[10]_85 [8]),
+       (.I0(\filter_in_r_reg[11]_20 [8]),
+        .I1(\filter_in_r_reg[10]_21 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [8]),
+        .I3(\filter_in_r_reg[9]_22 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [8]),
+        .I5(\filter_in_r_reg[8]_23 [8]),
         .O(\filtered_r[8]_i_56_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \filtered_r[8]_i_57 
-       (.I0(\filter_in_r_reg[15]_80 [8]),
-        .I1(\filter_in_r_reg[14]_81 [8]),
+       (.I0(\filter_in_r_reg[15]_16 [8]),
+        .I1(\filter_in_r_reg[14]_17 [8]),
         .I2(\ring_buffer_read_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [8]),
+        .I3(\filter_in_r_reg[13]_18 [8]),
         .I4(\ring_buffer_read_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [8]),
+        .I5(\filter_in_r_reg[12]_19 [8]),
         .O(\filtered_r[8]_i_57_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
@@ -21553,42 +21547,42 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [0]),
-        .I1(\filter_in_l_reg[18]_109 [0]),
+       (.I0(\filter_in_l_reg[19]_44 [0]),
+        .I1(\filter_in_l_reg[18]_45 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [0]),
+        .I3(\filter_in_l_reg[17]_46 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [0]),
+        .I5(\filter_in_l_reg[16]_47 [0]),
         .O(\m_axis_tdata[0]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [0]),
-        .I1(\filter_in_l_reg[22]_105 [0]),
+       (.I0(\filter_in_l_reg[23]_40 [0]),
+        .I1(\filter_in_l_reg[22]_41 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [0]),
+        .I3(\filter_in_l_reg[21]_42 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [0]),
+        .I5(\filter_in_l_reg[20]_43 [0]),
         .O(\m_axis_tdata[0]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [0]),
-        .I1(\filter_in_l_reg[26]_101 [0]),
+       (.I0(\filter_in_l_reg[27]_36 [0]),
+        .I1(\filter_in_l_reg[26]_37 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [0]),
+        .I3(\filter_in_l_reg[25]_38 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [0]),
+        .I5(\filter_in_l_reg[24]_39 [0]),
         .O(\m_axis_tdata[0]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [0]),
-        .I1(\filter_in_l_reg[30]_97 [0]),
+       (.I0(\filter_in_l_reg[31]_32 [0]),
+        .I1(\filter_in_l_reg[30]_33 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [0]),
+        .I3(\filter_in_l_reg[29]_34 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [0]),
+        .I5(\filter_in_l_reg[28]_35 [0]),
         .O(\m_axis_tdata[0]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -21602,102 +21596,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [0]),
-        .I1(\filter_in_l_reg[2]_125 [0]),
+       (.I0(\filter_in_l_reg[3]_60 [0]),
+        .I1(\filter_in_l_reg[2]_61 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [0]),
+        .I3(\filter_in_l_reg[1]_62 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [0]),
+        .I5(\filter_in_l_reg[0]_63 [0]),
         .O(\m_axis_tdata[0]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [0]),
-        .I1(\filter_in_l_reg[6]_121 [0]),
+       (.I0(\filter_in_l_reg[7]_56 [0]),
+        .I1(\filter_in_l_reg[6]_57 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [0]),
+        .I3(\filter_in_l_reg[5]_58 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [0]),
+        .I5(\filter_in_l_reg[4]_59 [0]),
         .O(\m_axis_tdata[0]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [0]),
-        .I1(\filter_in_l_reg[10]_117 [0]),
+       (.I0(\filter_in_l_reg[11]_52 [0]),
+        .I1(\filter_in_l_reg[10]_53 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [0]),
+        .I3(\filter_in_l_reg[9]_54 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [0]),
+        .I5(\filter_in_l_reg[8]_55 [0]),
         .O(\m_axis_tdata[0]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [0]),
-        .I1(\filter_in_l_reg[14]_113 [0]),
+       (.I0(\filter_in_l_reg[15]_48 [0]),
+        .I1(\filter_in_l_reg[14]_49 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [0]),
+        .I3(\filter_in_l_reg[13]_50 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [0]),
+        .I5(\filter_in_l_reg[12]_51 [0]),
         .O(\m_axis_tdata[0]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [0]),
-        .I1(\filter_in_r_reg[18]_77 [0]),
+       (.I0(\filter_in_r_reg[19]_12 [0]),
+        .I1(\filter_in_r_reg[18]_13 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [0]),
+        .I3(\filter_in_r_reg[17]_14 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [0]),
+        .I5(\filter_in_r_reg[16]_15 [0]),
         .O(\m_axis_tdata[0]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [0]),
-        .I1(\filter_in_r_reg[22]_73 [0]),
+       (.I0(\filter_in_r_reg[23]_8 [0]),
+        .I1(\filter_in_r_reg[22]_9 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [0]),
+        .I3(\filter_in_r_reg[21]_10 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [0]),
+        .I5(\filter_in_r_reg[20]_11 [0]),
         .O(\m_axis_tdata[0]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [0]),
-        .I1(\filter_in_r_reg[26]_69 [0]),
+       (.I0(\filter_in_r_reg[27]_4 [0]),
+        .I1(\filter_in_r_reg[26]_5 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [0]),
+        .I3(\filter_in_r_reg[25]_6 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [0]),
+        .I5(\filter_in_r_reg[24]_7 [0]),
         .O(\m_axis_tdata[0]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [0]),
-        .I1(\filter_in_r_reg[30]_65 [0]),
+       (.I0(\filter_in_r_reg[31]_0 [0]),
+        .I1(\filter_in_r_reg[30]_1 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [0]),
+        .I3(\filter_in_r_reg[29]_2 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [0]),
+        .I5(\filter_in_r_reg[28]_3 [0]),
         .O(\m_axis_tdata[0]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [0]),
-        .I1(\filter_in_r_reg[2]_93 [0]),
+       (.I0(\filter_in_r_reg[3]_28 [0]),
+        .I1(\filter_in_r_reg[2]_29 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [0]),
+        .I3(\filter_in_r_reg[1]_30 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [0]),
+        .I5(\filter_in_r_reg[0]_31 [0]),
         .O(\m_axis_tdata[0]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [0]),
-        .I1(\filter_in_r_reg[6]_89 [0]),
+       (.I0(\filter_in_r_reg[7]_24 [0]),
+        .I1(\filter_in_r_reg[6]_25 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [0]),
+        .I3(\filter_in_r_reg[5]_26 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [0]),
+        .I5(\filter_in_r_reg[4]_27 [0]),
         .O(\m_axis_tdata[0]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -21711,62 +21705,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [0]),
-        .I1(\filter_in_r_reg[10]_85 [0]),
+       (.I0(\filter_in_r_reg[11]_20 [0]),
+        .I1(\filter_in_r_reg[10]_21 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [0]),
+        .I3(\filter_in_r_reg[9]_22 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [0]),
+        .I5(\filter_in_r_reg[8]_23 [0]),
         .O(\m_axis_tdata[0]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[0]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [0]),
-        .I1(\filter_in_r_reg[14]_81 [0]),
+       (.I0(\filter_in_r_reg[15]_16 [0]),
+        .I1(\filter_in_r_reg[14]_17 [0]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [0]),
+        .I3(\filter_in_r_reg[13]_18 [0]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [0]),
+        .I5(\filter_in_r_reg[12]_19 [0]),
         .O(\m_axis_tdata[0]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [10]),
-        .I1(\filter_in_l_reg[18]_109 [10]),
+       (.I0(\filter_in_l_reg[19]_44 [10]),
+        .I1(\filter_in_l_reg[18]_45 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [10]),
+        .I3(\filter_in_l_reg[17]_46 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [10]),
+        .I5(\filter_in_l_reg[16]_47 [10]),
         .O(\m_axis_tdata[10]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [10]),
-        .I1(\filter_in_l_reg[22]_105 [10]),
+       (.I0(\filter_in_l_reg[23]_40 [10]),
+        .I1(\filter_in_l_reg[22]_41 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [10]),
+        .I3(\filter_in_l_reg[21]_42 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [10]),
+        .I5(\filter_in_l_reg[20]_43 [10]),
         .O(\m_axis_tdata[10]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [10]),
-        .I1(\filter_in_l_reg[26]_101 [10]),
+       (.I0(\filter_in_l_reg[27]_36 [10]),
+        .I1(\filter_in_l_reg[26]_37 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [10]),
+        .I3(\filter_in_l_reg[25]_38 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [10]),
+        .I5(\filter_in_l_reg[24]_39 [10]),
         .O(\m_axis_tdata[10]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [10]),
-        .I1(\filter_in_l_reg[30]_97 [10]),
+       (.I0(\filter_in_l_reg[31]_32 [10]),
+        .I1(\filter_in_l_reg[30]_33 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [10]),
+        .I3(\filter_in_l_reg[29]_34 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [10]),
+        .I5(\filter_in_l_reg[28]_35 [10]),
         .O(\m_axis_tdata[10]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -21780,102 +21774,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [10]),
-        .I1(\filter_in_l_reg[2]_125 [10]),
+       (.I0(\filter_in_l_reg[3]_60 [10]),
+        .I1(\filter_in_l_reg[2]_61 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [10]),
+        .I3(\filter_in_l_reg[1]_62 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [10]),
+        .I5(\filter_in_l_reg[0]_63 [10]),
         .O(\m_axis_tdata[10]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [10]),
-        .I1(\filter_in_l_reg[6]_121 [10]),
+       (.I0(\filter_in_l_reg[7]_56 [10]),
+        .I1(\filter_in_l_reg[6]_57 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [10]),
+        .I3(\filter_in_l_reg[5]_58 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [10]),
+        .I5(\filter_in_l_reg[4]_59 [10]),
         .O(\m_axis_tdata[10]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [10]),
-        .I1(\filter_in_l_reg[10]_117 [10]),
+       (.I0(\filter_in_l_reg[11]_52 [10]),
+        .I1(\filter_in_l_reg[10]_53 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [10]),
+        .I3(\filter_in_l_reg[9]_54 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [10]),
+        .I5(\filter_in_l_reg[8]_55 [10]),
         .O(\m_axis_tdata[10]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [10]),
-        .I1(\filter_in_l_reg[14]_113 [10]),
+       (.I0(\filter_in_l_reg[15]_48 [10]),
+        .I1(\filter_in_l_reg[14]_49 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [10]),
+        .I3(\filter_in_l_reg[13]_50 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [10]),
+        .I5(\filter_in_l_reg[12]_51 [10]),
         .O(\m_axis_tdata[10]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [10]),
-        .I1(\filter_in_r_reg[18]_77 [10]),
+       (.I0(\filter_in_r_reg[19]_12 [10]),
+        .I1(\filter_in_r_reg[18]_13 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [10]),
+        .I3(\filter_in_r_reg[17]_14 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [10]),
+        .I5(\filter_in_r_reg[16]_15 [10]),
         .O(\m_axis_tdata[10]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [10]),
-        .I1(\filter_in_r_reg[22]_73 [10]),
+       (.I0(\filter_in_r_reg[23]_8 [10]),
+        .I1(\filter_in_r_reg[22]_9 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [10]),
+        .I3(\filter_in_r_reg[21]_10 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [10]),
+        .I5(\filter_in_r_reg[20]_11 [10]),
         .O(\m_axis_tdata[10]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [10]),
-        .I1(\filter_in_r_reg[26]_69 [10]),
+       (.I0(\filter_in_r_reg[27]_4 [10]),
+        .I1(\filter_in_r_reg[26]_5 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [10]),
+        .I3(\filter_in_r_reg[25]_6 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [10]),
+        .I5(\filter_in_r_reg[24]_7 [10]),
         .O(\m_axis_tdata[10]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [10]),
-        .I1(\filter_in_r_reg[30]_65 [10]),
+       (.I0(\filter_in_r_reg[31]_0 [10]),
+        .I1(\filter_in_r_reg[30]_1 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [10]),
+        .I3(\filter_in_r_reg[29]_2 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [10]),
+        .I5(\filter_in_r_reg[28]_3 [10]),
         .O(\m_axis_tdata[10]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [10]),
-        .I1(\filter_in_r_reg[2]_93 [10]),
+       (.I0(\filter_in_r_reg[3]_28 [10]),
+        .I1(\filter_in_r_reg[2]_29 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [10]),
+        .I3(\filter_in_r_reg[1]_30 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [10]),
+        .I5(\filter_in_r_reg[0]_31 [10]),
         .O(\m_axis_tdata[10]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [10]),
-        .I1(\filter_in_r_reg[6]_89 [10]),
+       (.I0(\filter_in_r_reg[7]_24 [10]),
+        .I1(\filter_in_r_reg[6]_25 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [10]),
+        .I3(\filter_in_r_reg[5]_26 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [10]),
+        .I5(\filter_in_r_reg[4]_27 [10]),
         .O(\m_axis_tdata[10]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -21889,62 +21883,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [10]),
-        .I1(\filter_in_r_reg[10]_85 [10]),
+       (.I0(\filter_in_r_reg[11]_20 [10]),
+        .I1(\filter_in_r_reg[10]_21 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [10]),
+        .I3(\filter_in_r_reg[9]_22 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [10]),
+        .I5(\filter_in_r_reg[8]_23 [10]),
         .O(\m_axis_tdata[10]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[10]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [10]),
-        .I1(\filter_in_r_reg[14]_81 [10]),
+       (.I0(\filter_in_r_reg[15]_16 [10]),
+        .I1(\filter_in_r_reg[14]_17 [10]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [10]),
+        .I3(\filter_in_r_reg[13]_18 [10]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [10]),
+        .I5(\filter_in_r_reg[12]_19 [10]),
         .O(\m_axis_tdata[10]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [11]),
-        .I1(\filter_in_l_reg[18]_109 [11]),
+       (.I0(\filter_in_l_reg[19]_44 [11]),
+        .I1(\filter_in_l_reg[18]_45 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [11]),
+        .I3(\filter_in_l_reg[17]_46 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [11]),
+        .I5(\filter_in_l_reg[16]_47 [11]),
         .O(\m_axis_tdata[11]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [11]),
-        .I1(\filter_in_l_reg[22]_105 [11]),
+       (.I0(\filter_in_l_reg[23]_40 [11]),
+        .I1(\filter_in_l_reg[22]_41 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [11]),
+        .I3(\filter_in_l_reg[21]_42 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [11]),
+        .I5(\filter_in_l_reg[20]_43 [11]),
         .O(\m_axis_tdata[11]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [11]),
-        .I1(\filter_in_l_reg[26]_101 [11]),
+       (.I0(\filter_in_l_reg[27]_36 [11]),
+        .I1(\filter_in_l_reg[26]_37 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [11]),
+        .I3(\filter_in_l_reg[25]_38 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [11]),
+        .I5(\filter_in_l_reg[24]_39 [11]),
         .O(\m_axis_tdata[11]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [11]),
-        .I1(\filter_in_l_reg[30]_97 [11]),
+       (.I0(\filter_in_l_reg[31]_32 [11]),
+        .I1(\filter_in_l_reg[30]_33 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [11]),
+        .I3(\filter_in_l_reg[29]_34 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [11]),
+        .I5(\filter_in_l_reg[28]_35 [11]),
         .O(\m_axis_tdata[11]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -21958,102 +21952,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [11]),
-        .I1(\filter_in_l_reg[2]_125 [11]),
+       (.I0(\filter_in_l_reg[3]_60 [11]),
+        .I1(\filter_in_l_reg[2]_61 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [11]),
+        .I3(\filter_in_l_reg[1]_62 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [11]),
+        .I5(\filter_in_l_reg[0]_63 [11]),
         .O(\m_axis_tdata[11]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [11]),
-        .I1(\filter_in_l_reg[6]_121 [11]),
+       (.I0(\filter_in_l_reg[7]_56 [11]),
+        .I1(\filter_in_l_reg[6]_57 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [11]),
+        .I3(\filter_in_l_reg[5]_58 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [11]),
+        .I5(\filter_in_l_reg[4]_59 [11]),
         .O(\m_axis_tdata[11]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [11]),
-        .I1(\filter_in_l_reg[10]_117 [11]),
+       (.I0(\filter_in_l_reg[11]_52 [11]),
+        .I1(\filter_in_l_reg[10]_53 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [11]),
+        .I3(\filter_in_l_reg[9]_54 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [11]),
+        .I5(\filter_in_l_reg[8]_55 [11]),
         .O(\m_axis_tdata[11]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [11]),
-        .I1(\filter_in_l_reg[14]_113 [11]),
+       (.I0(\filter_in_l_reg[15]_48 [11]),
+        .I1(\filter_in_l_reg[14]_49 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [11]),
+        .I3(\filter_in_l_reg[13]_50 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [11]),
+        .I5(\filter_in_l_reg[12]_51 [11]),
         .O(\m_axis_tdata[11]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [11]),
-        .I1(\filter_in_r_reg[18]_77 [11]),
+       (.I0(\filter_in_r_reg[19]_12 [11]),
+        .I1(\filter_in_r_reg[18]_13 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [11]),
+        .I3(\filter_in_r_reg[17]_14 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [11]),
+        .I5(\filter_in_r_reg[16]_15 [11]),
         .O(\m_axis_tdata[11]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [11]),
-        .I1(\filter_in_r_reg[22]_73 [11]),
+       (.I0(\filter_in_r_reg[23]_8 [11]),
+        .I1(\filter_in_r_reg[22]_9 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [11]),
+        .I3(\filter_in_r_reg[21]_10 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [11]),
+        .I5(\filter_in_r_reg[20]_11 [11]),
         .O(\m_axis_tdata[11]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [11]),
-        .I1(\filter_in_r_reg[26]_69 [11]),
+       (.I0(\filter_in_r_reg[27]_4 [11]),
+        .I1(\filter_in_r_reg[26]_5 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [11]),
+        .I3(\filter_in_r_reg[25]_6 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [11]),
+        .I5(\filter_in_r_reg[24]_7 [11]),
         .O(\m_axis_tdata[11]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [11]),
-        .I1(\filter_in_r_reg[30]_65 [11]),
+       (.I0(\filter_in_r_reg[31]_0 [11]),
+        .I1(\filter_in_r_reg[30]_1 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [11]),
+        .I3(\filter_in_r_reg[29]_2 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [11]),
+        .I5(\filter_in_r_reg[28]_3 [11]),
         .O(\m_axis_tdata[11]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [11]),
-        .I1(\filter_in_r_reg[2]_93 [11]),
+       (.I0(\filter_in_r_reg[3]_28 [11]),
+        .I1(\filter_in_r_reg[2]_29 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [11]),
+        .I3(\filter_in_r_reg[1]_30 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [11]),
+        .I5(\filter_in_r_reg[0]_31 [11]),
         .O(\m_axis_tdata[11]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [11]),
-        .I1(\filter_in_r_reg[6]_89 [11]),
+       (.I0(\filter_in_r_reg[7]_24 [11]),
+        .I1(\filter_in_r_reg[6]_25 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [11]),
+        .I3(\filter_in_r_reg[5]_26 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [11]),
+        .I5(\filter_in_r_reg[4]_27 [11]),
         .O(\m_axis_tdata[11]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22067,62 +22061,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [11]),
-        .I1(\filter_in_r_reg[10]_85 [11]),
+       (.I0(\filter_in_r_reg[11]_20 [11]),
+        .I1(\filter_in_r_reg[10]_21 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [11]),
+        .I3(\filter_in_r_reg[9]_22 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [11]),
+        .I5(\filter_in_r_reg[8]_23 [11]),
         .O(\m_axis_tdata[11]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[11]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [11]),
-        .I1(\filter_in_r_reg[14]_81 [11]),
+       (.I0(\filter_in_r_reg[15]_16 [11]),
+        .I1(\filter_in_r_reg[14]_17 [11]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [11]),
+        .I3(\filter_in_r_reg[13]_18 [11]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [11]),
+        .I5(\filter_in_r_reg[12]_19 [11]),
         .O(\m_axis_tdata[11]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [12]),
-        .I1(\filter_in_l_reg[18]_109 [12]),
+       (.I0(\filter_in_l_reg[19]_44 [12]),
+        .I1(\filter_in_l_reg[18]_45 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [12]),
+        .I3(\filter_in_l_reg[17]_46 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [12]),
+        .I5(\filter_in_l_reg[16]_47 [12]),
         .O(\m_axis_tdata[12]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [12]),
-        .I1(\filter_in_l_reg[22]_105 [12]),
+       (.I0(\filter_in_l_reg[23]_40 [12]),
+        .I1(\filter_in_l_reg[22]_41 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [12]),
+        .I3(\filter_in_l_reg[21]_42 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [12]),
+        .I5(\filter_in_l_reg[20]_43 [12]),
         .O(\m_axis_tdata[12]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [12]),
-        .I1(\filter_in_l_reg[26]_101 [12]),
+       (.I0(\filter_in_l_reg[27]_36 [12]),
+        .I1(\filter_in_l_reg[26]_37 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [12]),
+        .I3(\filter_in_l_reg[25]_38 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [12]),
+        .I5(\filter_in_l_reg[24]_39 [12]),
         .O(\m_axis_tdata[12]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [12]),
-        .I1(\filter_in_l_reg[30]_97 [12]),
+       (.I0(\filter_in_l_reg[31]_32 [12]),
+        .I1(\filter_in_l_reg[30]_33 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [12]),
+        .I3(\filter_in_l_reg[29]_34 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [12]),
+        .I5(\filter_in_l_reg[28]_35 [12]),
         .O(\m_axis_tdata[12]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22136,102 +22130,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [12]),
-        .I1(\filter_in_l_reg[2]_125 [12]),
+       (.I0(\filter_in_l_reg[3]_60 [12]),
+        .I1(\filter_in_l_reg[2]_61 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [12]),
+        .I3(\filter_in_l_reg[1]_62 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [12]),
+        .I5(\filter_in_l_reg[0]_63 [12]),
         .O(\m_axis_tdata[12]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [12]),
-        .I1(\filter_in_l_reg[6]_121 [12]),
+       (.I0(\filter_in_l_reg[7]_56 [12]),
+        .I1(\filter_in_l_reg[6]_57 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [12]),
+        .I3(\filter_in_l_reg[5]_58 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [12]),
+        .I5(\filter_in_l_reg[4]_59 [12]),
         .O(\m_axis_tdata[12]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [12]),
-        .I1(\filter_in_l_reg[10]_117 [12]),
+       (.I0(\filter_in_l_reg[11]_52 [12]),
+        .I1(\filter_in_l_reg[10]_53 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [12]),
+        .I3(\filter_in_l_reg[9]_54 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [12]),
+        .I5(\filter_in_l_reg[8]_55 [12]),
         .O(\m_axis_tdata[12]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [12]),
-        .I1(\filter_in_l_reg[14]_113 [12]),
+       (.I0(\filter_in_l_reg[15]_48 [12]),
+        .I1(\filter_in_l_reg[14]_49 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [12]),
+        .I3(\filter_in_l_reg[13]_50 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [12]),
+        .I5(\filter_in_l_reg[12]_51 [12]),
         .O(\m_axis_tdata[12]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [12]),
-        .I1(\filter_in_r_reg[18]_77 [12]),
+       (.I0(\filter_in_r_reg[19]_12 [12]),
+        .I1(\filter_in_r_reg[18]_13 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [12]),
+        .I3(\filter_in_r_reg[17]_14 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [12]),
+        .I5(\filter_in_r_reg[16]_15 [12]),
         .O(\m_axis_tdata[12]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [12]),
-        .I1(\filter_in_r_reg[22]_73 [12]),
+       (.I0(\filter_in_r_reg[23]_8 [12]),
+        .I1(\filter_in_r_reg[22]_9 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [12]),
+        .I3(\filter_in_r_reg[21]_10 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [12]),
+        .I5(\filter_in_r_reg[20]_11 [12]),
         .O(\m_axis_tdata[12]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [12]),
-        .I1(\filter_in_r_reg[26]_69 [12]),
+       (.I0(\filter_in_r_reg[27]_4 [12]),
+        .I1(\filter_in_r_reg[26]_5 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [12]),
+        .I3(\filter_in_r_reg[25]_6 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [12]),
+        .I5(\filter_in_r_reg[24]_7 [12]),
         .O(\m_axis_tdata[12]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [12]),
-        .I1(\filter_in_r_reg[30]_65 [12]),
+       (.I0(\filter_in_r_reg[31]_0 [12]),
+        .I1(\filter_in_r_reg[30]_1 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [12]),
+        .I3(\filter_in_r_reg[29]_2 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [12]),
+        .I5(\filter_in_r_reg[28]_3 [12]),
         .O(\m_axis_tdata[12]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [12]),
-        .I1(\filter_in_r_reg[2]_93 [12]),
+       (.I0(\filter_in_r_reg[3]_28 [12]),
+        .I1(\filter_in_r_reg[2]_29 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [12]),
+        .I3(\filter_in_r_reg[1]_30 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [12]),
+        .I5(\filter_in_r_reg[0]_31 [12]),
         .O(\m_axis_tdata[12]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [12]),
-        .I1(\filter_in_r_reg[6]_89 [12]),
+       (.I0(\filter_in_r_reg[7]_24 [12]),
+        .I1(\filter_in_r_reg[6]_25 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [12]),
+        .I3(\filter_in_r_reg[5]_26 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [12]),
+        .I5(\filter_in_r_reg[4]_27 [12]),
         .O(\m_axis_tdata[12]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22245,62 +22239,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [12]),
-        .I1(\filter_in_r_reg[10]_85 [12]),
+       (.I0(\filter_in_r_reg[11]_20 [12]),
+        .I1(\filter_in_r_reg[10]_21 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [12]),
+        .I3(\filter_in_r_reg[9]_22 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [12]),
+        .I5(\filter_in_r_reg[8]_23 [12]),
         .O(\m_axis_tdata[12]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[12]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [12]),
-        .I1(\filter_in_r_reg[14]_81 [12]),
+       (.I0(\filter_in_r_reg[15]_16 [12]),
+        .I1(\filter_in_r_reg[14]_17 [12]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [12]),
+        .I3(\filter_in_r_reg[13]_18 [12]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [12]),
+        .I5(\filter_in_r_reg[12]_19 [12]),
         .O(\m_axis_tdata[12]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [13]),
-        .I1(\filter_in_l_reg[18]_109 [13]),
+       (.I0(\filter_in_l_reg[19]_44 [13]),
+        .I1(\filter_in_l_reg[18]_45 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [13]),
+        .I3(\filter_in_l_reg[17]_46 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [13]),
+        .I5(\filter_in_l_reg[16]_47 [13]),
         .O(\m_axis_tdata[13]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [13]),
-        .I1(\filter_in_l_reg[22]_105 [13]),
+       (.I0(\filter_in_l_reg[23]_40 [13]),
+        .I1(\filter_in_l_reg[22]_41 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [13]),
+        .I3(\filter_in_l_reg[21]_42 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [13]),
+        .I5(\filter_in_l_reg[20]_43 [13]),
         .O(\m_axis_tdata[13]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [13]),
-        .I1(\filter_in_l_reg[26]_101 [13]),
+       (.I0(\filter_in_l_reg[27]_36 [13]),
+        .I1(\filter_in_l_reg[26]_37 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [13]),
+        .I3(\filter_in_l_reg[25]_38 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [13]),
+        .I5(\filter_in_l_reg[24]_39 [13]),
         .O(\m_axis_tdata[13]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [13]),
-        .I1(\filter_in_l_reg[30]_97 [13]),
+       (.I0(\filter_in_l_reg[31]_32 [13]),
+        .I1(\filter_in_l_reg[30]_33 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [13]),
+        .I3(\filter_in_l_reg[29]_34 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [13]),
+        .I5(\filter_in_l_reg[28]_35 [13]),
         .O(\m_axis_tdata[13]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22314,102 +22308,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [13]),
-        .I1(\filter_in_l_reg[2]_125 [13]),
+       (.I0(\filter_in_l_reg[3]_60 [13]),
+        .I1(\filter_in_l_reg[2]_61 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [13]),
+        .I3(\filter_in_l_reg[1]_62 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [13]),
+        .I5(\filter_in_l_reg[0]_63 [13]),
         .O(\m_axis_tdata[13]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [13]),
-        .I1(\filter_in_l_reg[6]_121 [13]),
+       (.I0(\filter_in_l_reg[7]_56 [13]),
+        .I1(\filter_in_l_reg[6]_57 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [13]),
+        .I3(\filter_in_l_reg[5]_58 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [13]),
+        .I5(\filter_in_l_reg[4]_59 [13]),
         .O(\m_axis_tdata[13]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [13]),
-        .I1(\filter_in_l_reg[10]_117 [13]),
+       (.I0(\filter_in_l_reg[11]_52 [13]),
+        .I1(\filter_in_l_reg[10]_53 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [13]),
+        .I3(\filter_in_l_reg[9]_54 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [13]),
+        .I5(\filter_in_l_reg[8]_55 [13]),
         .O(\m_axis_tdata[13]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [13]),
-        .I1(\filter_in_l_reg[14]_113 [13]),
+       (.I0(\filter_in_l_reg[15]_48 [13]),
+        .I1(\filter_in_l_reg[14]_49 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [13]),
+        .I3(\filter_in_l_reg[13]_50 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [13]),
+        .I5(\filter_in_l_reg[12]_51 [13]),
         .O(\m_axis_tdata[13]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [13]),
-        .I1(\filter_in_r_reg[18]_77 [13]),
+       (.I0(\filter_in_r_reg[19]_12 [13]),
+        .I1(\filter_in_r_reg[18]_13 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [13]),
+        .I3(\filter_in_r_reg[17]_14 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [13]),
+        .I5(\filter_in_r_reg[16]_15 [13]),
         .O(\m_axis_tdata[13]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [13]),
-        .I1(\filter_in_r_reg[22]_73 [13]),
+       (.I0(\filter_in_r_reg[23]_8 [13]),
+        .I1(\filter_in_r_reg[22]_9 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [13]),
+        .I3(\filter_in_r_reg[21]_10 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [13]),
+        .I5(\filter_in_r_reg[20]_11 [13]),
         .O(\m_axis_tdata[13]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [13]),
-        .I1(\filter_in_r_reg[26]_69 [13]),
+       (.I0(\filter_in_r_reg[27]_4 [13]),
+        .I1(\filter_in_r_reg[26]_5 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [13]),
+        .I3(\filter_in_r_reg[25]_6 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [13]),
+        .I5(\filter_in_r_reg[24]_7 [13]),
         .O(\m_axis_tdata[13]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [13]),
-        .I1(\filter_in_r_reg[30]_65 [13]),
+       (.I0(\filter_in_r_reg[31]_0 [13]),
+        .I1(\filter_in_r_reg[30]_1 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [13]),
+        .I3(\filter_in_r_reg[29]_2 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [13]),
+        .I5(\filter_in_r_reg[28]_3 [13]),
         .O(\m_axis_tdata[13]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [13]),
-        .I1(\filter_in_r_reg[2]_93 [13]),
+       (.I0(\filter_in_r_reg[3]_28 [13]),
+        .I1(\filter_in_r_reg[2]_29 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [13]),
+        .I3(\filter_in_r_reg[1]_30 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [13]),
+        .I5(\filter_in_r_reg[0]_31 [13]),
         .O(\m_axis_tdata[13]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [13]),
-        .I1(\filter_in_r_reg[6]_89 [13]),
+       (.I0(\filter_in_r_reg[7]_24 [13]),
+        .I1(\filter_in_r_reg[6]_25 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [13]),
+        .I3(\filter_in_r_reg[5]_26 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [13]),
+        .I5(\filter_in_r_reg[4]_27 [13]),
         .O(\m_axis_tdata[13]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22423,62 +22417,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [13]),
-        .I1(\filter_in_r_reg[10]_85 [13]),
+       (.I0(\filter_in_r_reg[11]_20 [13]),
+        .I1(\filter_in_r_reg[10]_21 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [13]),
+        .I3(\filter_in_r_reg[9]_22 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [13]),
+        .I5(\filter_in_r_reg[8]_23 [13]),
         .O(\m_axis_tdata[13]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[13]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [13]),
-        .I1(\filter_in_r_reg[14]_81 [13]),
+       (.I0(\filter_in_r_reg[15]_16 [13]),
+        .I1(\filter_in_r_reg[14]_17 [13]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [13]),
+        .I3(\filter_in_r_reg[13]_18 [13]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [13]),
+        .I5(\filter_in_r_reg[12]_19 [13]),
         .O(\m_axis_tdata[13]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [14]),
-        .I1(\filter_in_l_reg[18]_109 [14]),
+       (.I0(\filter_in_l_reg[19]_44 [14]),
+        .I1(\filter_in_l_reg[18]_45 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [14]),
+        .I3(\filter_in_l_reg[17]_46 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [14]),
+        .I5(\filter_in_l_reg[16]_47 [14]),
         .O(\m_axis_tdata[14]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [14]),
-        .I1(\filter_in_l_reg[22]_105 [14]),
+       (.I0(\filter_in_l_reg[23]_40 [14]),
+        .I1(\filter_in_l_reg[22]_41 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [14]),
+        .I3(\filter_in_l_reg[21]_42 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [14]),
+        .I5(\filter_in_l_reg[20]_43 [14]),
         .O(\m_axis_tdata[14]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [14]),
-        .I1(\filter_in_l_reg[26]_101 [14]),
+       (.I0(\filter_in_l_reg[27]_36 [14]),
+        .I1(\filter_in_l_reg[26]_37 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [14]),
+        .I3(\filter_in_l_reg[25]_38 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [14]),
+        .I5(\filter_in_l_reg[24]_39 [14]),
         .O(\m_axis_tdata[14]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [14]),
-        .I1(\filter_in_l_reg[30]_97 [14]),
+       (.I0(\filter_in_l_reg[31]_32 [14]),
+        .I1(\filter_in_l_reg[30]_33 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [14]),
+        .I3(\filter_in_l_reg[29]_34 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [14]),
+        .I5(\filter_in_l_reg[28]_35 [14]),
         .O(\m_axis_tdata[14]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22492,102 +22486,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [14]),
-        .I1(\filter_in_l_reg[2]_125 [14]),
+       (.I0(\filter_in_l_reg[3]_60 [14]),
+        .I1(\filter_in_l_reg[2]_61 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [14]),
+        .I3(\filter_in_l_reg[1]_62 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [14]),
+        .I5(\filter_in_l_reg[0]_63 [14]),
         .O(\m_axis_tdata[14]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [14]),
-        .I1(\filter_in_l_reg[6]_121 [14]),
+       (.I0(\filter_in_l_reg[7]_56 [14]),
+        .I1(\filter_in_l_reg[6]_57 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [14]),
+        .I3(\filter_in_l_reg[5]_58 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [14]),
+        .I5(\filter_in_l_reg[4]_59 [14]),
         .O(\m_axis_tdata[14]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [14]),
-        .I1(\filter_in_l_reg[10]_117 [14]),
+       (.I0(\filter_in_l_reg[11]_52 [14]),
+        .I1(\filter_in_l_reg[10]_53 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [14]),
+        .I3(\filter_in_l_reg[9]_54 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [14]),
+        .I5(\filter_in_l_reg[8]_55 [14]),
         .O(\m_axis_tdata[14]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [14]),
-        .I1(\filter_in_l_reg[14]_113 [14]),
+       (.I0(\filter_in_l_reg[15]_48 [14]),
+        .I1(\filter_in_l_reg[14]_49 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [14]),
+        .I3(\filter_in_l_reg[13]_50 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [14]),
+        .I5(\filter_in_l_reg[12]_51 [14]),
         .O(\m_axis_tdata[14]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [14]),
-        .I1(\filter_in_r_reg[18]_77 [14]),
+       (.I0(\filter_in_r_reg[19]_12 [14]),
+        .I1(\filter_in_r_reg[18]_13 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [14]),
+        .I3(\filter_in_r_reg[17]_14 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [14]),
+        .I5(\filter_in_r_reg[16]_15 [14]),
         .O(\m_axis_tdata[14]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [14]),
-        .I1(\filter_in_r_reg[22]_73 [14]),
+       (.I0(\filter_in_r_reg[23]_8 [14]),
+        .I1(\filter_in_r_reg[22]_9 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [14]),
+        .I3(\filter_in_r_reg[21]_10 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [14]),
+        .I5(\filter_in_r_reg[20]_11 [14]),
         .O(\m_axis_tdata[14]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [14]),
-        .I1(\filter_in_r_reg[26]_69 [14]),
+       (.I0(\filter_in_r_reg[27]_4 [14]),
+        .I1(\filter_in_r_reg[26]_5 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [14]),
+        .I3(\filter_in_r_reg[25]_6 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [14]),
+        .I5(\filter_in_r_reg[24]_7 [14]),
         .O(\m_axis_tdata[14]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [14]),
-        .I1(\filter_in_r_reg[30]_65 [14]),
+       (.I0(\filter_in_r_reg[31]_0 [14]),
+        .I1(\filter_in_r_reg[30]_1 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [14]),
+        .I3(\filter_in_r_reg[29]_2 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [14]),
+        .I5(\filter_in_r_reg[28]_3 [14]),
         .O(\m_axis_tdata[14]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [14]),
-        .I1(\filter_in_r_reg[2]_93 [14]),
+       (.I0(\filter_in_r_reg[3]_28 [14]),
+        .I1(\filter_in_r_reg[2]_29 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [14]),
+        .I3(\filter_in_r_reg[1]_30 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [14]),
+        .I5(\filter_in_r_reg[0]_31 [14]),
         .O(\m_axis_tdata[14]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [14]),
-        .I1(\filter_in_r_reg[6]_89 [14]),
+       (.I0(\filter_in_r_reg[7]_24 [14]),
+        .I1(\filter_in_r_reg[6]_25 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [14]),
+        .I3(\filter_in_r_reg[5]_26 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [14]),
+        .I5(\filter_in_r_reg[4]_27 [14]),
         .O(\m_axis_tdata[14]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22601,62 +22595,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [14]),
-        .I1(\filter_in_r_reg[10]_85 [14]),
+       (.I0(\filter_in_r_reg[11]_20 [14]),
+        .I1(\filter_in_r_reg[10]_21 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [14]),
+        .I3(\filter_in_r_reg[9]_22 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [14]),
+        .I5(\filter_in_r_reg[8]_23 [14]),
         .O(\m_axis_tdata[14]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[14]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [14]),
-        .I1(\filter_in_r_reg[14]_81 [14]),
+       (.I0(\filter_in_r_reg[15]_16 [14]),
+        .I1(\filter_in_r_reg[14]_17 [14]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [14]),
+        .I3(\filter_in_r_reg[13]_18 [14]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [14]),
+        .I5(\filter_in_r_reg[12]_19 [14]),
         .O(\m_axis_tdata[14]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [15]),
-        .I1(\filter_in_l_reg[18]_109 [15]),
+       (.I0(\filter_in_l_reg[19]_44 [15]),
+        .I1(\filter_in_l_reg[18]_45 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [15]),
+        .I3(\filter_in_l_reg[17]_46 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [15]),
+        .I5(\filter_in_l_reg[16]_47 [15]),
         .O(\m_axis_tdata[15]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [15]),
-        .I1(\filter_in_l_reg[22]_105 [15]),
+       (.I0(\filter_in_l_reg[23]_40 [15]),
+        .I1(\filter_in_l_reg[22]_41 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [15]),
+        .I3(\filter_in_l_reg[21]_42 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [15]),
+        .I5(\filter_in_l_reg[20]_43 [15]),
         .O(\m_axis_tdata[15]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [15]),
-        .I1(\filter_in_l_reg[26]_101 [15]),
+       (.I0(\filter_in_l_reg[27]_36 [15]),
+        .I1(\filter_in_l_reg[26]_37 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [15]),
+        .I3(\filter_in_l_reg[25]_38 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [15]),
+        .I5(\filter_in_l_reg[24]_39 [15]),
         .O(\m_axis_tdata[15]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [15]),
-        .I1(\filter_in_l_reg[30]_97 [15]),
+       (.I0(\filter_in_l_reg[31]_32 [15]),
+        .I1(\filter_in_l_reg[30]_33 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [15]),
+        .I3(\filter_in_l_reg[29]_34 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [15]),
+        .I5(\filter_in_l_reg[28]_35 [15]),
         .O(\m_axis_tdata[15]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22670,102 +22664,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [15]),
-        .I1(\filter_in_l_reg[2]_125 [15]),
+       (.I0(\filter_in_l_reg[3]_60 [15]),
+        .I1(\filter_in_l_reg[2]_61 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [15]),
+        .I3(\filter_in_l_reg[1]_62 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [15]),
+        .I5(\filter_in_l_reg[0]_63 [15]),
         .O(\m_axis_tdata[15]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [15]),
-        .I1(\filter_in_l_reg[6]_121 [15]),
+       (.I0(\filter_in_l_reg[7]_56 [15]),
+        .I1(\filter_in_l_reg[6]_57 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [15]),
+        .I3(\filter_in_l_reg[5]_58 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [15]),
+        .I5(\filter_in_l_reg[4]_59 [15]),
         .O(\m_axis_tdata[15]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [15]),
-        .I1(\filter_in_l_reg[10]_117 [15]),
+       (.I0(\filter_in_l_reg[11]_52 [15]),
+        .I1(\filter_in_l_reg[10]_53 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [15]),
+        .I3(\filter_in_l_reg[9]_54 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [15]),
+        .I5(\filter_in_l_reg[8]_55 [15]),
         .O(\m_axis_tdata[15]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [15]),
-        .I1(\filter_in_l_reg[14]_113 [15]),
+       (.I0(\filter_in_l_reg[15]_48 [15]),
+        .I1(\filter_in_l_reg[14]_49 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [15]),
+        .I3(\filter_in_l_reg[13]_50 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [15]),
+        .I5(\filter_in_l_reg[12]_51 [15]),
         .O(\m_axis_tdata[15]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [15]),
-        .I1(\filter_in_r_reg[18]_77 [15]),
+       (.I0(\filter_in_r_reg[19]_12 [15]),
+        .I1(\filter_in_r_reg[18]_13 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [15]),
+        .I3(\filter_in_r_reg[17]_14 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [15]),
+        .I5(\filter_in_r_reg[16]_15 [15]),
         .O(\m_axis_tdata[15]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [15]),
-        .I1(\filter_in_r_reg[22]_73 [15]),
+       (.I0(\filter_in_r_reg[23]_8 [15]),
+        .I1(\filter_in_r_reg[22]_9 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [15]),
+        .I3(\filter_in_r_reg[21]_10 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [15]),
+        .I5(\filter_in_r_reg[20]_11 [15]),
         .O(\m_axis_tdata[15]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [15]),
-        .I1(\filter_in_r_reg[26]_69 [15]),
+       (.I0(\filter_in_r_reg[27]_4 [15]),
+        .I1(\filter_in_r_reg[26]_5 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [15]),
+        .I3(\filter_in_r_reg[25]_6 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [15]),
+        .I5(\filter_in_r_reg[24]_7 [15]),
         .O(\m_axis_tdata[15]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [15]),
-        .I1(\filter_in_r_reg[30]_65 [15]),
+       (.I0(\filter_in_r_reg[31]_0 [15]),
+        .I1(\filter_in_r_reg[30]_1 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [15]),
+        .I3(\filter_in_r_reg[29]_2 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [15]),
+        .I5(\filter_in_r_reg[28]_3 [15]),
         .O(\m_axis_tdata[15]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [15]),
-        .I1(\filter_in_r_reg[2]_93 [15]),
+       (.I0(\filter_in_r_reg[3]_28 [15]),
+        .I1(\filter_in_r_reg[2]_29 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [15]),
+        .I3(\filter_in_r_reg[1]_30 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [15]),
+        .I5(\filter_in_r_reg[0]_31 [15]),
         .O(\m_axis_tdata[15]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [15]),
-        .I1(\filter_in_r_reg[6]_89 [15]),
+       (.I0(\filter_in_r_reg[7]_24 [15]),
+        .I1(\filter_in_r_reg[6]_25 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [15]),
+        .I3(\filter_in_r_reg[5]_26 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [15]),
+        .I5(\filter_in_r_reg[4]_27 [15]),
         .O(\m_axis_tdata[15]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22779,62 +22773,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [15]),
-        .I1(\filter_in_r_reg[10]_85 [15]),
+       (.I0(\filter_in_r_reg[11]_20 [15]),
+        .I1(\filter_in_r_reg[10]_21 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [15]),
+        .I3(\filter_in_r_reg[9]_22 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [15]),
+        .I5(\filter_in_r_reg[8]_23 [15]),
         .O(\m_axis_tdata[15]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[15]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [15]),
-        .I1(\filter_in_r_reg[14]_81 [15]),
+       (.I0(\filter_in_r_reg[15]_16 [15]),
+        .I1(\filter_in_r_reg[14]_17 [15]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [15]),
+        .I3(\filter_in_r_reg[13]_18 [15]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [15]),
+        .I5(\filter_in_r_reg[12]_19 [15]),
         .O(\m_axis_tdata[15]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [16]),
-        .I1(\filter_in_l_reg[18]_109 [16]),
+       (.I0(\filter_in_l_reg[19]_44 [16]),
+        .I1(\filter_in_l_reg[18]_45 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [16]),
+        .I3(\filter_in_l_reg[17]_46 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [16]),
+        .I5(\filter_in_l_reg[16]_47 [16]),
         .O(\m_axis_tdata[16]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [16]),
-        .I1(\filter_in_l_reg[22]_105 [16]),
+       (.I0(\filter_in_l_reg[23]_40 [16]),
+        .I1(\filter_in_l_reg[22]_41 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [16]),
+        .I3(\filter_in_l_reg[21]_42 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [16]),
+        .I5(\filter_in_l_reg[20]_43 [16]),
         .O(\m_axis_tdata[16]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [16]),
-        .I1(\filter_in_l_reg[26]_101 [16]),
+       (.I0(\filter_in_l_reg[27]_36 [16]),
+        .I1(\filter_in_l_reg[26]_37 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [16]),
+        .I3(\filter_in_l_reg[25]_38 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [16]),
+        .I5(\filter_in_l_reg[24]_39 [16]),
         .O(\m_axis_tdata[16]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [16]),
-        .I1(\filter_in_l_reg[30]_97 [16]),
+       (.I0(\filter_in_l_reg[31]_32 [16]),
+        .I1(\filter_in_l_reg[30]_33 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [16]),
+        .I3(\filter_in_l_reg[29]_34 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [16]),
+        .I5(\filter_in_l_reg[28]_35 [16]),
         .O(\m_axis_tdata[16]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22848,102 +22842,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [16]),
-        .I1(\filter_in_l_reg[2]_125 [16]),
+       (.I0(\filter_in_l_reg[3]_60 [16]),
+        .I1(\filter_in_l_reg[2]_61 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [16]),
+        .I3(\filter_in_l_reg[1]_62 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [16]),
+        .I5(\filter_in_l_reg[0]_63 [16]),
         .O(\m_axis_tdata[16]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [16]),
-        .I1(\filter_in_l_reg[6]_121 [16]),
+       (.I0(\filter_in_l_reg[7]_56 [16]),
+        .I1(\filter_in_l_reg[6]_57 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [16]),
+        .I3(\filter_in_l_reg[5]_58 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [16]),
+        .I5(\filter_in_l_reg[4]_59 [16]),
         .O(\m_axis_tdata[16]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [16]),
-        .I1(\filter_in_l_reg[10]_117 [16]),
+       (.I0(\filter_in_l_reg[11]_52 [16]),
+        .I1(\filter_in_l_reg[10]_53 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [16]),
+        .I3(\filter_in_l_reg[9]_54 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [16]),
+        .I5(\filter_in_l_reg[8]_55 [16]),
         .O(\m_axis_tdata[16]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [16]),
-        .I1(\filter_in_l_reg[14]_113 [16]),
+       (.I0(\filter_in_l_reg[15]_48 [16]),
+        .I1(\filter_in_l_reg[14]_49 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__1_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [16]),
+        .I3(\filter_in_l_reg[13]_50 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [16]),
+        .I5(\filter_in_l_reg[12]_51 [16]),
         .O(\m_axis_tdata[16]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [16]),
-        .I1(\filter_in_r_reg[18]_77 [16]),
+       (.I0(\filter_in_r_reg[19]_12 [16]),
+        .I1(\filter_in_r_reg[18]_13 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [16]),
+        .I3(\filter_in_r_reg[17]_14 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [16]),
+        .I5(\filter_in_r_reg[16]_15 [16]),
         .O(\m_axis_tdata[16]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [16]),
-        .I1(\filter_in_r_reg[22]_73 [16]),
+       (.I0(\filter_in_r_reg[23]_8 [16]),
+        .I1(\filter_in_r_reg[22]_9 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [16]),
+        .I3(\filter_in_r_reg[21]_10 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [16]),
+        .I5(\filter_in_r_reg[20]_11 [16]),
         .O(\m_axis_tdata[16]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [16]),
-        .I1(\filter_in_r_reg[26]_69 [16]),
+       (.I0(\filter_in_r_reg[27]_4 [16]),
+        .I1(\filter_in_r_reg[26]_5 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [16]),
+        .I3(\filter_in_r_reg[25]_6 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [16]),
+        .I5(\filter_in_r_reg[24]_7 [16]),
         .O(\m_axis_tdata[16]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [16]),
-        .I1(\filter_in_r_reg[30]_65 [16]),
+       (.I0(\filter_in_r_reg[31]_0 [16]),
+        .I1(\filter_in_r_reg[30]_1 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [16]),
+        .I3(\filter_in_r_reg[29]_2 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [16]),
+        .I5(\filter_in_r_reg[28]_3 [16]),
         .O(\m_axis_tdata[16]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [16]),
-        .I1(\filter_in_r_reg[2]_93 [16]),
+       (.I0(\filter_in_r_reg[3]_28 [16]),
+        .I1(\filter_in_r_reg[2]_29 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [16]),
+        .I3(\filter_in_r_reg[1]_30 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [16]),
+        .I5(\filter_in_r_reg[0]_31 [16]),
         .O(\m_axis_tdata[16]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [16]),
-        .I1(\filter_in_r_reg[6]_89 [16]),
+       (.I0(\filter_in_r_reg[7]_24 [16]),
+        .I1(\filter_in_r_reg[6]_25 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [16]),
+        .I3(\filter_in_r_reg[5]_26 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [16]),
+        .I5(\filter_in_r_reg[4]_27 [16]),
         .O(\m_axis_tdata[16]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -22957,62 +22951,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [16]),
-        .I1(\filter_in_r_reg[10]_85 [16]),
+       (.I0(\filter_in_r_reg[11]_20 [16]),
+        .I1(\filter_in_r_reg[10]_21 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [16]),
+        .I3(\filter_in_r_reg[9]_22 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [16]),
+        .I5(\filter_in_r_reg[8]_23 [16]),
         .O(\m_axis_tdata[16]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[16]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [16]),
-        .I1(\filter_in_r_reg[14]_81 [16]),
+       (.I0(\filter_in_r_reg[15]_16 [16]),
+        .I1(\filter_in_r_reg[14]_17 [16]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [16]),
+        .I3(\filter_in_r_reg[13]_18 [16]),
         .I4(\ring_buffer_entry_reg[0]_rep__0_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [16]),
+        .I5(\filter_in_r_reg[12]_19 [16]),
         .O(\m_axis_tdata[16]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [17]),
-        .I1(\filter_in_l_reg[18]_109 [17]),
+       (.I0(\filter_in_l_reg[19]_44 [17]),
+        .I1(\filter_in_l_reg[18]_45 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [17]),
+        .I3(\filter_in_l_reg[17]_46 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [17]),
+        .I5(\filter_in_l_reg[16]_47 [17]),
         .O(\m_axis_tdata[17]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [17]),
-        .I1(\filter_in_l_reg[22]_105 [17]),
+       (.I0(\filter_in_l_reg[23]_40 [17]),
+        .I1(\filter_in_l_reg[22]_41 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [17]),
+        .I3(\filter_in_l_reg[21]_42 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [17]),
+        .I5(\filter_in_l_reg[20]_43 [17]),
         .O(\m_axis_tdata[17]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [17]),
-        .I1(\filter_in_l_reg[26]_101 [17]),
+       (.I0(\filter_in_l_reg[27]_36 [17]),
+        .I1(\filter_in_l_reg[26]_37 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [17]),
+        .I3(\filter_in_l_reg[25]_38 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [17]),
+        .I5(\filter_in_l_reg[24]_39 [17]),
         .O(\m_axis_tdata[17]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [17]),
-        .I1(\filter_in_l_reg[30]_97 [17]),
+       (.I0(\filter_in_l_reg[31]_32 [17]),
+        .I1(\filter_in_l_reg[30]_33 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [17]),
+        .I3(\filter_in_l_reg[29]_34 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [17]),
+        .I5(\filter_in_l_reg[28]_35 [17]),
         .O(\m_axis_tdata[17]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23026,102 +23020,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [17]),
-        .I1(\filter_in_l_reg[2]_125 [17]),
+       (.I0(\filter_in_l_reg[3]_60 [17]),
+        .I1(\filter_in_l_reg[2]_61 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [17]),
+        .I3(\filter_in_l_reg[1]_62 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [17]),
+        .I5(\filter_in_l_reg[0]_63 [17]),
         .O(\m_axis_tdata[17]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [17]),
-        .I1(\filter_in_l_reg[6]_121 [17]),
+       (.I0(\filter_in_l_reg[7]_56 [17]),
+        .I1(\filter_in_l_reg[6]_57 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [17]),
+        .I3(\filter_in_l_reg[5]_58 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [17]),
+        .I5(\filter_in_l_reg[4]_59 [17]),
         .O(\m_axis_tdata[17]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [17]),
-        .I1(\filter_in_l_reg[10]_117 [17]),
+       (.I0(\filter_in_l_reg[11]_52 [17]),
+        .I1(\filter_in_l_reg[10]_53 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [17]),
+        .I3(\filter_in_l_reg[9]_54 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [17]),
+        .I5(\filter_in_l_reg[8]_55 [17]),
         .O(\m_axis_tdata[17]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [17]),
-        .I1(\filter_in_l_reg[14]_113 [17]),
+       (.I0(\filter_in_l_reg[15]_48 [17]),
+        .I1(\filter_in_l_reg[14]_49 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [17]),
+        .I3(\filter_in_l_reg[13]_50 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [17]),
+        .I5(\filter_in_l_reg[12]_51 [17]),
         .O(\m_axis_tdata[17]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [17]),
-        .I1(\filter_in_r_reg[18]_77 [17]),
+       (.I0(\filter_in_r_reg[19]_12 [17]),
+        .I1(\filter_in_r_reg[18]_13 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [17]),
+        .I3(\filter_in_r_reg[17]_14 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [17]),
+        .I5(\filter_in_r_reg[16]_15 [17]),
         .O(\m_axis_tdata[17]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [17]),
-        .I1(\filter_in_r_reg[22]_73 [17]),
+       (.I0(\filter_in_r_reg[23]_8 [17]),
+        .I1(\filter_in_r_reg[22]_9 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [17]),
+        .I3(\filter_in_r_reg[21]_10 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [17]),
+        .I5(\filter_in_r_reg[20]_11 [17]),
         .O(\m_axis_tdata[17]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [17]),
-        .I1(\filter_in_r_reg[26]_69 [17]),
+       (.I0(\filter_in_r_reg[27]_4 [17]),
+        .I1(\filter_in_r_reg[26]_5 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [17]),
+        .I3(\filter_in_r_reg[25]_6 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [17]),
+        .I5(\filter_in_r_reg[24]_7 [17]),
         .O(\m_axis_tdata[17]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [17]),
-        .I1(\filter_in_r_reg[30]_65 [17]),
+       (.I0(\filter_in_r_reg[31]_0 [17]),
+        .I1(\filter_in_r_reg[30]_1 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [17]),
+        .I3(\filter_in_r_reg[29]_2 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [17]),
+        .I5(\filter_in_r_reg[28]_3 [17]),
         .O(\m_axis_tdata[17]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [17]),
-        .I1(\filter_in_r_reg[2]_93 [17]),
+       (.I0(\filter_in_r_reg[3]_28 [17]),
+        .I1(\filter_in_r_reg[2]_29 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [17]),
+        .I3(\filter_in_r_reg[1]_30 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [17]),
+        .I5(\filter_in_r_reg[0]_31 [17]),
         .O(\m_axis_tdata[17]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [17]),
-        .I1(\filter_in_r_reg[6]_89 [17]),
+       (.I0(\filter_in_r_reg[7]_24 [17]),
+        .I1(\filter_in_r_reg[6]_25 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [17]),
+        .I3(\filter_in_r_reg[5]_26 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [17]),
+        .I5(\filter_in_r_reg[4]_27 [17]),
         .O(\m_axis_tdata[17]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23135,62 +23129,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [17]),
-        .I1(\filter_in_r_reg[10]_85 [17]),
+       (.I0(\filter_in_r_reg[11]_20 [17]),
+        .I1(\filter_in_r_reg[10]_21 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [17]),
+        .I3(\filter_in_r_reg[9]_22 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [17]),
+        .I5(\filter_in_r_reg[8]_23 [17]),
         .O(\m_axis_tdata[17]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[17]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [17]),
-        .I1(\filter_in_r_reg[14]_81 [17]),
+       (.I0(\filter_in_r_reg[15]_16 [17]),
+        .I1(\filter_in_r_reg[14]_17 [17]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [17]),
+        .I3(\filter_in_r_reg[13]_18 [17]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [17]),
+        .I5(\filter_in_r_reg[12]_19 [17]),
         .O(\m_axis_tdata[17]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [18]),
-        .I1(\filter_in_l_reg[18]_109 [18]),
+       (.I0(\filter_in_l_reg[19]_44 [18]),
+        .I1(\filter_in_l_reg[18]_45 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [18]),
+        .I3(\filter_in_l_reg[17]_46 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [18]),
+        .I5(\filter_in_l_reg[16]_47 [18]),
         .O(\m_axis_tdata[18]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [18]),
-        .I1(\filter_in_l_reg[22]_105 [18]),
+       (.I0(\filter_in_l_reg[23]_40 [18]),
+        .I1(\filter_in_l_reg[22]_41 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [18]),
+        .I3(\filter_in_l_reg[21]_42 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [18]),
+        .I5(\filter_in_l_reg[20]_43 [18]),
         .O(\m_axis_tdata[18]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [18]),
-        .I1(\filter_in_l_reg[26]_101 [18]),
+       (.I0(\filter_in_l_reg[27]_36 [18]),
+        .I1(\filter_in_l_reg[26]_37 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [18]),
+        .I3(\filter_in_l_reg[25]_38 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [18]),
+        .I5(\filter_in_l_reg[24]_39 [18]),
         .O(\m_axis_tdata[18]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [18]),
-        .I1(\filter_in_l_reg[30]_97 [18]),
+       (.I0(\filter_in_l_reg[31]_32 [18]),
+        .I1(\filter_in_l_reg[30]_33 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [18]),
+        .I3(\filter_in_l_reg[29]_34 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [18]),
+        .I5(\filter_in_l_reg[28]_35 [18]),
         .O(\m_axis_tdata[18]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23204,102 +23198,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [18]),
-        .I1(\filter_in_l_reg[2]_125 [18]),
+       (.I0(\filter_in_l_reg[3]_60 [18]),
+        .I1(\filter_in_l_reg[2]_61 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [18]),
+        .I3(\filter_in_l_reg[1]_62 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [18]),
+        .I5(\filter_in_l_reg[0]_63 [18]),
         .O(\m_axis_tdata[18]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [18]),
-        .I1(\filter_in_l_reg[6]_121 [18]),
+       (.I0(\filter_in_l_reg[7]_56 [18]),
+        .I1(\filter_in_l_reg[6]_57 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [18]),
+        .I3(\filter_in_l_reg[5]_58 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [18]),
+        .I5(\filter_in_l_reg[4]_59 [18]),
         .O(\m_axis_tdata[18]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [18]),
-        .I1(\filter_in_l_reg[10]_117 [18]),
+       (.I0(\filter_in_l_reg[11]_52 [18]),
+        .I1(\filter_in_l_reg[10]_53 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [18]),
+        .I3(\filter_in_l_reg[9]_54 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [18]),
+        .I5(\filter_in_l_reg[8]_55 [18]),
         .O(\m_axis_tdata[18]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [18]),
-        .I1(\filter_in_l_reg[14]_113 [18]),
+       (.I0(\filter_in_l_reg[15]_48 [18]),
+        .I1(\filter_in_l_reg[14]_49 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [18]),
+        .I3(\filter_in_l_reg[13]_50 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [18]),
+        .I5(\filter_in_l_reg[12]_51 [18]),
         .O(\m_axis_tdata[18]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [18]),
-        .I1(\filter_in_r_reg[18]_77 [18]),
+       (.I0(\filter_in_r_reg[19]_12 [18]),
+        .I1(\filter_in_r_reg[18]_13 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [18]),
+        .I3(\filter_in_r_reg[17]_14 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [18]),
+        .I5(\filter_in_r_reg[16]_15 [18]),
         .O(\m_axis_tdata[18]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [18]),
-        .I1(\filter_in_r_reg[22]_73 [18]),
+       (.I0(\filter_in_r_reg[23]_8 [18]),
+        .I1(\filter_in_r_reg[22]_9 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [18]),
+        .I3(\filter_in_r_reg[21]_10 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [18]),
+        .I5(\filter_in_r_reg[20]_11 [18]),
         .O(\m_axis_tdata[18]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [18]),
-        .I1(\filter_in_r_reg[26]_69 [18]),
+       (.I0(\filter_in_r_reg[27]_4 [18]),
+        .I1(\filter_in_r_reg[26]_5 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [18]),
+        .I3(\filter_in_r_reg[25]_6 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [18]),
+        .I5(\filter_in_r_reg[24]_7 [18]),
         .O(\m_axis_tdata[18]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [18]),
-        .I1(\filter_in_r_reg[30]_65 [18]),
+       (.I0(\filter_in_r_reg[31]_0 [18]),
+        .I1(\filter_in_r_reg[30]_1 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [18]),
+        .I3(\filter_in_r_reg[29]_2 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [18]),
+        .I5(\filter_in_r_reg[28]_3 [18]),
         .O(\m_axis_tdata[18]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [18]),
-        .I1(\filter_in_r_reg[2]_93 [18]),
+       (.I0(\filter_in_r_reg[3]_28 [18]),
+        .I1(\filter_in_r_reg[2]_29 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [18]),
+        .I3(\filter_in_r_reg[1]_30 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [18]),
+        .I5(\filter_in_r_reg[0]_31 [18]),
         .O(\m_axis_tdata[18]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [18]),
-        .I1(\filter_in_r_reg[6]_89 [18]),
+       (.I0(\filter_in_r_reg[7]_24 [18]),
+        .I1(\filter_in_r_reg[6]_25 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [18]),
+        .I3(\filter_in_r_reg[5]_26 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [18]),
+        .I5(\filter_in_r_reg[4]_27 [18]),
         .O(\m_axis_tdata[18]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23313,62 +23307,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [18]),
-        .I1(\filter_in_r_reg[10]_85 [18]),
+       (.I0(\filter_in_r_reg[11]_20 [18]),
+        .I1(\filter_in_r_reg[10]_21 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [18]),
+        .I3(\filter_in_r_reg[9]_22 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [18]),
+        .I5(\filter_in_r_reg[8]_23 [18]),
         .O(\m_axis_tdata[18]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[18]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [18]),
-        .I1(\filter_in_r_reg[14]_81 [18]),
+       (.I0(\filter_in_r_reg[15]_16 [18]),
+        .I1(\filter_in_r_reg[14]_17 [18]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [18]),
+        .I3(\filter_in_r_reg[13]_18 [18]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [18]),
+        .I5(\filter_in_r_reg[12]_19 [18]),
         .O(\m_axis_tdata[18]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [19]),
-        .I1(\filter_in_l_reg[18]_109 [19]),
+       (.I0(\filter_in_l_reg[19]_44 [19]),
+        .I1(\filter_in_l_reg[18]_45 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [19]),
+        .I3(\filter_in_l_reg[17]_46 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [19]),
+        .I5(\filter_in_l_reg[16]_47 [19]),
         .O(\m_axis_tdata[19]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [19]),
-        .I1(\filter_in_l_reg[22]_105 [19]),
+       (.I0(\filter_in_l_reg[23]_40 [19]),
+        .I1(\filter_in_l_reg[22]_41 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [19]),
+        .I3(\filter_in_l_reg[21]_42 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [19]),
+        .I5(\filter_in_l_reg[20]_43 [19]),
         .O(\m_axis_tdata[19]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [19]),
-        .I1(\filter_in_l_reg[26]_101 [19]),
+       (.I0(\filter_in_l_reg[27]_36 [19]),
+        .I1(\filter_in_l_reg[26]_37 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [19]),
+        .I3(\filter_in_l_reg[25]_38 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [19]),
+        .I5(\filter_in_l_reg[24]_39 [19]),
         .O(\m_axis_tdata[19]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [19]),
-        .I1(\filter_in_l_reg[30]_97 [19]),
+       (.I0(\filter_in_l_reg[31]_32 [19]),
+        .I1(\filter_in_l_reg[30]_33 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [19]),
+        .I3(\filter_in_l_reg[29]_34 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [19]),
+        .I5(\filter_in_l_reg[28]_35 [19]),
         .O(\m_axis_tdata[19]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23382,102 +23376,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [19]),
-        .I1(\filter_in_l_reg[2]_125 [19]),
+       (.I0(\filter_in_l_reg[3]_60 [19]),
+        .I1(\filter_in_l_reg[2]_61 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [19]),
+        .I3(\filter_in_l_reg[1]_62 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [19]),
+        .I5(\filter_in_l_reg[0]_63 [19]),
         .O(\m_axis_tdata[19]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [19]),
-        .I1(\filter_in_l_reg[6]_121 [19]),
+       (.I0(\filter_in_l_reg[7]_56 [19]),
+        .I1(\filter_in_l_reg[6]_57 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [19]),
+        .I3(\filter_in_l_reg[5]_58 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [19]),
+        .I5(\filter_in_l_reg[4]_59 [19]),
         .O(\m_axis_tdata[19]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [19]),
-        .I1(\filter_in_l_reg[10]_117 [19]),
+       (.I0(\filter_in_l_reg[11]_52 [19]),
+        .I1(\filter_in_l_reg[10]_53 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [19]),
+        .I3(\filter_in_l_reg[9]_54 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [19]),
+        .I5(\filter_in_l_reg[8]_55 [19]),
         .O(\m_axis_tdata[19]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [19]),
-        .I1(\filter_in_l_reg[14]_113 [19]),
+       (.I0(\filter_in_l_reg[15]_48 [19]),
+        .I1(\filter_in_l_reg[14]_49 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [19]),
+        .I3(\filter_in_l_reg[13]_50 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [19]),
+        .I5(\filter_in_l_reg[12]_51 [19]),
         .O(\m_axis_tdata[19]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [19]),
-        .I1(\filter_in_r_reg[18]_77 [19]),
+       (.I0(\filter_in_r_reg[19]_12 [19]),
+        .I1(\filter_in_r_reg[18]_13 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [19]),
+        .I3(\filter_in_r_reg[17]_14 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [19]),
+        .I5(\filter_in_r_reg[16]_15 [19]),
         .O(\m_axis_tdata[19]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [19]),
-        .I1(\filter_in_r_reg[22]_73 [19]),
+       (.I0(\filter_in_r_reg[23]_8 [19]),
+        .I1(\filter_in_r_reg[22]_9 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [19]),
+        .I3(\filter_in_r_reg[21]_10 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [19]),
+        .I5(\filter_in_r_reg[20]_11 [19]),
         .O(\m_axis_tdata[19]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [19]),
-        .I1(\filter_in_r_reg[26]_69 [19]),
+       (.I0(\filter_in_r_reg[27]_4 [19]),
+        .I1(\filter_in_r_reg[26]_5 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [19]),
+        .I3(\filter_in_r_reg[25]_6 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [19]),
+        .I5(\filter_in_r_reg[24]_7 [19]),
         .O(\m_axis_tdata[19]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [19]),
-        .I1(\filter_in_r_reg[30]_65 [19]),
+       (.I0(\filter_in_r_reg[31]_0 [19]),
+        .I1(\filter_in_r_reg[30]_1 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [19]),
+        .I3(\filter_in_r_reg[29]_2 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [19]),
+        .I5(\filter_in_r_reg[28]_3 [19]),
         .O(\m_axis_tdata[19]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [19]),
-        .I1(\filter_in_r_reg[2]_93 [19]),
+       (.I0(\filter_in_r_reg[3]_28 [19]),
+        .I1(\filter_in_r_reg[2]_29 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [19]),
+        .I3(\filter_in_r_reg[1]_30 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [19]),
+        .I5(\filter_in_r_reg[0]_31 [19]),
         .O(\m_axis_tdata[19]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [19]),
-        .I1(\filter_in_r_reg[6]_89 [19]),
+       (.I0(\filter_in_r_reg[7]_24 [19]),
+        .I1(\filter_in_r_reg[6]_25 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [19]),
+        .I3(\filter_in_r_reg[5]_26 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [19]),
+        .I5(\filter_in_r_reg[4]_27 [19]),
         .O(\m_axis_tdata[19]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23491,62 +23485,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [19]),
-        .I1(\filter_in_r_reg[10]_85 [19]),
+       (.I0(\filter_in_r_reg[11]_20 [19]),
+        .I1(\filter_in_r_reg[10]_21 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [19]),
+        .I3(\filter_in_r_reg[9]_22 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [19]),
+        .I5(\filter_in_r_reg[8]_23 [19]),
         .O(\m_axis_tdata[19]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[19]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [19]),
-        .I1(\filter_in_r_reg[14]_81 [19]),
+       (.I0(\filter_in_r_reg[15]_16 [19]),
+        .I1(\filter_in_r_reg[14]_17 [19]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [19]),
+        .I3(\filter_in_r_reg[13]_18 [19]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [19]),
+        .I5(\filter_in_r_reg[12]_19 [19]),
         .O(\m_axis_tdata[19]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [1]),
-        .I1(\filter_in_l_reg[18]_109 [1]),
+       (.I0(\filter_in_l_reg[19]_44 [1]),
+        .I1(\filter_in_l_reg[18]_45 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [1]),
+        .I3(\filter_in_l_reg[17]_46 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [1]),
+        .I5(\filter_in_l_reg[16]_47 [1]),
         .O(\m_axis_tdata[1]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [1]),
-        .I1(\filter_in_l_reg[22]_105 [1]),
+       (.I0(\filter_in_l_reg[23]_40 [1]),
+        .I1(\filter_in_l_reg[22]_41 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [1]),
+        .I3(\filter_in_l_reg[21]_42 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [1]),
+        .I5(\filter_in_l_reg[20]_43 [1]),
         .O(\m_axis_tdata[1]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [1]),
-        .I1(\filter_in_l_reg[26]_101 [1]),
+       (.I0(\filter_in_l_reg[27]_36 [1]),
+        .I1(\filter_in_l_reg[26]_37 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [1]),
+        .I3(\filter_in_l_reg[25]_38 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [1]),
+        .I5(\filter_in_l_reg[24]_39 [1]),
         .O(\m_axis_tdata[1]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [1]),
-        .I1(\filter_in_l_reg[30]_97 [1]),
+       (.I0(\filter_in_l_reg[31]_32 [1]),
+        .I1(\filter_in_l_reg[30]_33 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [1]),
+        .I3(\filter_in_l_reg[29]_34 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [1]),
+        .I5(\filter_in_l_reg[28]_35 [1]),
         .O(\m_axis_tdata[1]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23560,102 +23554,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [1]),
-        .I1(\filter_in_l_reg[2]_125 [1]),
+       (.I0(\filter_in_l_reg[3]_60 [1]),
+        .I1(\filter_in_l_reg[2]_61 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [1]),
+        .I3(\filter_in_l_reg[1]_62 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [1]),
+        .I5(\filter_in_l_reg[0]_63 [1]),
         .O(\m_axis_tdata[1]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [1]),
-        .I1(\filter_in_l_reg[6]_121 [1]),
+       (.I0(\filter_in_l_reg[7]_56 [1]),
+        .I1(\filter_in_l_reg[6]_57 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [1]),
+        .I3(\filter_in_l_reg[5]_58 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [1]),
+        .I5(\filter_in_l_reg[4]_59 [1]),
         .O(\m_axis_tdata[1]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [1]),
-        .I1(\filter_in_l_reg[10]_117 [1]),
+       (.I0(\filter_in_l_reg[11]_52 [1]),
+        .I1(\filter_in_l_reg[10]_53 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [1]),
+        .I3(\filter_in_l_reg[9]_54 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [1]),
+        .I5(\filter_in_l_reg[8]_55 [1]),
         .O(\m_axis_tdata[1]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [1]),
-        .I1(\filter_in_l_reg[14]_113 [1]),
+       (.I0(\filter_in_l_reg[15]_48 [1]),
+        .I1(\filter_in_l_reg[14]_49 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [1]),
+        .I3(\filter_in_l_reg[13]_50 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [1]),
+        .I5(\filter_in_l_reg[12]_51 [1]),
         .O(\m_axis_tdata[1]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [1]),
-        .I1(\filter_in_r_reg[18]_77 [1]),
+       (.I0(\filter_in_r_reg[19]_12 [1]),
+        .I1(\filter_in_r_reg[18]_13 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [1]),
+        .I3(\filter_in_r_reg[17]_14 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [1]),
+        .I5(\filter_in_r_reg[16]_15 [1]),
         .O(\m_axis_tdata[1]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [1]),
-        .I1(\filter_in_r_reg[22]_73 [1]),
+       (.I0(\filter_in_r_reg[23]_8 [1]),
+        .I1(\filter_in_r_reg[22]_9 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [1]),
+        .I3(\filter_in_r_reg[21]_10 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [1]),
+        .I5(\filter_in_r_reg[20]_11 [1]),
         .O(\m_axis_tdata[1]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [1]),
-        .I1(\filter_in_r_reg[26]_69 [1]),
+       (.I0(\filter_in_r_reg[27]_4 [1]),
+        .I1(\filter_in_r_reg[26]_5 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [1]),
+        .I3(\filter_in_r_reg[25]_6 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [1]),
+        .I5(\filter_in_r_reg[24]_7 [1]),
         .O(\m_axis_tdata[1]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [1]),
-        .I1(\filter_in_r_reg[30]_65 [1]),
+       (.I0(\filter_in_r_reg[31]_0 [1]),
+        .I1(\filter_in_r_reg[30]_1 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [1]),
+        .I3(\filter_in_r_reg[29]_2 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [1]),
+        .I5(\filter_in_r_reg[28]_3 [1]),
         .O(\m_axis_tdata[1]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [1]),
-        .I1(\filter_in_r_reg[2]_93 [1]),
+       (.I0(\filter_in_r_reg[3]_28 [1]),
+        .I1(\filter_in_r_reg[2]_29 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [1]),
+        .I3(\filter_in_r_reg[1]_30 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [1]),
+        .I5(\filter_in_r_reg[0]_31 [1]),
         .O(\m_axis_tdata[1]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [1]),
-        .I1(\filter_in_r_reg[6]_89 [1]),
+       (.I0(\filter_in_r_reg[7]_24 [1]),
+        .I1(\filter_in_r_reg[6]_25 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [1]),
+        .I3(\filter_in_r_reg[5]_26 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [1]),
+        .I5(\filter_in_r_reg[4]_27 [1]),
         .O(\m_axis_tdata[1]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23669,62 +23663,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [1]),
-        .I1(\filter_in_r_reg[10]_85 [1]),
+       (.I0(\filter_in_r_reg[11]_20 [1]),
+        .I1(\filter_in_r_reg[10]_21 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [1]),
+        .I3(\filter_in_r_reg[9]_22 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [1]),
+        .I5(\filter_in_r_reg[8]_23 [1]),
         .O(\m_axis_tdata[1]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[1]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [1]),
-        .I1(\filter_in_r_reg[14]_81 [1]),
+       (.I0(\filter_in_r_reg[15]_16 [1]),
+        .I1(\filter_in_r_reg[14]_17 [1]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [1]),
+        .I3(\filter_in_r_reg[13]_18 [1]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [1]),
+        .I5(\filter_in_r_reg[12]_19 [1]),
         .O(\m_axis_tdata[1]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [20]),
-        .I1(\filter_in_l_reg[18]_109 [20]),
+       (.I0(\filter_in_l_reg[19]_44 [20]),
+        .I1(\filter_in_l_reg[18]_45 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [20]),
+        .I3(\filter_in_l_reg[17]_46 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [20]),
+        .I5(\filter_in_l_reg[16]_47 [20]),
         .O(\m_axis_tdata[20]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [20]),
-        .I1(\filter_in_l_reg[22]_105 [20]),
+       (.I0(\filter_in_l_reg[23]_40 [20]),
+        .I1(\filter_in_l_reg[22]_41 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [20]),
+        .I3(\filter_in_l_reg[21]_42 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [20]),
+        .I5(\filter_in_l_reg[20]_43 [20]),
         .O(\m_axis_tdata[20]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [20]),
-        .I1(\filter_in_l_reg[26]_101 [20]),
+       (.I0(\filter_in_l_reg[27]_36 [20]),
+        .I1(\filter_in_l_reg[26]_37 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [20]),
+        .I3(\filter_in_l_reg[25]_38 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [20]),
+        .I5(\filter_in_l_reg[24]_39 [20]),
         .O(\m_axis_tdata[20]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [20]),
-        .I1(\filter_in_l_reg[30]_97 [20]),
+       (.I0(\filter_in_l_reg[31]_32 [20]),
+        .I1(\filter_in_l_reg[30]_33 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [20]),
+        .I3(\filter_in_l_reg[29]_34 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [20]),
+        .I5(\filter_in_l_reg[28]_35 [20]),
         .O(\m_axis_tdata[20]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23738,102 +23732,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [20]),
-        .I1(\filter_in_l_reg[2]_125 [20]),
+       (.I0(\filter_in_l_reg[3]_60 [20]),
+        .I1(\filter_in_l_reg[2]_61 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [20]),
+        .I3(\filter_in_l_reg[1]_62 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [20]),
+        .I5(\filter_in_l_reg[0]_63 [20]),
         .O(\m_axis_tdata[20]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [20]),
-        .I1(\filter_in_l_reg[6]_121 [20]),
+       (.I0(\filter_in_l_reg[7]_56 [20]),
+        .I1(\filter_in_l_reg[6]_57 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [20]),
+        .I3(\filter_in_l_reg[5]_58 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [20]),
+        .I5(\filter_in_l_reg[4]_59 [20]),
         .O(\m_axis_tdata[20]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [20]),
-        .I1(\filter_in_l_reg[10]_117 [20]),
+       (.I0(\filter_in_l_reg[11]_52 [20]),
+        .I1(\filter_in_l_reg[10]_53 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [20]),
+        .I3(\filter_in_l_reg[9]_54 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [20]),
+        .I5(\filter_in_l_reg[8]_55 [20]),
         .O(\m_axis_tdata[20]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [20]),
-        .I1(\filter_in_l_reg[14]_113 [20]),
+       (.I0(\filter_in_l_reg[15]_48 [20]),
+        .I1(\filter_in_l_reg[14]_49 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [20]),
+        .I3(\filter_in_l_reg[13]_50 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [20]),
+        .I5(\filter_in_l_reg[12]_51 [20]),
         .O(\m_axis_tdata[20]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [20]),
-        .I1(\filter_in_r_reg[18]_77 [20]),
+       (.I0(\filter_in_r_reg[19]_12 [20]),
+        .I1(\filter_in_r_reg[18]_13 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [20]),
+        .I3(\filter_in_r_reg[17]_14 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [20]),
+        .I5(\filter_in_r_reg[16]_15 [20]),
         .O(\m_axis_tdata[20]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [20]),
-        .I1(\filter_in_r_reg[22]_73 [20]),
+       (.I0(\filter_in_r_reg[23]_8 [20]),
+        .I1(\filter_in_r_reg[22]_9 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [20]),
+        .I3(\filter_in_r_reg[21]_10 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [20]),
+        .I5(\filter_in_r_reg[20]_11 [20]),
         .O(\m_axis_tdata[20]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [20]),
-        .I1(\filter_in_r_reg[26]_69 [20]),
+       (.I0(\filter_in_r_reg[27]_4 [20]),
+        .I1(\filter_in_r_reg[26]_5 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [20]),
+        .I3(\filter_in_r_reg[25]_6 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [20]),
+        .I5(\filter_in_r_reg[24]_7 [20]),
         .O(\m_axis_tdata[20]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [20]),
-        .I1(\filter_in_r_reg[30]_65 [20]),
+       (.I0(\filter_in_r_reg[31]_0 [20]),
+        .I1(\filter_in_r_reg[30]_1 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [20]),
+        .I3(\filter_in_r_reg[29]_2 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [20]),
+        .I5(\filter_in_r_reg[28]_3 [20]),
         .O(\m_axis_tdata[20]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [20]),
-        .I1(\filter_in_r_reg[2]_93 [20]),
+       (.I0(\filter_in_r_reg[3]_28 [20]),
+        .I1(\filter_in_r_reg[2]_29 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [20]),
+        .I3(\filter_in_r_reg[1]_30 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [20]),
+        .I5(\filter_in_r_reg[0]_31 [20]),
         .O(\m_axis_tdata[20]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [20]),
-        .I1(\filter_in_r_reg[6]_89 [20]),
+       (.I0(\filter_in_r_reg[7]_24 [20]),
+        .I1(\filter_in_r_reg[6]_25 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [20]),
+        .I3(\filter_in_r_reg[5]_26 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [20]),
+        .I5(\filter_in_r_reg[4]_27 [20]),
         .O(\m_axis_tdata[20]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23847,62 +23841,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [20]),
-        .I1(\filter_in_r_reg[10]_85 [20]),
+       (.I0(\filter_in_r_reg[11]_20 [20]),
+        .I1(\filter_in_r_reg[10]_21 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [20]),
+        .I3(\filter_in_r_reg[9]_22 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [20]),
+        .I5(\filter_in_r_reg[8]_23 [20]),
         .O(\m_axis_tdata[20]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[20]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [20]),
-        .I1(\filter_in_r_reg[14]_81 [20]),
+       (.I0(\filter_in_r_reg[15]_16 [20]),
+        .I1(\filter_in_r_reg[14]_17 [20]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [20]),
+        .I3(\filter_in_r_reg[13]_18 [20]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [20]),
+        .I5(\filter_in_r_reg[12]_19 [20]),
         .O(\m_axis_tdata[20]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [21]),
-        .I1(\filter_in_l_reg[18]_109 [21]),
+       (.I0(\filter_in_l_reg[19]_44 [21]),
+        .I1(\filter_in_l_reg[18]_45 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [21]),
+        .I3(\filter_in_l_reg[17]_46 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [21]),
+        .I5(\filter_in_l_reg[16]_47 [21]),
         .O(\m_axis_tdata[21]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [21]),
-        .I1(\filter_in_l_reg[22]_105 [21]),
+       (.I0(\filter_in_l_reg[23]_40 [21]),
+        .I1(\filter_in_l_reg[22]_41 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [21]),
+        .I3(\filter_in_l_reg[21]_42 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [21]),
+        .I5(\filter_in_l_reg[20]_43 [21]),
         .O(\m_axis_tdata[21]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [21]),
-        .I1(\filter_in_l_reg[26]_101 [21]),
+       (.I0(\filter_in_l_reg[27]_36 [21]),
+        .I1(\filter_in_l_reg[26]_37 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [21]),
+        .I3(\filter_in_l_reg[25]_38 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [21]),
+        .I5(\filter_in_l_reg[24]_39 [21]),
         .O(\m_axis_tdata[21]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [21]),
-        .I1(\filter_in_l_reg[30]_97 [21]),
+       (.I0(\filter_in_l_reg[31]_32 [21]),
+        .I1(\filter_in_l_reg[30]_33 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [21]),
+        .I3(\filter_in_l_reg[29]_34 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [21]),
+        .I5(\filter_in_l_reg[28]_35 [21]),
         .O(\m_axis_tdata[21]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -23916,102 +23910,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [21]),
-        .I1(\filter_in_l_reg[2]_125 [21]),
+       (.I0(\filter_in_l_reg[3]_60 [21]),
+        .I1(\filter_in_l_reg[2]_61 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [21]),
+        .I3(\filter_in_l_reg[1]_62 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [21]),
+        .I5(\filter_in_l_reg[0]_63 [21]),
         .O(\m_axis_tdata[21]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [21]),
-        .I1(\filter_in_l_reg[6]_121 [21]),
+       (.I0(\filter_in_l_reg[7]_56 [21]),
+        .I1(\filter_in_l_reg[6]_57 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [21]),
+        .I3(\filter_in_l_reg[5]_58 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [21]),
+        .I5(\filter_in_l_reg[4]_59 [21]),
         .O(\m_axis_tdata[21]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [21]),
-        .I1(\filter_in_l_reg[10]_117 [21]),
+       (.I0(\filter_in_l_reg[11]_52 [21]),
+        .I1(\filter_in_l_reg[10]_53 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [21]),
+        .I3(\filter_in_l_reg[9]_54 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [21]),
+        .I5(\filter_in_l_reg[8]_55 [21]),
         .O(\m_axis_tdata[21]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [21]),
-        .I1(\filter_in_l_reg[14]_113 [21]),
+       (.I0(\filter_in_l_reg[15]_48 [21]),
+        .I1(\filter_in_l_reg[14]_49 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [21]),
+        .I3(\filter_in_l_reg[13]_50 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [21]),
+        .I5(\filter_in_l_reg[12]_51 [21]),
         .O(\m_axis_tdata[21]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [21]),
-        .I1(\filter_in_r_reg[18]_77 [21]),
+       (.I0(\filter_in_r_reg[19]_12 [21]),
+        .I1(\filter_in_r_reg[18]_13 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [21]),
+        .I3(\filter_in_r_reg[17]_14 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [21]),
+        .I5(\filter_in_r_reg[16]_15 [21]),
         .O(\m_axis_tdata[21]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [21]),
-        .I1(\filter_in_r_reg[22]_73 [21]),
+       (.I0(\filter_in_r_reg[23]_8 [21]),
+        .I1(\filter_in_r_reg[22]_9 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [21]),
+        .I3(\filter_in_r_reg[21]_10 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [21]),
+        .I5(\filter_in_r_reg[20]_11 [21]),
         .O(\m_axis_tdata[21]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [21]),
-        .I1(\filter_in_r_reg[26]_69 [21]),
+       (.I0(\filter_in_r_reg[27]_4 [21]),
+        .I1(\filter_in_r_reg[26]_5 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [21]),
+        .I3(\filter_in_r_reg[25]_6 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [21]),
+        .I5(\filter_in_r_reg[24]_7 [21]),
         .O(\m_axis_tdata[21]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [21]),
-        .I1(\filter_in_r_reg[30]_65 [21]),
+       (.I0(\filter_in_r_reg[31]_0 [21]),
+        .I1(\filter_in_r_reg[30]_1 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [21]),
+        .I3(\filter_in_r_reg[29]_2 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [21]),
+        .I5(\filter_in_r_reg[28]_3 [21]),
         .O(\m_axis_tdata[21]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [21]),
-        .I1(\filter_in_r_reg[2]_93 [21]),
+       (.I0(\filter_in_r_reg[3]_28 [21]),
+        .I1(\filter_in_r_reg[2]_29 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [21]),
+        .I3(\filter_in_r_reg[1]_30 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [21]),
+        .I5(\filter_in_r_reg[0]_31 [21]),
         .O(\m_axis_tdata[21]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [21]),
-        .I1(\filter_in_r_reg[6]_89 [21]),
+       (.I0(\filter_in_r_reg[7]_24 [21]),
+        .I1(\filter_in_r_reg[6]_25 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [21]),
+        .I3(\filter_in_r_reg[5]_26 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [21]),
+        .I5(\filter_in_r_reg[4]_27 [21]),
         .O(\m_axis_tdata[21]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24025,62 +24019,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [21]),
-        .I1(\filter_in_r_reg[10]_85 [21]),
+       (.I0(\filter_in_r_reg[11]_20 [21]),
+        .I1(\filter_in_r_reg[10]_21 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [21]),
+        .I3(\filter_in_r_reg[9]_22 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [21]),
+        .I5(\filter_in_r_reg[8]_23 [21]),
         .O(\m_axis_tdata[21]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[21]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [21]),
-        .I1(\filter_in_r_reg[14]_81 [21]),
+       (.I0(\filter_in_r_reg[15]_16 [21]),
+        .I1(\filter_in_r_reg[14]_17 [21]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [21]),
+        .I3(\filter_in_r_reg[13]_18 [21]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [21]),
+        .I5(\filter_in_r_reg[12]_19 [21]),
         .O(\m_axis_tdata[21]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [22]),
-        .I1(\filter_in_l_reg[18]_109 [22]),
+       (.I0(\filter_in_l_reg[19]_44 [22]),
+        .I1(\filter_in_l_reg[18]_45 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [22]),
+        .I3(\filter_in_l_reg[17]_46 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [22]),
+        .I5(\filter_in_l_reg[16]_47 [22]),
         .O(\m_axis_tdata[22]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [22]),
-        .I1(\filter_in_l_reg[22]_105 [22]),
+       (.I0(\filter_in_l_reg[23]_40 [22]),
+        .I1(\filter_in_l_reg[22]_41 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [22]),
+        .I3(\filter_in_l_reg[21]_42 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [22]),
+        .I5(\filter_in_l_reg[20]_43 [22]),
         .O(\m_axis_tdata[22]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [22]),
-        .I1(\filter_in_l_reg[26]_101 [22]),
+       (.I0(\filter_in_l_reg[27]_36 [22]),
+        .I1(\filter_in_l_reg[26]_37 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [22]),
+        .I3(\filter_in_l_reg[25]_38 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [22]),
+        .I5(\filter_in_l_reg[24]_39 [22]),
         .O(\m_axis_tdata[22]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [22]),
-        .I1(\filter_in_l_reg[30]_97 [22]),
+       (.I0(\filter_in_l_reg[31]_32 [22]),
+        .I1(\filter_in_l_reg[30]_33 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [22]),
+        .I3(\filter_in_l_reg[29]_34 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [22]),
+        .I5(\filter_in_l_reg[28]_35 [22]),
         .O(\m_axis_tdata[22]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24094,102 +24088,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [22]),
-        .I1(\filter_in_l_reg[2]_125 [22]),
+       (.I0(\filter_in_l_reg[3]_60 [22]),
+        .I1(\filter_in_l_reg[2]_61 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [22]),
+        .I3(\filter_in_l_reg[1]_62 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [22]),
+        .I5(\filter_in_l_reg[0]_63 [22]),
         .O(\m_axis_tdata[22]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [22]),
-        .I1(\filter_in_l_reg[6]_121 [22]),
+       (.I0(\filter_in_l_reg[7]_56 [22]),
+        .I1(\filter_in_l_reg[6]_57 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [22]),
+        .I3(\filter_in_l_reg[5]_58 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [22]),
+        .I5(\filter_in_l_reg[4]_59 [22]),
         .O(\m_axis_tdata[22]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [22]),
-        .I1(\filter_in_l_reg[10]_117 [22]),
+       (.I0(\filter_in_l_reg[11]_52 [22]),
+        .I1(\filter_in_l_reg[10]_53 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [22]),
+        .I3(\filter_in_l_reg[9]_54 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [22]),
+        .I5(\filter_in_l_reg[8]_55 [22]),
         .O(\m_axis_tdata[22]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [22]),
-        .I1(\filter_in_l_reg[14]_113 [22]),
+       (.I0(\filter_in_l_reg[15]_48 [22]),
+        .I1(\filter_in_l_reg[14]_49 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [22]),
+        .I3(\filter_in_l_reg[13]_50 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [22]),
+        .I5(\filter_in_l_reg[12]_51 [22]),
         .O(\m_axis_tdata[22]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [22]),
-        .I1(\filter_in_r_reg[18]_77 [22]),
+       (.I0(\filter_in_r_reg[19]_12 [22]),
+        .I1(\filter_in_r_reg[18]_13 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [22]),
+        .I3(\filter_in_r_reg[17]_14 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [22]),
+        .I5(\filter_in_r_reg[16]_15 [22]),
         .O(\m_axis_tdata[22]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [22]),
-        .I1(\filter_in_r_reg[22]_73 [22]),
+       (.I0(\filter_in_r_reg[23]_8 [22]),
+        .I1(\filter_in_r_reg[22]_9 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [22]),
+        .I3(\filter_in_r_reg[21]_10 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [22]),
+        .I5(\filter_in_r_reg[20]_11 [22]),
         .O(\m_axis_tdata[22]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [22]),
-        .I1(\filter_in_r_reg[26]_69 [22]),
+       (.I0(\filter_in_r_reg[27]_4 [22]),
+        .I1(\filter_in_r_reg[26]_5 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [22]),
+        .I3(\filter_in_r_reg[25]_6 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [22]),
+        .I5(\filter_in_r_reg[24]_7 [22]),
         .O(\m_axis_tdata[22]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [22]),
-        .I1(\filter_in_r_reg[30]_65 [22]),
+       (.I0(\filter_in_r_reg[31]_0 [22]),
+        .I1(\filter_in_r_reg[30]_1 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [22]),
+        .I3(\filter_in_r_reg[29]_2 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [22]),
+        .I5(\filter_in_r_reg[28]_3 [22]),
         .O(\m_axis_tdata[22]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [22]),
-        .I1(\filter_in_r_reg[2]_93 [22]),
+       (.I0(\filter_in_r_reg[3]_28 [22]),
+        .I1(\filter_in_r_reg[2]_29 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [22]),
+        .I3(\filter_in_r_reg[1]_30 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [22]),
+        .I5(\filter_in_r_reg[0]_31 [22]),
         .O(\m_axis_tdata[22]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [22]),
-        .I1(\filter_in_r_reg[6]_89 [22]),
+       (.I0(\filter_in_r_reg[7]_24 [22]),
+        .I1(\filter_in_r_reg[6]_25 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [22]),
+        .I3(\filter_in_r_reg[5]_26 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [22]),
+        .I5(\filter_in_r_reg[4]_27 [22]),
         .O(\m_axis_tdata[22]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24203,22 +24197,22 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [22]),
-        .I1(\filter_in_r_reg[10]_85 [22]),
+       (.I0(\filter_in_r_reg[11]_20 [22]),
+        .I1(\filter_in_r_reg[10]_21 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [22]),
+        .I3(\filter_in_r_reg[9]_22 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [22]),
+        .I5(\filter_in_r_reg[8]_23 [22]),
         .O(\m_axis_tdata[22]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[22]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [22]),
-        .I1(\filter_in_r_reg[14]_81 [22]),
+       (.I0(\filter_in_r_reg[15]_16 [22]),
+        .I1(\filter_in_r_reg[14]_17 [22]),
         .I2(\ring_buffer_entry_reg[1]_rep__0_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [22]),
+        .I3(\filter_in_r_reg[13]_18 [22]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [22]),
+        .I5(\filter_in_r_reg[12]_19 [22]),
         .O(\m_axis_tdata[22]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'h5580008000000000)) 
@@ -24233,132 +24227,132 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_17 
-       (.I0(\filter_in_l_reg[19]_108 [23]),
-        .I1(\filter_in_l_reg[18]_109 [23]),
+       (.I0(\filter_in_l_reg[19]_44 [23]),
+        .I1(\filter_in_l_reg[18]_45 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [23]),
+        .I3(\filter_in_l_reg[17]_46 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [23]),
+        .I5(\filter_in_l_reg[16]_47 [23]),
         .O(\m_axis_tdata[23]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_18 
-       (.I0(\filter_in_l_reg[23]_104 [23]),
-        .I1(\filter_in_l_reg[22]_105 [23]),
+       (.I0(\filter_in_l_reg[23]_40 [23]),
+        .I1(\filter_in_l_reg[22]_41 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [23]),
+        .I3(\filter_in_l_reg[21]_42 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [23]),
+        .I5(\filter_in_l_reg[20]_43 [23]),
         .O(\m_axis_tdata[23]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_19 
-       (.I0(\filter_in_l_reg[27]_100 [23]),
-        .I1(\filter_in_l_reg[26]_101 [23]),
+       (.I0(\filter_in_l_reg[27]_36 [23]),
+        .I1(\filter_in_l_reg[26]_37 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [23]),
+        .I3(\filter_in_l_reg[25]_38 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [23]),
+        .I5(\filter_in_l_reg[24]_39 [23]),
         .O(\m_axis_tdata[23]_i_19_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_20 
-       (.I0(\filter_in_l_reg[31]_96 [23]),
-        .I1(\filter_in_l_reg[30]_97 [23]),
+       (.I0(\filter_in_l_reg[31]_32 [23]),
+        .I1(\filter_in_l_reg[30]_33 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [23]),
+        .I3(\filter_in_l_reg[29]_34 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [23]),
+        .I5(\filter_in_l_reg[28]_35 [23]),
         .O(\m_axis_tdata[23]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_21 
-       (.I0(\filter_in_l_reg[3]_124 [23]),
-        .I1(\filter_in_l_reg[2]_125 [23]),
+       (.I0(\filter_in_l_reg[3]_60 [23]),
+        .I1(\filter_in_l_reg[2]_61 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [23]),
+        .I3(\filter_in_l_reg[1]_62 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [23]),
+        .I5(\filter_in_l_reg[0]_63 [23]),
         .O(\m_axis_tdata[23]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_22 
-       (.I0(\filter_in_l_reg[7]_120 [23]),
-        .I1(\filter_in_l_reg[6]_121 [23]),
+       (.I0(\filter_in_l_reg[7]_56 [23]),
+        .I1(\filter_in_l_reg[6]_57 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [23]),
+        .I3(\filter_in_l_reg[5]_58 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [23]),
+        .I5(\filter_in_l_reg[4]_59 [23]),
         .O(\m_axis_tdata[23]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_23 
-       (.I0(\filter_in_l_reg[11]_116 [23]),
-        .I1(\filter_in_l_reg[10]_117 [23]),
+       (.I0(\filter_in_l_reg[11]_52 [23]),
+        .I1(\filter_in_l_reg[10]_53 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [23]),
+        .I3(\filter_in_l_reg[9]_54 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [23]),
+        .I5(\filter_in_l_reg[8]_55 [23]),
         .O(\m_axis_tdata[23]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_24 
-       (.I0(\filter_in_l_reg[15]_112 [23]),
-        .I1(\filter_in_l_reg[14]_113 [23]),
+       (.I0(\filter_in_l_reg[15]_48 [23]),
+        .I1(\filter_in_l_reg[14]_49 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [23]),
+        .I3(\filter_in_l_reg[13]_50 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__1_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [23]),
+        .I5(\filter_in_l_reg[12]_51 [23]),
         .O(\m_axis_tdata[23]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_25 
-       (.I0(\filter_in_r_reg[19]_76 [23]),
-        .I1(\filter_in_r_reg[18]_77 [23]),
+       (.I0(\filter_in_r_reg[19]_12 [23]),
+        .I1(\filter_in_r_reg[18]_13 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [23]),
+        .I3(\filter_in_r_reg[17]_14 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [23]),
+        .I5(\filter_in_r_reg[16]_15 [23]),
         .O(\m_axis_tdata[23]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_26 
-       (.I0(\filter_in_r_reg[23]_72 [23]),
-        .I1(\filter_in_r_reg[22]_73 [23]),
+       (.I0(\filter_in_r_reg[23]_8 [23]),
+        .I1(\filter_in_r_reg[22]_9 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [23]),
+        .I3(\filter_in_r_reg[21]_10 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [23]),
+        .I5(\filter_in_r_reg[20]_11 [23]),
         .O(\m_axis_tdata[23]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_27 
-       (.I0(\filter_in_r_reg[27]_68 [23]),
-        .I1(\filter_in_r_reg[26]_69 [23]),
+       (.I0(\filter_in_r_reg[27]_4 [23]),
+        .I1(\filter_in_r_reg[26]_5 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [23]),
+        .I3(\filter_in_r_reg[25]_6 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [23]),
+        .I5(\filter_in_r_reg[24]_7 [23]),
         .O(\m_axis_tdata[23]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_28 
-       (.I0(\filter_in_r_reg[31]_64 [23]),
-        .I1(\filter_in_r_reg[30]_65 [23]),
+       (.I0(\filter_in_r_reg[31]_0 [23]),
+        .I1(\filter_in_r_reg[30]_1 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [23]),
+        .I3(\filter_in_r_reg[29]_2 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [23]),
+        .I5(\filter_in_r_reg[28]_3 [23]),
         .O(\m_axis_tdata[23]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_29 
-       (.I0(\filter_in_r_reg[3]_92 [23]),
-        .I1(\filter_in_r_reg[2]_93 [23]),
+       (.I0(\filter_in_r_reg[3]_28 [23]),
+        .I1(\filter_in_r_reg[2]_29 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [23]),
+        .I3(\filter_in_r_reg[1]_30 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [23]),
+        .I5(\filter_in_r_reg[0]_31 [23]),
         .O(\m_axis_tdata[23]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24372,32 +24366,32 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_30 
-       (.I0(\filter_in_r_reg[7]_88 [23]),
-        .I1(\filter_in_r_reg[6]_89 [23]),
+       (.I0(\filter_in_r_reg[7]_24 [23]),
+        .I1(\filter_in_r_reg[6]_25 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [23]),
+        .I3(\filter_in_r_reg[5]_26 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [23]),
+        .I5(\filter_in_r_reg[4]_27 [23]),
         .O(\m_axis_tdata[23]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_31 
-       (.I0(\filter_in_r_reg[11]_84 [23]),
-        .I1(\filter_in_r_reg[10]_85 [23]),
+       (.I0(\filter_in_r_reg[11]_20 [23]),
+        .I1(\filter_in_r_reg[10]_21 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [23]),
+        .I3(\filter_in_r_reg[9]_22 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [23]),
+        .I5(\filter_in_r_reg[8]_23 [23]),
         .O(\m_axis_tdata[23]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[23]_i_32 
-       (.I0(\filter_in_r_reg[15]_80 [23]),
-        .I1(\filter_in_r_reg[14]_81 [23]),
+       (.I0(\filter_in_r_reg[15]_16 [23]),
+        .I1(\filter_in_r_reg[14]_17 [23]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [23]),
+        .I3(\filter_in_r_reg[13]_18 [23]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [23]),
+        .I5(\filter_in_r_reg[12]_19 [23]),
         .O(\m_axis_tdata[23]_i_32_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24411,42 +24405,42 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [2]),
-        .I1(\filter_in_l_reg[18]_109 [2]),
+       (.I0(\filter_in_l_reg[19]_44 [2]),
+        .I1(\filter_in_l_reg[18]_45 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [2]),
+        .I3(\filter_in_l_reg[17]_46 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [2]),
+        .I5(\filter_in_l_reg[16]_47 [2]),
         .O(\m_axis_tdata[2]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [2]),
-        .I1(\filter_in_l_reg[22]_105 [2]),
+       (.I0(\filter_in_l_reg[23]_40 [2]),
+        .I1(\filter_in_l_reg[22]_41 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [2]),
+        .I3(\filter_in_l_reg[21]_42 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [2]),
+        .I5(\filter_in_l_reg[20]_43 [2]),
         .O(\m_axis_tdata[2]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [2]),
-        .I1(\filter_in_l_reg[26]_101 [2]),
+       (.I0(\filter_in_l_reg[27]_36 [2]),
+        .I1(\filter_in_l_reg[26]_37 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [2]),
+        .I3(\filter_in_l_reg[25]_38 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [2]),
+        .I5(\filter_in_l_reg[24]_39 [2]),
         .O(\m_axis_tdata[2]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [2]),
-        .I1(\filter_in_l_reg[30]_97 [2]),
+       (.I0(\filter_in_l_reg[31]_32 [2]),
+        .I1(\filter_in_l_reg[30]_33 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [2]),
+        .I3(\filter_in_l_reg[29]_34 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [2]),
+        .I5(\filter_in_l_reg[28]_35 [2]),
         .O(\m_axis_tdata[2]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24460,102 +24454,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [2]),
-        .I1(\filter_in_l_reg[2]_125 [2]),
+       (.I0(\filter_in_l_reg[3]_60 [2]),
+        .I1(\filter_in_l_reg[2]_61 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [2]),
+        .I3(\filter_in_l_reg[1]_62 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [2]),
+        .I5(\filter_in_l_reg[0]_63 [2]),
         .O(\m_axis_tdata[2]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [2]),
-        .I1(\filter_in_l_reg[6]_121 [2]),
+       (.I0(\filter_in_l_reg[7]_56 [2]),
+        .I1(\filter_in_l_reg[6]_57 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [2]),
+        .I3(\filter_in_l_reg[5]_58 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [2]),
+        .I5(\filter_in_l_reg[4]_59 [2]),
         .O(\m_axis_tdata[2]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [2]),
-        .I1(\filter_in_l_reg[10]_117 [2]),
+       (.I0(\filter_in_l_reg[11]_52 [2]),
+        .I1(\filter_in_l_reg[10]_53 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [2]),
+        .I3(\filter_in_l_reg[9]_54 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [2]),
+        .I5(\filter_in_l_reg[8]_55 [2]),
         .O(\m_axis_tdata[2]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [2]),
-        .I1(\filter_in_l_reg[14]_113 [2]),
+       (.I0(\filter_in_l_reg[15]_48 [2]),
+        .I1(\filter_in_l_reg[14]_49 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [2]),
+        .I3(\filter_in_l_reg[13]_50 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [2]),
+        .I5(\filter_in_l_reg[12]_51 [2]),
         .O(\m_axis_tdata[2]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [2]),
-        .I1(\filter_in_r_reg[18]_77 [2]),
+       (.I0(\filter_in_r_reg[19]_12 [2]),
+        .I1(\filter_in_r_reg[18]_13 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [2]),
+        .I3(\filter_in_r_reg[17]_14 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [2]),
+        .I5(\filter_in_r_reg[16]_15 [2]),
         .O(\m_axis_tdata[2]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [2]),
-        .I1(\filter_in_r_reg[22]_73 [2]),
+       (.I0(\filter_in_r_reg[23]_8 [2]),
+        .I1(\filter_in_r_reg[22]_9 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [2]),
+        .I3(\filter_in_r_reg[21]_10 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [2]),
+        .I5(\filter_in_r_reg[20]_11 [2]),
         .O(\m_axis_tdata[2]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [2]),
-        .I1(\filter_in_r_reg[26]_69 [2]),
+       (.I0(\filter_in_r_reg[27]_4 [2]),
+        .I1(\filter_in_r_reg[26]_5 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [2]),
+        .I3(\filter_in_r_reg[25]_6 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [2]),
+        .I5(\filter_in_r_reg[24]_7 [2]),
         .O(\m_axis_tdata[2]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [2]),
-        .I1(\filter_in_r_reg[30]_65 [2]),
+       (.I0(\filter_in_r_reg[31]_0 [2]),
+        .I1(\filter_in_r_reg[30]_1 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [2]),
+        .I3(\filter_in_r_reg[29]_2 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [2]),
+        .I5(\filter_in_r_reg[28]_3 [2]),
         .O(\m_axis_tdata[2]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [2]),
-        .I1(\filter_in_r_reg[2]_93 [2]),
+       (.I0(\filter_in_r_reg[3]_28 [2]),
+        .I1(\filter_in_r_reg[2]_29 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [2]),
+        .I3(\filter_in_r_reg[1]_30 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [2]),
+        .I5(\filter_in_r_reg[0]_31 [2]),
         .O(\m_axis_tdata[2]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [2]),
-        .I1(\filter_in_r_reg[6]_89 [2]),
+       (.I0(\filter_in_r_reg[7]_24 [2]),
+        .I1(\filter_in_r_reg[6]_25 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [2]),
+        .I3(\filter_in_r_reg[5]_26 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [2]),
+        .I5(\filter_in_r_reg[4]_27 [2]),
         .O(\m_axis_tdata[2]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24569,62 +24563,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [2]),
-        .I1(\filter_in_r_reg[10]_85 [2]),
+       (.I0(\filter_in_r_reg[11]_20 [2]),
+        .I1(\filter_in_r_reg[10]_21 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [2]),
+        .I3(\filter_in_r_reg[9]_22 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [2]),
+        .I5(\filter_in_r_reg[8]_23 [2]),
         .O(\m_axis_tdata[2]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[2]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [2]),
-        .I1(\filter_in_r_reg[14]_81 [2]),
+       (.I0(\filter_in_r_reg[15]_16 [2]),
+        .I1(\filter_in_r_reg[14]_17 [2]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [2]),
+        .I3(\filter_in_r_reg[13]_18 [2]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [2]),
+        .I5(\filter_in_r_reg[12]_19 [2]),
         .O(\m_axis_tdata[2]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [3]),
-        .I1(\filter_in_l_reg[18]_109 [3]),
+       (.I0(\filter_in_l_reg[19]_44 [3]),
+        .I1(\filter_in_l_reg[18]_45 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [3]),
+        .I3(\filter_in_l_reg[17]_46 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [3]),
+        .I5(\filter_in_l_reg[16]_47 [3]),
         .O(\m_axis_tdata[3]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [3]),
-        .I1(\filter_in_l_reg[22]_105 [3]),
+       (.I0(\filter_in_l_reg[23]_40 [3]),
+        .I1(\filter_in_l_reg[22]_41 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [3]),
+        .I3(\filter_in_l_reg[21]_42 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [3]),
+        .I5(\filter_in_l_reg[20]_43 [3]),
         .O(\m_axis_tdata[3]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [3]),
-        .I1(\filter_in_l_reg[26]_101 [3]),
+       (.I0(\filter_in_l_reg[27]_36 [3]),
+        .I1(\filter_in_l_reg[26]_37 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [3]),
+        .I3(\filter_in_l_reg[25]_38 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [3]),
+        .I5(\filter_in_l_reg[24]_39 [3]),
         .O(\m_axis_tdata[3]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [3]),
-        .I1(\filter_in_l_reg[30]_97 [3]),
+       (.I0(\filter_in_l_reg[31]_32 [3]),
+        .I1(\filter_in_l_reg[30]_33 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [3]),
+        .I3(\filter_in_l_reg[29]_34 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [3]),
+        .I5(\filter_in_l_reg[28]_35 [3]),
         .O(\m_axis_tdata[3]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24638,102 +24632,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [3]),
-        .I1(\filter_in_l_reg[2]_125 [3]),
+       (.I0(\filter_in_l_reg[3]_60 [3]),
+        .I1(\filter_in_l_reg[2]_61 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [3]),
+        .I3(\filter_in_l_reg[1]_62 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [3]),
+        .I5(\filter_in_l_reg[0]_63 [3]),
         .O(\m_axis_tdata[3]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [3]),
-        .I1(\filter_in_l_reg[6]_121 [3]),
+       (.I0(\filter_in_l_reg[7]_56 [3]),
+        .I1(\filter_in_l_reg[6]_57 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [3]),
+        .I3(\filter_in_l_reg[5]_58 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [3]),
+        .I5(\filter_in_l_reg[4]_59 [3]),
         .O(\m_axis_tdata[3]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [3]),
-        .I1(\filter_in_l_reg[10]_117 [3]),
+       (.I0(\filter_in_l_reg[11]_52 [3]),
+        .I1(\filter_in_l_reg[10]_53 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [3]),
+        .I3(\filter_in_l_reg[9]_54 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [3]),
+        .I5(\filter_in_l_reg[8]_55 [3]),
         .O(\m_axis_tdata[3]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [3]),
-        .I1(\filter_in_l_reg[14]_113 [3]),
+       (.I0(\filter_in_l_reg[15]_48 [3]),
+        .I1(\filter_in_l_reg[14]_49 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [3]),
+        .I3(\filter_in_l_reg[13]_50 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [3]),
+        .I5(\filter_in_l_reg[12]_51 [3]),
         .O(\m_axis_tdata[3]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [3]),
-        .I1(\filter_in_r_reg[18]_77 [3]),
+       (.I0(\filter_in_r_reg[19]_12 [3]),
+        .I1(\filter_in_r_reg[18]_13 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[17]_78 [3]),
+        .I3(\filter_in_r_reg[17]_14 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [3]),
+        .I5(\filter_in_r_reg[16]_15 [3]),
         .O(\m_axis_tdata[3]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [3]),
-        .I1(\filter_in_r_reg[22]_73 [3]),
+       (.I0(\filter_in_r_reg[23]_8 [3]),
+        .I1(\filter_in_r_reg[22]_9 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[21]_74 [3]),
+        .I3(\filter_in_r_reg[21]_10 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [3]),
+        .I5(\filter_in_r_reg[20]_11 [3]),
         .O(\m_axis_tdata[3]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [3]),
-        .I1(\filter_in_r_reg[26]_69 [3]),
+       (.I0(\filter_in_r_reg[27]_4 [3]),
+        .I1(\filter_in_r_reg[26]_5 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[25]_70 [3]),
+        .I3(\filter_in_r_reg[25]_6 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [3]),
+        .I5(\filter_in_r_reg[24]_7 [3]),
         .O(\m_axis_tdata[3]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [3]),
-        .I1(\filter_in_r_reg[30]_65 [3]),
+       (.I0(\filter_in_r_reg[31]_0 [3]),
+        .I1(\filter_in_r_reg[30]_1 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[29]_66 [3]),
+        .I3(\filter_in_r_reg[29]_2 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [3]),
+        .I5(\filter_in_r_reg[28]_3 [3]),
         .O(\m_axis_tdata[3]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [3]),
-        .I1(\filter_in_r_reg[2]_93 [3]),
+       (.I0(\filter_in_r_reg[3]_28 [3]),
+        .I1(\filter_in_r_reg[2]_29 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [3]),
+        .I3(\filter_in_r_reg[1]_30 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [3]),
+        .I5(\filter_in_r_reg[0]_31 [3]),
         .O(\m_axis_tdata[3]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [3]),
-        .I1(\filter_in_r_reg[6]_89 [3]),
+       (.I0(\filter_in_r_reg[7]_24 [3]),
+        .I1(\filter_in_r_reg[6]_25 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [3]),
+        .I3(\filter_in_r_reg[5]_26 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [3]),
+        .I5(\filter_in_r_reg[4]_27 [3]),
         .O(\m_axis_tdata[3]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24747,62 +24741,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [3]),
-        .I1(\filter_in_r_reg[10]_85 [3]),
+       (.I0(\filter_in_r_reg[11]_20 [3]),
+        .I1(\filter_in_r_reg[10]_21 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[9]_86 [3]),
+        .I3(\filter_in_r_reg[9]_22 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [3]),
+        .I5(\filter_in_r_reg[8]_23 [3]),
         .O(\m_axis_tdata[3]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[3]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [3]),
-        .I1(\filter_in_r_reg[14]_81 [3]),
+       (.I0(\filter_in_r_reg[15]_16 [3]),
+        .I1(\filter_in_r_reg[14]_17 [3]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[13]_82 [3]),
+        .I3(\filter_in_r_reg[13]_18 [3]),
         .I4(\ring_buffer_entry_reg[0]_rep_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [3]),
+        .I5(\filter_in_r_reg[12]_19 [3]),
         .O(\m_axis_tdata[3]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [4]),
-        .I1(\filter_in_l_reg[18]_109 [4]),
+       (.I0(\filter_in_l_reg[19]_44 [4]),
+        .I1(\filter_in_l_reg[18]_45 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[17]_110 [4]),
+        .I3(\filter_in_l_reg[17]_46 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [4]),
+        .I5(\filter_in_l_reg[16]_47 [4]),
         .O(\m_axis_tdata[4]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [4]),
-        .I1(\filter_in_l_reg[22]_105 [4]),
+       (.I0(\filter_in_l_reg[23]_40 [4]),
+        .I1(\filter_in_l_reg[22]_41 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[21]_106 [4]),
+        .I3(\filter_in_l_reg[21]_42 [4]),
         .I4(ring_buffer_entry_reg[0]),
-        .I5(\filter_in_l_reg[20]_107 [4]),
+        .I5(\filter_in_l_reg[20]_43 [4]),
         .O(\m_axis_tdata[4]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [4]),
-        .I1(\filter_in_l_reg[26]_101 [4]),
+       (.I0(\filter_in_l_reg[27]_36 [4]),
+        .I1(\filter_in_l_reg[26]_37 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[25]_102 [4]),
+        .I3(\filter_in_l_reg[25]_38 [4]),
         .I4(ring_buffer_entry_reg[0]),
-        .I5(\filter_in_l_reg[24]_103 [4]),
+        .I5(\filter_in_l_reg[24]_39 [4]),
         .O(\m_axis_tdata[4]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [4]),
-        .I1(\filter_in_l_reg[30]_97 [4]),
+       (.I0(\filter_in_l_reg[31]_32 [4]),
+        .I1(\filter_in_l_reg[30]_33 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[29]_98 [4]),
+        .I3(\filter_in_l_reg[29]_34 [4]),
         .I4(ring_buffer_entry_reg[0]),
-        .I5(\filter_in_l_reg[28]_99 [4]),
+        .I5(\filter_in_l_reg[28]_35 [4]),
         .O(\m_axis_tdata[4]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24816,102 +24810,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [4]),
-        .I1(\filter_in_l_reg[2]_125 [4]),
+       (.I0(\filter_in_l_reg[3]_60 [4]),
+        .I1(\filter_in_l_reg[2]_61 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[1]_126 [4]),
+        .I3(\filter_in_l_reg[1]_62 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [4]),
+        .I5(\filter_in_l_reg[0]_63 [4]),
         .O(\m_axis_tdata[4]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [4]),
-        .I1(\filter_in_l_reg[6]_121 [4]),
+       (.I0(\filter_in_l_reg[7]_56 [4]),
+        .I1(\filter_in_l_reg[6]_57 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[5]_122 [4]),
+        .I3(\filter_in_l_reg[5]_58 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [4]),
+        .I5(\filter_in_l_reg[4]_59 [4]),
         .O(\m_axis_tdata[4]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [4]),
-        .I1(\filter_in_l_reg[10]_117 [4]),
+       (.I0(\filter_in_l_reg[11]_52 [4]),
+        .I1(\filter_in_l_reg[10]_53 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[9]_118 [4]),
+        .I3(\filter_in_l_reg[9]_54 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [4]),
+        .I5(\filter_in_l_reg[8]_55 [4]),
         .O(\m_axis_tdata[4]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [4]),
-        .I1(\filter_in_l_reg[14]_113 [4]),
+       (.I0(\filter_in_l_reg[15]_48 [4]),
+        .I1(\filter_in_l_reg[14]_49 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_l_reg[13]_114 [4]),
+        .I3(\filter_in_l_reg[13]_50 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [4]),
+        .I5(\filter_in_l_reg[12]_51 [4]),
         .O(\m_axis_tdata[4]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [4]),
-        .I1(\filter_in_r_reg[18]_77 [4]),
+       (.I0(\filter_in_r_reg[19]_12 [4]),
+        .I1(\filter_in_r_reg[18]_13 [4]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [4]),
+        .I3(\filter_in_r_reg[17]_14 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [4]),
+        .I5(\filter_in_r_reg[16]_15 [4]),
         .O(\m_axis_tdata[4]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [4]),
-        .I1(\filter_in_r_reg[22]_73 [4]),
+       (.I0(\filter_in_r_reg[23]_8 [4]),
+        .I1(\filter_in_r_reg[22]_9 [4]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [4]),
+        .I3(\filter_in_r_reg[21]_10 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [4]),
+        .I5(\filter_in_r_reg[20]_11 [4]),
         .O(\m_axis_tdata[4]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [4]),
-        .I1(\filter_in_r_reg[26]_69 [4]),
+       (.I0(\filter_in_r_reg[27]_4 [4]),
+        .I1(\filter_in_r_reg[26]_5 [4]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [4]),
+        .I3(\filter_in_r_reg[25]_6 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [4]),
+        .I5(\filter_in_r_reg[24]_7 [4]),
         .O(\m_axis_tdata[4]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [4]),
-        .I1(\filter_in_r_reg[30]_65 [4]),
+       (.I0(\filter_in_r_reg[31]_0 [4]),
+        .I1(\filter_in_r_reg[30]_1 [4]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [4]),
+        .I3(\filter_in_r_reg[29]_2 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [4]),
+        .I5(\filter_in_r_reg[28]_3 [4]),
         .O(\m_axis_tdata[4]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [4]),
-        .I1(\filter_in_r_reg[2]_93 [4]),
+       (.I0(\filter_in_r_reg[3]_28 [4]),
+        .I1(\filter_in_r_reg[2]_29 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[1]_94 [4]),
+        .I3(\filter_in_r_reg[1]_30 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [4]),
+        .I5(\filter_in_r_reg[0]_31 [4]),
         .O(\m_axis_tdata[4]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [4]),
-        .I1(\filter_in_r_reg[6]_89 [4]),
+       (.I0(\filter_in_r_reg[7]_24 [4]),
+        .I1(\filter_in_r_reg[6]_25 [4]),
         .I2(ring_buffer_entry_reg[1]),
-        .I3(\filter_in_r_reg[5]_90 [4]),
+        .I3(\filter_in_r_reg[5]_26 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [4]),
+        .I5(\filter_in_r_reg[4]_27 [4]),
         .O(\m_axis_tdata[4]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24925,62 +24919,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [4]),
-        .I1(\filter_in_r_reg[10]_85 [4]),
+       (.I0(\filter_in_r_reg[11]_20 [4]),
+        .I1(\filter_in_r_reg[10]_21 [4]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [4]),
+        .I3(\filter_in_r_reg[9]_22 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [4]),
+        .I5(\filter_in_r_reg[8]_23 [4]),
         .O(\m_axis_tdata[4]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[4]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [4]),
-        .I1(\filter_in_r_reg[14]_81 [4]),
+       (.I0(\filter_in_r_reg[15]_16 [4]),
+        .I1(\filter_in_r_reg[14]_17 [4]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [4]),
+        .I3(\filter_in_r_reg[13]_18 [4]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [4]),
+        .I5(\filter_in_r_reg[12]_19 [4]),
         .O(\m_axis_tdata[4]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [5]),
-        .I1(\filter_in_l_reg[18]_109 [5]),
+       (.I0(\filter_in_l_reg[19]_44 [5]),
+        .I1(\filter_in_l_reg[18]_45 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [5]),
+        .I3(\filter_in_l_reg[17]_46 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [5]),
+        .I5(\filter_in_l_reg[16]_47 [5]),
         .O(\m_axis_tdata[5]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [5]),
-        .I1(\filter_in_l_reg[22]_105 [5]),
+       (.I0(\filter_in_l_reg[23]_40 [5]),
+        .I1(\filter_in_l_reg[22]_41 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [5]),
+        .I3(\filter_in_l_reg[21]_42 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [5]),
+        .I5(\filter_in_l_reg[20]_43 [5]),
         .O(\m_axis_tdata[5]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [5]),
-        .I1(\filter_in_l_reg[26]_101 [5]),
+       (.I0(\filter_in_l_reg[27]_36 [5]),
+        .I1(\filter_in_l_reg[26]_37 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [5]),
+        .I3(\filter_in_l_reg[25]_38 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [5]),
+        .I5(\filter_in_l_reg[24]_39 [5]),
         .O(\m_axis_tdata[5]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [5]),
-        .I1(\filter_in_l_reg[30]_97 [5]),
+       (.I0(\filter_in_l_reg[31]_32 [5]),
+        .I1(\filter_in_l_reg[30]_33 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [5]),
+        .I3(\filter_in_l_reg[29]_34 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [5]),
+        .I5(\filter_in_l_reg[28]_35 [5]),
         .O(\m_axis_tdata[5]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -24994,102 +24988,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [5]),
-        .I1(\filter_in_l_reg[2]_125 [5]),
+       (.I0(\filter_in_l_reg[3]_60 [5]),
+        .I1(\filter_in_l_reg[2]_61 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [5]),
+        .I3(\filter_in_l_reg[1]_62 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [5]),
+        .I5(\filter_in_l_reg[0]_63 [5]),
         .O(\m_axis_tdata[5]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [5]),
-        .I1(\filter_in_l_reg[6]_121 [5]),
+       (.I0(\filter_in_l_reg[7]_56 [5]),
+        .I1(\filter_in_l_reg[6]_57 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [5]),
+        .I3(\filter_in_l_reg[5]_58 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [5]),
+        .I5(\filter_in_l_reg[4]_59 [5]),
         .O(\m_axis_tdata[5]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [5]),
-        .I1(\filter_in_l_reg[10]_117 [5]),
+       (.I0(\filter_in_l_reg[11]_52 [5]),
+        .I1(\filter_in_l_reg[10]_53 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [5]),
+        .I3(\filter_in_l_reg[9]_54 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [5]),
+        .I5(\filter_in_l_reg[8]_55 [5]),
         .O(\m_axis_tdata[5]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [5]),
-        .I1(\filter_in_l_reg[14]_113 [5]),
+       (.I0(\filter_in_l_reg[15]_48 [5]),
+        .I1(\filter_in_l_reg[14]_49 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [5]),
+        .I3(\filter_in_l_reg[13]_50 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [5]),
+        .I5(\filter_in_l_reg[12]_51 [5]),
         .O(\m_axis_tdata[5]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [5]),
-        .I1(\filter_in_r_reg[18]_77 [5]),
+       (.I0(\filter_in_r_reg[19]_12 [5]),
+        .I1(\filter_in_r_reg[18]_13 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [5]),
+        .I3(\filter_in_r_reg[17]_14 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [5]),
+        .I5(\filter_in_r_reg[16]_15 [5]),
         .O(\m_axis_tdata[5]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [5]),
-        .I1(\filter_in_r_reg[22]_73 [5]),
+       (.I0(\filter_in_r_reg[23]_8 [5]),
+        .I1(\filter_in_r_reg[22]_9 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [5]),
+        .I3(\filter_in_r_reg[21]_10 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [5]),
+        .I5(\filter_in_r_reg[20]_11 [5]),
         .O(\m_axis_tdata[5]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [5]),
-        .I1(\filter_in_r_reg[26]_69 [5]),
+       (.I0(\filter_in_r_reg[27]_4 [5]),
+        .I1(\filter_in_r_reg[26]_5 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [5]),
+        .I3(\filter_in_r_reg[25]_6 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [5]),
+        .I5(\filter_in_r_reg[24]_7 [5]),
         .O(\m_axis_tdata[5]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [5]),
-        .I1(\filter_in_r_reg[30]_65 [5]),
+       (.I0(\filter_in_r_reg[31]_0 [5]),
+        .I1(\filter_in_r_reg[30]_1 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [5]),
+        .I3(\filter_in_r_reg[29]_2 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [5]),
+        .I5(\filter_in_r_reg[28]_3 [5]),
         .O(\m_axis_tdata[5]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [5]),
-        .I1(\filter_in_r_reg[2]_93 [5]),
+       (.I0(\filter_in_r_reg[3]_28 [5]),
+        .I1(\filter_in_r_reg[2]_29 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [5]),
+        .I3(\filter_in_r_reg[1]_30 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [5]),
+        .I5(\filter_in_r_reg[0]_31 [5]),
         .O(\m_axis_tdata[5]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [5]),
-        .I1(\filter_in_r_reg[6]_89 [5]),
+       (.I0(\filter_in_r_reg[7]_24 [5]),
+        .I1(\filter_in_r_reg[6]_25 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [5]),
+        .I3(\filter_in_r_reg[5]_26 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [5]),
+        .I5(\filter_in_r_reg[4]_27 [5]),
         .O(\m_axis_tdata[5]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25103,62 +25097,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [5]),
-        .I1(\filter_in_r_reg[10]_85 [5]),
+       (.I0(\filter_in_r_reg[11]_20 [5]),
+        .I1(\filter_in_r_reg[10]_21 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [5]),
+        .I3(\filter_in_r_reg[9]_22 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [5]),
+        .I5(\filter_in_r_reg[8]_23 [5]),
         .O(\m_axis_tdata[5]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[5]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [5]),
-        .I1(\filter_in_r_reg[14]_81 [5]),
+       (.I0(\filter_in_r_reg[15]_16 [5]),
+        .I1(\filter_in_r_reg[14]_17 [5]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [5]),
+        .I3(\filter_in_r_reg[13]_18 [5]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [5]),
+        .I5(\filter_in_r_reg[12]_19 [5]),
         .O(\m_axis_tdata[5]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [6]),
-        .I1(\filter_in_l_reg[18]_109 [6]),
+       (.I0(\filter_in_l_reg[19]_44 [6]),
+        .I1(\filter_in_l_reg[18]_45 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [6]),
+        .I3(\filter_in_l_reg[17]_46 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [6]),
+        .I5(\filter_in_l_reg[16]_47 [6]),
         .O(\m_axis_tdata[6]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [6]),
-        .I1(\filter_in_l_reg[22]_105 [6]),
+       (.I0(\filter_in_l_reg[23]_40 [6]),
+        .I1(\filter_in_l_reg[22]_41 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [6]),
+        .I3(\filter_in_l_reg[21]_42 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [6]),
+        .I5(\filter_in_l_reg[20]_43 [6]),
         .O(\m_axis_tdata[6]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [6]),
-        .I1(\filter_in_l_reg[26]_101 [6]),
+       (.I0(\filter_in_l_reg[27]_36 [6]),
+        .I1(\filter_in_l_reg[26]_37 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [6]),
+        .I3(\filter_in_l_reg[25]_38 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [6]),
+        .I5(\filter_in_l_reg[24]_39 [6]),
         .O(\m_axis_tdata[6]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [6]),
-        .I1(\filter_in_l_reg[30]_97 [6]),
+       (.I0(\filter_in_l_reg[31]_32 [6]),
+        .I1(\filter_in_l_reg[30]_33 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [6]),
+        .I3(\filter_in_l_reg[29]_34 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [6]),
+        .I5(\filter_in_l_reg[28]_35 [6]),
         .O(\m_axis_tdata[6]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25172,102 +25166,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [6]),
-        .I1(\filter_in_l_reg[2]_125 [6]),
+       (.I0(\filter_in_l_reg[3]_60 [6]),
+        .I1(\filter_in_l_reg[2]_61 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [6]),
+        .I3(\filter_in_l_reg[1]_62 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [6]),
+        .I5(\filter_in_l_reg[0]_63 [6]),
         .O(\m_axis_tdata[6]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [6]),
-        .I1(\filter_in_l_reg[6]_121 [6]),
+       (.I0(\filter_in_l_reg[7]_56 [6]),
+        .I1(\filter_in_l_reg[6]_57 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [6]),
+        .I3(\filter_in_l_reg[5]_58 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [6]),
+        .I5(\filter_in_l_reg[4]_59 [6]),
         .O(\m_axis_tdata[6]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [6]),
-        .I1(\filter_in_l_reg[10]_117 [6]),
+       (.I0(\filter_in_l_reg[11]_52 [6]),
+        .I1(\filter_in_l_reg[10]_53 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [6]),
+        .I3(\filter_in_l_reg[9]_54 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [6]),
+        .I5(\filter_in_l_reg[8]_55 [6]),
         .O(\m_axis_tdata[6]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [6]),
-        .I1(\filter_in_l_reg[14]_113 [6]),
+       (.I0(\filter_in_l_reg[15]_48 [6]),
+        .I1(\filter_in_l_reg[14]_49 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [6]),
+        .I3(\filter_in_l_reg[13]_50 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [6]),
+        .I5(\filter_in_l_reg[12]_51 [6]),
         .O(\m_axis_tdata[6]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [6]),
-        .I1(\filter_in_r_reg[18]_77 [6]),
+       (.I0(\filter_in_r_reg[19]_12 [6]),
+        .I1(\filter_in_r_reg[18]_13 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [6]),
+        .I3(\filter_in_r_reg[17]_14 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [6]),
+        .I5(\filter_in_r_reg[16]_15 [6]),
         .O(\m_axis_tdata[6]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [6]),
-        .I1(\filter_in_r_reg[22]_73 [6]),
+       (.I0(\filter_in_r_reg[23]_8 [6]),
+        .I1(\filter_in_r_reg[22]_9 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [6]),
+        .I3(\filter_in_r_reg[21]_10 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [6]),
+        .I5(\filter_in_r_reg[20]_11 [6]),
         .O(\m_axis_tdata[6]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [6]),
-        .I1(\filter_in_r_reg[26]_69 [6]),
+       (.I0(\filter_in_r_reg[27]_4 [6]),
+        .I1(\filter_in_r_reg[26]_5 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [6]),
+        .I3(\filter_in_r_reg[25]_6 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [6]),
+        .I5(\filter_in_r_reg[24]_7 [6]),
         .O(\m_axis_tdata[6]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [6]),
-        .I1(\filter_in_r_reg[30]_65 [6]),
+       (.I0(\filter_in_r_reg[31]_0 [6]),
+        .I1(\filter_in_r_reg[30]_1 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [6]),
+        .I3(\filter_in_r_reg[29]_2 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [6]),
+        .I5(\filter_in_r_reg[28]_3 [6]),
         .O(\m_axis_tdata[6]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [6]),
-        .I1(\filter_in_r_reg[2]_93 [6]),
+       (.I0(\filter_in_r_reg[3]_28 [6]),
+        .I1(\filter_in_r_reg[2]_29 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [6]),
+        .I3(\filter_in_r_reg[1]_30 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [6]),
+        .I5(\filter_in_r_reg[0]_31 [6]),
         .O(\m_axis_tdata[6]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [6]),
-        .I1(\filter_in_r_reg[6]_89 [6]),
+       (.I0(\filter_in_r_reg[7]_24 [6]),
+        .I1(\filter_in_r_reg[6]_25 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [6]),
+        .I3(\filter_in_r_reg[5]_26 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [6]),
+        .I5(\filter_in_r_reg[4]_27 [6]),
         .O(\m_axis_tdata[6]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25281,62 +25275,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [6]),
-        .I1(\filter_in_r_reg[10]_85 [6]),
+       (.I0(\filter_in_r_reg[11]_20 [6]),
+        .I1(\filter_in_r_reg[10]_21 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [6]),
+        .I3(\filter_in_r_reg[9]_22 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [6]),
+        .I5(\filter_in_r_reg[8]_23 [6]),
         .O(\m_axis_tdata[6]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[6]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [6]),
-        .I1(\filter_in_r_reg[14]_81 [6]),
+       (.I0(\filter_in_r_reg[15]_16 [6]),
+        .I1(\filter_in_r_reg[14]_17 [6]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [6]),
+        .I3(\filter_in_r_reg[13]_18 [6]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [6]),
+        .I5(\filter_in_r_reg[12]_19 [6]),
         .O(\m_axis_tdata[6]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [7]),
-        .I1(\filter_in_l_reg[18]_109 [7]),
+       (.I0(\filter_in_l_reg[19]_44 [7]),
+        .I1(\filter_in_l_reg[18]_45 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [7]),
+        .I3(\filter_in_l_reg[17]_46 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [7]),
+        .I5(\filter_in_l_reg[16]_47 [7]),
         .O(\m_axis_tdata[7]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [7]),
-        .I1(\filter_in_l_reg[22]_105 [7]),
+       (.I0(\filter_in_l_reg[23]_40 [7]),
+        .I1(\filter_in_l_reg[22]_41 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [7]),
+        .I3(\filter_in_l_reg[21]_42 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [7]),
+        .I5(\filter_in_l_reg[20]_43 [7]),
         .O(\m_axis_tdata[7]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [7]),
-        .I1(\filter_in_l_reg[26]_101 [7]),
+       (.I0(\filter_in_l_reg[27]_36 [7]),
+        .I1(\filter_in_l_reg[26]_37 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [7]),
+        .I3(\filter_in_l_reg[25]_38 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [7]),
+        .I5(\filter_in_l_reg[24]_39 [7]),
         .O(\m_axis_tdata[7]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [7]),
-        .I1(\filter_in_l_reg[30]_97 [7]),
+       (.I0(\filter_in_l_reg[31]_32 [7]),
+        .I1(\filter_in_l_reg[30]_33 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [7]),
+        .I3(\filter_in_l_reg[29]_34 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [7]),
+        .I5(\filter_in_l_reg[28]_35 [7]),
         .O(\m_axis_tdata[7]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25350,102 +25344,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [7]),
-        .I1(\filter_in_l_reg[2]_125 [7]),
+       (.I0(\filter_in_l_reg[3]_60 [7]),
+        .I1(\filter_in_l_reg[2]_61 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [7]),
+        .I3(\filter_in_l_reg[1]_62 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [7]),
+        .I5(\filter_in_l_reg[0]_63 [7]),
         .O(\m_axis_tdata[7]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [7]),
-        .I1(\filter_in_l_reg[6]_121 [7]),
+       (.I0(\filter_in_l_reg[7]_56 [7]),
+        .I1(\filter_in_l_reg[6]_57 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [7]),
+        .I3(\filter_in_l_reg[5]_58 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [7]),
+        .I5(\filter_in_l_reg[4]_59 [7]),
         .O(\m_axis_tdata[7]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [7]),
-        .I1(\filter_in_l_reg[10]_117 [7]),
+       (.I0(\filter_in_l_reg[11]_52 [7]),
+        .I1(\filter_in_l_reg[10]_53 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [7]),
+        .I3(\filter_in_l_reg[9]_54 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [7]),
+        .I5(\filter_in_l_reg[8]_55 [7]),
         .O(\m_axis_tdata[7]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [7]),
-        .I1(\filter_in_l_reg[14]_113 [7]),
+       (.I0(\filter_in_l_reg[15]_48 [7]),
+        .I1(\filter_in_l_reg[14]_49 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [7]),
+        .I3(\filter_in_l_reg[13]_50 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [7]),
+        .I5(\filter_in_l_reg[12]_51 [7]),
         .O(\m_axis_tdata[7]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [7]),
-        .I1(\filter_in_r_reg[18]_77 [7]),
+       (.I0(\filter_in_r_reg[19]_12 [7]),
+        .I1(\filter_in_r_reg[18]_13 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [7]),
+        .I3(\filter_in_r_reg[17]_14 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [7]),
+        .I5(\filter_in_r_reg[16]_15 [7]),
         .O(\m_axis_tdata[7]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [7]),
-        .I1(\filter_in_r_reg[22]_73 [7]),
+       (.I0(\filter_in_r_reg[23]_8 [7]),
+        .I1(\filter_in_r_reg[22]_9 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [7]),
+        .I3(\filter_in_r_reg[21]_10 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [7]),
+        .I5(\filter_in_r_reg[20]_11 [7]),
         .O(\m_axis_tdata[7]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [7]),
-        .I1(\filter_in_r_reg[26]_69 [7]),
+       (.I0(\filter_in_r_reg[27]_4 [7]),
+        .I1(\filter_in_r_reg[26]_5 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [7]),
+        .I3(\filter_in_r_reg[25]_6 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [7]),
+        .I5(\filter_in_r_reg[24]_7 [7]),
         .O(\m_axis_tdata[7]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [7]),
-        .I1(\filter_in_r_reg[30]_65 [7]),
+       (.I0(\filter_in_r_reg[31]_0 [7]),
+        .I1(\filter_in_r_reg[30]_1 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [7]),
+        .I3(\filter_in_r_reg[29]_2 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [7]),
+        .I5(\filter_in_r_reg[28]_3 [7]),
         .O(\m_axis_tdata[7]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [7]),
-        .I1(\filter_in_r_reg[2]_93 [7]),
+       (.I0(\filter_in_r_reg[3]_28 [7]),
+        .I1(\filter_in_r_reg[2]_29 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [7]),
+        .I3(\filter_in_r_reg[1]_30 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [7]),
+        .I5(\filter_in_r_reg[0]_31 [7]),
         .O(\m_axis_tdata[7]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [7]),
-        .I1(\filter_in_r_reg[6]_89 [7]),
+       (.I0(\filter_in_r_reg[7]_24 [7]),
+        .I1(\filter_in_r_reg[6]_25 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [7]),
+        .I3(\filter_in_r_reg[5]_26 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [7]),
+        .I5(\filter_in_r_reg[4]_27 [7]),
         .O(\m_axis_tdata[7]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25459,62 +25453,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [7]),
-        .I1(\filter_in_r_reg[10]_85 [7]),
+       (.I0(\filter_in_r_reg[11]_20 [7]),
+        .I1(\filter_in_r_reg[10]_21 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [7]),
+        .I3(\filter_in_r_reg[9]_22 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [7]),
+        .I5(\filter_in_r_reg[8]_23 [7]),
         .O(\m_axis_tdata[7]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[7]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [7]),
-        .I1(\filter_in_r_reg[14]_81 [7]),
+       (.I0(\filter_in_r_reg[15]_16 [7]),
+        .I1(\filter_in_r_reg[14]_17 [7]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [7]),
+        .I3(\filter_in_r_reg[13]_18 [7]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [7]),
+        .I5(\filter_in_r_reg[12]_19 [7]),
         .O(\m_axis_tdata[7]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [8]),
-        .I1(\filter_in_l_reg[18]_109 [8]),
+       (.I0(\filter_in_l_reg[19]_44 [8]),
+        .I1(\filter_in_l_reg[18]_45 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [8]),
+        .I3(\filter_in_l_reg[17]_46 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [8]),
+        .I5(\filter_in_l_reg[16]_47 [8]),
         .O(\m_axis_tdata[8]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [8]),
-        .I1(\filter_in_l_reg[22]_105 [8]),
+       (.I0(\filter_in_l_reg[23]_40 [8]),
+        .I1(\filter_in_l_reg[22]_41 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [8]),
+        .I3(\filter_in_l_reg[21]_42 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [8]),
+        .I5(\filter_in_l_reg[20]_43 [8]),
         .O(\m_axis_tdata[8]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [8]),
-        .I1(\filter_in_l_reg[26]_101 [8]),
+       (.I0(\filter_in_l_reg[27]_36 [8]),
+        .I1(\filter_in_l_reg[26]_37 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [8]),
+        .I3(\filter_in_l_reg[25]_38 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [8]),
+        .I5(\filter_in_l_reg[24]_39 [8]),
         .O(\m_axis_tdata[8]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [8]),
-        .I1(\filter_in_l_reg[30]_97 [8]),
+       (.I0(\filter_in_l_reg[31]_32 [8]),
+        .I1(\filter_in_l_reg[30]_33 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [8]),
+        .I3(\filter_in_l_reg[29]_34 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [8]),
+        .I5(\filter_in_l_reg[28]_35 [8]),
         .O(\m_axis_tdata[8]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25528,102 +25522,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [8]),
-        .I1(\filter_in_l_reg[2]_125 [8]),
+       (.I0(\filter_in_l_reg[3]_60 [8]),
+        .I1(\filter_in_l_reg[2]_61 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [8]),
+        .I3(\filter_in_l_reg[1]_62 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [8]),
+        .I5(\filter_in_l_reg[0]_63 [8]),
         .O(\m_axis_tdata[8]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [8]),
-        .I1(\filter_in_l_reg[6]_121 [8]),
+       (.I0(\filter_in_l_reg[7]_56 [8]),
+        .I1(\filter_in_l_reg[6]_57 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [8]),
+        .I3(\filter_in_l_reg[5]_58 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [8]),
+        .I5(\filter_in_l_reg[4]_59 [8]),
         .O(\m_axis_tdata[8]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [8]),
-        .I1(\filter_in_l_reg[10]_117 [8]),
+       (.I0(\filter_in_l_reg[11]_52 [8]),
+        .I1(\filter_in_l_reg[10]_53 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [8]),
+        .I3(\filter_in_l_reg[9]_54 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [8]),
+        .I5(\filter_in_l_reg[8]_55 [8]),
         .O(\m_axis_tdata[8]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [8]),
-        .I1(\filter_in_l_reg[14]_113 [8]),
+       (.I0(\filter_in_l_reg[15]_48 [8]),
+        .I1(\filter_in_l_reg[14]_49 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [8]),
+        .I3(\filter_in_l_reg[13]_50 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [8]),
+        .I5(\filter_in_l_reg[12]_51 [8]),
         .O(\m_axis_tdata[8]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [8]),
-        .I1(\filter_in_r_reg[18]_77 [8]),
+       (.I0(\filter_in_r_reg[19]_12 [8]),
+        .I1(\filter_in_r_reg[18]_13 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [8]),
+        .I3(\filter_in_r_reg[17]_14 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [8]),
+        .I5(\filter_in_r_reg[16]_15 [8]),
         .O(\m_axis_tdata[8]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [8]),
-        .I1(\filter_in_r_reg[22]_73 [8]),
+       (.I0(\filter_in_r_reg[23]_8 [8]),
+        .I1(\filter_in_r_reg[22]_9 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [8]),
+        .I3(\filter_in_r_reg[21]_10 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [8]),
+        .I5(\filter_in_r_reg[20]_11 [8]),
         .O(\m_axis_tdata[8]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [8]),
-        .I1(\filter_in_r_reg[26]_69 [8]),
+       (.I0(\filter_in_r_reg[27]_4 [8]),
+        .I1(\filter_in_r_reg[26]_5 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [8]),
+        .I3(\filter_in_r_reg[25]_6 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [8]),
+        .I5(\filter_in_r_reg[24]_7 [8]),
         .O(\m_axis_tdata[8]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [8]),
-        .I1(\filter_in_r_reg[30]_65 [8]),
+       (.I0(\filter_in_r_reg[31]_0 [8]),
+        .I1(\filter_in_r_reg[30]_1 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [8]),
+        .I3(\filter_in_r_reg[29]_2 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [8]),
+        .I5(\filter_in_r_reg[28]_3 [8]),
         .O(\m_axis_tdata[8]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [8]),
-        .I1(\filter_in_r_reg[2]_93 [8]),
+       (.I0(\filter_in_r_reg[3]_28 [8]),
+        .I1(\filter_in_r_reg[2]_29 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [8]),
+        .I3(\filter_in_r_reg[1]_30 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [8]),
+        .I5(\filter_in_r_reg[0]_31 [8]),
         .O(\m_axis_tdata[8]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [8]),
-        .I1(\filter_in_r_reg[6]_89 [8]),
+       (.I0(\filter_in_r_reg[7]_24 [8]),
+        .I1(\filter_in_r_reg[6]_25 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [8]),
+        .I3(\filter_in_r_reg[5]_26 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [8]),
+        .I5(\filter_in_r_reg[4]_27 [8]),
         .O(\m_axis_tdata[8]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25637,62 +25631,62 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [8]),
-        .I1(\filter_in_r_reg[10]_85 [8]),
+       (.I0(\filter_in_r_reg[11]_20 [8]),
+        .I1(\filter_in_r_reg[10]_21 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [8]),
+        .I3(\filter_in_r_reg[9]_22 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [8]),
+        .I5(\filter_in_r_reg[8]_23 [8]),
         .O(\m_axis_tdata[8]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[8]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [8]),
-        .I1(\filter_in_r_reg[14]_81 [8]),
+       (.I0(\filter_in_r_reg[15]_16 [8]),
+        .I1(\filter_in_r_reg[14]_17 [8]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [8]),
+        .I3(\filter_in_r_reg[13]_18 [8]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [8]),
+        .I5(\filter_in_r_reg[12]_19 [8]),
         .O(\m_axis_tdata[8]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_16 
-       (.I0(\filter_in_l_reg[19]_108 [9]),
-        .I1(\filter_in_l_reg[18]_109 [9]),
+       (.I0(\filter_in_l_reg[19]_44 [9]),
+        .I1(\filter_in_l_reg[18]_45 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[17]_110 [9]),
+        .I3(\filter_in_l_reg[17]_46 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[16]_111 [9]),
+        .I5(\filter_in_l_reg[16]_47 [9]),
         .O(\m_axis_tdata[9]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_17 
-       (.I0(\filter_in_l_reg[23]_104 [9]),
-        .I1(\filter_in_l_reg[22]_105 [9]),
+       (.I0(\filter_in_l_reg[23]_40 [9]),
+        .I1(\filter_in_l_reg[22]_41 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[21]_106 [9]),
+        .I3(\filter_in_l_reg[21]_42 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[20]_107 [9]),
+        .I5(\filter_in_l_reg[20]_43 [9]),
         .O(\m_axis_tdata[9]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_18 
-       (.I0(\filter_in_l_reg[27]_100 [9]),
-        .I1(\filter_in_l_reg[26]_101 [9]),
+       (.I0(\filter_in_l_reg[27]_36 [9]),
+        .I1(\filter_in_l_reg[26]_37 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[25]_102 [9]),
+        .I3(\filter_in_l_reg[25]_38 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[24]_103 [9]),
+        .I5(\filter_in_l_reg[24]_39 [9]),
         .O(\m_axis_tdata[9]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_19 
-       (.I0(\filter_in_l_reg[31]_96 [9]),
-        .I1(\filter_in_l_reg[30]_97 [9]),
+       (.I0(\filter_in_l_reg[31]_32 [9]),
+        .I1(\filter_in_l_reg[30]_33 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[29]_98 [9]),
+        .I3(\filter_in_l_reg[29]_34 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[28]_99 [9]),
+        .I5(\filter_in_l_reg[28]_35 [9]),
         .O(\m_axis_tdata[9]_i_19_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25706,102 +25700,102 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_20 
-       (.I0(\filter_in_l_reg[3]_124 [9]),
-        .I1(\filter_in_l_reg[2]_125 [9]),
+       (.I0(\filter_in_l_reg[3]_60 [9]),
+        .I1(\filter_in_l_reg[2]_61 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[1]_126 [9]),
+        .I3(\filter_in_l_reg[1]_62 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[0]_127 [9]),
+        .I5(\filter_in_l_reg[0]_63 [9]),
         .O(\m_axis_tdata[9]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_21 
-       (.I0(\filter_in_l_reg[7]_120 [9]),
-        .I1(\filter_in_l_reg[6]_121 [9]),
+       (.I0(\filter_in_l_reg[7]_56 [9]),
+        .I1(\filter_in_l_reg[6]_57 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[5]_122 [9]),
+        .I3(\filter_in_l_reg[5]_58 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[4]_123 [9]),
+        .I5(\filter_in_l_reg[4]_59 [9]),
         .O(\m_axis_tdata[9]_i_21_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_22 
-       (.I0(\filter_in_l_reg[11]_116 [9]),
-        .I1(\filter_in_l_reg[10]_117 [9]),
+       (.I0(\filter_in_l_reg[11]_52 [9]),
+        .I1(\filter_in_l_reg[10]_53 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[9]_118 [9]),
+        .I3(\filter_in_l_reg[9]_54 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[8]_119 [9]),
+        .I5(\filter_in_l_reg[8]_55 [9]),
         .O(\m_axis_tdata[9]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_23 
-       (.I0(\filter_in_l_reg[15]_112 [9]),
-        .I1(\filter_in_l_reg[14]_113 [9]),
+       (.I0(\filter_in_l_reg[15]_48 [9]),
+        .I1(\filter_in_l_reg[14]_49 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_l_reg[13]_114 [9]),
+        .I3(\filter_in_l_reg[13]_50 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_l_reg[12]_115 [9]),
+        .I5(\filter_in_l_reg[12]_51 [9]),
         .O(\m_axis_tdata[9]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_24 
-       (.I0(\filter_in_r_reg[19]_76 [9]),
-        .I1(\filter_in_r_reg[18]_77 [9]),
+       (.I0(\filter_in_r_reg[19]_12 [9]),
+        .I1(\filter_in_r_reg[18]_13 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[17]_78 [9]),
+        .I3(\filter_in_r_reg[17]_14 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[16]_79 [9]),
+        .I5(\filter_in_r_reg[16]_15 [9]),
         .O(\m_axis_tdata[9]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_25 
-       (.I0(\filter_in_r_reg[23]_72 [9]),
-        .I1(\filter_in_r_reg[22]_73 [9]),
+       (.I0(\filter_in_r_reg[23]_8 [9]),
+        .I1(\filter_in_r_reg[22]_9 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[21]_74 [9]),
+        .I3(\filter_in_r_reg[21]_10 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[20]_75 [9]),
+        .I5(\filter_in_r_reg[20]_11 [9]),
         .O(\m_axis_tdata[9]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_26 
-       (.I0(\filter_in_r_reg[27]_68 [9]),
-        .I1(\filter_in_r_reg[26]_69 [9]),
+       (.I0(\filter_in_r_reg[27]_4 [9]),
+        .I1(\filter_in_r_reg[26]_5 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[25]_70 [9]),
+        .I3(\filter_in_r_reg[25]_6 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[24]_71 [9]),
+        .I5(\filter_in_r_reg[24]_7 [9]),
         .O(\m_axis_tdata[9]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_27 
-       (.I0(\filter_in_r_reg[31]_64 [9]),
-        .I1(\filter_in_r_reg[30]_65 [9]),
+       (.I0(\filter_in_r_reg[31]_0 [9]),
+        .I1(\filter_in_r_reg[30]_1 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[29]_66 [9]),
+        .I3(\filter_in_r_reg[29]_2 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[28]_67 [9]),
+        .I5(\filter_in_r_reg[28]_3 [9]),
         .O(\m_axis_tdata[9]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_28 
-       (.I0(\filter_in_r_reg[3]_92 [9]),
-        .I1(\filter_in_r_reg[2]_93 [9]),
+       (.I0(\filter_in_r_reg[3]_28 [9]),
+        .I1(\filter_in_r_reg[2]_29 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[1]_94 [9]),
+        .I3(\filter_in_r_reg[1]_30 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[0]_95 [9]),
+        .I5(\filter_in_r_reg[0]_31 [9]),
         .O(\m_axis_tdata[9]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_29 
-       (.I0(\filter_in_r_reg[7]_88 [9]),
-        .I1(\filter_in_r_reg[6]_89 [9]),
+       (.I0(\filter_in_r_reg[7]_24 [9]),
+        .I1(\filter_in_r_reg[6]_25 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[5]_90 [9]),
+        .I3(\filter_in_r_reg[5]_26 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[4]_91 [9]),
+        .I5(\filter_in_r_reg[4]_27 [9]),
         .O(\m_axis_tdata[9]_i_29_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
@@ -25815,22 +25809,22 @@ module design_1_dual_moving_average_0_0_dual_moving_average
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_30 
-       (.I0(\filter_in_r_reg[11]_84 [9]),
-        .I1(\filter_in_r_reg[10]_85 [9]),
+       (.I0(\filter_in_r_reg[11]_20 [9]),
+        .I1(\filter_in_r_reg[10]_21 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[9]_86 [9]),
+        .I3(\filter_in_r_reg[9]_22 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[8]_87 [9]),
+        .I5(\filter_in_r_reg[8]_23 [9]),
         .O(\m_axis_tdata[9]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \m_axis_tdata[9]_i_31 
-       (.I0(\filter_in_r_reg[15]_80 [9]),
-        .I1(\filter_in_r_reg[14]_81 [9]),
+       (.I0(\filter_in_r_reg[15]_16 [9]),
+        .I1(\filter_in_r_reg[14]_17 [9]),
         .I2(\ring_buffer_entry_reg[1]_rep_n_0 ),
-        .I3(\filter_in_r_reg[13]_82 [9]),
+        .I3(\filter_in_r_reg[13]_18 [9]),
         .I4(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
-        .I5(\filter_in_r_reg[12]_83 [9]),
+        .I5(\filter_in_r_reg[12]_19 [9]),
         .O(\m_axis_tdata[9]_i_31_n_0 ));
   FDRE \m_axis_tdata_reg[0] 
        (.C(aclk),
@@ -27536,6 +27530,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\m_axis_tdata[9]_i_19_n_0 ),
         .O(\m_axis_tdata_reg[9]_i_9_n_0 ),
         .S(\ring_buffer_entry_reg[2]_rep_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h8)) 
     m_axis_tlast_INST_0
@@ -27613,7 +27608,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\ring_buffer_entry_reg[0]_rep__2_n_0 ),
         .I2(ring_buffer_entry_reg[2]),
         .O(\ring_buffer_entry[2]_rep_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \ring_buffer_entry[3]_i_1 
@@ -27630,7 +27625,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(state),
         .I3(aresetn),
         .O(ring_buffer_entry0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \ring_buffer_entry[4]_i_2 
@@ -27837,7 +27832,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I1(\ring_buffer_read_reg[0]_rep_n_0 ),
         .I2(ring_buffer_read_reg[2]),
         .O(\ring_buffer_read[2]_rep_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \ring_buffer_read[3]_i_1 
@@ -27846,7 +27841,7 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .I2(\ring_buffer_read_reg[1]_rep__2_n_0 ),
         .I3(ring_buffer_read_reg[3]),
         .O(plusOp__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \ring_buffer_read[4]_i_1 
@@ -27980,22 +27975,12 @@ module design_1_dual_moving_average_0_0_dual_moving_average
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(plusOp__0[4]),
         .Q(ring_buffer_read_reg[4]));
-  LUT6 #(
-    .INIT(64'hBFFFFFFF00000000)) 
-    s_axis_tready_i_1
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    s_axis_tready_INST_0
        (.I0(\FSM_sequential_state_reg[1]_0 ),
-        .I1(s_axis_tlast),
-        .I2(s_axis_tvalid),
-        .I3(state),
-        .I4(aresetn),
-        .I5(s_axis_tready),
-        .O(s_axis_tready_i_1_n_0));
-  FDRE s_axis_tready_reg
-       (.C(aclk),
-        .CE(1'b1),
-        .D(s_axis_tready_i_1_n_0),
-        .Q(s_axis_tready),
-        .R(1'b0));
+        .O(s_axis_tready));
 endmodule
 `ifndef GLBL
 `define GLBL

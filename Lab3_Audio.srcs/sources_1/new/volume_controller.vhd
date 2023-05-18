@@ -98,7 +98,8 @@ begin
 
                     --Assess ampl, inc and dec. Divide each interval in two halfs 1st and 2nd. By looking at volume(5) we understand in which half we are. 
                     --If we are in the 1st half we sum 1 to the value of volume(8 downto 6) otherwise we don't touch it
-                    if volume(volume'high - N + 2) = '1' and unsigned(volume(volume'high downto N - 1)) /= 2 ** (volume'high - N + 2) - 1 then --if volume(5) = 1   9-6+2=5  and volume(8 a 5) != 1111 altrimenti va in overflow
+                    if volume(volume'high - N + 2) = '1' and unsigned(volume(volume'high downto N - 1)) /= 2 ** (volume'high - N + 2) - 1 then 
+                    --if volume(5) = 1   9-6+2=5  and volume(8 a 5) != 1111 altrimenti va in overflow
                         --ampl <= unsigned(volume(volume'high-1 downto N)) +1;  -- 8 downto 6 = 3 bits  1st half
                         inc <= unsigned(volume(volume'high - 1 downto N)) + 1; -- 8 downto 6 = 3 bts    1st half
                         dec <= not (unsigned(volume(volume'high - 1 downto N))); --2nd half
@@ -152,25 +153,31 @@ begin
 
                                 else
                                     m_axis_tdata(to_integer(inc) - 1 downto 0)         <= (others => '0'); --ex  8 posizioni  7 downto 0                                
-                                    m_axis_tdata(data_l'high downto (to_integer(inc))) <= data_l(data_l'high - (to_integer(inc)) downto 0); --ex 8 pos 23 downto 7+1 = 15 downto 0 == 16 bit originali restano ho shiftato di 8  23-7 downto 0 = 16 downto 0 Ã¨ troppo 23-7-1
+                                    m_axis_tdata(data_l'high downto (to_integer(inc))) <= data_l(data_l'high - (to_integer(inc)) downto 0); 
+                                    --ex 8 pos 23 downto 7+1 = 15 downto 0 == 16 bit originali restano ho shiftato di 8  23-7 downto 0 = 16 downto 0 Ã¨ troppo 23-7-1
 
                                     if unsigned(data_l(data_l'high downto data_l'high - (to_integer(inc)) + 1)) /= 0 then --it clipped
                                         m_axis_tdata <= (others => '1');
-                                        -- clipped                    <= unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)+1)));   -- ex 8 pos 23 downto 23- 7-1= 23 downto 15 == 8 bit
+                                        -- clipped                    <= unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)+1)));   
+                                        -- ex 8 pos 23 downto 23- 7-1= 23 downto 15 == 8 bit
                                     end if;
                                 end if;
                             --volume increase should be corret now
 
                             elsif up_down = '0' then -- decreas shifting left
                                 if shift(0) = '0' and to_integer(dec) = 2 ** (dec'high) - 1 then --shifto di 8 posizioni hard
-                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) - 1 downto 0)             <= data_l(data_l'high downto to_integer(dec) + 1); --23-7-1 downto 0 = 15 downto 0  23 downto 7+1 = 15 downto 0
-                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec)) <= (others => '0'); --23 downto 23-7 = 23 downto 16 = 7 downto 0
+                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) - 1 downto 0)             <= data_l(data_l'high downto to_integer(dec) + 1); 
+                                    --23-7-1 downto 0 = 15 downto 0  23 downto 7+1 = 15 downto 0
+                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec)) <= (others => '0'); 
+                                    --23 downto 23-7 = 23 downto 16 = 7 downto 0
                                 elsif to_integer(dec) = 1 then
                                     m_axis_tdata(m_axis_tdata'high)              <= '0'; --only this was different wrt to the formula below
                                     m_axis_tdata(m_axis_tdata'high - 1 downto 0) <= data_l(data_l'high downto 1);
                                 else
-                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec) + 1) <= (others => '0'); -- max value 23 downto 23-7 = 23 downto 16 == 7 downto 0 instead i want 6 downto 0 ==> 23 downto 23-7+1=> 23 downto 17 ==> 6 downto 0  dec=2 23 downto 23-2+1 = 23 downto 22 ==> 1 downto 0 problema per 0 e per 1
-                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) downto 0)                     <= data_l(data_l'high downto to_integer(dec)); --max value 23-7 downto 0 = 16 downto 0  (17 valori) e 23 downto 7 = 16 downto 0 
+                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec) + 1) <= (others => '0'); 
+                                    -- max value 23 downto 23-7 = 23 downto 16 == 7 downto 0 instead i want 6 downto 0 ==> 23 downto 23-7+1=> 23 downto 17 ==> 6 downto 0  dec=2 23 downto 23-2+1 = 23 downto 22 ==> 1 downto 0 problema per 0 e per 1
+                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) downto 0)                     <= data_l(data_l'high downto to_integer(dec)); 
+                                    --max value 23-7 downto 0 = 16 downto 0  (17 valori) e 23 downto 7 = 16 downto 0 
                                 end if;
                                 --I stored data_r and prepared data_l with its shifts and loaded on the m_axis_tdata line
                             end if;
@@ -214,24 +221,31 @@ begin
 
                                 else
                                     m_axis_tdata(to_integer(inc) - 1 downto 0)         <= (others => '0'); --ex  8 posizioni  7 downto 0                                
-                                    m_axis_tdata(data_r'high downto (to_integer(inc))) <= data_r(data_l'high - (to_integer(inc)) downto 0); --ex 8 pos 23 downto 7+1 = 15 downto 0 == 16 bit originali restano ho shiftato di 8  23-7 downto 0 = 16 downto 0 Ã¨ troppo 23-7-1
+                                    m_axis_tdata(data_r'high downto (to_integer(inc))) <= data_r(data_l'high - (to_integer(inc)) downto 0); 
+                                    --ex 8 pos 23 downto 7+1 = 15 downto 0 == 16 bit originali restano ho shiftato di 8  23-7 downto 0 = 16 downto 0 Ã¨ troppo 23-7-1
 
                                     if unsigned(data_r(data_r'high downto data_r'high - (to_integer(inc)) + 1)) /= 0 then --it clipped
                                         m_axis_tdata <= (others => '1');
-                                        -- clipped                    <= unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)+1)));   -- ex 8 pos 23 downto 23- 7-1= 23 downto 15 == 8 bit
+                                        -- clipped                    <= unsigned(data_l ( data_l'high downto data_l'high - (to_integer(inc)+1)));   
+                                        -- ex 8 pos 23 downto 23- 7-1= 23 downto 15 == 8 bit
                                     end if;
                                 end if;
 
                             elsif up_down = '0' then -- decreas shifting left
                                 if shift(0) = '0' and to_integer(dec) = 2 ** (dec'high) - 1 then --shifto di 8 posizioni hard
-                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) - 1 downto 0)             <= data_r(data_l'high downto to_integer(dec) + 1); --23-7-1 downto 0 = 15 downto 0  23 downto 7+1 = 15 downto 0
-                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec)) <= (others => '0'); --23 downto 23-7 = 23 downto 16 = 7 downto 0
+                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) - 1 downto 0)             <= data_r(data_l'high downto to_integer(dec) + 1); 
+                                    --23-7-1 downto 0 = 15 downto 0  23 downto 7+1 = 15 downto 0
+                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec)) <= (others => '0'); 
+                                    --23 downto 23-7 = 23 downto 16 = 7 downto 0
                                 elsif to_integer(dec) = 1 then
                                     m_axis_tdata(m_axis_tdata'high)              <= '0'; --only this was different wrt to the formula below
                                     m_axis_tdata(m_axis_tdata'high - 1 downto 0) <= data_r(data_r'high downto 1);
                                 else
-                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec) - 1) <= (others => '0'); -- max value 23 downto 23-7 = 23 downto 16 == 7 downto 0 instead i want 6 downto 0 ==> 23 downto 23-7+1=> 23 downto 17 ==> 6 downto 0  dec=2 23 downto 23-2+1 = 23 downto 22 ==> 1 downto 0 problema per 0 e per 1
-                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) downto 0)                     <= data_r(data_r'high downto to_integer(dec)); --max value 23-7 downto 0 = 16 downto 0  (17 valori) e 23 downto 7 = 16 downto 0 
+                                    m_axis_tdata(m_axis_tdata'high downto m_axis_tdata'high - to_integer(dec) - 1) <= (others => '0'); 
+                                    -- max value 23 downto 23-7 = 23 downto 16 == 7 downto 0 instead i want 6 downto 0 ==> 23 downto 23-7+1=> 23 downto 17 ==> 6 downto 0  
+                                    -- dec=2 23 downto 23-2+1 = 23 downto 22 ==> 1 downto 0 problema per 0 e per 1
+                                    m_axis_tdata(m_axis_tdata'high - to_integer(dec) downto 0)                     <= data_r(data_r'high downto to_integer(dec)); 
+                                    --max value 23-7 downto 0 = 16 downto 0  (17 valori) e 23 downto 7 = 16 downto 0 
                                 end if;
                                 --I stored data_r and prepared data_l with its shifts and loaded on the m_axis_tdata line
                             end if;
@@ -248,7 +262,8 @@ begin
                         up_down <= volume(volume'high);
                         --Assess ampl, inc and dec. Divide each interval in two halfs 1st and 2nd. By looking at volume(5) we understand in which half we are. 
                         --If we are in the 1st half we sum 1 to the value of volume(8 downto 6) otherwise we don't touch it
-                        if volume(volume'high - N + 2) = '1' and unsigned(volume(volume'high downto N - 1)) /= 2 ** (volume'high - N + 2) - 1 then --if volume(5) = 1   9-6+2=5  and volume(8 a 5) != 1111 altrimenti va in overflow
+                        if volume(volume'high - N + 2) = '1' and unsigned(volume(volume'high downto N - 1)) /= 2 ** (volume'high - N + 2) - 1 then 
+                            --if volume(5) = 1   9-6+2=5  and volume(8 a 5) != 1111 altrimenti va in overflow
                             --ampl <= unsigned(volume(volume'high-1 downto N)) +1;  -- 8 downto 6 = 3 bits  1st half
                             inc <= unsigned(volume(volume'high - 1 downto N)) + 1; -- 8 downto 6 = 3 bts    1st half
                             dec <= not (unsigned(volume(volume'high - 1 downto N))); --2nd half

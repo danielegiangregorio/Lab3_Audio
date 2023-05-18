@@ -1,7 +1,7 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-//Date        : Thu May 18 10:42:39 2023
+//Date        : Thu May 18 13:14:18 2023
 //Host        : SburroROG running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -23,12 +23,13 @@ module design_1
     SPI_M_0_ss_i,
     SPI_M_0_ss_o,
     SPI_M_0_ss_t,
-    clk_in1_0,
+    reset,
     reset_0,
     rx_lrck_0,
     rx_mclk_0,
     rx_sclk_0,
     rx_sdin_0,
+    sys_clock,
     tx_lrck_0,
     tx_mclk_0,
     tx_sclk_0,
@@ -45,12 +46,13 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_M_0 SS_I" *) input [0:0]SPI_M_0_ss_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_M_0 SS_O" *) output [0:0]SPI_M_0_ss_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 SPI_M_0 SS_T" *) output [0:0]SPI_M_0_ss_t;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_IN1_0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_IN1_0, CLK_DOMAIN design_1_clk_in1_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk_in1_0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET_0, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset_0;
   output rx_lrck_0;
   output rx_mclk_0;
   output rx_sclk_0;
   input rx_sdin_0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_1_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input sys_clock;
   output tx_lrck_0;
   output tx_mclk_0;
   output tx_sclk_0;
@@ -58,7 +60,6 @@ module design_1
 
   wire Net;
   wire Net1;
-  wire Net2;
   wire [0:0]Net3;
   wire [0:0]Net5;
   wire [7:0]axi4stream_spi_master_1_M_AXIS_TDATA;
@@ -90,7 +91,6 @@ module design_1
   wire balance_controller_0_m_axis_TLAST;
   wire balance_controller_0_m_axis_TREADY;
   wire balance_controller_0_m_axis_TVALID;
-  wire clk_in1_0_1;
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_locked;
@@ -115,13 +115,14 @@ module design_1
   wire mute_0_m_axis_TREADY;
   wire mute_0_m_axis_TVALID;
   wire [0:0]proc_sys_reset_1_peripheral_aresetn;
+  wire reset_1;
   wire rx_sdin_0_1;
+  wire sys_clock_1;
   wire [23:0]volume_controller_0_m_axis_TDATA;
   wire volume_controller_0_m_axis_TLAST;
   wire volume_controller_0_m_axis_TREADY;
   wire volume_controller_0_m_axis_TVALID;
 
-  assign Net2 = reset_0;
   assign SPI_M_0_io0_o[0] = axi4stream_spi_master_1_SPI_M_IO0_O;
   assign SPI_M_0_io0_t[0] = axi4stream_spi_master_1_SPI_M_IO0_T;
   assign SPI_M_0_io1_o[0] = axi4stream_spi_master_1_SPI_M_IO1_O;
@@ -134,11 +135,12 @@ module design_1
   assign axi4stream_spi_master_1_SPI_M_IO1_I = SPI_M_0_io1_i[0];
   assign axi4stream_spi_master_1_SPI_M_SCK_I = SPI_M_0_sck_i[0];
   assign axi4stream_spi_master_1_SPI_M_SS_I = SPI_M_0_ss_i[0];
-  assign clk_in1_0_1 = clk_in1_0;
+  assign reset_1 = reset;
   assign rx_lrck_0 = axis_dual_i2s_0_rx_lrck;
   assign rx_mclk_0 = axis_dual_i2s_0_rx_mclk;
   assign rx_sclk_0 = axis_dual_i2s_0_rx_sclk;
   assign rx_sdin_0_1 = rx_sdin_0;
+  assign sys_clock_1 = sys_clock;
   assign tx_lrck_0 = axis_dual_i2s_0_tx_lrck;
   assign tx_mclk_0 = axis_dual_i2s_0_tx_mclk;
   assign tx_sclk_0 = axis_dual_i2s_0_tx_sclk;
@@ -197,11 +199,11 @@ module design_1
         .s_axis_tready(dual_moving_average_0_m_axis_TREADY),
         .s_axis_tvalid(dual_moving_average_0_m_axis_TVALID));
   design_1_clk_wiz_0_0 clk_wiz_0
-       (.clk_in1(clk_in1_0_1),
+       (.clk_in1(sys_clock_1),
         .clk_out1(clk_wiz_0_clk_out1),
         .clk_out2(clk_wiz_0_clk_out2),
         .locked(clk_wiz_0_locked),
-        .reset(Net2));
+        .reset(reset_1));
   design_1_debouncer_0_0 debouncer_0
        (.clk(clk_wiz_0_clk_out1),
         .debounced(debouncer_0_debounced),
@@ -268,7 +270,7 @@ module design_1
   design_1_proc_sys_reset_0_0 proc_sys_reset_0
        (.aux_reset_in(1'b1),
         .dcm_locked(clk_wiz_0_locked),
-        .ext_reset_in(Net2),
+        .ext_reset_in(reset_1),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(Net3),
         .peripheral_reset(Net5),
@@ -276,7 +278,7 @@ module design_1
   design_1_proc_sys_reset_1_0 proc_sys_reset_1
        (.aux_reset_in(1'b1),
         .dcm_locked(clk_wiz_0_locked),
-        .ext_reset_in(Net2),
+        .ext_reset_in(reset_1),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(proc_sys_reset_1_peripheral_aresetn),
         .slowest_sync_clk(clk_wiz_0_clk_out2));

@@ -1,7 +1,7 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-//Date        : Thu May 18 10:42:39 2023
+//Date        : Thu May 18 13:14:18 2023
 //Host        : SburroROG running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -14,12 +14,13 @@ module design_1_wrapper
     SPI_M_0_io1_io,
     SPI_M_0_sck_io,
     SPI_M_0_ss_io,
-    clk_in1_0,
+    reset,
     reset_0,
     rx_lrck_0,
     rx_mclk_0,
     rx_sclk_0,
     rx_sdin_0,
+    sys_clock,
     tx_lrck_0,
     tx_mclk_0,
     tx_sclk_0,
@@ -28,12 +29,13 @@ module design_1_wrapper
   inout [0:0]SPI_M_0_io1_io;
   inout [0:0]SPI_M_0_sck_io;
   inout [0:0]SPI_M_0_ss_io;
-  input clk_in1_0;
+  input reset;
   input reset_0;
   output rx_lrck_0;
   output rx_mclk_0;
   output rx_sclk_0;
   input rx_sdin_0;
+  input sys_clock;
   output tx_lrck_0;
   output tx_mclk_0;
   output tx_sclk_0;
@@ -55,12 +57,13 @@ module design_1_wrapper
   wire [0:0]SPI_M_0_ss_io_0;
   wire [0:0]SPI_M_0_ss_o_0;
   wire [0:0]SPI_M_0_ss_t_0;
-  wire clk_in1_0;
+  wire reset;
   wire reset_0;
   wire rx_lrck_0;
   wire rx_mclk_0;
   wire rx_sclk_0;
   wire rx_sdin_0;
+  wire sys_clock;
   wire tx_lrck_0;
   wire tx_mclk_0;
   wire tx_sclk_0;
@@ -99,12 +102,13 @@ module design_1_wrapper
         .SPI_M_0_ss_i(SPI_M_0_ss_i_0),
         .SPI_M_0_ss_o(SPI_M_0_ss_o_0),
         .SPI_M_0_ss_t(SPI_M_0_ss_t_0),
-        .clk_in1_0(clk_in1_0),
+        .reset(reset),
         .reset_0(reset_0),
         .rx_lrck_0(rx_lrck_0),
         .rx_mclk_0(rx_mclk_0),
         .rx_sclk_0(rx_sclk_0),
         .rx_sdin_0(rx_sdin_0),
+        .sys_clock(sys_clock),
         .tx_lrck_0(tx_lrck_0),
         .tx_mclk_0(tx_mclk_0),
         .tx_sclk_0(tx_sclk_0),

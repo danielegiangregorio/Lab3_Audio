@@ -94,7 +94,9 @@ output wire m_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TREADY" *)
 input wire m_axis_tready;
 
-  volume_controller inst (
+  volume_controller #(
+    .N(6)
+  ) inst (
     .volume(volume),
     .aclk(aclk),
     .aresetn(aresetn),

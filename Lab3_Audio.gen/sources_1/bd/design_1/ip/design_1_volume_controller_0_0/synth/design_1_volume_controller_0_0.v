@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "volume_controller,Vivado 2022.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_volume_controller_0_0,volume_controller,{}" *)
-(* CORE_GENERATION_INFO = "design_1_volume_controller_0_0,volume_controller,{x_ipProduct=Vivado 2022.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=volume_controller,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "design_1_volume_controller_0_0,volume_controller,{x_ipProduct=Vivado 2022.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=volume_controller,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,N=6}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_volume_controller_0_0 (
@@ -95,7 +95,9 @@ output wire m_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TREADY" *)
 input wire m_axis_tready;
 
-  volume_controller inst (
+  volume_controller #(
+    .N(6)
+  ) inst (
     .volume(volume),
     .aclk(aclk),
     .aresetn(aresetn),
