@@ -170,9 +170,13 @@ begin
     begin
         if volume_buffer_l(volume_buffer_l'high downto 24) /= "0" then
             clipped_l <= '1';
+        else
+            clipped_l <= '0';
         end if;
         if volume_buffer_r(volume_buffer_l'high downto 24) /= "0" then
             clipped_r <= '1';
+        else
+            clipped_r <= '0';
         end if;
     end process clipper;
        
