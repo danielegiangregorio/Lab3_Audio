@@ -24,7 +24,6 @@ preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 780 -swap {0 1 2 4 3} -defaultsOS
 preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 460 -y 530 -swap {2 0 1 3 4 5 6 8 7 9} -defaultsOSRD
 preplace inst proc_sys_reset_1 -pg 1 -lvl 2 -x 460 -y 720 -swap {2 0 3 4 1 5 6 7 8 9} -defaultsOSRD
 preplace inst mute_0 -pg 1 -lvl 9 -x 2760 -y 560 -defaultsOSRD
-preplace inst balance_controller_0 -pg 1 -lvl 7 -x 2120 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
 preplace inst led_controller_0 -pg 1 -lvl 5 -x 1440 -y 750 -swap {0 1 3 2 4} -defaultsOSRD
 preplace inst edge_detector_0 -pg 1 -lvl 4 -x 1100 -y 450 -swap {2 0 1 3} -defaultsOSRD
 preplace inst edge_detector_1 -pg 1 -lvl 4 -x 1100 -y 630 -swap {2 0 1 3} -defaultsOSRD
@@ -32,8 +31,9 @@ preplace inst debouncer_0 -pg 1 -lvl 3 -x 800 -y 470 -swap {1 2 0 3} -defaultsOS
 preplace inst debouncer_1 -pg 1 -lvl 3 -x 800 -y 650 -swap {1 2 0 3} -defaultsOSRD
 preplace inst digilent_jstk2_0 -pg 1 -lvl 5 -x 1440 -y 400 -swap {0 1 2 3 4 5 6 15 14 10 11 9 12 8 7 13} -defaultsOSRD
 preplace inst axi4stream_spi_master_1 -pg 1 -lvl 7 -x 2120 -y 150 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 20} -defaultsOSRD
-preplace inst volume_controller_0 -pg 1 -lvl 8 -x 2460 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
 preplace inst dual_moving_average_0 -pg 1 -lvl 6 -x 1790 -y 590 -swap {0 1 2 3 4 5 6 7 8 9 11 10 12} -defaultsOSRD
+preplace inst balance_controller_0 -pg 1 -lvl 7 -x 2120 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
+preplace inst volume_controller_0 -pg 1 -lvl 8 -x 2460 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
 preplace netloc Net 1 4 5 1240 510 1610J 490 N 490 N 490 2580
 preplace netloc Net1 1 4 2 1270 620 NJ
 preplace netloc Net3 1 2 8 N 570 940J 540 1230J 540 1620 480 1930 330 2270 330 N 330 N
@@ -73,7 +73,7 @@ levelinfo -pg 1 -110 110 460 800 1100 1440 1790 2120 2460 2760 3070 5130
 pagesize -pg 1 -db -bbox -sgen -220 -140 5250 900
 ",
    "Color Coded_ScaleFactor":"0.858056",
-   "Color Coded_TopLeft":"1098,69",
+   "Color Coded_TopLeft":"-214,70",
    "Default View_Layers":"/clk_in1_0_1:true|/clk_wiz_0_clk_out2:true|/Net5:true|/Net2:true|/clk_wiz_0_clk_out1:true|/Net3:true|/proc_sys_reset_1_peripheral_aresetn:true|",
    "Default View_ScaleFactor":"0.371458",
    "Default View_TopLeft":"-105,-738",

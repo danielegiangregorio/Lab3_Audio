@@ -1,7 +1,7 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Thu May 18 12:31:05 2023
+-- Date        : Thu May 18 17:16:11 2023
 -- Host        : SburroROG running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_axi4stream_spi_master_1_0/design_1_axi4stream_spi_master_1_0_sim_netlist.vhdl
@@ -1295,14 +1295,14 @@ architecture STRUCTURE of design_1_axi4stream_spi_master_1_0 is
   attribute x_interface_info : string;
   attribute x_interface_info of aclk : signal is "xilinx.com:signal:clock:1.0 aclk CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of aclk : signal is "XIL_INTERFACENAME aclk, ASSOCIATED_BUSIF S_AXIS:M_AXIS, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute x_interface_parameter of aclk : signal is "XIL_INTERFACENAME aclk, ASSOCIATED_BUSIF S_AXIS:M_AXIS, FREQ_HZ 180000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   attribute x_interface_info of aresetn : signal is "xilinx.com:signal:reset:1.0 aresetn RST";
   attribute x_interface_parameter of aresetn : signal is "XIL_INTERFACENAME aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of cs_i : signal is "xilinx.com:interface:spi:1.0 SPI_M SS_I";
   attribute x_interface_info of cs_o : signal is "xilinx.com:interface:spi:1.0 SPI_M SS_O";
   attribute x_interface_info of cs_t : signal is "xilinx.com:interface:spi:1.0 SPI_M SS_T";
   attribute x_interface_info of m_axis_tvalid : signal is "xilinx.com:interface:axis:1.0 M_AXIS TVALID";
-  attribute x_interface_parameter of m_axis_tvalid : signal is "XIL_INTERFACENAME M_AXIS, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute x_interface_parameter of m_axis_tvalid : signal is "XIL_INTERFACENAME M_AXIS, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 180000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute x_interface_info of miso_i : signal is "xilinx.com:interface:spi:1.0 SPI_M IO1_I";
   attribute x_interface_info of miso_o : signal is "xilinx.com:interface:spi:1.0 SPI_M IO1_O";
   attribute x_interface_info of miso_t : signal is "xilinx.com:interface:spi:1.0 SPI_M IO1_T";
@@ -1311,7 +1311,7 @@ architecture STRUCTURE of design_1_axi4stream_spi_master_1_0 is
   attribute x_interface_info of mosi_t : signal is "xilinx.com:interface:spi:1.0 SPI_M IO0_T";
   attribute x_interface_info of s_axis_tready : signal is "xilinx.com:interface:axis:1.0 S_AXIS TREADY";
   attribute x_interface_info of s_axis_tvalid : signal is "xilinx.com:interface:axis:1.0 S_AXIS TVALID";
-  attribute x_interface_parameter of s_axis_tvalid : signal is "XIL_INTERFACENAME S_AXIS, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute x_interface_parameter of s_axis_tvalid : signal is "XIL_INTERFACENAME S_AXIS, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 180000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute x_interface_info of sclk_i : signal is "xilinx.com:interface:spi:1.0 SPI_M SCK_I";
   attribute x_interface_info of sclk_o : signal is "xilinx.com:interface:spi:1.0 SPI_M SCK_O";
   attribute x_interface_info of sclk_t : signal is "xilinx.com:interface:spi:1.0 SPI_M SCK_T";
