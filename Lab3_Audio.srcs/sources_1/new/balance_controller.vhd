@@ -39,7 +39,7 @@ architecture Behavioral of balance_controller is
     signal zeros                         : unsigned(9 - N - 1 downto 0) := (others => '0');
     -- signals
     signal balance_set_hold              : std_logic_vector(9 - N + 1 downto 0) := (others => '0');
-    signal balance_exp_value             : integer range 0 to 2**(9 - N) := 0;
+    signal balance_exp_value             : positive range 0 to 2**(9 - N) := 0;
     signal balance_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
     signal balance_exp_is_left           : std_logic := '0';
     signal balance_in_l                  : unsigned (23 downto 0) := (others => '0');
@@ -131,14 +131,8 @@ begin
         elsif rising_edge(aclk) then
             balance_set_hold <= balance(9 downto N - 1);
             -- we have two edge cases, the 32 bits interval at top and bottom of the scale, here we search if we are in the bottom half
-            if balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1) = ones then
-                if balance_set_hold(0) = '1' then
-                    balance_exp_value <= (2**(9 - N));
-                end if;
-            elsif balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1) = zeros then
-                if balance_set_hold(0) = '1' then
-                    balance_exp_value <= (2**(9 - N));
-                end if;   
+            if balance_exp_value_preprocess(0) = '1' then
+                balance_exp_value <= to_integer(unsigned(balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1)))+1;  
             else
                 balance_exp_value <= to_integer(unsigned(balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1))); 
             end if;

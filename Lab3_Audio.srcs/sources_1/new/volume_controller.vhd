@@ -39,7 +39,7 @@ architecture Behavioral of volume_controller is
     signal clipped_r                    : std_logic := '0';
     -- signals
     signal volume_sign_msb_hold              : std_logic_vector(9 - N + 1 downto 0) := (others => '0');
-    signal volume_exp_value             : integer range 0 to 2**(9 - N) := 0;
+    signal volume_exp_value             : positive range 0 to 2**(9 - N) := 0;
     signal volume_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
     signal volume_exp_is_negative       : std_logic := '0';
     signal volume_buffer_l              : unsigned (23 + 2**(9 - N) downto 0) := (others => '0');
