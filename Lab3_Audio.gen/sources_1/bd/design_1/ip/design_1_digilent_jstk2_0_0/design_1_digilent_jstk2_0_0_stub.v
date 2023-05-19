@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Tue May  9 10:18:32 2023
+// Date        : Thu May 18 17:15:30 2023
 // Host        : SburroROG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/posta/src/GitHub/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_digilent_jstk2_0_0/design_1_digilent_jstk2_0_0_stub.v
+//               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_digilent_jstk2_0_0/design_1_digilent_jstk2_0_0_stub.v
 // Design      : design_1_digilent_jstk2_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "digilent_jstk2,Vivado 2022.2" *)
+(* X_CORE_INFO = "digilent_jstk2,Vivado 2022.2" *)
 module design_1_digilent_jstk2_0_0(aclk, aresetn, m_axis_tvalid, m_axis_tdata, 
   m_axis_tready, s_axis_tvalid, s_axis_tdata, jstk_x, jstk_y, btn_jstk, btn_trigger, led_r, led_g, 
   led_b)

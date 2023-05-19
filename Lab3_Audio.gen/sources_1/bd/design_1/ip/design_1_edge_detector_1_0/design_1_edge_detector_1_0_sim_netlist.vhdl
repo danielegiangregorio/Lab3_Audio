@@ -1,7 +1,7 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Tue May  9 10:19:08 2023
+-- Date        : Thu May 18 10:49:40 2023
 -- Host        : SburroROG running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top design_1_edge_detector_1_0 -prefix
 --               design_1_edge_detector_1_0_ design_1_edge_detector_0_0_sim_netlist.vhdl
@@ -91,23 +91,23 @@ entity design_1_edge_detector_1_0 is
   attribute NotValidForBitStream of design_1_edge_detector_1_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of design_1_edge_detector_1_0 : entity is "design_1_edge_detector_0_0,edge_detector,{}";
-  attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of design_1_edge_detector_1_0 : entity is "yes";
-  attribute ip_definition_source : string;
-  attribute ip_definition_source of design_1_edge_detector_1_0 : entity is "module_ref";
-  attribute x_core_info : string;
-  attribute x_core_info of design_1_edge_detector_1_0 : entity is "edge_detector,Vivado 2022.2";
+  attribute DowngradeIPIdentifiedWarnings : string;
+  attribute DowngradeIPIdentifiedWarnings of design_1_edge_detector_1_0 : entity is "yes";
+  attribute IP_DEFINITION_SOURCE : string;
+  attribute IP_DEFINITION_SOURCE of design_1_edge_detector_1_0 : entity is "module_ref";
+  attribute X_CORE_INFO : string;
+  attribute X_CORE_INFO of design_1_edge_detector_1_0 : entity is "edge_detector,Vivado 2022.2";
 end design_1_edge_detector_1_0;
 
 architecture STRUCTURE of design_1_edge_detector_1_0 is
-  attribute x_interface_info : string;
-  attribute x_interface_info of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
-  attribute x_interface_info of reset : signal is "xilinx.com:signal:reset:1.0 reset RST";
-  attribute x_interface_parameter of reset : signal is "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 reset RST";
+  attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
 begin
-U0: entity work.design_1_edge_detector_1_0_edge_detector
+inst: entity work.design_1_edge_detector_1_0_edge_detector
      port map (
       clk => clk,
       input_signal => input_signal,
