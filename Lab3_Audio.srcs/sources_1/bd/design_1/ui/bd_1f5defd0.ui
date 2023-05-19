@@ -31,12 +31,12 @@ preplace inst debouncer_0 -pg 1 -lvl 3 -x 800 -y 470 -swap {1 2 0 3} -defaultsOS
 preplace inst debouncer_1 -pg 1 -lvl 3 -x 800 -y 650 -swap {1 2 0 3} -defaultsOSRD
 preplace inst digilent_jstk2_0 -pg 1 -lvl 5 -x 1440 -y 400 -swap {0 1 2 3 4 5 6 15 14 10 11 9 12 8 7 13} -defaultsOSRD
 preplace inst axi4stream_spi_master_1 -pg 1 -lvl 7 -x 2120 -y 150 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 20} -defaultsOSRD
+preplace inst volume_controller_0 -pg 1 -lvl 8 -x 2460 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
 preplace inst dual_moving_average_0 -pg 1 -lvl 6 -x 1790 -y 590 -swap {0 1 2 3 4 5 6 7 8 9 11 10 12} -defaultsOSRD
 preplace inst balance_controller_0 -pg 1 -lvl 7 -x 2120 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
-preplace inst volume_controller_0 -pg 1 -lvl 8 -x 2460 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
-preplace netloc Net 1 4 5 1240 510 1610J 490 N 490 N 490 2580
+preplace netloc Net 1 4 5 1240 510 1610J 480 N 480 N 480 2590
 preplace netloc Net1 1 4 2 1270 620 NJ
-preplace netloc Net3 1 2 8 N 570 940J 540 1230J 540 1620 480 1930 330 2270 330 N 330 N
+preplace netloc Net3 1 2 8 N 570 940J 540 1230J 540 1620 490 1930 330 2270 330 N 330 N
 preplace netloc Net5 1 2 2 650 390 930
 preplace netloc axis_dual_i2s_0_rx_lrck 1 10 1 3190 370n
 preplace netloc axis_dual_i2s_0_rx_mclk 1 10 1 3200 350n
@@ -63,17 +63,16 @@ preplace netloc rx_sdin_0_1 1 0 10 -90J 270 NJ 270 N 270 NJ 270 NJ 270 NJ 270 N 
 preplace netloc sys_clock_1 1 0 1 N 790
 preplace netloc axi4stream_spi_master_1_M_AXIS 1 4 4 1230 230 N 230 N 230 2270
 preplace netloc axi4stream_spi_master_1_SPI_M 1 7 4 N 140 N 140 N 140 N
-preplace netloc axis_dual_i2s_0_m_axis 1 5 6 1640 470 N 470 N 470 N 470 N 470 3170
-preplace netloc balance_controller_0_m_axis 1 7 1 2260 550n
 preplace netloc digilent_jstk2_0_m_axis 1 5 2 1640 130 N
-preplace netloc dual_moving_average_0_m_axis 1 6 1 1920 550n
 preplace netloc mute_0_m_axis 1 9 1 2920 270n
-preplace netloc volume_controller_0_m_axis 1 8 1 2590 550n
+preplace netloc axis_dual_i2s_0_m_axis 1 5 6 1640 450 N 450 N 450 N 450 N 450 3170
+preplace netloc dual_moving_average_0_m_axis 1 6 1 1920 550n
+preplace netloc balance_controller_0_m_axis 1 7 2 2260 490 2580
 levelinfo -pg 1 -110 110 460 800 1100 1440 1790 2120 2460 2760 3070 5130
 pagesize -pg 1 -db -bbox -sgen -220 -140 5250 900
 ",
    "Color Coded_ScaleFactor":"0.858056",
-   "Color Coded_TopLeft":"-216,-28",
+   "Color Coded_TopLeft":"1381,121",
    "Default View_Layers":"/clk_in1_0_1:true|/clk_wiz_0_clk_out2:true|/Net5:true|/Net2:true|/clk_wiz_0_clk_out1:true|/Net3:true|/proc_sys_reset_1_peripheral_aresetn:true|",
    "Default View_ScaleFactor":"0.371458",
    "Default View_TopLeft":"-105,-738",

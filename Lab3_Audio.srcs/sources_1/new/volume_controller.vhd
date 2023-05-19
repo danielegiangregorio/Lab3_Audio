@@ -115,7 +115,10 @@ begin
 
     -- take the sign of the volume variation
     volume_exp_is_negative <= not volume(volume'high);
-    -- take the complement of the module for correct decrement of volume
+    -- take the complement of the module of the significants bits for correct decrement of volume
+    -- when want itervals of 2^N bits, so we need to save the bits from high-1 downto N - 1.
+    -- The bits with lower significance than N - 1 are useless, while the N-1th is useful to 
+    -- compte the volume exponent in the edge cases (0-32, 512 +- 32, 1024- (1024-32))
     with volume_exp_is_negative select volume_exp_value_preprocess <=
         unsigned(volume(volume'high -1 downto N - 1))  when '0',
         unsigned(not volume(volume'high -1 downto N - 1)) when '1',
@@ -153,7 +156,9 @@ begin
                 volume_buffer_r (23 + volume_exp_value downto volume_exp_value) <= volume_in_r;
             elsif volume_exp_is_negative = '1' then
                 volume_buffer_l (23 - volume_exp_value downto 0) <= volume_in_l(23 downto volume_exp_value);
+                volume_buffer_l (volume_buffer_l'high downto 23 - volume_exp_value + 1) <= (others => '0');
                 volume_buffer_r (23 - volume_exp_value downto 0) <= volume_in_r(23 downto volume_exp_value);
+                volume_buffer_r (volume_buffer_r'high downto 23 - volume_exp_value + 1) <= (others => '0');
             end if;
         end if;
     end process volume_process; 

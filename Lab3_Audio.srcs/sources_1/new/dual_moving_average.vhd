@@ -53,8 +53,8 @@ architecture Behavioral of dual_moving_average is
     signal state : state_t;
     signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
     signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
-    signal filtered_l : unsigned (28 downto 0) := (others => '0');
-    signal filtered_r : unsigned (28 downto 0) := (others => '0');
+    signal filtered_l : unsigned (29 downto 0) := (others => '0');
+    signal filtered_r : unsigned (29 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_r : unsigned (23 downto 0) := (others => '0');
     signal filter_in_r : ring_buffer := ( others => ( others => '0'));
@@ -148,15 +148,17 @@ begin
             if ring_buffer_read = 0 then
                 -- commit the result to output and reset the calculation buffer
                 -- the avg is implemented shifting by 5 right te sum of the 32 samples
-                filtered_out_l <= filtered_l(28 downto 5);
-                filtered_out_r <= filtered_r(28 downto 5);
-                filtered_l <= (others => '0');
-                filtered_r <= (others => '0');
-            end if;
-
-            filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
-            filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));
-            ring_buffer_read <= ring_buffer_read + 1;        
+                filtered_out_l <= filtered_l(29 downto 6);
+                filtered_out_r <= filtered_r(29 downto 6);
+                filtered_l (23 downto 0) <= filter_in_l(to_integer(ring_buffer_read));
+                filtered_l (29 downto 24) <= (others => '0');
+                filtered_r (23 downto 0) <= filter_in_r(to_integer(ring_buffer_read));
+                filtered_r (29 downto 24) <= (others => '0');
+            else
+                filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
+                filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));  
+            end if; 
+            ring_buffer_read <= ring_buffer_read + 1;      
         end if;
     end process dma_filter;
 

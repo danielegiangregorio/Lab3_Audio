@@ -165,7 +165,7 @@ begin
            wait for 20*CLK_PERIOD;
 	end process;
 	
-    s_axis_tdata  <= "101010101010101010101010", "000000000101010101010101"  after 1000 ns;
+    s_axis_tdata  <= "101010101010101010101010", "001100000101010101010101"  after 1000 ns;
     s_axis_tlast  <= lr_ch; --ampl full 
     s_axis_tvalid <= '1';
     m_axis_tready <= '1';

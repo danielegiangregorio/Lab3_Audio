@@ -37,6 +37,7 @@ architecture Behavioral of balance_controller is
     -- helper signals
     signal ones                          : unsigned(9 - N - 1 downto 0) := (others => '1');
     signal zeros                         : unsigned(9 - N - 1 downto 0) := (others => '0');
+    signal ready_to_send                 : std_logic := '0';
     -- signals
     signal balance_exp_value             : integer range 0 to 2**(9 - N) := 0;
     signal balance_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
@@ -135,13 +136,19 @@ begin
                 balance_exp_value <= to_integer(unsigned(balance_exp_value_preprocess(balance_exp_value_preprocess'high downto 1))); 
             end if;
             -- store the shifted value in balance_out_channel for the fading channel, let pass the other
-            balance_out_l <= (others => '0');
-            balance_out_r <= (others => '0');
             if balance_exp_is_left = '1' then 
+
                 balance_out_l  <= balance_in_l;
-                balance_out_r (23 - balance_exp_value downto 0) <= balance_in_r(23 downto balance_exp_value);
+                
+                balance_out_r (23 - balance_exp_value -1 downto 0) <= balance_in_r(23 -1 downto balance_exp_value);
+                balance_out_r (23 -1 downto 23 - balance_exp_value) <= (others => '0');
+                balance_out_r (23) <= balance_in_r(23);
             elsif balance_exp_is_left = '0' then
-                balance_out_l (23 - balance_exp_value downto 0) <= balance_in_l(23 downto balance_exp_value);
+
+                balance_out_l (23 - balance_exp_value -1 downto 0) <= balance_in_l(23 -1 downto balance_exp_value);
+                balance_out_l (23 -1 downto 23 - balance_exp_value) <= (others => '0');
+                balance_out_l (23) <= balance_in_l(23);
+
                 balance_out_r  <= balance_in_r;
             end if;
         end if;
