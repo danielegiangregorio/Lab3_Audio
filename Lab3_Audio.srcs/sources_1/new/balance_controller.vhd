@@ -140,14 +140,21 @@ begin
 
                 balance_out_l  <= balance_in_l;
                 
-                balance_out_r (23 - balance_exp_value -1 downto 0) <= balance_in_r(23 -1 downto balance_exp_value);
-                balance_out_r (23 -1 downto 23 - balance_exp_value) <= (others => '0');
-                balance_out_r (23) <= balance_in_r(23);
+                balance_out_r (23 - balance_exp_value downto 0) <= balance_in_r(23 downto balance_exp_value);
+                if balance_in_r(23) = '1' then
+                    balance_out_r (23 downto 23 - balance_exp_value +1) <= (others => '1');
+                else
+                    balance_out_r (23 downto 23 - balance_exp_value +1) <= (others => '0');
+                end if;
+                
             elsif balance_exp_is_left = '0' then
 
-                balance_out_l (23 - balance_exp_value -1 downto 0) <= balance_in_l(23 -1 downto balance_exp_value);
-                balance_out_l (23 -1 downto 23 - balance_exp_value) <= (others => '0');
-                balance_out_l (23) <= balance_in_l(23);
+                balance_out_l (23 - balance_exp_value downto 0) <= balance_in_l(23 downto balance_exp_value);
+                if balance_in_l(23) = '1' then
+                    balance_out_l (23 downto 23 - balance_exp_value +1) <= (others => '1');
+                else
+                    balance_out_l (23 downto 23 - balance_exp_value +1) <= (others => '0');
+                end if;
 
                 balance_out_r  <= balance_in_r;
             end if;

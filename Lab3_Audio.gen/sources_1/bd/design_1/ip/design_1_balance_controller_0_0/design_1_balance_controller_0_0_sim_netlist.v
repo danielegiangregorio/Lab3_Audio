@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Fri May 19 16:07:55 2023
+// Date        : Fri May 19 16:50:42 2023
 // Host        : SburroROG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_balance_controller_0_0/design_1_balance_controller_0_0_sim_netlist.v
@@ -71,9 +71,9 @@ module design_1_balance_controller_0_0_balance_controller
     m_axis_tdata,
     m_axis_tlast,
     s_axis_tready,
-    s_axis_tlast,
-    s_axis_tvalid,
     m_axis_tready,
+    s_axis_tvalid,
+    s_axis_tlast,
     aclk,
     s_axis_tdata,
     aresetn,
@@ -82,9 +82,9 @@ module design_1_balance_controller_0_0_balance_controller
   output [23:0]m_axis_tdata;
   output m_axis_tlast;
   output s_axis_tready;
-  input s_axis_tlast;
-  input s_axis_tvalid;
   input m_axis_tready;
+  input s_axis_tvalid;
+  input s_axis_tlast;
   input aclk;
   input [23:0]s_axis_tdata;
   input aresetn;
@@ -97,11 +97,17 @@ module design_1_balance_controller_0_0_balance_controller
   wire aclk;
   wire aresetn;
   wire [4:0]balance;
-  wire [23:0]balance_in_l;
+  wire [3:0]balance_exp_value;
+  wire \balance_exp_value_reg_n_0_[0] ;
+  wire \balance_exp_value_reg_n_0_[1] ;
+  wire \balance_exp_value_reg_n_0_[2] ;
+  wire \balance_exp_value_reg_n_0_[3] ;
+  wire [22:0]balance_in_l;
   wire balance_in_l_1;
-  wire [23:0]balance_in_r;
+  wire \balance_in_l_reg_n_0_[23] ;
+  wire [22:0]balance_in_r;
   wire balance_in_r_0;
-  wire [23:0]balance_out_l;
+  wire \balance_in_r_reg_n_0_[23] ;
   wire \balance_out_l[0]_i_1_n_0 ;
   wire \balance_out_l[0]_i_2_n_0 ;
   wire \balance_out_l[0]_i_3_n_0 ;
@@ -134,17 +140,15 @@ module design_1_balance_controller_0_0_balance_controller
   wire \balance_out_l[18]_i_3_n_0 ;
   wire \balance_out_l[19]_i_1_n_0 ;
   wire \balance_out_l[19]_i_2_n_0 ;
-  wire \balance_out_l[19]_i_3_n_0 ;
   wire \balance_out_l[1]_i_1_n_0 ;
   wire \balance_out_l[1]_i_2_n_0 ;
   wire \balance_out_l[1]_i_3_n_0 ;
   wire \balance_out_l[20]_i_1_n_0 ;
   wire \balance_out_l[20]_i_2_n_0 ;
-  wire \balance_out_l[20]_i_3_n_0 ;
   wire \balance_out_l[21]_i_1_n_0 ;
   wire \balance_out_l[21]_i_2_n_0 ;
   wire \balance_out_l[22]_i_1_n_0 ;
-  wire \balance_out_l[23]_i_1_n_0 ;
+  wire \balance_out_l[22]_i_2_n_0 ;
   wire \balance_out_l[2]_i_1_n_0 ;
   wire \balance_out_l[2]_i_2_n_0 ;
   wire \balance_out_l[2]_i_3_n_0 ;
@@ -169,7 +173,30 @@ module design_1_balance_controller_0_0_balance_controller
   wire \balance_out_l[9]_i_1_n_0 ;
   wire \balance_out_l[9]_i_2_n_0 ;
   wire \balance_out_l[9]_i_3_n_0 ;
-  wire [23:0]balance_out_r;
+  wire \balance_out_l_reg_n_0_[0] ;
+  wire \balance_out_l_reg_n_0_[10] ;
+  wire \balance_out_l_reg_n_0_[11] ;
+  wire \balance_out_l_reg_n_0_[12] ;
+  wire \balance_out_l_reg_n_0_[13] ;
+  wire \balance_out_l_reg_n_0_[14] ;
+  wire \balance_out_l_reg_n_0_[15] ;
+  wire \balance_out_l_reg_n_0_[16] ;
+  wire \balance_out_l_reg_n_0_[17] ;
+  wire \balance_out_l_reg_n_0_[18] ;
+  wire \balance_out_l_reg_n_0_[19] ;
+  wire \balance_out_l_reg_n_0_[1] ;
+  wire \balance_out_l_reg_n_0_[20] ;
+  wire \balance_out_l_reg_n_0_[21] ;
+  wire \balance_out_l_reg_n_0_[22] ;
+  wire \balance_out_l_reg_n_0_[23] ;
+  wire \balance_out_l_reg_n_0_[2] ;
+  wire \balance_out_l_reg_n_0_[3] ;
+  wire \balance_out_l_reg_n_0_[4] ;
+  wire \balance_out_l_reg_n_0_[5] ;
+  wire \balance_out_l_reg_n_0_[6] ;
+  wire \balance_out_l_reg_n_0_[7] ;
+  wire \balance_out_l_reg_n_0_[8] ;
+  wire \balance_out_l_reg_n_0_[9] ;
   wire \balance_out_r[0]_i_1_n_0 ;
   wire \balance_out_r[0]_i_2_n_0 ;
   wire \balance_out_r[0]_i_3_n_0 ;
@@ -202,17 +229,15 @@ module design_1_balance_controller_0_0_balance_controller
   wire \balance_out_r[18]_i_3_n_0 ;
   wire \balance_out_r[19]_i_1_n_0 ;
   wire \balance_out_r[19]_i_2_n_0 ;
-  wire \balance_out_r[19]_i_3_n_0 ;
   wire \balance_out_r[1]_i_1_n_0 ;
   wire \balance_out_r[1]_i_2_n_0 ;
   wire \balance_out_r[1]_i_3_n_0 ;
   wire \balance_out_r[20]_i_1_n_0 ;
   wire \balance_out_r[20]_i_2_n_0 ;
-  wire \balance_out_r[20]_i_3_n_0 ;
   wire \balance_out_r[21]_i_1_n_0 ;
   wire \balance_out_r[21]_i_2_n_0 ;
   wire \balance_out_r[22]_i_1_n_0 ;
-  wire \balance_out_r[23]_i_1_n_0 ;
+  wire \balance_out_r[22]_i_2_n_0 ;
   wire \balance_out_r[2]_i_1_n_0 ;
   wire \balance_out_r[2]_i_2_n_0 ;
   wire \balance_out_r[2]_i_3_n_0 ;
@@ -237,6 +262,30 @@ module design_1_balance_controller_0_0_balance_controller
   wire \balance_out_r[9]_i_1_n_0 ;
   wire \balance_out_r[9]_i_2_n_0 ;
   wire \balance_out_r[9]_i_3_n_0 ;
+  wire \balance_out_r_reg_n_0_[0] ;
+  wire \balance_out_r_reg_n_0_[10] ;
+  wire \balance_out_r_reg_n_0_[11] ;
+  wire \balance_out_r_reg_n_0_[12] ;
+  wire \balance_out_r_reg_n_0_[13] ;
+  wire \balance_out_r_reg_n_0_[14] ;
+  wire \balance_out_r_reg_n_0_[15] ;
+  wire \balance_out_r_reg_n_0_[16] ;
+  wire \balance_out_r_reg_n_0_[17] ;
+  wire \balance_out_r_reg_n_0_[18] ;
+  wire \balance_out_r_reg_n_0_[19] ;
+  wire \balance_out_r_reg_n_0_[1] ;
+  wire \balance_out_r_reg_n_0_[20] ;
+  wire \balance_out_r_reg_n_0_[21] ;
+  wire \balance_out_r_reg_n_0_[22] ;
+  wire \balance_out_r_reg_n_0_[23] ;
+  wire \balance_out_r_reg_n_0_[2] ;
+  wire \balance_out_r_reg_n_0_[3] ;
+  wire \balance_out_r_reg_n_0_[4] ;
+  wire \balance_out_r_reg_n_0_[5] ;
+  wire \balance_out_r_reg_n_0_[6] ;
+  wire \balance_out_r_reg_n_0_[7] ;
+  wire \balance_out_r_reg_n_0_[8] ;
+  wire \balance_out_r_reg_n_0_[9] ;
   wire [23:0]m_axis_tdata;
   wire m_axis_tdata0;
   wire \m_axis_tdata[0]_i_1_n_0 ;
@@ -273,23 +322,23 @@ module design_1_balance_controller_0_0_balance_controller
 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h33CC5C5C)) 
+    .INIT(32'h48787B78)) 
     \FSM_sequential_state[0]_i_1 
-       (.I0(s_axis_tlast),
-        .I1(state),
-        .I2(s_axis_tvalid),
-        .I3(m_axis_tready),
-        .I4(\FSM_sequential_state_reg[1]_0 ),
+       (.I0(m_axis_tready),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(state),
+        .I3(s_axis_tvalid),
+        .I4(s_axis_tlast),
         .O(\FSM_sequential_state[0]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h33FF8080)) 
+    .INIT(32'h7C4C4C4C)) 
     \FSM_sequential_state[1]_i_1 
-       (.I0(s_axis_tlast),
-        .I1(state),
-        .I2(s_axis_tvalid),
-        .I3(m_axis_tready),
-        .I4(\FSM_sequential_state_reg[1]_0 ),
+       (.I0(m_axis_tready),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(state),
+        .I3(s_axis_tvalid),
+        .I4(s_axis_tlast),
         .O(\FSM_sequential_state[1]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -314,13 +363,81 @@ module design_1_balance_controller_0_0_balance_controller
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\FSM_sequential_state[1]_i_1_n_0 ),
         .Q(\FSM_sequential_state_reg[1]_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \balance_exp_value[0]_i_1 
+       (.I0(balance[1]),
+        .I1(balance[0]),
+        .O(balance_exp_value[0]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT4 #(
+    .INIT(16'h399C)) 
+    \balance_exp_value[1]_i_1 
+       (.I0(balance[4]),
+        .I1(balance[2]),
+        .I2(balance[1]),
+        .I3(balance[0]),
+        .O(balance_exp_value[1]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h5999999A)) 
+    \balance_exp_value[2]_i_1 
+       (.I0(balance[3]),
+        .I1(balance[4]),
+        .I2(balance[1]),
+        .I3(balance[0]),
+        .I4(balance[2]),
+        .O(balance_exp_value[2]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h80000001)) 
+    \balance_exp_value[3]_i_1 
+       (.I0(balance[3]),
+        .I1(balance[2]),
+        .I2(balance[1]),
+        .I3(balance[0]),
+        .I4(balance[4]),
+        .O(balance_exp_value[3]));
+  FDCE #(
+    .INIT(1'b0)) 
+    \balance_exp_value_reg[0] 
+       (.C(aclk),
+        .CE(1'b1),
+        .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
+        .D(balance_exp_value[0]),
+        .Q(\balance_exp_value_reg_n_0_[0] ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \balance_exp_value_reg[1] 
+       (.C(aclk),
+        .CE(1'b1),
+        .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
+        .D(balance_exp_value[1]),
+        .Q(\balance_exp_value_reg_n_0_[1] ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \balance_exp_value_reg[2] 
+       (.C(aclk),
+        .CE(1'b1),
+        .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
+        .D(balance_exp_value[2]),
+        .Q(\balance_exp_value_reg_n_0_[2] ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \balance_exp_value_reg[3] 
+       (.C(aclk),
+        .CE(1'b1),
+        .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
+        .D(balance_exp_value[3]),
+        .Q(\balance_exp_value_reg_n_0_[3] ));
   LUT4 #(
     .INIT(16'h0004)) 
     \balance_in_l[23]_i_1 
        (.I0(state),
         .I1(s_axis_tvalid),
-        .I2(\FSM_sequential_state_reg[1]_0 ),
-        .I3(s_axis_tlast),
+        .I2(s_axis_tlast),
+        .I3(\FSM_sequential_state_reg[1]_0 ),
         .O(balance_in_l_1));
   FDCE #(
     .INIT(1'b0)) 
@@ -449,7 +566,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(balance_in_l_1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(balance_in_l[23]));
+        .Q(\balance_in_l_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_in_l_reg[2] 
@@ -515,12 +632,12 @@ module design_1_balance_controller_0_0_balance_controller
         .D(s_axis_tdata[9]),
         .Q(balance_in_l[9]));
   LUT4 #(
-    .INIT(16'h0800)) 
+    .INIT(16'h0080)) 
     \balance_in_r[23]_i_1 
        (.I0(state),
         .I1(s_axis_tvalid),
-        .I2(\FSM_sequential_state_reg[1]_0 ),
-        .I3(s_axis_tlast),
+        .I2(s_axis_tlast),
+        .I3(\FSM_sequential_state_reg[1]_0 ),
         .O(balance_in_r_0));
   FDCE #(
     .INIT(1'b0)) 
@@ -649,7 +766,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(balance_in_r_0),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[23]),
-        .Q(balance_in_r[23]));
+        .Q(\balance_in_r_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_in_r_reg[2] 
@@ -714,610 +831,591 @@ module design_1_balance_controller_0_0_balance_controller
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(s_axis_tdata[9]),
         .Q(balance_in_r[9]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
+    \balance_out_l[0]_i_1 
+       (.I0(\balance_out_l[1]_i_2_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
+        .I2(\balance_out_l[0]_i_2_n_0 ),
+        .I3(balance[4]),
+        .I4(balance_in_l[0]),
+        .O(\balance_out_l[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \balance_out_l[0]_i_1 
-       (.I0(\balance_out_l[0]_i_2_n_0 ),
-        .I1(balance[4]),
-        .I2(balance_in_l[0]),
-        .O(\balance_out_l[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'hB8F3B8C0)) 
     \balance_out_l[0]_i_2 
        (.I0(\balance_out_l[2]_i_3_n_0 ),
-        .I1(balance[1]),
-        .I2(\balance_out_l[1]_i_3_n_0 ),
-        .I3(balance[0]),
-        .I4(\balance_out_l[0]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_l[0]_i_3_n_0 ),
         .O(\balance_out_l[0]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[0]_i_3 
-       (.I0(balance_in_l[6]),
-        .I1(balance_in_l[2]),
-        .I2(balance[2]),
-        .I3(balance_in_l[4]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[12]),
+        .I1(balance_in_l[4]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[8]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[0]),
         .O(\balance_out_l[0]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[10]_i_1 
        (.I0(\balance_out_l[11]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[10]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[10]),
         .O(\balance_out_l[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[10]_i_2 
-       (.I0(\balance_out_l[11]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[12]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[10]_i_3_n_0 ),
         .O(\balance_out_l[10]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[10]_i_3 
-       (.I0(balance_in_l[16]),
-        .I1(balance_in_l[12]),
-        .I2(balance[2]),
-        .I3(balance_in_l[14]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[22]),
+        .I1(balance_in_l[14]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[18]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[10]),
         .O(\balance_out_l[10]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[11]_i_1 
        (.I0(\balance_out_l[12]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[11]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[11]),
         .O(\balance_out_l[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[11]_i_2 
-       (.I0(\balance_out_l[12]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[13]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[11]_i_3_n_0 ),
         .O(\balance_out_l[11]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[11]_i_3 
-       (.I0(balance_in_l[17]),
-        .I1(balance_in_l[13]),
-        .I2(balance[2]),
-        .I3(balance_in_l[15]),
-        .I4(balance[3]),
+       (.I0(\balance_in_l_reg_n_0_[23] ),
+        .I1(balance_in_l[15]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[19]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[11]),
         .O(\balance_out_l[11]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[12]_i_1 
        (.I0(\balance_out_l[13]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[12]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[12]),
         .O(\balance_out_l[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[12]_i_2 
-       (.I0(\balance_out_l[13]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[14]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[12]_i_3_n_0 ),
         .O(\balance_out_l[12]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[12]_i_3 
-       (.I0(balance_in_l[18]),
-        .I1(balance_in_l[14]),
-        .I2(balance[2]),
-        .I3(balance_in_l[16]),
-        .I4(balance[3]),
+       (.I0(\balance_in_l_reg_n_0_[23] ),
+        .I1(balance_in_l[16]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[20]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[12]),
         .O(\balance_out_l[12]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[13]_i_1 
        (.I0(\balance_out_l[14]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[13]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[13]),
         .O(\balance_out_l[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[13]_i_2 
-       (.I0(\balance_out_l[14]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[15]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[13]_i_3_n_0 ),
         .O(\balance_out_l[13]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[13]_i_3 
-       (.I0(balance_in_l[19]),
-        .I1(balance_in_l[15]),
-        .I2(balance[2]),
-        .I3(balance_in_l[17]),
-        .I4(balance[3]),
+       (.I0(\balance_in_l_reg_n_0_[23] ),
+        .I1(balance_in_l[17]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[21]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[13]),
         .O(\balance_out_l[13]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[14]_i_1 
        (.I0(\balance_out_l[15]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[14]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[14]),
         .O(\balance_out_l[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[14]_i_2 
-       (.I0(\balance_out_l[15]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[16]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[14]_i_3_n_0 ),
         .O(\balance_out_l[14]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[14]_i_3 
-       (.I0(balance_in_l[20]),
-        .I1(balance_in_l[16]),
-        .I2(balance[2]),
-        .I3(balance_in_l[18]),
-        .I4(balance[3]),
+       (.I0(\balance_in_l_reg_n_0_[23] ),
+        .I1(balance_in_l[18]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[22]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[14]),
         .O(\balance_out_l[14]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[15]_i_1 
        (.I0(\balance_out_l[16]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[15]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[15]),
         .O(\balance_out_l[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[15]_i_2 
-       (.I0(\balance_out_l[16]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[17]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[15]_i_3_n_0 ),
         .O(\balance_out_l[15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  LUT5 #(
+    .INIT(32'hF0BBF088)) 
     \balance_out_l[15]_i_3 
-       (.I0(balance_in_l[21]),
-        .I1(balance_in_l[17]),
-        .I2(balance[2]),
-        .I3(balance_in_l[19]),
-        .I4(balance[3]),
-        .I5(balance_in_l[15]),
+       (.I0(balance_in_l[19]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_l_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_l[15]),
         .O(\balance_out_l[15]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[16]_i_1 
        (.I0(\balance_out_l[17]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[16]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[16]),
         .O(\balance_out_l[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[16]_i_2 
-       (.I0(\balance_out_l[17]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[18]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[16]_i_3_n_0 ),
         .O(\balance_out_l[16]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  LUT5 #(
+    .INIT(32'hF0BBF088)) 
     \balance_out_l[16]_i_3 
-       (.I0(balance_in_l[22]),
-        .I1(balance_in_l[18]),
-        .I2(balance[2]),
-        .I3(balance_in_l[20]),
-        .I4(balance[3]),
-        .I5(balance_in_l[16]),
+       (.I0(balance_in_l[20]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_l_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_l[16]),
         .O(\balance_out_l[16]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[17]_i_1 
        (.I0(\balance_out_l[18]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[17]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[17]),
         .O(\balance_out_l[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT6 #(
+    .INIT(64'hCDC8FFFFCDC80000)) 
     \balance_out_l[17]_i_2 
-       (.I0(\balance_out_l[18]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_l[17]_i_3_n_0 ),
+       (.I0(\balance_exp_value_reg_n_0_[2] ),
+        .I1(\balance_in_l_reg_n_0_[23] ),
+        .I2(\balance_exp_value_reg_n_0_[3] ),
+        .I3(balance_in_l[19]),
+        .I4(\balance_exp_value_reg_n_0_[1] ),
+        .I5(\balance_out_l[17]_i_3_n_0 ),
         .O(\balance_out_l[17]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'h30BB3088)) 
+    .INIT(32'hF0BBF088)) 
     \balance_out_l[17]_i_3 
-       (.I0(balance_in_l[19]),
-        .I1(balance[2]),
-        .I2(balance_in_l[21]),
-        .I3(balance[3]),
+       (.I0(balance_in_l[21]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_l_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
         .I4(balance_in_l[17]),
         .O(\balance_out_l[17]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[18]_i_1 
        (.I0(\balance_out_l[19]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[18]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[18]),
         .O(\balance_out_l[18]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00B8FFFF00B80000)) 
+    .INIT(64'hCDC8FFFFCDC80000)) 
     \balance_out_l[18]_i_2 
-       (.I0(balance_in_l[21]),
-        .I1(balance[2]),
-        .I2(balance_in_l[19]),
-        .I3(balance[3]),
-        .I4(balance[0]),
+       (.I0(\balance_exp_value_reg_n_0_[2] ),
+        .I1(\balance_in_l_reg_n_0_[23] ),
+        .I2(\balance_exp_value_reg_n_0_[3] ),
+        .I3(balance_in_l[20]),
+        .I4(\balance_exp_value_reg_n_0_[1] ),
         .I5(\balance_out_l[18]_i_3_n_0 ),
         .O(\balance_out_l[18]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h30BB3088)) 
+    .INIT(32'hF0BBF088)) 
     \balance_out_l[18]_i_3 
-       (.I0(balance_in_l[20]),
-        .I1(balance[2]),
-        .I2(balance_in_l[22]),
-        .I3(balance[3]),
+       (.I0(balance_in_l[22]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_l_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
         .I4(balance_in_l[18]),
         .O(\balance_out_l[18]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[19]_i_1 
-       (.I0(\balance_out_l[20]_i_3_n_0 ),
-        .I1(balance[1]),
+       (.I0(\balance_out_l[20]_i_2_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[19]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[19]),
         .O(\balance_out_l[19]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00B8FFFF00B80000)) 
+    .INIT(64'hFF00FB0BFF00F808)) 
     \balance_out_l[19]_i_2 
-       (.I0(balance_in_l[22]),
-        .I1(balance[2]),
-        .I2(balance_in_l[20]),
-        .I3(balance[3]),
-        .I4(balance[0]),
-        .I5(\balance_out_l[19]_i_3_n_0 ),
-        .O(\balance_out_l[19]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h00B8)) 
-    \balance_out_l[19]_i_3 
        (.I0(balance_in_l[21]),
-        .I1(balance[2]),
-        .I2(balance_in_l[19]),
-        .I3(balance[3]),
-        .O(\balance_out_l[19]_i_3_n_0 ));
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(\balance_in_l_reg_n_0_[23] ),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_l[19]),
+        .O(\balance_out_l[19]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[1]_i_1 
        (.I0(\balance_out_l[2]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[1]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[1]),
         .O(\balance_out_l[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[1]_i_2 
-       (.I0(\balance_out_l[2]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[3]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[1]_i_3_n_0 ),
         .O(\balance_out_l[1]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[1]_i_3 
-       (.I0(balance_in_l[7]),
-        .I1(balance_in_l[3]),
-        .I2(balance[2]),
-        .I3(balance_in_l[5]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[13]),
+        .I1(balance_in_l[5]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[9]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[1]),
         .O(\balance_out_l[1]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[20]_i_1 
-       (.I0(\balance_out_l[20]_i_2_n_0 ),
-        .I1(balance[1]),
-        .I2(\balance_out_l[20]_i_3_n_0 ),
+       (.I0(\balance_out_l[21]_i_2_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
+        .I2(\balance_out_l[20]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[20]),
         .O(\balance_out_l[20]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h00000B08)) 
+  LUT6 #(
+    .INIT(64'hFF00FB0BFF00F808)) 
     \balance_out_l[20]_i_2 
        (.I0(balance_in_l[22]),
-        .I1(balance[0]),
-        .I2(balance[3]),
-        .I3(balance_in_l[21]),
-        .I4(balance[2]),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(\balance_in_l_reg_n_0_[23] ),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_l[20]),
         .O(\balance_out_l[20]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000030BB3088)) 
-    \balance_out_l[20]_i_3 
-       (.I0(balance_in_l[21]),
-        .I1(balance[0]),
-        .I2(balance_in_l[22]),
-        .I3(balance[2]),
-        .I4(balance_in_l[20]),
-        .I5(balance[3]),
-        .O(\balance_out_l[20]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
     \balance_out_l[21]_i_1 
-       (.I0(\balance_out_l[21]_i_2_n_0 ),
-        .I1(balance[4]),
-        .I2(balance_in_l[21]),
-        .O(\balance_out_l[21]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000004D0048)) 
-    \balance_out_l[21]_i_2 
-       (.I0(balance[1]),
-        .I1(balance_in_l[22]),
-        .I2(balance[0]),
-        .I3(balance[3]),
+       (.I0(\balance_out_l[22]_i_2_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
+        .I2(\balance_out_l[21]_i_2_n_0 ),
+        .I3(balance[4]),
         .I4(balance_in_l[21]),
-        .I5(balance[2]),
+        .O(\balance_out_l[21]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hF0F1F0E0)) 
+    \balance_out_l[21]_i_2 
+       (.I0(\balance_exp_value_reg_n_0_[1] ),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_l_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_l[21]),
         .O(\balance_out_l[21]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0001FFFF00000000)) 
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
     \balance_out_l[22]_i_1 
-       (.I0(balance[0]),
-        .I1(balance[3]),
-        .I2(balance[2]),
-        .I3(balance[1]),
-        .I4(balance[4]),
-        .I5(balance_in_l[22]),
+       (.I0(\balance_in_l_reg_n_0_[23] ),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
+        .I2(\balance_out_l[22]_i_2_n_0 ),
+        .I3(balance[4]),
+        .I4(balance_in_l[22]),
         .O(\balance_out_l[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \balance_out_l[23]_i_1 
-       (.I0(balance_in_l[23]),
-        .I1(balance[4]),
-        .O(\balance_out_l[23]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hF0F1F0E0)) 
+    \balance_out_l[22]_i_2 
+       (.I0(\balance_exp_value_reg_n_0_[1] ),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_l_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_l[22]),
+        .O(\balance_out_l[22]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[2]_i_1 
        (.I0(\balance_out_l[3]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[2]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[2]),
         .O(\balance_out_l[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[2]_i_2 
-       (.I0(\balance_out_l[3]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[4]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[2]_i_3_n_0 ),
         .O(\balance_out_l[2]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[2]_i_3 
-       (.I0(balance_in_l[8]),
-        .I1(balance_in_l[4]),
-        .I2(balance[2]),
-        .I3(balance_in_l[6]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[14]),
+        .I1(balance_in_l[6]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[10]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[2]),
         .O(\balance_out_l[2]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[3]_i_1 
        (.I0(\balance_out_l[4]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[3]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[3]),
         .O(\balance_out_l[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[3]_i_2 
-       (.I0(\balance_out_l[4]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[5]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[3]_i_3_n_0 ),
         .O(\balance_out_l[3]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[3]_i_3 
-       (.I0(balance_in_l[9]),
-        .I1(balance_in_l[5]),
-        .I2(balance[2]),
-        .I3(balance_in_l[7]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[15]),
+        .I1(balance_in_l[7]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[11]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[3]),
         .O(\balance_out_l[3]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[4]_i_1 
        (.I0(\balance_out_l[5]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[4]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[4]),
         .O(\balance_out_l[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[4]_i_2 
-       (.I0(\balance_out_l[5]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[6]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[4]_i_3_n_0 ),
         .O(\balance_out_l[4]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[4]_i_3 
-       (.I0(balance_in_l[10]),
-        .I1(balance_in_l[6]),
-        .I2(balance[2]),
-        .I3(balance_in_l[8]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[16]),
+        .I1(balance_in_l[8]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[12]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[4]),
         .O(\balance_out_l[4]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[5]_i_1 
        (.I0(\balance_out_l[6]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[5]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[5]),
         .O(\balance_out_l[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[5]_i_2 
-       (.I0(\balance_out_l[6]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[7]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[5]_i_3_n_0 ),
         .O(\balance_out_l[5]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[5]_i_3 
-       (.I0(balance_in_l[11]),
-        .I1(balance_in_l[7]),
-        .I2(balance[2]),
-        .I3(balance_in_l[9]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[17]),
+        .I1(balance_in_l[9]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[13]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[5]),
         .O(\balance_out_l[5]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[6]_i_1 
        (.I0(\balance_out_l[7]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[6]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[6]),
         .O(\balance_out_l[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[6]_i_2 
-       (.I0(\balance_out_l[7]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[8]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[6]_i_3_n_0 ),
         .O(\balance_out_l[6]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[6]_i_3 
-       (.I0(balance_in_l[12]),
-        .I1(balance_in_l[8]),
-        .I2(balance[2]),
-        .I3(balance_in_l[10]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[18]),
+        .I1(balance_in_l[10]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[14]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[6]),
         .O(\balance_out_l[6]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[7]_i_1 
        (.I0(\balance_out_l[8]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[7]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[7]),
         .O(\balance_out_l[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[7]_i_2 
-       (.I0(\balance_out_l[8]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[9]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[7]_i_3_n_0 ),
         .O(\balance_out_l[7]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[7]_i_3 
-       (.I0(balance_in_l[13]),
-        .I1(balance_in_l[9]),
-        .I2(balance[2]),
-        .I3(balance_in_l[11]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[19]),
+        .I1(balance_in_l[11]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[15]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[7]),
         .O(\balance_out_l[7]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[8]_i_1 
        (.I0(\balance_out_l[9]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[8]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[8]),
         .O(\balance_out_l[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[8]_i_2 
-       (.I0(\balance_out_l[9]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[10]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[8]_i_3_n_0 ),
         .O(\balance_out_l[8]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[8]_i_3 
-       (.I0(balance_in_l[14]),
-        .I1(balance_in_l[10]),
-        .I2(balance[2]),
-        .I3(balance_in_l[12]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[20]),
+        .I1(balance_in_l[12]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[16]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[8]),
         .O(\balance_out_l[8]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \balance_out_l[9]_i_1 
        (.I0(\balance_out_l[10]_i_2_n_0 ),
-        .I1(balance[1]),
+        .I1(\balance_exp_value_reg_n_0_[0] ),
         .I2(\balance_out_l[9]_i_2_n_0 ),
         .I3(balance[4]),
         .I4(balance_in_l[9]),
         .O(\balance_out_l[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_l[9]_i_2 
-       (.I0(\balance_out_l[10]_i_3_n_0 ),
-        .I1(balance[0]),
+       (.I0(\balance_out_l[11]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
         .I2(\balance_out_l[9]_i_3_n_0 ),
         .O(\balance_out_l[9]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_l[9]_i_3 
-       (.I0(balance_in_l[15]),
-        .I1(balance_in_l[11]),
-        .I2(balance[2]),
-        .I3(balance_in_l[13]),
-        .I4(balance[3]),
+       (.I0(balance_in_l[21]),
+        .I1(balance_in_l[13]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_l[17]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
         .I5(balance_in_l[9]),
         .O(\balance_out_l[9]_i_3_n_0 ));
   FDCE #(
@@ -1327,7 +1425,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[0]_i_1_n_0 ),
-        .Q(balance_out_l[0]));
+        .Q(\balance_out_l_reg_n_0_[0] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[10] 
@@ -1335,7 +1433,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[10]_i_1_n_0 ),
-        .Q(balance_out_l[10]));
+        .Q(\balance_out_l_reg_n_0_[10] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[11] 
@@ -1343,7 +1441,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[11]_i_1_n_0 ),
-        .Q(balance_out_l[11]));
+        .Q(\balance_out_l_reg_n_0_[11] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[12] 
@@ -1351,7 +1449,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[12]_i_1_n_0 ),
-        .Q(balance_out_l[12]));
+        .Q(\balance_out_l_reg_n_0_[12] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[13] 
@@ -1359,7 +1457,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[13]_i_1_n_0 ),
-        .Q(balance_out_l[13]));
+        .Q(\balance_out_l_reg_n_0_[13] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[14] 
@@ -1367,7 +1465,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[14]_i_1_n_0 ),
-        .Q(balance_out_l[14]));
+        .Q(\balance_out_l_reg_n_0_[14] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[15] 
@@ -1375,7 +1473,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[15]_i_1_n_0 ),
-        .Q(balance_out_l[15]));
+        .Q(\balance_out_l_reg_n_0_[15] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[16] 
@@ -1383,7 +1481,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[16]_i_1_n_0 ),
-        .Q(balance_out_l[16]));
+        .Q(\balance_out_l_reg_n_0_[16] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[17] 
@@ -1391,7 +1489,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[17]_i_1_n_0 ),
-        .Q(balance_out_l[17]));
+        .Q(\balance_out_l_reg_n_0_[17] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[18] 
@@ -1399,7 +1497,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[18]_i_1_n_0 ),
-        .Q(balance_out_l[18]));
+        .Q(\balance_out_l_reg_n_0_[18] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[19] 
@@ -1407,7 +1505,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[19]_i_1_n_0 ),
-        .Q(balance_out_l[19]));
+        .Q(\balance_out_l_reg_n_0_[19] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[1] 
@@ -1415,7 +1513,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[1]_i_1_n_0 ),
-        .Q(balance_out_l[1]));
+        .Q(\balance_out_l_reg_n_0_[1] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[20] 
@@ -1423,7 +1521,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[20]_i_1_n_0 ),
-        .Q(balance_out_l[20]));
+        .Q(\balance_out_l_reg_n_0_[20] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[21] 
@@ -1431,7 +1529,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[21]_i_1_n_0 ),
-        .Q(balance_out_l[21]));
+        .Q(\balance_out_l_reg_n_0_[21] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[22] 
@@ -1439,15 +1537,15 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[22]_i_1_n_0 ),
-        .Q(balance_out_l[22]));
+        .Q(\balance_out_l_reg_n_0_[22] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[23] 
        (.C(aclk),
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(\balance_out_l[23]_i_1_n_0 ),
-        .Q(balance_out_l[23]));
+        .D(\balance_in_l_reg_n_0_[23] ),
+        .Q(\balance_out_l_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[2] 
@@ -1455,7 +1553,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[2]_i_1_n_0 ),
-        .Q(balance_out_l[2]));
+        .Q(\balance_out_l_reg_n_0_[2] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[3] 
@@ -1463,7 +1561,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[3]_i_1_n_0 ),
-        .Q(balance_out_l[3]));
+        .Q(\balance_out_l_reg_n_0_[3] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[4] 
@@ -1471,7 +1569,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[4]_i_1_n_0 ),
-        .Q(balance_out_l[4]));
+        .Q(\balance_out_l_reg_n_0_[4] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[5] 
@@ -1479,7 +1577,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[5]_i_1_n_0 ),
-        .Q(balance_out_l[5]));
+        .Q(\balance_out_l_reg_n_0_[5] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[6] 
@@ -1487,7 +1585,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[6]_i_1_n_0 ),
-        .Q(balance_out_l[6]));
+        .Q(\balance_out_l_reg_n_0_[6] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[7] 
@@ -1495,7 +1593,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[7]_i_1_n_0 ),
-        .Q(balance_out_l[7]));
+        .Q(\balance_out_l_reg_n_0_[7] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[8] 
@@ -1503,7 +1601,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[8]_i_1_n_0 ),
-        .Q(balance_out_l[8]));
+        .Q(\balance_out_l_reg_n_0_[8] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_l_reg[9] 
@@ -1511,612 +1609,593 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_l[9]_i_1_n_0 ),
-        .Q(balance_out_l[9]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+        .Q(\balance_out_l_reg_n_0_[9] ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
     \balance_out_r[0]_i_1 
        (.I0(balance_in_r[0]),
         .I1(balance[4]),
-        .I2(\balance_out_r[0]_i_2_n_0 ),
+        .I2(\balance_out_r[1]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[0]_i_2_n_0 ),
         .O(\balance_out_r[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT5 #(
-    .INIT(32'hB8F3B8C0)) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
     \balance_out_r[0]_i_2 
-       (.I0(\balance_out_r[0]_i_3_n_0 ),
-        .I1(balance[1]),
-        .I2(\balance_out_r[1]_i_3_n_0 ),
-        .I3(balance[0]),
-        .I4(\balance_out_r[2]_i_3_n_0 ),
+       (.I0(\balance_out_r[2]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[0]_i_3_n_0 ),
         .O(\balance_out_r[0]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[0]_i_3 
-       (.I0(balance_in_r[0]),
+       (.I0(balance_in_r[12]),
         .I1(balance_in_r[4]),
-        .I2(balance[2]),
-        .I3(balance_in_r[2]),
-        .I4(balance[3]),
-        .I5(balance_in_r[6]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[8]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[0]),
         .O(\balance_out_r[0]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[10]_i_1 
        (.I0(balance_in_r[10]),
         .I1(balance[4]),
-        .I2(\balance_out_r[10]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[11]_i_2_n_0 ),
+        .I2(\balance_out_r[11]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[10]_i_2_n_0 ),
         .O(\balance_out_r[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[10]_i_2 
-       (.I0(\balance_out_r[10]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[11]_i_3_n_0 ),
+       (.I0(\balance_out_r[12]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[10]_i_3_n_0 ),
         .O(\balance_out_r[10]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[10]_i_3 
-       (.I0(balance_in_r[10]),
+       (.I0(balance_in_r[22]),
         .I1(balance_in_r[14]),
-        .I2(balance[2]),
-        .I3(balance_in_r[12]),
-        .I4(balance[3]),
-        .I5(balance_in_r[16]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[18]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[10]),
         .O(\balance_out_r[10]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[11]_i_1 
        (.I0(balance_in_r[11]),
         .I1(balance[4]),
-        .I2(\balance_out_r[11]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[12]_i_2_n_0 ),
+        .I2(\balance_out_r[12]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[11]_i_2_n_0 ),
         .O(\balance_out_r[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[11]_i_2 
-       (.I0(\balance_out_r[11]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[12]_i_3_n_0 ),
+       (.I0(\balance_out_r[13]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[11]_i_3_n_0 ),
         .O(\balance_out_r[11]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[11]_i_3 
-       (.I0(balance_in_r[11]),
+       (.I0(\balance_in_r_reg_n_0_[23] ),
         .I1(balance_in_r[15]),
-        .I2(balance[2]),
-        .I3(balance_in_r[13]),
-        .I4(balance[3]),
-        .I5(balance_in_r[17]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[19]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[11]),
         .O(\balance_out_r[11]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[12]_i_1 
        (.I0(balance_in_r[12]),
         .I1(balance[4]),
-        .I2(\balance_out_r[12]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[13]_i_2_n_0 ),
+        .I2(\balance_out_r[13]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[12]_i_2_n_0 ),
         .O(\balance_out_r[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[12]_i_2 
-       (.I0(\balance_out_r[12]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[13]_i_3_n_0 ),
+       (.I0(\balance_out_r[14]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[12]_i_3_n_0 ),
         .O(\balance_out_r[12]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[12]_i_3 
-       (.I0(balance_in_r[12]),
+       (.I0(\balance_in_r_reg_n_0_[23] ),
         .I1(balance_in_r[16]),
-        .I2(balance[2]),
-        .I3(balance_in_r[14]),
-        .I4(balance[3]),
-        .I5(balance_in_r[18]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[20]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[12]),
         .O(\balance_out_r[12]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[13]_i_1 
        (.I0(balance_in_r[13]),
         .I1(balance[4]),
-        .I2(\balance_out_r[13]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[14]_i_2_n_0 ),
+        .I2(\balance_out_r[14]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[13]_i_2_n_0 ),
         .O(\balance_out_r[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[13]_i_2 
-       (.I0(\balance_out_r[13]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[14]_i_3_n_0 ),
+       (.I0(\balance_out_r[15]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[13]_i_3_n_0 ),
         .O(\balance_out_r[13]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[13]_i_3 
-       (.I0(balance_in_r[13]),
+       (.I0(\balance_in_r_reg_n_0_[23] ),
         .I1(balance_in_r[17]),
-        .I2(balance[2]),
-        .I3(balance_in_r[15]),
-        .I4(balance[3]),
-        .I5(balance_in_r[19]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[21]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[13]),
         .O(\balance_out_r[13]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[14]_i_1 
        (.I0(balance_in_r[14]),
         .I1(balance[4]),
-        .I2(\balance_out_r[14]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[15]_i_2_n_0 ),
+        .I2(\balance_out_r[15]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[14]_i_2_n_0 ),
         .O(\balance_out_r[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[14]_i_2 
-       (.I0(\balance_out_r[14]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[15]_i_3_n_0 ),
+       (.I0(\balance_out_r[16]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[14]_i_3_n_0 ),
         .O(\balance_out_r[14]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[14]_i_3 
-       (.I0(balance_in_r[14]),
+       (.I0(\balance_in_r_reg_n_0_[23] ),
         .I1(balance_in_r[18]),
-        .I2(balance[2]),
-        .I3(balance_in_r[16]),
-        .I4(balance[3]),
-        .I5(balance_in_r[20]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[22]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[14]),
         .O(\balance_out_r[14]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[15]_i_1 
        (.I0(balance_in_r[15]),
         .I1(balance[4]),
-        .I2(\balance_out_r[15]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[16]_i_2_n_0 ),
+        .I2(\balance_out_r[16]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[15]_i_2_n_0 ),
         .O(\balance_out_r[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[15]_i_2 
-       (.I0(\balance_out_r[15]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[16]_i_3_n_0 ),
+       (.I0(\balance_out_r[17]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[15]_i_3_n_0 ),
         .O(\balance_out_r[15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  LUT5 #(
+    .INIT(32'hF0BBF088)) 
     \balance_out_r[15]_i_3 
-       (.I0(balance_in_r[15]),
-        .I1(balance_in_r[19]),
-        .I2(balance[2]),
-        .I3(balance_in_r[17]),
-        .I4(balance[3]),
-        .I5(balance_in_r[21]),
+       (.I0(balance_in_r[19]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_r[15]),
         .O(\balance_out_r[15]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[16]_i_1 
        (.I0(balance_in_r[16]),
         .I1(balance[4]),
-        .I2(\balance_out_r[16]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[17]_i_2_n_0 ),
+        .I2(\balance_out_r[17]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[16]_i_2_n_0 ),
         .O(\balance_out_r[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[16]_i_2 
-       (.I0(\balance_out_r[16]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[17]_i_3_n_0 ),
+       (.I0(\balance_out_r[18]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[16]_i_3_n_0 ),
         .O(\balance_out_r[16]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  LUT5 #(
+    .INIT(32'hF0BBF088)) 
     \balance_out_r[16]_i_3 
-       (.I0(balance_in_r[16]),
-        .I1(balance_in_r[20]),
-        .I2(balance[2]),
-        .I3(balance_in_r[18]),
-        .I4(balance[3]),
-        .I5(balance_in_r[22]),
+       (.I0(balance_in_r[20]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_r[16]),
         .O(\balance_out_r[16]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[17]_i_1 
        (.I0(balance_in_r[17]),
         .I1(balance[4]),
-        .I2(\balance_out_r[17]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[18]_i_2_n_0 ),
+        .I2(\balance_out_r[18]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[17]_i_2_n_0 ),
         .O(\balance_out_r[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT6 #(
+    .INIT(64'hCDC8FFFFCDC80000)) 
     \balance_out_r[17]_i_2 
-       (.I0(\balance_out_r[17]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[18]_i_3_n_0 ),
+       (.I0(\balance_exp_value_reg_n_0_[2] ),
+        .I1(\balance_in_r_reg_n_0_[23] ),
+        .I2(\balance_exp_value_reg_n_0_[3] ),
+        .I3(balance_in_r[19]),
+        .I4(\balance_exp_value_reg_n_0_[1] ),
+        .I5(\balance_out_r[17]_i_3_n_0 ),
         .O(\balance_out_r[17]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hAFA0C0C0)) 
+    .INIT(32'hF0BBF088)) 
     \balance_out_r[17]_i_3 
-       (.I0(balance_in_r[17]),
-        .I1(balance_in_r[21]),
-        .I2(balance[2]),
-        .I3(balance_in_r[19]),
-        .I4(balance[3]),
+       (.I0(balance_in_r[21]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_r[17]),
         .O(\balance_out_r[17]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[18]_i_1 
        (.I0(balance_in_r[18]),
         .I1(balance[4]),
-        .I2(\balance_out_r[18]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[19]_i_2_n_0 ),
+        .I2(\balance_out_r[19]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[18]_i_2_n_0 ),
         .O(\balance_out_r[18]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hB8BBB88888888888)) 
+    .INIT(64'hCDC8FFFFCDC80000)) 
     \balance_out_r[18]_i_2 
-       (.I0(\balance_out_r[18]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(balance_in_r[19]),
-        .I3(balance[2]),
-        .I4(balance_in_r[21]),
-        .I5(balance[3]),
-        .O(\balance_out_r[18]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'hAFA0C0C0)) 
-    \balance_out_r[18]_i_3 
-       (.I0(balance_in_r[18]),
-        .I1(balance_in_r[22]),
-        .I2(balance[2]),
+       (.I0(\balance_exp_value_reg_n_0_[2] ),
+        .I1(\balance_in_r_reg_n_0_[23] ),
+        .I2(\balance_exp_value_reg_n_0_[3] ),
         .I3(balance_in_r[20]),
-        .I4(balance[3]),
+        .I4(\balance_exp_value_reg_n_0_[1] ),
+        .I5(\balance_out_r[18]_i_3_n_0 ),
+        .O(\balance_out_r[18]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hF0BBF088)) 
+    \balance_out_r[18]_i_3 
+       (.I0(balance_in_r[22]),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_r[18]),
         .O(\balance_out_r[18]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[19]_i_1 
        (.I0(balance_in_r[19]),
         .I1(balance[4]),
-        .I2(\balance_out_r[19]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[20]_i_2_n_0 ),
+        .I2(\balance_out_r[20]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[19]_i_2_n_0 ),
         .O(\balance_out_r[19]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hB800FFFFB8000000)) 
+    .INIT(64'hFF00FB0BFF00F808)) 
     \balance_out_r[19]_i_2 
-       (.I0(balance_in_r[19]),
-        .I1(balance[2]),
-        .I2(balance_in_r[21]),
-        .I3(balance[3]),
-        .I4(balance[0]),
-        .I5(\balance_out_r[19]_i_3_n_0 ),
+       (.I0(balance_in_r[21]),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(\balance_in_r_reg_n_0_[23] ),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[19]),
         .O(\balance_out_r[19]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'hB800)) 
-    \balance_out_r[19]_i_3 
-       (.I0(balance_in_r[20]),
-        .I1(balance[2]),
-        .I2(balance_in_r[22]),
-        .I3(balance[3]),
-        .O(\balance_out_r[19]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[1]_i_1 
        (.I0(balance_in_r[1]),
         .I1(balance[4]),
-        .I2(\balance_out_r[1]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[2]_i_2_n_0 ),
+        .I2(\balance_out_r[2]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[1]_i_2_n_0 ),
         .O(\balance_out_r[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[1]_i_2 
-       (.I0(\balance_out_r[1]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[2]_i_3_n_0 ),
+       (.I0(\balance_out_r[3]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[1]_i_3_n_0 ),
         .O(\balance_out_r[1]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[1]_i_3 
-       (.I0(balance_in_r[1]),
+       (.I0(balance_in_r[13]),
         .I1(balance_in_r[5]),
-        .I2(balance[2]),
-        .I3(balance_in_r[3]),
-        .I4(balance[3]),
-        .I5(balance_in_r[7]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[9]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[1]),
         .O(\balance_out_r[1]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[20]_i_1 
        (.I0(balance_in_r[20]),
         .I1(balance[4]),
-        .I2(\balance_out_r[20]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[20]_i_3_n_0 ),
+        .I2(\balance_out_r[21]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[20]_i_2_n_0 ),
         .O(\balance_out_r[20]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hAF00A000C000C000)) 
+    .INIT(64'hFF00FB0BFF00F808)) 
     \balance_out_r[20]_i_2 
-       (.I0(balance_in_r[20]),
-        .I1(balance_in_r[22]),
-        .I2(balance[0]),
-        .I3(balance[3]),
-        .I4(balance_in_r[21]),
-        .I5(balance[2]),
+       (.I0(balance_in_r[22]),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(\balance_in_r_reg_n_0_[23] ),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[20]),
         .O(\balance_out_r[20]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hB0800000)) 
-    \balance_out_r[20]_i_3 
-       (.I0(balance_in_r[21]),
-        .I1(balance[0]),
-        .I2(balance[3]),
-        .I3(balance_in_r[22]),
-        .I4(balance[2]),
-        .O(\balance_out_r[20]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+    .INIT(32'hB8BBB888)) 
     \balance_out_r[21]_i_1 
        (.I0(balance_in_r[21]),
         .I1(balance[4]),
-        .I2(\balance_out_r[21]_i_2_n_0 ),
+        .I2(\balance_out_r[22]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[21]_i_2_n_0 ),
         .O(\balance_out_r[21]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hB0800000C0000000)) 
+  LUT5 #(
+    .INIT(32'hF0F1F0E0)) 
     \balance_out_r[21]_i_2 
-       (.I0(balance_in_r[21]),
-        .I1(balance[1]),
-        .I2(balance[2]),
-        .I3(balance_in_r[22]),
-        .I4(balance[3]),
-        .I5(balance[0]),
+       (.I0(\balance_exp_value_reg_n_0_[1] ),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_r[21]),
         .O(\balance_out_r[21]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hEA00AA00AA00AA00)) 
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
     \balance_out_r[22]_i_1 
-       (.I0(balance[4]),
-        .I1(balance[0]),
-        .I2(balance[3]),
-        .I3(balance_in_r[22]),
-        .I4(balance[2]),
-        .I5(balance[1]),
-        .O(\balance_out_r[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \balance_out_r[23]_i_1 
-       (.I0(balance_in_r[23]),
+       (.I0(balance_in_r[22]),
         .I1(balance[4]),
-        .O(\balance_out_r[23]_i_1_n_0 ));
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[22]_i_2_n_0 ),
+        .O(\balance_out_r[22]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hF0F1F0E0)) 
+    \balance_out_r[22]_i_2 
+       (.I0(\balance_exp_value_reg_n_0_[1] ),
+        .I1(\balance_exp_value_reg_n_0_[2] ),
+        .I2(\balance_in_r_reg_n_0_[23] ),
+        .I3(\balance_exp_value_reg_n_0_[3] ),
+        .I4(balance_in_r[22]),
+        .O(\balance_out_r[22]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[2]_i_1 
        (.I0(balance_in_r[2]),
         .I1(balance[4]),
-        .I2(\balance_out_r[2]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[3]_i_2_n_0 ),
+        .I2(\balance_out_r[3]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[2]_i_2_n_0 ),
         .O(\balance_out_r[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[2]_i_2 
-       (.I0(\balance_out_r[2]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[3]_i_3_n_0 ),
+       (.I0(\balance_out_r[4]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[2]_i_3_n_0 ),
         .O(\balance_out_r[2]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[2]_i_3 
-       (.I0(balance_in_r[2]),
+       (.I0(balance_in_r[14]),
         .I1(balance_in_r[6]),
-        .I2(balance[2]),
-        .I3(balance_in_r[4]),
-        .I4(balance[3]),
-        .I5(balance_in_r[8]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[10]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[2]),
         .O(\balance_out_r[2]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[3]_i_1 
        (.I0(balance_in_r[3]),
         .I1(balance[4]),
-        .I2(\balance_out_r[3]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[4]_i_2_n_0 ),
+        .I2(\balance_out_r[4]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[3]_i_2_n_0 ),
         .O(\balance_out_r[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[3]_i_2 
-       (.I0(\balance_out_r[3]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[4]_i_3_n_0 ),
+       (.I0(\balance_out_r[5]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[3]_i_3_n_0 ),
         .O(\balance_out_r[3]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[3]_i_3 
-       (.I0(balance_in_r[3]),
+       (.I0(balance_in_r[15]),
         .I1(balance_in_r[7]),
-        .I2(balance[2]),
-        .I3(balance_in_r[5]),
-        .I4(balance[3]),
-        .I5(balance_in_r[9]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[11]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[3]),
         .O(\balance_out_r[3]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[4]_i_1 
        (.I0(balance_in_r[4]),
         .I1(balance[4]),
-        .I2(\balance_out_r[4]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[5]_i_2_n_0 ),
+        .I2(\balance_out_r[5]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[4]_i_2_n_0 ),
         .O(\balance_out_r[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[4]_i_2 
-       (.I0(\balance_out_r[4]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[5]_i_3_n_0 ),
+       (.I0(\balance_out_r[6]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[4]_i_3_n_0 ),
         .O(\balance_out_r[4]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[4]_i_3 
-       (.I0(balance_in_r[4]),
+       (.I0(balance_in_r[16]),
         .I1(balance_in_r[8]),
-        .I2(balance[2]),
-        .I3(balance_in_r[6]),
-        .I4(balance[3]),
-        .I5(balance_in_r[10]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[12]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[4]),
         .O(\balance_out_r[4]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[5]_i_1 
        (.I0(balance_in_r[5]),
         .I1(balance[4]),
-        .I2(\balance_out_r[5]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[6]_i_2_n_0 ),
+        .I2(\balance_out_r[6]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[5]_i_2_n_0 ),
         .O(\balance_out_r[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[5]_i_2 
-       (.I0(\balance_out_r[5]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[6]_i_3_n_0 ),
+       (.I0(\balance_out_r[7]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[5]_i_3_n_0 ),
         .O(\balance_out_r[5]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[5]_i_3 
-       (.I0(balance_in_r[5]),
+       (.I0(balance_in_r[17]),
         .I1(balance_in_r[9]),
-        .I2(balance[2]),
-        .I3(balance_in_r[7]),
-        .I4(balance[3]),
-        .I5(balance_in_r[11]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[13]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[5]),
         .O(\balance_out_r[5]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[6]_i_1 
        (.I0(balance_in_r[6]),
         .I1(balance[4]),
-        .I2(\balance_out_r[6]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[7]_i_2_n_0 ),
+        .I2(\balance_out_r[7]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[6]_i_2_n_0 ),
         .O(\balance_out_r[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[6]_i_2 
-       (.I0(\balance_out_r[6]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[7]_i_3_n_0 ),
+       (.I0(\balance_out_r[8]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[6]_i_3_n_0 ),
         .O(\balance_out_r[6]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[6]_i_3 
-       (.I0(balance_in_r[6]),
+       (.I0(balance_in_r[18]),
         .I1(balance_in_r[10]),
-        .I2(balance[2]),
-        .I3(balance_in_r[8]),
-        .I4(balance[3]),
-        .I5(balance_in_r[12]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[14]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[6]),
         .O(\balance_out_r[6]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[7]_i_1 
        (.I0(balance_in_r[7]),
         .I1(balance[4]),
-        .I2(\balance_out_r[7]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[8]_i_2_n_0 ),
+        .I2(\balance_out_r[8]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[7]_i_2_n_0 ),
         .O(\balance_out_r[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[7]_i_2 
-       (.I0(\balance_out_r[7]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[8]_i_3_n_0 ),
+       (.I0(\balance_out_r[9]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[7]_i_3_n_0 ),
         .O(\balance_out_r[7]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[7]_i_3 
-       (.I0(balance_in_r[7]),
+       (.I0(balance_in_r[19]),
         .I1(balance_in_r[11]),
-        .I2(balance[2]),
-        .I3(balance_in_r[9]),
-        .I4(balance[3]),
-        .I5(balance_in_r[13]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[15]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[7]),
         .O(\balance_out_r[7]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[8]_i_1 
        (.I0(balance_in_r[8]),
         .I1(balance[4]),
-        .I2(\balance_out_r[8]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[9]_i_2_n_0 ),
+        .I2(\balance_out_r[9]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[8]_i_2_n_0 ),
         .O(\balance_out_r[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[8]_i_2 
-       (.I0(\balance_out_r[8]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[9]_i_3_n_0 ),
+       (.I0(\balance_out_r[10]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[8]_i_3_n_0 ),
         .O(\balance_out_r[8]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[8]_i_3 
-       (.I0(balance_in_r[8]),
+       (.I0(balance_in_r[20]),
         .I1(balance_in_r[12]),
-        .I2(balance[2]),
-        .I3(balance_in_r[10]),
-        .I4(balance[3]),
-        .I5(balance_in_r[14]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[16]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[8]),
         .O(\balance_out_r[8]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \balance_out_r[9]_i_1 
        (.I0(balance_in_r[9]),
         .I1(balance[4]),
-        .I2(\balance_out_r[9]_i_2_n_0 ),
-        .I3(balance[1]),
-        .I4(\balance_out_r[10]_i_2_n_0 ),
+        .I2(\balance_out_r[10]_i_2_n_0 ),
+        .I3(\balance_exp_value_reg_n_0_[0] ),
+        .I4(\balance_out_r[9]_i_2_n_0 ),
         .O(\balance_out_r[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \balance_out_r[9]_i_2 
-       (.I0(\balance_out_r[9]_i_3_n_0 ),
-        .I1(balance[0]),
-        .I2(\balance_out_r[10]_i_3_n_0 ),
+       (.I0(\balance_out_r[11]_i_3_n_0 ),
+        .I1(\balance_exp_value_reg_n_0_[1] ),
+        .I2(\balance_out_r[9]_i_3_n_0 ),
         .O(\balance_out_r[9]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \balance_out_r[9]_i_3 
-       (.I0(balance_in_r[9]),
+       (.I0(balance_in_r[21]),
         .I1(balance_in_r[13]),
-        .I2(balance[2]),
-        .I3(balance_in_r[11]),
-        .I4(balance[3]),
-        .I5(balance_in_r[15]),
+        .I2(\balance_exp_value_reg_n_0_[2] ),
+        .I3(balance_in_r[17]),
+        .I4(\balance_exp_value_reg_n_0_[3] ),
+        .I5(balance_in_r[9]),
         .O(\balance_out_r[9]_i_3_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
@@ -2125,7 +2204,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[0]_i_1_n_0 ),
-        .Q(balance_out_r[0]));
+        .Q(\balance_out_r_reg_n_0_[0] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[10] 
@@ -2133,7 +2212,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[10]_i_1_n_0 ),
-        .Q(balance_out_r[10]));
+        .Q(\balance_out_r_reg_n_0_[10] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[11] 
@@ -2141,7 +2220,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[11]_i_1_n_0 ),
-        .Q(balance_out_r[11]));
+        .Q(\balance_out_r_reg_n_0_[11] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[12] 
@@ -2149,7 +2228,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[12]_i_1_n_0 ),
-        .Q(balance_out_r[12]));
+        .Q(\balance_out_r_reg_n_0_[12] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[13] 
@@ -2157,7 +2236,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[13]_i_1_n_0 ),
-        .Q(balance_out_r[13]));
+        .Q(\balance_out_r_reg_n_0_[13] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[14] 
@@ -2165,7 +2244,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[14]_i_1_n_0 ),
-        .Q(balance_out_r[14]));
+        .Q(\balance_out_r_reg_n_0_[14] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[15] 
@@ -2173,7 +2252,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[15]_i_1_n_0 ),
-        .Q(balance_out_r[15]));
+        .Q(\balance_out_r_reg_n_0_[15] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[16] 
@@ -2181,7 +2260,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[16]_i_1_n_0 ),
-        .Q(balance_out_r[16]));
+        .Q(\balance_out_r_reg_n_0_[16] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[17] 
@@ -2189,7 +2268,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[17]_i_1_n_0 ),
-        .Q(balance_out_r[17]));
+        .Q(\balance_out_r_reg_n_0_[17] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[18] 
@@ -2197,7 +2276,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[18]_i_1_n_0 ),
-        .Q(balance_out_r[18]));
+        .Q(\balance_out_r_reg_n_0_[18] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[19] 
@@ -2205,7 +2284,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[19]_i_1_n_0 ),
-        .Q(balance_out_r[19]));
+        .Q(\balance_out_r_reg_n_0_[19] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[1] 
@@ -2213,7 +2292,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[1]_i_1_n_0 ),
-        .Q(balance_out_r[1]));
+        .Q(\balance_out_r_reg_n_0_[1] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[20] 
@@ -2221,7 +2300,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[20]_i_1_n_0 ),
-        .Q(balance_out_r[20]));
+        .Q(\balance_out_r_reg_n_0_[20] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[21] 
@@ -2229,7 +2308,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[21]_i_1_n_0 ),
-        .Q(balance_out_r[21]));
+        .Q(\balance_out_r_reg_n_0_[21] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[22] 
@@ -2237,15 +2316,15 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[22]_i_1_n_0 ),
-        .Q(balance_out_r[22]));
+        .Q(\balance_out_r_reg_n_0_[22] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[23] 
        (.C(aclk),
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
-        .D(\balance_out_r[23]_i_1_n_0 ),
-        .Q(balance_out_r[23]));
+        .D(\balance_in_r_reg_n_0_[23] ),
+        .Q(\balance_out_r_reg_n_0_[23] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[2] 
@@ -2253,7 +2332,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[2]_i_1_n_0 ),
-        .Q(balance_out_r[2]));
+        .Q(\balance_out_r_reg_n_0_[2] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[3] 
@@ -2261,7 +2340,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[3]_i_1_n_0 ),
-        .Q(balance_out_r[3]));
+        .Q(\balance_out_r_reg_n_0_[3] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[4] 
@@ -2269,7 +2348,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[4]_i_1_n_0 ),
-        .Q(balance_out_r[4]));
+        .Q(\balance_out_r_reg_n_0_[4] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[5] 
@@ -2277,7 +2356,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[5]_i_1_n_0 ),
-        .Q(balance_out_r[5]));
+        .Q(\balance_out_r_reg_n_0_[5] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[6] 
@@ -2285,7 +2364,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[6]_i_1_n_0 ),
-        .Q(balance_out_r[6]));
+        .Q(\balance_out_r_reg_n_0_[6] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[7] 
@@ -2293,7 +2372,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[7]_i_1_n_0 ),
-        .Q(balance_out_r[7]));
+        .Q(\balance_out_r_reg_n_0_[7] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[8] 
@@ -2301,7 +2380,7 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[8]_i_1_n_0 ),
-        .Q(balance_out_r[8]));
+        .Q(\balance_out_r_reg_n_0_[8] ));
   FDCE #(
     .INIT(1'b0)) 
     \balance_out_r_reg[9] 
@@ -2309,208 +2388,208 @@ module design_1_balance_controller_0_0_balance_controller
         .CE(1'b1),
         .CLR(\FSM_sequential_state[1]_i_2_n_0 ),
         .D(\balance_out_r[9]_i_1_n_0 ),
-        .Q(balance_out_r[9]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+        .Q(\balance_out_r_reg_n_0_[9] ));
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[0]_i_1 
-       (.I0(balance_out_r[0]),
+       (.I0(\balance_out_r_reg_n_0_[0] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[0]),
+        .I2(\balance_out_l_reg_n_0_[0] ),
         .O(\m_axis_tdata[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[10]_i_1 
-       (.I0(balance_out_r[10]),
+       (.I0(\balance_out_r_reg_n_0_[10] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[10]),
+        .I2(\balance_out_l_reg_n_0_[10] ),
         .O(\m_axis_tdata[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[11]_i_1 
-       (.I0(balance_out_r[11]),
+       (.I0(\balance_out_r_reg_n_0_[11] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[11]),
+        .I2(\balance_out_l_reg_n_0_[11] ),
         .O(\m_axis_tdata[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[12]_i_1 
-       (.I0(balance_out_r[12]),
+       (.I0(\balance_out_r_reg_n_0_[12] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[12]),
+        .I2(\balance_out_l_reg_n_0_[12] ),
         .O(\m_axis_tdata[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[13]_i_1 
-       (.I0(balance_out_r[13]),
+       (.I0(\balance_out_r_reg_n_0_[13] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[13]),
+        .I2(\balance_out_l_reg_n_0_[13] ),
         .O(\m_axis_tdata[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[14]_i_1 
-       (.I0(balance_out_r[14]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[14]),
-        .O(\m_axis_tdata[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[15]_i_1 
-       (.I0(balance_out_r[15]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[15]),
-        .O(\m_axis_tdata[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[16]_i_1 
-       (.I0(balance_out_r[16]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[16]),
-        .O(\m_axis_tdata[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[17]_i_1 
-       (.I0(balance_out_r[17]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[17]),
-        .O(\m_axis_tdata[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[18]_i_1 
-       (.I0(balance_out_r[18]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[18]),
-        .O(\m_axis_tdata[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[19]_i_1 
-       (.I0(balance_out_r[19]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[19]),
-        .O(\m_axis_tdata[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[1]_i_1 
-       (.I0(balance_out_r[1]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[1]),
-        .O(\m_axis_tdata[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[20]_i_1 
-       (.I0(balance_out_r[20]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[20]),
-        .O(\m_axis_tdata[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \m_axis_tdata[21]_i_1 
-       (.I0(balance_out_r[21]),
-        .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[21]),
-        .O(\m_axis_tdata[21]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \m_axis_tdata[22]_i_1 
-       (.I0(balance_out_r[22]),
+    \m_axis_tdata[14]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[14] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[22]),
-        .O(\m_axis_tdata[22]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0F00808000000000)) 
-    \m_axis_tdata[23]_i_1 
-       (.I0(s_axis_tvalid),
-        .I1(s_axis_tlast),
-        .I2(state),
-        .I3(m_axis_tready),
-        .I4(\FSM_sequential_state_reg[1]_0 ),
-        .I5(aresetn),
-        .O(m_axis_tdata0));
+        .I2(\balance_out_l_reg_n_0_[14] ),
+        .O(\m_axis_tdata[14]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[15]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[15] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[15] ),
+        .O(\m_axis_tdata[15]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \m_axis_tdata[23]_i_2 
-       (.I0(balance_out_r[23]),
+    \m_axis_tdata[16]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[16] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[23]),
+        .I2(\balance_out_l_reg_n_0_[16] ),
+        .O(\m_axis_tdata[16]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[17]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[17] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[17] ),
+        .O(\m_axis_tdata[17]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[18]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[18] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[18] ),
+        .O(\m_axis_tdata[18]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[19]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[19] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[19] ),
+        .O(\m_axis_tdata[19]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[1]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[1] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[1] ),
+        .O(\m_axis_tdata[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[20]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[20] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[20] ),
+        .O(\m_axis_tdata[20]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[21]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[21] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[21] ),
+        .O(\m_axis_tdata[21]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[22]_i_1 
+       (.I0(\balance_out_r_reg_n_0_[22] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[22] ),
+        .O(\m_axis_tdata[22]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h5580008000000000)) 
+    \m_axis_tdata[23]_i_1 
+       (.I0(state),
+        .I1(s_axis_tvalid),
+        .I2(s_axis_tlast),
+        .I3(\FSM_sequential_state_reg[1]_0 ),
+        .I4(m_axis_tready),
+        .I5(aresetn),
+        .O(m_axis_tdata0));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[23]_i_2 
+       (.I0(\balance_out_r_reg_n_0_[23] ),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
+        .I2(\balance_out_l_reg_n_0_[23] ),
         .O(\m_axis_tdata[23]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[2]_i_1 
-       (.I0(balance_out_r[2]),
+       (.I0(\balance_out_r_reg_n_0_[2] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[2]),
+        .I2(\balance_out_l_reg_n_0_[2] ),
         .O(\m_axis_tdata[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[3]_i_1 
-       (.I0(balance_out_r[3]),
+       (.I0(\balance_out_r_reg_n_0_[3] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[3]),
+        .I2(\balance_out_l_reg_n_0_[3] ),
         .O(\m_axis_tdata[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[4]_i_1 
-       (.I0(balance_out_r[4]),
+       (.I0(\balance_out_r_reg_n_0_[4] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[4]),
+        .I2(\balance_out_l_reg_n_0_[4] ),
         .O(\m_axis_tdata[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[5]_i_1 
-       (.I0(balance_out_r[5]),
+       (.I0(\balance_out_r_reg_n_0_[5] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[5]),
+        .I2(\balance_out_l_reg_n_0_[5] ),
         .O(\m_axis_tdata[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[6]_i_1 
-       (.I0(balance_out_r[6]),
+       (.I0(\balance_out_r_reg_n_0_[6] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[6]),
+        .I2(\balance_out_l_reg_n_0_[6] ),
         .O(\m_axis_tdata[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[7]_i_1 
-       (.I0(balance_out_r[7]),
+       (.I0(\balance_out_r_reg_n_0_[7] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[7]),
+        .I2(\balance_out_l_reg_n_0_[7] ),
         .O(\m_axis_tdata[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[8]_i_1 
-       (.I0(balance_out_r[8]),
+       (.I0(\balance_out_r_reg_n_0_[8] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[8]),
+        .I2(\balance_out_l_reg_n_0_[8] ),
         .O(\m_axis_tdata[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \m_axis_tdata[9]_i_1 
-       (.I0(balance_out_r[9]),
+       (.I0(\balance_out_r_reg_n_0_[9] ),
         .I1(\FSM_sequential_state_reg[1]_0 ),
-        .I2(balance_out_l[9]),
+        .I2(\balance_out_l_reg_n_0_[9] ),
         .O(\m_axis_tdata[9]_i_1_n_0 ));
   FDRE \m_axis_tdata_reg[0] 
        (.C(aclk),
@@ -2656,14 +2735,14 @@ module design_1_balance_controller_0_0_balance_controller
         .D(\m_axis_tdata[9]_i_1_n_0 ),
         .Q(m_axis_tdata[9]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'h8)) 
     m_axis_tlast_INST_0
-       (.I0(\FSM_sequential_state_reg[1]_0 ),
-        .I1(state),
+       (.I0(state),
+        .I1(\FSM_sequential_state_reg[1]_0 ),
         .O(m_axis_tlast));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT1 #(
     .INIT(2'h1)) 
     s_axis_tready_INST_0

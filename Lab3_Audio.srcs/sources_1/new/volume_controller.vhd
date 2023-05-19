@@ -153,12 +153,21 @@ begin
             volume_buffer_r <= (others => '0');
             if volume_exp_is_negative = '0' then 
                 volume_buffer_l (23 + volume_exp_value downto volume_exp_value) <= volume_in_l;
+                volume_buffer_l (volume_exp_value -1 downto 0) <= (others => '0');
                 volume_buffer_r (23 + volume_exp_value downto volume_exp_value) <= volume_in_r;
+                volume_buffer_r (volume_exp_value -1 downto 0) <= (others => '0');
             elsif volume_exp_is_negative = '1' then
-                volume_buffer_l (23 - volume_exp_value downto 0) <= volume_in_l(23 downto volume_exp_value);
-                volume_buffer_l (volume_buffer_l'high downto 23 - volume_exp_value + 1) <= (others => '0');
-                volume_buffer_r (23 - volume_exp_value downto 0) <= volume_in_r(23 downto volume_exp_value);
-                volume_buffer_r (volume_buffer_r'high downto 23 - volume_exp_value + 1) <= (others => '0');
+                if volume_in_l(23) = '1' then
+                    volume_out_l (23 downto 23 - volume_exp_value +1) <= (others => '1');
+                else
+                    volume_out_l (23 downto 23 - volume_exp_value +1) <= (others => '0');
+                end if;
+                volume_out_r (23 - volume_exp_value downto 0) <= volume_in_r(23 downto volume_exp_value);
+                if volume_in_r(23) = '1' then
+                    volume_out_r (23 downto 23 - volume_exp_value +1) <= (others => '1');
+                else
+                    volume_out_r (23 downto 23 - volume_exp_value +1) <= (others => '0');
+                end if;
             end if;
         end if;
     end process volume_process; 

@@ -49,12 +49,12 @@ end dual_moving_average;
 
 architecture Behavioral of dual_moving_average is
     type state_t is (RCV_L, RCV_R, SEND_L, SEND_R);
-    type ring_buffer is array (31 downto 0) of unsigned (23 downto 0);
+    type ring_buffer is array (31 downto 0) of signed (23 downto 0);
     signal state : state_t;
     signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
     signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
-    signal filtered_l : unsigned (29 downto 0) := (others => '0');
-    signal filtered_r : unsigned (29 downto 0) := (others => '0');
+    signal filtered_l : signed (28 downto 0) := (others => '0');
+    signal filtered_r : signed (28 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_r : unsigned (23 downto 0) := (others => '0');
     signal filter_in_r : ring_buffer := ( others => ( others => '0'));
@@ -90,7 +90,7 @@ begin
                 when RCV_L =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '0' then
                         -- get l sample, jump to next state
-                        filter_in_l(TO_INTEGER(ring_buffer_entry)) <= unsigned(s_axis_tdata);
+                        filter_in_l(TO_INTEGER(ring_buffer_entry)) <= signed(s_axis_tdata);
                         state <= RCV_R;
                     end if;
 
@@ -98,7 +98,7 @@ begin
                     -- wait for l sample
                     if s_axis_tvalid = '1' and s_axis_tlast = '1' then
                         -- get r sample
-                        filter_in_r( TO_INTEGER(ring_buffer_entry) ) <= unsigned(s_axis_tdata);
+                        filter_in_r( TO_INTEGER(ring_buffer_entry) ) <= signed(s_axis_tdata);
                         -- setup m_axis to send l sample in the next state
                         if filter_enable = '1' then
                             m_axis_tdata    <= std_logic_vector(filtered_out_l);
@@ -148,12 +148,12 @@ begin
             if ring_buffer_read = 0 then
                 -- commit the result to output and reset the calculation buffer
                 -- the avg is implemented shifting by 5 right te sum of the 32 samples
-                filtered_out_l <= filtered_l(29 downto 6);
-                filtered_out_r <= filtered_r(29 downto 6);
-                filtered_l (23 downto 0) <= filter_in_l(to_integer(ring_buffer_read));
-                filtered_l (29 downto 24) <= (others => '0');
+                filtered_out_l <= unsigned(filtered_l(28 downto 5));
+                filtered_out_r <= unsigned(filtered_r(28 downto 5));
+                filtered_l (23 downto 0) <= (filter_in_l(to_integer(ring_buffer_read)));
+                filtered_l (28 downto 23) <= (others => '0');
                 filtered_r (23 downto 0) <= filter_in_r(to_integer(ring_buffer_read));
-                filtered_r (29 downto 24) <= (others => '0');
+                filtered_r (28 downto 23) <= (others => '0');
             else
                 filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
                 filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));  

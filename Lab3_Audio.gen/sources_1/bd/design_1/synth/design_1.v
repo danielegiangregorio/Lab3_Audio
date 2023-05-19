@@ -1,7 +1,7 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-//Date        : Fri May 19 16:07:17 2023
+//Date        : Fri May 19 16:56:30 2023
 //Host        : SburroROG running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -118,6 +118,10 @@ module design_1
   wire reset_1;
   wire rx_sdin_0_1;
   wire sys_clock_1;
+  wire [23:0]volume_controller_0_m_axis_TDATA;
+  wire volume_controller_0_m_axis_TLAST;
+  wire volume_controller_0_m_axis_TREADY;
+  wire volume_controller_0_m_axis_TVALID;
 
   assign SPI_M_0_io0_o[0] = axi4stream_spi_master_1_SPI_M_IO0_O;
   assign SPI_M_0_io0_t[0] = axi4stream_spi_master_1_SPI_M_IO0_T;
@@ -259,10 +263,10 @@ module design_1
         .m_axis_tready(mute_0_m_axis_TREADY),
         .m_axis_tvalid(mute_0_m_axis_TVALID),
         .mute_enable(Net),
-        .s_axis_tdata(balance_controller_0_m_axis_TDATA),
-        .s_axis_tlast(balance_controller_0_m_axis_TLAST),
-        .s_axis_tready(balance_controller_0_m_axis_TREADY),
-        .s_axis_tvalid(balance_controller_0_m_axis_TVALID));
+        .s_axis_tdata(volume_controller_0_m_axis_TDATA),
+        .s_axis_tlast(volume_controller_0_m_axis_TLAST),
+        .s_axis_tready(volume_controller_0_m_axis_TREADY),
+        .s_axis_tvalid(volume_controller_0_m_axis_TVALID));
   design_1_proc_sys_reset_0_0 proc_sys_reset_0
        (.aux_reset_in(1'b1),
         .dcm_locked(clk_wiz_0_locked),
@@ -281,9 +285,13 @@ module design_1
   design_1_volume_controller_0_0 volume_controller_0
        (.aclk(clk_wiz_0_clk_out1),
         .aresetn(Net3),
-        .m_axis_tready(1'b1),
-        .s_axis_tdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axis_tlast(1'b0),
-        .s_axis_tvalid(1'b0),
+        .m_axis_tdata(volume_controller_0_m_axis_TDATA),
+        .m_axis_tlast(volume_controller_0_m_axis_TLAST),
+        .m_axis_tready(volume_controller_0_m_axis_TREADY),
+        .m_axis_tvalid(volume_controller_0_m_axis_TVALID),
+        .s_axis_tdata(balance_controller_0_m_axis_TDATA),
+        .s_axis_tlast(balance_controller_0_m_axis_TLAST),
+        .s_axis_tready(balance_controller_0_m_axis_TREADY),
+        .s_axis_tvalid(balance_controller_0_m_axis_TVALID),
         .volume(digilent_jstk2_0_jstk_y));
 endmodule

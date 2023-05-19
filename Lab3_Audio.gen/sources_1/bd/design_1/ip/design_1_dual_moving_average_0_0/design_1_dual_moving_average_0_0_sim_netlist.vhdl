@@ -1,7 +1,7 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Fri May 19 15:43:20 2023
+-- Date        : Fri May 19 16:50:45 2023
 -- Host        : SburroROG running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/posta/src/Lab3_Audio/Lab3_Audio.gen/sources_1/bd/design_1/ip/design_1_dual_moving_average_0_0/design_1_dual_moving_average_0_0_sim_netlist.vhdl
@@ -37,7 +37,7 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   signal \FSM_sequential_state[1]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_state[1]_i_2_n_0\ : STD_LOGIC;
   signal \^fsm_sequential_state_reg[1]_0\ : STD_LOGIC;
-  signal data1 : STD_LOGIC_VECTOR ( 29 downto 0 );
+  signal data1 : STD_LOGIC_VECTOR ( 28 downto 0 );
   signal \filter_in_l[0]_127\ : STD_LOGIC;
   signal \filter_in_l[10]_117\ : STD_LOGIC;
   signal \filter_in_l[11]_116\ : STD_LOGIC;
@@ -205,384 +205,388 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   signal \filter_in_r_reg[8]__0\ : STD_LOGIC;
   signal \filter_in_r_reg[9]_22\ : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal \filter_in_r_reg[9]__0\ : STD_LOGIC;
-  signal filtered_l : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal \filtered_l[11]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_l[11]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_l[15]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_l[19]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_l[23]_i_6_n_0\ : STD_LOGIC;
+  signal filtered_l : STD_LOGIC_VECTOR ( 22 downto 0 );
+  signal \filtered_l0_carry__0_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_n_1\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_n_2\ : STD_LOGIC;
+  signal \filtered_l0_carry__0_n_3\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_n_1\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_n_2\ : STD_LOGIC;
+  signal \filtered_l0_carry__1_n_3\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_n_1\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_n_2\ : STD_LOGIC;
+  signal \filtered_l0_carry__2_n_3\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_n_1\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_n_2\ : STD_LOGIC;
+  signal \filtered_l0_carry__3_n_3\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_n_1\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_n_2\ : STD_LOGIC;
+  signal \filtered_l0_carry__4_n_3\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_n_0\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_n_1\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_n_2\ : STD_LOGIC;
+  signal \filtered_l0_carry__5_n_3\ : STD_LOGIC;
+  signal \filtered_l0_carry__6_i_1_n_0\ : STD_LOGIC;
+  signal filtered_l0_carry_i_10_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_11_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_12_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_13_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_14_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_15_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_16_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_17_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_18_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_19_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_1_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_20_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_21_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_22_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_23_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_24_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_25_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_26_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_27_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_28_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_29_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_2_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_30_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_31_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_32_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_33_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_34_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_35_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_36_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_37_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_38_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_39_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_3_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_40_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_41_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_42_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_43_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_44_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_45_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_46_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_47_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_48_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_49_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_4_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_50_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_51_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_52_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_53_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_54_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_55_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_56_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_5_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_6_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_7_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_8_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_i_9_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_n_0 : STD_LOGIC;
+  signal filtered_l0_carry_n_1 : STD_LOGIC;
+  signal filtered_l0_carry_n_2 : STD_LOGIC;
+  signal filtered_l0_carry_n_3 : STD_LOGIC;
+  signal \filtered_l[23]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_l[24]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_l[25]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_l[26]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_l[27]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_l[28]_i_1_n_0\ : STD_LOGIC;
-  signal \filtered_l[29]_i_1_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_l[3]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_l[7]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[11]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[15]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[19]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[23]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[27]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[27]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[27]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[27]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[29]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[3]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_l_reg[7]_i_9_n_0\ : STD_LOGIC;
   signal \filtered_l_reg_n_0_[0]\ : STD_LOGIC;
   signal \filtered_l_reg_n_0_[1]\ : STD_LOGIC;
   signal \filtered_l_reg_n_0_[2]\ : STD_LOGIC;
   signal \filtered_l_reg_n_0_[3]\ : STD_LOGIC;
   signal \filtered_l_reg_n_0_[4]\ : STD_LOGIC;
-  signal \filtered_l_reg_n_0_[5]\ : STD_LOGIC;
   signal filtered_out_l : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal filtered_out_r : STD_LOGIC;
   signal \filtered_out_r_reg_n_0_[0]\ : STD_LOGIC;
@@ -609,408 +613,412 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   signal \filtered_out_r_reg_n_0_[7]\ : STD_LOGIC;
   signal \filtered_out_r_reg_n_0_[8]\ : STD_LOGIC;
   signal \filtered_out_r_reg_n_0_[9]\ : STD_LOGIC;
-  signal filtered_r : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal \filtered_r[11]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_r[11]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_r[15]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_r[19]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_r[23]_i_6_n_0\ : STD_LOGIC;
+  signal filtered_r : STD_LOGIC_VECTOR ( 22 downto 0 );
+  signal \filtered_r0_carry__0_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_1\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_2\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_3\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_4\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_5\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_6\ : STD_LOGIC;
+  signal \filtered_r0_carry__0_n_7\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_1\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_2\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_3\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_4\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_5\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_6\ : STD_LOGIC;
+  signal \filtered_r0_carry__1_n_7\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_1\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_2\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_3\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_4\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_5\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_6\ : STD_LOGIC;
+  signal \filtered_r0_carry__2_n_7\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_51_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_52_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_53_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_54_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_55_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_56_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_1\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_2\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_3\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_4\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_5\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_6\ : STD_LOGIC;
+  signal \filtered_r0_carry__3_n_7\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_12_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_13_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_14_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_15_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_16_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_17_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_18_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_19_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_20_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_21_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_22_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_23_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_24_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_25_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_26_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_27_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_28_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_29_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_30_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_31_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_32_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_33_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_34_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_35_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_36_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_37_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_38_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_39_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_40_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_41_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_42_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_43_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_44_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_45_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_46_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_47_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_48_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_49_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_50_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_1\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_2\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_3\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_4\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_5\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_6\ : STD_LOGIC;
+  signal \filtered_r0_carry__4_n_7\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_10_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_11_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_2_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_3_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_4_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_6_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_7_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_8_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_i_9_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_1\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_2\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_3\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_4\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_5\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_6\ : STD_LOGIC;
+  signal \filtered_r0_carry__5_n_7\ : STD_LOGIC;
+  signal \filtered_r0_carry__6_i_1_n_0\ : STD_LOGIC;
+  signal \filtered_r0_carry__6_n_7\ : STD_LOGIC;
+  signal filtered_r0_carry_i_10_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_11_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_12_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_13_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_14_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_15_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_16_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_17_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_18_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_19_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_1_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_20_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_21_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_22_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_23_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_24_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_25_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_26_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_27_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_28_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_29_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_2_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_30_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_31_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_32_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_33_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_34_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_35_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_36_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_37_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_38_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_39_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_3_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_40_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_41_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_42_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_43_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_44_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_45_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_46_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_47_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_48_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_49_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_4_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_50_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_51_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_52_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_53_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_54_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_55_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_56_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_5_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_6_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_7_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_8_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_i_9_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_n_0 : STD_LOGIC;
+  signal filtered_r0_carry_n_1 : STD_LOGIC;
+  signal filtered_r0_carry_n_2 : STD_LOGIC;
+  signal filtered_r0_carry_n_3 : STD_LOGIC;
+  signal filtered_r0_carry_n_4 : STD_LOGIC;
+  signal filtered_r0_carry_n_5 : STD_LOGIC;
+  signal filtered_r0_carry_n_6 : STD_LOGIC;
+  signal filtered_r0_carry_n_7 : STD_LOGIC;
+  signal \filtered_r[23]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_r[24]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_r[25]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_r[26]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_r[27]_i_1_n_0\ : STD_LOGIC;
   signal \filtered_r[28]_i_1_n_0\ : STD_LOGIC;
-  signal \filtered_r[29]_i_1_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_r[3]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_21_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_22_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_23_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_24_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_27_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_28_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_29_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_30_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_33_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_34_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_35_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_36_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_39_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_3_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_40_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_41_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_42_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_43_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_44_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_45_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_46_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_47_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_48_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_49_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_4_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_50_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_51_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_52_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_53_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_54_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_55_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_56_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_57_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_58_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_5_n_0\ : STD_LOGIC;
-  signal \filtered_r[7]_i_6_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[11]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[15]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[19]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[23]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[27]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[29]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[29]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[29]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[3]_i_9_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_10_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_11_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_12_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_13_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_14_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_15_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_16_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_17_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_18_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_19_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_20_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_25_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_26_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_1\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_2\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_3\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_4\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_5\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_6\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_2_n_7\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_31_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_32_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_37_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_38_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_7_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_8_n_0\ : STD_LOGIC;
-  signal \filtered_r_reg[7]_i_9_n_0\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[0]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[10]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[11]\ : STD_LOGIC;
@@ -1032,7 +1040,6 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   signal \filtered_r_reg_n_0_[26]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[27]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[28]\ : STD_LOGIC;
-  signal \filtered_r_reg_n_0_[29]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[2]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[3]\ : STD_LOGIC;
   signal \filtered_r_reg_n_0_[4]\ : STD_LOGIC;
@@ -1782,10 +1789,10 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   signal \ring_buffer_read_reg[2]_rep_n_0\ : STD_LOGIC;
   signal state : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \state0__0\ : STD_LOGIC;
-  signal \NLW_filtered_l_reg[29]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_filtered_l_reg[29]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW_filtered_r_reg[29]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
-  signal \NLW_filtered_r_reg[29]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal \NLW_filtered_l0_carry__6_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_filtered_l0_carry__6_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal \NLW_filtered_r0_carry__6_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_filtered_r0_carry__6_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \FSM_sequential_state[0]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \FSM_sequential_state[1]_i_1\ : label is "soft_lutpair1";
@@ -1793,24 +1800,24 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[0]\ : label is "rcv_r:01,send_l:10,rcv_l:00,send_r:11";
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[1]\ : label is "rcv_r:01,send_l:10,rcv_l:00,send_r:11";
   attribute SOFT_HLUTNM of \filter_in_l[16][23]_i_2\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \filter_in_l[24][23]_i_2\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \filter_in_l[28][23]_i_2\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \filter_in_l[31][23]_i_2\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \filter_in_l[31][23]_i_3\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \filter_in_l[6][23]_i_2\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \filter_in_l[24][23]_i_2\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \filter_in_l[28][23]_i_2\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \filter_in_l[31][23]_i_2\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \filter_in_l[31][23]_i_3\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \filter_in_l[6][23]_i_2\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of \filter_in_r[0][23]_i_2\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \filter_in_r[10][23]_i_2\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \filter_in_r[11][23]_i_2\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \filter_in_r[11][23]_i_2\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of \filter_in_r[12][23]_i_2\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \filter_in_r[13][23]_i_2\ : label is "soft_lutpair12";
   attribute SOFT_HLUTNM of \filter_in_r[14][23]_i_2\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \filter_in_r[15][23]_i_2\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \filter_in_r[15][23]_i_2\ : label is "soft_lutpair44";
   attribute SOFT_HLUTNM of \filter_in_r[16][23]_i_2\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \filter_in_r[17][23]_i_2\ : label is "soft_lutpair15";
   attribute SOFT_HLUTNM of \filter_in_r[18][23]_i_2\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \filter_in_r[19][23]_i_2\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \filter_in_r[19][23]_i_3\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \filter_in_r[19][23]_i_4\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \filter_in_r[19][23]_i_2\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \filter_in_r[19][23]_i_3\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \filter_in_r[19][23]_i_4\ : label is "soft_lutpair47";
   attribute SOFT_HLUTNM of \filter_in_r[1][23]_i_2\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \filter_in_r[20][23]_i_2\ : label is "soft_lutpair15";
   attribute SOFT_HLUTNM of \filter_in_r[21][23]_i_2\ : label is "soft_lutpair11";
@@ -1832,73 +1839,71 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   attribute SOFT_HLUTNM of \filter_in_r[7][23]_i_2\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \filter_in_r[8][23]_i_2\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \filter_in_r[9][23]_i_2\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \filtered_l[0]_i_1\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \filtered_l[10]_i_1\ : label is "soft_lutpair36";
+  attribute ADDER_THRESHOLD : integer;
+  attribute ADDER_THRESHOLD of filtered_l0_carry : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__0\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__1\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__2\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__3\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__4\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__5\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_l0_carry__6\ : label is 35;
+  attribute SOFT_HLUTNM of \filtered_l[0]_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \filtered_l[10]_i_1\ : label is "soft_lutpair35";
   attribute SOFT_HLUTNM of \filtered_l[11]_i_1\ : label is "soft_lutpair36";
-  attribute SOFT_HLUTNM of \filtered_l[12]_i_1\ : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \filtered_l[12]_i_1\ : label is "soft_lutpair36";
   attribute SOFT_HLUTNM of \filtered_l[13]_i_1\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of \filtered_l[14]_i_1\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \filtered_l[14]_i_1\ : label is "soft_lutpair37";
   attribute SOFT_HLUTNM of \filtered_l[15]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \filtered_l[16]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \filtered_l[16]_i_1\ : label is "soft_lutpair38";
   attribute SOFT_HLUTNM of \filtered_l[17]_i_1\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \filtered_l[18]_i_1\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \filtered_l[18]_i_1\ : label is "soft_lutpair39";
   attribute SOFT_HLUTNM of \filtered_l[19]_i_1\ : label is "soft_lutpair40";
   attribute SOFT_HLUTNM of \filtered_l[1]_i_1\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \filtered_l[20]_i_1\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \filtered_l[20]_i_1\ : label is "soft_lutpair40";
   attribute SOFT_HLUTNM of \filtered_l[21]_i_1\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \filtered_l[22]_i_1\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \filtered_l[23]_i_1\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \filtered_l[2]_i_1\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \filtered_l[22]_i_1\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \filtered_l[2]_i_1\ : label is "soft_lutpair31";
   attribute SOFT_HLUTNM of \filtered_l[3]_i_1\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \filtered_l[4]_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \filtered_l[4]_i_1\ : label is "soft_lutpair32";
   attribute SOFT_HLUTNM of \filtered_l[5]_i_1\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \filtered_l[6]_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \filtered_l[6]_i_1\ : label is "soft_lutpair33";
   attribute SOFT_HLUTNM of \filtered_l[7]_i_1\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \filtered_l[8]_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \filtered_l[8]_i_1\ : label is "soft_lutpair34";
   attribute SOFT_HLUTNM of \filtered_l[9]_i_1\ : label is "soft_lutpair35";
-  attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[11]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[15]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[19]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[23]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[27]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[29]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[3]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_l_reg[7]_i_2\ : label is 35;
+  attribute ADDER_THRESHOLD of filtered_r0_carry : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__0\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__1\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__2\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__3\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__4\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__5\ : label is 35;
+  attribute ADDER_THRESHOLD of \filtered_r0_carry__6\ : label is 35;
   attribute SOFT_HLUTNM of \filtered_r[0]_i_1\ : label is "soft_lutpair30";
   attribute SOFT_HLUTNM of \filtered_r[10]_i_1\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \filtered_r[11]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \filtered_r[11]_i_1\ : label is "soft_lutpair24";
   attribute SOFT_HLUTNM of \filtered_r[12]_i_1\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \filtered_r[13]_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \filtered_r[13]_i_1\ : label is "soft_lutpair23";
   attribute SOFT_HLUTNM of \filtered_r[14]_i_1\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \filtered_r[15]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \filtered_r[15]_i_1\ : label is "soft_lutpair22";
   attribute SOFT_HLUTNM of \filtered_r[16]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \filtered_r[17]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \filtered_r[17]_i_1\ : label is "soft_lutpair21";
   attribute SOFT_HLUTNM of \filtered_r[18]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \filtered_r[19]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \filtered_r[1]_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \filtered_r[19]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \filtered_r[1]_i_1\ : label is "soft_lutpair29";
   attribute SOFT_HLUTNM of \filtered_r[20]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \filtered_r[21]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \filtered_r[21]_i_1\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \filtered_r[22]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \filtered_r[23]_i_1\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \filtered_r[2]_i_1\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \filtered_r[3]_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \filtered_r[3]_i_1\ : label is "soft_lutpair28";
   attribute SOFT_HLUTNM of \filtered_r[4]_i_1\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \filtered_r[5]_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \filtered_r[5]_i_1\ : label is "soft_lutpair27";
   attribute SOFT_HLUTNM of \filtered_r[6]_i_1\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \filtered_r[7]_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \filtered_r[7]_i_1\ : label is "soft_lutpair26";
   attribute SOFT_HLUTNM of \filtered_r[8]_i_1\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \filtered_r[9]_i_1\ : label is "soft_lutpair26";
-  attribute ADDER_THRESHOLD of \filtered_r_reg[11]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[15]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[19]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[23]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[27]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[29]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[3]_i_2\ : label is 35;
-  attribute ADDER_THRESHOLD of \filtered_r_reg[7]_i_2\ : label is 35;
-  attribute SOFT_HLUTNM of m_axis_tlast_INST_0 : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \ring_buffer_entry[0]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \filtered_r[9]_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of m_axis_tlast_INST_0 : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \ring_buffer_entry[0]_i_1\ : label is "soft_lutpair47";
   attribute SOFT_HLUTNM of \ring_buffer_entry[1]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \ring_buffer_entry[2]_i_1\ : label is "soft_lutpair18";
   attribute SOFT_HLUTNM of \ring_buffer_entry[3]_i_1\ : label is "soft_lutpair18";
@@ -1915,8 +1920,8 @@ architecture STRUCTURE of design_1_dual_moving_average_0_0_dual_moving_average i
   attribute ORIG_CELL_NAME of \ring_buffer_entry_reg[1]_rep__2\ : label is "ring_buffer_entry_reg[1]";
   attribute ORIG_CELL_NAME of \ring_buffer_entry_reg[2]\ : label is "ring_buffer_entry_reg[2]";
   attribute ORIG_CELL_NAME of \ring_buffer_entry_reg[2]_rep\ : label is "ring_buffer_entry_reg[2]";
-  attribute SOFT_HLUTNM of \ring_buffer_read[0]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \ring_buffer_read[1]_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \ring_buffer_read[0]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \ring_buffer_read[1]_i_1\ : label is "soft_lutpair48";
   attribute SOFT_HLUTNM of \ring_buffer_read[3]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \ring_buffer_read[4]_i_1\ : label is "soft_lutpair4";
   attribute ORIG_CELL_NAME of \ring_buffer_read_reg[0]\ : label is "ring_buffer_read_reg[0]";
@@ -20128,6 +20133,3837 @@ begin
       D => s_axis_tdata(9),
       Q => \filter_in_r_reg[9]_22\(9)
     );
+filtered_l0_carry: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => filtered_l0_carry_n_0,
+      CO(2) => filtered_l0_carry_n_1,
+      CO(1) => filtered_l0_carry_n_2,
+      CO(0) => filtered_l0_carry_n_3,
+      CYINIT => '0',
+      DI(3) => \filtered_l_reg_n_0_[3]\,
+      DI(2) => \filtered_l_reg_n_0_[2]\,
+      DI(1) => \filtered_l_reg_n_0_[1]\,
+      DI(0) => \filtered_l_reg_n_0_[0]\,
+      O(3 downto 0) => data1(3 downto 0),
+      S(3) => filtered_l0_carry_i_1_n_0,
+      S(2) => filtered_l0_carry_i_2_n_0,
+      S(1) => filtered_l0_carry_i_3_n_0,
+      S(0) => filtered_l0_carry_i_4_n_0
+    );
+\filtered_l0_carry__0\: unisim.vcomponents.CARRY4
+     port map (
+      CI => filtered_l0_carry_n_0,
+      CO(3) => \filtered_l0_carry__0_n_0\,
+      CO(2) => \filtered_l0_carry__0_n_1\,
+      CO(1) => \filtered_l0_carry__0_n_2\,
+      CO(0) => \filtered_l0_carry__0_n_3\,
+      CYINIT => '0',
+      DI(3 downto 1) => p_0_in(2 downto 0),
+      DI(0) => \filtered_l_reg_n_0_[4]\,
+      O(3 downto 0) => data1(7 downto 4),
+      S(3) => \filtered_l0_carry__0_i_1_n_0\,
+      S(2) => \filtered_l0_carry__0_i_2_n_0\,
+      S(1) => \filtered_l0_carry__0_i_3_n_0\,
+      S(0) => \filtered_l0_carry__0_i_4_n_0\
+    );
+\filtered_l0_carry__0_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(2),
+      I1 => \filtered_l0_carry__0_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__0_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__0_i_7_n_0\,
+      O => \filtered_l0_carry__0_i_1_n_0\
+    );
+\filtered_l0_carry__0_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_27_n_0\,
+      I1 => \filtered_l0_carry__0_i_28_n_0\,
+      O => \filtered_l0_carry__0_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__0_i_29_n_0\,
+      I1 => \filtered_l0_carry__0_i_30_n_0\,
+      O => \filtered_l0_carry__0_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__0_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_31_n_0\,
+      I1 => \filtered_l0_carry__0_i_32_n_0\,
+      O => \filtered_l0_carry__0_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_33_n_0\,
+      I1 => \filtered_l0_carry__0_i_34_n_0\,
+      O => \filtered_l0_carry__0_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__0_i_35_n_0\,
+      I1 => \filtered_l0_carry__0_i_36_n_0\,
+      O => \filtered_l0_carry__0_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__0_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_37_n_0\,
+      I1 => \filtered_l0_carry__0_i_38_n_0\,
+      O => \filtered_l0_carry__0_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_l0_carry__0_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_39_n_0\,
+      I1 => \filtered_l0_carry__0_i_40_n_0\,
+      O => \filtered_l0_carry__0_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_l0_carry__0_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_41_n_0\,
+      I1 => \filtered_l0_carry__0_i_42_n_0\,
+      O => \filtered_l0_carry__0_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_43_n_0\,
+      I1 => \filtered_l0_carry__0_i_44_n_0\,
+      O => \filtered_l0_carry__0_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(7),
+      I1 => \filter_in_l_reg[18]_45\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(7),
+      O => \filtered_l0_carry__0_i_19_n_0\
+    );
+\filtered_l0_carry__0_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(1),
+      I1 => \filtered_l0_carry__0_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__0_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__0_i_10_n_0\,
+      O => \filtered_l0_carry__0_i_2_n_0\
+    );
+\filtered_l0_carry__0_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(7),
+      I1 => \filter_in_l_reg[22]_41\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(7),
+      O => \filtered_l0_carry__0_i_20_n_0\
+    );
+\filtered_l0_carry__0_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(7),
+      I1 => \filter_in_l_reg[26]_37\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(7),
+      O => \filtered_l0_carry__0_i_21_n_0\
+    );
+\filtered_l0_carry__0_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(7),
+      I1 => \filter_in_l_reg[30]_33\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(7),
+      O => \filtered_l0_carry__0_i_22_n_0\
+    );
+\filtered_l0_carry__0_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_45_n_0\,
+      I1 => \filtered_l0_carry__0_i_46_n_0\,
+      O => \filtered_l0_carry__0_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_47_n_0\,
+      I1 => \filtered_l0_carry__0_i_48_n_0\,
+      O => \filtered_l0_carry__0_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(6),
+      I1 => \filter_in_l_reg[18]_45\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(6),
+      O => \filtered_l0_carry__0_i_25_n_0\
+    );
+\filtered_l0_carry__0_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(6),
+      I1 => \filter_in_l_reg[22]_41\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(6),
+      O => \filtered_l0_carry__0_i_26_n_0\
+    );
+\filtered_l0_carry__0_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(6),
+      I1 => \filter_in_l_reg[26]_37\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(6),
+      O => \filtered_l0_carry__0_i_27_n_0\
+    );
+\filtered_l0_carry__0_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(6),
+      I1 => \filter_in_l_reg[30]_33\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(6),
+      O => \filtered_l0_carry__0_i_28_n_0\
+    );
+\filtered_l0_carry__0_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_49_n_0\,
+      I1 => \filtered_l0_carry__0_i_50_n_0\,
+      O => \filtered_l0_carry__0_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_l0_carry__0_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(0),
+      I1 => \filtered_l0_carry__0_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__0_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__0_i_13_n_0\,
+      O => \filtered_l0_carry__0_i_3_n_0\
+    );
+\filtered_l0_carry__0_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_51_n_0\,
+      I1 => \filtered_l0_carry__0_i_52_n_0\,
+      O => \filtered_l0_carry__0_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_l0_carry__0_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(5),
+      I1 => \filter_in_l_reg[18]_45\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(5),
+      O => \filtered_l0_carry__0_i_31_n_0\
+    );
+\filtered_l0_carry__0_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(5),
+      I1 => \filter_in_l_reg[22]_41\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(5),
+      O => \filtered_l0_carry__0_i_32_n_0\
+    );
+\filtered_l0_carry__0_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(5),
+      I1 => \filter_in_l_reg[26]_37\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(5),
+      O => \filtered_l0_carry__0_i_33_n_0\
+    );
+\filtered_l0_carry__0_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(5),
+      I1 => \filter_in_l_reg[30]_33\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(5),
+      O => \filtered_l0_carry__0_i_34_n_0\
+    );
+\filtered_l0_carry__0_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_53_n_0\,
+      I1 => \filtered_l0_carry__0_i_54_n_0\,
+      O => \filtered_l0_carry__0_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_l0_carry__0_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_55_n_0\,
+      I1 => \filtered_l0_carry__0_i_56_n_0\,
+      O => \filtered_l0_carry__0_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_l0_carry__0_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(4),
+      I1 => \filter_in_l_reg[18]_45\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[16]_47\(4),
+      O => \filtered_l0_carry__0_i_37_n_0\
+    );
+\filtered_l0_carry__0_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(4),
+      I1 => \filter_in_l_reg[22]_41\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[20]_43\(4),
+      O => \filtered_l0_carry__0_i_38_n_0\
+    );
+\filtered_l0_carry__0_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(4),
+      I1 => \filter_in_l_reg[26]_37\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[24]_39\(4),
+      O => \filtered_l0_carry__0_i_39_n_0\
+    );
+\filtered_l0_carry__0_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_l_reg_n_0_[4]\,
+      I1 => \filtered_l0_carry__0_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__0_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__0_i_16_n_0\,
+      O => \filtered_l0_carry__0_i_4_n_0\
+    );
+\filtered_l0_carry__0_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(4),
+      I1 => \filter_in_l_reg[30]_33\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[28]_35\(4),
+      O => \filtered_l0_carry__0_i_40_n_0\
+    );
+\filtered_l0_carry__0_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(7),
+      I1 => \filter_in_l_reg[2]_61\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(7),
+      O => \filtered_l0_carry__0_i_41_n_0\
+    );
+\filtered_l0_carry__0_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(7),
+      I1 => \filter_in_l_reg[6]_57\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(7),
+      O => \filtered_l0_carry__0_i_42_n_0\
+    );
+\filtered_l0_carry__0_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(7),
+      I1 => \filter_in_l_reg[10]_53\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(7),
+      O => \filtered_l0_carry__0_i_43_n_0\
+    );
+\filtered_l0_carry__0_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(7),
+      I1 => \filter_in_l_reg[14]_49\(7),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(7),
+      O => \filtered_l0_carry__0_i_44_n_0\
+    );
+\filtered_l0_carry__0_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(6),
+      I1 => \filter_in_l_reg[2]_61\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(6),
+      O => \filtered_l0_carry__0_i_45_n_0\
+    );
+\filtered_l0_carry__0_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(6),
+      I1 => \filter_in_l_reg[6]_57\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(6),
+      O => \filtered_l0_carry__0_i_46_n_0\
+    );
+\filtered_l0_carry__0_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(6),
+      I1 => \filter_in_l_reg[10]_53\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(6),
+      O => \filtered_l0_carry__0_i_47_n_0\
+    );
+\filtered_l0_carry__0_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(6),
+      I1 => \filter_in_l_reg[14]_49\(6),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(6),
+      O => \filtered_l0_carry__0_i_48_n_0\
+    );
+\filtered_l0_carry__0_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(5),
+      I1 => \filter_in_l_reg[2]_61\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(5),
+      O => \filtered_l0_carry__0_i_49_n_0\
+    );
+\filtered_l0_carry__0_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__0_i_17_n_0\,
+      I1 => \filtered_l0_carry__0_i_18_n_0\,
+      O => \filtered_l0_carry__0_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__0_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(5),
+      I1 => \filter_in_l_reg[6]_57\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(5),
+      O => \filtered_l0_carry__0_i_50_n_0\
+    );
+\filtered_l0_carry__0_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(5),
+      I1 => \filter_in_l_reg[10]_53\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(5),
+      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(5),
+      O => \filtered_l0_carry__0_i_51_n_0\
+    );
+\filtered_l0_carry__0_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(5),
+      I1 => \filter_in_l_reg[14]_49\(5),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(5),
+      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(5),
+      O => \filtered_l0_carry__0_i_52_n_0\
+    );
+\filtered_l0_carry__0_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(4),
+      I1 => \filter_in_l_reg[2]_61\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[0]_63\(4),
+      O => \filtered_l0_carry__0_i_53_n_0\
+    );
+\filtered_l0_carry__0_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(4),
+      I1 => \filter_in_l_reg[6]_57\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[4]_59\(4),
+      O => \filtered_l0_carry__0_i_54_n_0\
+    );
+\filtered_l0_carry__0_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(4),
+      I1 => \filter_in_l_reg[10]_53\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[8]_55\(4),
+      O => \filtered_l0_carry__0_i_55_n_0\
+    );
+\filtered_l0_carry__0_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(4),
+      I1 => \filter_in_l_reg[14]_49\(4),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(4),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[12]_51\(4),
+      O => \filtered_l0_carry__0_i_56_n_0\
+    );
+\filtered_l0_carry__0_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_19_n_0\,
+      I1 => \filtered_l0_carry__0_i_20_n_0\,
+      O => \filtered_l0_carry__0_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_21_n_0\,
+      I1 => \filtered_l0_carry__0_i_22_n_0\,
+      O => \filtered_l0_carry__0_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__0_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__0_i_23_n_0\,
+      I1 => \filtered_l0_carry__0_i_24_n_0\,
+      O => \filtered_l0_carry__0_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__0_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__0_i_25_n_0\,
+      I1 => \filtered_l0_carry__0_i_26_n_0\,
+      O => \filtered_l0_carry__0_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_l0_carry__0_n_0\,
+      CO(3) => \filtered_l0_carry__1_n_0\,
+      CO(2) => \filtered_l0_carry__1_n_1\,
+      CO(1) => \filtered_l0_carry__1_n_2\,
+      CO(0) => \filtered_l0_carry__1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => p_0_in(6 downto 3),
+      O(3 downto 0) => data1(11 downto 8),
+      S(3) => \filtered_l0_carry__1_i_1_n_0\,
+      S(2) => \filtered_l0_carry__1_i_2_n_0\,
+      S(1) => \filtered_l0_carry__1_i_3_n_0\,
+      S(0) => \filtered_l0_carry__1_i_4_n_0\
+    );
+\filtered_l0_carry__1_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(6),
+      I1 => \filtered_l0_carry__1_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__1_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__1_i_7_n_0\,
+      O => \filtered_l0_carry__1_i_1_n_0\
+    );
+\filtered_l0_carry__1_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_27_n_0\,
+      I1 => \filtered_l0_carry__1_i_28_n_0\,
+      O => \filtered_l0_carry__1_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__1_i_29_n_0\,
+      I1 => \filtered_l0_carry__1_i_30_n_0\,
+      O => \filtered_l0_carry__1_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__1_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_31_n_0\,
+      I1 => \filtered_l0_carry__1_i_32_n_0\,
+      O => \filtered_l0_carry__1_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_33_n_0\,
+      I1 => \filtered_l0_carry__1_i_34_n_0\,
+      O => \filtered_l0_carry__1_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__1_i_35_n_0\,
+      I1 => \filtered_l0_carry__1_i_36_n_0\,
+      O => \filtered_l0_carry__1_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__1_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_37_n_0\,
+      I1 => \filtered_l0_carry__1_i_38_n_0\,
+      O => \filtered_l0_carry__1_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_39_n_0\,
+      I1 => \filtered_l0_carry__1_i_40_n_0\,
+      O => \filtered_l0_carry__1_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_41_n_0\,
+      I1 => \filtered_l0_carry__1_i_42_n_0\,
+      O => \filtered_l0_carry__1_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_43_n_0\,
+      I1 => \filtered_l0_carry__1_i_44_n_0\,
+      O => \filtered_l0_carry__1_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(11),
+      I1 => \filter_in_l_reg[18]_45\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(11),
+      O => \filtered_l0_carry__1_i_19_n_0\
+    );
+\filtered_l0_carry__1_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(5),
+      I1 => \filtered_l0_carry__1_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__1_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__1_i_10_n_0\,
+      O => \filtered_l0_carry__1_i_2_n_0\
+    );
+\filtered_l0_carry__1_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(11),
+      I1 => \filter_in_l_reg[22]_41\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(11),
+      O => \filtered_l0_carry__1_i_20_n_0\
+    );
+\filtered_l0_carry__1_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(11),
+      I1 => \filter_in_l_reg[26]_37\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(11),
+      O => \filtered_l0_carry__1_i_21_n_0\
+    );
+\filtered_l0_carry__1_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(11),
+      I1 => \filter_in_l_reg[30]_33\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(11),
+      O => \filtered_l0_carry__1_i_22_n_0\
+    );
+\filtered_l0_carry__1_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_45_n_0\,
+      I1 => \filtered_l0_carry__1_i_46_n_0\,
+      O => \filtered_l0_carry__1_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_47_n_0\,
+      I1 => \filtered_l0_carry__1_i_48_n_0\,
+      O => \filtered_l0_carry__1_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(10),
+      I1 => \filter_in_l_reg[18]_45\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(10),
+      O => \filtered_l0_carry__1_i_25_n_0\
+    );
+\filtered_l0_carry__1_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(10),
+      I1 => \filter_in_l_reg[22]_41\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(10),
+      O => \filtered_l0_carry__1_i_26_n_0\
+    );
+\filtered_l0_carry__1_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(10),
+      I1 => \filter_in_l_reg[26]_37\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(10),
+      O => \filtered_l0_carry__1_i_27_n_0\
+    );
+\filtered_l0_carry__1_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(10),
+      I1 => \filter_in_l_reg[30]_33\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(10),
+      O => \filtered_l0_carry__1_i_28_n_0\
+    );
+\filtered_l0_carry__1_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_49_n_0\,
+      I1 => \filtered_l0_carry__1_i_50_n_0\,
+      O => \filtered_l0_carry__1_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(4),
+      I1 => \filtered_l0_carry__1_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__1_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__1_i_13_n_0\,
+      O => \filtered_l0_carry__1_i_3_n_0\
+    );
+\filtered_l0_carry__1_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_51_n_0\,
+      I1 => \filtered_l0_carry__1_i_52_n_0\,
+      O => \filtered_l0_carry__1_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(9),
+      I1 => \filter_in_l_reg[18]_45\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(9),
+      O => \filtered_l0_carry__1_i_31_n_0\
+    );
+\filtered_l0_carry__1_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(9),
+      I1 => \filter_in_l_reg[22]_41\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(9),
+      O => \filtered_l0_carry__1_i_32_n_0\
+    );
+\filtered_l0_carry__1_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(9),
+      I1 => \filter_in_l_reg[26]_37\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(9),
+      O => \filtered_l0_carry__1_i_33_n_0\
+    );
+\filtered_l0_carry__1_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(9),
+      I1 => \filter_in_l_reg[30]_33\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(9),
+      O => \filtered_l0_carry__1_i_34_n_0\
+    );
+\filtered_l0_carry__1_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_53_n_0\,
+      I1 => \filtered_l0_carry__1_i_54_n_0\,
+      O => \filtered_l0_carry__1_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_55_n_0\,
+      I1 => \filtered_l0_carry__1_i_56_n_0\,
+      O => \filtered_l0_carry__1_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(8),
+      I1 => \filter_in_l_reg[18]_45\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(8),
+      O => \filtered_l0_carry__1_i_37_n_0\
+    );
+\filtered_l0_carry__1_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(8),
+      I1 => \filter_in_l_reg[22]_41\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(8),
+      O => \filtered_l0_carry__1_i_38_n_0\
+    );
+\filtered_l0_carry__1_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(8),
+      I1 => \filter_in_l_reg[26]_37\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(8),
+      O => \filtered_l0_carry__1_i_39_n_0\
+    );
+\filtered_l0_carry__1_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(3),
+      I1 => \filtered_l0_carry__1_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__1_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__1_i_16_n_0\,
+      O => \filtered_l0_carry__1_i_4_n_0\
+    );
+\filtered_l0_carry__1_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(8),
+      I1 => \filter_in_l_reg[30]_33\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(8),
+      O => \filtered_l0_carry__1_i_40_n_0\
+    );
+\filtered_l0_carry__1_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(11),
+      I1 => \filter_in_l_reg[2]_61\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(11),
+      O => \filtered_l0_carry__1_i_41_n_0\
+    );
+\filtered_l0_carry__1_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(11),
+      I1 => \filter_in_l_reg[6]_57\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(11),
+      O => \filtered_l0_carry__1_i_42_n_0\
+    );
+\filtered_l0_carry__1_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(11),
+      I1 => \filter_in_l_reg[10]_53\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(11),
+      O => \filtered_l0_carry__1_i_43_n_0\
+    );
+\filtered_l0_carry__1_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(11),
+      I1 => \filter_in_l_reg[14]_49\(11),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(11),
+      O => \filtered_l0_carry__1_i_44_n_0\
+    );
+\filtered_l0_carry__1_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(10),
+      I1 => \filter_in_l_reg[2]_61\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(10),
+      O => \filtered_l0_carry__1_i_45_n_0\
+    );
+\filtered_l0_carry__1_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(10),
+      I1 => \filter_in_l_reg[6]_57\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(10),
+      O => \filtered_l0_carry__1_i_46_n_0\
+    );
+\filtered_l0_carry__1_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(10),
+      I1 => \filter_in_l_reg[10]_53\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(10),
+      O => \filtered_l0_carry__1_i_47_n_0\
+    );
+\filtered_l0_carry__1_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(10),
+      I1 => \filter_in_l_reg[14]_49\(10),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(10),
+      O => \filtered_l0_carry__1_i_48_n_0\
+    );
+\filtered_l0_carry__1_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(9),
+      I1 => \filter_in_l_reg[2]_61\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(9),
+      O => \filtered_l0_carry__1_i_49_n_0\
+    );
+\filtered_l0_carry__1_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__1_i_17_n_0\,
+      I1 => \filtered_l0_carry__1_i_18_n_0\,
+      O => \filtered_l0_carry__1_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__1_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(9),
+      I1 => \filter_in_l_reg[6]_57\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(9),
+      O => \filtered_l0_carry__1_i_50_n_0\
+    );
+\filtered_l0_carry__1_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(9),
+      I1 => \filter_in_l_reg[10]_53\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(9),
+      O => \filtered_l0_carry__1_i_51_n_0\
+    );
+\filtered_l0_carry__1_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(9),
+      I1 => \filter_in_l_reg[14]_49\(9),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(9),
+      O => \filtered_l0_carry__1_i_52_n_0\
+    );
+\filtered_l0_carry__1_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(8),
+      I1 => \filter_in_l_reg[2]_61\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(8),
+      O => \filtered_l0_carry__1_i_53_n_0\
+    );
+\filtered_l0_carry__1_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(8),
+      I1 => \filter_in_l_reg[6]_57\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(8),
+      O => \filtered_l0_carry__1_i_54_n_0\
+    );
+\filtered_l0_carry__1_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(8),
+      I1 => \filter_in_l_reg[10]_53\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(8),
+      O => \filtered_l0_carry__1_i_55_n_0\
+    );
+\filtered_l0_carry__1_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(8),
+      I1 => \filter_in_l_reg[14]_49\(8),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(8),
+      O => \filtered_l0_carry__1_i_56_n_0\
+    );
+\filtered_l0_carry__1_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_19_n_0\,
+      I1 => \filtered_l0_carry__1_i_20_n_0\,
+      O => \filtered_l0_carry__1_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_21_n_0\,
+      I1 => \filtered_l0_carry__1_i_22_n_0\,
+      O => \filtered_l0_carry__1_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__1_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__1_i_23_n_0\,
+      I1 => \filtered_l0_carry__1_i_24_n_0\,
+      O => \filtered_l0_carry__1_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__1_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__1_i_25_n_0\,
+      I1 => \filtered_l0_carry__1_i_26_n_0\,
+      O => \filtered_l0_carry__1_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_l0_carry__1_n_0\,
+      CO(3) => \filtered_l0_carry__2_n_0\,
+      CO(2) => \filtered_l0_carry__2_n_1\,
+      CO(1) => \filtered_l0_carry__2_n_2\,
+      CO(0) => \filtered_l0_carry__2_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => p_0_in(10 downto 7),
+      O(3 downto 0) => data1(15 downto 12),
+      S(3) => \filtered_l0_carry__2_i_1_n_0\,
+      S(2) => \filtered_l0_carry__2_i_2_n_0\,
+      S(1) => \filtered_l0_carry__2_i_3_n_0\,
+      S(0) => \filtered_l0_carry__2_i_4_n_0\
+    );
+\filtered_l0_carry__2_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(10),
+      I1 => \filtered_l0_carry__2_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__2_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__2_i_7_n_0\,
+      O => \filtered_l0_carry__2_i_1_n_0\
+    );
+\filtered_l0_carry__2_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_27_n_0\,
+      I1 => \filtered_l0_carry__2_i_28_n_0\,
+      O => \filtered_l0_carry__2_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__2_i_29_n_0\,
+      I1 => \filtered_l0_carry__2_i_30_n_0\,
+      O => \filtered_l0_carry__2_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__2_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_31_n_0\,
+      I1 => \filtered_l0_carry__2_i_32_n_0\,
+      O => \filtered_l0_carry__2_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_33_n_0\,
+      I1 => \filtered_l0_carry__2_i_34_n_0\,
+      O => \filtered_l0_carry__2_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__2_i_35_n_0\,
+      I1 => \filtered_l0_carry__2_i_36_n_0\,
+      O => \filtered_l0_carry__2_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__2_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_37_n_0\,
+      I1 => \filtered_l0_carry__2_i_38_n_0\,
+      O => \filtered_l0_carry__2_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_39_n_0\,
+      I1 => \filtered_l0_carry__2_i_40_n_0\,
+      O => \filtered_l0_carry__2_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_41_n_0\,
+      I1 => \filtered_l0_carry__2_i_42_n_0\,
+      O => \filtered_l0_carry__2_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_43_n_0\,
+      I1 => \filtered_l0_carry__2_i_44_n_0\,
+      O => \filtered_l0_carry__2_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(15),
+      I1 => \filter_in_l_reg[18]_45\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(15),
+      O => \filtered_l0_carry__2_i_19_n_0\
+    );
+\filtered_l0_carry__2_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(9),
+      I1 => \filtered_l0_carry__2_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__2_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__2_i_10_n_0\,
+      O => \filtered_l0_carry__2_i_2_n_0\
+    );
+\filtered_l0_carry__2_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(15),
+      I1 => \filter_in_l_reg[22]_41\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(15),
+      O => \filtered_l0_carry__2_i_20_n_0\
+    );
+\filtered_l0_carry__2_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(15),
+      I1 => \filter_in_l_reg[26]_37\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(15),
+      O => \filtered_l0_carry__2_i_21_n_0\
+    );
+\filtered_l0_carry__2_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(15),
+      I1 => \filter_in_l_reg[30]_33\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(15),
+      O => \filtered_l0_carry__2_i_22_n_0\
+    );
+\filtered_l0_carry__2_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_45_n_0\,
+      I1 => \filtered_l0_carry__2_i_46_n_0\,
+      O => \filtered_l0_carry__2_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_47_n_0\,
+      I1 => \filtered_l0_carry__2_i_48_n_0\,
+      O => \filtered_l0_carry__2_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(14),
+      I1 => \filter_in_l_reg[18]_45\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(14),
+      O => \filtered_l0_carry__2_i_25_n_0\
+    );
+\filtered_l0_carry__2_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(14),
+      I1 => \filter_in_l_reg[22]_41\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(14),
+      O => \filtered_l0_carry__2_i_26_n_0\
+    );
+\filtered_l0_carry__2_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(14),
+      I1 => \filter_in_l_reg[26]_37\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(14),
+      O => \filtered_l0_carry__2_i_27_n_0\
+    );
+\filtered_l0_carry__2_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(14),
+      I1 => \filter_in_l_reg[30]_33\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(14),
+      O => \filtered_l0_carry__2_i_28_n_0\
+    );
+\filtered_l0_carry__2_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_49_n_0\,
+      I1 => \filtered_l0_carry__2_i_50_n_0\,
+      O => \filtered_l0_carry__2_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(8),
+      I1 => \filtered_l0_carry__2_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__2_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__2_i_13_n_0\,
+      O => \filtered_l0_carry__2_i_3_n_0\
+    );
+\filtered_l0_carry__2_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_51_n_0\,
+      I1 => \filtered_l0_carry__2_i_52_n_0\,
+      O => \filtered_l0_carry__2_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(13),
+      I1 => \filter_in_l_reg[18]_45\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(13),
+      O => \filtered_l0_carry__2_i_31_n_0\
+    );
+\filtered_l0_carry__2_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(13),
+      I1 => \filter_in_l_reg[22]_41\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(13),
+      O => \filtered_l0_carry__2_i_32_n_0\
+    );
+\filtered_l0_carry__2_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(13),
+      I1 => \filter_in_l_reg[26]_37\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(13),
+      O => \filtered_l0_carry__2_i_33_n_0\
+    );
+\filtered_l0_carry__2_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(13),
+      I1 => \filter_in_l_reg[30]_33\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(13),
+      O => \filtered_l0_carry__2_i_34_n_0\
+    );
+\filtered_l0_carry__2_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_53_n_0\,
+      I1 => \filtered_l0_carry__2_i_54_n_0\,
+      O => \filtered_l0_carry__2_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_55_n_0\,
+      I1 => \filtered_l0_carry__2_i_56_n_0\,
+      O => \filtered_l0_carry__2_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(12),
+      I1 => \filter_in_l_reg[18]_45\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(12),
+      O => \filtered_l0_carry__2_i_37_n_0\
+    );
+\filtered_l0_carry__2_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(12),
+      I1 => \filter_in_l_reg[22]_41\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(12),
+      O => \filtered_l0_carry__2_i_38_n_0\
+    );
+\filtered_l0_carry__2_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(12),
+      I1 => \filter_in_l_reg[26]_37\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(12),
+      O => \filtered_l0_carry__2_i_39_n_0\
+    );
+\filtered_l0_carry__2_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(7),
+      I1 => \filtered_l0_carry__2_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__2_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__2_i_16_n_0\,
+      O => \filtered_l0_carry__2_i_4_n_0\
+    );
+\filtered_l0_carry__2_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(12),
+      I1 => \filter_in_l_reg[30]_33\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(12),
+      O => \filtered_l0_carry__2_i_40_n_0\
+    );
+\filtered_l0_carry__2_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(15),
+      I1 => \filter_in_l_reg[2]_61\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(15),
+      O => \filtered_l0_carry__2_i_41_n_0\
+    );
+\filtered_l0_carry__2_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(15),
+      I1 => \filter_in_l_reg[6]_57\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(15),
+      O => \filtered_l0_carry__2_i_42_n_0\
+    );
+\filtered_l0_carry__2_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(15),
+      I1 => \filter_in_l_reg[10]_53\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(15),
+      O => \filtered_l0_carry__2_i_43_n_0\
+    );
+\filtered_l0_carry__2_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(15),
+      I1 => \filter_in_l_reg[14]_49\(15),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(15),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(15),
+      O => \filtered_l0_carry__2_i_44_n_0\
+    );
+\filtered_l0_carry__2_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(14),
+      I1 => \filter_in_l_reg[2]_61\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(14),
+      O => \filtered_l0_carry__2_i_45_n_0\
+    );
+\filtered_l0_carry__2_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(14),
+      I1 => \filter_in_l_reg[6]_57\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(14),
+      O => \filtered_l0_carry__2_i_46_n_0\
+    );
+\filtered_l0_carry__2_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(14),
+      I1 => \filter_in_l_reg[10]_53\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(14),
+      O => \filtered_l0_carry__2_i_47_n_0\
+    );
+\filtered_l0_carry__2_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(14),
+      I1 => \filter_in_l_reg[14]_49\(14),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(14),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(14),
+      O => \filtered_l0_carry__2_i_48_n_0\
+    );
+\filtered_l0_carry__2_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(13),
+      I1 => \filter_in_l_reg[2]_61\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(13),
+      O => \filtered_l0_carry__2_i_49_n_0\
+    );
+\filtered_l0_carry__2_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__2_i_17_n_0\,
+      I1 => \filtered_l0_carry__2_i_18_n_0\,
+      O => \filtered_l0_carry__2_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__2_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(13),
+      I1 => \filter_in_l_reg[6]_57\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(13),
+      O => \filtered_l0_carry__2_i_50_n_0\
+    );
+\filtered_l0_carry__2_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(13),
+      I1 => \filter_in_l_reg[10]_53\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(13),
+      O => \filtered_l0_carry__2_i_51_n_0\
+    );
+\filtered_l0_carry__2_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(13),
+      I1 => \filter_in_l_reg[14]_49\(13),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(13),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(13),
+      O => \filtered_l0_carry__2_i_52_n_0\
+    );
+\filtered_l0_carry__2_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(12),
+      I1 => \filter_in_l_reg[2]_61\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(12),
+      O => \filtered_l0_carry__2_i_53_n_0\
+    );
+\filtered_l0_carry__2_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(12),
+      I1 => \filter_in_l_reg[6]_57\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(12),
+      O => \filtered_l0_carry__2_i_54_n_0\
+    );
+\filtered_l0_carry__2_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(12),
+      I1 => \filter_in_l_reg[10]_53\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(12),
+      O => \filtered_l0_carry__2_i_55_n_0\
+    );
+\filtered_l0_carry__2_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(12),
+      I1 => \filter_in_l_reg[14]_49\(12),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(12),
+      O => \filtered_l0_carry__2_i_56_n_0\
+    );
+\filtered_l0_carry__2_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_19_n_0\,
+      I1 => \filtered_l0_carry__2_i_20_n_0\,
+      O => \filtered_l0_carry__2_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_21_n_0\,
+      I1 => \filtered_l0_carry__2_i_22_n_0\,
+      O => \filtered_l0_carry__2_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__2_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__2_i_23_n_0\,
+      I1 => \filtered_l0_carry__2_i_24_n_0\,
+      O => \filtered_l0_carry__2_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__2_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__2_i_25_n_0\,
+      I1 => \filtered_l0_carry__2_i_26_n_0\,
+      O => \filtered_l0_carry__2_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_l0_carry__2_n_0\,
+      CO(3) => \filtered_l0_carry__3_n_0\,
+      CO(2) => \filtered_l0_carry__3_n_1\,
+      CO(1) => \filtered_l0_carry__3_n_2\,
+      CO(0) => \filtered_l0_carry__3_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => p_0_in(14 downto 11),
+      O(3 downto 0) => data1(19 downto 16),
+      S(3) => \filtered_l0_carry__3_i_1_n_0\,
+      S(2) => \filtered_l0_carry__3_i_2_n_0\,
+      S(1) => \filtered_l0_carry__3_i_3_n_0\,
+      S(0) => \filtered_l0_carry__3_i_4_n_0\
+    );
+\filtered_l0_carry__3_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(14),
+      I1 => \filtered_l0_carry__3_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__3_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__3_i_7_n_0\,
+      O => \filtered_l0_carry__3_i_1_n_0\
+    );
+\filtered_l0_carry__3_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_27_n_0\,
+      I1 => \filtered_l0_carry__3_i_28_n_0\,
+      O => \filtered_l0_carry__3_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__3_i_29_n_0\,
+      I1 => \filtered_l0_carry__3_i_30_n_0\,
+      O => \filtered_l0_carry__3_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__3_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_31_n_0\,
+      I1 => \filtered_l0_carry__3_i_32_n_0\,
+      O => \filtered_l0_carry__3_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_33_n_0\,
+      I1 => \filtered_l0_carry__3_i_34_n_0\,
+      O => \filtered_l0_carry__3_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__3_i_35_n_0\,
+      I1 => \filtered_l0_carry__3_i_36_n_0\,
+      O => \filtered_l0_carry__3_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__3_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_37_n_0\,
+      I1 => \filtered_l0_carry__3_i_38_n_0\,
+      O => \filtered_l0_carry__3_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_39_n_0\,
+      I1 => \filtered_l0_carry__3_i_40_n_0\,
+      O => \filtered_l0_carry__3_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_41_n_0\,
+      I1 => \filtered_l0_carry__3_i_42_n_0\,
+      O => \filtered_l0_carry__3_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_43_n_0\,
+      I1 => \filtered_l0_carry__3_i_44_n_0\,
+      O => \filtered_l0_carry__3_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(19),
+      I1 => \filter_in_l_reg[18]_45\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(19),
+      O => \filtered_l0_carry__3_i_19_n_0\
+    );
+\filtered_l0_carry__3_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(13),
+      I1 => \filtered_l0_carry__3_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__3_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__3_i_10_n_0\,
+      O => \filtered_l0_carry__3_i_2_n_0\
+    );
+\filtered_l0_carry__3_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(19),
+      I1 => \filter_in_l_reg[22]_41\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(19),
+      O => \filtered_l0_carry__3_i_20_n_0\
+    );
+\filtered_l0_carry__3_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(19),
+      I1 => \filter_in_l_reg[26]_37\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(19),
+      O => \filtered_l0_carry__3_i_21_n_0\
+    );
+\filtered_l0_carry__3_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(19),
+      I1 => \filter_in_l_reg[30]_33\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(19),
+      O => \filtered_l0_carry__3_i_22_n_0\
+    );
+\filtered_l0_carry__3_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_45_n_0\,
+      I1 => \filtered_l0_carry__3_i_46_n_0\,
+      O => \filtered_l0_carry__3_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_47_n_0\,
+      I1 => \filtered_l0_carry__3_i_48_n_0\,
+      O => \filtered_l0_carry__3_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(18),
+      I1 => \filter_in_l_reg[18]_45\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(18),
+      O => \filtered_l0_carry__3_i_25_n_0\
+    );
+\filtered_l0_carry__3_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(18),
+      I1 => \filter_in_l_reg[22]_41\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(18),
+      O => \filtered_l0_carry__3_i_26_n_0\
+    );
+\filtered_l0_carry__3_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(18),
+      I1 => \filter_in_l_reg[26]_37\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(18),
+      O => \filtered_l0_carry__3_i_27_n_0\
+    );
+\filtered_l0_carry__3_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(18),
+      I1 => \filter_in_l_reg[30]_33\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(18),
+      O => \filtered_l0_carry__3_i_28_n_0\
+    );
+\filtered_l0_carry__3_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_49_n_0\,
+      I1 => \filtered_l0_carry__3_i_50_n_0\,
+      O => \filtered_l0_carry__3_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(12),
+      I1 => \filtered_l0_carry__3_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__3_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__3_i_13_n_0\,
+      O => \filtered_l0_carry__3_i_3_n_0\
+    );
+\filtered_l0_carry__3_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_51_n_0\,
+      I1 => \filtered_l0_carry__3_i_52_n_0\,
+      O => \filtered_l0_carry__3_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(17),
+      I1 => \filter_in_l_reg[18]_45\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(17),
+      O => \filtered_l0_carry__3_i_31_n_0\
+    );
+\filtered_l0_carry__3_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(17),
+      I1 => \filter_in_l_reg[22]_41\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(17),
+      O => \filtered_l0_carry__3_i_32_n_0\
+    );
+\filtered_l0_carry__3_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(17),
+      I1 => \filter_in_l_reg[26]_37\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(17),
+      O => \filtered_l0_carry__3_i_33_n_0\
+    );
+\filtered_l0_carry__3_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(17),
+      I1 => \filter_in_l_reg[30]_33\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(17),
+      O => \filtered_l0_carry__3_i_34_n_0\
+    );
+\filtered_l0_carry__3_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_53_n_0\,
+      I1 => \filtered_l0_carry__3_i_54_n_0\,
+      O => \filtered_l0_carry__3_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_55_n_0\,
+      I1 => \filtered_l0_carry__3_i_56_n_0\,
+      O => \filtered_l0_carry__3_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(16),
+      I1 => \filter_in_l_reg[18]_45\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(16),
+      O => \filtered_l0_carry__3_i_37_n_0\
+    );
+\filtered_l0_carry__3_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(16),
+      I1 => \filter_in_l_reg[22]_41\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(16),
+      O => \filtered_l0_carry__3_i_38_n_0\
+    );
+\filtered_l0_carry__3_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(16),
+      I1 => \filter_in_l_reg[26]_37\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(16),
+      O => \filtered_l0_carry__3_i_39_n_0\
+    );
+\filtered_l0_carry__3_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(11),
+      I1 => \filtered_l0_carry__3_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__3_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__3_i_16_n_0\,
+      O => \filtered_l0_carry__3_i_4_n_0\
+    );
+\filtered_l0_carry__3_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(16),
+      I1 => \filter_in_l_reg[30]_33\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(16),
+      O => \filtered_l0_carry__3_i_40_n_0\
+    );
+\filtered_l0_carry__3_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(19),
+      I1 => \filter_in_l_reg[2]_61\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(19),
+      O => \filtered_l0_carry__3_i_41_n_0\
+    );
+\filtered_l0_carry__3_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(19),
+      I1 => \filter_in_l_reg[6]_57\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(19),
+      O => \filtered_l0_carry__3_i_42_n_0\
+    );
+\filtered_l0_carry__3_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(19),
+      I1 => \filter_in_l_reg[10]_53\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(19),
+      O => \filtered_l0_carry__3_i_43_n_0\
+    );
+\filtered_l0_carry__3_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(19),
+      I1 => \filter_in_l_reg[14]_49\(19),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(19),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(19),
+      O => \filtered_l0_carry__3_i_44_n_0\
+    );
+\filtered_l0_carry__3_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(18),
+      I1 => \filter_in_l_reg[2]_61\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(18),
+      O => \filtered_l0_carry__3_i_45_n_0\
+    );
+\filtered_l0_carry__3_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(18),
+      I1 => \filter_in_l_reg[6]_57\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(18),
+      O => \filtered_l0_carry__3_i_46_n_0\
+    );
+\filtered_l0_carry__3_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(18),
+      I1 => \filter_in_l_reg[10]_53\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(18),
+      O => \filtered_l0_carry__3_i_47_n_0\
+    );
+\filtered_l0_carry__3_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(18),
+      I1 => \filter_in_l_reg[14]_49\(18),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(18),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(18),
+      O => \filtered_l0_carry__3_i_48_n_0\
+    );
+\filtered_l0_carry__3_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(17),
+      I1 => \filter_in_l_reg[2]_61\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(17),
+      O => \filtered_l0_carry__3_i_49_n_0\
+    );
+\filtered_l0_carry__3_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__3_i_17_n_0\,
+      I1 => \filtered_l0_carry__3_i_18_n_0\,
+      O => \filtered_l0_carry__3_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__3_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(17),
+      I1 => \filter_in_l_reg[6]_57\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(17),
+      O => \filtered_l0_carry__3_i_50_n_0\
+    );
+\filtered_l0_carry__3_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(17),
+      I1 => \filter_in_l_reg[10]_53\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(17),
+      O => \filtered_l0_carry__3_i_51_n_0\
+    );
+\filtered_l0_carry__3_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(17),
+      I1 => \filter_in_l_reg[14]_49\(17),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(17),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(17),
+      O => \filtered_l0_carry__3_i_52_n_0\
+    );
+\filtered_l0_carry__3_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(16),
+      I1 => \filter_in_l_reg[2]_61\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(16),
+      O => \filtered_l0_carry__3_i_53_n_0\
+    );
+\filtered_l0_carry__3_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(16),
+      I1 => \filter_in_l_reg[6]_57\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(16),
+      O => \filtered_l0_carry__3_i_54_n_0\
+    );
+\filtered_l0_carry__3_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(16),
+      I1 => \filter_in_l_reg[10]_53\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(16),
+      O => \filtered_l0_carry__3_i_55_n_0\
+    );
+\filtered_l0_carry__3_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(16),
+      I1 => \filter_in_l_reg[14]_49\(16),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(16),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(16),
+      O => \filtered_l0_carry__3_i_56_n_0\
+    );
+\filtered_l0_carry__3_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_19_n_0\,
+      I1 => \filtered_l0_carry__3_i_20_n_0\,
+      O => \filtered_l0_carry__3_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_21_n_0\,
+      I1 => \filtered_l0_carry__3_i_22_n_0\,
+      O => \filtered_l0_carry__3_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__3_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__3_i_23_n_0\,
+      I1 => \filtered_l0_carry__3_i_24_n_0\,
+      O => \filtered_l0_carry__3_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__3_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__3_i_25_n_0\,
+      I1 => \filtered_l0_carry__3_i_26_n_0\,
+      O => \filtered_l0_carry__3_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_l0_carry__3_n_0\,
+      CO(3) => \filtered_l0_carry__4_n_0\,
+      CO(2) => \filtered_l0_carry__4_n_1\,
+      CO(1) => \filtered_l0_carry__4_n_2\,
+      CO(0) => \filtered_l0_carry__4_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => p_0_in(18 downto 15),
+      O(3 downto 0) => data1(23 downto 20),
+      S(3) => \filtered_l0_carry__4_i_1_n_0\,
+      S(2) => \filtered_l0_carry__4_i_2_n_0\,
+      S(1) => \filtered_l0_carry__4_i_3_n_0\,
+      S(0) => \filtered_l0_carry__4_i_4_n_0\
+    );
+\filtered_l0_carry__4_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"111DDD1DEEE222E2"
+    )
+        port map (
+      I0 => \filtered_l0_carry__4_i_5_n_0\,
+      I1 => ring_buffer_read_reg(4),
+      I2 => \filtered_l0_carry__4_i_6_n_0\,
+      I3 => ring_buffer_read_reg(3),
+      I4 => \filtered_l0_carry__4_i_7_n_0\,
+      I5 => p_0_in(18),
+      O => \filtered_l0_carry__4_i_1_n_0\
+    );
+\filtered_l0_carry__4_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_25_n_0\,
+      I1 => \filtered_l0_carry__4_i_26_n_0\,
+      O => \filtered_l0_carry__4_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__4_i_27_n_0\,
+      I1 => \filtered_l0_carry__4_i_28_n_0\,
+      O => \filtered_l0_carry__4_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__4_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_29_n_0\,
+      I1 => \filtered_l0_carry__4_i_30_n_0\,
+      O => \filtered_l0_carry__4_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_31_n_0\,
+      I1 => \filtered_l0_carry__4_i_32_n_0\,
+      O => \filtered_l0_carry__4_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__4_i_33_n_0\,
+      I1 => \filtered_l0_carry__4_i_34_n_0\,
+      O => \filtered_l0_carry__4_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__4_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_35_n_0\,
+      I1 => \filtered_l0_carry__4_i_36_n_0\,
+      O => \filtered_l0_carry__4_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_37_n_0\,
+      I1 => \filtered_l0_carry__4_i_38_n_0\,
+      O => \filtered_l0_carry__4_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_17\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(23),
+      I1 => \filter_in_l_reg[18]_45\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(23),
+      O => \filtered_l0_carry__4_i_17_n_0\
+    );
+\filtered_l0_carry__4_i_18\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(23),
+      I1 => \filter_in_l_reg[22]_41\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(23),
+      O => \filtered_l0_carry__4_i_18_n_0\
+    );
+\filtered_l0_carry__4_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(23),
+      I1 => \filter_in_l_reg[26]_37\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(23),
+      O => \filtered_l0_carry__4_i_19_n_0\
+    );
+\filtered_l0_carry__4_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(17),
+      I1 => \filtered_l0_carry__4_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__4_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__4_i_10_n_0\,
+      O => \filtered_l0_carry__4_i_2_n_0\
+    );
+\filtered_l0_carry__4_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(23),
+      I1 => \filter_in_l_reg[30]_33\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(23),
+      O => \filtered_l0_carry__4_i_20_n_0\
+    );
+\filtered_l0_carry__4_i_21\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_39_n_0\,
+      I1 => \filtered_l0_carry__4_i_40_n_0\,
+      O => \filtered_l0_carry__4_i_21_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_22\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_41_n_0\,
+      I1 => \filtered_l0_carry__4_i_42_n_0\,
+      O => \filtered_l0_carry__4_i_22_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_23\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(22),
+      I1 => \filter_in_l_reg[18]_45\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(22),
+      O => \filtered_l0_carry__4_i_23_n_0\
+    );
+\filtered_l0_carry__4_i_24\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(22),
+      I1 => \filter_in_l_reg[22]_41\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(22),
+      O => \filtered_l0_carry__4_i_24_n_0\
+    );
+\filtered_l0_carry__4_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(22),
+      I1 => \filter_in_l_reg[26]_37\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(22),
+      O => \filtered_l0_carry__4_i_25_n_0\
+    );
+\filtered_l0_carry__4_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(22),
+      I1 => \filter_in_l_reg[30]_33\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(22),
+      O => \filtered_l0_carry__4_i_26_n_0\
+    );
+\filtered_l0_carry__4_i_27\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_43_n_0\,
+      I1 => \filtered_l0_carry__4_i_44_n_0\,
+      O => \filtered_l0_carry__4_i_27_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_28\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_45_n_0\,
+      I1 => \filtered_l0_carry__4_i_46_n_0\,
+      O => \filtered_l0_carry__4_i_28_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_29\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(21),
+      I1 => \filter_in_l_reg[18]_45\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(21),
+      O => \filtered_l0_carry__4_i_29_n_0\
+    );
+\filtered_l0_carry__4_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(16),
+      I1 => \filtered_l0_carry__4_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__4_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__4_i_13_n_0\,
+      O => \filtered_l0_carry__4_i_3_n_0\
+    );
+\filtered_l0_carry__4_i_30\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(21),
+      I1 => \filter_in_l_reg[22]_41\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(21),
+      O => \filtered_l0_carry__4_i_30_n_0\
+    );
+\filtered_l0_carry__4_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(21),
+      I1 => \filter_in_l_reg[26]_37\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(21),
+      O => \filtered_l0_carry__4_i_31_n_0\
+    );
+\filtered_l0_carry__4_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(21),
+      I1 => \filter_in_l_reg[30]_33\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(21),
+      O => \filtered_l0_carry__4_i_32_n_0\
+    );
+\filtered_l0_carry__4_i_33\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_47_n_0\,
+      I1 => \filtered_l0_carry__4_i_48_n_0\,
+      O => \filtered_l0_carry__4_i_33_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_34\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_49_n_0\,
+      I1 => \filtered_l0_carry__4_i_50_n_0\,
+      O => \filtered_l0_carry__4_i_34_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_35\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(20),
+      I1 => \filter_in_l_reg[18]_45\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[16]_47\(20),
+      O => \filtered_l0_carry__4_i_35_n_0\
+    );
+\filtered_l0_carry__4_i_36\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(20),
+      I1 => \filter_in_l_reg[22]_41\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[20]_43\(20),
+      O => \filtered_l0_carry__4_i_36_n_0\
+    );
+\filtered_l0_carry__4_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(20),
+      I1 => \filter_in_l_reg[26]_37\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[24]_39\(20),
+      O => \filtered_l0_carry__4_i_37_n_0\
+    );
+\filtered_l0_carry__4_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(20),
+      I1 => \filter_in_l_reg[30]_33\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[28]_35\(20),
+      O => \filtered_l0_carry__4_i_38_n_0\
+    );
+\filtered_l0_carry__4_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(22),
+      I1 => \filter_in_l_reg[2]_61\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(22),
+      O => \filtered_l0_carry__4_i_39_n_0\
+    );
+\filtered_l0_carry__4_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => p_0_in(15),
+      I1 => \filtered_l0_carry__4_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_l0_carry__4_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_l0_carry__4_i_16_n_0\,
+      O => \filtered_l0_carry__4_i_4_n_0\
+    );
+\filtered_l0_carry__4_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(22),
+      I1 => \filter_in_l_reg[6]_57\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(22),
+      O => \filtered_l0_carry__4_i_40_n_0\
+    );
+\filtered_l0_carry__4_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(22),
+      I1 => \filter_in_l_reg[10]_53\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(22),
+      O => \filtered_l0_carry__4_i_41_n_0\
+    );
+\filtered_l0_carry__4_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(22),
+      I1 => \filter_in_l_reg[14]_49\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(22),
+      O => \filtered_l0_carry__4_i_42_n_0\
+    );
+\filtered_l0_carry__4_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(21),
+      I1 => \filter_in_l_reg[2]_61\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(21),
+      O => \filtered_l0_carry__4_i_43_n_0\
+    );
+\filtered_l0_carry__4_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(21),
+      I1 => \filter_in_l_reg[6]_57\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(21),
+      O => \filtered_l0_carry__4_i_44_n_0\
+    );
+\filtered_l0_carry__4_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(21),
+      I1 => \filter_in_l_reg[10]_53\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(21),
+      O => \filtered_l0_carry__4_i_45_n_0\
+    );
+\filtered_l0_carry__4_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(21),
+      I1 => \filter_in_l_reg[14]_49\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(21),
+      O => \filtered_l0_carry__4_i_46_n_0\
+    );
+\filtered_l0_carry__4_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(20),
+      I1 => \filter_in_l_reg[2]_61\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(20),
+      O => \filtered_l0_carry__4_i_47_n_0\
+    );
+\filtered_l0_carry__4_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(20),
+      I1 => \filter_in_l_reg[6]_57\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(20),
+      O => \filtered_l0_carry__4_i_48_n_0\
+    );
+\filtered_l0_carry__4_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(20),
+      I1 => \filter_in_l_reg[10]_53\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(20),
+      O => \filtered_l0_carry__4_i_49_n_0\
+    );
+\filtered_l0_carry__4_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__5_i_6_n_0\,
+      I1 => \filtered_l0_carry__5_i_7_n_0\,
+      O => \filtered_l0_carry__4_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__4_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(20),
+      I1 => \filter_in_l_reg[14]_49\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(20),
+      O => \filtered_l0_carry__4_i_50_n_0\
+    );
+\filtered_l0_carry__4_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_17_n_0\,
+      I1 => \filtered_l0_carry__4_i_18_n_0\,
+      O => \filtered_l0_carry__4_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__4_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_19_n_0\,
+      I1 => \filtered_l0_carry__4_i_20_n_0\,
+      O => \filtered_l0_carry__4_i_7_n_0\,
+      S => ring_buffer_read_reg(2)
+    );
+\filtered_l0_carry__4_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_l0_carry__4_i_21_n_0\,
+      I1 => \filtered_l0_carry__4_i_22_n_0\,
+      O => \filtered_l0_carry__4_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_l0_carry__4_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__4_i_23_n_0\,
+      I1 => \filtered_l0_carry__4_i_24_n_0\,
+      O => \filtered_l0_carry__4_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__5\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_l0_carry__4_n_0\,
+      CO(3) => \filtered_l0_carry__5_n_0\,
+      CO(2) => \filtered_l0_carry__5_n_1\,
+      CO(1) => \filtered_l0_carry__5_n_2\,
+      CO(0) => \filtered_l0_carry__5_n_3\,
+      CYINIT => '0',
+      DI(3 downto 1) => p_0_in(21 downto 19),
+      DI(0) => \filtered_l0_carry__5_i_1_n_0\,
+      O(3 downto 0) => data1(27 downto 24),
+      S(3) => \filtered_l0_carry__5_i_2_n_0\,
+      S(2) => \filtered_l0_carry__5_i_3_n_0\,
+      S(1) => \filtered_l0_carry__5_i_4_n_0\,
+      S(0) => \filtered_l0_carry__5_i_5_n_0\
+    );
+\filtered_l0_carry__5_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"001D331DCC1DFF1D"
+    )
+        port map (
+      I0 => \filtered_l0_carry__5_i_6_n_0\,
+      I1 => ring_buffer_read_reg(3),
+      I2 => \filtered_l0_carry__5_i_7_n_0\,
+      I3 => ring_buffer_read_reg(4),
+      I4 => \filtered_l0_carry__4_i_6_n_0\,
+      I5 => \filtered_l0_carry__4_i_7_n_0\,
+      O => \filtered_l0_carry__5_i_1_n_0\
+    );
+\filtered_l0_carry__5_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(23),
+      I1 => \filter_in_l_reg[10]_53\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[8]_55\(23),
+      O => \filtered_l0_carry__5_i_10_n_0\
+    );
+\filtered_l0_carry__5_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(23),
+      I1 => \filter_in_l_reg[14]_49\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[12]_51\(23),
+      O => \filtered_l0_carry__5_i_11_n_0\
+    );
+\filtered_l0_carry__5_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => p_0_in(21),
+      I1 => p_0_in(22),
+      O => \filtered_l0_carry__5_i_2_n_0\
+    );
+\filtered_l0_carry__5_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => p_0_in(20),
+      I1 => p_0_in(21),
+      O => \filtered_l0_carry__5_i_3_n_0\
+    );
+\filtered_l0_carry__5_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => p_0_in(19),
+      I1 => p_0_in(20),
+      O => \filtered_l0_carry__5_i_4_n_0\
+    );
+\filtered_l0_carry__5_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"111DDD1DEEE222E2"
+    )
+        port map (
+      I0 => \filtered_l0_carry__4_i_5_n_0\,
+      I1 => ring_buffer_read_reg(4),
+      I2 => \filtered_l0_carry__4_i_6_n_0\,
+      I3 => ring_buffer_read_reg(3),
+      I4 => \filtered_l0_carry__4_i_7_n_0\,
+      I5 => p_0_in(19),
+      O => \filtered_l0_carry__5_i_5_n_0\
+    );
+\filtered_l0_carry__5_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__5_i_8_n_0\,
+      I1 => \filtered_l0_carry__5_i_9_n_0\,
+      O => \filtered_l0_carry__5_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__5_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_l0_carry__5_i_10_n_0\,
+      I1 => \filtered_l0_carry__5_i_11_n_0\,
+      O => \filtered_l0_carry__5_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_l0_carry__5_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(23),
+      I1 => \filter_in_l_reg[2]_61\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[0]_63\(23),
+      O => \filtered_l0_carry__5_i_8_n_0\
+    );
+\filtered_l0_carry__5_i_9\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(23),
+      I1 => \filter_in_l_reg[6]_57\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_l_reg[4]_59\(23),
+      O => \filtered_l0_carry__5_i_9_n_0\
+    );
+\filtered_l0_carry__6\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_l0_carry__5_n_0\,
+      CO(3 downto 0) => \NLW_filtered_l0_carry__6_CO_UNCONNECTED\(3 downto 0),
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3 downto 1) => \NLW_filtered_l0_carry__6_O_UNCONNECTED\(3 downto 1),
+      O(0) => data1(28),
+      S(3 downto 1) => B"000",
+      S(0) => \filtered_l0_carry__6_i_1_n_0\
+    );
+\filtered_l0_carry__6_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => p_0_in(22),
+      I1 => p_0_in(23),
+      O => \filtered_l0_carry__6_i_1_n_0\
+    );
+filtered_l0_carry_i_1: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_l_reg_n_0_[3]\,
+      I1 => filtered_l0_carry_i_5_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_l0_carry_i_6_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_l0_carry_i_7_n_0,
+      O => filtered_l0_carry_i_1_n_0
+    );
+filtered_l0_carry_i_10: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_27_n_0,
+      I1 => filtered_l0_carry_i_28_n_0,
+      O => filtered_l0_carry_i_10_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_11: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_l0_carry_i_29_n_0,
+      I1 => filtered_l0_carry_i_30_n_0,
+      O => filtered_l0_carry_i_11_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_l0_carry_i_12: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_31_n_0,
+      I1 => filtered_l0_carry_i_32_n_0,
+      O => filtered_l0_carry_i_12_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_13: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_33_n_0,
+      I1 => filtered_l0_carry_i_34_n_0,
+      O => filtered_l0_carry_i_13_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_14: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_l0_carry_i_35_n_0,
+      I1 => filtered_l0_carry_i_36_n_0,
+      O => filtered_l0_carry_i_14_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_l0_carry_i_15: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_37_n_0,
+      I1 => filtered_l0_carry_i_38_n_0,
+      O => filtered_l0_carry_i_15_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_16: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_39_n_0,
+      I1 => filtered_l0_carry_i_40_n_0,
+      O => filtered_l0_carry_i_16_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_17: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_41_n_0,
+      I1 => filtered_l0_carry_i_42_n_0,
+      O => filtered_l0_carry_i_17_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_18: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_43_n_0,
+      I1 => filtered_l0_carry_i_44_n_0,
+      O => filtered_l0_carry_i_18_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_19: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(3),
+      I1 => \filter_in_l_reg[18]_45\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[16]_47\(3),
+      O => filtered_l0_carry_i_19_n_0
+    );
+filtered_l0_carry_i_2: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_l_reg_n_0_[2]\,
+      I1 => filtered_l0_carry_i_8_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_l0_carry_i_9_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_l0_carry_i_10_n_0,
+      O => filtered_l0_carry_i_2_n_0
+    );
+filtered_l0_carry_i_20: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(3),
+      I1 => \filter_in_l_reg[22]_41\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[20]_43\(3),
+      O => filtered_l0_carry_i_20_n_0
+    );
+filtered_l0_carry_i_21: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(3),
+      I1 => \filter_in_l_reg[26]_37\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[24]_39\(3),
+      O => filtered_l0_carry_i_21_n_0
+    );
+filtered_l0_carry_i_22: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(3),
+      I1 => \filter_in_l_reg[30]_33\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[28]_35\(3),
+      O => filtered_l0_carry_i_22_n_0
+    );
+filtered_l0_carry_i_23: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_45_n_0,
+      I1 => filtered_l0_carry_i_46_n_0,
+      O => filtered_l0_carry_i_23_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_24: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_47_n_0,
+      I1 => filtered_l0_carry_i_48_n_0,
+      O => filtered_l0_carry_i_24_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_25: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(2),
+      I1 => \filter_in_l_reg[18]_45\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[16]_47\(2),
+      O => filtered_l0_carry_i_25_n_0
+    );
+filtered_l0_carry_i_26: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(2),
+      I1 => \filter_in_l_reg[22]_41\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[20]_43\(2),
+      O => filtered_l0_carry_i_26_n_0
+    );
+filtered_l0_carry_i_27: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(2),
+      I1 => \filter_in_l_reg[26]_37\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[24]_39\(2),
+      O => filtered_l0_carry_i_27_n_0
+    );
+filtered_l0_carry_i_28: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(2),
+      I1 => \filter_in_l_reg[30]_33\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[28]_35\(2),
+      O => filtered_l0_carry_i_28_n_0
+    );
+filtered_l0_carry_i_29: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_49_n_0,
+      I1 => filtered_l0_carry_i_50_n_0,
+      O => filtered_l0_carry_i_29_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_l_reg_n_0_[1]\,
+      I1 => filtered_l0_carry_i_11_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_l0_carry_i_12_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_l0_carry_i_13_n_0,
+      O => filtered_l0_carry_i_3_n_0
+    );
+filtered_l0_carry_i_30: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_51_n_0,
+      I1 => filtered_l0_carry_i_52_n_0,
+      O => filtered_l0_carry_i_30_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_31: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(1),
+      I1 => \filter_in_l_reg[18]_45\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[16]_47\(1),
+      O => filtered_l0_carry_i_31_n_0
+    );
+filtered_l0_carry_i_32: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(1),
+      I1 => \filter_in_l_reg[22]_41\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[20]_43\(1),
+      O => filtered_l0_carry_i_32_n_0
+    );
+filtered_l0_carry_i_33: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(1),
+      I1 => \filter_in_l_reg[26]_37\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[24]_39\(1),
+      O => filtered_l0_carry_i_33_n_0
+    );
+filtered_l0_carry_i_34: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(1),
+      I1 => \filter_in_l_reg[30]_33\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[28]_35\(1),
+      O => filtered_l0_carry_i_34_n_0
+    );
+filtered_l0_carry_i_35: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_53_n_0,
+      I1 => filtered_l0_carry_i_54_n_0,
+      O => filtered_l0_carry_i_35_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_36: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_55_n_0,
+      I1 => filtered_l0_carry_i_56_n_0,
+      O => filtered_l0_carry_i_36_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_37: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[19]_44\(0),
+      I1 => \filter_in_l_reg[18]_45\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[17]_46\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[16]_47\(0),
+      O => filtered_l0_carry_i_37_n_0
+    );
+filtered_l0_carry_i_38: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[23]_40\(0),
+      I1 => \filter_in_l_reg[22]_41\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[21]_42\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[20]_43\(0),
+      O => filtered_l0_carry_i_38_n_0
+    );
+filtered_l0_carry_i_39: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[27]_36\(0),
+      I1 => \filter_in_l_reg[26]_37\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[25]_38\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[24]_39\(0),
+      O => filtered_l0_carry_i_39_n_0
+    );
+filtered_l0_carry_i_4: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_l_reg_n_0_[0]\,
+      I1 => filtered_l0_carry_i_14_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_l0_carry_i_15_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_l0_carry_i_16_n_0,
+      O => filtered_l0_carry_i_4_n_0
+    );
+filtered_l0_carry_i_40: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[31]_32\(0),
+      I1 => \filter_in_l_reg[30]_33\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[29]_34\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[28]_35\(0),
+      O => filtered_l0_carry_i_40_n_0
+    );
+filtered_l0_carry_i_41: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(3),
+      I1 => \filter_in_l_reg[2]_61\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[0]_63\(3),
+      O => filtered_l0_carry_i_41_n_0
+    );
+filtered_l0_carry_i_42: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(3),
+      I1 => \filter_in_l_reg[6]_57\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[4]_59\(3),
+      O => filtered_l0_carry_i_42_n_0
+    );
+filtered_l0_carry_i_43: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(3),
+      I1 => \filter_in_l_reg[10]_53\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[8]_55\(3),
+      O => filtered_l0_carry_i_43_n_0
+    );
+filtered_l0_carry_i_44: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(3),
+      I1 => \filter_in_l_reg[14]_49\(3),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(3),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[12]_51\(3),
+      O => filtered_l0_carry_i_44_n_0
+    );
+filtered_l0_carry_i_45: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(2),
+      I1 => \filter_in_l_reg[2]_61\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[0]_63\(2),
+      O => filtered_l0_carry_i_45_n_0
+    );
+filtered_l0_carry_i_46: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(2),
+      I1 => \filter_in_l_reg[6]_57\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[4]_59\(2),
+      O => filtered_l0_carry_i_46_n_0
+    );
+filtered_l0_carry_i_47: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(2),
+      I1 => \filter_in_l_reg[10]_53\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[8]_55\(2),
+      O => filtered_l0_carry_i_47_n_0
+    );
+filtered_l0_carry_i_48: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(2),
+      I1 => \filter_in_l_reg[14]_49\(2),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(2),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[12]_51\(2),
+      O => filtered_l0_carry_i_48_n_0
+    );
+filtered_l0_carry_i_49: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(1),
+      I1 => \filter_in_l_reg[2]_61\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[0]_63\(1),
+      O => filtered_l0_carry_i_49_n_0
+    );
+filtered_l0_carry_i_5: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_l0_carry_i_17_n_0,
+      I1 => filtered_l0_carry_i_18_n_0,
+      O => filtered_l0_carry_i_5_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_l0_carry_i_50: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(1),
+      I1 => \filter_in_l_reg[6]_57\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[4]_59\(1),
+      O => filtered_l0_carry_i_50_n_0
+    );
+filtered_l0_carry_i_51: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(1),
+      I1 => \filter_in_l_reg[10]_53\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[8]_55\(1),
+      O => filtered_l0_carry_i_51_n_0
+    );
+filtered_l0_carry_i_52: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(1),
+      I1 => \filter_in_l_reg[14]_49\(1),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(1),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[12]_51\(1),
+      O => filtered_l0_carry_i_52_n_0
+    );
+filtered_l0_carry_i_53: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[3]_60\(0),
+      I1 => \filter_in_l_reg[2]_61\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[1]_62\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[0]_63\(0),
+      O => filtered_l0_carry_i_53_n_0
+    );
+filtered_l0_carry_i_54: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[7]_56\(0),
+      I1 => \filter_in_l_reg[6]_57\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[5]_58\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[4]_59\(0),
+      O => filtered_l0_carry_i_54_n_0
+    );
+filtered_l0_carry_i_55: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[11]_52\(0),
+      I1 => \filter_in_l_reg[10]_53\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[9]_54\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[8]_55\(0),
+      O => filtered_l0_carry_i_55_n_0
+    );
+filtered_l0_carry_i_56: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_l_reg[15]_48\(0),
+      I1 => \filter_in_l_reg[14]_49\(0),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_l_reg[13]_50\(0),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_l_reg[12]_51\(0),
+      O => filtered_l0_carry_i_56_n_0
+    );
+filtered_l0_carry_i_6: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_19_n_0,
+      I1 => filtered_l0_carry_i_20_n_0,
+      O => filtered_l0_carry_i_6_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_7: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_21_n_0,
+      I1 => filtered_l0_carry_i_22_n_0,
+      O => filtered_l0_carry_i_7_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_l0_carry_i_8: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_l0_carry_i_23_n_0,
+      I1 => filtered_l0_carry_i_24_n_0,
+      O => filtered_l0_carry_i_8_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_l0_carry_i_9: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_l0_carry_i_25_n_0,
+      I1 => filtered_l0_carry_i_26_n_0,
+      O => filtered_l0_carry_i_9_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
 \filtered_l[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
@@ -20157,474 +23993,6 @@ begin
       I1 => filtered_out_r,
       I2 => data1(11),
       O => filtered_l(11)
-    );
-\filtered_l[11]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(11),
-      I1 => \filter_in_l_reg[18]_45\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(11),
-      O => \filtered_l[11]_i_21_n_0\
-    );
-\filtered_l[11]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(11),
-      I1 => \filter_in_l_reg[22]_41\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(11),
-      O => \filtered_l[11]_i_22_n_0\
-    );
-\filtered_l[11]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(11),
-      I1 => \filter_in_l_reg[26]_37\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(11),
-      O => \filtered_l[11]_i_23_n_0\
-    );
-\filtered_l[11]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(11),
-      I1 => \filter_in_l_reg[30]_33\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(11),
-      O => \filtered_l[11]_i_24_n_0\
-    );
-\filtered_l[11]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(10),
-      I1 => \filter_in_l_reg[18]_45\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(10),
-      O => \filtered_l[11]_i_27_n_0\
-    );
-\filtered_l[11]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(10),
-      I1 => \filter_in_l_reg[22]_41\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(10),
-      O => \filtered_l[11]_i_28_n_0\
-    );
-\filtered_l[11]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(10),
-      I1 => \filter_in_l_reg[26]_37\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(10),
-      O => \filtered_l[11]_i_29_n_0\
-    );
-\filtered_l[11]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(5),
-      I1 => \filtered_l_reg[11]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[11]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[11]_i_9_n_0\,
-      O => \filtered_l[11]_i_3_n_0\
-    );
-\filtered_l[11]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(10),
-      I1 => \filter_in_l_reg[30]_33\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(10),
-      O => \filtered_l[11]_i_30_n_0\
-    );
-\filtered_l[11]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(9),
-      I1 => \filter_in_l_reg[18]_45\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(9),
-      O => \filtered_l[11]_i_33_n_0\
-    );
-\filtered_l[11]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(9),
-      I1 => \filter_in_l_reg[22]_41\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(9),
-      O => \filtered_l[11]_i_34_n_0\
-    );
-\filtered_l[11]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(9),
-      I1 => \filter_in_l_reg[26]_37\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(9),
-      O => \filtered_l[11]_i_35_n_0\
-    );
-\filtered_l[11]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(9),
-      I1 => \filter_in_l_reg[30]_33\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(9),
-      O => \filtered_l[11]_i_36_n_0\
-    );
-\filtered_l[11]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(8),
-      I1 => \filter_in_l_reg[18]_45\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(8),
-      O => \filtered_l[11]_i_39_n_0\
-    );
-\filtered_l[11]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(4),
-      I1 => \filtered_l_reg[11]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[11]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[11]_i_12_n_0\,
-      O => \filtered_l[11]_i_4_n_0\
-    );
-\filtered_l[11]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(8),
-      I1 => \filter_in_l_reg[22]_41\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(8),
-      O => \filtered_l[11]_i_40_n_0\
-    );
-\filtered_l[11]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(8),
-      I1 => \filter_in_l_reg[26]_37\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(8),
-      O => \filtered_l[11]_i_41_n_0\
-    );
-\filtered_l[11]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(8),
-      I1 => \filter_in_l_reg[30]_33\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(8),
-      O => \filtered_l[11]_i_42_n_0\
-    );
-\filtered_l[11]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(11),
-      I1 => \filter_in_l_reg[2]_61\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(11),
-      O => \filtered_l[11]_i_43_n_0\
-    );
-\filtered_l[11]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(11),
-      I1 => \filter_in_l_reg[6]_57\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(11),
-      O => \filtered_l[11]_i_44_n_0\
-    );
-\filtered_l[11]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(11),
-      I1 => \filter_in_l_reg[10]_53\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(11),
-      O => \filtered_l[11]_i_45_n_0\
-    );
-\filtered_l[11]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(11),
-      I1 => \filter_in_l_reg[14]_49\(11),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(11),
-      O => \filtered_l[11]_i_46_n_0\
-    );
-\filtered_l[11]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(10),
-      I1 => \filter_in_l_reg[2]_61\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(10),
-      O => \filtered_l[11]_i_47_n_0\
-    );
-\filtered_l[11]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(10),
-      I1 => \filter_in_l_reg[6]_57\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(10),
-      O => \filtered_l[11]_i_48_n_0\
-    );
-\filtered_l[11]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(10),
-      I1 => \filter_in_l_reg[10]_53\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(10),
-      O => \filtered_l[11]_i_49_n_0\
-    );
-\filtered_l[11]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(3),
-      I1 => \filtered_l_reg[11]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[11]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[11]_i_15_n_0\,
-      O => \filtered_l[11]_i_5_n_0\
-    );
-\filtered_l[11]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(10),
-      I1 => \filter_in_l_reg[14]_49\(10),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(10),
-      O => \filtered_l[11]_i_50_n_0\
-    );
-\filtered_l[11]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(9),
-      I1 => \filter_in_l_reg[2]_61\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(9),
-      O => \filtered_l[11]_i_51_n_0\
-    );
-\filtered_l[11]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(9),
-      I1 => \filter_in_l_reg[6]_57\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(9),
-      O => \filtered_l[11]_i_52_n_0\
-    );
-\filtered_l[11]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(9),
-      I1 => \filter_in_l_reg[10]_53\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(9),
-      O => \filtered_l[11]_i_53_n_0\
-    );
-\filtered_l[11]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(9),
-      I1 => \filter_in_l_reg[14]_49\(9),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(9),
-      O => \filtered_l[11]_i_54_n_0\
-    );
-\filtered_l[11]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(8),
-      I1 => \filter_in_l_reg[2]_61\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(8),
-      O => \filtered_l[11]_i_55_n_0\
-    );
-\filtered_l[11]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(8),
-      I1 => \filter_in_l_reg[6]_57\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(8),
-      O => \filtered_l[11]_i_56_n_0\
-    );
-\filtered_l[11]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(8),
-      I1 => \filter_in_l_reg[10]_53\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(8),
-      O => \filtered_l[11]_i_57_n_0\
-    );
-\filtered_l[11]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(8),
-      I1 => \filter_in_l_reg[14]_49\(8),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(8),
-      O => \filtered_l[11]_i_58_n_0\
-    );
-\filtered_l[11]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(2),
-      I1 => \filtered_l_reg[11]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[11]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[11]_i_18_n_0\,
-      O => \filtered_l[11]_i_6_n_0\
     );
 \filtered_l[12]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -20666,474 +24034,6 @@ begin
       I2 => data1(15),
       O => filtered_l(15)
     );
-\filtered_l[15]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(15),
-      I1 => \filter_in_l_reg[18]_45\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(15),
-      O => \filtered_l[15]_i_21_n_0\
-    );
-\filtered_l[15]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(15),
-      I1 => \filter_in_l_reg[22]_41\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(15),
-      O => \filtered_l[15]_i_22_n_0\
-    );
-\filtered_l[15]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(15),
-      I1 => \filter_in_l_reg[26]_37\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(15),
-      O => \filtered_l[15]_i_23_n_0\
-    );
-\filtered_l[15]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(15),
-      I1 => \filter_in_l_reg[30]_33\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(15),
-      O => \filtered_l[15]_i_24_n_0\
-    );
-\filtered_l[15]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(14),
-      I1 => \filter_in_l_reg[18]_45\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(14),
-      O => \filtered_l[15]_i_27_n_0\
-    );
-\filtered_l[15]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(14),
-      I1 => \filter_in_l_reg[22]_41\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(14),
-      O => \filtered_l[15]_i_28_n_0\
-    );
-\filtered_l[15]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(14),
-      I1 => \filter_in_l_reg[26]_37\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(14),
-      O => \filtered_l[15]_i_29_n_0\
-    );
-\filtered_l[15]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(9),
-      I1 => \filtered_l_reg[15]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[15]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[15]_i_9_n_0\,
-      O => \filtered_l[15]_i_3_n_0\
-    );
-\filtered_l[15]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(14),
-      I1 => \filter_in_l_reg[30]_33\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(14),
-      O => \filtered_l[15]_i_30_n_0\
-    );
-\filtered_l[15]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(13),
-      I1 => \filter_in_l_reg[18]_45\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(13),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(13),
-      O => \filtered_l[15]_i_33_n_0\
-    );
-\filtered_l[15]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(13),
-      I1 => \filter_in_l_reg[22]_41\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(13),
-      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(13),
-      O => \filtered_l[15]_i_34_n_0\
-    );
-\filtered_l[15]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(13),
-      I1 => \filter_in_l_reg[26]_37\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(13),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(13),
-      O => \filtered_l[15]_i_35_n_0\
-    );
-\filtered_l[15]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(13),
-      I1 => \filter_in_l_reg[30]_33\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(13),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(13),
-      O => \filtered_l[15]_i_36_n_0\
-    );
-\filtered_l[15]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(12),
-      I1 => \filter_in_l_reg[18]_45\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(12),
-      O => \filtered_l[15]_i_39_n_0\
-    );
-\filtered_l[15]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(8),
-      I1 => \filtered_l_reg[15]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[15]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[15]_i_12_n_0\,
-      O => \filtered_l[15]_i_4_n_0\
-    );
-\filtered_l[15]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(12),
-      I1 => \filter_in_l_reg[22]_41\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(12),
-      O => \filtered_l[15]_i_40_n_0\
-    );
-\filtered_l[15]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(12),
-      I1 => \filter_in_l_reg[26]_37\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(12),
-      O => \filtered_l[15]_i_41_n_0\
-    );
-\filtered_l[15]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(12),
-      I1 => \filter_in_l_reg[30]_33\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(12),
-      O => \filtered_l[15]_i_42_n_0\
-    );
-\filtered_l[15]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(15),
-      I1 => \filter_in_l_reg[2]_61\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(15),
-      O => \filtered_l[15]_i_43_n_0\
-    );
-\filtered_l[15]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(15),
-      I1 => \filter_in_l_reg[6]_57\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(15),
-      O => \filtered_l[15]_i_44_n_0\
-    );
-\filtered_l[15]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(15),
-      I1 => \filter_in_l_reg[10]_53\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(15),
-      O => \filtered_l[15]_i_45_n_0\
-    );
-\filtered_l[15]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(15),
-      I1 => \filter_in_l_reg[14]_49\(15),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(15),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(15),
-      O => \filtered_l[15]_i_46_n_0\
-    );
-\filtered_l[15]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(14),
-      I1 => \filter_in_l_reg[2]_61\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(14),
-      O => \filtered_l[15]_i_47_n_0\
-    );
-\filtered_l[15]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(14),
-      I1 => \filter_in_l_reg[6]_57\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(14),
-      O => \filtered_l[15]_i_48_n_0\
-    );
-\filtered_l[15]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(14),
-      I1 => \filter_in_l_reg[10]_53\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(14),
-      O => \filtered_l[15]_i_49_n_0\
-    );
-\filtered_l[15]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(7),
-      I1 => \filtered_l_reg[15]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[15]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[15]_i_15_n_0\,
-      O => \filtered_l[15]_i_5_n_0\
-    );
-\filtered_l[15]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(14),
-      I1 => \filter_in_l_reg[14]_49\(14),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(14),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(14),
-      O => \filtered_l[15]_i_50_n_0\
-    );
-\filtered_l[15]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(13),
-      I1 => \filter_in_l_reg[2]_61\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(13),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(13),
-      O => \filtered_l[15]_i_51_n_0\
-    );
-\filtered_l[15]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(13),
-      I1 => \filter_in_l_reg[6]_57\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(13),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(13),
-      O => \filtered_l[15]_i_52_n_0\
-    );
-\filtered_l[15]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(13),
-      I1 => \filter_in_l_reg[10]_53\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(13),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(13),
-      O => \filtered_l[15]_i_53_n_0\
-    );
-\filtered_l[15]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(13),
-      I1 => \filter_in_l_reg[14]_49\(13),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(13),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(13),
-      O => \filtered_l[15]_i_54_n_0\
-    );
-\filtered_l[15]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(12),
-      I1 => \filter_in_l_reg[2]_61\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(12),
-      O => \filtered_l[15]_i_55_n_0\
-    );
-\filtered_l[15]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(12),
-      I1 => \filter_in_l_reg[6]_57\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(12),
-      O => \filtered_l[15]_i_56_n_0\
-    );
-\filtered_l[15]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(12),
-      I1 => \filter_in_l_reg[10]_53\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(12),
-      O => \filtered_l[15]_i_57_n_0\
-    );
-\filtered_l[15]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(12),
-      I1 => \filter_in_l_reg[14]_49\(12),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(12),
-      O => \filtered_l[15]_i_58_n_0\
-    );
-\filtered_l[15]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(6),
-      I1 => \filtered_l_reg[15]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[15]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[15]_i_18_n_0\,
-      O => \filtered_l[15]_i_6_n_0\
-    );
 \filtered_l[16]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
@@ -21173,474 +24073,6 @@ begin
       I1 => filtered_out_r,
       I2 => data1(19),
       O => filtered_l(19)
-    );
-\filtered_l[19]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(19),
-      I1 => \filter_in_l_reg[18]_45\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(19),
-      O => \filtered_l[19]_i_21_n_0\
-    );
-\filtered_l[19]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(19),
-      I1 => \filter_in_l_reg[22]_41\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(19),
-      O => \filtered_l[19]_i_22_n_0\
-    );
-\filtered_l[19]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(19),
-      I1 => \filter_in_l_reg[26]_37\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(19),
-      O => \filtered_l[19]_i_23_n_0\
-    );
-\filtered_l[19]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(19),
-      I1 => \filter_in_l_reg[30]_33\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(19),
-      O => \filtered_l[19]_i_24_n_0\
-    );
-\filtered_l[19]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(18),
-      I1 => \filter_in_l_reg[18]_45\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(18),
-      O => \filtered_l[19]_i_27_n_0\
-    );
-\filtered_l[19]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(18),
-      I1 => \filter_in_l_reg[22]_41\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(18),
-      O => \filtered_l[19]_i_28_n_0\
-    );
-\filtered_l[19]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(18),
-      I1 => \filter_in_l_reg[26]_37\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(18),
-      O => \filtered_l[19]_i_29_n_0\
-    );
-\filtered_l[19]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(13),
-      I1 => \filtered_l_reg[19]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[19]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[19]_i_9_n_0\,
-      O => \filtered_l[19]_i_3_n_0\
-    );
-\filtered_l[19]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(18),
-      I1 => \filter_in_l_reg[30]_33\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(18),
-      O => \filtered_l[19]_i_30_n_0\
-    );
-\filtered_l[19]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(17),
-      I1 => \filter_in_l_reg[18]_45\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(17),
-      O => \filtered_l[19]_i_33_n_0\
-    );
-\filtered_l[19]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(17),
-      I1 => \filter_in_l_reg[22]_41\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(17),
-      O => \filtered_l[19]_i_34_n_0\
-    );
-\filtered_l[19]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(17),
-      I1 => \filter_in_l_reg[26]_37\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(17),
-      O => \filtered_l[19]_i_35_n_0\
-    );
-\filtered_l[19]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(17),
-      I1 => \filter_in_l_reg[30]_33\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(17),
-      O => \filtered_l[19]_i_36_n_0\
-    );
-\filtered_l[19]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(16),
-      I1 => \filter_in_l_reg[18]_45\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(16),
-      O => \filtered_l[19]_i_39_n_0\
-    );
-\filtered_l[19]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(12),
-      I1 => \filtered_l_reg[19]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[19]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[19]_i_12_n_0\,
-      O => \filtered_l[19]_i_4_n_0\
-    );
-\filtered_l[19]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(16),
-      I1 => \filter_in_l_reg[22]_41\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(16),
-      O => \filtered_l[19]_i_40_n_0\
-    );
-\filtered_l[19]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(16),
-      I1 => \filter_in_l_reg[26]_37\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(16),
-      O => \filtered_l[19]_i_41_n_0\
-    );
-\filtered_l[19]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(16),
-      I1 => \filter_in_l_reg[30]_33\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(16),
-      O => \filtered_l[19]_i_42_n_0\
-    );
-\filtered_l[19]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(19),
-      I1 => \filter_in_l_reg[2]_61\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(19),
-      O => \filtered_l[19]_i_43_n_0\
-    );
-\filtered_l[19]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(19),
-      I1 => \filter_in_l_reg[6]_57\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(19),
-      O => \filtered_l[19]_i_44_n_0\
-    );
-\filtered_l[19]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(19),
-      I1 => \filter_in_l_reg[10]_53\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(19),
-      O => \filtered_l[19]_i_45_n_0\
-    );
-\filtered_l[19]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(19),
-      I1 => \filter_in_l_reg[14]_49\(19),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(19),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(19),
-      O => \filtered_l[19]_i_46_n_0\
-    );
-\filtered_l[19]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(18),
-      I1 => \filter_in_l_reg[2]_61\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(18),
-      O => \filtered_l[19]_i_47_n_0\
-    );
-\filtered_l[19]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(18),
-      I1 => \filter_in_l_reg[6]_57\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(18),
-      O => \filtered_l[19]_i_48_n_0\
-    );
-\filtered_l[19]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(18),
-      I1 => \filter_in_l_reg[10]_53\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(18),
-      O => \filtered_l[19]_i_49_n_0\
-    );
-\filtered_l[19]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(11),
-      I1 => \filtered_l_reg[19]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[19]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[19]_i_15_n_0\,
-      O => \filtered_l[19]_i_5_n_0\
-    );
-\filtered_l[19]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(18),
-      I1 => \filter_in_l_reg[14]_49\(18),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(18),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(18),
-      O => \filtered_l[19]_i_50_n_0\
-    );
-\filtered_l[19]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(17),
-      I1 => \filter_in_l_reg[2]_61\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(17),
-      O => \filtered_l[19]_i_51_n_0\
-    );
-\filtered_l[19]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(17),
-      I1 => \filter_in_l_reg[6]_57\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(17),
-      O => \filtered_l[19]_i_52_n_0\
-    );
-\filtered_l[19]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(17),
-      I1 => \filter_in_l_reg[10]_53\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(17),
-      O => \filtered_l[19]_i_53_n_0\
-    );
-\filtered_l[19]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(17),
-      I1 => \filter_in_l_reg[14]_49\(17),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(17),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(17),
-      O => \filtered_l[19]_i_54_n_0\
-    );
-\filtered_l[19]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(16),
-      I1 => \filter_in_l_reg[2]_61\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(16),
-      O => \filtered_l[19]_i_55_n_0\
-    );
-\filtered_l[19]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(16),
-      I1 => \filter_in_l_reg[6]_57\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(16),
-      O => \filtered_l[19]_i_56_n_0\
-    );
-\filtered_l[19]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(16),
-      I1 => \filter_in_l_reg[10]_53\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(16),
-      O => \filtered_l[19]_i_57_n_0\
-    );
-\filtered_l[19]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(16),
-      I1 => \filter_in_l_reg[14]_49\(16),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(16),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(16),
-      O => \filtered_l[19]_i_58_n_0\
-    );
-\filtered_l[19]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(10),
-      I1 => \filtered_l_reg[19]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[19]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[19]_i_18_n_0\,
-      O => \filtered_l[19]_i_6_n_0\
     );
 \filtered_l[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -21682,483 +24114,18 @@ begin
       I2 => data1(22),
       O => filtered_l(22)
     );
-\filtered_l[23]_i_1\: unisim.vcomponents.LUT3
+\filtered_l[23]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"B8"
+      INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filter_in_l_reg[0]_63\(23),
-      I1 => filtered_out_r,
-      I2 => data1(23),
-      O => filtered_l(23)
-    );
-\filtered_l[23]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(23),
-      I1 => \filter_in_l_reg[18]_45\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(23),
-      O => \filtered_l[23]_i_21_n_0\
-    );
-\filtered_l[23]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(23),
-      I1 => \filter_in_l_reg[22]_41\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(23),
-      O => \filtered_l[23]_i_22_n_0\
-    );
-\filtered_l[23]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(23),
-      I1 => \filter_in_l_reg[26]_37\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(23),
-      O => \filtered_l[23]_i_23_n_0\
-    );
-\filtered_l[23]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(23),
-      I1 => \filter_in_l_reg[30]_33\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(23),
-      O => \filtered_l[23]_i_24_n_0\
-    );
-\filtered_l[23]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(22),
-      I1 => \filter_in_l_reg[18]_45\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(22),
-      O => \filtered_l[23]_i_27_n_0\
-    );
-\filtered_l[23]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(22),
-      I1 => \filter_in_l_reg[22]_41\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(22),
-      O => \filtered_l[23]_i_28_n_0\
-    );
-\filtered_l[23]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(22),
-      I1 => \filter_in_l_reg[26]_37\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(22),
-      O => \filtered_l[23]_i_29_n_0\
-    );
-\filtered_l[23]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(17),
-      I1 => \filtered_l_reg[23]_i_7_n_0\,
+      I0 => data1(23),
+      I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[23]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[23]_i_9_n_0\,
-      O => \filtered_l[23]_i_3_n_0\
-    );
-\filtered_l[23]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(22),
-      I1 => \filter_in_l_reg[30]_33\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(22),
-      O => \filtered_l[23]_i_30_n_0\
-    );
-\filtered_l[23]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(21),
-      I1 => \filter_in_l_reg[18]_45\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(21),
-      O => \filtered_l[23]_i_33_n_0\
-    );
-\filtered_l[23]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(21),
-      I1 => \filter_in_l_reg[22]_41\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(21),
-      O => \filtered_l[23]_i_34_n_0\
-    );
-\filtered_l[23]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(21),
-      I1 => \filter_in_l_reg[26]_37\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(21),
-      O => \filtered_l[23]_i_35_n_0\
-    );
-\filtered_l[23]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(21),
-      I1 => \filter_in_l_reg[30]_33\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(21),
-      O => \filtered_l[23]_i_36_n_0\
-    );
-\filtered_l[23]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(20),
-      I1 => \filter_in_l_reg[18]_45\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[16]_47\(20),
-      O => \filtered_l[23]_i_39_n_0\
-    );
-\filtered_l[23]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(16),
-      I1 => \filtered_l_reg[23]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[23]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[23]_i_12_n_0\,
-      O => \filtered_l[23]_i_4_n_0\
-    );
-\filtered_l[23]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(20),
-      I1 => \filter_in_l_reg[22]_41\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[20]_43\(20),
-      O => \filtered_l[23]_i_40_n_0\
-    );
-\filtered_l[23]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(20),
-      I1 => \filter_in_l_reg[26]_37\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[24]_39\(20),
-      O => \filtered_l[23]_i_41_n_0\
-    );
-\filtered_l[23]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(20),
-      I1 => \filter_in_l_reg[30]_33\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[28]_35\(20),
-      O => \filtered_l[23]_i_42_n_0\
-    );
-\filtered_l[23]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(23),
-      I1 => \filter_in_l_reg[2]_61\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(23),
-      O => \filtered_l[23]_i_43_n_0\
-    );
-\filtered_l[23]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(23),
-      I1 => \filter_in_l_reg[6]_57\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(23),
-      O => \filtered_l[23]_i_44_n_0\
-    );
-\filtered_l[23]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(23),
-      I1 => \filter_in_l_reg[10]_53\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(23),
-      O => \filtered_l[23]_i_45_n_0\
-    );
-\filtered_l[23]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(23),
-      I1 => \filter_in_l_reg[14]_49\(23),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(23),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(23),
-      O => \filtered_l[23]_i_46_n_0\
-    );
-\filtered_l[23]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(22),
-      I1 => \filter_in_l_reg[2]_61\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(22),
-      O => \filtered_l[23]_i_47_n_0\
-    );
-\filtered_l[23]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(22),
-      I1 => \filter_in_l_reg[6]_57\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(22),
-      O => \filtered_l[23]_i_48_n_0\
-    );
-\filtered_l[23]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(22),
-      I1 => \filter_in_l_reg[10]_53\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(22),
-      O => \filtered_l[23]_i_49_n_0\
-    );
-\filtered_l[23]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(15),
-      I1 => \filtered_l_reg[23]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[23]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[23]_i_15_n_0\,
-      O => \filtered_l[23]_i_5_n_0\
-    );
-\filtered_l[23]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(22),
-      I1 => \filter_in_l_reg[14]_49\(22),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(22),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(22),
-      O => \filtered_l[23]_i_50_n_0\
-    );
-\filtered_l[23]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(21),
-      I1 => \filter_in_l_reg[2]_61\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(21),
-      O => \filtered_l[23]_i_51_n_0\
-    );
-\filtered_l[23]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(21),
-      I1 => \filter_in_l_reg[6]_57\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(21),
-      O => \filtered_l[23]_i_52_n_0\
-    );
-\filtered_l[23]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(21),
-      I1 => \filter_in_l_reg[10]_53\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(21),
-      O => \filtered_l[23]_i_53_n_0\
-    );
-\filtered_l[23]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(21),
-      I1 => \filter_in_l_reg[14]_49\(21),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(21),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(21),
-      O => \filtered_l[23]_i_54_n_0\
-    );
-\filtered_l[23]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(20),
-      I1 => \filter_in_l_reg[2]_61\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(20),
-      O => \filtered_l[23]_i_55_n_0\
-    );
-\filtered_l[23]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(20),
-      I1 => \filter_in_l_reg[6]_57\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(20),
-      O => \filtered_l[23]_i_56_n_0\
-    );
-\filtered_l[23]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(20),
-      I1 => \filter_in_l_reg[10]_53\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(20),
-      O => \filtered_l[23]_i_57_n_0\
-    );
-\filtered_l[23]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(20),
-      I1 => \filter_in_l_reg[14]_49\(20),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(20),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(20),
-      O => \filtered_l[23]_i_58_n_0\
-    );
-\filtered_l[23]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(14),
-      I1 => \filtered_l_reg[23]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[23]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[23]_i_18_n_0\,
-      O => \filtered_l[23]_i_6_n_0\
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I5 => ring_buffer_read_reg(3),
+      O => \filtered_l[23]_i_1_n_0\
     );
 \filtered_l[24]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -22168,7 +24135,7 @@ begin
       I0 => data1(24),
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_l[24]_i_1_n_0\
@@ -22181,7 +24148,7 @@ begin
       I0 => data1(25),
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_l[25]_i_1_n_0\
@@ -22194,7 +24161,7 @@ begin
       I0 => data1(26),
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_l[26]_i_1_n_0\
@@ -22207,7 +24174,7 @@ begin
       I0 => data1(27),
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_l[27]_i_1_n_0\
@@ -22220,23 +24187,10 @@ begin
       I0 => data1(28),
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_l[28]_i_1_n_0\
-    );
-\filtered_l[29]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAAAAAAAAAAA8"
-    )
-        port map (
-      I0 => data1(29),
-      I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
-      I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I5 => ring_buffer_read_reg(3),
-      O => \filtered_l[29]_i_1_n_0\
     );
 \filtered_l[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -22257,474 +24211,6 @@ begin
       I1 => filtered_out_r,
       I2 => data1(3),
       O => filtered_l(3)
-    );
-\filtered_l[3]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(3),
-      I1 => \filter_in_l_reg[18]_45\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(3),
-      O => \filtered_l[3]_i_21_n_0\
-    );
-\filtered_l[3]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(3),
-      I1 => \filter_in_l_reg[22]_41\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(3),
-      O => \filtered_l[3]_i_22_n_0\
-    );
-\filtered_l[3]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(3),
-      I1 => \filter_in_l_reg[26]_37\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(3),
-      O => \filtered_l[3]_i_23_n_0\
-    );
-\filtered_l[3]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(3),
-      I1 => \filter_in_l_reg[30]_33\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(3),
-      O => \filtered_l[3]_i_24_n_0\
-    );
-\filtered_l[3]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(2),
-      I1 => \filter_in_l_reg[18]_45\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(2),
-      O => \filtered_l[3]_i_27_n_0\
-    );
-\filtered_l[3]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(2),
-      I1 => \filter_in_l_reg[22]_41\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(2),
-      O => \filtered_l[3]_i_28_n_0\
-    );
-\filtered_l[3]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(2),
-      I1 => \filter_in_l_reg[26]_37\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(2),
-      O => \filtered_l[3]_i_29_n_0\
-    );
-\filtered_l[3]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_l_reg_n_0_[3]\,
-      I1 => \filtered_l_reg[3]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[3]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[3]_i_9_n_0\,
-      O => \filtered_l[3]_i_3_n_0\
-    );
-\filtered_l[3]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(2),
-      I1 => \filter_in_l_reg[30]_33\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(2),
-      O => \filtered_l[3]_i_30_n_0\
-    );
-\filtered_l[3]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(1),
-      I1 => \filter_in_l_reg[18]_45\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(1),
-      O => \filtered_l[3]_i_33_n_0\
-    );
-\filtered_l[3]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(1),
-      I1 => \filter_in_l_reg[22]_41\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(1),
-      O => \filtered_l[3]_i_34_n_0\
-    );
-\filtered_l[3]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(1),
-      I1 => \filter_in_l_reg[26]_37\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(1),
-      O => \filtered_l[3]_i_35_n_0\
-    );
-\filtered_l[3]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(1),
-      I1 => \filter_in_l_reg[30]_33\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(1),
-      O => \filtered_l[3]_i_36_n_0\
-    );
-\filtered_l[3]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(0),
-      I1 => \filter_in_l_reg[18]_45\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(0),
-      O => \filtered_l[3]_i_39_n_0\
-    );
-\filtered_l[3]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_l_reg_n_0_[2]\,
-      I1 => \filtered_l_reg[3]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[3]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[3]_i_12_n_0\,
-      O => \filtered_l[3]_i_4_n_0\
-    );
-\filtered_l[3]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(0),
-      I1 => \filter_in_l_reg[22]_41\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(0),
-      O => \filtered_l[3]_i_40_n_0\
-    );
-\filtered_l[3]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(0),
-      I1 => \filter_in_l_reg[26]_37\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(0),
-      O => \filtered_l[3]_i_41_n_0\
-    );
-\filtered_l[3]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(0),
-      I1 => \filter_in_l_reg[30]_33\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(0),
-      O => \filtered_l[3]_i_42_n_0\
-    );
-\filtered_l[3]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(3),
-      I1 => \filter_in_l_reg[2]_61\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(3),
-      O => \filtered_l[3]_i_43_n_0\
-    );
-\filtered_l[3]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(3),
-      I1 => \filter_in_l_reg[6]_57\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(3),
-      O => \filtered_l[3]_i_44_n_0\
-    );
-\filtered_l[3]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(3),
-      I1 => \filter_in_l_reg[10]_53\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(3),
-      O => \filtered_l[3]_i_45_n_0\
-    );
-\filtered_l[3]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(3),
-      I1 => \filter_in_l_reg[14]_49\(3),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(3),
-      O => \filtered_l[3]_i_46_n_0\
-    );
-\filtered_l[3]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(2),
-      I1 => \filter_in_l_reg[2]_61\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(2),
-      O => \filtered_l[3]_i_47_n_0\
-    );
-\filtered_l[3]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(2),
-      I1 => \filter_in_l_reg[6]_57\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(2),
-      O => \filtered_l[3]_i_48_n_0\
-    );
-\filtered_l[3]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(2),
-      I1 => \filter_in_l_reg[10]_53\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(2),
-      O => \filtered_l[3]_i_49_n_0\
-    );
-\filtered_l[3]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_l_reg_n_0_[1]\,
-      I1 => \filtered_l_reg[3]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[3]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[3]_i_15_n_0\,
-      O => \filtered_l[3]_i_5_n_0\
-    );
-\filtered_l[3]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(2),
-      I1 => \filter_in_l_reg[14]_49\(2),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(2),
-      O => \filtered_l[3]_i_50_n_0\
-    );
-\filtered_l[3]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(1),
-      I1 => \filter_in_l_reg[2]_61\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(1),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[0]_63\(1),
-      O => \filtered_l[3]_i_51_n_0\
-    );
-\filtered_l[3]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(1),
-      I1 => \filter_in_l_reg[6]_57\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(1),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[4]_59\(1),
-      O => \filtered_l[3]_i_52_n_0\
-    );
-\filtered_l[3]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(1),
-      I1 => \filter_in_l_reg[10]_53\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(1),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[8]_55\(1),
-      O => \filtered_l[3]_i_53_n_0\
-    );
-\filtered_l[3]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(1),
-      I1 => \filter_in_l_reg[14]_49\(1),
-      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(1),
-      I4 => ring_buffer_read_reg(0),
-      I5 => \filter_in_l_reg[12]_51\(1),
-      O => \filtered_l[3]_i_54_n_0\
-    );
-\filtered_l[3]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(0),
-      I1 => \filter_in_l_reg[2]_61\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(0),
-      O => \filtered_l[3]_i_55_n_0\
-    );
-\filtered_l[3]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(0),
-      I1 => \filter_in_l_reg[6]_57\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(0),
-      O => \filtered_l[3]_i_56_n_0\
-    );
-\filtered_l[3]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(0),
-      I1 => \filter_in_l_reg[10]_53\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(0),
-      O => \filtered_l[3]_i_57_n_0\
-    );
-\filtered_l[3]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(0),
-      I1 => \filter_in_l_reg[14]_49\(0),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(0),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(0),
-      O => \filtered_l[3]_i_58_n_0\
-    );
-\filtered_l[3]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_l_reg_n_0_[0]\,
-      I1 => \filtered_l_reg[3]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[3]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[3]_i_18_n_0\,
-      O => \filtered_l[3]_i_6_n_0\
     );
 \filtered_l[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -22766,474 +24252,6 @@ begin
       I2 => data1(7),
       O => filtered_l(7)
     );
-\filtered_l[7]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(7),
-      I1 => \filter_in_l_reg[18]_45\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(7),
-      O => \filtered_l[7]_i_21_n_0\
-    );
-\filtered_l[7]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(7),
-      I1 => \filter_in_l_reg[22]_41\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(7),
-      O => \filtered_l[7]_i_22_n_0\
-    );
-\filtered_l[7]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(7),
-      I1 => \filter_in_l_reg[26]_37\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(7),
-      O => \filtered_l[7]_i_23_n_0\
-    );
-\filtered_l[7]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(7),
-      I1 => \filter_in_l_reg[30]_33\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(7),
-      O => \filtered_l[7]_i_24_n_0\
-    );
-\filtered_l[7]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(6),
-      I1 => \filter_in_l_reg[18]_45\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(6),
-      O => \filtered_l[7]_i_27_n_0\
-    );
-\filtered_l[7]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(6),
-      I1 => \filter_in_l_reg[22]_41\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(6),
-      O => \filtered_l[7]_i_28_n_0\
-    );
-\filtered_l[7]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(6),
-      I1 => \filter_in_l_reg[26]_37\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(6),
-      O => \filtered_l[7]_i_29_n_0\
-    );
-\filtered_l[7]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(1),
-      I1 => \filtered_l_reg[7]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[7]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[7]_i_9_n_0\,
-      O => \filtered_l[7]_i_3_n_0\
-    );
-\filtered_l[7]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(6),
-      I1 => \filter_in_l_reg[30]_33\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(6),
-      O => \filtered_l[7]_i_30_n_0\
-    );
-\filtered_l[7]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(5),
-      I1 => \filter_in_l_reg[18]_45\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(5),
-      O => \filtered_l[7]_i_33_n_0\
-    );
-\filtered_l[7]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(5),
-      I1 => \filter_in_l_reg[22]_41\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(5),
-      O => \filtered_l[7]_i_34_n_0\
-    );
-\filtered_l[7]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(5),
-      I1 => \filter_in_l_reg[26]_37\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(5),
-      O => \filtered_l[7]_i_35_n_0\
-    );
-\filtered_l[7]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(5),
-      I1 => \filter_in_l_reg[30]_33\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(5),
-      O => \filtered_l[7]_i_36_n_0\
-    );
-\filtered_l[7]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[19]_44\(4),
-      I1 => \filter_in_l_reg[18]_45\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[17]_46\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[16]_47\(4),
-      O => \filtered_l[7]_i_39_n_0\
-    );
-\filtered_l[7]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => p_0_in(0),
-      I1 => \filtered_l_reg[7]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[7]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[7]_i_12_n_0\,
-      O => \filtered_l[7]_i_4_n_0\
-    );
-\filtered_l[7]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[23]_40\(4),
-      I1 => \filter_in_l_reg[22]_41\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[21]_42\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[20]_43\(4),
-      O => \filtered_l[7]_i_40_n_0\
-    );
-\filtered_l[7]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[27]_36\(4),
-      I1 => \filter_in_l_reg[26]_37\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[25]_38\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[24]_39\(4),
-      O => \filtered_l[7]_i_41_n_0\
-    );
-\filtered_l[7]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[31]_32\(4),
-      I1 => \filter_in_l_reg[30]_33\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[29]_34\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[28]_35\(4),
-      O => \filtered_l[7]_i_42_n_0\
-    );
-\filtered_l[7]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(7),
-      I1 => \filter_in_l_reg[2]_61\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(7),
-      O => \filtered_l[7]_i_43_n_0\
-    );
-\filtered_l[7]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(7),
-      I1 => \filter_in_l_reg[6]_57\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(7),
-      O => \filtered_l[7]_i_44_n_0\
-    );
-\filtered_l[7]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(7),
-      I1 => \filter_in_l_reg[10]_53\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(7),
-      O => \filtered_l[7]_i_45_n_0\
-    );
-\filtered_l[7]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(7),
-      I1 => \filter_in_l_reg[14]_49\(7),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(7),
-      O => \filtered_l[7]_i_46_n_0\
-    );
-\filtered_l[7]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(6),
-      I1 => \filter_in_l_reg[2]_61\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(6),
-      O => \filtered_l[7]_i_47_n_0\
-    );
-\filtered_l[7]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(6),
-      I1 => \filter_in_l_reg[6]_57\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(6),
-      O => \filtered_l[7]_i_48_n_0\
-    );
-\filtered_l[7]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(6),
-      I1 => \filter_in_l_reg[10]_53\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(6),
-      O => \filtered_l[7]_i_49_n_0\
-    );
-\filtered_l[7]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_l_reg_n_0_[5]\,
-      I1 => \filtered_l_reg[7]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[7]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[7]_i_15_n_0\,
-      O => \filtered_l[7]_i_5_n_0\
-    );
-\filtered_l[7]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(6),
-      I1 => \filter_in_l_reg[14]_49\(6),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(6),
-      O => \filtered_l[7]_i_50_n_0\
-    );
-\filtered_l[7]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(5),
-      I1 => \filter_in_l_reg[2]_61\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(5),
-      O => \filtered_l[7]_i_51_n_0\
-    );
-\filtered_l[7]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(5),
-      I1 => \filter_in_l_reg[6]_57\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(5),
-      O => \filtered_l[7]_i_52_n_0\
-    );
-\filtered_l[7]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(5),
-      I1 => \filter_in_l_reg[10]_53\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(5),
-      O => \filtered_l[7]_i_53_n_0\
-    );
-\filtered_l[7]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(5),
-      I1 => \filter_in_l_reg[14]_49\(5),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(5),
-      O => \filtered_l[7]_i_54_n_0\
-    );
-\filtered_l[7]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[3]_60\(4),
-      I1 => \filter_in_l_reg[2]_61\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[1]_62\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[0]_63\(4),
-      O => \filtered_l[7]_i_55_n_0\
-    );
-\filtered_l[7]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[7]_56\(4),
-      I1 => \filter_in_l_reg[6]_57\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[5]_58\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[4]_59\(4),
-      O => \filtered_l[7]_i_56_n_0\
-    );
-\filtered_l[7]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[11]_52\(4),
-      I1 => \filter_in_l_reg[10]_53\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[9]_54\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[8]_55\(4),
-      O => \filtered_l[7]_i_57_n_0\
-    );
-\filtered_l[7]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_l_reg[15]_48\(4),
-      I1 => \filter_in_l_reg[14]_49\(4),
-      I2 => \ring_buffer_read_reg[1]_rep__1_n_0\,
-      I3 => \filter_in_l_reg[13]_50\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
-      I5 => \filter_in_l_reg[12]_51\(4),
-      O => \filtered_l[7]_i_58_n_0\
-    );
-\filtered_l[7]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_l_reg_n_0_[4]\,
-      I1 => \filtered_l_reg[7]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_l_reg[7]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_l_reg[7]_i_18_n_0\,
-      O => \filtered_l[7]_i_6_n_0\
-    );
 \filtered_l[8]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
@@ -23274,7 +24292,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(10),
-      Q => p_0_in(4)
+      Q => p_0_in(5)
     );
 \filtered_l_reg[11]\: unisim.vcomponents.FDCE
     generic map(
@@ -23285,162 +24303,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(11),
-      Q => p_0_in(5)
-    );
-\filtered_l_reg[11]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[11]_i_25_n_0\,
-      I1 => \filtered_l_reg[11]_i_26_n_0\,
-      O => \filtered_l_reg[11]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[11]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_27_n_0\,
-      I1 => \filtered_l[11]_i_28_n_0\,
-      O => \filtered_l_reg[11]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_29_n_0\,
-      I1 => \filtered_l[11]_i_30_n_0\,
-      O => \filtered_l_reg[11]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[11]_i_31_n_0\,
-      I1 => \filtered_l_reg[11]_i_32_n_0\,
-      O => \filtered_l_reg[11]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[11]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_33_n_0\,
-      I1 => \filtered_l[11]_i_34_n_0\,
-      O => \filtered_l_reg[11]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_35_n_0\,
-      I1 => \filtered_l[11]_i_36_n_0\,
-      O => \filtered_l_reg[11]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[11]_i_37_n_0\,
-      I1 => \filtered_l_reg[11]_i_38_n_0\,
-      O => \filtered_l_reg[11]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[11]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_39_n_0\,
-      I1 => \filtered_l[11]_i_40_n_0\,
-      O => \filtered_l_reg[11]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_41_n_0\,
-      I1 => \filtered_l[11]_i_42_n_0\,
-      O => \filtered_l_reg[11]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_43_n_0\,
-      I1 => \filtered_l[11]_i_44_n_0\,
-      O => \filtered_l_reg[11]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[7]_i_2_n_0\,
-      CO(3) => \filtered_l_reg[11]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[11]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[11]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[11]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => p_0_in(5 downto 2),
-      O(3 downto 0) => data1(11 downto 8),
-      S(3) => \filtered_l[11]_i_3_n_0\,
-      S(2) => \filtered_l[11]_i_4_n_0\,
-      S(1) => \filtered_l[11]_i_5_n_0\,
-      S(0) => \filtered_l[11]_i_6_n_0\
-    );
-\filtered_l_reg[11]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_45_n_0\,
-      I1 => \filtered_l[11]_i_46_n_0\,
-      O => \filtered_l_reg[11]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_47_n_0\,
-      I1 => \filtered_l[11]_i_48_n_0\,
-      O => \filtered_l_reg[11]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_49_n_0\,
-      I1 => \filtered_l[11]_i_50_n_0\,
-      O => \filtered_l_reg[11]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_51_n_0\,
-      I1 => \filtered_l[11]_i_52_n_0\,
-      O => \filtered_l_reg[11]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_53_n_0\,
-      I1 => \filtered_l[11]_i_54_n_0\,
-      O => \filtered_l_reg[11]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_55_n_0\,
-      I1 => \filtered_l[11]_i_56_n_0\,
-      O => \filtered_l_reg[11]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_57_n_0\,
-      I1 => \filtered_l[11]_i_58_n_0\,
-      O => \filtered_l_reg[11]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[11]_i_19_n_0\,
-      I1 => \filtered_l_reg[11]_i_20_n_0\,
-      O => \filtered_l_reg[11]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[11]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_21_n_0\,
-      I1 => \filtered_l[11]_i_22_n_0\,
-      O => \filtered_l_reg[11]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[11]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[11]_i_23_n_0\,
-      I1 => \filtered_l[11]_i_24_n_0\,
-      O => \filtered_l_reg[11]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+      Q => p_0_in(6)
     );
 \filtered_l_reg[12]\: unisim.vcomponents.FDCE
     generic map(
@@ -23451,7 +24314,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(12),
-      Q => p_0_in(6)
+      Q => p_0_in(7)
     );
 \filtered_l_reg[13]\: unisim.vcomponents.FDCE
     generic map(
@@ -23462,7 +24325,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(13),
-      Q => p_0_in(7)
+      Q => p_0_in(8)
     );
 \filtered_l_reg[14]\: unisim.vcomponents.FDCE
     generic map(
@@ -23473,7 +24336,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(14),
-      Q => p_0_in(8)
+      Q => p_0_in(9)
     );
 \filtered_l_reg[15]\: unisim.vcomponents.FDCE
     generic map(
@@ -23484,162 +24347,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(15),
-      Q => p_0_in(9)
-    );
-\filtered_l_reg[15]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[15]_i_25_n_0\,
-      I1 => \filtered_l_reg[15]_i_26_n_0\,
-      O => \filtered_l_reg[15]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[15]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_27_n_0\,
-      I1 => \filtered_l[15]_i_28_n_0\,
-      O => \filtered_l_reg[15]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_29_n_0\,
-      I1 => \filtered_l[15]_i_30_n_0\,
-      O => \filtered_l_reg[15]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[15]_i_31_n_0\,
-      I1 => \filtered_l_reg[15]_i_32_n_0\,
-      O => \filtered_l_reg[15]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[15]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_33_n_0\,
-      I1 => \filtered_l[15]_i_34_n_0\,
-      O => \filtered_l_reg[15]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_35_n_0\,
-      I1 => \filtered_l[15]_i_36_n_0\,
-      O => \filtered_l_reg[15]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[15]_i_37_n_0\,
-      I1 => \filtered_l_reg[15]_i_38_n_0\,
-      O => \filtered_l_reg[15]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[15]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_39_n_0\,
-      I1 => \filtered_l[15]_i_40_n_0\,
-      O => \filtered_l_reg[15]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_41_n_0\,
-      I1 => \filtered_l[15]_i_42_n_0\,
-      O => \filtered_l_reg[15]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_43_n_0\,
-      I1 => \filtered_l[15]_i_44_n_0\,
-      O => \filtered_l_reg[15]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[11]_i_2_n_0\,
-      CO(3) => \filtered_l_reg[15]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[15]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[15]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[15]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => p_0_in(9 downto 6),
-      O(3 downto 0) => data1(15 downto 12),
-      S(3) => \filtered_l[15]_i_3_n_0\,
-      S(2) => \filtered_l[15]_i_4_n_0\,
-      S(1) => \filtered_l[15]_i_5_n_0\,
-      S(0) => \filtered_l[15]_i_6_n_0\
-    );
-\filtered_l_reg[15]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_45_n_0\,
-      I1 => \filtered_l[15]_i_46_n_0\,
-      O => \filtered_l_reg[15]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_47_n_0\,
-      I1 => \filtered_l[15]_i_48_n_0\,
-      O => \filtered_l_reg[15]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_49_n_0\,
-      I1 => \filtered_l[15]_i_50_n_0\,
-      O => \filtered_l_reg[15]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_51_n_0\,
-      I1 => \filtered_l[15]_i_52_n_0\,
-      O => \filtered_l_reg[15]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_53_n_0\,
-      I1 => \filtered_l[15]_i_54_n_0\,
-      O => \filtered_l_reg[15]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_55_n_0\,
-      I1 => \filtered_l[15]_i_56_n_0\,
-      O => \filtered_l_reg[15]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_57_n_0\,
-      I1 => \filtered_l[15]_i_58_n_0\,
-      O => \filtered_l_reg[15]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[15]_i_19_n_0\,
-      I1 => \filtered_l_reg[15]_i_20_n_0\,
-      O => \filtered_l_reg[15]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[15]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_21_n_0\,
-      I1 => \filtered_l[15]_i_22_n_0\,
-      O => \filtered_l_reg[15]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[15]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[15]_i_23_n_0\,
-      I1 => \filtered_l[15]_i_24_n_0\,
-      O => \filtered_l_reg[15]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+      Q => p_0_in(10)
     );
 \filtered_l_reg[16]\: unisim.vcomponents.FDCE
     generic map(
@@ -23650,7 +24358,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(16),
-      Q => p_0_in(10)
+      Q => p_0_in(11)
     );
 \filtered_l_reg[17]\: unisim.vcomponents.FDCE
     generic map(
@@ -23661,7 +24369,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(17),
-      Q => p_0_in(11)
+      Q => p_0_in(12)
     );
 \filtered_l_reg[18]\: unisim.vcomponents.FDCE
     generic map(
@@ -23672,7 +24380,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(18),
-      Q => p_0_in(12)
+      Q => p_0_in(13)
     );
 \filtered_l_reg[19]\: unisim.vcomponents.FDCE
     generic map(
@@ -23683,162 +24391,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(19),
-      Q => p_0_in(13)
-    );
-\filtered_l_reg[19]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[19]_i_25_n_0\,
-      I1 => \filtered_l_reg[19]_i_26_n_0\,
-      O => \filtered_l_reg[19]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[19]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_27_n_0\,
-      I1 => \filtered_l[19]_i_28_n_0\,
-      O => \filtered_l_reg[19]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_29_n_0\,
-      I1 => \filtered_l[19]_i_30_n_0\,
-      O => \filtered_l_reg[19]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[19]_i_31_n_0\,
-      I1 => \filtered_l_reg[19]_i_32_n_0\,
-      O => \filtered_l_reg[19]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[19]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_33_n_0\,
-      I1 => \filtered_l[19]_i_34_n_0\,
-      O => \filtered_l_reg[19]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_35_n_0\,
-      I1 => \filtered_l[19]_i_36_n_0\,
-      O => \filtered_l_reg[19]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[19]_i_37_n_0\,
-      I1 => \filtered_l_reg[19]_i_38_n_0\,
-      O => \filtered_l_reg[19]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[19]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_39_n_0\,
-      I1 => \filtered_l[19]_i_40_n_0\,
-      O => \filtered_l_reg[19]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_41_n_0\,
-      I1 => \filtered_l[19]_i_42_n_0\,
-      O => \filtered_l_reg[19]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_43_n_0\,
-      I1 => \filtered_l[19]_i_44_n_0\,
-      O => \filtered_l_reg[19]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[15]_i_2_n_0\,
-      CO(3) => \filtered_l_reg[19]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[19]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[19]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[19]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => p_0_in(13 downto 10),
-      O(3 downto 0) => data1(19 downto 16),
-      S(3) => \filtered_l[19]_i_3_n_0\,
-      S(2) => \filtered_l[19]_i_4_n_0\,
-      S(1) => \filtered_l[19]_i_5_n_0\,
-      S(0) => \filtered_l[19]_i_6_n_0\
-    );
-\filtered_l_reg[19]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_45_n_0\,
-      I1 => \filtered_l[19]_i_46_n_0\,
-      O => \filtered_l_reg[19]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_47_n_0\,
-      I1 => \filtered_l[19]_i_48_n_0\,
-      O => \filtered_l_reg[19]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_49_n_0\,
-      I1 => \filtered_l[19]_i_50_n_0\,
-      O => \filtered_l_reg[19]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_51_n_0\,
-      I1 => \filtered_l[19]_i_52_n_0\,
-      O => \filtered_l_reg[19]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_53_n_0\,
-      I1 => \filtered_l[19]_i_54_n_0\,
-      O => \filtered_l_reg[19]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_55_n_0\,
-      I1 => \filtered_l[19]_i_56_n_0\,
-      O => \filtered_l_reg[19]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_57_n_0\,
-      I1 => \filtered_l[19]_i_58_n_0\,
-      O => \filtered_l_reg[19]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[19]_i_19_n_0\,
-      I1 => \filtered_l_reg[19]_i_20_n_0\,
-      O => \filtered_l_reg[19]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[19]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_21_n_0\,
-      I1 => \filtered_l[19]_i_22_n_0\,
-      O => \filtered_l_reg[19]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[19]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[19]_i_23_n_0\,
-      I1 => \filtered_l[19]_i_24_n_0\,
-      O => \filtered_l_reg[19]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+      Q => p_0_in(14)
     );
 \filtered_l_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -23860,7 +24413,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(20),
-      Q => p_0_in(14)
+      Q => p_0_in(15)
     );
 \filtered_l_reg[21]\: unisim.vcomponents.FDCE
     generic map(
@@ -23871,7 +24424,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(21),
-      Q => p_0_in(15)
+      Q => p_0_in(16)
     );
 \filtered_l_reg[22]\: unisim.vcomponents.FDCE
     generic map(
@@ -23882,7 +24435,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(22),
-      Q => p_0_in(16)
+      Q => p_0_in(17)
     );
 \filtered_l_reg[23]\: unisim.vcomponents.FDCE
     generic map(
@@ -23892,163 +24445,8 @@ begin
       C => aclk,
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => filtered_l(23),
-      Q => p_0_in(17)
-    );
-\filtered_l_reg[23]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[23]_i_25_n_0\,
-      I1 => \filtered_l_reg[23]_i_26_n_0\,
-      O => \filtered_l_reg[23]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[23]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_27_n_0\,
-      I1 => \filtered_l[23]_i_28_n_0\,
-      O => \filtered_l_reg[23]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_29_n_0\,
-      I1 => \filtered_l[23]_i_30_n_0\,
-      O => \filtered_l_reg[23]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[23]_i_31_n_0\,
-      I1 => \filtered_l_reg[23]_i_32_n_0\,
-      O => \filtered_l_reg[23]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[23]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_33_n_0\,
-      I1 => \filtered_l[23]_i_34_n_0\,
-      O => \filtered_l_reg[23]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_35_n_0\,
-      I1 => \filtered_l[23]_i_36_n_0\,
-      O => \filtered_l_reg[23]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[23]_i_37_n_0\,
-      I1 => \filtered_l_reg[23]_i_38_n_0\,
-      O => \filtered_l_reg[23]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[23]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_39_n_0\,
-      I1 => \filtered_l[23]_i_40_n_0\,
-      O => \filtered_l_reg[23]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_41_n_0\,
-      I1 => \filtered_l[23]_i_42_n_0\,
-      O => \filtered_l_reg[23]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_43_n_0\,
-      I1 => \filtered_l[23]_i_44_n_0\,
-      O => \filtered_l_reg[23]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[19]_i_2_n_0\,
-      CO(3) => \filtered_l_reg[23]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[23]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[23]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[23]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => p_0_in(17 downto 14),
-      O(3 downto 0) => data1(23 downto 20),
-      S(3) => \filtered_l[23]_i_3_n_0\,
-      S(2) => \filtered_l[23]_i_4_n_0\,
-      S(1) => \filtered_l[23]_i_5_n_0\,
-      S(0) => \filtered_l[23]_i_6_n_0\
-    );
-\filtered_l_reg[23]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_45_n_0\,
-      I1 => \filtered_l[23]_i_46_n_0\,
-      O => \filtered_l_reg[23]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_47_n_0\,
-      I1 => \filtered_l[23]_i_48_n_0\,
-      O => \filtered_l_reg[23]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_49_n_0\,
-      I1 => \filtered_l[23]_i_50_n_0\,
-      O => \filtered_l_reg[23]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_51_n_0\,
-      I1 => \filtered_l[23]_i_52_n_0\,
-      O => \filtered_l_reg[23]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_53_n_0\,
-      I1 => \filtered_l[23]_i_54_n_0\,
-      O => \filtered_l_reg[23]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_55_n_0\,
-      I1 => \filtered_l[23]_i_56_n_0\,
-      O => \filtered_l_reg[23]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_57_n_0\,
-      I1 => \filtered_l[23]_i_58_n_0\,
-      O => \filtered_l_reg[23]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[23]_i_19_n_0\,
-      I1 => \filtered_l_reg[23]_i_20_n_0\,
-      O => \filtered_l_reg[23]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[23]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_21_n_0\,
-      I1 => \filtered_l[23]_i_22_n_0\,
-      O => \filtered_l_reg[23]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[23]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[23]_i_23_n_0\,
-      I1 => \filtered_l[23]_i_24_n_0\,
-      O => \filtered_l_reg[23]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+      D => \filtered_l[23]_i_1_n_0\,
+      Q => p_0_in(18)
     );
 \filtered_l_reg[24]\: unisim.vcomponents.FDCE
     generic map(
@@ -24059,7 +24457,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \filtered_l[24]_i_1_n_0\,
-      Q => p_0_in(18)
+      Q => p_0_in(19)
     );
 \filtered_l_reg[25]\: unisim.vcomponents.FDCE
     generic map(
@@ -24070,7 +24468,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \filtered_l[25]_i_1_n_0\,
-      Q => p_0_in(19)
+      Q => p_0_in(20)
     );
 \filtered_l_reg[26]\: unisim.vcomponents.FDCE
     generic map(
@@ -24081,7 +24479,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \filtered_l[26]_i_1_n_0\,
-      Q => p_0_in(20)
+      Q => p_0_in(21)
     );
 \filtered_l_reg[27]\: unisim.vcomponents.FDCE
     generic map(
@@ -24092,19 +24490,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \filtered_l[27]_i_1_n_0\,
-      Q => p_0_in(21)
-    );
-\filtered_l_reg[27]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[23]_i_2_n_0\,
-      CO(3) => \filtered_l_reg[27]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[27]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[27]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[27]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => data1(27 downto 24),
-      S(3 downto 0) => p_0_in(21 downto 18)
+      Q => p_0_in(22)
     );
 \filtered_l_reg[28]\: unisim.vcomponents.FDCE
     generic map(
@@ -24115,30 +24501,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \filtered_l[28]_i_1_n_0\,
-      Q => p_0_in(22)
-    );
-\filtered_l_reg[29]\: unisim.vcomponents.FDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => '1',
-      CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_l[29]_i_1_n_0\,
       Q => p_0_in(23)
-    );
-\filtered_l_reg[29]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[27]_i_2_n_0\,
-      CO(3 downto 1) => \NLW_filtered_l_reg[29]_i_2_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => \filtered_l_reg[29]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 2) => \NLW_filtered_l_reg[29]_i_2_O_UNCONNECTED\(3 downto 2),
-      O(1 downto 0) => data1(29 downto 28),
-      S(3 downto 2) => B"00",
-      S(1 downto 0) => p_0_in(23 downto 22)
     );
 \filtered_l_reg[2]\: unisim.vcomponents.FDCE
     generic map(
@@ -24162,164 +24525,6 @@ begin
       D => filtered_l(3),
       Q => \filtered_l_reg_n_0_[3]\
     );
-\filtered_l_reg[3]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[3]_i_25_n_0\,
-      I1 => \filtered_l_reg[3]_i_26_n_0\,
-      O => \filtered_l_reg[3]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[3]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_27_n_0\,
-      I1 => \filtered_l[3]_i_28_n_0\,
-      O => \filtered_l_reg[3]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_29_n_0\,
-      I1 => \filtered_l[3]_i_30_n_0\,
-      O => \filtered_l_reg[3]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[3]_i_31_n_0\,
-      I1 => \filtered_l_reg[3]_i_32_n_0\,
-      O => \filtered_l_reg[3]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[3]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_33_n_0\,
-      I1 => \filtered_l[3]_i_34_n_0\,
-      O => \filtered_l_reg[3]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_35_n_0\,
-      I1 => \filtered_l[3]_i_36_n_0\,
-      O => \filtered_l_reg[3]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[3]_i_37_n_0\,
-      I1 => \filtered_l_reg[3]_i_38_n_0\,
-      O => \filtered_l_reg[3]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[3]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_39_n_0\,
-      I1 => \filtered_l[3]_i_40_n_0\,
-      O => \filtered_l_reg[3]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_l_reg[3]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_41_n_0\,
-      I1 => \filtered_l[3]_i_42_n_0\,
-      O => \filtered_l_reg[3]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_l_reg[3]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_43_n_0\,
-      I1 => \filtered_l[3]_i_44_n_0\,
-      O => \filtered_l_reg[3]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \filtered_l_reg[3]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[3]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[3]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[3]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_l_reg_n_0_[3]\,
-      DI(2) => \filtered_l_reg_n_0_[2]\,
-      DI(1) => \filtered_l_reg_n_0_[1]\,
-      DI(0) => \filtered_l_reg_n_0_[0]\,
-      O(3 downto 0) => data1(3 downto 0),
-      S(3) => \filtered_l[3]_i_3_n_0\,
-      S(2) => \filtered_l[3]_i_4_n_0\,
-      S(1) => \filtered_l[3]_i_5_n_0\,
-      S(0) => \filtered_l[3]_i_6_n_0\
-    );
-\filtered_l_reg[3]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_45_n_0\,
-      I1 => \filtered_l[3]_i_46_n_0\,
-      O => \filtered_l_reg[3]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_47_n_0\,
-      I1 => \filtered_l[3]_i_48_n_0\,
-      O => \filtered_l_reg[3]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_49_n_0\,
-      I1 => \filtered_l[3]_i_50_n_0\,
-      O => \filtered_l_reg[3]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_51_n_0\,
-      I1 => \filtered_l[3]_i_52_n_0\,
-      O => \filtered_l_reg[3]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_l_reg[3]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_53_n_0\,
-      I1 => \filtered_l[3]_i_54_n_0\,
-      O => \filtered_l_reg[3]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_l_reg[3]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_55_n_0\,
-      I1 => \filtered_l[3]_i_56_n_0\,
-      O => \filtered_l_reg[3]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_l_reg[3]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_57_n_0\,
-      I1 => \filtered_l[3]_i_58_n_0\,
-      O => \filtered_l_reg[3]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_l_reg[3]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[3]_i_19_n_0\,
-      I1 => \filtered_l_reg[3]_i_20_n_0\,
-      O => \filtered_l_reg[3]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[3]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_21_n_0\,
-      I1 => \filtered_l[3]_i_22_n_0\,
-      O => \filtered_l_reg[3]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[3]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[3]_i_23_n_0\,
-      I1 => \filtered_l[3]_i_24_n_0\,
-      O => \filtered_l_reg[3]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
 \filtered_l_reg[4]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
@@ -24340,7 +24545,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(5),
-      Q => \filtered_l_reg_n_0_[5]\
+      Q => p_0_in(0)
     );
 \filtered_l_reg[6]\: unisim.vcomponents.FDCE
     generic map(
@@ -24351,7 +24556,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(6),
-      Q => p_0_in(0)
+      Q => p_0_in(1)
     );
 \filtered_l_reg[7]\: unisim.vcomponents.FDCE
     generic map(
@@ -24362,164 +24567,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(7),
-      Q => p_0_in(1)
-    );
-\filtered_l_reg[7]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[7]_i_25_n_0\,
-      I1 => \filtered_l_reg[7]_i_26_n_0\,
-      O => \filtered_l_reg[7]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[7]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_27_n_0\,
-      I1 => \filtered_l[7]_i_28_n_0\,
-      O => \filtered_l_reg[7]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_29_n_0\,
-      I1 => \filtered_l[7]_i_30_n_0\,
-      O => \filtered_l_reg[7]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[7]_i_31_n_0\,
-      I1 => \filtered_l_reg[7]_i_32_n_0\,
-      O => \filtered_l_reg[7]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[7]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_33_n_0\,
-      I1 => \filtered_l[7]_i_34_n_0\,
-      O => \filtered_l_reg[7]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_35_n_0\,
-      I1 => \filtered_l[7]_i_36_n_0\,
-      O => \filtered_l_reg[7]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[7]_i_37_n_0\,
-      I1 => \filtered_l_reg[7]_i_38_n_0\,
-      O => \filtered_l_reg[7]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[7]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_39_n_0\,
-      I1 => \filtered_l[7]_i_40_n_0\,
-      O => \filtered_l_reg[7]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_41_n_0\,
-      I1 => \filtered_l[7]_i_42_n_0\,
-      O => \filtered_l_reg[7]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_43_n_0\,
-      I1 => \filtered_l[7]_i_44_n_0\,
-      O => \filtered_l_reg[7]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_l_reg[3]_i_2_n_0\,
-      CO(3) => \filtered_l_reg[7]_i_2_n_0\,
-      CO(2) => \filtered_l_reg[7]_i_2_n_1\,
-      CO(1) => \filtered_l_reg[7]_i_2_n_2\,
-      CO(0) => \filtered_l_reg[7]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 2) => p_0_in(1 downto 0),
-      DI(1) => \filtered_l_reg_n_0_[5]\,
-      DI(0) => \filtered_l_reg_n_0_[4]\,
-      O(3 downto 0) => data1(7 downto 4),
-      S(3) => \filtered_l[7]_i_3_n_0\,
-      S(2) => \filtered_l[7]_i_4_n_0\,
-      S(1) => \filtered_l[7]_i_5_n_0\,
-      S(0) => \filtered_l[7]_i_6_n_0\
-    );
-\filtered_l_reg[7]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_45_n_0\,
-      I1 => \filtered_l[7]_i_46_n_0\,
-      O => \filtered_l_reg[7]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_47_n_0\,
-      I1 => \filtered_l[7]_i_48_n_0\,
-      O => \filtered_l_reg[7]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_49_n_0\,
-      I1 => \filtered_l[7]_i_50_n_0\,
-      O => \filtered_l_reg[7]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_51_n_0\,
-      I1 => \filtered_l[7]_i_52_n_0\,
-      O => \filtered_l_reg[7]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_53_n_0\,
-      I1 => \filtered_l[7]_i_54_n_0\,
-      O => \filtered_l_reg[7]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_55_n_0\,
-      I1 => \filtered_l[7]_i_56_n_0\,
-      O => \filtered_l_reg[7]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_57_n_0\,
-      I1 => \filtered_l[7]_i_58_n_0\,
-      O => \filtered_l_reg[7]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_l_reg[7]_i_19_n_0\,
-      I1 => \filtered_l_reg[7]_i_20_n_0\,
-      O => \filtered_l_reg[7]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_l_reg[7]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_21_n_0\,
-      I1 => \filtered_l[7]_i_22_n_0\,
-      O => \filtered_l_reg[7]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
-    );
-\filtered_l_reg[7]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_l[7]_i_23_n_0\,
-      I1 => \filtered_l[7]_i_24_n_0\,
-      O => \filtered_l_reg[7]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+      Q => p_0_in(2)
     );
 \filtered_l_reg[8]\: unisim.vcomponents.FDCE
     generic map(
@@ -24530,7 +24578,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(8),
-      Q => p_0_in(2)
+      Q => p_0_in(3)
     );
 \filtered_l_reg[9]\: unisim.vcomponents.FDCE
     generic map(
@@ -24541,7 +24589,7 @@ begin
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_l(9),
-      Q => p_0_in(3)
+      Q => p_0_in(4)
     );
 \filtered_out_l_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -24813,10 +24861,10 @@ begin
     )
         port map (
       I0 => ring_buffer_read_reg(3),
-      I1 => \ring_buffer_read_reg[1]_rep__1_n_0\,
+      I1 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I2 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I3 => ring_buffer_read_reg(4),
-      I4 => ring_buffer_read_reg(2),
+      I4 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       O => filtered_out_r
     );
 \filtered_out_r_reg[0]\: unisim.vcomponents.FDCE
@@ -24827,7 +24875,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[6]\,
+      D => \filtered_r_reg_n_0_[5]\,
       Q => \filtered_out_r_reg_n_0_[0]\
     );
 \filtered_out_r_reg[10]\: unisim.vcomponents.FDCE
@@ -24838,7 +24886,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[16]\,
+      D => \filtered_r_reg_n_0_[15]\,
       Q => \filtered_out_r_reg_n_0_[10]\
     );
 \filtered_out_r_reg[11]\: unisim.vcomponents.FDCE
@@ -24849,7 +24897,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[17]\,
+      D => \filtered_r_reg_n_0_[16]\,
       Q => \filtered_out_r_reg_n_0_[11]\
     );
 \filtered_out_r_reg[12]\: unisim.vcomponents.FDCE
@@ -24860,7 +24908,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[18]\,
+      D => \filtered_r_reg_n_0_[17]\,
       Q => \filtered_out_r_reg_n_0_[12]\
     );
 \filtered_out_r_reg[13]\: unisim.vcomponents.FDCE
@@ -24871,7 +24919,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[19]\,
+      D => \filtered_r_reg_n_0_[18]\,
       Q => \filtered_out_r_reg_n_0_[13]\
     );
 \filtered_out_r_reg[14]\: unisim.vcomponents.FDCE
@@ -24882,7 +24930,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[20]\,
+      D => \filtered_r_reg_n_0_[19]\,
       Q => \filtered_out_r_reg_n_0_[14]\
     );
 \filtered_out_r_reg[15]\: unisim.vcomponents.FDCE
@@ -24893,7 +24941,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[21]\,
+      D => \filtered_r_reg_n_0_[20]\,
       Q => \filtered_out_r_reg_n_0_[15]\
     );
 \filtered_out_r_reg[16]\: unisim.vcomponents.FDCE
@@ -24904,7 +24952,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[22]\,
+      D => \filtered_r_reg_n_0_[21]\,
       Q => \filtered_out_r_reg_n_0_[16]\
     );
 \filtered_out_r_reg[17]\: unisim.vcomponents.FDCE
@@ -24915,7 +24963,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[23]\,
+      D => \filtered_r_reg_n_0_[22]\,
       Q => \filtered_out_r_reg_n_0_[17]\
     );
 \filtered_out_r_reg[18]\: unisim.vcomponents.FDCE
@@ -24926,7 +24974,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[24]\,
+      D => \filtered_r_reg_n_0_[23]\,
       Q => \filtered_out_r_reg_n_0_[18]\
     );
 \filtered_out_r_reg[19]\: unisim.vcomponents.FDCE
@@ -24937,7 +24985,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[25]\,
+      D => \filtered_r_reg_n_0_[24]\,
       Q => \filtered_out_r_reg_n_0_[19]\
     );
 \filtered_out_r_reg[1]\: unisim.vcomponents.FDCE
@@ -24948,7 +24996,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[7]\,
+      D => \filtered_r_reg_n_0_[6]\,
       Q => \filtered_out_r_reg_n_0_[1]\
     );
 \filtered_out_r_reg[20]\: unisim.vcomponents.FDCE
@@ -24959,7 +25007,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[26]\,
+      D => \filtered_r_reg_n_0_[25]\,
       Q => \filtered_out_r_reg_n_0_[20]\
     );
 \filtered_out_r_reg[21]\: unisim.vcomponents.FDCE
@@ -24970,7 +25018,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[27]\,
+      D => \filtered_r_reg_n_0_[26]\,
       Q => \filtered_out_r_reg_n_0_[21]\
     );
 \filtered_out_r_reg[22]\: unisim.vcomponents.FDCE
@@ -24981,7 +25029,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[28]\,
+      D => \filtered_r_reg_n_0_[27]\,
       Q => \filtered_out_r_reg_n_0_[22]\
     );
 \filtered_out_r_reg[23]\: unisim.vcomponents.FDCE
@@ -24992,7 +25040,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[29]\,
+      D => \filtered_r_reg_n_0_[28]\,
       Q => \filtered_out_r_reg_n_0_[23]\
     );
 \filtered_out_r_reg[2]\: unisim.vcomponents.FDCE
@@ -25003,7 +25051,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[8]\,
+      D => \filtered_r_reg_n_0_[7]\,
       Q => \filtered_out_r_reg_n_0_[2]\
     );
 \filtered_out_r_reg[3]\: unisim.vcomponents.FDCE
@@ -25014,7 +25062,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[9]\,
+      D => \filtered_r_reg_n_0_[8]\,
       Q => \filtered_out_r_reg_n_0_[3]\
     );
 \filtered_out_r_reg[4]\: unisim.vcomponents.FDCE
@@ -25025,7 +25073,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[10]\,
+      D => \filtered_r_reg_n_0_[9]\,
       Q => \filtered_out_r_reg_n_0_[4]\
     );
 \filtered_out_r_reg[5]\: unisim.vcomponents.FDCE
@@ -25036,7 +25084,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[11]\,
+      D => \filtered_r_reg_n_0_[10]\,
       Q => \filtered_out_r_reg_n_0_[5]\
     );
 \filtered_out_r_reg[6]\: unisim.vcomponents.FDCE
@@ -25047,7 +25095,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[12]\,
+      D => \filtered_r_reg_n_0_[11]\,
       Q => \filtered_out_r_reg_n_0_[6]\
     );
 \filtered_out_r_reg[7]\: unisim.vcomponents.FDCE
@@ -25058,7 +25106,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[13]\,
+      D => \filtered_r_reg_n_0_[12]\,
       Q => \filtered_out_r_reg_n_0_[7]\
     );
 \filtered_out_r_reg[8]\: unisim.vcomponents.FDCE
@@ -25069,7 +25117,7 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[14]\,
+      D => \filtered_r_reg_n_0_[13]\,
       Q => \filtered_out_r_reg_n_0_[8]\
     );
 \filtered_out_r_reg[9]\: unisim.vcomponents.FDCE
@@ -25080,8 +25128,3876 @@ begin
       C => aclk,
       CE => filtered_out_r,
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r_reg_n_0_[15]\,
+      D => \filtered_r_reg_n_0_[14]\,
       Q => \filtered_out_r_reg_n_0_[9]\
+    );
+filtered_r0_carry: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => filtered_r0_carry_n_0,
+      CO(2) => filtered_r0_carry_n_1,
+      CO(1) => filtered_r0_carry_n_2,
+      CO(0) => filtered_r0_carry_n_3,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[3]\,
+      DI(2) => \filtered_r_reg_n_0_[2]\,
+      DI(1) => \filtered_r_reg_n_0_[1]\,
+      DI(0) => \filtered_r_reg_n_0_[0]\,
+      O(3) => filtered_r0_carry_n_4,
+      O(2) => filtered_r0_carry_n_5,
+      O(1) => filtered_r0_carry_n_6,
+      O(0) => filtered_r0_carry_n_7,
+      S(3) => filtered_r0_carry_i_1_n_0,
+      S(2) => filtered_r0_carry_i_2_n_0,
+      S(1) => filtered_r0_carry_i_3_n_0,
+      S(0) => filtered_r0_carry_i_4_n_0
+    );
+\filtered_r0_carry__0\: unisim.vcomponents.CARRY4
+     port map (
+      CI => filtered_r0_carry_n_0,
+      CO(3) => \filtered_r0_carry__0_n_0\,
+      CO(2) => \filtered_r0_carry__0_n_1\,
+      CO(1) => \filtered_r0_carry__0_n_2\,
+      CO(0) => \filtered_r0_carry__0_n_3\,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[7]\,
+      DI(2) => \filtered_r_reg_n_0_[6]\,
+      DI(1) => \filtered_r_reg_n_0_[5]\,
+      DI(0) => \filtered_r_reg_n_0_[4]\,
+      O(3) => \filtered_r0_carry__0_n_4\,
+      O(2) => \filtered_r0_carry__0_n_5\,
+      O(1) => \filtered_r0_carry__0_n_6\,
+      O(0) => \filtered_r0_carry__0_n_7\,
+      S(3) => \filtered_r0_carry__0_i_1_n_0\,
+      S(2) => \filtered_r0_carry__0_i_2_n_0\,
+      S(1) => \filtered_r0_carry__0_i_3_n_0\,
+      S(0) => \filtered_r0_carry__0_i_4_n_0\
+    );
+\filtered_r0_carry__0_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[7]\,
+      I1 => \filtered_r0_carry__0_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__0_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__0_i_7_n_0\,
+      O => \filtered_r0_carry__0_i_1_n_0\
+    );
+\filtered_r0_carry__0_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_27_n_0\,
+      I1 => \filtered_r0_carry__0_i_28_n_0\,
+      O => \filtered_r0_carry__0_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__0_i_29_n_0\,
+      I1 => \filtered_r0_carry__0_i_30_n_0\,
+      O => \filtered_r0_carry__0_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__0_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_31_n_0\,
+      I1 => \filtered_r0_carry__0_i_32_n_0\,
+      O => \filtered_r0_carry__0_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_33_n_0\,
+      I1 => \filtered_r0_carry__0_i_34_n_0\,
+      O => \filtered_r0_carry__0_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__0_i_35_n_0\,
+      I1 => \filtered_r0_carry__0_i_36_n_0\,
+      O => \filtered_r0_carry__0_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__0_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_37_n_0\,
+      I1 => \filtered_r0_carry__0_i_38_n_0\,
+      O => \filtered_r0_carry__0_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_39_n_0\,
+      I1 => \filtered_r0_carry__0_i_40_n_0\,
+      O => \filtered_r0_carry__0_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_41_n_0\,
+      I1 => \filtered_r0_carry__0_i_42_n_0\,
+      O => \filtered_r0_carry__0_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_43_n_0\,
+      I1 => \filtered_r0_carry__0_i_44_n_0\,
+      O => \filtered_r0_carry__0_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(7),
+      I1 => \filter_in_r_reg[18]_13\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(7),
+      O => \filtered_r0_carry__0_i_19_n_0\
+    );
+\filtered_r0_carry__0_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[6]\,
+      I1 => \filtered_r0_carry__0_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__0_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__0_i_10_n_0\,
+      O => \filtered_r0_carry__0_i_2_n_0\
+    );
+\filtered_r0_carry__0_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(7),
+      I1 => \filter_in_r_reg[22]_9\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(7),
+      O => \filtered_r0_carry__0_i_20_n_0\
+    );
+\filtered_r0_carry__0_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(7),
+      I1 => \filter_in_r_reg[26]_5\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(7),
+      O => \filtered_r0_carry__0_i_21_n_0\
+    );
+\filtered_r0_carry__0_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(7),
+      I1 => \filter_in_r_reg[30]_1\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(7),
+      O => \filtered_r0_carry__0_i_22_n_0\
+    );
+\filtered_r0_carry__0_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_45_n_0\,
+      I1 => \filtered_r0_carry__0_i_46_n_0\,
+      O => \filtered_r0_carry__0_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_47_n_0\,
+      I1 => \filtered_r0_carry__0_i_48_n_0\,
+      O => \filtered_r0_carry__0_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(6),
+      I1 => \filter_in_r_reg[18]_13\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(6),
+      O => \filtered_r0_carry__0_i_25_n_0\
+    );
+\filtered_r0_carry__0_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(6),
+      I1 => \filter_in_r_reg[22]_9\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(6),
+      O => \filtered_r0_carry__0_i_26_n_0\
+    );
+\filtered_r0_carry__0_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(6),
+      I1 => \filter_in_r_reg[26]_5\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(6),
+      O => \filtered_r0_carry__0_i_27_n_0\
+    );
+\filtered_r0_carry__0_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(6),
+      I1 => \filter_in_r_reg[30]_1\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(6),
+      O => \filtered_r0_carry__0_i_28_n_0\
+    );
+\filtered_r0_carry__0_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_49_n_0\,
+      I1 => \filtered_r0_carry__0_i_50_n_0\,
+      O => \filtered_r0_carry__0_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[5]\,
+      I1 => \filtered_r0_carry__0_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__0_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__0_i_13_n_0\,
+      O => \filtered_r0_carry__0_i_3_n_0\
+    );
+\filtered_r0_carry__0_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_51_n_0\,
+      I1 => \filtered_r0_carry__0_i_52_n_0\,
+      O => \filtered_r0_carry__0_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(5),
+      I1 => \filter_in_r_reg[18]_13\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(5),
+      O => \filtered_r0_carry__0_i_31_n_0\
+    );
+\filtered_r0_carry__0_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(5),
+      I1 => \filter_in_r_reg[22]_9\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(5),
+      O => \filtered_r0_carry__0_i_32_n_0\
+    );
+\filtered_r0_carry__0_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(5),
+      I1 => \filter_in_r_reg[26]_5\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(5),
+      O => \filtered_r0_carry__0_i_33_n_0\
+    );
+\filtered_r0_carry__0_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(5),
+      I1 => \filter_in_r_reg[30]_1\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(5),
+      O => \filtered_r0_carry__0_i_34_n_0\
+    );
+\filtered_r0_carry__0_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_53_n_0\,
+      I1 => \filtered_r0_carry__0_i_54_n_0\,
+      O => \filtered_r0_carry__0_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_55_n_0\,
+      I1 => \filtered_r0_carry__0_i_56_n_0\,
+      O => \filtered_r0_carry__0_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(4),
+      I1 => \filter_in_r_reg[18]_13\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(4),
+      O => \filtered_r0_carry__0_i_37_n_0\
+    );
+\filtered_r0_carry__0_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(4),
+      I1 => \filter_in_r_reg[22]_9\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(4),
+      O => \filtered_r0_carry__0_i_38_n_0\
+    );
+\filtered_r0_carry__0_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(4),
+      I1 => \filter_in_r_reg[26]_5\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(4),
+      O => \filtered_r0_carry__0_i_39_n_0\
+    );
+\filtered_r0_carry__0_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[4]\,
+      I1 => \filtered_r0_carry__0_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__0_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__0_i_16_n_0\,
+      O => \filtered_r0_carry__0_i_4_n_0\
+    );
+\filtered_r0_carry__0_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(4),
+      I1 => \filter_in_r_reg[30]_1\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(4),
+      O => \filtered_r0_carry__0_i_40_n_0\
+    );
+\filtered_r0_carry__0_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(7),
+      I1 => \filter_in_r_reg[2]_29\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(7),
+      O => \filtered_r0_carry__0_i_41_n_0\
+    );
+\filtered_r0_carry__0_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(7),
+      I1 => \filter_in_r_reg[6]_25\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(7),
+      O => \filtered_r0_carry__0_i_42_n_0\
+    );
+\filtered_r0_carry__0_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(7),
+      I1 => \filter_in_r_reg[10]_21\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(7),
+      O => \filtered_r0_carry__0_i_43_n_0\
+    );
+\filtered_r0_carry__0_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(7),
+      I1 => \filter_in_r_reg[14]_17\(7),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(7),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(7),
+      O => \filtered_r0_carry__0_i_44_n_0\
+    );
+\filtered_r0_carry__0_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(6),
+      I1 => \filter_in_r_reg[2]_29\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(6),
+      O => \filtered_r0_carry__0_i_45_n_0\
+    );
+\filtered_r0_carry__0_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(6),
+      I1 => \filter_in_r_reg[6]_25\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(6),
+      O => \filtered_r0_carry__0_i_46_n_0\
+    );
+\filtered_r0_carry__0_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(6),
+      I1 => \filter_in_r_reg[10]_21\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(6),
+      O => \filtered_r0_carry__0_i_47_n_0\
+    );
+\filtered_r0_carry__0_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(6),
+      I1 => \filter_in_r_reg[14]_17\(6),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(6),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(6),
+      O => \filtered_r0_carry__0_i_48_n_0\
+    );
+\filtered_r0_carry__0_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(5),
+      I1 => \filter_in_r_reg[2]_29\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(5),
+      O => \filtered_r0_carry__0_i_49_n_0\
+    );
+\filtered_r0_carry__0_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__0_i_17_n_0\,
+      I1 => \filtered_r0_carry__0_i_18_n_0\,
+      O => \filtered_r0_carry__0_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__0_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(5),
+      I1 => \filter_in_r_reg[6]_25\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(5),
+      O => \filtered_r0_carry__0_i_50_n_0\
+    );
+\filtered_r0_carry__0_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(5),
+      I1 => \filter_in_r_reg[10]_21\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(5),
+      O => \filtered_r0_carry__0_i_51_n_0\
+    );
+\filtered_r0_carry__0_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(5),
+      I1 => \filter_in_r_reg[14]_17\(5),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(5),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(5),
+      O => \filtered_r0_carry__0_i_52_n_0\
+    );
+\filtered_r0_carry__0_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(4),
+      I1 => \filter_in_r_reg[2]_29\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(4),
+      O => \filtered_r0_carry__0_i_53_n_0\
+    );
+\filtered_r0_carry__0_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(4),
+      I1 => \filter_in_r_reg[6]_25\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(4),
+      O => \filtered_r0_carry__0_i_54_n_0\
+    );
+\filtered_r0_carry__0_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(4),
+      I1 => \filter_in_r_reg[10]_21\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(4),
+      O => \filtered_r0_carry__0_i_55_n_0\
+    );
+\filtered_r0_carry__0_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(4),
+      I1 => \filter_in_r_reg[14]_17\(4),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(4),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(4),
+      O => \filtered_r0_carry__0_i_56_n_0\
+    );
+\filtered_r0_carry__0_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_19_n_0\,
+      I1 => \filtered_r0_carry__0_i_20_n_0\,
+      O => \filtered_r0_carry__0_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_21_n_0\,
+      I1 => \filtered_r0_carry__0_i_22_n_0\,
+      O => \filtered_r0_carry__0_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__0_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__0_i_23_n_0\,
+      I1 => \filtered_r0_carry__0_i_24_n_0\,
+      O => \filtered_r0_carry__0_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__0_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__0_i_25_n_0\,
+      I1 => \filtered_r0_carry__0_i_26_n_0\,
+      O => \filtered_r0_carry__0_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_r0_carry__0_n_0\,
+      CO(3) => \filtered_r0_carry__1_n_0\,
+      CO(2) => \filtered_r0_carry__1_n_1\,
+      CO(1) => \filtered_r0_carry__1_n_2\,
+      CO(0) => \filtered_r0_carry__1_n_3\,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[11]\,
+      DI(2) => \filtered_r_reg_n_0_[10]\,
+      DI(1) => \filtered_r_reg_n_0_[9]\,
+      DI(0) => \filtered_r_reg_n_0_[8]\,
+      O(3) => \filtered_r0_carry__1_n_4\,
+      O(2) => \filtered_r0_carry__1_n_5\,
+      O(1) => \filtered_r0_carry__1_n_6\,
+      O(0) => \filtered_r0_carry__1_n_7\,
+      S(3) => \filtered_r0_carry__1_i_1_n_0\,
+      S(2) => \filtered_r0_carry__1_i_2_n_0\,
+      S(1) => \filtered_r0_carry__1_i_3_n_0\,
+      S(0) => \filtered_r0_carry__1_i_4_n_0\
+    );
+\filtered_r0_carry__1_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[11]\,
+      I1 => \filtered_r0_carry__1_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__1_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__1_i_7_n_0\,
+      O => \filtered_r0_carry__1_i_1_n_0\
+    );
+\filtered_r0_carry__1_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_27_n_0\,
+      I1 => \filtered_r0_carry__1_i_28_n_0\,
+      O => \filtered_r0_carry__1_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__1_i_29_n_0\,
+      I1 => \filtered_r0_carry__1_i_30_n_0\,
+      O => \filtered_r0_carry__1_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__1_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_31_n_0\,
+      I1 => \filtered_r0_carry__1_i_32_n_0\,
+      O => \filtered_r0_carry__1_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_33_n_0\,
+      I1 => \filtered_r0_carry__1_i_34_n_0\,
+      O => \filtered_r0_carry__1_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__1_i_35_n_0\,
+      I1 => \filtered_r0_carry__1_i_36_n_0\,
+      O => \filtered_r0_carry__1_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__1_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_37_n_0\,
+      I1 => \filtered_r0_carry__1_i_38_n_0\,
+      O => \filtered_r0_carry__1_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_39_n_0\,
+      I1 => \filtered_r0_carry__1_i_40_n_0\,
+      O => \filtered_r0_carry__1_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_41_n_0\,
+      I1 => \filtered_r0_carry__1_i_42_n_0\,
+      O => \filtered_r0_carry__1_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_43_n_0\,
+      I1 => \filtered_r0_carry__1_i_44_n_0\,
+      O => \filtered_r0_carry__1_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(11),
+      I1 => \filter_in_r_reg[18]_13\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(11),
+      O => \filtered_r0_carry__1_i_19_n_0\
+    );
+\filtered_r0_carry__1_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[10]\,
+      I1 => \filtered_r0_carry__1_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__1_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__1_i_10_n_0\,
+      O => \filtered_r0_carry__1_i_2_n_0\
+    );
+\filtered_r0_carry__1_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(11),
+      I1 => \filter_in_r_reg[22]_9\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(11),
+      O => \filtered_r0_carry__1_i_20_n_0\
+    );
+\filtered_r0_carry__1_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(11),
+      I1 => \filter_in_r_reg[26]_5\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(11),
+      O => \filtered_r0_carry__1_i_21_n_0\
+    );
+\filtered_r0_carry__1_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(11),
+      I1 => \filter_in_r_reg[30]_1\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(11),
+      O => \filtered_r0_carry__1_i_22_n_0\
+    );
+\filtered_r0_carry__1_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_45_n_0\,
+      I1 => \filtered_r0_carry__1_i_46_n_0\,
+      O => \filtered_r0_carry__1_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_47_n_0\,
+      I1 => \filtered_r0_carry__1_i_48_n_0\,
+      O => \filtered_r0_carry__1_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(10),
+      I1 => \filter_in_r_reg[18]_13\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(10),
+      O => \filtered_r0_carry__1_i_25_n_0\
+    );
+\filtered_r0_carry__1_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(10),
+      I1 => \filter_in_r_reg[22]_9\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(10),
+      O => \filtered_r0_carry__1_i_26_n_0\
+    );
+\filtered_r0_carry__1_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(10),
+      I1 => \filter_in_r_reg[26]_5\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(10),
+      O => \filtered_r0_carry__1_i_27_n_0\
+    );
+\filtered_r0_carry__1_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(10),
+      I1 => \filter_in_r_reg[30]_1\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(10),
+      O => \filtered_r0_carry__1_i_28_n_0\
+    );
+\filtered_r0_carry__1_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_49_n_0\,
+      I1 => \filtered_r0_carry__1_i_50_n_0\,
+      O => \filtered_r0_carry__1_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[9]\,
+      I1 => \filtered_r0_carry__1_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__1_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__1_i_13_n_0\,
+      O => \filtered_r0_carry__1_i_3_n_0\
+    );
+\filtered_r0_carry__1_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_51_n_0\,
+      I1 => \filtered_r0_carry__1_i_52_n_0\,
+      O => \filtered_r0_carry__1_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(9),
+      I1 => \filter_in_r_reg[18]_13\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(9),
+      O => \filtered_r0_carry__1_i_31_n_0\
+    );
+\filtered_r0_carry__1_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(9),
+      I1 => \filter_in_r_reg[22]_9\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(9),
+      O => \filtered_r0_carry__1_i_32_n_0\
+    );
+\filtered_r0_carry__1_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(9),
+      I1 => \filter_in_r_reg[26]_5\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(9),
+      O => \filtered_r0_carry__1_i_33_n_0\
+    );
+\filtered_r0_carry__1_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(9),
+      I1 => \filter_in_r_reg[30]_1\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(9),
+      O => \filtered_r0_carry__1_i_34_n_0\
+    );
+\filtered_r0_carry__1_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_53_n_0\,
+      I1 => \filtered_r0_carry__1_i_54_n_0\,
+      O => \filtered_r0_carry__1_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_55_n_0\,
+      I1 => \filtered_r0_carry__1_i_56_n_0\,
+      O => \filtered_r0_carry__1_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(8),
+      I1 => \filter_in_r_reg[18]_13\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(8),
+      O => \filtered_r0_carry__1_i_37_n_0\
+    );
+\filtered_r0_carry__1_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(8),
+      I1 => \filter_in_r_reg[22]_9\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(8),
+      O => \filtered_r0_carry__1_i_38_n_0\
+    );
+\filtered_r0_carry__1_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(8),
+      I1 => \filter_in_r_reg[26]_5\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(8),
+      O => \filtered_r0_carry__1_i_39_n_0\
+    );
+\filtered_r0_carry__1_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[8]\,
+      I1 => \filtered_r0_carry__1_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__1_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__1_i_16_n_0\,
+      O => \filtered_r0_carry__1_i_4_n_0\
+    );
+\filtered_r0_carry__1_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(8),
+      I1 => \filter_in_r_reg[30]_1\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(8),
+      O => \filtered_r0_carry__1_i_40_n_0\
+    );
+\filtered_r0_carry__1_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(11),
+      I1 => \filter_in_r_reg[2]_29\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(11),
+      O => \filtered_r0_carry__1_i_41_n_0\
+    );
+\filtered_r0_carry__1_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(11),
+      I1 => \filter_in_r_reg[6]_25\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(11),
+      O => \filtered_r0_carry__1_i_42_n_0\
+    );
+\filtered_r0_carry__1_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(11),
+      I1 => \filter_in_r_reg[10]_21\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(11),
+      O => \filtered_r0_carry__1_i_43_n_0\
+    );
+\filtered_r0_carry__1_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(11),
+      I1 => \filter_in_r_reg[14]_17\(11),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(11),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(11),
+      O => \filtered_r0_carry__1_i_44_n_0\
+    );
+\filtered_r0_carry__1_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(10),
+      I1 => \filter_in_r_reg[2]_29\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(10),
+      O => \filtered_r0_carry__1_i_45_n_0\
+    );
+\filtered_r0_carry__1_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(10),
+      I1 => \filter_in_r_reg[6]_25\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(10),
+      O => \filtered_r0_carry__1_i_46_n_0\
+    );
+\filtered_r0_carry__1_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(10),
+      I1 => \filter_in_r_reg[10]_21\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(10),
+      O => \filtered_r0_carry__1_i_47_n_0\
+    );
+\filtered_r0_carry__1_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(10),
+      I1 => \filter_in_r_reg[14]_17\(10),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(10),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(10),
+      O => \filtered_r0_carry__1_i_48_n_0\
+    );
+\filtered_r0_carry__1_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(9),
+      I1 => \filter_in_r_reg[2]_29\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(9),
+      O => \filtered_r0_carry__1_i_49_n_0\
+    );
+\filtered_r0_carry__1_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__1_i_17_n_0\,
+      I1 => \filtered_r0_carry__1_i_18_n_0\,
+      O => \filtered_r0_carry__1_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__1_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(9),
+      I1 => \filter_in_r_reg[6]_25\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(9),
+      O => \filtered_r0_carry__1_i_50_n_0\
+    );
+\filtered_r0_carry__1_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(9),
+      I1 => \filter_in_r_reg[10]_21\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(9),
+      O => \filtered_r0_carry__1_i_51_n_0\
+    );
+\filtered_r0_carry__1_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(9),
+      I1 => \filter_in_r_reg[14]_17\(9),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(9),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(9),
+      O => \filtered_r0_carry__1_i_52_n_0\
+    );
+\filtered_r0_carry__1_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(8),
+      I1 => \filter_in_r_reg[2]_29\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(8),
+      O => \filtered_r0_carry__1_i_53_n_0\
+    );
+\filtered_r0_carry__1_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(8),
+      I1 => \filter_in_r_reg[6]_25\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(8),
+      O => \filtered_r0_carry__1_i_54_n_0\
+    );
+\filtered_r0_carry__1_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(8),
+      I1 => \filter_in_r_reg[10]_21\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(8),
+      O => \filtered_r0_carry__1_i_55_n_0\
+    );
+\filtered_r0_carry__1_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(8),
+      I1 => \filter_in_r_reg[14]_17\(8),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(8),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(8),
+      O => \filtered_r0_carry__1_i_56_n_0\
+    );
+\filtered_r0_carry__1_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_19_n_0\,
+      I1 => \filtered_r0_carry__1_i_20_n_0\,
+      O => \filtered_r0_carry__1_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_21_n_0\,
+      I1 => \filtered_r0_carry__1_i_22_n_0\,
+      O => \filtered_r0_carry__1_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__1_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__1_i_23_n_0\,
+      I1 => \filtered_r0_carry__1_i_24_n_0\,
+      O => \filtered_r0_carry__1_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__1_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__1_i_25_n_0\,
+      I1 => \filtered_r0_carry__1_i_26_n_0\,
+      O => \filtered_r0_carry__1_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_r0_carry__1_n_0\,
+      CO(3) => \filtered_r0_carry__2_n_0\,
+      CO(2) => \filtered_r0_carry__2_n_1\,
+      CO(1) => \filtered_r0_carry__2_n_2\,
+      CO(0) => \filtered_r0_carry__2_n_3\,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[15]\,
+      DI(2) => \filtered_r_reg_n_0_[14]\,
+      DI(1) => \filtered_r_reg_n_0_[13]\,
+      DI(0) => \filtered_r_reg_n_0_[12]\,
+      O(3) => \filtered_r0_carry__2_n_4\,
+      O(2) => \filtered_r0_carry__2_n_5\,
+      O(1) => \filtered_r0_carry__2_n_6\,
+      O(0) => \filtered_r0_carry__2_n_7\,
+      S(3) => \filtered_r0_carry__2_i_1_n_0\,
+      S(2) => \filtered_r0_carry__2_i_2_n_0\,
+      S(1) => \filtered_r0_carry__2_i_3_n_0\,
+      S(0) => \filtered_r0_carry__2_i_4_n_0\
+    );
+\filtered_r0_carry__2_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[15]\,
+      I1 => \filtered_r0_carry__2_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__2_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__2_i_7_n_0\,
+      O => \filtered_r0_carry__2_i_1_n_0\
+    );
+\filtered_r0_carry__2_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_27_n_0\,
+      I1 => \filtered_r0_carry__2_i_28_n_0\,
+      O => \filtered_r0_carry__2_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__2_i_29_n_0\,
+      I1 => \filtered_r0_carry__2_i_30_n_0\,
+      O => \filtered_r0_carry__2_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__2_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_31_n_0\,
+      I1 => \filtered_r0_carry__2_i_32_n_0\,
+      O => \filtered_r0_carry__2_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_33_n_0\,
+      I1 => \filtered_r0_carry__2_i_34_n_0\,
+      O => \filtered_r0_carry__2_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__2_i_35_n_0\,
+      I1 => \filtered_r0_carry__2_i_36_n_0\,
+      O => \filtered_r0_carry__2_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__2_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_37_n_0\,
+      I1 => \filtered_r0_carry__2_i_38_n_0\,
+      O => \filtered_r0_carry__2_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_39_n_0\,
+      I1 => \filtered_r0_carry__2_i_40_n_0\,
+      O => \filtered_r0_carry__2_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_41_n_0\,
+      I1 => \filtered_r0_carry__2_i_42_n_0\,
+      O => \filtered_r0_carry__2_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_43_n_0\,
+      I1 => \filtered_r0_carry__2_i_44_n_0\,
+      O => \filtered_r0_carry__2_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(15),
+      I1 => \filter_in_r_reg[18]_13\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(15),
+      O => \filtered_r0_carry__2_i_19_n_0\
+    );
+\filtered_r0_carry__2_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[14]\,
+      I1 => \filtered_r0_carry__2_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__2_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__2_i_10_n_0\,
+      O => \filtered_r0_carry__2_i_2_n_0\
+    );
+\filtered_r0_carry__2_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(15),
+      I1 => \filter_in_r_reg[22]_9\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(15),
+      O => \filtered_r0_carry__2_i_20_n_0\
+    );
+\filtered_r0_carry__2_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(15),
+      I1 => \filter_in_r_reg[26]_5\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(15),
+      O => \filtered_r0_carry__2_i_21_n_0\
+    );
+\filtered_r0_carry__2_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(15),
+      I1 => \filter_in_r_reg[30]_1\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(15),
+      O => \filtered_r0_carry__2_i_22_n_0\
+    );
+\filtered_r0_carry__2_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_45_n_0\,
+      I1 => \filtered_r0_carry__2_i_46_n_0\,
+      O => \filtered_r0_carry__2_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_47_n_0\,
+      I1 => \filtered_r0_carry__2_i_48_n_0\,
+      O => \filtered_r0_carry__2_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(14),
+      I1 => \filter_in_r_reg[18]_13\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(14),
+      O => \filtered_r0_carry__2_i_25_n_0\
+    );
+\filtered_r0_carry__2_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(14),
+      I1 => \filter_in_r_reg[22]_9\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(14),
+      O => \filtered_r0_carry__2_i_26_n_0\
+    );
+\filtered_r0_carry__2_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(14),
+      I1 => \filter_in_r_reg[26]_5\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(14),
+      O => \filtered_r0_carry__2_i_27_n_0\
+    );
+\filtered_r0_carry__2_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(14),
+      I1 => \filter_in_r_reg[30]_1\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(14),
+      O => \filtered_r0_carry__2_i_28_n_0\
+    );
+\filtered_r0_carry__2_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_49_n_0\,
+      I1 => \filtered_r0_carry__2_i_50_n_0\,
+      O => \filtered_r0_carry__2_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[13]\,
+      I1 => \filtered_r0_carry__2_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__2_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__2_i_13_n_0\,
+      O => \filtered_r0_carry__2_i_3_n_0\
+    );
+\filtered_r0_carry__2_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_51_n_0\,
+      I1 => \filtered_r0_carry__2_i_52_n_0\,
+      O => \filtered_r0_carry__2_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(13),
+      I1 => \filter_in_r_reg[18]_13\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(13),
+      O => \filtered_r0_carry__2_i_31_n_0\
+    );
+\filtered_r0_carry__2_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(13),
+      I1 => \filter_in_r_reg[22]_9\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(13),
+      O => \filtered_r0_carry__2_i_32_n_0\
+    );
+\filtered_r0_carry__2_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(13),
+      I1 => \filter_in_r_reg[26]_5\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(13),
+      O => \filtered_r0_carry__2_i_33_n_0\
+    );
+\filtered_r0_carry__2_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(13),
+      I1 => \filter_in_r_reg[30]_1\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(13),
+      O => \filtered_r0_carry__2_i_34_n_0\
+    );
+\filtered_r0_carry__2_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_53_n_0\,
+      I1 => \filtered_r0_carry__2_i_54_n_0\,
+      O => \filtered_r0_carry__2_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_55_n_0\,
+      I1 => \filtered_r0_carry__2_i_56_n_0\,
+      O => \filtered_r0_carry__2_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(12),
+      I1 => \filter_in_r_reg[18]_13\(12),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(12),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(12),
+      O => \filtered_r0_carry__2_i_37_n_0\
+    );
+\filtered_r0_carry__2_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(12),
+      I1 => \filter_in_r_reg[22]_9\(12),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(12),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(12),
+      O => \filtered_r0_carry__2_i_38_n_0\
+    );
+\filtered_r0_carry__2_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(12),
+      I1 => \filter_in_r_reg[26]_5\(12),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(12),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(12),
+      O => \filtered_r0_carry__2_i_39_n_0\
+    );
+\filtered_r0_carry__2_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[12]\,
+      I1 => \filtered_r0_carry__2_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__2_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__2_i_16_n_0\,
+      O => \filtered_r0_carry__2_i_4_n_0\
+    );
+\filtered_r0_carry__2_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(12),
+      I1 => \filter_in_r_reg[30]_1\(12),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(12),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(12),
+      O => \filtered_r0_carry__2_i_40_n_0\
+    );
+\filtered_r0_carry__2_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(15),
+      I1 => \filter_in_r_reg[2]_29\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(15),
+      O => \filtered_r0_carry__2_i_41_n_0\
+    );
+\filtered_r0_carry__2_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(15),
+      I1 => \filter_in_r_reg[6]_25\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(15),
+      O => \filtered_r0_carry__2_i_42_n_0\
+    );
+\filtered_r0_carry__2_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(15),
+      I1 => \filter_in_r_reg[10]_21\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(15),
+      O => \filtered_r0_carry__2_i_43_n_0\
+    );
+\filtered_r0_carry__2_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(15),
+      I1 => \filter_in_r_reg[14]_17\(15),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(15),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(15),
+      O => \filtered_r0_carry__2_i_44_n_0\
+    );
+\filtered_r0_carry__2_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(14),
+      I1 => \filter_in_r_reg[2]_29\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(14),
+      O => \filtered_r0_carry__2_i_45_n_0\
+    );
+\filtered_r0_carry__2_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(14),
+      I1 => \filter_in_r_reg[6]_25\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(14),
+      O => \filtered_r0_carry__2_i_46_n_0\
+    );
+\filtered_r0_carry__2_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(14),
+      I1 => \filter_in_r_reg[10]_21\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(14),
+      O => \filtered_r0_carry__2_i_47_n_0\
+    );
+\filtered_r0_carry__2_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(14),
+      I1 => \filter_in_r_reg[14]_17\(14),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(14),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(14),
+      O => \filtered_r0_carry__2_i_48_n_0\
+    );
+\filtered_r0_carry__2_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(13),
+      I1 => \filter_in_r_reg[2]_29\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(13),
+      O => \filtered_r0_carry__2_i_49_n_0\
+    );
+\filtered_r0_carry__2_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__2_i_17_n_0\,
+      I1 => \filtered_r0_carry__2_i_18_n_0\,
+      O => \filtered_r0_carry__2_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__2_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(13),
+      I1 => \filter_in_r_reg[6]_25\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(13),
+      O => \filtered_r0_carry__2_i_50_n_0\
+    );
+\filtered_r0_carry__2_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(13),
+      I1 => \filter_in_r_reg[10]_21\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(13),
+      O => \filtered_r0_carry__2_i_51_n_0\
+    );
+\filtered_r0_carry__2_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(13),
+      I1 => \filter_in_r_reg[14]_17\(13),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(13),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(13),
+      O => \filtered_r0_carry__2_i_52_n_0\
+    );
+\filtered_r0_carry__2_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(12),
+      I1 => \filter_in_r_reg[2]_29\(12),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(12),
+      O => \filtered_r0_carry__2_i_53_n_0\
+    );
+\filtered_r0_carry__2_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(12),
+      I1 => \filter_in_r_reg[6]_25\(12),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(12),
+      O => \filtered_r0_carry__2_i_54_n_0\
+    );
+\filtered_r0_carry__2_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(12),
+      I1 => \filter_in_r_reg[10]_21\(12),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(12),
+      O => \filtered_r0_carry__2_i_55_n_0\
+    );
+\filtered_r0_carry__2_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(12),
+      I1 => \filter_in_r_reg[14]_17\(12),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(12),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(12),
+      O => \filtered_r0_carry__2_i_56_n_0\
+    );
+\filtered_r0_carry__2_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_19_n_0\,
+      I1 => \filtered_r0_carry__2_i_20_n_0\,
+      O => \filtered_r0_carry__2_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_21_n_0\,
+      I1 => \filtered_r0_carry__2_i_22_n_0\,
+      O => \filtered_r0_carry__2_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__2_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__2_i_23_n_0\,
+      I1 => \filtered_r0_carry__2_i_24_n_0\,
+      O => \filtered_r0_carry__2_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__2_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__2_i_25_n_0\,
+      I1 => \filtered_r0_carry__2_i_26_n_0\,
+      O => \filtered_r0_carry__2_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_r0_carry__2_n_0\,
+      CO(3) => \filtered_r0_carry__3_n_0\,
+      CO(2) => \filtered_r0_carry__3_n_1\,
+      CO(1) => \filtered_r0_carry__3_n_2\,
+      CO(0) => \filtered_r0_carry__3_n_3\,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[19]\,
+      DI(2) => \filtered_r_reg_n_0_[18]\,
+      DI(1) => \filtered_r_reg_n_0_[17]\,
+      DI(0) => \filtered_r_reg_n_0_[16]\,
+      O(3) => \filtered_r0_carry__3_n_4\,
+      O(2) => \filtered_r0_carry__3_n_5\,
+      O(1) => \filtered_r0_carry__3_n_6\,
+      O(0) => \filtered_r0_carry__3_n_7\,
+      S(3) => \filtered_r0_carry__3_i_1_n_0\,
+      S(2) => \filtered_r0_carry__3_i_2_n_0\,
+      S(1) => \filtered_r0_carry__3_i_3_n_0\,
+      S(0) => \filtered_r0_carry__3_i_4_n_0\
+    );
+\filtered_r0_carry__3_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[19]\,
+      I1 => \filtered_r0_carry__3_i_5_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__3_i_6_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__3_i_7_n_0\,
+      O => \filtered_r0_carry__3_i_1_n_0\
+    );
+\filtered_r0_carry__3_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_27_n_0\,
+      I1 => \filtered_r0_carry__3_i_28_n_0\,
+      O => \filtered_r0_carry__3_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__3_i_29_n_0\,
+      I1 => \filtered_r0_carry__3_i_30_n_0\,
+      O => \filtered_r0_carry__3_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__3_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_31_n_0\,
+      I1 => \filtered_r0_carry__3_i_32_n_0\,
+      O => \filtered_r0_carry__3_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_33_n_0\,
+      I1 => \filtered_r0_carry__3_i_34_n_0\,
+      O => \filtered_r0_carry__3_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__3_i_35_n_0\,
+      I1 => \filtered_r0_carry__3_i_36_n_0\,
+      O => \filtered_r0_carry__3_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__3_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_37_n_0\,
+      I1 => \filtered_r0_carry__3_i_38_n_0\,
+      O => \filtered_r0_carry__3_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_39_n_0\,
+      I1 => \filtered_r0_carry__3_i_40_n_0\,
+      O => \filtered_r0_carry__3_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_17\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_41_n_0\,
+      I1 => \filtered_r0_carry__3_i_42_n_0\,
+      O => \filtered_r0_carry__3_i_17_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_18\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_43_n_0\,
+      I1 => \filtered_r0_carry__3_i_44_n_0\,
+      O => \filtered_r0_carry__3_i_18_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(19),
+      I1 => \filter_in_r_reg[18]_13\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(19),
+      O => \filtered_r0_carry__3_i_19_n_0\
+    );
+\filtered_r0_carry__3_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[18]\,
+      I1 => \filtered_r0_carry__3_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__3_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__3_i_10_n_0\,
+      O => \filtered_r0_carry__3_i_2_n_0\
+    );
+\filtered_r0_carry__3_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(19),
+      I1 => \filter_in_r_reg[22]_9\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(19),
+      O => \filtered_r0_carry__3_i_20_n_0\
+    );
+\filtered_r0_carry__3_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(19),
+      I1 => \filter_in_r_reg[26]_5\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(19),
+      O => \filtered_r0_carry__3_i_21_n_0\
+    );
+\filtered_r0_carry__3_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(19),
+      I1 => \filter_in_r_reg[30]_1\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(19),
+      O => \filtered_r0_carry__3_i_22_n_0\
+    );
+\filtered_r0_carry__3_i_23\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_45_n_0\,
+      I1 => \filtered_r0_carry__3_i_46_n_0\,
+      O => \filtered_r0_carry__3_i_23_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_24\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_47_n_0\,
+      I1 => \filtered_r0_carry__3_i_48_n_0\,
+      O => \filtered_r0_carry__3_i_24_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(18),
+      I1 => \filter_in_r_reg[18]_13\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(18),
+      O => \filtered_r0_carry__3_i_25_n_0\
+    );
+\filtered_r0_carry__3_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(18),
+      I1 => \filter_in_r_reg[22]_9\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(18),
+      O => \filtered_r0_carry__3_i_26_n_0\
+    );
+\filtered_r0_carry__3_i_27\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(18),
+      I1 => \filter_in_r_reg[26]_5\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(18),
+      O => \filtered_r0_carry__3_i_27_n_0\
+    );
+\filtered_r0_carry__3_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(18),
+      I1 => \filter_in_r_reg[30]_1\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(18),
+      O => \filtered_r0_carry__3_i_28_n_0\
+    );
+\filtered_r0_carry__3_i_29\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_49_n_0\,
+      I1 => \filtered_r0_carry__3_i_50_n_0\,
+      O => \filtered_r0_carry__3_i_29_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[17]\,
+      I1 => \filtered_r0_carry__3_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__3_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__3_i_13_n_0\,
+      O => \filtered_r0_carry__3_i_3_n_0\
+    );
+\filtered_r0_carry__3_i_30\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_51_n_0\,
+      I1 => \filtered_r0_carry__3_i_52_n_0\,
+      O => \filtered_r0_carry__3_i_30_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(17),
+      I1 => \filter_in_r_reg[18]_13\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(17),
+      O => \filtered_r0_carry__3_i_31_n_0\
+    );
+\filtered_r0_carry__3_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(17),
+      I1 => \filter_in_r_reg[22]_9\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(17),
+      O => \filtered_r0_carry__3_i_32_n_0\
+    );
+\filtered_r0_carry__3_i_33\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(17),
+      I1 => \filter_in_r_reg[26]_5\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(17),
+      O => \filtered_r0_carry__3_i_33_n_0\
+    );
+\filtered_r0_carry__3_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(17),
+      I1 => \filter_in_r_reg[30]_1\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(17),
+      O => \filtered_r0_carry__3_i_34_n_0\
+    );
+\filtered_r0_carry__3_i_35\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_53_n_0\,
+      I1 => \filtered_r0_carry__3_i_54_n_0\,
+      O => \filtered_r0_carry__3_i_35_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_36\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_55_n_0\,
+      I1 => \filtered_r0_carry__3_i_56_n_0\,
+      O => \filtered_r0_carry__3_i_36_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(16),
+      I1 => \filter_in_r_reg[18]_13\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[16]_15\(16),
+      O => \filtered_r0_carry__3_i_37_n_0\
+    );
+\filtered_r0_carry__3_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(16),
+      I1 => \filter_in_r_reg[22]_9\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[20]_11\(16),
+      O => \filtered_r0_carry__3_i_38_n_0\
+    );
+\filtered_r0_carry__3_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(16),
+      I1 => \filter_in_r_reg[26]_5\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[24]_7\(16),
+      O => \filtered_r0_carry__3_i_39_n_0\
+    );
+\filtered_r0_carry__3_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[16]\,
+      I1 => \filtered_r0_carry__3_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__3_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__3_i_16_n_0\,
+      O => \filtered_r0_carry__3_i_4_n_0\
+    );
+\filtered_r0_carry__3_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(16),
+      I1 => \filter_in_r_reg[30]_1\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[28]_3\(16),
+      O => \filtered_r0_carry__3_i_40_n_0\
+    );
+\filtered_r0_carry__3_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(19),
+      I1 => \filter_in_r_reg[2]_29\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(19),
+      O => \filtered_r0_carry__3_i_41_n_0\
+    );
+\filtered_r0_carry__3_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(19),
+      I1 => \filter_in_r_reg[6]_25\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(19),
+      O => \filtered_r0_carry__3_i_42_n_0\
+    );
+\filtered_r0_carry__3_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(19),
+      I1 => \filter_in_r_reg[10]_21\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(19),
+      O => \filtered_r0_carry__3_i_43_n_0\
+    );
+\filtered_r0_carry__3_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(19),
+      I1 => \filter_in_r_reg[14]_17\(19),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(19),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(19),
+      O => \filtered_r0_carry__3_i_44_n_0\
+    );
+\filtered_r0_carry__3_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(18),
+      I1 => \filter_in_r_reg[2]_29\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(18),
+      O => \filtered_r0_carry__3_i_45_n_0\
+    );
+\filtered_r0_carry__3_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(18),
+      I1 => \filter_in_r_reg[6]_25\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(18),
+      O => \filtered_r0_carry__3_i_46_n_0\
+    );
+\filtered_r0_carry__3_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(18),
+      I1 => \filter_in_r_reg[10]_21\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(18),
+      O => \filtered_r0_carry__3_i_47_n_0\
+    );
+\filtered_r0_carry__3_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(18),
+      I1 => \filter_in_r_reg[14]_17\(18),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(18),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(18),
+      O => \filtered_r0_carry__3_i_48_n_0\
+    );
+\filtered_r0_carry__3_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(17),
+      I1 => \filter_in_r_reg[2]_29\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(17),
+      O => \filtered_r0_carry__3_i_49_n_0\
+    );
+\filtered_r0_carry__3_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__3_i_17_n_0\,
+      I1 => \filtered_r0_carry__3_i_18_n_0\,
+      O => \filtered_r0_carry__3_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__3_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(17),
+      I1 => \filter_in_r_reg[6]_25\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(17),
+      O => \filtered_r0_carry__3_i_50_n_0\
+    );
+\filtered_r0_carry__3_i_51\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(17),
+      I1 => \filter_in_r_reg[10]_21\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(17),
+      O => \filtered_r0_carry__3_i_51_n_0\
+    );
+\filtered_r0_carry__3_i_52\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(17),
+      I1 => \filter_in_r_reg[14]_17\(17),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(17),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(17),
+      O => \filtered_r0_carry__3_i_52_n_0\
+    );
+\filtered_r0_carry__3_i_53\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(16),
+      I1 => \filter_in_r_reg[2]_29\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[0]_31\(16),
+      O => \filtered_r0_carry__3_i_53_n_0\
+    );
+\filtered_r0_carry__3_i_54\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(16),
+      I1 => \filter_in_r_reg[6]_25\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[4]_27\(16),
+      O => \filtered_r0_carry__3_i_54_n_0\
+    );
+\filtered_r0_carry__3_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(16),
+      I1 => \filter_in_r_reg[10]_21\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[8]_23\(16),
+      O => \filtered_r0_carry__3_i_55_n_0\
+    );
+\filtered_r0_carry__3_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(16),
+      I1 => \filter_in_r_reg[14]_17\(16),
+      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(16),
+      I4 => ring_buffer_read_reg(0),
+      I5 => \filter_in_r_reg[12]_19\(16),
+      O => \filtered_r0_carry__3_i_56_n_0\
+    );
+\filtered_r0_carry__3_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_19_n_0\,
+      I1 => \filtered_r0_carry__3_i_20_n_0\,
+      O => \filtered_r0_carry__3_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_21_n_0\,
+      I1 => \filtered_r0_carry__3_i_22_n_0\,
+      O => \filtered_r0_carry__3_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__3_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__3_i_23_n_0\,
+      I1 => \filtered_r0_carry__3_i_24_n_0\,
+      O => \filtered_r0_carry__3_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__3_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__3_i_25_n_0\,
+      I1 => \filtered_r0_carry__3_i_26_n_0\,
+      O => \filtered_r0_carry__3_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+\filtered_r0_carry__4\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_r0_carry__3_n_0\,
+      CO(3) => \filtered_r0_carry__4_n_0\,
+      CO(2) => \filtered_r0_carry__4_n_1\,
+      CO(1) => \filtered_r0_carry__4_n_2\,
+      CO(0) => \filtered_r0_carry__4_n_3\,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[23]\,
+      DI(2) => \filtered_r_reg_n_0_[22]\,
+      DI(1) => \filtered_r_reg_n_0_[21]\,
+      DI(0) => \filtered_r_reg_n_0_[20]\,
+      O(3) => \filtered_r0_carry__4_n_4\,
+      O(2) => \filtered_r0_carry__4_n_5\,
+      O(1) => \filtered_r0_carry__4_n_6\,
+      O(0) => \filtered_r0_carry__4_n_7\,
+      S(3) => \filtered_r0_carry__4_i_1_n_0\,
+      S(2) => \filtered_r0_carry__4_i_2_n_0\,
+      S(1) => \filtered_r0_carry__4_i_3_n_0\,
+      S(0) => \filtered_r0_carry__4_i_4_n_0\
+    );
+\filtered_r0_carry__4_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"111DDD1DEEE222E2"
+    )
+        port map (
+      I0 => \filtered_r0_carry__4_i_5_n_0\,
+      I1 => ring_buffer_read_reg(4),
+      I2 => \filtered_r0_carry__4_i_6_n_0\,
+      I3 => ring_buffer_read_reg(3),
+      I4 => \filtered_r0_carry__4_i_7_n_0\,
+      I5 => \filtered_r_reg_n_0_[23]\,
+      O => \filtered_r0_carry__4_i_1_n_0\
+    );
+\filtered_r0_carry__4_i_10\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_25_n_0\,
+      I1 => \filtered_r0_carry__4_i_26_n_0\,
+      O => \filtered_r0_carry__4_i_10_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_11\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__4_i_27_n_0\,
+      I1 => \filtered_r0_carry__4_i_28_n_0\,
+      O => \filtered_r0_carry__4_i_11_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__4_i_12\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_29_n_0\,
+      I1 => \filtered_r0_carry__4_i_30_n_0\,
+      O => \filtered_r0_carry__4_i_12_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_13\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_31_n_0\,
+      I1 => \filtered_r0_carry__4_i_32_n_0\,
+      O => \filtered_r0_carry__4_i_13_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_14\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__4_i_33_n_0\,
+      I1 => \filtered_r0_carry__4_i_34_n_0\,
+      O => \filtered_r0_carry__4_i_14_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__4_i_15\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_35_n_0\,
+      I1 => \filtered_r0_carry__4_i_36_n_0\,
+      O => \filtered_r0_carry__4_i_15_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_16\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_37_n_0\,
+      I1 => \filtered_r0_carry__4_i_38_n_0\,
+      O => \filtered_r0_carry__4_i_16_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_17\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(23),
+      I1 => \filter_in_r_reg[18]_13\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(23),
+      O => \filtered_r0_carry__4_i_17_n_0\
+    );
+\filtered_r0_carry__4_i_18\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(23),
+      I1 => \filter_in_r_reg[22]_9\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(23),
+      O => \filtered_r0_carry__4_i_18_n_0\
+    );
+\filtered_r0_carry__4_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(23),
+      I1 => \filter_in_r_reg[26]_5\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(23),
+      O => \filtered_r0_carry__4_i_19_n_0\
+    );
+\filtered_r0_carry__4_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[22]\,
+      I1 => \filtered_r0_carry__4_i_8_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__4_i_9_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__4_i_10_n_0\,
+      O => \filtered_r0_carry__4_i_2_n_0\
+    );
+\filtered_r0_carry__4_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(23),
+      I1 => \filter_in_r_reg[30]_1\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(23),
+      O => \filtered_r0_carry__4_i_20_n_0\
+    );
+\filtered_r0_carry__4_i_21\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_39_n_0\,
+      I1 => \filtered_r0_carry__4_i_40_n_0\,
+      O => \filtered_r0_carry__4_i_21_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_22\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_41_n_0\,
+      I1 => \filtered_r0_carry__4_i_42_n_0\,
+      O => \filtered_r0_carry__4_i_22_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_23\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(22),
+      I1 => \filter_in_r_reg[18]_13\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(22),
+      O => \filtered_r0_carry__4_i_23_n_0\
+    );
+\filtered_r0_carry__4_i_24\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(22),
+      I1 => \filter_in_r_reg[22]_9\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(22),
+      O => \filtered_r0_carry__4_i_24_n_0\
+    );
+\filtered_r0_carry__4_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(22),
+      I1 => \filter_in_r_reg[26]_5\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(22),
+      O => \filtered_r0_carry__4_i_25_n_0\
+    );
+\filtered_r0_carry__4_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(22),
+      I1 => \filter_in_r_reg[30]_1\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(22),
+      O => \filtered_r0_carry__4_i_26_n_0\
+    );
+\filtered_r0_carry__4_i_27\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_43_n_0\,
+      I1 => \filtered_r0_carry__4_i_44_n_0\,
+      O => \filtered_r0_carry__4_i_27_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_28\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_45_n_0\,
+      I1 => \filtered_r0_carry__4_i_46_n_0\,
+      O => \filtered_r0_carry__4_i_28_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_29\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(21),
+      I1 => \filter_in_r_reg[18]_13\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(21),
+      O => \filtered_r0_carry__4_i_29_n_0\
+    );
+\filtered_r0_carry__4_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[21]\,
+      I1 => \filtered_r0_carry__4_i_11_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__4_i_12_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__4_i_13_n_0\,
+      O => \filtered_r0_carry__4_i_3_n_0\
+    );
+\filtered_r0_carry__4_i_30\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(21),
+      I1 => \filter_in_r_reg[22]_9\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(21),
+      O => \filtered_r0_carry__4_i_30_n_0\
+    );
+\filtered_r0_carry__4_i_31\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(21),
+      I1 => \filter_in_r_reg[26]_5\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(21),
+      O => \filtered_r0_carry__4_i_31_n_0\
+    );
+\filtered_r0_carry__4_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(21),
+      I1 => \filter_in_r_reg[30]_1\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(21),
+      O => \filtered_r0_carry__4_i_32_n_0\
+    );
+\filtered_r0_carry__4_i_33\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_47_n_0\,
+      I1 => \filtered_r0_carry__4_i_48_n_0\,
+      O => \filtered_r0_carry__4_i_33_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_34\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_49_n_0\,
+      I1 => \filtered_r0_carry__4_i_50_n_0\,
+      O => \filtered_r0_carry__4_i_34_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_35\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(20),
+      I1 => \filter_in_r_reg[18]_13\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[17]_14\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(20),
+      O => \filtered_r0_carry__4_i_35_n_0\
+    );
+\filtered_r0_carry__4_i_36\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(20),
+      I1 => \filter_in_r_reg[22]_9\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[21]_10\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(20),
+      O => \filtered_r0_carry__4_i_36_n_0\
+    );
+\filtered_r0_carry__4_i_37\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(20),
+      I1 => \filter_in_r_reg[26]_5\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[25]_6\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(20),
+      O => \filtered_r0_carry__4_i_37_n_0\
+    );
+\filtered_r0_carry__4_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(20),
+      I1 => \filter_in_r_reg[30]_1\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[29]_2\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(20),
+      O => \filtered_r0_carry__4_i_38_n_0\
+    );
+\filtered_r0_carry__4_i_39\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(22),
+      I1 => \filter_in_r_reg[2]_29\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(22),
+      O => \filtered_r0_carry__4_i_39_n_0\
+    );
+\filtered_r0_carry__4_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[20]\,
+      I1 => \filtered_r0_carry__4_i_14_n_0\,
+      I2 => ring_buffer_read_reg(4),
+      I3 => \filtered_r0_carry__4_i_15_n_0\,
+      I4 => ring_buffer_read_reg(3),
+      I5 => \filtered_r0_carry__4_i_16_n_0\,
+      O => \filtered_r0_carry__4_i_4_n_0\
+    );
+\filtered_r0_carry__4_i_40\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(22),
+      I1 => \filter_in_r_reg[6]_25\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(22),
+      O => \filtered_r0_carry__4_i_40_n_0\
+    );
+\filtered_r0_carry__4_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(22),
+      I1 => \filter_in_r_reg[10]_21\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(22),
+      O => \filtered_r0_carry__4_i_41_n_0\
+    );
+\filtered_r0_carry__4_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(22),
+      I1 => \filter_in_r_reg[14]_17\(22),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(22),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(22),
+      O => \filtered_r0_carry__4_i_42_n_0\
+    );
+\filtered_r0_carry__4_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(21),
+      I1 => \filter_in_r_reg[2]_29\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(21),
+      O => \filtered_r0_carry__4_i_43_n_0\
+    );
+\filtered_r0_carry__4_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(21),
+      I1 => \filter_in_r_reg[6]_25\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(21),
+      O => \filtered_r0_carry__4_i_44_n_0\
+    );
+\filtered_r0_carry__4_i_45\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(21),
+      I1 => \filter_in_r_reg[10]_21\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(21),
+      O => \filtered_r0_carry__4_i_45_n_0\
+    );
+\filtered_r0_carry__4_i_46\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(21),
+      I1 => \filter_in_r_reg[14]_17\(21),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(21),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(21),
+      O => \filtered_r0_carry__4_i_46_n_0\
+    );
+\filtered_r0_carry__4_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(20),
+      I1 => \filter_in_r_reg[2]_29\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(20),
+      O => \filtered_r0_carry__4_i_47_n_0\
+    );
+\filtered_r0_carry__4_i_48\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(20),
+      I1 => \filter_in_r_reg[6]_25\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(20),
+      O => \filtered_r0_carry__4_i_48_n_0\
+    );
+\filtered_r0_carry__4_i_49\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(20),
+      I1 => \filter_in_r_reg[10]_21\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(20),
+      O => \filtered_r0_carry__4_i_49_n_0\
+    );
+\filtered_r0_carry__4_i_5\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__5_i_6_n_0\,
+      I1 => \filtered_r0_carry__5_i_7_n_0\,
+      O => \filtered_r0_carry__4_i_5_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__4_i_50\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(20),
+      I1 => \filter_in_r_reg[14]_17\(20),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(20),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(20),
+      O => \filtered_r0_carry__4_i_50_n_0\
+    );
+\filtered_r0_carry__4_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_17_n_0\,
+      I1 => \filtered_r0_carry__4_i_18_n_0\,
+      O => \filtered_r0_carry__4_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_19_n_0\,
+      I1 => \filtered_r0_carry__4_i_20_n_0\,
+      O => \filtered_r0_carry__4_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__4_i_8\: unisim.vcomponents.MUXF8
+     port map (
+      I0 => \filtered_r0_carry__4_i_21_n_0\,
+      I1 => \filtered_r0_carry__4_i_22_n_0\,
+      O => \filtered_r0_carry__4_i_8_n_0\,
+      S => ring_buffer_read_reg(3)
+    );
+\filtered_r0_carry__4_i_9\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__4_i_23_n_0\,
+      I1 => \filtered_r0_carry__4_i_24_n_0\,
+      O => \filtered_r0_carry__4_i_9_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__5\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_r0_carry__4_n_0\,
+      CO(3) => \filtered_r0_carry__5_n_0\,
+      CO(2) => \filtered_r0_carry__5_n_1\,
+      CO(1) => \filtered_r0_carry__5_n_2\,
+      CO(0) => \filtered_r0_carry__5_n_3\,
+      CYINIT => '0',
+      DI(3) => \filtered_r_reg_n_0_[26]\,
+      DI(2) => \filtered_r_reg_n_0_[25]\,
+      DI(1) => \filtered_r_reg_n_0_[24]\,
+      DI(0) => \filtered_r0_carry__5_i_1_n_0\,
+      O(3) => \filtered_r0_carry__5_n_4\,
+      O(2) => \filtered_r0_carry__5_n_5\,
+      O(1) => \filtered_r0_carry__5_n_6\,
+      O(0) => \filtered_r0_carry__5_n_7\,
+      S(3) => \filtered_r0_carry__5_i_2_n_0\,
+      S(2) => \filtered_r0_carry__5_i_3_n_0\,
+      S(1) => \filtered_r0_carry__5_i_4_n_0\,
+      S(0) => \filtered_r0_carry__5_i_5_n_0\
+    );
+\filtered_r0_carry__5_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"001D331DCC1DFF1D"
+    )
+        port map (
+      I0 => \filtered_r0_carry__5_i_6_n_0\,
+      I1 => ring_buffer_read_reg(3),
+      I2 => \filtered_r0_carry__5_i_7_n_0\,
+      I3 => ring_buffer_read_reg(4),
+      I4 => \filtered_r0_carry__4_i_6_n_0\,
+      I5 => \filtered_r0_carry__4_i_7_n_0\,
+      O => \filtered_r0_carry__5_i_1_n_0\
+    );
+\filtered_r0_carry__5_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(23),
+      I1 => \filter_in_r_reg[10]_21\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[9]_22\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(23),
+      O => \filtered_r0_carry__5_i_10_n_0\
+    );
+\filtered_r0_carry__5_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(23),
+      I1 => \filter_in_r_reg[14]_17\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[13]_18\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(23),
+      O => \filtered_r0_carry__5_i_11_n_0\
+    );
+\filtered_r0_carry__5_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[26]\,
+      I1 => \filtered_r_reg_n_0_[27]\,
+      O => \filtered_r0_carry__5_i_2_n_0\
+    );
+\filtered_r0_carry__5_i_3\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[25]\,
+      I1 => \filtered_r_reg_n_0_[26]\,
+      O => \filtered_r0_carry__5_i_3_n_0\
+    );
+\filtered_r0_carry__5_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[24]\,
+      I1 => \filtered_r_reg_n_0_[25]\,
+      O => \filtered_r0_carry__5_i_4_n_0\
+    );
+\filtered_r0_carry__5_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"111DDD1DEEE222E2"
+    )
+        port map (
+      I0 => \filtered_r0_carry__4_i_5_n_0\,
+      I1 => ring_buffer_read_reg(4),
+      I2 => \filtered_r0_carry__4_i_6_n_0\,
+      I3 => ring_buffer_read_reg(3),
+      I4 => \filtered_r0_carry__4_i_7_n_0\,
+      I5 => \filtered_r_reg_n_0_[24]\,
+      O => \filtered_r0_carry__5_i_5_n_0\
+    );
+\filtered_r0_carry__5_i_6\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__5_i_8_n_0\,
+      I1 => \filtered_r0_carry__5_i_9_n_0\,
+      O => \filtered_r0_carry__5_i_6_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__5_i_7\: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \filtered_r0_carry__5_i_10_n_0\,
+      I1 => \filtered_r0_carry__5_i_11_n_0\,
+      O => \filtered_r0_carry__5_i_7_n_0\,
+      S => \ring_buffer_read_reg[2]_rep__0_n_0\
+    );
+\filtered_r0_carry__5_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(23),
+      I1 => \filter_in_r_reg[2]_29\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[1]_30\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(23),
+      O => \filtered_r0_carry__5_i_8_n_0\
+    );
+\filtered_r0_carry__5_i_9\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(23),
+      I1 => \filter_in_r_reg[6]_25\(23),
+      I2 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I3 => \filter_in_r_reg[5]_26\(23),
+      I4 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(23),
+      O => \filtered_r0_carry__5_i_9_n_0\
+    );
+\filtered_r0_carry__6\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \filtered_r0_carry__5_n_0\,
+      CO(3 downto 0) => \NLW_filtered_r0_carry__6_CO_UNCONNECTED\(3 downto 0),
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3 downto 1) => \NLW_filtered_r0_carry__6_O_UNCONNECTED\(3 downto 1),
+      O(0) => \filtered_r0_carry__6_n_7\,
+      S(3 downto 1) => B"000",
+      S(0) => \filtered_r0_carry__6_i_1_n_0\
+    );
+\filtered_r0_carry__6_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[27]\,
+      I1 => \filtered_r_reg_n_0_[28]\,
+      O => \filtered_r0_carry__6_i_1_n_0\
+    );
+filtered_r0_carry_i_1: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[3]\,
+      I1 => filtered_r0_carry_i_5_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_r0_carry_i_6_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_r0_carry_i_7_n_0,
+      O => filtered_r0_carry_i_1_n_0
+    );
+filtered_r0_carry_i_10: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_27_n_0,
+      I1 => filtered_r0_carry_i_28_n_0,
+      O => filtered_r0_carry_i_10_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_11: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_r0_carry_i_29_n_0,
+      I1 => filtered_r0_carry_i_30_n_0,
+      O => filtered_r0_carry_i_11_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_r0_carry_i_12: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_31_n_0,
+      I1 => filtered_r0_carry_i_32_n_0,
+      O => filtered_r0_carry_i_12_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_13: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_33_n_0,
+      I1 => filtered_r0_carry_i_34_n_0,
+      O => filtered_r0_carry_i_13_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_14: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_r0_carry_i_35_n_0,
+      I1 => filtered_r0_carry_i_36_n_0,
+      O => filtered_r0_carry_i_14_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_r0_carry_i_15: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_37_n_0,
+      I1 => filtered_r0_carry_i_38_n_0,
+      O => filtered_r0_carry_i_15_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_16: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_39_n_0,
+      I1 => filtered_r0_carry_i_40_n_0,
+      O => filtered_r0_carry_i_16_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_17: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_41_n_0,
+      I1 => filtered_r0_carry_i_42_n_0,
+      O => filtered_r0_carry_i_17_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_18: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_43_n_0,
+      I1 => filtered_r0_carry_i_44_n_0,
+      O => filtered_r0_carry_i_18_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_19: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(3),
+      I1 => \filter_in_r_reg[18]_13\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(3),
+      O => filtered_r0_carry_i_19_n_0
+    );
+filtered_r0_carry_i_2: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[2]\,
+      I1 => filtered_r0_carry_i_8_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_r0_carry_i_9_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_r0_carry_i_10_n_0,
+      O => filtered_r0_carry_i_2_n_0
+    );
+filtered_r0_carry_i_20: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(3),
+      I1 => \filter_in_r_reg[22]_9\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(3),
+      O => filtered_r0_carry_i_20_n_0
+    );
+filtered_r0_carry_i_21: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(3),
+      I1 => \filter_in_r_reg[26]_5\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(3),
+      O => filtered_r0_carry_i_21_n_0
+    );
+filtered_r0_carry_i_22: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(3),
+      I1 => \filter_in_r_reg[30]_1\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(3),
+      O => filtered_r0_carry_i_22_n_0
+    );
+filtered_r0_carry_i_23: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_45_n_0,
+      I1 => filtered_r0_carry_i_46_n_0,
+      O => filtered_r0_carry_i_23_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_24: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_47_n_0,
+      I1 => filtered_r0_carry_i_48_n_0,
+      O => filtered_r0_carry_i_24_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_25: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(2),
+      I1 => \filter_in_r_reg[18]_13\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(2),
+      O => filtered_r0_carry_i_25_n_0
+    );
+filtered_r0_carry_i_26: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(2),
+      I1 => \filter_in_r_reg[22]_9\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(2),
+      O => filtered_r0_carry_i_26_n_0
+    );
+filtered_r0_carry_i_27: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(2),
+      I1 => \filter_in_r_reg[26]_5\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(2),
+      O => filtered_r0_carry_i_27_n_0
+    );
+filtered_r0_carry_i_28: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(2),
+      I1 => \filter_in_r_reg[30]_1\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(2),
+      O => filtered_r0_carry_i_28_n_0
+    );
+filtered_r0_carry_i_29: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_49_n_0,
+      I1 => filtered_r0_carry_i_50_n_0,
+      O => filtered_r0_carry_i_29_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[1]\,
+      I1 => filtered_r0_carry_i_11_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_r0_carry_i_12_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_r0_carry_i_13_n_0,
+      O => filtered_r0_carry_i_3_n_0
+    );
+filtered_r0_carry_i_30: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_51_n_0,
+      I1 => filtered_r0_carry_i_52_n_0,
+      O => filtered_r0_carry_i_30_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_31: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(1),
+      I1 => \filter_in_r_reg[18]_13\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(1),
+      O => filtered_r0_carry_i_31_n_0
+    );
+filtered_r0_carry_i_32: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(1),
+      I1 => \filter_in_r_reg[22]_9\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(1),
+      O => filtered_r0_carry_i_32_n_0
+    );
+filtered_r0_carry_i_33: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(1),
+      I1 => \filter_in_r_reg[26]_5\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(1),
+      O => filtered_r0_carry_i_33_n_0
+    );
+filtered_r0_carry_i_34: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(1),
+      I1 => \filter_in_r_reg[30]_1\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(1),
+      O => filtered_r0_carry_i_34_n_0
+    );
+filtered_r0_carry_i_35: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_53_n_0,
+      I1 => filtered_r0_carry_i_54_n_0,
+      O => filtered_r0_carry_i_35_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_36: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_55_n_0,
+      I1 => filtered_r0_carry_i_56_n_0,
+      O => filtered_r0_carry_i_36_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_37: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[19]_12\(0),
+      I1 => \filter_in_r_reg[18]_13\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[17]_14\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[16]_15\(0),
+      O => filtered_r0_carry_i_37_n_0
+    );
+filtered_r0_carry_i_38: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[23]_8\(0),
+      I1 => \filter_in_r_reg[22]_9\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[21]_10\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[20]_11\(0),
+      O => filtered_r0_carry_i_38_n_0
+    );
+filtered_r0_carry_i_39: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[27]_4\(0),
+      I1 => \filter_in_r_reg[26]_5\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[25]_6\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[24]_7\(0),
+      O => filtered_r0_carry_i_39_n_0
+    );
+filtered_r0_carry_i_4: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"565656A6A6A656A6"
+    )
+        port map (
+      I0 => \filtered_r_reg_n_0_[0]\,
+      I1 => filtered_r0_carry_i_14_n_0,
+      I2 => ring_buffer_read_reg(4),
+      I3 => filtered_r0_carry_i_15_n_0,
+      I4 => ring_buffer_read_reg(3),
+      I5 => filtered_r0_carry_i_16_n_0,
+      O => filtered_r0_carry_i_4_n_0
+    );
+filtered_r0_carry_i_40: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[31]_0\(0),
+      I1 => \filter_in_r_reg[30]_1\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[29]_2\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[28]_3\(0),
+      O => filtered_r0_carry_i_40_n_0
+    );
+filtered_r0_carry_i_41: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(3),
+      I1 => \filter_in_r_reg[2]_29\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(3),
+      O => filtered_r0_carry_i_41_n_0
+    );
+filtered_r0_carry_i_42: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(3),
+      I1 => \filter_in_r_reg[6]_25\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(3),
+      O => filtered_r0_carry_i_42_n_0
+    );
+filtered_r0_carry_i_43: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(3),
+      I1 => \filter_in_r_reg[10]_21\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(3),
+      O => filtered_r0_carry_i_43_n_0
+    );
+filtered_r0_carry_i_44: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(3),
+      I1 => \filter_in_r_reg[14]_17\(3),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(3),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(3),
+      O => filtered_r0_carry_i_44_n_0
+    );
+filtered_r0_carry_i_45: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(2),
+      I1 => \filter_in_r_reg[2]_29\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(2),
+      O => filtered_r0_carry_i_45_n_0
+    );
+filtered_r0_carry_i_46: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(2),
+      I1 => \filter_in_r_reg[6]_25\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(2),
+      O => filtered_r0_carry_i_46_n_0
+    );
+filtered_r0_carry_i_47: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(2),
+      I1 => \filter_in_r_reg[10]_21\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(2),
+      O => filtered_r0_carry_i_47_n_0
+    );
+filtered_r0_carry_i_48: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(2),
+      I1 => \filter_in_r_reg[14]_17\(2),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(2),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(2),
+      O => filtered_r0_carry_i_48_n_0
+    );
+filtered_r0_carry_i_49: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(1),
+      I1 => \filter_in_r_reg[2]_29\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(1),
+      O => filtered_r0_carry_i_49_n_0
+    );
+filtered_r0_carry_i_5: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_r0_carry_i_17_n_0,
+      I1 => filtered_r0_carry_i_18_n_0,
+      O => filtered_r0_carry_i_5_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_r0_carry_i_50: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(1),
+      I1 => \filter_in_r_reg[6]_25\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(1),
+      O => filtered_r0_carry_i_50_n_0
+    );
+filtered_r0_carry_i_51: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(1),
+      I1 => \filter_in_r_reg[10]_21\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(1),
+      O => filtered_r0_carry_i_51_n_0
+    );
+filtered_r0_carry_i_52: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(1),
+      I1 => \filter_in_r_reg[14]_17\(1),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(1),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(1),
+      O => filtered_r0_carry_i_52_n_0
+    );
+filtered_r0_carry_i_53: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[3]_28\(0),
+      I1 => \filter_in_r_reg[2]_29\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[1]_30\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[0]_31\(0),
+      O => filtered_r0_carry_i_53_n_0
+    );
+filtered_r0_carry_i_54: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[7]_24\(0),
+      I1 => \filter_in_r_reg[6]_25\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[5]_26\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[4]_27\(0),
+      O => filtered_r0_carry_i_54_n_0
+    );
+filtered_r0_carry_i_55: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[11]_20\(0),
+      I1 => \filter_in_r_reg[10]_21\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[9]_22\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[8]_23\(0),
+      O => filtered_r0_carry_i_55_n_0
+    );
+filtered_r0_carry_i_56: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \filter_in_r_reg[15]_16\(0),
+      I1 => \filter_in_r_reg[14]_17\(0),
+      I2 => ring_buffer_read_reg(1),
+      I3 => \filter_in_r_reg[13]_18\(0),
+      I4 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I5 => \filter_in_r_reg[12]_19\(0),
+      O => filtered_r0_carry_i_56_n_0
+    );
+filtered_r0_carry_i_6: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_19_n_0,
+      I1 => filtered_r0_carry_i_20_n_0,
+      O => filtered_r0_carry_i_6_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_7: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_21_n_0,
+      I1 => filtered_r0_carry_i_22_n_0,
+      O => filtered_r0_carry_i_7_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
+    );
+filtered_r0_carry_i_8: unisim.vcomponents.MUXF8
+     port map (
+      I0 => filtered_r0_carry_i_23_n_0,
+      I1 => filtered_r0_carry_i_24_n_0,
+      O => filtered_r0_carry_i_8_n_0,
+      S => ring_buffer_read_reg(3)
+    );
+filtered_r0_carry_i_9: unisim.vcomponents.MUXF7
+     port map (
+      I0 => filtered_r0_carry_i_25_n_0,
+      I1 => filtered_r0_carry_i_26_n_0,
+      O => filtered_r0_carry_i_9_n_0,
+      S => \ring_buffer_read_reg[2]_rep_n_0\
     );
 \filtered_r[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -25090,7 +29006,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(0),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[3]_i_2_n_7\,
+      I2 => filtered_r0_carry_n_7,
       O => filtered_r(0)
     );
 \filtered_r[10]_i_1\: unisim.vcomponents.LUT3
@@ -25100,7 +29016,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(10),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[11]_i_2_n_5\,
+      I2 => \filtered_r0_carry__1_n_5\,
       O => filtered_r(10)
     );
 \filtered_r[11]_i_1\: unisim.vcomponents.LUT3
@@ -25110,476 +29026,8 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(11),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[11]_i_2_n_4\,
+      I2 => \filtered_r0_carry__1_n_4\,
       O => filtered_r(11)
-    );
-\filtered_r[11]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(11),
-      I1 => \filter_in_r_reg[18]_13\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(11),
-      O => \filtered_r[11]_i_21_n_0\
-    );
-\filtered_r[11]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(11),
-      I1 => \filter_in_r_reg[22]_9\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(11),
-      O => \filtered_r[11]_i_22_n_0\
-    );
-\filtered_r[11]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(11),
-      I1 => \filter_in_r_reg[26]_5\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(11),
-      O => \filtered_r[11]_i_23_n_0\
-    );
-\filtered_r[11]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(11),
-      I1 => \filter_in_r_reg[30]_1\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(11),
-      O => \filtered_r[11]_i_24_n_0\
-    );
-\filtered_r[11]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(10),
-      I1 => \filter_in_r_reg[18]_13\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(10),
-      O => \filtered_r[11]_i_27_n_0\
-    );
-\filtered_r[11]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(10),
-      I1 => \filter_in_r_reg[22]_9\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(10),
-      O => \filtered_r[11]_i_28_n_0\
-    );
-\filtered_r[11]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(10),
-      I1 => \filter_in_r_reg[26]_5\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(10),
-      O => \filtered_r[11]_i_29_n_0\
-    );
-\filtered_r[11]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[11]\,
-      I1 => \filtered_r_reg[11]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[11]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[11]_i_9_n_0\,
-      O => \filtered_r[11]_i_3_n_0\
-    );
-\filtered_r[11]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(10),
-      I1 => \filter_in_r_reg[30]_1\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(10),
-      O => \filtered_r[11]_i_30_n_0\
-    );
-\filtered_r[11]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(9),
-      I1 => \filter_in_r_reg[18]_13\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(9),
-      O => \filtered_r[11]_i_33_n_0\
-    );
-\filtered_r[11]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(9),
-      I1 => \filter_in_r_reg[22]_9\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(9),
-      O => \filtered_r[11]_i_34_n_0\
-    );
-\filtered_r[11]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(9),
-      I1 => \filter_in_r_reg[26]_5\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(9),
-      O => \filtered_r[11]_i_35_n_0\
-    );
-\filtered_r[11]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(9),
-      I1 => \filter_in_r_reg[30]_1\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(9),
-      O => \filtered_r[11]_i_36_n_0\
-    );
-\filtered_r[11]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(8),
-      I1 => \filter_in_r_reg[18]_13\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(8),
-      O => \filtered_r[11]_i_39_n_0\
-    );
-\filtered_r[11]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[10]\,
-      I1 => \filtered_r_reg[11]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[11]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[11]_i_12_n_0\,
-      O => \filtered_r[11]_i_4_n_0\
-    );
-\filtered_r[11]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(8),
-      I1 => \filter_in_r_reg[22]_9\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(8),
-      O => \filtered_r[11]_i_40_n_0\
-    );
-\filtered_r[11]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(8),
-      I1 => \filter_in_r_reg[26]_5\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(8),
-      O => \filtered_r[11]_i_41_n_0\
-    );
-\filtered_r[11]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(8),
-      I1 => \filter_in_r_reg[30]_1\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(8),
-      O => \filtered_r[11]_i_42_n_0\
-    );
-\filtered_r[11]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(11),
-      I1 => \filter_in_r_reg[2]_29\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(11),
-      O => \filtered_r[11]_i_43_n_0\
-    );
-\filtered_r[11]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(11),
-      I1 => \filter_in_r_reg[6]_25\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(11),
-      O => \filtered_r[11]_i_44_n_0\
-    );
-\filtered_r[11]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(11),
-      I1 => \filter_in_r_reg[10]_21\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(11),
-      O => \filtered_r[11]_i_45_n_0\
-    );
-\filtered_r[11]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(11),
-      I1 => \filter_in_r_reg[14]_17\(11),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(11),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(11),
-      O => \filtered_r[11]_i_46_n_0\
-    );
-\filtered_r[11]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(10),
-      I1 => \filter_in_r_reg[2]_29\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(10),
-      O => \filtered_r[11]_i_47_n_0\
-    );
-\filtered_r[11]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(10),
-      I1 => \filter_in_r_reg[6]_25\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(10),
-      O => \filtered_r[11]_i_48_n_0\
-    );
-\filtered_r[11]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(10),
-      I1 => \filter_in_r_reg[10]_21\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(10),
-      O => \filtered_r[11]_i_49_n_0\
-    );
-\filtered_r[11]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[9]\,
-      I1 => \filtered_r_reg[11]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[11]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[11]_i_15_n_0\,
-      O => \filtered_r[11]_i_5_n_0\
-    );
-\filtered_r[11]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(10),
-      I1 => \filter_in_r_reg[14]_17\(10),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(10),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(10),
-      O => \filtered_r[11]_i_50_n_0\
-    );
-\filtered_r[11]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(9),
-      I1 => \filter_in_r_reg[2]_29\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(9),
-      O => \filtered_r[11]_i_51_n_0\
-    );
-\filtered_r[11]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(9),
-      I1 => \filter_in_r_reg[6]_25\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(9),
-      O => \filtered_r[11]_i_52_n_0\
-    );
-\filtered_r[11]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(9),
-      I1 => \filter_in_r_reg[10]_21\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(9),
-      O => \filtered_r[11]_i_53_n_0\
-    );
-\filtered_r[11]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(9),
-      I1 => \filter_in_r_reg[14]_17\(9),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(9),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(9),
-      O => \filtered_r[11]_i_54_n_0\
-    );
-\filtered_r[11]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(8),
-      I1 => \filter_in_r_reg[2]_29\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(8),
-      O => \filtered_r[11]_i_55_n_0\
-    );
-\filtered_r[11]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(8),
-      I1 => \filter_in_r_reg[6]_25\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(8),
-      O => \filtered_r[11]_i_56_n_0\
-    );
-\filtered_r[11]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(8),
-      I1 => \filter_in_r_reg[10]_21\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(8),
-      O => \filtered_r[11]_i_57_n_0\
-    );
-\filtered_r[11]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(8),
-      I1 => \filter_in_r_reg[14]_17\(8),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(8),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(8),
-      O => \filtered_r[11]_i_58_n_0\
-    );
-\filtered_r[11]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[8]\,
-      I1 => \filtered_r_reg[11]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[11]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[11]_i_18_n_0\,
-      O => \filtered_r[11]_i_6_n_0\
     );
 \filtered_r[12]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -25588,7 +29036,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(12),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[15]_i_2_n_7\,
+      I2 => \filtered_r0_carry__2_n_7\,
       O => filtered_r(12)
     );
 \filtered_r[13]_i_1\: unisim.vcomponents.LUT3
@@ -25598,7 +29046,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(13),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[15]_i_2_n_6\,
+      I2 => \filtered_r0_carry__2_n_6\,
       O => filtered_r(13)
     );
 \filtered_r[14]_i_1\: unisim.vcomponents.LUT3
@@ -25608,7 +29056,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(14),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[15]_i_2_n_5\,
+      I2 => \filtered_r0_carry__2_n_5\,
       O => filtered_r(14)
     );
 \filtered_r[15]_i_1\: unisim.vcomponents.LUT3
@@ -25618,476 +29066,8 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(15),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[15]_i_2_n_4\,
+      I2 => \filtered_r0_carry__2_n_4\,
       O => filtered_r(15)
-    );
-\filtered_r[15]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(15),
-      I1 => \filter_in_r_reg[18]_13\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(15),
-      O => \filtered_r[15]_i_21_n_0\
-    );
-\filtered_r[15]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(15),
-      I1 => \filter_in_r_reg[22]_9\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(15),
-      O => \filtered_r[15]_i_22_n_0\
-    );
-\filtered_r[15]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(15),
-      I1 => \filter_in_r_reg[26]_5\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(15),
-      O => \filtered_r[15]_i_23_n_0\
-    );
-\filtered_r[15]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(15),
-      I1 => \filter_in_r_reg[30]_1\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(15),
-      O => \filtered_r[15]_i_24_n_0\
-    );
-\filtered_r[15]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(14),
-      I1 => \filter_in_r_reg[18]_13\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(14),
-      O => \filtered_r[15]_i_27_n_0\
-    );
-\filtered_r[15]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(14),
-      I1 => \filter_in_r_reg[22]_9\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(14),
-      O => \filtered_r[15]_i_28_n_0\
-    );
-\filtered_r[15]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(14),
-      I1 => \filter_in_r_reg[26]_5\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(14),
-      O => \filtered_r[15]_i_29_n_0\
-    );
-\filtered_r[15]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[15]\,
-      I1 => \filtered_r_reg[15]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[15]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[15]_i_9_n_0\,
-      O => \filtered_r[15]_i_3_n_0\
-    );
-\filtered_r[15]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(14),
-      I1 => \filter_in_r_reg[30]_1\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(14),
-      O => \filtered_r[15]_i_30_n_0\
-    );
-\filtered_r[15]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(13),
-      I1 => \filter_in_r_reg[18]_13\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(13),
-      O => \filtered_r[15]_i_33_n_0\
-    );
-\filtered_r[15]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(13),
-      I1 => \filter_in_r_reg[22]_9\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(13),
-      O => \filtered_r[15]_i_34_n_0\
-    );
-\filtered_r[15]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(13),
-      I1 => \filter_in_r_reg[26]_5\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(13),
-      O => \filtered_r[15]_i_35_n_0\
-    );
-\filtered_r[15]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(13),
-      I1 => \filter_in_r_reg[30]_1\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(13),
-      O => \filtered_r[15]_i_36_n_0\
-    );
-\filtered_r[15]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(12),
-      I1 => \filter_in_r_reg[18]_13\(12),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(12),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(12),
-      O => \filtered_r[15]_i_39_n_0\
-    );
-\filtered_r[15]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[14]\,
-      I1 => \filtered_r_reg[15]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[15]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[15]_i_12_n_0\,
-      O => \filtered_r[15]_i_4_n_0\
-    );
-\filtered_r[15]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(12),
-      I1 => \filter_in_r_reg[22]_9\(12),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(12),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(12),
-      O => \filtered_r[15]_i_40_n_0\
-    );
-\filtered_r[15]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(12),
-      I1 => \filter_in_r_reg[26]_5\(12),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(12),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(12),
-      O => \filtered_r[15]_i_41_n_0\
-    );
-\filtered_r[15]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(12),
-      I1 => \filter_in_r_reg[30]_1\(12),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(12),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(12),
-      O => \filtered_r[15]_i_42_n_0\
-    );
-\filtered_r[15]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(15),
-      I1 => \filter_in_r_reg[2]_29\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(15),
-      O => \filtered_r[15]_i_43_n_0\
-    );
-\filtered_r[15]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(15),
-      I1 => \filter_in_r_reg[6]_25\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(15),
-      O => \filtered_r[15]_i_44_n_0\
-    );
-\filtered_r[15]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(15),
-      I1 => \filter_in_r_reg[10]_21\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(15),
-      O => \filtered_r[15]_i_45_n_0\
-    );
-\filtered_r[15]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(15),
-      I1 => \filter_in_r_reg[14]_17\(15),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(15),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(15),
-      O => \filtered_r[15]_i_46_n_0\
-    );
-\filtered_r[15]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(14),
-      I1 => \filter_in_r_reg[2]_29\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(14),
-      O => \filtered_r[15]_i_47_n_0\
-    );
-\filtered_r[15]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(14),
-      I1 => \filter_in_r_reg[6]_25\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(14),
-      O => \filtered_r[15]_i_48_n_0\
-    );
-\filtered_r[15]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(14),
-      I1 => \filter_in_r_reg[10]_21\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(14),
-      O => \filtered_r[15]_i_49_n_0\
-    );
-\filtered_r[15]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[13]\,
-      I1 => \filtered_r_reg[15]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[15]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[15]_i_15_n_0\,
-      O => \filtered_r[15]_i_5_n_0\
-    );
-\filtered_r[15]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(14),
-      I1 => \filter_in_r_reg[14]_17\(14),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(14),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(14),
-      O => \filtered_r[15]_i_50_n_0\
-    );
-\filtered_r[15]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(13),
-      I1 => \filter_in_r_reg[2]_29\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(13),
-      O => \filtered_r[15]_i_51_n_0\
-    );
-\filtered_r[15]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(13),
-      I1 => \filter_in_r_reg[6]_25\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(13),
-      O => \filtered_r[15]_i_52_n_0\
-    );
-\filtered_r[15]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(13),
-      I1 => \filter_in_r_reg[10]_21\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(13),
-      O => \filtered_r[15]_i_53_n_0\
-    );
-\filtered_r[15]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(13),
-      I1 => \filter_in_r_reg[14]_17\(13),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(13),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(13),
-      O => \filtered_r[15]_i_54_n_0\
-    );
-\filtered_r[15]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(12),
-      I1 => \filter_in_r_reg[2]_29\(12),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(12),
-      O => \filtered_r[15]_i_55_n_0\
-    );
-\filtered_r[15]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(12),
-      I1 => \filter_in_r_reg[6]_25\(12),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(12),
-      O => \filtered_r[15]_i_56_n_0\
-    );
-\filtered_r[15]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(12),
-      I1 => \filter_in_r_reg[10]_21\(12),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(12),
-      O => \filtered_r[15]_i_57_n_0\
-    );
-\filtered_r[15]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(12),
-      I1 => \filter_in_r_reg[14]_17\(12),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(12),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(12),
-      O => \filtered_r[15]_i_58_n_0\
-    );
-\filtered_r[15]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[12]\,
-      I1 => \filtered_r_reg[15]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[15]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[15]_i_18_n_0\,
-      O => \filtered_r[15]_i_6_n_0\
     );
 \filtered_r[16]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -26096,7 +29076,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(16),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[19]_i_2_n_7\,
+      I2 => \filtered_r0_carry__3_n_7\,
       O => filtered_r(16)
     );
 \filtered_r[17]_i_1\: unisim.vcomponents.LUT3
@@ -26106,7 +29086,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(17),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[19]_i_2_n_6\,
+      I2 => \filtered_r0_carry__3_n_6\,
       O => filtered_r(17)
     );
 \filtered_r[18]_i_1\: unisim.vcomponents.LUT3
@@ -26116,7 +29096,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(18),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[19]_i_2_n_5\,
+      I2 => \filtered_r0_carry__3_n_5\,
       O => filtered_r(18)
     );
 \filtered_r[19]_i_1\: unisim.vcomponents.LUT3
@@ -26126,476 +29106,8 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(19),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[19]_i_2_n_4\,
+      I2 => \filtered_r0_carry__3_n_4\,
       O => filtered_r(19)
-    );
-\filtered_r[19]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(19),
-      I1 => \filter_in_r_reg[18]_13\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(19),
-      O => \filtered_r[19]_i_21_n_0\
-    );
-\filtered_r[19]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(19),
-      I1 => \filter_in_r_reg[22]_9\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(19),
-      O => \filtered_r[19]_i_22_n_0\
-    );
-\filtered_r[19]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(19),
-      I1 => \filter_in_r_reg[26]_5\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(19),
-      O => \filtered_r[19]_i_23_n_0\
-    );
-\filtered_r[19]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(19),
-      I1 => \filter_in_r_reg[30]_1\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(19),
-      O => \filtered_r[19]_i_24_n_0\
-    );
-\filtered_r[19]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(18),
-      I1 => \filter_in_r_reg[18]_13\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(18),
-      O => \filtered_r[19]_i_27_n_0\
-    );
-\filtered_r[19]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(18),
-      I1 => \filter_in_r_reg[22]_9\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(18),
-      O => \filtered_r[19]_i_28_n_0\
-    );
-\filtered_r[19]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(18),
-      I1 => \filter_in_r_reg[26]_5\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(18),
-      O => \filtered_r[19]_i_29_n_0\
-    );
-\filtered_r[19]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[19]\,
-      I1 => \filtered_r_reg[19]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[19]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[19]_i_9_n_0\,
-      O => \filtered_r[19]_i_3_n_0\
-    );
-\filtered_r[19]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(18),
-      I1 => \filter_in_r_reg[30]_1\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(18),
-      O => \filtered_r[19]_i_30_n_0\
-    );
-\filtered_r[19]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(17),
-      I1 => \filter_in_r_reg[18]_13\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(17),
-      O => \filtered_r[19]_i_33_n_0\
-    );
-\filtered_r[19]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(17),
-      I1 => \filter_in_r_reg[22]_9\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(17),
-      O => \filtered_r[19]_i_34_n_0\
-    );
-\filtered_r[19]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(17),
-      I1 => \filter_in_r_reg[26]_5\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(17),
-      O => \filtered_r[19]_i_35_n_0\
-    );
-\filtered_r[19]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(17),
-      I1 => \filter_in_r_reg[30]_1\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(17),
-      O => \filtered_r[19]_i_36_n_0\
-    );
-\filtered_r[19]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(16),
-      I1 => \filter_in_r_reg[18]_13\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(16),
-      O => \filtered_r[19]_i_39_n_0\
-    );
-\filtered_r[19]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[18]\,
-      I1 => \filtered_r_reg[19]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[19]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[19]_i_12_n_0\,
-      O => \filtered_r[19]_i_4_n_0\
-    );
-\filtered_r[19]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(16),
-      I1 => \filter_in_r_reg[22]_9\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(16),
-      O => \filtered_r[19]_i_40_n_0\
-    );
-\filtered_r[19]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(16),
-      I1 => \filter_in_r_reg[26]_5\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(16),
-      O => \filtered_r[19]_i_41_n_0\
-    );
-\filtered_r[19]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(16),
-      I1 => \filter_in_r_reg[30]_1\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(16),
-      O => \filtered_r[19]_i_42_n_0\
-    );
-\filtered_r[19]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(19),
-      I1 => \filter_in_r_reg[2]_29\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(19),
-      O => \filtered_r[19]_i_43_n_0\
-    );
-\filtered_r[19]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(19),
-      I1 => \filter_in_r_reg[6]_25\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(19),
-      O => \filtered_r[19]_i_44_n_0\
-    );
-\filtered_r[19]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(19),
-      I1 => \filter_in_r_reg[10]_21\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(19),
-      O => \filtered_r[19]_i_45_n_0\
-    );
-\filtered_r[19]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(19),
-      I1 => \filter_in_r_reg[14]_17\(19),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(19),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(19),
-      O => \filtered_r[19]_i_46_n_0\
-    );
-\filtered_r[19]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(18),
-      I1 => \filter_in_r_reg[2]_29\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(18),
-      O => \filtered_r[19]_i_47_n_0\
-    );
-\filtered_r[19]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(18),
-      I1 => \filter_in_r_reg[6]_25\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(18),
-      O => \filtered_r[19]_i_48_n_0\
-    );
-\filtered_r[19]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(18),
-      I1 => \filter_in_r_reg[10]_21\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(18),
-      O => \filtered_r[19]_i_49_n_0\
-    );
-\filtered_r[19]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[17]\,
-      I1 => \filtered_r_reg[19]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[19]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[19]_i_15_n_0\,
-      O => \filtered_r[19]_i_5_n_0\
-    );
-\filtered_r[19]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(18),
-      I1 => \filter_in_r_reg[14]_17\(18),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(18),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(18),
-      O => \filtered_r[19]_i_50_n_0\
-    );
-\filtered_r[19]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(17),
-      I1 => \filter_in_r_reg[2]_29\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(17),
-      O => \filtered_r[19]_i_51_n_0\
-    );
-\filtered_r[19]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(17),
-      I1 => \filter_in_r_reg[6]_25\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(17),
-      O => \filtered_r[19]_i_52_n_0\
-    );
-\filtered_r[19]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(17),
-      I1 => \filter_in_r_reg[10]_21\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(17),
-      O => \filtered_r[19]_i_53_n_0\
-    );
-\filtered_r[19]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(17),
-      I1 => \filter_in_r_reg[14]_17\(17),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(17),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(17),
-      O => \filtered_r[19]_i_54_n_0\
-    );
-\filtered_r[19]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(16),
-      I1 => \filter_in_r_reg[2]_29\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(16),
-      O => \filtered_r[19]_i_55_n_0\
-    );
-\filtered_r[19]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(16),
-      I1 => \filter_in_r_reg[6]_25\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(16),
-      O => \filtered_r[19]_i_56_n_0\
-    );
-\filtered_r[19]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(16),
-      I1 => \filter_in_r_reg[10]_21\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(16),
-      O => \filtered_r[19]_i_57_n_0\
-    );
-\filtered_r[19]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(16),
-      I1 => \filter_in_r_reg[14]_17\(16),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(16),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(16),
-      O => \filtered_r[19]_i_58_n_0\
-    );
-\filtered_r[19]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[16]\,
-      I1 => \filtered_r_reg[19]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[19]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[19]_i_18_n_0\,
-      O => \filtered_r[19]_i_6_n_0\
     );
 \filtered_r[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -26604,7 +29116,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(1),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[3]_i_2_n_6\,
+      I2 => filtered_r0_carry_n_6,
       O => filtered_r(1)
     );
 \filtered_r[20]_i_1\: unisim.vcomponents.LUT3
@@ -26614,7 +29126,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(20),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[23]_i_2_n_7\,
+      I2 => \filtered_r0_carry__4_n_7\,
       O => filtered_r(20)
     );
 \filtered_r[21]_i_1\: unisim.vcomponents.LUT3
@@ -26624,7 +29136,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(21),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[23]_i_2_n_6\,
+      I2 => \filtered_r0_carry__4_n_6\,
       O => filtered_r(21)
     );
 \filtered_r[22]_i_1\: unisim.vcomponents.LUT3
@@ -26634,496 +29146,31 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(22),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[23]_i_2_n_5\,
+      I2 => \filtered_r0_carry__4_n_5\,
       O => filtered_r(22)
     );
-\filtered_r[23]_i_1\: unisim.vcomponents.LUT3
+\filtered_r[23]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"B8"
+      INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filter_in_r_reg[0]_31\(23),
-      I1 => filtered_out_r,
-      I2 => \filtered_r_reg[23]_i_2_n_4\,
-      O => filtered_r(23)
-    );
-\filtered_r[23]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(23),
-      I1 => \filter_in_r_reg[18]_13\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(23),
-      O => \filtered_r[23]_i_21_n_0\
-    );
-\filtered_r[23]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(23),
-      I1 => \filter_in_r_reg[22]_9\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(23),
-      O => \filtered_r[23]_i_22_n_0\
-    );
-\filtered_r[23]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(23),
-      I1 => \filter_in_r_reg[26]_5\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(23),
-      O => \filtered_r[23]_i_23_n_0\
-    );
-\filtered_r[23]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(23),
-      I1 => \filter_in_r_reg[30]_1\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(23),
-      O => \filtered_r[23]_i_24_n_0\
-    );
-\filtered_r[23]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(22),
-      I1 => \filter_in_r_reg[18]_13\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(22),
-      O => \filtered_r[23]_i_27_n_0\
-    );
-\filtered_r[23]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(22),
-      I1 => \filter_in_r_reg[22]_9\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(22),
-      O => \filtered_r[23]_i_28_n_0\
-    );
-\filtered_r[23]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(22),
-      I1 => \filter_in_r_reg[26]_5\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(22),
-      O => \filtered_r[23]_i_29_n_0\
-    );
-\filtered_r[23]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[23]\,
-      I1 => \filtered_r_reg[23]_i_7_n_0\,
+      I0 => \filtered_r0_carry__4_n_4\,
+      I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[23]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[23]_i_9_n_0\,
-      O => \filtered_r[23]_i_3_n_0\
-    );
-\filtered_r[23]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(22),
-      I1 => \filter_in_r_reg[30]_1\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(22),
-      O => \filtered_r[23]_i_30_n_0\
-    );
-\filtered_r[23]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(21),
-      I1 => \filter_in_r_reg[18]_13\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(21),
-      O => \filtered_r[23]_i_33_n_0\
-    );
-\filtered_r[23]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(21),
-      I1 => \filter_in_r_reg[22]_9\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(21),
-      O => \filtered_r[23]_i_34_n_0\
-    );
-\filtered_r[23]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(21),
-      I1 => \filter_in_r_reg[26]_5\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(21),
-      O => \filtered_r[23]_i_35_n_0\
-    );
-\filtered_r[23]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(21),
-      I1 => \filter_in_r_reg[30]_1\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(21),
-      O => \filtered_r[23]_i_36_n_0\
-    );
-\filtered_r[23]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(20),
-      I1 => \filter_in_r_reg[18]_13\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[17]_14\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(20),
-      O => \filtered_r[23]_i_39_n_0\
-    );
-\filtered_r[23]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[22]\,
-      I1 => \filtered_r_reg[23]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[23]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[23]_i_12_n_0\,
-      O => \filtered_r[23]_i_4_n_0\
-    );
-\filtered_r[23]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(20),
-      I1 => \filter_in_r_reg[22]_9\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[21]_10\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(20),
-      O => \filtered_r[23]_i_40_n_0\
-    );
-\filtered_r[23]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(20),
-      I1 => \filter_in_r_reg[26]_5\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[25]_6\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(20),
-      O => \filtered_r[23]_i_41_n_0\
-    );
-\filtered_r[23]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(20),
-      I1 => \filter_in_r_reg[30]_1\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[29]_2\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(20),
-      O => \filtered_r[23]_i_42_n_0\
-    );
-\filtered_r[23]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(23),
-      I1 => \filter_in_r_reg[2]_29\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(23),
-      O => \filtered_r[23]_i_43_n_0\
-    );
-\filtered_r[23]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(23),
-      I1 => \filter_in_r_reg[6]_25\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(23),
-      O => \filtered_r[23]_i_44_n_0\
-    );
-\filtered_r[23]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(23),
-      I1 => \filter_in_r_reg[10]_21\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(23),
-      O => \filtered_r[23]_i_45_n_0\
-    );
-\filtered_r[23]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(23),
-      I1 => \filter_in_r_reg[14]_17\(23),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(23),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(23),
-      O => \filtered_r[23]_i_46_n_0\
-    );
-\filtered_r[23]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(22),
-      I1 => \filter_in_r_reg[2]_29\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(22),
-      O => \filtered_r[23]_i_47_n_0\
-    );
-\filtered_r[23]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(22),
-      I1 => \filter_in_r_reg[6]_25\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(22),
-      O => \filtered_r[23]_i_48_n_0\
-    );
-\filtered_r[23]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(22),
-      I1 => \filter_in_r_reg[10]_21\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(22),
-      O => \filtered_r[23]_i_49_n_0\
-    );
-\filtered_r[23]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[21]\,
-      I1 => \filtered_r_reg[23]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[23]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[23]_i_15_n_0\,
-      O => \filtered_r[23]_i_5_n_0\
-    );
-\filtered_r[23]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(22),
-      I1 => \filter_in_r_reg[14]_17\(22),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(22),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(22),
-      O => \filtered_r[23]_i_50_n_0\
-    );
-\filtered_r[23]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(21),
-      I1 => \filter_in_r_reg[2]_29\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(21),
-      O => \filtered_r[23]_i_51_n_0\
-    );
-\filtered_r[23]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(21),
-      I1 => \filter_in_r_reg[6]_25\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(21),
-      O => \filtered_r[23]_i_52_n_0\
-    );
-\filtered_r[23]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(21),
-      I1 => \filter_in_r_reg[10]_21\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(21),
-      O => \filtered_r[23]_i_53_n_0\
-    );
-\filtered_r[23]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(21),
-      I1 => \filter_in_r_reg[14]_17\(21),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(21),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(21),
-      O => \filtered_r[23]_i_54_n_0\
-    );
-\filtered_r[23]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(20),
-      I1 => \filter_in_r_reg[2]_29\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[1]_30\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(20),
-      O => \filtered_r[23]_i_55_n_0\
-    );
-\filtered_r[23]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(20),
-      I1 => \filter_in_r_reg[6]_25\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[5]_26\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(20),
-      O => \filtered_r[23]_i_56_n_0\
-    );
-\filtered_r[23]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(20),
-      I1 => \filter_in_r_reg[10]_21\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[9]_22\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(20),
-      O => \filtered_r[23]_i_57_n_0\
-    );
-\filtered_r[23]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(20),
-      I1 => \filter_in_r_reg[14]_17\(20),
-      I2 => \ring_buffer_read_reg[1]_rep_n_0\,
-      I3 => \filter_in_r_reg[13]_18\(20),
-      I4 => \ring_buffer_read_reg[0]_rep_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(20),
-      O => \filtered_r[23]_i_58_n_0\
-    );
-\filtered_r[23]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[20]\,
-      I1 => \filtered_r_reg[23]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[23]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[23]_i_18_n_0\,
-      O => \filtered_r[23]_i_6_n_0\
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
+      I5 => ring_buffer_read_reg(3),
+      O => \filtered_r[23]_i_1_n_0\
     );
 \filtered_r[24]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filtered_r_reg[27]_i_2_n_7\,
+      I0 => \filtered_r0_carry__5_n_7\,
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_r[24]_i_1_n_0\
@@ -27133,10 +29180,10 @@ begin
       INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filtered_r_reg[27]_i_2_n_6\,
+      I0 => \filtered_r0_carry__5_n_6\,
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_r[25]_i_1_n_0\
@@ -27146,10 +29193,10 @@ begin
       INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filtered_r_reg[27]_i_2_n_5\,
+      I0 => \filtered_r0_carry__5_n_5\,
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_r[26]_i_1_n_0\
@@ -27159,10 +29206,10 @@ begin
       INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filtered_r_reg[27]_i_2_n_4\,
+      I0 => \filtered_r0_carry__5_n_4\,
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_r[27]_i_1_n_0\
@@ -27172,26 +29219,13 @@ begin
       INIT => X"AAAAAAAAAAAAAAA8"
     )
         port map (
-      I0 => \filtered_r_reg[29]_i_2_n_7\,
+      I0 => \filtered_r0_carry__6_n_7\,
       I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
+      I3 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I5 => ring_buffer_read_reg(3),
       O => \filtered_r[28]_i_1_n_0\
-    );
-\filtered_r[29]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAAAAAAAAAAA8"
-    )
-        port map (
-      I0 => \filtered_r_reg[29]_i_2_n_6\,
-      I1 => \ring_buffer_read_reg[2]_rep__0_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => ring_buffer_read_reg(0),
-      I4 => \ring_buffer_read_reg[1]_rep__0_n_0\,
-      I5 => ring_buffer_read_reg(3),
-      O => \filtered_r[29]_i_1_n_0\
     );
 \filtered_r[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -27200,7 +29234,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(2),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[3]_i_2_n_5\,
+      I2 => filtered_r0_carry_n_5,
       O => filtered_r(2)
     );
 \filtered_r[3]_i_1\: unisim.vcomponents.LUT3
@@ -27210,476 +29244,8 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(3),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[3]_i_2_n_4\,
+      I2 => filtered_r0_carry_n_4,
       O => filtered_r(3)
-    );
-\filtered_r[3]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(3),
-      I1 => \filter_in_r_reg[18]_13\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(3),
-      O => \filtered_r[3]_i_21_n_0\
-    );
-\filtered_r[3]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(3),
-      I1 => \filter_in_r_reg[22]_9\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(3),
-      O => \filtered_r[3]_i_22_n_0\
-    );
-\filtered_r[3]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(3),
-      I1 => \filter_in_r_reg[26]_5\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(3),
-      O => \filtered_r[3]_i_23_n_0\
-    );
-\filtered_r[3]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(3),
-      I1 => \filter_in_r_reg[30]_1\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(3),
-      O => \filtered_r[3]_i_24_n_0\
-    );
-\filtered_r[3]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(2),
-      I1 => \filter_in_r_reg[18]_13\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(2),
-      O => \filtered_r[3]_i_27_n_0\
-    );
-\filtered_r[3]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(2),
-      I1 => \filter_in_r_reg[22]_9\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(2),
-      O => \filtered_r[3]_i_28_n_0\
-    );
-\filtered_r[3]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(2),
-      I1 => \filter_in_r_reg[26]_5\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(2),
-      O => \filtered_r[3]_i_29_n_0\
-    );
-\filtered_r[3]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[3]\,
-      I1 => \filtered_r_reg[3]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[3]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[3]_i_9_n_0\,
-      O => \filtered_r[3]_i_3_n_0\
-    );
-\filtered_r[3]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(2),
-      I1 => \filter_in_r_reg[30]_1\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(2),
-      O => \filtered_r[3]_i_30_n_0\
-    );
-\filtered_r[3]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(1),
-      I1 => \filter_in_r_reg[18]_13\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(1),
-      O => \filtered_r[3]_i_33_n_0\
-    );
-\filtered_r[3]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(1),
-      I1 => \filter_in_r_reg[22]_9\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(1),
-      O => \filtered_r[3]_i_34_n_0\
-    );
-\filtered_r[3]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(1),
-      I1 => \filter_in_r_reg[26]_5\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(1),
-      O => \filtered_r[3]_i_35_n_0\
-    );
-\filtered_r[3]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(1),
-      I1 => \filter_in_r_reg[30]_1\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(1),
-      O => \filtered_r[3]_i_36_n_0\
-    );
-\filtered_r[3]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(0),
-      I1 => \filter_in_r_reg[18]_13\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(0),
-      O => \filtered_r[3]_i_39_n_0\
-    );
-\filtered_r[3]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[2]\,
-      I1 => \filtered_r_reg[3]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[3]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[3]_i_12_n_0\,
-      O => \filtered_r[3]_i_4_n_0\
-    );
-\filtered_r[3]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(0),
-      I1 => \filter_in_r_reg[22]_9\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(0),
-      O => \filtered_r[3]_i_40_n_0\
-    );
-\filtered_r[3]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(0),
-      I1 => \filter_in_r_reg[26]_5\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(0),
-      O => \filtered_r[3]_i_41_n_0\
-    );
-\filtered_r[3]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(0),
-      I1 => \filter_in_r_reg[30]_1\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(0),
-      O => \filtered_r[3]_i_42_n_0\
-    );
-\filtered_r[3]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(3),
-      I1 => \filter_in_r_reg[2]_29\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(3),
-      O => \filtered_r[3]_i_43_n_0\
-    );
-\filtered_r[3]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(3),
-      I1 => \filter_in_r_reg[6]_25\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(3),
-      O => \filtered_r[3]_i_44_n_0\
-    );
-\filtered_r[3]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(3),
-      I1 => \filter_in_r_reg[10]_21\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(3),
-      O => \filtered_r[3]_i_45_n_0\
-    );
-\filtered_r[3]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(3),
-      I1 => \filter_in_r_reg[14]_17\(3),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(3),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(3),
-      O => \filtered_r[3]_i_46_n_0\
-    );
-\filtered_r[3]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(2),
-      I1 => \filter_in_r_reg[2]_29\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(2),
-      O => \filtered_r[3]_i_47_n_0\
-    );
-\filtered_r[3]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(2),
-      I1 => \filter_in_r_reg[6]_25\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(2),
-      O => \filtered_r[3]_i_48_n_0\
-    );
-\filtered_r[3]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(2),
-      I1 => \filter_in_r_reg[10]_21\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(2),
-      O => \filtered_r[3]_i_49_n_0\
-    );
-\filtered_r[3]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[1]\,
-      I1 => \filtered_r_reg[3]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[3]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[3]_i_15_n_0\,
-      O => \filtered_r[3]_i_5_n_0\
-    );
-\filtered_r[3]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(2),
-      I1 => \filter_in_r_reg[14]_17\(2),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(2),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(2),
-      O => \filtered_r[3]_i_50_n_0\
-    );
-\filtered_r[3]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(1),
-      I1 => \filter_in_r_reg[2]_29\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(1),
-      O => \filtered_r[3]_i_51_n_0\
-    );
-\filtered_r[3]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(1),
-      I1 => \filter_in_r_reg[6]_25\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(1),
-      O => \filtered_r[3]_i_52_n_0\
-    );
-\filtered_r[3]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(1),
-      I1 => \filter_in_r_reg[10]_21\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(1),
-      O => \filtered_r[3]_i_53_n_0\
-    );
-\filtered_r[3]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(1),
-      I1 => \filter_in_r_reg[14]_17\(1),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(1),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(1),
-      O => \filtered_r[3]_i_54_n_0\
-    );
-\filtered_r[3]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(0),
-      I1 => \filter_in_r_reg[2]_29\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(0),
-      O => \filtered_r[3]_i_55_n_0\
-    );
-\filtered_r[3]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(0),
-      I1 => \filter_in_r_reg[6]_25\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(0),
-      O => \filtered_r[3]_i_56_n_0\
-    );
-\filtered_r[3]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(0),
-      I1 => \filter_in_r_reg[10]_21\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(0),
-      O => \filtered_r[3]_i_57_n_0\
-    );
-\filtered_r[3]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(0),
-      I1 => \filter_in_r_reg[14]_17\(0),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(0),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(0),
-      O => \filtered_r[3]_i_58_n_0\
-    );
-\filtered_r[3]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[0]\,
-      I1 => \filtered_r_reg[3]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[3]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[3]_i_18_n_0\,
-      O => \filtered_r[3]_i_6_n_0\
     );
 \filtered_r[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -27688,7 +29254,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(4),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[7]_i_2_n_7\,
+      I2 => \filtered_r0_carry__0_n_7\,
       O => filtered_r(4)
     );
 \filtered_r[5]_i_1\: unisim.vcomponents.LUT3
@@ -27698,7 +29264,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(5),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[7]_i_2_n_6\,
+      I2 => \filtered_r0_carry__0_n_6\,
       O => filtered_r(5)
     );
 \filtered_r[6]_i_1\: unisim.vcomponents.LUT3
@@ -27708,7 +29274,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(6),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[7]_i_2_n_5\,
+      I2 => \filtered_r0_carry__0_n_5\,
       O => filtered_r(6)
     );
 \filtered_r[7]_i_1\: unisim.vcomponents.LUT3
@@ -27718,476 +29284,8 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(7),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[7]_i_2_n_4\,
+      I2 => \filtered_r0_carry__0_n_4\,
       O => filtered_r(7)
-    );
-\filtered_r[7]_i_21\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(7),
-      I1 => \filter_in_r_reg[18]_13\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(7),
-      O => \filtered_r[7]_i_21_n_0\
-    );
-\filtered_r[7]_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(7),
-      I1 => \filter_in_r_reg[22]_9\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(7),
-      O => \filtered_r[7]_i_22_n_0\
-    );
-\filtered_r[7]_i_23\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(7),
-      I1 => \filter_in_r_reg[26]_5\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(7),
-      O => \filtered_r[7]_i_23_n_0\
-    );
-\filtered_r[7]_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(7),
-      I1 => \filter_in_r_reg[30]_1\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(7),
-      O => \filtered_r[7]_i_24_n_0\
-    );
-\filtered_r[7]_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(6),
-      I1 => \filter_in_r_reg[18]_13\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(6),
-      O => \filtered_r[7]_i_27_n_0\
-    );
-\filtered_r[7]_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(6),
-      I1 => \filter_in_r_reg[22]_9\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(6),
-      O => \filtered_r[7]_i_28_n_0\
-    );
-\filtered_r[7]_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(6),
-      I1 => \filter_in_r_reg[26]_5\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(6),
-      O => \filtered_r[7]_i_29_n_0\
-    );
-\filtered_r[7]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[7]\,
-      I1 => \filtered_r_reg[7]_i_7_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[7]_i_8_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[7]_i_9_n_0\,
-      O => \filtered_r[7]_i_3_n_0\
-    );
-\filtered_r[7]_i_30\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(6),
-      I1 => \filter_in_r_reg[30]_1\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(6),
-      O => \filtered_r[7]_i_30_n_0\
-    );
-\filtered_r[7]_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(5),
-      I1 => \filter_in_r_reg[18]_13\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(5),
-      O => \filtered_r[7]_i_33_n_0\
-    );
-\filtered_r[7]_i_34\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(5),
-      I1 => \filter_in_r_reg[22]_9\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(5),
-      O => \filtered_r[7]_i_34_n_0\
-    );
-\filtered_r[7]_i_35\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(5),
-      I1 => \filter_in_r_reg[26]_5\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(5),
-      O => \filtered_r[7]_i_35_n_0\
-    );
-\filtered_r[7]_i_36\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(5),
-      I1 => \filter_in_r_reg[30]_1\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(5),
-      O => \filtered_r[7]_i_36_n_0\
-    );
-\filtered_r[7]_i_39\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[19]_12\(4),
-      I1 => \filter_in_r_reg[18]_13\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[17]_14\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[16]_15\(4),
-      O => \filtered_r[7]_i_39_n_0\
-    );
-\filtered_r[7]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[6]\,
-      I1 => \filtered_r_reg[7]_i_10_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[7]_i_11_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[7]_i_12_n_0\,
-      O => \filtered_r[7]_i_4_n_0\
-    );
-\filtered_r[7]_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[23]_8\(4),
-      I1 => \filter_in_r_reg[22]_9\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[21]_10\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[20]_11\(4),
-      O => \filtered_r[7]_i_40_n_0\
-    );
-\filtered_r[7]_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[27]_4\(4),
-      I1 => \filter_in_r_reg[26]_5\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[25]_6\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[24]_7\(4),
-      O => \filtered_r[7]_i_41_n_0\
-    );
-\filtered_r[7]_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[31]_0\(4),
-      I1 => \filter_in_r_reg[30]_1\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[29]_2\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[28]_3\(4),
-      O => \filtered_r[7]_i_42_n_0\
-    );
-\filtered_r[7]_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(7),
-      I1 => \filter_in_r_reg[2]_29\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(7),
-      O => \filtered_r[7]_i_43_n_0\
-    );
-\filtered_r[7]_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(7),
-      I1 => \filter_in_r_reg[6]_25\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(7),
-      O => \filtered_r[7]_i_44_n_0\
-    );
-\filtered_r[7]_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(7),
-      I1 => \filter_in_r_reg[10]_21\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(7),
-      O => \filtered_r[7]_i_45_n_0\
-    );
-\filtered_r[7]_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(7),
-      I1 => \filter_in_r_reg[14]_17\(7),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(7),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(7),
-      O => \filtered_r[7]_i_46_n_0\
-    );
-\filtered_r[7]_i_47\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(6),
-      I1 => \filter_in_r_reg[2]_29\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(6),
-      O => \filtered_r[7]_i_47_n_0\
-    );
-\filtered_r[7]_i_48\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(6),
-      I1 => \filter_in_r_reg[6]_25\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(6),
-      O => \filtered_r[7]_i_48_n_0\
-    );
-\filtered_r[7]_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(6),
-      I1 => \filter_in_r_reg[10]_21\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(6),
-      O => \filtered_r[7]_i_49_n_0\
-    );
-\filtered_r[7]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[5]\,
-      I1 => \filtered_r_reg[7]_i_13_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[7]_i_14_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[7]_i_15_n_0\,
-      O => \filtered_r[7]_i_5_n_0\
-    );
-\filtered_r[7]_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(6),
-      I1 => \filter_in_r_reg[14]_17\(6),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(6),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(6),
-      O => \filtered_r[7]_i_50_n_0\
-    );
-\filtered_r[7]_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(5),
-      I1 => \filter_in_r_reg[2]_29\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(5),
-      O => \filtered_r[7]_i_51_n_0\
-    );
-\filtered_r[7]_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(5),
-      I1 => \filter_in_r_reg[6]_25\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(5),
-      O => \filtered_r[7]_i_52_n_0\
-    );
-\filtered_r[7]_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(5),
-      I1 => \filter_in_r_reg[10]_21\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(5),
-      O => \filtered_r[7]_i_53_n_0\
-    );
-\filtered_r[7]_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(5),
-      I1 => \filter_in_r_reg[14]_17\(5),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(5),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(5),
-      O => \filtered_r[7]_i_54_n_0\
-    );
-\filtered_r[7]_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[3]_28\(4),
-      I1 => \filter_in_r_reg[2]_29\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[1]_30\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[0]_31\(4),
-      O => \filtered_r[7]_i_55_n_0\
-    );
-\filtered_r[7]_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[7]_24\(4),
-      I1 => \filter_in_r_reg[6]_25\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[5]_26\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[4]_27\(4),
-      O => \filtered_r[7]_i_56_n_0\
-    );
-\filtered_r[7]_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[11]_20\(4),
-      I1 => \filter_in_r_reg[10]_21\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[9]_22\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[8]_23\(4),
-      O => \filtered_r[7]_i_57_n_0\
-    );
-\filtered_r[7]_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \filter_in_r_reg[15]_16\(4),
-      I1 => \filter_in_r_reg[14]_17\(4),
-      I2 => ring_buffer_read_reg(1),
-      I3 => \filter_in_r_reg[13]_18\(4),
-      I4 => \ring_buffer_read_reg[0]_rep__1_n_0\,
-      I5 => \filter_in_r_reg[12]_19\(4),
-      O => \filtered_r[7]_i_58_n_0\
-    );
-\filtered_r[7]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"565656A6A6A656A6"
-    )
-        port map (
-      I0 => \filtered_r_reg_n_0_[4]\,
-      I1 => \filtered_r_reg[7]_i_16_n_0\,
-      I2 => ring_buffer_read_reg(4),
-      I3 => \filtered_r_reg[7]_i_17_n_0\,
-      I4 => ring_buffer_read_reg(3),
-      I5 => \filtered_r_reg[7]_i_18_n_0\,
-      O => \filtered_r[7]_i_6_n_0\
     );
 \filtered_r[8]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -28196,7 +29294,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(8),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[11]_i_2_n_7\,
+      I2 => \filtered_r0_carry__1_n_7\,
       O => filtered_r(8)
     );
 \filtered_r[9]_i_1\: unisim.vcomponents.LUT3
@@ -28206,7 +29304,7 @@ begin
         port map (
       I0 => \filter_in_r_reg[0]_31\(9),
       I1 => filtered_out_r,
-      I2 => \filtered_r_reg[11]_i_2_n_6\,
+      I2 => \filtered_r0_carry__1_n_6\,
       O => filtered_r(9)
     );
 \filtered_r_reg[0]\: unisim.vcomponents.FDCE
@@ -28241,167 +29339,6 @@ begin
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_r(11),
       Q => \filtered_r_reg_n_0_[11]\
-    );
-\filtered_r_reg[11]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[11]_i_25_n_0\,
-      I1 => \filtered_r_reg[11]_i_26_n_0\,
-      O => \filtered_r_reg[11]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[11]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_27_n_0\,
-      I1 => \filtered_r[11]_i_28_n_0\,
-      O => \filtered_r_reg[11]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_29_n_0\,
-      I1 => \filtered_r[11]_i_30_n_0\,
-      O => \filtered_r_reg[11]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[11]_i_31_n_0\,
-      I1 => \filtered_r_reg[11]_i_32_n_0\,
-      O => \filtered_r_reg[11]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[11]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_33_n_0\,
-      I1 => \filtered_r[11]_i_34_n_0\,
-      O => \filtered_r_reg[11]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_35_n_0\,
-      I1 => \filtered_r[11]_i_36_n_0\,
-      O => \filtered_r_reg[11]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[11]_i_37_n_0\,
-      I1 => \filtered_r_reg[11]_i_38_n_0\,
-      O => \filtered_r_reg[11]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[11]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_39_n_0\,
-      I1 => \filtered_r[11]_i_40_n_0\,
-      O => \filtered_r_reg[11]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_41_n_0\,
-      I1 => \filtered_r[11]_i_42_n_0\,
-      O => \filtered_r_reg[11]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_43_n_0\,
-      I1 => \filtered_r[11]_i_44_n_0\,
-      O => \filtered_r_reg[11]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[7]_i_2_n_0\,
-      CO(3) => \filtered_r_reg[11]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[11]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[11]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[11]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_r_reg_n_0_[11]\,
-      DI(2) => \filtered_r_reg_n_0_[10]\,
-      DI(1) => \filtered_r_reg_n_0_[9]\,
-      DI(0) => \filtered_r_reg_n_0_[8]\,
-      O(3) => \filtered_r_reg[11]_i_2_n_4\,
-      O(2) => \filtered_r_reg[11]_i_2_n_5\,
-      O(1) => \filtered_r_reg[11]_i_2_n_6\,
-      O(0) => \filtered_r_reg[11]_i_2_n_7\,
-      S(3) => \filtered_r[11]_i_3_n_0\,
-      S(2) => \filtered_r[11]_i_4_n_0\,
-      S(1) => \filtered_r[11]_i_5_n_0\,
-      S(0) => \filtered_r[11]_i_6_n_0\
-    );
-\filtered_r_reg[11]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_45_n_0\,
-      I1 => \filtered_r[11]_i_46_n_0\,
-      O => \filtered_r_reg[11]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_47_n_0\,
-      I1 => \filtered_r[11]_i_48_n_0\,
-      O => \filtered_r_reg[11]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_49_n_0\,
-      I1 => \filtered_r[11]_i_50_n_0\,
-      O => \filtered_r_reg[11]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_51_n_0\,
-      I1 => \filtered_r[11]_i_52_n_0\,
-      O => \filtered_r_reg[11]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_53_n_0\,
-      I1 => \filtered_r[11]_i_54_n_0\,
-      O => \filtered_r_reg[11]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_55_n_0\,
-      I1 => \filtered_r[11]_i_56_n_0\,
-      O => \filtered_r_reg[11]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_57_n_0\,
-      I1 => \filtered_r[11]_i_58_n_0\,
-      O => \filtered_r_reg[11]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[11]_i_19_n_0\,
-      I1 => \filtered_r_reg[11]_i_20_n_0\,
-      O => \filtered_r_reg[11]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[11]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_21_n_0\,
-      I1 => \filtered_r[11]_i_22_n_0\,
-      O => \filtered_r_reg[11]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[11]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[11]_i_23_n_0\,
-      I1 => \filtered_r[11]_i_24_n_0\,
-      O => \filtered_r_reg[11]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
     );
 \filtered_r_reg[12]\: unisim.vcomponents.FDCE
     generic map(
@@ -28447,167 +29384,6 @@ begin
       D => filtered_r(15),
       Q => \filtered_r_reg_n_0_[15]\
     );
-\filtered_r_reg[15]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[15]_i_25_n_0\,
-      I1 => \filtered_r_reg[15]_i_26_n_0\,
-      O => \filtered_r_reg[15]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[15]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_27_n_0\,
-      I1 => \filtered_r[15]_i_28_n_0\,
-      O => \filtered_r_reg[15]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_29_n_0\,
-      I1 => \filtered_r[15]_i_30_n_0\,
-      O => \filtered_r_reg[15]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[15]_i_31_n_0\,
-      I1 => \filtered_r_reg[15]_i_32_n_0\,
-      O => \filtered_r_reg[15]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[15]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_33_n_0\,
-      I1 => \filtered_r[15]_i_34_n_0\,
-      O => \filtered_r_reg[15]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_35_n_0\,
-      I1 => \filtered_r[15]_i_36_n_0\,
-      O => \filtered_r_reg[15]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[15]_i_37_n_0\,
-      I1 => \filtered_r_reg[15]_i_38_n_0\,
-      O => \filtered_r_reg[15]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[15]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_39_n_0\,
-      I1 => \filtered_r[15]_i_40_n_0\,
-      O => \filtered_r_reg[15]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_41_n_0\,
-      I1 => \filtered_r[15]_i_42_n_0\,
-      O => \filtered_r_reg[15]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_43_n_0\,
-      I1 => \filtered_r[15]_i_44_n_0\,
-      O => \filtered_r_reg[15]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[11]_i_2_n_0\,
-      CO(3) => \filtered_r_reg[15]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[15]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[15]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[15]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_r_reg_n_0_[15]\,
-      DI(2) => \filtered_r_reg_n_0_[14]\,
-      DI(1) => \filtered_r_reg_n_0_[13]\,
-      DI(0) => \filtered_r_reg_n_0_[12]\,
-      O(3) => \filtered_r_reg[15]_i_2_n_4\,
-      O(2) => \filtered_r_reg[15]_i_2_n_5\,
-      O(1) => \filtered_r_reg[15]_i_2_n_6\,
-      O(0) => \filtered_r_reg[15]_i_2_n_7\,
-      S(3) => \filtered_r[15]_i_3_n_0\,
-      S(2) => \filtered_r[15]_i_4_n_0\,
-      S(1) => \filtered_r[15]_i_5_n_0\,
-      S(0) => \filtered_r[15]_i_6_n_0\
-    );
-\filtered_r_reg[15]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_45_n_0\,
-      I1 => \filtered_r[15]_i_46_n_0\,
-      O => \filtered_r_reg[15]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_47_n_0\,
-      I1 => \filtered_r[15]_i_48_n_0\,
-      O => \filtered_r_reg[15]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_49_n_0\,
-      I1 => \filtered_r[15]_i_50_n_0\,
-      O => \filtered_r_reg[15]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_51_n_0\,
-      I1 => \filtered_r[15]_i_52_n_0\,
-      O => \filtered_r_reg[15]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_53_n_0\,
-      I1 => \filtered_r[15]_i_54_n_0\,
-      O => \filtered_r_reg[15]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_55_n_0\,
-      I1 => \filtered_r[15]_i_56_n_0\,
-      O => \filtered_r_reg[15]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_57_n_0\,
-      I1 => \filtered_r[15]_i_58_n_0\,
-      O => \filtered_r_reg[15]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[15]_i_19_n_0\,
-      I1 => \filtered_r_reg[15]_i_20_n_0\,
-      O => \filtered_r_reg[15]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[15]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_21_n_0\,
-      I1 => \filtered_r[15]_i_22_n_0\,
-      O => \filtered_r_reg[15]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[15]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[15]_i_23_n_0\,
-      I1 => \filtered_r[15]_i_24_n_0\,
-      O => \filtered_r_reg[15]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
 \filtered_r_reg[16]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
@@ -28651,167 +29427,6 @@ begin
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_r(19),
       Q => \filtered_r_reg_n_0_[19]\
-    );
-\filtered_r_reg[19]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[19]_i_25_n_0\,
-      I1 => \filtered_r_reg[19]_i_26_n_0\,
-      O => \filtered_r_reg[19]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[19]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_27_n_0\,
-      I1 => \filtered_r[19]_i_28_n_0\,
-      O => \filtered_r_reg[19]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_29_n_0\,
-      I1 => \filtered_r[19]_i_30_n_0\,
-      O => \filtered_r_reg[19]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[19]_i_31_n_0\,
-      I1 => \filtered_r_reg[19]_i_32_n_0\,
-      O => \filtered_r_reg[19]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[19]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_33_n_0\,
-      I1 => \filtered_r[19]_i_34_n_0\,
-      O => \filtered_r_reg[19]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_35_n_0\,
-      I1 => \filtered_r[19]_i_36_n_0\,
-      O => \filtered_r_reg[19]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[19]_i_37_n_0\,
-      I1 => \filtered_r_reg[19]_i_38_n_0\,
-      O => \filtered_r_reg[19]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[19]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_39_n_0\,
-      I1 => \filtered_r[19]_i_40_n_0\,
-      O => \filtered_r_reg[19]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_41_n_0\,
-      I1 => \filtered_r[19]_i_42_n_0\,
-      O => \filtered_r_reg[19]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_43_n_0\,
-      I1 => \filtered_r[19]_i_44_n_0\,
-      O => \filtered_r_reg[19]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[15]_i_2_n_0\,
-      CO(3) => \filtered_r_reg[19]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[19]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[19]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[19]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_r_reg_n_0_[19]\,
-      DI(2) => \filtered_r_reg_n_0_[18]\,
-      DI(1) => \filtered_r_reg_n_0_[17]\,
-      DI(0) => \filtered_r_reg_n_0_[16]\,
-      O(3) => \filtered_r_reg[19]_i_2_n_4\,
-      O(2) => \filtered_r_reg[19]_i_2_n_5\,
-      O(1) => \filtered_r_reg[19]_i_2_n_6\,
-      O(0) => \filtered_r_reg[19]_i_2_n_7\,
-      S(3) => \filtered_r[19]_i_3_n_0\,
-      S(2) => \filtered_r[19]_i_4_n_0\,
-      S(1) => \filtered_r[19]_i_5_n_0\,
-      S(0) => \filtered_r[19]_i_6_n_0\
-    );
-\filtered_r_reg[19]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_45_n_0\,
-      I1 => \filtered_r[19]_i_46_n_0\,
-      O => \filtered_r_reg[19]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_47_n_0\,
-      I1 => \filtered_r[19]_i_48_n_0\,
-      O => \filtered_r_reg[19]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_49_n_0\,
-      I1 => \filtered_r[19]_i_50_n_0\,
-      O => \filtered_r_reg[19]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_51_n_0\,
-      I1 => \filtered_r[19]_i_52_n_0\,
-      O => \filtered_r_reg[19]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_53_n_0\,
-      I1 => \filtered_r[19]_i_54_n_0\,
-      O => \filtered_r_reg[19]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_55_n_0\,
-      I1 => \filtered_r[19]_i_56_n_0\,
-      O => \filtered_r_reg[19]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_57_n_0\,
-      I1 => \filtered_r[19]_i_58_n_0\,
-      O => \filtered_r_reg[19]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[19]_i_19_n_0\,
-      I1 => \filtered_r_reg[19]_i_20_n_0\,
-      O => \filtered_r_reg[19]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[19]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_21_n_0\,
-      I1 => \filtered_r[19]_i_22_n_0\,
-      O => \filtered_r_reg[19]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[19]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[19]_i_23_n_0\,
-      I1 => \filtered_r[19]_i_24_n_0\,
-      O => \filtered_r_reg[19]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
     );
 \filtered_r_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -28865,169 +29480,8 @@ begin
       C => aclk,
       CE => '1',
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => filtered_r(23),
+      D => \filtered_r[23]_i_1_n_0\,
       Q => \filtered_r_reg_n_0_[23]\
-    );
-\filtered_r_reg[23]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[23]_i_25_n_0\,
-      I1 => \filtered_r_reg[23]_i_26_n_0\,
-      O => \filtered_r_reg[23]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[23]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_27_n_0\,
-      I1 => \filtered_r[23]_i_28_n_0\,
-      O => \filtered_r_reg[23]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_29_n_0\,
-      I1 => \filtered_r[23]_i_30_n_0\,
-      O => \filtered_r_reg[23]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[23]_i_31_n_0\,
-      I1 => \filtered_r_reg[23]_i_32_n_0\,
-      O => \filtered_r_reg[23]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[23]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_33_n_0\,
-      I1 => \filtered_r[23]_i_34_n_0\,
-      O => \filtered_r_reg[23]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_35_n_0\,
-      I1 => \filtered_r[23]_i_36_n_0\,
-      O => \filtered_r_reg[23]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[23]_i_37_n_0\,
-      I1 => \filtered_r_reg[23]_i_38_n_0\,
-      O => \filtered_r_reg[23]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[23]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_39_n_0\,
-      I1 => \filtered_r[23]_i_40_n_0\,
-      O => \filtered_r_reg[23]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_41_n_0\,
-      I1 => \filtered_r[23]_i_42_n_0\,
-      O => \filtered_r_reg[23]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_43_n_0\,
-      I1 => \filtered_r[23]_i_44_n_0\,
-      O => \filtered_r_reg[23]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[19]_i_2_n_0\,
-      CO(3) => \filtered_r_reg[23]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[23]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[23]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[23]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_r_reg_n_0_[23]\,
-      DI(2) => \filtered_r_reg_n_0_[22]\,
-      DI(1) => \filtered_r_reg_n_0_[21]\,
-      DI(0) => \filtered_r_reg_n_0_[20]\,
-      O(3) => \filtered_r_reg[23]_i_2_n_4\,
-      O(2) => \filtered_r_reg[23]_i_2_n_5\,
-      O(1) => \filtered_r_reg[23]_i_2_n_6\,
-      O(0) => \filtered_r_reg[23]_i_2_n_7\,
-      S(3) => \filtered_r[23]_i_3_n_0\,
-      S(2) => \filtered_r[23]_i_4_n_0\,
-      S(1) => \filtered_r[23]_i_5_n_0\,
-      S(0) => \filtered_r[23]_i_6_n_0\
-    );
-\filtered_r_reg[23]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_45_n_0\,
-      I1 => \filtered_r[23]_i_46_n_0\,
-      O => \filtered_r_reg[23]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_47_n_0\,
-      I1 => \filtered_r[23]_i_48_n_0\,
-      O => \filtered_r_reg[23]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_49_n_0\,
-      I1 => \filtered_r[23]_i_50_n_0\,
-      O => \filtered_r_reg[23]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_51_n_0\,
-      I1 => \filtered_r[23]_i_52_n_0\,
-      O => \filtered_r_reg[23]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_53_n_0\,
-      I1 => \filtered_r[23]_i_54_n_0\,
-      O => \filtered_r_reg[23]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_55_n_0\,
-      I1 => \filtered_r[23]_i_56_n_0\,
-      O => \filtered_r_reg[23]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_57_n_0\,
-      I1 => \filtered_r[23]_i_58_n_0\,
-      O => \filtered_r_reg[23]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[23]_i_19_n_0\,
-      I1 => \filtered_r_reg[23]_i_20_n_0\,
-      O => \filtered_r_reg[23]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[23]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_21_n_0\,
-      I1 => \filtered_r[23]_i_22_n_0\,
-      O => \filtered_r_reg[23]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[23]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[23]_i_23_n_0\,
-      I1 => \filtered_r[23]_i_24_n_0\,
-      O => \filtered_r_reg[23]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
     );
 \filtered_r_reg[24]\: unisim.vcomponents.FDCE
     generic map(
@@ -29073,24 +29527,6 @@ begin
       D => \filtered_r[27]_i_1_n_0\,
       Q => \filtered_r_reg_n_0_[27]\
     );
-\filtered_r_reg[27]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[23]_i_2_n_0\,
-      CO(3) => \filtered_r_reg[27]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[27]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[27]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[27]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \filtered_r_reg[27]_i_2_n_4\,
-      O(2) => \filtered_r_reg[27]_i_2_n_5\,
-      O(1) => \filtered_r_reg[27]_i_2_n_6\,
-      O(0) => \filtered_r_reg[27]_i_2_n_7\,
-      S(3) => \filtered_r_reg_n_0_[27]\,
-      S(2) => \filtered_r_reg_n_0_[26]\,
-      S(1) => \filtered_r_reg_n_0_[25]\,
-      S(0) => \filtered_r_reg_n_0_[24]\
-    );
 \filtered_r_reg[28]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
@@ -29101,31 +29537,6 @@ begin
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => \filtered_r[28]_i_1_n_0\,
       Q => \filtered_r_reg_n_0_[28]\
-    );
-\filtered_r_reg[29]\: unisim.vcomponents.FDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => aclk,
-      CE => '1',
-      CLR => \FSM_sequential_state[1]_i_2_n_0\,
-      D => \filtered_r[29]_i_1_n_0\,
-      Q => \filtered_r_reg_n_0_[29]\
-    );
-\filtered_r_reg[29]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[27]_i_2_n_0\,
-      CO(3 downto 1) => \NLW_filtered_r_reg[29]_i_2_CO_UNCONNECTED\(3 downto 1),
-      CO(0) => \filtered_r_reg[29]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 2) => \NLW_filtered_r_reg[29]_i_2_O_UNCONNECTED\(3 downto 2),
-      O(1) => \filtered_r_reg[29]_i_2_n_6\,
-      O(0) => \filtered_r_reg[29]_i_2_n_7\,
-      S(3 downto 2) => B"00",
-      S(1) => \filtered_r_reg_n_0_[29]\,
-      S(0) => \filtered_r_reg_n_0_[28]\
     );
 \filtered_r_reg[2]\: unisim.vcomponents.FDCE
     generic map(
@@ -29148,167 +29559,6 @@ begin
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_r(3),
       Q => \filtered_r_reg_n_0_[3]\
-    );
-\filtered_r_reg[3]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[3]_i_25_n_0\,
-      I1 => \filtered_r_reg[3]_i_26_n_0\,
-      O => \filtered_r_reg[3]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[3]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_27_n_0\,
-      I1 => \filtered_r[3]_i_28_n_0\,
-      O => \filtered_r_reg[3]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_29_n_0\,
-      I1 => \filtered_r[3]_i_30_n_0\,
-      O => \filtered_r_reg[3]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[3]_i_31_n_0\,
-      I1 => \filtered_r_reg[3]_i_32_n_0\,
-      O => \filtered_r_reg[3]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[3]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_33_n_0\,
-      I1 => \filtered_r[3]_i_34_n_0\,
-      O => \filtered_r_reg[3]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_35_n_0\,
-      I1 => \filtered_r[3]_i_36_n_0\,
-      O => \filtered_r_reg[3]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[3]_i_37_n_0\,
-      I1 => \filtered_r_reg[3]_i_38_n_0\,
-      O => \filtered_r_reg[3]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[3]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_39_n_0\,
-      I1 => \filtered_r[3]_i_40_n_0\,
-      O => \filtered_r_reg[3]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_41_n_0\,
-      I1 => \filtered_r[3]_i_42_n_0\,
-      O => \filtered_r_reg[3]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_43_n_0\,
-      I1 => \filtered_r[3]_i_44_n_0\,
-      O => \filtered_r_reg[3]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \filtered_r_reg[3]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[3]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[3]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[3]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_r_reg_n_0_[3]\,
-      DI(2) => \filtered_r_reg_n_0_[2]\,
-      DI(1) => \filtered_r_reg_n_0_[1]\,
-      DI(0) => \filtered_r_reg_n_0_[0]\,
-      O(3) => \filtered_r_reg[3]_i_2_n_4\,
-      O(2) => \filtered_r_reg[3]_i_2_n_5\,
-      O(1) => \filtered_r_reg[3]_i_2_n_6\,
-      O(0) => \filtered_r_reg[3]_i_2_n_7\,
-      S(3) => \filtered_r[3]_i_3_n_0\,
-      S(2) => \filtered_r[3]_i_4_n_0\,
-      S(1) => \filtered_r[3]_i_5_n_0\,
-      S(0) => \filtered_r[3]_i_6_n_0\
-    );
-\filtered_r_reg[3]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_45_n_0\,
-      I1 => \filtered_r[3]_i_46_n_0\,
-      O => \filtered_r_reg[3]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_47_n_0\,
-      I1 => \filtered_r[3]_i_48_n_0\,
-      O => \filtered_r_reg[3]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_49_n_0\,
-      I1 => \filtered_r[3]_i_50_n_0\,
-      O => \filtered_r_reg[3]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_51_n_0\,
-      I1 => \filtered_r[3]_i_52_n_0\,
-      O => \filtered_r_reg[3]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_53_n_0\,
-      I1 => \filtered_r[3]_i_54_n_0\,
-      O => \filtered_r_reg[3]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_55_n_0\,
-      I1 => \filtered_r[3]_i_56_n_0\,
-      O => \filtered_r_reg[3]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_57_n_0\,
-      I1 => \filtered_r[3]_i_58_n_0\,
-      O => \filtered_r_reg[3]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[3]_i_19_n_0\,
-      I1 => \filtered_r_reg[3]_i_20_n_0\,
-      O => \filtered_r_reg[3]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[3]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_21_n_0\,
-      I1 => \filtered_r[3]_i_22_n_0\,
-      O => \filtered_r_reg[3]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[3]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[3]_i_23_n_0\,
-      I1 => \filtered_r[3]_i_24_n_0\,
-      O => \filtered_r_reg[3]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
     );
 \filtered_r_reg[4]\: unisim.vcomponents.FDCE
     generic map(
@@ -29353,167 +29603,6 @@ begin
       CLR => \FSM_sequential_state[1]_i_2_n_0\,
       D => filtered_r(7),
       Q => \filtered_r_reg_n_0_[7]\
-    );
-\filtered_r_reg[7]_i_10\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[7]_i_25_n_0\,
-      I1 => \filtered_r_reg[7]_i_26_n_0\,
-      O => \filtered_r_reg[7]_i_10_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[7]_i_11\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_27_n_0\,
-      I1 => \filtered_r[7]_i_28_n_0\,
-      O => \filtered_r_reg[7]_i_11_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_12\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_29_n_0\,
-      I1 => \filtered_r[7]_i_30_n_0\,
-      O => \filtered_r_reg[7]_i_12_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_13\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[7]_i_31_n_0\,
-      I1 => \filtered_r_reg[7]_i_32_n_0\,
-      O => \filtered_r_reg[7]_i_13_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[7]_i_14\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_33_n_0\,
-      I1 => \filtered_r[7]_i_34_n_0\,
-      O => \filtered_r_reg[7]_i_14_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_15\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_35_n_0\,
-      I1 => \filtered_r[7]_i_36_n_0\,
-      O => \filtered_r_reg[7]_i_15_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_16\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[7]_i_37_n_0\,
-      I1 => \filtered_r_reg[7]_i_38_n_0\,
-      O => \filtered_r_reg[7]_i_16_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[7]_i_17\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_39_n_0\,
-      I1 => \filtered_r[7]_i_40_n_0\,
-      O => \filtered_r_reg[7]_i_17_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_18\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_41_n_0\,
-      I1 => \filtered_r[7]_i_42_n_0\,
-      O => \filtered_r_reg[7]_i_18_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_19\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_43_n_0\,
-      I1 => \filtered_r[7]_i_44_n_0\,
-      O => \filtered_r_reg[7]_i_19_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \filtered_r_reg[3]_i_2_n_0\,
-      CO(3) => \filtered_r_reg[7]_i_2_n_0\,
-      CO(2) => \filtered_r_reg[7]_i_2_n_1\,
-      CO(1) => \filtered_r_reg[7]_i_2_n_2\,
-      CO(0) => \filtered_r_reg[7]_i_2_n_3\,
-      CYINIT => '0',
-      DI(3) => \filtered_r_reg_n_0_[7]\,
-      DI(2) => \filtered_r_reg_n_0_[6]\,
-      DI(1) => \filtered_r_reg_n_0_[5]\,
-      DI(0) => \filtered_r_reg_n_0_[4]\,
-      O(3) => \filtered_r_reg[7]_i_2_n_4\,
-      O(2) => \filtered_r_reg[7]_i_2_n_5\,
-      O(1) => \filtered_r_reg[7]_i_2_n_6\,
-      O(0) => \filtered_r_reg[7]_i_2_n_7\,
-      S(3) => \filtered_r[7]_i_3_n_0\,
-      S(2) => \filtered_r[7]_i_4_n_0\,
-      S(1) => \filtered_r[7]_i_5_n_0\,
-      S(0) => \filtered_r[7]_i_6_n_0\
-    );
-\filtered_r_reg[7]_i_20\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_45_n_0\,
-      I1 => \filtered_r[7]_i_46_n_0\,
-      O => \filtered_r_reg[7]_i_20_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_25\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_47_n_0\,
-      I1 => \filtered_r[7]_i_48_n_0\,
-      O => \filtered_r_reg[7]_i_25_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_26\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_49_n_0\,
-      I1 => \filtered_r[7]_i_50_n_0\,
-      O => \filtered_r_reg[7]_i_26_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_31\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_51_n_0\,
-      I1 => \filtered_r[7]_i_52_n_0\,
-      O => \filtered_r_reg[7]_i_31_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_32\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_53_n_0\,
-      I1 => \filtered_r[7]_i_54_n_0\,
-      O => \filtered_r_reg[7]_i_32_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_37\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_55_n_0\,
-      I1 => \filtered_r[7]_i_56_n_0\,
-      O => \filtered_r_reg[7]_i_37_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_38\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_57_n_0\,
-      I1 => \filtered_r[7]_i_58_n_0\,
-      O => \filtered_r_reg[7]_i_38_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_7\: unisim.vcomponents.MUXF8
-     port map (
-      I0 => \filtered_r_reg[7]_i_19_n_0\,
-      I1 => \filtered_r_reg[7]_i_20_n_0\,
-      O => \filtered_r_reg[7]_i_7_n_0\,
-      S => ring_buffer_read_reg(3)
-    );
-\filtered_r_reg[7]_i_8\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_21_n_0\,
-      I1 => \filtered_r[7]_i_22_n_0\,
-      O => \filtered_r_reg[7]_i_8_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
-    );
-\filtered_r_reg[7]_i_9\: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \filtered_r[7]_i_23_n_0\,
-      I1 => \filtered_r[7]_i_24_n_0\,
-      O => \filtered_r_reg[7]_i_9_n_0\,
-      S => \ring_buffer_read_reg[2]_rep_n_0\
     );
 \filtered_r_reg[8]\: unisim.vcomponents.FDCE
     generic map(
@@ -37782,7 +37871,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"1"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
       O => \plusOp__0\(0)
     );
 \ring_buffer_read[0]_rep_i_1\: unisim.vcomponents.LUT1
@@ -37790,7 +37879,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"1"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
       O => \ring_buffer_read[0]_rep_i_1_n_0\
     );
 \ring_buffer_read[0]_rep_i_1__0\: unisim.vcomponents.LUT1
@@ -37798,7 +37887,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"1"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
       O => \ring_buffer_read[0]_rep_i_1__0_n_0\
     );
 \ring_buffer_read[0]_rep_i_1__1\: unisim.vcomponents.LUT1
@@ -37806,7 +37895,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"1"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
       O => \ring_buffer_read[0]_rep_i_1__1_n_0\
     );
 \ring_buffer_read[0]_rep_i_1__2\: unisim.vcomponents.LUT1
@@ -37814,7 +37903,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"1"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
       O => \ring_buffer_read[0]_rep_i_1__2_n_0\
     );
 \ring_buffer_read[1]_i_1\: unisim.vcomponents.LUT2
@@ -37822,7 +37911,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
       I1 => ring_buffer_read_reg(1),
       O => \plusOp__0\(1)
     );
@@ -37831,7 +37920,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep_n_0\,
+      I0 => ring_buffer_read_reg(0),
       I1 => ring_buffer_read_reg(1),
       O => \ring_buffer_read[1]_rep_i_1_n_0\
     );
@@ -37840,7 +37929,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => ring_buffer_read_reg(0),
+      I0 => \ring_buffer_read_reg[0]_rep__1_n_0\,
       I1 => ring_buffer_read_reg(1),
       O => \ring_buffer_read[1]_rep_i_1__0_n_0\
     );
@@ -37849,7 +37938,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"6"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep__1_n_0\,
       I1 => ring_buffer_read_reg(1),
       O => \ring_buffer_read[1]_rep_i_1__1_n_0\
     );
@@ -37858,7 +37947,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"78"
     )
         port map (
-      I0 => ring_buffer_read_reg(0),
+      I0 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I1 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(2),
       O => \plusOp__0\(2)
@@ -37868,7 +37957,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"78"
     )
         port map (
-      I0 => \ring_buffer_read_reg[0]_rep__2_n_0\,
+      I0 => \ring_buffer_read_reg[0]_rep__1_n_0\,
       I1 => \ring_buffer_read_reg[1]_rep__1_n_0\,
       I2 => ring_buffer_read_reg(2),
       O => \ring_buffer_read[2]_rep_i_1_n_0\
@@ -37878,7 +37967,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
       INIT => X"78"
     )
         port map (
-      I0 => ring_buffer_read_reg(0),
+      I0 => \ring_buffer_read_reg[0]_rep__2_n_0\,
       I1 => \ring_buffer_read_reg[1]_rep__0_n_0\,
       I2 => ring_buffer_read_reg(2),
       O => \ring_buffer_read[2]_rep_i_1__0_n_0\
@@ -37889,7 +37978,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
     )
         port map (
       I0 => ring_buffer_read_reg(1),
-      I1 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I1 => \ring_buffer_read_reg[0]_rep_n_0\,
       I2 => ring_buffer_read_reg(2),
       I3 => ring_buffer_read_reg(3),
       O => \plusOp__0\(3)
@@ -37900,7 +37989,7 @@ m_axis_tlast_INST_0: unisim.vcomponents.LUT2
     )
         port map (
       I0 => ring_buffer_read_reg(2),
-      I1 => \ring_buffer_read_reg[0]_rep__0_n_0\,
+      I1 => \ring_buffer_read_reg[0]_rep_n_0\,
       I2 => ring_buffer_read_reg(1),
       I3 => ring_buffer_read_reg(3),
       I4 => ring_buffer_read_reg(4),
