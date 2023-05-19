@@ -104,7 +104,7 @@ begin
                 when SEND_R =>
                     if m_axis_tready = '1' then
                     -- update counter and go back to receive status
-                        state <= RCV_R;
+                        state <= RCV_L;
                     end if;
 
                 when others =>

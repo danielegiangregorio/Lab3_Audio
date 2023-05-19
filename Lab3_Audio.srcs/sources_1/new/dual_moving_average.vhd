@@ -123,7 +123,7 @@ begin
                 when SEND_R =>
                     if m_axis_tready = '1' then
                     -- update counter and go back to receive status
-                        state <= RCV_R;
+                        state <= RCV_L;
                         ring_buffer_entry <= ring_buffer_entry + 1;
                     end if;
 
