@@ -150,10 +150,8 @@ begin
                 -- the avg is implemented shifting by 5 right te sum of the 32 samples
                 filtered_out_l <= unsigned(filtered_l(28 downto 5));
                 filtered_out_r <= unsigned(filtered_r(28 downto 5));
-                filtered_l (23 downto 0) <= (filter_in_l(to_integer(ring_buffer_read)));
-                filtered_l (28 downto 23) <= (others => '0');
-                filtered_r (23 downto 0) <= filter_in_r(to_integer(ring_buffer_read));
-                filtered_r (28 downto 23) <= (others => '0');
+                filtered_l <= resize(filter_in_l(to_integer(ring_buffer_read)),29);
+                filtered_r <= resize(filter_in_r(to_integer(ring_buffer_read)),29);
             else
                 filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
                 filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));  

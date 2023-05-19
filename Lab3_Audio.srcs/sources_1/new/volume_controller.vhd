@@ -41,12 +41,14 @@ architecture Behavioral of volume_controller is
     signal volume_exp_value             : integer range 0 to 2**(9 - N) := 0;
     signal volume_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
     signal volume_exp_is_negative       : std_logic := '0';
-    signal volume_buffer_l              : unsigned (23 + 2**(9 - N) downto 0) := (others => '0');
-    signal volume_buffer_r              : unsigned (23 + 2**(9 - N) downto 0) := (others => '0');
-    signal volume_in_l                  : unsigned (23 downto 0) := (others => '0');
-    signal volume_in_r                  : unsigned (23 downto 0) := (others => '0');
-    signal volume_out_l                 : unsigned (23 downto 0) := (others => '0');
-    signal volume_out_r                 : unsigned (23 downto 0) := (others => '0');
+    signal volume_buffer_l              : signed (23 + 2**(9 - N) downto 0) := (others => '0');
+    signal volume_buffer_r              : signed (23 + 2**(9 - N) downto 0) := (others => '0');
+    signal volume_buffer_shifted_l      : signed (23 + 2**(9 - N) downto 0) := (others => '0');
+    signal volume_buffer_shifted_r      : signed (23 + 2**(9 - N) downto 0) := (others => '0');
+    signal volume_in_l                  : signed (23 downto 0) := (others => '0');
+    signal volume_in_r                  : signed (23 downto 0) := (others => '0');
+    signal volume_out_l                 : signed (23 downto 0) := (others => '0');
+    signal volume_out_r                 : signed (23 downto 0) := (others => '0');
 begin
 
     with state select s_axis_tready <=
@@ -79,7 +81,7 @@ begin
                 when RCV_L =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '0' then
                         -- get l sample, jump to next state
-                        volume_in_l <= unsigned(s_axis_tdata);
+                        volume_in_l <= signed(s_axis_tdata);
                         state <= RCV_R;
                     end if;
 
@@ -87,7 +89,7 @@ begin
                     -- wait for l sample
                     if s_axis_tvalid = '1' and s_axis_tlast = '1' then
                         -- get r sample
-                        volume_in_r <= unsigned(s_axis_tdata);
+                        volume_in_r <= signed(s_axis_tdata);
                         -- setup m_axis to send l sample in the next state
                         m_axis_tdata    <= std_logic_vector(volume_out_l);
                         state <= SEND_L;
@@ -125,21 +127,40 @@ begin
         (others => '0') when others;
     -- if the channel is clipped we output the maximum possible signal
     with clipped_l select volume_out_l <=
-        volume_buffer_l(23 downto 0) when '0',
-        (others => '1') when '1',
+        volume_buffer_shifted_l(23 downto 0) when '0',
+        (23 => volume_in_l(23),
+        others => not volume_in_l(23)) when '1',
         (others => '0') when others;
     with clipped_r select volume_out_r <=
-        volume_buffer_r(23 downto 0) when '0',
-        (others => '1') when '1',
+        volume_buffer_shifted_r(23 downto 0) when '0',
+        (23 => volume_in_r(23),
+        others => not volume_in_r(23)) when '1',
         (others => '0') when others;
 
+    input_buffering : process(volume_in_l,volume_in_r,aresetn)
+    begin
+        volume_buffer_l <= (others => '0');
+        volume_buffer_r <= (others => '0');
+        
+            if volume_in_l(23) = '1' then
+                volume_buffer_l(volume_buffer_l'high downto 24) <= (others => '1');
+            elsif volume_in_l(23) = '0' then
+                volume_buffer_l(volume_buffer_l'high downto 24) <= (others => '0');
+            end if;
+            volume_buffer_l(23 downto 0) <= volume_in_l;
 
+            if volume_in_r(23) = '1' then
+                volume_buffer_r(volume_buffer_r'high downto 24) <= (others => '1');
+            elsif volume_in_r(23) = '0' then
+                volume_buffer_r(volume_buffer_r'high downto 24) <= (others => '0');
+            end if;
+            volume_buffer_r(23 downto 0) <= volume_in_r;
+    end process input_buffering;
+    
     volume_process: process(aclk, aresetn)
     begin
         if aresetn = '0' then
             -- reset output and calculation buffer
-            volume_buffer_l <= (others => '0');
-            volume_buffer_r <= (others => '0');
             volume_exp_value <= 0;
         elsif rising_edge(aclk) then
         -- if we are in the second part of a 2^N interval, the gain is actually N+1 on each side
@@ -149,42 +170,47 @@ begin
                 volume_exp_value <= to_integer(unsigned(volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1)));    
             end if;
             -- store the shifted value in volume_buffer_channel, the comb logic will process the clipping for the volume rise case
-            volume_buffer_l <= (others => '0');
-            volume_buffer_r <= (others => '0');
+            volume_buffer_shifted_l <= (others => '0');
+            volume_buffer_shifted_r <= (others => '0');
             if volume_exp_is_negative = '0' then 
-                volume_buffer_l (23 + volume_exp_value downto volume_exp_value) <= volume_in_l;
-                volume_buffer_l (volume_exp_value -1 downto 0) <= (others => '0');
-                volume_buffer_r (23 + volume_exp_value downto volume_exp_value) <= volume_in_r;
-                volume_buffer_r (volume_exp_value -1 downto 0) <= (others => '0');
+                volume_buffer_shifted_l <= shift_left(volume_buffer_l,volume_exp_value);
+                volume_buffer_shifted_r <= shift_left(volume_buffer_r,volume_exp_value);
             elsif volume_exp_is_negative = '1' then
-                if volume_in_l(23) = '1' then
-                    volume_buffer_l (23 downto 23 - volume_exp_value +1) <= (others => '1');
-                else
-                    volume_buffer_l (23 downto 23 - volume_exp_value +1) <= (others => '0');
-                end if;
-                volume_buffer_r (23 - volume_exp_value downto 0) <= volume_in_r(23 downto volume_exp_value);
-                if volume_in_r(23) = '1' then
-                    volume_buffer_r (23 downto 23 - volume_exp_value +1) <= (others => '1');
-                else
-                    volume_buffer_r (23 downto 23 - volume_exp_value +1) <= (others => '0');
-                end if;
+                volume_buffer_shifted_l <= shift_right(volume_buffer_l,volume_exp_value);
+                volume_buffer_shifted_r <= shift_right(volume_buffer_r,volume_exp_value);
             end if;
         end if;
     end process volume_process; 
     
-    -- if one of the MSBs above the expected 24bits is high we have clipped, so we rise clipped in the channle
-    clipper : process(volume_buffer_l, volume_buffer_r)
+    -- if one of the MSBs above the expected 24bits is high we have clipped, so we rise clipped in the channel
+    clipper : process(volume_buffer_shifted_l, volume_buffer_shifted_r)
     begin
-        if volume_buffer_l(volume_buffer_l'high downto 24) /= "0" then
-            clipped_l <= '1';
-        else
-            clipped_l <= '0';
+        if volume_in_l(23) = '0' then
+            if to_integer(volume_buffer_shifted_l(volume_buffer_shifted_l'high downto 24)) /= 0 then
+                clipped_l <= '1';
+            else
+                clipped_l <= '0';
+            end if;
+        elsif volume_in_l(23) = '1' then
+            if to_integer(volume_buffer_shifted_l(volume_buffer_shifted_l'high downto 24)) /= -1 then
+                clipped_l <= '1';
+            else
+                clipped_l <= '0';
+            end if;
         end if;
-        if volume_buffer_r(volume_buffer_l'high downto 24) /= "0" then
-            clipped_r <= '1';
-        else
-            clipped_r <= '0';
-        end if;
+        if volume_in_r(23) = '0' then
+            if to_integer(volume_buffer_shifted_r(volume_buffer_shifted_r'high downto 24)) = 0 then
+                clipped_r <= '1';
+            else
+                clipped_r <= '0';
+            end if;
+        elsif volume_in_r(23) = '1' then
+            if to_integer(volume_buffer_shifted_r(volume_buffer_shifted_r'high downto 24)) /= -1 then
+                clipped_r <= '1';
+            else
+                clipped_r <= '0';
+            end if;
+        end if; 
     end process clipper;
        
 

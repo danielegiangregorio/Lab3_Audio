@@ -31,8 +31,8 @@ preplace inst debouncer_0 -pg 1 -lvl 3 -x 800 -y 470 -swap {1 2 0 3} -defaultsOS
 preplace inst debouncer_1 -pg 1 -lvl 3 -x 800 -y 650 -swap {1 2 0 3} -defaultsOSRD
 preplace inst digilent_jstk2_0 -pg 1 -lvl 5 -x 1440 -y 400 -swap {0 1 2 3 4 5 6 15 14 10 11 9 12 8 7 13} -defaultsOSRD
 preplace inst axi4stream_spi_master_1 -pg 1 -lvl 7 -x 2120 -y 150 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 21 20} -defaultsOSRD
-preplace inst dual_moving_average_0 -pg 1 -lvl 6 -x 1790 -y 590 -swap {0 1 2 3 4 5 6 7 8 9 11 10 12} -defaultsOSRD
 preplace inst balance_controller_0 -pg 1 -lvl 7 -x 2120 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
+preplace inst dual_moving_average_0 -pg 1 -lvl 6 -x 1790 -y 590 -swap {0 1 2 3 4 5 6 7 8 9 11 10 12} -defaultsOSRD
 preplace inst volume_controller_0 -pg 1 -lvl 8 -x 2460 -y 580 -swap {0 1 2 3 4 5 6 7 8 9 10 12 11} -defaultsOSRD
 preplace netloc Net 1 4 5 1240 510 1610J 490 N 490 N 490 2580
 preplace netloc Net1 1 4 2 1270 620 NJ
