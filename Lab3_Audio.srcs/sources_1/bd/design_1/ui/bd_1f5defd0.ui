@@ -5,7 +5,7 @@
    "Addressing View_TopLeft":"-346,-350",
    "Color Coded_ExpandedHierarchyInLayout":"",
    "Color Coded_Layers":"/clk_in1_0_1:true|/clk_wiz_0_clk_out2:true|/Net5:true|/Net2:true|/clk_wiz_0_clk_out1:true|/Net3:true|/proc_sys_reset_1_peripheral_aresetn:true|",
-   "Color Coded_Layout":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+   "Color Coded_Layout":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
 preplace port SPI_M_0 -pg 1 -lvl 11 -x 5130 -y 140 -defaultsOSRD
 preplace port port-id_rx_sdin_0 -pg 1 -lvl 0 -x -110 -y 690 -defaultsOSRD
@@ -58,9 +58,9 @@ preplace netloc led_controller_0_led_b 1 4 2 1270 560 1570
 preplace netloc led_controller_0_led_g 1 4 2 1270 290 1600
 preplace netloc led_controller_0_led_r 1 4 2 1260 520 1580
 preplace netloc proc_sys_reset_1_peripheral_aresetn 1 2 8 640 260 N 260 N 260 N 260 N 260 N 260 N 260 2910
+preplace netloc reset_1 1 0 2 -80 680 230
 preplace netloc rx_sdin_0_1 1 0 10 -90J 270 NJ 270 N 270 NJ 270 NJ 270 NJ 270 N 270 N 270 N 270 2900
 preplace netloc sys_clock_1 1 0 1 N 790
-preplace netloc reset_1 1 0 2 -80 680 230
 preplace netloc axi4stream_spi_master_1_M_AXIS 1 4 4 1230 230 N 230 N 230 2270
 preplace netloc axi4stream_spi_master_1_SPI_M 1 7 4 N 140 N 140 N 140 N
 preplace netloc axis_dual_i2s_0_m_axis 1 5 6 1640 470 N 470 N 470 N 470 N 470 3170
@@ -73,7 +73,7 @@ levelinfo -pg 1 -110 110 460 800 1100 1440 1790 2120 2460 2760 3070 5130
 pagesize -pg 1 -db -bbox -sgen -220 -140 5250 900
 ",
    "Color Coded_ScaleFactor":"0.858056",
-   "Color Coded_TopLeft":"1020,531",
+   "Color Coded_TopLeft":"-216,-28",
    "Default View_Layers":"/clk_in1_0_1:true|/clk_wiz_0_clk_out2:true|/Net5:true|/Net2:true|/clk_wiz_0_clk_out1:true|/Net3:true|/proc_sys_reset_1_peripheral_aresetn:true|",
    "Default View_ScaleFactor":"0.371458",
    "Default View_TopLeft":"-105,-738",

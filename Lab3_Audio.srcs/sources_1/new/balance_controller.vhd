@@ -39,7 +39,7 @@ architecture Behavioral of balance_controller is
     signal zeros                         : unsigned(9 - N - 1 downto 0) := (others => '0');
     -- signals
     signal balance_set_hold              : std_logic_vector(9 - N + 1 downto 0) := (others => '0');
-    signal balance_exp_value             : positive range 0 to 2**(9 - N) := 0;
+    signal balance_exp_value             : integer range 0 to 2**(9 - N) := 0;
     signal balance_exp_value_preprocess  : unsigned(9 - N downto 0) := (others => '0');
     signal balance_exp_is_left           : std_logic := '0';
     signal balance_in_l                  : unsigned (23 downto 0) := (others => '0');
@@ -117,8 +117,9 @@ begin
     -- take the complement of the module for correct decrement of volume
     with balance_exp_is_left select balance_exp_value_preprocess <=
         unsigned(balance_set_hold(balance_set_hold'high -1 downto 0))  when '0',
-        unsigned(not balance_set_hold(balance_set_hold'high -1 downto 0)) when '1';
-
+        unsigned(not balance_set_hold(balance_set_hold'high -1 downto 0)) when '1',
+        (others => '0') when others;
+        
 
     balance_process: process(aclk, aresetn)
     begin
