@@ -125,43 +125,29 @@ begin
         unsigned(volume(volume'high -1 downto N - 1))  when '0',
         unsigned(not volume(volume'high -1 downto N - 1)) when '1',
         (others => '0') when others;
-    -- if the channel is clipped we output the maximum possible signal
-    with clipped_l select volume_out_l <=
-        volume_buffer_shifted_l(23 downto 0) when '0',
-        (23 => volume_in_l(23),
-        others => not volume_in_l(23)) when '1',
-        (others => '0') when others;
-    with clipped_r select volume_out_r <=
-        volume_buffer_shifted_r(23 downto 0) when '0',
-        (23 => volume_in_r(23),
-        others => not volume_in_r(23)) when '1',
-        (others => '0') when others;
 
-    input_buffering : process(volume_in_l,volume_in_r,aresetn)
+    sign_extension : process(volume_in_l,volume_in_r,aresetn)
     begin
-        volume_buffer_l <= (others => '0');
-        volume_buffer_r <= (others => '0');
-        
-            if volume_in_l(23) = '1' then
-                volume_buffer_l(volume_buffer_l'high downto 24) <= (others => '1');
-            elsif volume_in_l(23) = '0' then
-                volume_buffer_l(volume_buffer_l'high downto 24) <= (others => '0');
-            end if;
+        if aresetn = '0' then
+            volume_buffer_l <= (others => '0');
+            volume_buffer_r <= (others => '0');
+        else
+        -- l channel sign extension
+            volume_buffer_l(volume_buffer_l'high downto 24) <= (others => volume_in_l(23));
             volume_buffer_l(23 downto 0) <= volume_in_l;
-
-            if volume_in_r(23) = '1' then
-                volume_buffer_r(volume_buffer_r'high downto 24) <= (others => '1');
-            elsif volume_in_r(23) = '0' then
-                volume_buffer_r(volume_buffer_r'high downto 24) <= (others => '0');
-            end if;
+        -- r channel sign extension
+            volume_buffer_r(volume_buffer_r'high downto 24) <= (others => volume_in_r(23));    
             volume_buffer_r(23 downto 0) <= volume_in_r;
-    end process input_buffering;
-    
+        end if;
+    end process sign_extension;
+
     volume_process: process(aclk, aresetn)
     begin
         if aresetn = '0' then
             -- reset output and calculation buffer
             volume_exp_value <= 0;
+            volume_buffer_shifted_l <= (others => '0');
+            volume_buffer_shifted_r <= (others => '0');
         elsif rising_edge(aclk) then
         -- if we are in the second part of a 2^N interval, the gain is actually N+1 on each side
             if volume_exp_value_preprocess(0) = '1' then
@@ -170,48 +156,79 @@ begin
                 volume_exp_value <= to_integer(unsigned(volume_exp_value_preprocess(volume_exp_value_preprocess'high downto 1)));    
             end if;
             -- store the shifted value in volume_buffer_channel, the comb logic will process the clipping for the volume rise case
-            volume_buffer_shifted_l <= (others => '0');
-            volume_buffer_shifted_r <= (others => '0');
+                volume_buffer_shifted_l <= volume_buffer_l;
+                volume_buffer_shifted_r <= volume_buffer_r;
+
             if volume_exp_is_negative = '0' then 
-                volume_buffer_shifted_l <= shift_left(volume_buffer_l,volume_exp_value);
-                volume_buffer_shifted_r <= shift_left(volume_buffer_r,volume_exp_value);
+                -- l channel volume increase
+                volume_buffer_shifted_l(volume_buffer_shifted_l'high downto volume_exp_value) <= volume_buffer_l(volume_buffer_l'high - volume_exp_value downto 0);
+                volume_buffer_shifted_l(volume_exp_value -1 downto 0) <= (others => '0');
+                -- r channel volume increase
+                volume_buffer_shifted_r(volume_buffer_shifted_r'high downto volume_exp_value) <= volume_buffer_r(volume_buffer_r'high - volume_exp_value downto 0);
+                volume_buffer_shifted_r(volume_exp_value -1 downto 0) <= (others => '0');
+                --volume_buffer_shifted_l <= shift_left(volume_buffer_l,volume_exp_value);
+                --volume_buffer_shifted_r <= shift_left(volume_buffer_r,volume_exp_value);
             elsif volume_exp_is_negative = '1' then
-                volume_buffer_shifted_l <= shift_right(volume_buffer_l,volume_exp_value);
-                volume_buffer_shifted_r <= shift_right(volume_buffer_r,volume_exp_value);
+                -- l channel colume decrease
+                volume_buffer_shifted_l(volume_buffer_shifted_l'high - volume_exp_value downto 0) <= volume_buffer_l(volume_buffer_l'high downto volume_exp_value);
+                volume_buffer_shifted_l(volume_buffer_shifted_l'high downto volume_buffer_shifted_l'high - volume_exp_value + 1) <= 
+                    (others => volume_buffer_shifted_l(volume_buffer_shifted_l'high));
+                -- r channel volume decrease
+                volume_buffer_shifted_r(volume_buffer_shifted_r'high - volume_exp_value downto 0) <= volume_buffer_r(volume_buffer_r'high downto volume_exp_value);
+                volume_buffer_shifted_r(volume_buffer_shifted_r'high downto volume_buffer_shifted_r'high - volume_exp_value + 1) <= 
+                    (others => volume_buffer_shifted_r(volume_buffer_shifted_r'high));
+                --volume_buffer_shifted_l <= shift_right(volume_buffer_l,volume_exp_value);
+                --volume_buffer_shifted_r <= shift_right(volume_buffer_r,volume_exp_value);
             end if;
         end if;
     end process volume_process; 
-    
-    -- if one of the MSBs above the expected 24bits is high we have clipped, so we rise clipped in the channel
-    clipper : process(volume_buffer_shifted_l, volume_buffer_shifted_r)
+    -- if one of the MSBs above the expected 24bits is different ffrom the sign we have clipped, so we clip the channel to the highest magnitude value
+    clipper : process(aclk, aresetn)
     begin
-        if volume_in_l(23) = '0' then
-            if to_integer(volume_buffer_shifted_l(volume_buffer_shifted_l'high downto 24)) /= 0 then
-                clipped_l <= '1';
-            else
-                clipped_l <= '0';
+        if aresetn = '0' then
+            volume_out_l <= (others => '0');
+            volume_out_r <= (others => '0');
+        elsif rising_edge(aclk) then
+            -- l channel clipper
+            if volume_in_l(23) = '0' then
+                if to_integer(volume_buffer_shifted_l(volume_buffer_shifted_l'high downto 23)) /= 0 then
+                volume_out_l <= (
+                    23 => volume_in_l(23),
+                    others => not volume_in_l(23)
+                    );
+                else
+                volume_out_l <= volume_buffer_shifted_l(23 downto 0);
+                end if;
+            elsif volume_in_l(23) = '1' then
+                if to_integer(volume_buffer_shifted_l(volume_buffer_shifted_l'high downto 23)) /= -1 then
+                volume_out_l <= (
+                    23 => volume_in_l(23),
+                    others => not volume_in_l(23)
+                    );
+                else
+                volume_out_l <= volume_buffer_shifted_l(23 downto 0);
+                end if;
             end if;
-        elsif volume_in_l(23) = '1' then
-            if to_integer(volume_buffer_shifted_l(volume_buffer_shifted_l'high downto 24)) /= -1 then
-                clipped_l <= '1';
-            else
-                clipped_l <= '0';
+            -- r channel clipper
+            if volume_in_r(23) = '0' then
+                if to_integer(volume_buffer_shifted_r(volume_buffer_shifted_r'high downto 23)) /= 0 then
+                volume_out_r <= (
+                    23 => volume_in_r(23),
+                    others => not volume_in_r(23)
+                    );
+                else
+                volume_out_r <= volume_buffer_shifted_r(23 downto 0);
+                end if;
+            elsif volume_in_r(23) = '1' then
+                if to_integer(volume_buffer_shifted_r(volume_buffer_shifted_r'high downto 23)) /= -1 then
+                volume_out_r <= (
+                    23 => volume_in_r(23),
+                    others => not volume_in_r(23)
+                    );
+                else
+                volume_out_r <= volume_buffer_shifted_r(23 downto 0);
+                end if;
             end if;
         end if;
-        if volume_in_r(23) = '0' then
-            if to_integer(volume_buffer_shifted_r(volume_buffer_shifted_r'high downto 24)) = 0 then
-                clipped_r <= '1';
-            else
-                clipped_r <= '0';
-            end if;
-        elsif volume_in_r(23) = '1' then
-            if to_integer(volume_buffer_shifted_r(volume_buffer_shifted_r'high downto 24)) /= -1 then
-                clipped_r <= '1';
-            else
-                clipped_r <= '0';
-            end if;
-        end if; 
     end process clipper;
-       
-
 end Behavioral;

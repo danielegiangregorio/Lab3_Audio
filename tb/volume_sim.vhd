@@ -69,6 +69,7 @@ end component volume_controller;
 	signal	reset	:	STD_LOGIC	:= TB_RESET_INIT;
 	signal	clk		:	STD_LOGIC	:= TB_CLK_INIT;
 	signal volume   :  STD_LOGIC_VECTOR (9 downto 0) := (others => '0');
+	signal data     :  std_logic_vector (23 downto 0) := (others => '0');
     --signal aclk :  STD_LOGIC;
     --signal           aresetn :  STD_LOGIC;
               
@@ -162,10 +163,11 @@ begin
 	vol_increase: process
 	begin
            ( volume )<=std_logic_vector(unsigned(volume) + 1); 
+           data <= std_logic_vector(unsigned(data) + 1);
            wait for 20*CLK_PERIOD;
 	end process;
 	
-    s_axis_tdata  <= "101010101010101010101010", "001100000101010101010101"  after 1000 ns;
+    s_axis_tdata  <= data;
     s_axis_tlast  <= lr_ch; --ampl full 
     s_axis_tvalid <= '1';
     m_axis_tready <= '1';

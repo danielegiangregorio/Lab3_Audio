@@ -63,17 +63,17 @@ preplace netloc rx_sdin_0_1 1 0 10 -90J 270 NJ 270 N 270 NJ 270 NJ 270 NJ 270 N 
 preplace netloc sys_clock_1 1 0 1 N 790
 preplace netloc axi4stream_spi_master_1_M_AXIS 1 4 4 1230 230 N 230 N 230 2270
 preplace netloc axi4stream_spi_master_1_SPI_M 1 7 4 N 140 N 140 N 140 N
-preplace netloc digilent_jstk2_0_m_axis 1 5 2 1640 130 N
-preplace netloc mute_0_m_axis 1 9 1 2920 270n
 preplace netloc axis_dual_i2s_0_m_axis 1 5 6 1640 470 N 470 N 470 N 470 N 470 3170
-preplace netloc dual_moving_average_0_m_axis 1 6 1 1920 550n
 preplace netloc balance_controller_0_m_axis 1 7 1 2260 550n
+preplace netloc digilent_jstk2_0_m_axis 1 5 2 1640 130 N
+preplace netloc dual_moving_average_0_m_axis 1 6 1 1920 550n
+preplace netloc mute_0_m_axis 1 9 1 2920 270n
 preplace netloc volume_controller_0_m_axis 1 8 1 2590 550n
 levelinfo -pg 1 -110 110 460 800 1100 1440 1790 2120 2460 2760 3070 5130
 pagesize -pg 1 -db -bbox -sgen -220 -140 5250 900
 ",
    "Color Coded_ScaleFactor":"0.858056",
-   "Color Coded_TopLeft":"1381,121",
+   "Color Coded_TopLeft":"1381,120",
    "Default View_Layers":"/clk_in1_0_1:true|/clk_wiz_0_clk_out2:true|/Net5:true|/Net2:true|/clk_wiz_0_clk_out1:true|/Net3:true|/proc_sys_reset_1_peripheral_aresetn:true|",
    "Default View_ScaleFactor":"0.371458",
    "Default View_TopLeft":"-105,-738",
