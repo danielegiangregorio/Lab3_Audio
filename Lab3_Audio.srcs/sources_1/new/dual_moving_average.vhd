@@ -54,11 +54,19 @@ architecture Behavioral of dual_moving_average is
     signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
     signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
     signal filtered_l : signed (28 downto 0) := (others => '0');
+    signal filtered_l_retiming: signed (28 downto 0) := (others => '0');
     signal filtered_r : signed (28 downto 0) := (others => '0');
+    signal filtered_r_retiming : signed (28 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_r : unsigned (23 downto 0) := (others => '0');
     signal filter_in_r : ring_buffer := ( others => ( others => '0'));
     signal filter_in_l : ring_buffer := ( others => ( others => '0'));
+    
+    
+    --retiming------
+    attribute Retiming_Backward: integer;
+    attribute Retiming_Backward of filtered_l_retiming, filtered_r_retiming: signal is 1;    
+    
 begin
     
     with state select s_axis_tready <=
@@ -144,17 +152,18 @@ begin
             ring_buffer_read <= (others => '0');
 
         elsif rising_edge(aclk) then
-
+            filtered_l <= filtered_l_retiming;   --modified for retiming
+            filtered_r <= filtered_r_retiming;   -- modified for retiming
             if ring_buffer_read = 0 then
                 -- commit the result to output and reset the calculation buffer
                 -- the avg is implemented shifting by 5 right te sum of the 32 samples
-                filtered_out_l <= unsigned(filtered_l(28 downto 5));
-                filtered_out_r <= unsigned(filtered_r(28 downto 5));
-                filtered_l <= resize(filter_in_l(to_integer(ring_buffer_read)),29);
-                filtered_r <= resize(filter_in_r(to_integer(ring_buffer_read)),29);
+                filtered_out_l <= unsigned(filtered_l_retiming(28 downto 5));    --retiming
+                filtered_out_r <= unsigned(filtered_r_retiming(28 downto 5));
+                filtered_l_retiming <= resize(filter_in_l(to_integer(ring_buffer_read)),29);  --retiming
+                filtered_r_retiming <= resize(filter_in_r(to_integer(ring_buffer_read)),29);
             else
-                filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
-                filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));  
+                filtered_l_retiming <= filtered_l_retiming + filter_in_l(TO_INTEGER(ring_buffer_read));   --retiming
+                filtered_r_retiming <= filtered_r_retiming + filter_in_r(TO_INTEGER(ring_buffer_read));  
             end if; 
             ring_buffer_read <= ring_buffer_read + 1;      
         end if;
