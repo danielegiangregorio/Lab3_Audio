@@ -49,12 +49,12 @@ end dual_moving_average;
 
 architecture Behavioral of dual_moving_average is
     type state_t is (RCV_L, RCV_R, SEND_L, SEND_R);
-    type ring_buffer is array (31 downto 0) of unsigned (23 downto 0);
+    type ring_buffer is array (31 downto 0) of signed (23 downto 0);
     signal state : state_t;
-    signal ring_buffer_entry : unsigned (5 downto 0) := (others => '0');
-    signal ring_buffer_read : unsigned (5 downto 0) := (others => '0');
-    signal filtered_l : unsigned (23 downto 0) := (others => '0');
-    signal filtered_r : unsigned (23 downto 0) := (others => '0');
+    signal ring_buffer_entry : unsigned (4 downto 0) := (others => '0');
+    signal ring_buffer_read : unsigned (4 downto 0) := (others => '0');
+    signal filtered_l : signed (28 downto 0) := (others => '0');
+    signal filtered_r : signed (28 downto 0) := (others => '0');
     signal filtered_out_l : unsigned (23 downto 0) := (others => '0');
     signal filtered_out_r : unsigned (23 downto 0) := (others => '0');
     signal filter_in_r : ring_buffer := ( others => ( others => '0'));
@@ -89,35 +89,41 @@ begin
             case state is
                 when RCV_L =>
                     if s_axis_tvalid = '1' and s_axis_tlast = '0' then
-                        filter_in_l(TO_INTEGER(ring_buffer_entry)) <= unsigned(s_axis_tdata);
+                        -- get l sample, jump to next state
+                        filter_in_l(TO_INTEGER(ring_buffer_entry)) <= signed(s_axis_tdata);
                         state <= RCV_R;
                     end if;
 
                 when RCV_R =>
+                    -- wait for l sample
                     if s_axis_tvalid = '1' and s_axis_tlast = '1' then
-                        filter_in_r( TO_INTEGER(ring_buffer_entry) ) <= unsigned(s_axis_tdata);
+                        -- get r sample
+                        filter_in_r( TO_INTEGER(ring_buffer_entry) ) <= signed(s_axis_tdata);
+                        -- setup m_axis to send l sample in the next state
+                        if filter_enable = '1' then
+                            m_axis_tdata    <= std_logic_vector(filtered_out_l);
+                        else
+                            m_axis_tdata    <= std_logic_vector(filter_in_l(TO_INTEGER(ring_buffer_entry)));
+                        end if;
                         state <= SEND_L;
-                        s_axis_tready <= '0';
                     end if;
 
                 when SEND_L =>
-                    if filter_enable = '1' then
-                        m_axis_tdata    <= std_logic_vector(filtered_out_l);
-                    else
-                        m_axis_tdata    <= std_logic_vector(filter_in_l(TO_INTEGER(ring_buffer_entry)));
-                    end if;
+                    -- wait for receiver
                     if m_axis_tready = '1' then
-                        state <= SEND_R;
+                        -- setup m_axis to send r sample in the next state
+                        if filter_enable = '1' then
+                            m_axis_tdata    <= std_logic_vector(filtered_out_r);
+                        else
+                            m_axis_tdata    <= std_logic_vector(filter_in_r(TO_INTEGER(ring_buffer_entry)));
+                        end if;
+                            state <= SEND_R;
                     end if;
 
                 when SEND_R =>
-                    if filter_enable = '1' then
-                        m_axis_tdata    <= std_logic_vector(filtered_out_r);
-                    else
-                        m_axis_tdata    <= std_logic_vector(filter_in_r(TO_INTEGER(ring_buffer_entry)));
-                    end if;
                     if m_axis_tready = '1' then
-                        state <= RCV_R;
+                    -- update counter and go back to receive status
+                        state <= RCV_L;
                         ring_buffer_entry <= ring_buffer_entry + 1;
                     end if;
 
@@ -130,21 +136,27 @@ begin
     dma_filter: process(aclk, aresetn)
     begin
         if aresetn = '0' then
+            -- reset output and calculation buffer
             filtered_out_l <= (others => '0');
             filtered_out_r <= (others => '0');
             filtered_l <= (others => '0');
             filtered_r <= (others => '0');
             ring_buffer_read <= (others => '0');
+
         elsif rising_edge(aclk) then
-                filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read))(23 downto 5);
-                filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read))(23 downto 5);
-                ring_buffer_read <= ring_buffer_read + 1;
-                if ring_buffer_read = 31 then
-                    filtered_out_l <= filtered_l;
-                    filtered_out_r <= filtered_r;
-                    filtered_l <= (others => '0');
-                    filtered_r <= (others => '0');
-                end if;
+
+            if ring_buffer_read = 0 then
+                -- commit the result to output and reset the calculation buffer
+                -- the avg is implemented shifting by 5 right te sum of the 32 samples
+                filtered_out_l <= unsigned(filtered_l(28 downto 5));
+                filtered_out_r <= unsigned(filtered_r(28 downto 5));
+                filtered_l <= resize(filter_in_l(to_integer(ring_buffer_read)),29);
+                filtered_r <= resize(filter_in_r(to_integer(ring_buffer_read)),29);
+            else
+                filtered_l <= filtered_l + filter_in_l(TO_INTEGER(ring_buffer_read));
+                filtered_r <= filtered_r + filter_in_r(TO_INTEGER(ring_buffer_read));  
+            end if; 
+            ring_buffer_read <= ring_buffer_read + 1;      
         end if;
     end process dma_filter;
 
