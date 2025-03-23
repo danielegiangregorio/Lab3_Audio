@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Tue May  9 10:19:56 2023
+// Date        : Thu May 18 10:50:33 2023
 // Host        : SburroROG running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top design_1_debouncer_1_0 -prefix
 //               design_1_debouncer_1_0_ design_1_debouncer_0_0_sim_netlist.v
@@ -315,8 +315,8 @@ module design_1_debouncer_1_0_debouncer
         .Q(debounced));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "design_1_debouncer_0_0,debouncer,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "debouncer,Vivado 2022.2" *) 
+(* CHECK_LICENSE_TYPE = "design_1_debouncer_0_0,debouncer,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "debouncer,Vivado 2022.2" *) 
 (* NotValidForBitStream *)
 module design_1_debouncer_1_0
    (input_signal,
@@ -324,8 +324,8 @@ module design_1_debouncer_1_0
     reset,
     debounced);
   input input_signal;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input reset;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input reset;
   output debounced;
 
   wire clk;
@@ -333,7 +333,7 @@ module design_1_debouncer_1_0
   wire input_signal;
   wire reset;
 
-  design_1_debouncer_1_0_debouncer U0
+  design_1_debouncer_1_0_debouncer inst
        (.clk(clk),
         .debounced(debounced),
         .input_signal(input_signal),
